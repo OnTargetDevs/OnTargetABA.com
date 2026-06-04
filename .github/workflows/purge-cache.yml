@@ -1,0 +1,83 @@
+name: Purge Cloudflare cache after deploy
+
+# Every push to main triggers a Cloudflare Pages deploy. Once the deploy
+# finishes, this workflow purges the ontargetnotes.com zone cache so the
+# custom domain (website.ontargetnotes.com) catches up to the latest
+# build immediately instead of waiting on Cloudflare's CDN TTL.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: purge-cf-cache
+  cancel-in-progress: false
+
+jobs:
+  wait-and-purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Wait for matching Cloudflare Pages deployment
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_PAGES_PROJECT: ${{ secrets.CF_PAGES_PROJECT }}
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          python3 <<'PY'
+          import json, os, sys, time, urllib.request, urllib.error
+          tok = os.environ['CF_API_TOKEN']
+          acct = os.environ['CF_ACCOUNT_ID']
+          proj = os.environ['CF_PAGES_PROJECT']
+          sha = os.environ['COMMIT_SHA']
+          h = {'Authorization': f'Bearer {tok}', 'Accept': 'application/json'}
+          base = f'https://api.cloudflare.com/client/v4/accounts/{acct}/pages/projects/{proj}/deployments'
+
+          deadline = time.time() + 12 * 60
+          last_status = ''
+          while time.time() < deadline:
+              req = urllib.request.Request(f'{base}?per_page=20', headers=h)
+              try:
+                  d = json.loads(urllib.request.urlopen(req, timeout=20).read())
+              except urllib.error.HTTPError as e:
+                  print(f'CF API HTTPError {e.code}: {e.read().decode()[:300]}', file=sys.stderr)
+                  time.sleep(8); continue
+              match = None
+              for r in d.get('result', []):
+                  meta = ((r.get('deployment_trigger') or {}).get('metadata') or {})
+                  if meta.get('commit_hash', '')[:8] == sha[:8]:
+                      match = r; break
+              if not match:
+                  print(f'no deployment yet for commit {sha[:8]}, waiting...')
+                  time.sleep(10); continue
+              stages = match.get('stages') or []
+              last = stages[-1] if stages else {}
+              status_line = f"deploy {match['id'][:8]} stage={last.get('name')} status={last.get('status')}"
+              if status_line != last_status:
+                  print(status_line)
+                  last_status = status_line
+              if last.get('status') == 'success':
+                  print('deploy succeeded — proceeding to purge.')
+                  sys.exit(0)
+              if last.get('status') in ('failure', 'canceled'):
+                  print(f"deploy ended with status={last.get('status')} — skipping purge.")
+                  sys.exit(1)
+              time.sleep(8)
+          print('Timed out waiting for the CF Pages deploy.', file=sys.stderr)
+          sys.exit(1)
+          PY
+
+      - name: Purge ontargetnotes.com zone cache
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+        run: |
+          set -e
+          resp=$(curl -sS -X POST \
+            -H "Authorization: Bearer $CF_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"purge_everything":true}' \
+            "https://api.cloudflare.com/client/v4/zones/$CF_ZONE_ID/purge_cache")
+          echo "$resp"
+          echo "$resp" | python3 -c 'import json,sys; d=json.load(sys.stdin); sys.exit(0 if d.get("success") else 1)'
