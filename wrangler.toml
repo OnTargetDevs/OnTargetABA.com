@@ -1,0 +1,16 @@
+# Cloudflare Wrangler config for the On Target ABA static site +
+# admin-dashboard Pages Functions.
+#
+# This file is only consulted by the Wrangler CLI (e.g. `wrangler pages dev
+# website`, `wrangler pages deploy website`). The deployed project's
+# settings live in the Cloudflare Pages dashboard and are the production
+# source of truth.
+
+name = "ontargetaba-com"
+compatibility_date = "2025-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# CF Pages build output directory — the folder Wrangler treats as the
+# deploy root. _redirects, _headers, index.html, and the functions/
+# subtree all live here.
+pages_build_output_dir = "website"
