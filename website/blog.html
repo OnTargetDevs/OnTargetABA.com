@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -438,7 +438,7 @@ tailwind.config = {
     els.featuredImg.alt = post.title;
     els.featuredTitle.textContent = post.title;
     els.featuredExcerpt.textContent = post.excerpt || '';
-    els.featuredDate.textContent = formatDate(post.date) + (post.read_time ? ' · ' + post.read_time : '');
+    els.featuredDate.textContent = formatDate(post.date) + (post.read_time ? ' &middot; ' + post.read_time : '');
     els.featuredCat.textContent = post.category || 'Latest';
     els.featuredWrap.classList.remove('hidden');
   }
@@ -502,7 +502,7 @@ tailwind.config = {
       els.loadingGrid.classList.add('hidden');
       els.empty.classList.remove('hidden');
       els.empty.querySelector('h3').textContent = 'Articles are loading';
-      els.empty.querySelector('p').textContent = "We're publishing new articles — check back shortly.";
+      els.empty.querySelector('p').textContent = "We're publishing new articles &mdash; check back shortly.";
     });
 })();
 </script>
