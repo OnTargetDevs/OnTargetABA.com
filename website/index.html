@@ -564,7 +564,7 @@ tailwind.config = {
     <div class="lg:col-span-7 relative z-10">
       <div class="reveal eyebrow"><span class="dot"></span> Quality care without the wait</div>
 
-      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[72px] leading-[1.02] font-700 tracking-tight">
+      <h1 data-editable="hero-headline" class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[72px] leading-[1.02] font-700 tracking-tight">
         ABA therapy to help your child
         <span class="relative inline-block">
           <span class="relative z-10 italic font-600">succeed</span>
@@ -575,16 +575,16 @@ tailwind.config = {
         at home, at school&hellip; and at all times.
       </h1>
 
-      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
+      <p data-editable="hero-subhead" class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
         Evidence-based, compassionate ABA therapy and autism evaluations for children ages 2&ndash;18. Most insurance accepted, no waitlist, and a low BCBA-to-client ratio so every kid gets the attention they deserve.
       </p>
 
       <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
         <a href="contact.html" class="btn btn-coral">
-          Get Started Today
+          <span data-editable="primary-cta">Get Started Today</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="autism-testing.html" class="btn btn-ghost">Schedule Autism Testing</a>
+        <a href="autism-testing.html" class="btn btn-ghost" data-editable="secondary-cta">Schedule Autism Testing</a>
       </div>
 
       <!-- proof row -->
@@ -648,8 +648,8 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-5">
     <div class="max-w-2xl mb-14">
       <div class="reveal eyebrow"><span class="dot"></span> Outcomes that matter</div>
-      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Three areas. Real progress.</h2>
-      <p class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg">Every plan is built around your child, but the goals stay the same: stronger language, richer play, more independent days.</p>
+      <h2 data-editable="section-1-headline" class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Three areas. Real progress.</h2>
+      <p data-editable="intro-paragraph" class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg">Every plan is built around your child, but the goals stay the same: stronger language, richer play, more independent days.</p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">
@@ -796,7 +796,7 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-5">
     <div class="max-w-2xl mb-14">
       <div class="reveal eyebrow"><span class="dot"></span> Why On Target ABA</div>
-      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Six reasons families choose us.</h2>
+      <h2 data-editable="section-2-headline" class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Six reasons families choose us.</h2>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -1520,7 +1520,7 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-5">
     <div class="max-w-2xl mb-14">
       <div class="reveal eyebrow"><span class="dot"></span> Locations</div>
-      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Now serving three states.</h2>
+      <h2 data-editable="section-3-headline" class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Now serving three states.</h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">
@@ -1582,5 +1582,6 @@ tailwind.config = {
 <script src="/assets/js/header.js"></script>
 <script src="/assets/js/footer.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="/assets/js/page-overrides.js" defer></script>
 </body>
 </html>

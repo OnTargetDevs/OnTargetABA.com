@@ -1,5 +1,25 @@
 # Cloudflare Pages response headers
 
+# Shared header / footer JS: short cache so banner + nav changes propagate
+# within minutes. Listed before the generic /assets/js/* rule below so it
+# takes precedence.
+/assets/js/header.js
+  Cache-Control: public, max-age=300
+
+/assets/js/footer.js
+  Cache-Control: public, max-age=300
+
+# API endpoints: never cache, never index.
+/api/*
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Robots-Tag: noindex
+
+# Admin dashboard: never cache, never index, never frame.
+/admin/*
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Frame-Options: DENY
+  X-Robots-Tag: noindex
+
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

@@ -11,3 +11,13 @@ ehthumbs.db
 
 # Logs
 *.log
+
+# Admin dashboard secrets (Google OAuth, JWT, GitHub PAT)
+.env
+.env.*
+!.env.example
+website/.dev.vars
+website/.dev.vars.*
+.wrangler/
+node_modules/
+.lighthouseci/

@@ -134,6 +134,29 @@ These were run once during initial migration, their changes are baked into the H
 - `cookie-consent.html` is a placeholder shell &mdash; the original is a Termageddon runtime embed; wire the real script before launch.
 - All forms use `onsubmit="event.preventDefault(); &hellip;"` placeholder handlers on top of the Jotform iframe so the styled wrapper degrades cleanly.
 
+## Documentation
+
+In-depth references live under [`docs/`](docs/):
+
+- [`docs/ADMIN_DASHBOARD.md`](docs/ADMIN_DASHBOARD.md) &mdash; user-facing
+  walkthrough of the `/admin` dashboard: sign-in, editing pages, creating
+  blog posts, and how each save becomes a PR.
+- [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) &mdash; Cloudflare Pages
+  configuration, required environment variables and secrets, the build
+  pipeline, and the rollback procedure.
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) &mdash; how the static
+  site, the admin dashboard, and the Pages Functions fit together
+  (auth flow, draft-preview catch-all, PR workflow).
+- [`docs/CONTENT_AUTHORING.md`](docs/CONTENT_AUTHORING.md) &mdash; blog
+  frontmatter conventions, page templates, and editorial style notes.
+
+## License &amp; Contributing
+
+- See [`LICENSE`](LICENSE) for the proprietary, all-rights-reserved
+  license terms (&copy; 2026 Shalom Karr).
+- See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the PR workflow, commit
+  conventions, branch naming, and local development setup.
+
 ## License
 
 Content &copy; On Target ABA, LLC. Markup and design &copy; 2026.

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Edit page &mdash; Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+<style>
+  html, body { height: 100%; }
+  body.admin { display: flex; flex-direction: column; }
+</style>
+</head>
+<body class="admin font-sans">
+  <header class="admin-topbar">
+    <a class="admin-topbar__brand" href="/admin/pages.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span>On Target Admin</span>
+    </a>
+    <div class="admin-topbar__right" style="margin-left:auto;gap:0.5rem;">
+      <span id="page-title" class="admin-muted" style="font-weight:600;color:var(--ink);"></span>
+      <span data-saving class="admin-muted" style="font-size:0.8rem;"></span>
+      <button class="btn btn-ghost btn-sm" type="button" id="preview-toggle">Preview</button>
+      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" id="view-live">View live</a>
+      <a class="btn btn-ghost btn-sm" href="/admin/pages.html">Back</a>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <div class="split admin-page--full" style="height:auto;flex:1 1 auto;">
+    <div class="split__iframe" id="iframe-wrap">
+      <iframe id="page-iframe" title="Page preview" sandbox="allow-same-origin allow-scripts allow-forms allow-popups"></iframe>
+    </div>
+
+    <aside class="split__panel">
+      <div class="panel-head">
+        <div>
+          <p class="admin-eyebrow">Editing</p>
+          <h2 class="admin-h2" id="panel-slug">—</h2>
+        </div>
+        <button class="btn btn-ghost btn-sm" type="button" id="save-template-btn" title="Save current page as a reusable template">Save as template</button>
+      </div>
+      <div class="panel-body">
+        <p class="admin-muted" style="font-size:0.85rem;margin-bottom:0.85rem;">
+          Click any pink <strong>Edit</strong> badge on the page to change copy or swap an image. Edits queue up here and submit as one pull request.
+        </p>
+        <div id="changes-list">
+          <div class="empty">No pending changes.</div>
+        </div>
+      </div>
+      <div class="panel-foot">
+        <button class="btn btn-ghost" type="button" id="discard-btn">Discard</button>
+        <button class="btn btn-primary" type="button" id="save-btn" style="margin-left:auto;">Save &amp; open PR</button>
+      </div>
+    </aside>
+  </div>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    await Admin.requireAuth();
+
+    const params = new URLSearchParams(location.search);
+    const slug = params.get('slug');
+    if (!slug) {
+      Admin.toast('Missing slug', 'error');
+      setTimeout(function () { location.href = '/admin/pages.html'; }, 1200);
+      return;
+    }
+    document.getElementById('page-title').textContent = slug;
+    document.getElementById('panel-slug').textContent = slug;
+    const liveLink = document.getElementById('view-live');
+    liveLink.href = '/' + slug;
+
+    const iframe = document.getElementById('page-iframe');
+    const iframeWrap = document.getElementById('iframe-wrap');
+    const changesList = document.getElementById('changes-list');
+    const savingSlot = document.querySelector('[data-saving]');
+    const saveBtn = document.getElementById('save-btn');
+    const discardBtn = document.getElementById('discard-btn');
+    const previewToggle = document.getElementById('preview-toggle');
+    const saveTemplateBtn = document.getElementById('save-template-btn');
+
+    const dirty = Admin.dirtyGuard();
+    const draftKey = 'page-editor:' + slug;
+    let pendingOverrides = {};
+    let initialOverrides = {};
+    let pageSha = null;
+    let badges = [];
+    let previewMode = false;
+
+    // Restore localStorage draft if present
+    const restored = Admin.drafts.load(draftKey);
+    if (restored && restored.pendingOverrides) {
+      pendingOverrides = restored.pendingOverrides;
+      Admin.toast('Restored unsaved changes from your last session', 'info');
+    }
+
+    // Fetch page data
+    try {
+      const data = await Admin.api.get('/api/pages/' + encodeURIComponent(slug));
+      initialOverrides = (data && data.overrides) || {};
+      pageSha = data && data.sha && (data.sha.overrides || data.sha);
+      if (data && data.registry && data.registry.path) liveLink.href = data.registry.path;
+    } catch (err) {
+      console.error(err);
+      Admin.toast('Could not load page overrides', 'error');
+    }
+
+    // Load the iframe with the live page
+    iframe.src = liveLink.href + (liveLink.href.includes('?') ? '&' : '?') + 'admin=1';
+
+    iframe.addEventListener('load', function () {
+      try {
+        annotateIframe();
+      } catch (err) {
+        console.error(err);
+        Admin.toast('Could not attach editor (iframe origin?)', 'error');
+      }
+      renderChanges();
+    });
+
+    // Reposition badges on iframe scroll/resize
+    function attachBadgeReflow(doc) {
+      const win = doc.defaultView;
+      const onChange = Admin.debounce(positionBadges, 30);
+      win.addEventListener('scroll', onChange, { passive: true });
+      win.addEventListener('resize', onChange);
+      const ro = new ResizeObserver(onChange);
+      ro.observe(doc.documentElement);
+    }
+
+    function annotateIframe() {
+      // Wipe any prior badges
+      badges.forEach(function (b) { if (b.node) b.node.remove(); });
+      badges = [];
+
+      const doc = iframe.contentDocument;
+      if (!doc) return;
+      const nodes = doc.querySelectorAll('[data-editable]');
+      nodes.forEach(function (node) {
+        const key = node.getAttribute('data-editable');
+        if (!key) return;
+        const isImage = node.tagName === 'IMG' || node.hasAttribute('data-editable-image');
+        // Apply already-pending edits visually so the iframe reflects the queue
+        applyOverride(node, key, pendingOverrides[key] || initialOverrides[key]);
+
+        const badge = document.createElement('button');
+        badge.type = 'button';
+        badge.className = 'edit-badge';
+        badge.textContent = isImage ? 'Image' : 'Edit';
+        badge.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (isImage) openImageModal(node, key);
+          else activateTextEdit(node, key);
+        });
+        iframeWrap.appendChild(badge);
+        badges.push({ node: badge, target: node, key: key });
+      });
+
+      attachBadgeReflow(doc);
+      positionBadges();
+    }
+
+    function positionBadges() {
+      const wrapRect = iframeWrap.getBoundingClientRect();
+      badges.forEach(function (b) {
+        if (!b.target || !b.target.getBoundingClientRect) return;
+        const r = b.target.getBoundingClientRect();
+        // Coordinates inside the iframe — translate to outer wrap
+        const top = r.top + wrapRect.top - wrapRect.top; // relative to iframeWrap because iframe fills it
+        b.node.style.top  = (r.top + (r.height / 2)) + 'px';
+        b.node.style.left = (r.left) + 'px';
+        b.node.style.display = (r.width === 0 && r.height === 0) ? 'none' : '';
+        if (previewMode) b.node.style.display = 'none';
+      });
+    }
+
+    function applyOverride(node, key, override) {
+      if (!override) return;
+      if (override.type === 'text' && 'value' in override) {
+        node.textContent = override.value;
+      } else if (override.type === 'image') {
+        if (override.src) node.setAttribute('src', override.src);
+        if (override.alt != null) node.setAttribute('alt', override.alt);
+      }
+    }
+
+    function activateTextEdit(node, key) {
+      node.setAttribute('contenteditable', 'true');
+      node.style.outline = '2px solid var(--coral, #E84F3B)';
+      node.style.outlineOffset = '2px';
+      node.focus();
+      const range = node.ownerDocument.createRange();
+      range.selectNodeContents(node);
+      const sel = node.ownerDocument.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      function commit() {
+        node.removeAttribute('contenteditable');
+        node.style.outline = '';
+        node.style.outlineOffset = '';
+        const value = node.textContent.trim();
+        pendingOverrides[key] = { type: 'text', value: value };
+        markDirty();
+        renderChanges();
+        positionBadges();
+      }
+      node.addEventListener('blur', commit, { once: true });
+      node.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          node.blur();
+        }
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          node.blur();
+        }
+      });
+    }
+
+    function openImageModal(node, key) {
+      const existing = pendingOverrides[key] || initialOverrides[key] || { src: node.getAttribute('src') || '', alt: node.getAttribute('alt') || '' };
+      const backdrop = document.createElement('div');
+      backdrop.className = 'modal-backdrop';
+      backdrop.dataset.adminModal = '1';
+      backdrop.innerHTML =
+        '<div class="modal" role="dialog" aria-modal="true">' +
+          '<div class="modal__head" style="text-align:left;padding:1.25rem 1.25rem 0;">' +
+            '<h2>Edit image</h2>' +
+            '<p style="margin-top:0.25rem;"></p>' +
+          '</div>' +
+          '<div class="modal__body" style="padding:0.5rem 1.25rem 0;">' +
+            '<div class="field"><label>Image URL</label><input class="input" type="url" data-field="src" placeholder="/assets/images/&hellip;.jpg"></div>' +
+            '<div class="field" style="margin-top:0.6rem;"><label>Alt text</label><input class="input" type="text" data-field="alt" placeholder="What the image shows"></div>' +
+          '</div>' +
+          '<div class="modal__foot" style="flex-direction:row;justify-content:flex-end;gap:0.5rem;">' +
+            '<button class="btn btn-ghost" type="button" data-cancel>Cancel</button>' +
+            '<button class="btn btn-primary" type="button" data-save>Apply</button>' +
+          '</div>' +
+        '</div>';
+      backdrop.querySelector('p').textContent = 'Key: ' + key;
+      backdrop.querySelector('[data-field="src"]').value = existing.src || '';
+      backdrop.querySelector('[data-field="alt"]').value = existing.alt || '';
+      backdrop.querySelector('[data-cancel]').addEventListener('click', function () { backdrop.remove(); });
+      backdrop.addEventListener('click', function (e) { if (e.target === backdrop) backdrop.remove(); });
+      backdrop.querySelector('[data-save]').addEventListener('click', function () {
+        const src = backdrop.querySelector('[data-field="src"]').value.trim();
+        const alt = backdrop.querySelector('[data-field="alt"]').value.trim();
+        if (!src) { Admin.toast('Image URL is required', 'error'); return; }
+        pendingOverrides[key] = { type: 'image', src: src, alt: alt };
+        applyOverride(node, key, pendingOverrides[key]);
+        markDirty();
+        renderChanges();
+        positionBadges();
+        backdrop.remove();
+      });
+      document.body.appendChild(backdrop);
+    }
+
+    function renderChanges() {
+      const keys = Object.keys(pendingOverrides);
+      if (!keys.length) {
+        changesList.innerHTML = '<div class="empty">No pending changes.</div>';
+        saveBtn.disabled = true;
+        return;
+      }
+      saveBtn.disabled = false;
+      changesList.innerHTML = '';
+      keys.forEach(function (k) {
+        const o = pendingOverrides[k];
+        const row = document.createElement('div');
+        row.className = 'change-row';
+        let valHtml;
+        if (o.type === 'image') {
+          valHtml = '<span class="change-row__val">' +
+            '<span class="pill pill-info">image</span> ' +
+            '<code></code>' +
+            (o.alt ? '<div class="admin-muted" style="font-size:0.78rem;margin-top:0.2rem;"></div>' : '') +
+          '</span>';
+        } else {
+          valHtml = '<span class="change-row__val"></span>';
+        }
+        row.innerHTML =
+          '<span class="change-row__key"></span>' +
+          valHtml +
+          '<div class="change-row__bar">' +
+            '<button class="btn btn-ghost btn-sm" type="button" data-act="revert">Revert</button>' +
+          '</div>';
+        row.querySelector('.change-row__key').textContent = k;
+        if (o.type === 'image') {
+          row.querySelector('code').textContent = o.src;
+          if (o.alt) row.querySelector('.admin-muted').textContent = 'alt: ' + o.alt;
+        } else {
+          row.querySelector('.change-row__val').textContent = o.value || '';
+        }
+        row.querySelector('[data-act="revert"]').addEventListener('click', function () {
+          delete pendingOverrides[k];
+          // Restore initial value in the iframe DOM
+          const target = badges.find(function (b) { return b.key === k; });
+          if (target) {
+            const orig = initialOverrides[k];
+            if (orig) applyOverride(target.target, k, orig);
+            // No easy way to restore original DOM text without re-render — leave the override applied/cleared.
+          }
+          markDirty();
+          renderChanges();
+          positionBadges();
+        });
+        changesList.appendChild(row);
+      });
+    }
+
+    function markDirty() {
+      dirty.set(true);
+      Admin.drafts.save(draftKey, { pendingOverrides: pendingOverrides, ts: Date.now() });
+    }
+
+    // Auto-save draft to localStorage every 3s
+    setInterval(function () {
+      if (dirty.get()) Admin.drafts.save(draftKey, { pendingOverrides: pendingOverrides, ts: Date.now() });
+    }, 3000);
+
+    discardBtn.addEventListener('click', function () {
+      if (!Object.keys(pendingOverrides).length) return;
+      if (!confirm('Discard all pending changes?')) return;
+      pendingOverrides = {};
+      Admin.drafts.clear(draftKey);
+      dirty.set(false);
+      // Reload iframe to re-render original DOM
+      iframe.src = iframe.src;
+      renderChanges();
+    });
+
+    previewToggle.addEventListener('click', function () {
+      previewMode = !previewMode;
+      previewToggle.textContent = previewMode ? 'Show edit handles' : 'Preview';
+      positionBadges();
+    });
+
+    saveBtn.addEventListener('click', async function () {
+      if (!Object.keys(pendingOverrides).length) return;
+      saveBtn.disabled = true;
+      const done = Admin.saving(savingSlot, 'Submitting PR&hellip;');
+      try {
+        // Merge pending into a full overrides map so the server overwrites
+        const fullOverrides = Object.assign({}, initialOverrides, pendingOverrides);
+        const res = await Admin.api.put('/api/pages/' + encodeURIComponent(slug), {
+          overrides: fullOverrides,
+          sha: pageSha
+        });
+        done('Saved');
+        dirty.set(false);
+        Admin.drafts.clear(draftKey);
+        if (res && res.pr) {
+          Admin.showPrSubmittedModal(res.pr, {
+            title: 'Page changes — PR #' + res.pr.number,
+            secondaryLabel: 'Back to pages',
+            secondaryHref: '/admin/pages.html'
+          });
+        } else {
+          Admin.toast('Saved', 'success');
+        }
+      } catch (err) {
+        console.error(err);
+        Admin.toast(err.message || 'Save failed', 'error');
+        done();
+      } finally {
+        saveBtn.disabled = false;
+      }
+    });
+
+    saveTemplateBtn.addEventListener('click', async function () {
+      const name = prompt('Template name (lowercase, e.g. "location-page")', '');
+      if (!name) return;
+      const tplName = Admin.slugify(name);
+      if (!tplName) { Admin.toast('Invalid template name', 'error'); return; }
+      saveTemplateBtn.disabled = true;
+      const done = Admin.saving(savingSlot, 'Submitting PR&hellip;');
+      try {
+        const res = await Admin.api.post('/api/templates/from-page', {
+          pageSlug: slug,
+          templateName: tplName
+        });
+        done('Saved');
+        if (res && res.pr) {
+          Admin.showPrSubmittedModal(res.pr, {
+            title: 'Template saved — PR #' + res.pr.number,
+            description: 'After the PR merges, this template will be available when creating new pages.',
+            secondaryLabel: 'Back to editor',
+            onSecondary: function () { document.querySelector('.modal-backdrop').remove(); }
+          });
+        } else {
+          Admin.toast('Template saved', 'success');
+        }
+      } catch (err) {
+        console.error(err);
+        Admin.toast(err.message || 'Could not save template', 'error');
+        done();
+      } finally {
+        saveTemplateBtn.disabled = false;
+      }
+    });
+
+    window.addEventListener('resize', Admin.debounce(positionBadges, 60));
+  })();
+  </script>
+</body>
+</html>

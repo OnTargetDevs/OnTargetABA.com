@@ -1,0 +1,148 @@
+name: lighthouse
+
+on:
+  pull_request:
+    branches: ['**']
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  lighthouse:
+    name: Lighthouse audit against CF Pages preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Wait for Cloudflare Pages preview
+        id: cf-preview
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Poll the PR's deployments for the CF Pages "preview" environment.
+          # Fall back to a 90s sleep if no deployment shows up.
+          owner_repo="${{ github.repository }}"
+          sha="${{ github.event.pull_request.head.sha }}"
+          url=""
+          for i in $(seq 1 30); do
+            url=$(gh api "repos/$owner_repo/deployments?sha=$sha" --jq \
+              '[.[] | select(.environment | test("preview|Preview"))][0].payload.web_url // empty' 2>/dev/null || true)
+            if [ -n "$url" ]; then
+              echo "Preview ready: $url"
+              break
+            fi
+            statuses_url=$(gh api "repos/$owner_repo/commits/$sha/status" --jq \
+              '[.statuses[] | select(.context | test("Cloudflare Pages|cloudflare/pages"))][0].target_url // empty' 2>/dev/null || true)
+            if [ -n "$statuses_url" ]; then
+              url="$statuses_url"
+              echo "Preview ready (via status): $url"
+              break
+            fi
+            echo "Waiting for preview deploy ($i/30)..."
+            sleep 15
+          done
+
+          if [ -z "$url" ]; then
+            echo "::warning::No CF Pages preview detected after 7.5min; falling back to staging URL"
+            url="https://website.ontargetnotes.com/"
+          fi
+          echo "preview_url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Run Lighthouse CI
+        id: lhci
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: ${{ steps.cf-preview.outputs.preview_url }}
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Score gate + baseline comparison
+        id: gate
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, sys, glob
+
+          # Collect the LHCI manifest produced by treosh's action.
+          manifests = glob.glob(".lighthouseci/manifest.json")
+          if not manifests:
+              print("::warning::No LHCI manifest found; skipping gate.")
+              sys.exit(0)
+
+          rep = json.loads(pathlib.Path(manifests[0]).read_text())
+          # Use the median run if present.
+          run = next((r for r in rep if r.get("isRepresentativeRun")), rep[0])
+          summary = run.get("summary", {})
+
+          scores = {
+              "performance":    round(summary.get("performance", 0) * 100, 1),
+              "accessibility":  round(summary.get("accessibility", 0) * 100, 1),
+              "seo":            round(summary.get("seo", 0) * 100, 1),
+              "best-practices": round(summary.get("best-practices", 0) * 100, 1),
+          }
+          print("Scores:", scores)
+
+          thresholds = {"performance": 90, "accessibility": 95, "seo": 95, "best-practices": 90}
+          failures = [k for k, v in scores.items() if v < thresholds[k]]
+
+          baseline_path = pathlib.Path(".github/lighthouse-baseline.json")
+          regression = []
+          if baseline_path.exists():
+              try:
+                  baseline = json.loads(baseline_path.read_text())
+                  for k, v in scores.items():
+                      if k in baseline and v < baseline[k] - 5:
+                          regression.append(f"{k}: {v} (baseline {baseline[k]}, drop > 5)")
+              except Exception as e:
+                  print(f"::warning::Could not parse baseline: {e}")
+          else:
+              print("No baseline found; recording current scores as baseline.")
+              baseline_path.parent.mkdir(parents=True, exist_ok=True)
+              baseline_path.write_text(json.dumps(scores, indent=2))
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              for k, v in scores.items():
+                  f.write(f"{k}={v}\n")
+              f.write(f"failures={','.join(failures)}\n")
+              f.write(f"regression={'; '.join(regression)}\n")
+
+          if failures or regression:
+              print(f"::error::Failed thresholds: {failures}; regressions: {regression}")
+              sys.exit(1)
+          PY
+
+      - name: Commit baseline if new
+        if: always()
+        run: |
+          if [ -f .github/lighthouse-baseline.json ] && \
+             ! git diff --quiet -- .github/lighthouse-baseline.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add .github/lighthouse-baseline.json
+            git commit -m "chore: record Lighthouse baseline [skip ci]" || true
+            git push || true
+          fi
+
+      - name: Comment on PR
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const out = ${{ toJson(steps.gate.outputs) }};
+            const body = [
+              '### Lighthouse',
+              '',
+              `- performance: **${out.performance}**`,
+              `- accessibility: **${out.accessibility}**`,
+              `- seo: **${out.seo}**`,
+              `- best-practices: **${out['best-practices']}**`,
+              out.failures ? `\n:x: Failures: ${out.failures}` : '',
+              out.regression ? `\n:warning: Regressions: ${out.regression}` : '',
+            ].join('\n');
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body,
+            });

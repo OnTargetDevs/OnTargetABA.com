@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pages &mdash; Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body class="admin font-sans">
+  <header class="admin-topbar">
+    <a class="admin-topbar__brand" href="/admin/">
+      <span class="dot" aria-hidden="true"></span>
+      <span>On Target Admin</span>
+    </a>
+    <nav class="admin-topbar__nav" aria-label="Admin">
+      <a href="/admin/">Dashboard</a>
+      <a href="/admin/pages.html">Pages</a>
+      <a href="/admin/posts.html">Posts</a>
+      <a href="/admin/header.html">Header</a>
+      <a href="/admin/footer.html">Footer</a>
+    </nav>
+    <div class="admin-topbar__right">
+      <span data-user-email class="admin-muted"></span>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="admin-page">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-5">
+      <div>
+        <p class="admin-eyebrow mb-1">Pages</p>
+        <h1 class="admin-h1">All pages</h1>
+      </div>
+      <a class="btn btn-primary" href="/admin/new-page.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+        New page
+      </a>
+    </div>
+
+    <div class="toolbar">
+      <input id="search" class="input" type="search" placeholder="Search by title, slug, or template&hellip;" />
+      <select id="filter" class="select" style="max-width:160px;">
+        <option value="">All statuses</option>
+        <option value="live">Live</option>
+        <option value="draft">Draft</option>
+        <option value="hidden">Hidden</option>
+      </select>
+      <span data-saving class="admin-muted" style="margin-left:auto;font-size:0.8rem;"></span>
+    </div>
+
+    <div class="admin-card">
+      <div style="overflow-x:auto;">
+        <table class="admin-table" id="pages-table">
+          <thead>
+            <tr>
+              <th style="width:32%;">Title</th>
+              <th>Slug</th>
+              <th style="width:120px;">Status</th>
+              <th>Template</th>
+              <th style="text-align:right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5"><div class="empty">Loading pages&hellip;</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    await Admin.requireAuth();
+    const tbody = document.querySelector('#pages-table tbody');
+    const savingSlot = document.querySelector('[data-saving]');
+    const search = document.getElementById('search');
+    const filter = document.getElementById('filter');
+    let allPages = [];
+
+    function statusOf(p) {
+      if (p.hidden) return 'hidden';
+      if (p.draft) return 'draft';
+      return 'live';
+    }
+    function pillFor(status) {
+      if (status === 'live')   return '<span class="pill pill-live">Live</span>';
+      if (status === 'draft')  return '<span class="pill pill-draft">Draft</span>';
+      return '<span class="pill pill-hidden">Hidden</span>';
+    }
+
+    function render() {
+      const q = (search.value || '').toLowerCase().trim();
+      const f = filter.value;
+      const filtered = allPages.filter(function (p) {
+        if (f && statusOf(p) !== f) return false;
+        if (!q) return true;
+        return (p.title || '').toLowerCase().includes(q)
+            || (p.slug || '').toLowerCase().includes(q)
+            || (p.template || '').toLowerCase().includes(q);
+      });
+
+      if (!filtered.length) {
+        tbody.innerHTML = '<tr><td colspan="5"><div class="empty">No pages match.</div></td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = '';
+      filtered.forEach(function (p) {
+        const status = statusOf(p);
+        const tr = document.createElement('tr');
+        tr.dataset.slug = p.slug;
+        tr.innerHTML =
+          '<td><div style="font-weight:600;"></div><div class="admin-muted" style="font-size:0.78rem;"></div></td>' +
+          '<td><code style="font-size:0.8rem;color:var(--ink-soft);"></code></td>' +
+          '<td></td>' +
+          '<td><code style="font-size:0.78rem;color:var(--mute);"></code></td>' +
+          '<td class="row-actions">' +
+            '<a class="btn btn-ghost btn-sm" data-action="edit">Edit</a>' +
+            '<button class="btn btn-ghost btn-sm" type="button" data-action="draft"></button>' +
+            '<button class="btn btn-ghost btn-sm" type="button" data-action="hide"></button>' +
+            '<button class="btn btn-danger btn-sm" type="button" data-action="delete">Delete</button>' +
+          '</td>';
+        tr.children[0].children[0].textContent = p.title || p.slug;
+        tr.children[0].children[1].textContent = p.path || ('/' + p.slug);
+        tr.children[1].querySelector('code').textContent = p.slug;
+        tr.children[2].innerHTML = pillFor(status);
+        tr.children[3].querySelector('code').textContent = p.template || '—';
+        tr.querySelector('[data-action="edit"]').href = '/admin/page-editor.html?slug=' + encodeURIComponent(p.slug);
+        tr.querySelector('[data-action="draft"]').textContent = p.draft ? 'Publish' : 'Draft';
+        tr.querySelector('[data-action="hide"]').textContent  = p.hidden ? 'Unhide' : 'Hide';
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function load() {
+      try {
+        const data = await Admin.api.get('/api/pages');
+        allPages = (data && data.pages) || [];
+        render();
+      } catch (err) {
+        console.error(err);
+        tbody.innerHTML = '<tr><td colspan="5"><div class="empty">Failed to load pages.</div></td></tr>';
+        Admin.toast('Could not load pages', 'error');
+      }
+    }
+
+    tbody.addEventListener('click', async function (e) {
+      const btn = e.target.closest('button[data-action], a[data-action]');
+      if (!btn) return;
+      const row = btn.closest('tr');
+      const slug = row && row.dataset.slug;
+      if (!slug) return;
+      const action = btn.dataset.action;
+      const page = allPages.find(function (p) { return p.slug === slug; });
+      if (!page) return;
+
+      if (action === 'edit') return;
+
+      if (action === 'draft') {
+        await mutate(btn, function () {
+          return Admin.api.post('/api/pages/' + encodeURIComponent(slug) + '/draft', { draft: !page.draft });
+        }, page.draft ? 'Publish PR opened' : 'Draft PR opened');
+        return;
+      }
+      if (action === 'hide') {
+        await mutate(btn, function () {
+          return Admin.api.post('/api/pages/' + encodeURIComponent(slug) + '/hide', { hidden: !page.hidden });
+        }, page.hidden ? 'Unhide PR opened' : 'Hide PR opened');
+        return;
+      }
+      if (action === 'delete') {
+        if (!confirm('Delete page "' + (page.title || slug) + '"? This opens a PR; the page only leaves the site when you merge it.')) return;
+        await mutate(btn, function () {
+          return Admin.api.del('/api/pages/' + encodeURIComponent(slug));
+        }, 'Delete PR opened');
+        return;
+      }
+    });
+
+    async function mutate(btn, fn, successTitle) {
+      btn.disabled = true;
+      const done = Admin.saving(savingSlot, 'Submitting PR&hellip;');
+      try {
+        const res = await fn();
+        done('Saved');
+        Admin.toast(successTitle, 'success');
+        if (res && res.pr) {
+          Admin.showPrSubmittedModal(res.pr, {
+            title: successTitle + ' (PR #' + res.pr.number + ')',
+            secondaryLabel: 'Back to pages',
+            secondaryHref: '/admin/pages.html',
+            onSecondary: function () {
+              document.querySelector('.modal-backdrop').remove();
+              load();
+            }
+          });
+        } else {
+          await load();
+        }
+      } catch (err) {
+        console.error(err);
+        Admin.toast(err.message || 'Action failed', 'error');
+        done();
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    search.addEventListener('input', Admin.debounce(render, 120));
+    filter.addEventListener('change', render);
+
+    await load();
+  })();
+  </script>
+</body>
+</html>

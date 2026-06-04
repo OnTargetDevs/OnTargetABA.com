@@ -1,0 +1,143 @@
+name: changelog
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    name: Prepend unreleased entries to CHANGELOG.md
+    runs-on: ubuntu-latest
+    # Avoid recursive runs from the bot's own commit.
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find last changelog update
+        id: range
+        run: |
+          # Find the most recent commit that touched CHANGELOG.md before HEAD.
+          last=$(git log -n 1 --pretty=format:%H -- CHANGELOG.md)
+          if [ -z "$last" ] || [ "$last" = "$(git rev-parse HEAD)" ]; then
+            # No prior changelog commit, or HEAD is the changelog commit:
+            # use the previous commit on main as the range start.
+            last=$(git rev-parse HEAD~1 2>/dev/null || git rev-list --max-parents=0 HEAD)
+          fi
+          echo "since=$last" >> "$GITHUB_OUTPUT"
+          echo "Range: $last..HEAD"
+
+      - name: Build new entries
+        id: build
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, re, subprocess, datetime
+
+          since = os.environ["SINCE"]
+          out = subprocess.check_output(
+              ["git", "log", f"{since}..HEAD", "--pretty=format:%s"],
+              text=True,
+          ).strip().splitlines()
+
+          buckets = {
+              "Added":    [],
+              "Changed":  [],
+              "Fixed":    [],
+              "Removed":  [],
+              "Docs":     [],
+              "Chore":    [],
+          }
+          mapping = {
+              "feat":    "Added",
+              "content": "Added",
+              "fix":     "Fixed",
+              "perf":    "Changed",
+              "refactor":"Changed",
+              "style":   "Changed",
+              "docs":    "Docs",
+              "chore":   "Chore",
+              "test":    "Chore",
+              "build":   "Chore",
+              "ci":      "Chore",
+          }
+          pat = re.compile(r"^(?P<type>[a-z]+)(?:\([^)]+\))?:\s*(?P<msg>.+)$")
+          for line in out:
+              m = pat.match(line.strip())
+              if not m:
+                  continue
+              bucket = mapping.get(m.group("type"))
+              if not bucket:
+                  continue
+              if "[skip ci]" in m.group("msg"):
+                  continue
+              buckets[bucket].append(m.group("msg"))
+
+          if not any(buckets.values()):
+              print("No conventional-commit entries to record.")
+              pathlib.Path("/tmp/new_entries.md").write_text("")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write("changed=false\n")
+              raise SystemExit(0)
+
+          today = datetime.date.today().isoformat()
+          parts = [f"## [Unreleased] &mdash; {today}", ""]
+          for name in ["Added", "Changed", "Fixed", "Removed", "Docs", "Chore"]:
+              items = buckets[name]
+              if not items:
+                  continue
+              parts.append(f"### {name}")
+              parts.append("")
+              for it in items:
+                  parts.append(f"- {it}")
+              parts.append("")
+
+          new_block = "\n".join(parts).rstrip() + "\n\n"
+          pathlib.Path("/tmp/new_entries.md").write_text(new_block)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write("changed=true\n")
+          PY
+        env:
+          SINCE: ${{ steps.range.outputs.since }}
+
+      - name: Prepend to CHANGELOG.md
+        if: steps.build.outputs.changed == 'true'
+        run: |
+          python3 - <<'PY'
+          import pathlib
+
+          new_block = pathlib.Path("/tmp/new_entries.md").read_text()
+          cl = pathlib.Path("CHANGELOG.md")
+          original = cl.read_text() if cl.exists() else "# Changelog\n\n"
+
+          # Insert new block right after the first '## [Unreleased]' header
+          # so prior unreleased entries are preserved.
+          marker = "## [Unreleased]"
+          idx = original.find(marker)
+          if idx == -1:
+              updated = original.rstrip() + "\n\n" + new_block
+          else:
+              # Find end of the [Unreleased] section's first line.
+              eol = original.find("\n", idx)
+              insert_at = eol + 1 if eol != -1 else len(original)
+              updated = original[:insert_at] + "\n" + new_block + original[insert_at:]
+
+          cl.write_text(updated)
+          PY
+
+      - name: Commit and push
+        if: steps.build.outputs.changed == 'true'
+        run: |
+          if git diff --quiet -- CHANGELOG.md; then
+            echo "No changelog changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md
+          git commit -m "docs: update CHANGELOG.md [skip ci]"
+          git push

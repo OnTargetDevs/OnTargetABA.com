@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-06-04T20:00:00Z",
+  "_comment": "Example per-page overrides. Filename pattern: {slug}.overrides.json (e.g. about.overrides.json). At runtime, page-overrides.js fetches /assets/data/pages/{slug}.overrides.json and applies each key to the matching [data-editable=\"{key}\"] element on the page. Text overrides set textContent; image overrides set src and alt. A 404 here is fine — the page just renders its baked-in content. Admin UI writes this file via the Functions PR flow.",
+  "overrides": {
+    "hero-headline": {
+      "type": "text",
+      "value": "Built around your child."
+    },
+    "hero-subhead": {
+      "type": "text",
+      "value": "Evidence-based ABA therapy for children ages 2–18, delivered in the settings that work best."
+    },
+    "intro-paragraph": {
+      "type": "text",
+      "value": "On Target ABA blends compassionate care, individualized programming, and family partnership to help kids make real progress, every week."
+    },
+    "primary-cta": {
+      "type": "text",
+      "value": "Let's Get Started"
+    },
+    "secondary-cta": {
+      "type": "text",
+      "value": "Learn More"
+    },
+    "section-1-headline": {
+      "type": "text",
+      "value": "A goal as clear as it gets."
+    },
+    "hero-image": {
+      "type": "image",
+      "src": "/assets/images/NewAbout.png",
+      "alt": "On Target ABA family-focused care"
+    }
+  }
+}

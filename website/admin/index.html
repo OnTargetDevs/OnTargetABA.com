@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin &mdash; On Target ABA</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body class="admin font-sans">
+  <!-- LOGIN STATE -->
+  <div id="login-shell" class="login-shell" hidden>
+    <div class="login-card">
+      <div class="login-card__logo" aria-hidden="true"></div>
+      <h1>On Target ABA Admin</h1>
+      <p>Sign in with your Google workspace account to manage the site.</p>
+      <button id="google-signin" class="login-google" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09Z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23Z"/>
+          <path fill="#FBBC05" d="M5.84 14.1A6.6 6.6 0 0 1 5.5 12c0-.73.13-1.44.34-2.1V7.07H2.18A11 11 0 0 0 1 12c0 1.78.43 3.46 1.18 4.93l3.66-2.83Z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.46 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.83C6.71 7.3 9.14 5.38 12 5.38Z"/>
+        </svg>
+        <span>Sign in with Google</span>
+      </button>
+      <p class="admin-muted" style="margin-top:1.25rem;font-size:0.78rem;">
+        Restricted to <strong>@ontargetaba.com</strong> accounts.
+      </p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD STATE -->
+  <div id="dash-shell" hidden>
+    <header class="admin-topbar">
+      <a class="admin-topbar__brand" href="/admin/">
+        <span class="dot" aria-hidden="true"></span>
+        <span>On Target Admin</span>
+      </a>
+      <nav class="admin-topbar__nav" aria-label="Admin">
+        <a href="/admin/">Dashboard</a>
+        <a href="/admin/pages.html">Pages</a>
+        <a href="/admin/posts.html">Posts</a>
+        <a href="/admin/header.html">Header</a>
+        <a href="/admin/footer.html">Footer</a>
+      </nav>
+      <div class="admin-topbar__right">
+        <span data-user-email class="admin-muted"></span>
+        <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+      </div>
+    </header>
+
+    <main class="admin-page">
+      <div class="flex items-end justify-between flex-wrap gap-3 mb-6">
+        <div>
+          <p class="admin-eyebrow mb-1">Dashboard</p>
+          <h1 class="admin-h1">Edit ontargetaba.com</h1>
+          <p class="admin-muted mt-1">All changes open a pull request for your review &mdash; nothing goes live without a merge.</p>
+        </div>
+        <a class="btn btn-primary" href="/admin/new-page.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+          New page
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <section class="stat-grid mb-7" id="stats">
+        <div class="stat"><span class="stat__label">Pages</span><span class="stat__value" data-stat="pages">&mdash;</span></div>
+        <div class="stat"><span class="stat__label">Drafts</span><span class="stat__value" data-stat="drafts">&mdash;</span></div>
+        <div class="stat"><span class="stat__label">Hidden</span><span class="stat__value" data-stat="hidden">&mdash;</span></div>
+        <div class="stat"><span class="stat__label">Posts</span><span class="stat__value" data-stat="posts">&mdash;</span></div>
+      </section>
+
+      <!-- Tiles -->
+      <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+        <a class="tile" href="/admin/pages.html">
+          <div class="tile__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13l3 3v13a1 1 0 0 1-1 1H4Z"/><path d="M9 4v6h7"/></svg>
+          </div>
+          <div class="tile__title">Pages</div>
+          <div class="tile__desc">Marketing pages, locations, services. Edit copy or template-scaffold a new page.</div>
+        </a>
+        <a class="tile" href="/admin/posts.html">
+          <div class="tile__icon tile__icon--coral" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h14M3 10h14M3 15h9"/></svg>
+          </div>
+          <div class="tile__title">Blog posts</div>
+          <div class="tile__desc">Markdown + frontmatter editor with live preview.</div>
+        </a>
+        <a class="tile" href="/admin/header.html">
+          <div class="tile__icon tile__icon--sun" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"/><path d="M3 14h18M3 18h12"/></svg>
+          </div>
+          <div class="tile__title">Header</div>
+          <div class="tile__desc">Announcement bar, nav links, CTAs, breadcrumbs.</div>
+        </a>
+        <a class="tile" href="/admin/footer.html">
+          <div class="tile__icon tile__icon--sage" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h12M3 9h18M3 13h12M5 19h14"/></svg>
+          </div>
+          <div class="tile__title">Footer</div>
+          <div class="tile__desc">Columns, legal links, credit, copyright.</div>
+        </a>
+      </section>
+
+      <!-- Recent PRs -->
+      <section class="admin-card">
+        <div class="admin-card__head">
+          <div>
+            <h2 class="admin-h2">Recent pull requests</h2>
+            <p class="admin-muted" style="font-size:0.85rem;margin-top:0.15rem;">Saves from this admin open PRs against <code>main</code>.</p>
+          </div>
+          <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://github.com/Shalom-Karr/OnTargetABA.com/pulls">View on GitHub</a>
+        </div>
+        <div class="admin-card__body" id="recent-prs">
+          <div class="empty">Loading recent PRs&hellip;</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    const me = await Admin.requireAuth({ allowAnonymous: true });
+    const login = document.getElementById('login-shell');
+    const dash  = document.getElementById('dash-shell');
+
+    if (!me) {
+      login.hidden = false;
+      document.getElementById('google-signin').addEventListener('click', function () {
+        window.location = '/api/auth/google';
+      });
+      return;
+    }
+
+    dash.hidden = false;
+
+    // Stats
+    try {
+      const [pagesResp, postsResp] = await Promise.all([
+        Admin.api.get('/api/pages').catch(() => ({ pages: [] })),
+        Admin.api.get('/api/posts').catch(() => ({ posts: [] }))
+      ]);
+      const pages = (pagesResp && pagesResp.pages) || [];
+      const posts = (postsResp && postsResp.posts) || [];
+      const drafts = pages.filter(p => p.draft).length + posts.filter(p => p.draft).length;
+      const hidden = pages.filter(p => p.hidden).length + posts.filter(p => p.hidden).length;
+      document.querySelector('[data-stat="pages"]').textContent  = pages.length;
+      document.querySelector('[data-stat="drafts"]').textContent = drafts;
+      document.querySelector('[data-stat="hidden"]').textContent = hidden;
+      document.querySelector('[data-stat="posts"]').textContent  = posts.length;
+    } catch (err) {
+      console.warn('[admin] stats failed', err);
+    }
+
+    // Recent PRs (optional endpoint; gracefully skip 404)
+    const prsBox = document.getElementById('recent-prs');
+    try {
+      const data = await Admin.api.get('/api/recent-prs');
+      const prs = (data && data.prs) || [];
+      if (!prs.length) {
+        prsBox.innerHTML = '<div class="empty">No recent admin PRs yet. Saves from this admin will appear here.</div>';
+        return;
+      }
+      const table = document.createElement('table');
+      table.className = 'admin-table';
+      table.innerHTML =
+        '<thead><tr><th>PR</th><th>Title</th><th>Branch</th><th>State</th><th></th></tr></thead>' +
+        '<tbody></tbody>';
+      const tbody = table.querySelector('tbody');
+      prs.forEach(function (pr) {
+        const tr = document.createElement('tr');
+        const stateClass = (pr.state === 'merged' || pr.merged) ? 'pill-live' :
+                           (pr.state === 'closed') ? 'pill-hidden' : 'pill-draft';
+        const stateLabel = (pr.state === 'merged' || pr.merged) ? 'Merged' :
+                           (pr.state === 'closed') ? 'Closed' : 'Open';
+        tr.innerHTML =
+          '<td><strong>#' + pr.number + '</strong></td>' +
+          '<td></td>' +
+          '<td><code style="font-size:0.78rem;color:var(--ink-soft);"></code></td>' +
+          '<td><span class="pill ' + stateClass + '">' + stateLabel + '</span></td>' +
+          '<td class="row-actions"><a class="btn btn-ghost btn-sm" target="_blank" rel="noopener">View</a></td>';
+        tr.children[1].textContent = pr.title || '';
+        tr.querySelector('code').textContent = pr.branch || '';
+        tr.querySelector('a').href = pr.url || '#';
+        tbody.appendChild(tr);
+      });
+      prsBox.innerHTML = '';
+      prsBox.appendChild(table);
+    } catch (err) {
+      if (err.status === 404) {
+        prsBox.innerHTML = '<div class="empty">Recent PR feed not enabled. View pull requests directly on GitHub.</div>';
+      } else {
+        prsBox.innerHTML = '<div class="empty">Could not load recent PRs.</div>';
+      }
+    }
+  })();
+  </script>
+</body>
+</html>

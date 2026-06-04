@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "logo": {
+    "src": "/assets/images/footerImg.png",
+    "alt": "On Target ABA"
+  },
+  "tagline": "Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.",
+  "phone": {
+    "href": "tel:8889895011",
+    "label": "1-888-989-5011"
+  },
+  "columns": [
+    {
+      "title": "Services",
+      "links": [
+        { "href": "/center-based-aba-therapy.html",          "label": "Center-Based ABA" },
+        { "href": "/in-home-aba-therapy.html",               "label": "In-Home ABA" },
+        { "href": "/early-intervention-autism-program.html", "label": "Early Intervention" },
+        { "href": "/potty-training-program.html",            "label": "Potty Training" },
+        { "href": "/autism-testing.html",                    "label": "Autism Testing" }
+      ]
+    },
+    {
+      "title": "Company",
+      "links": [
+        { "href": "/about.html",        "label": "About" },
+        { "href": "/our-process.html",  "label": "Our Process" },
+        { "href": "/locations.html",    "label": "Locations" },
+        { "href": "/careers.html",      "label": "Careers" },
+        { "href": "/blog.html",         "label": "Blog" }
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        { "href": "/aba-therapy-guide.html", "label": "ABA Therapy Guide" },
+        { "href": "/insurance.html",         "label": "Insurance" },
+        { "href": "/faqs.html",              "label": "FAQs" },
+        { "href": "/contact.html",           "label": "Contact" },
+        { "href": "/pre-intake-form.html",   "label": "Pre-Intake Form" }
+      ]
+    },
+    {
+      "title": "Locations",
+      "links": [
+        { "href": "/murray-utah.html",       "label": "Utah | Murray, UT" },
+        { "href": "/mayfield-ohio.html",     "label": "Cleveland | Mayfield Village, OH" },
+        { "href": "/gahanna-ohio.html",      "label": "Columbus | Gahanna, OH" },
+        { "href": "/worthington-ohio.html",  "label": "Worthington | Worthington, OH" }
+      ]
+    }
+  ],
+  "credit": {
+    "url": "https://shalomkarr.pages.dev/",
+    "name": "Shalom Karr"
+  },
+  "copyright": "© ON TARGET ABA, LLC · All rights reserved · Operated by Target ABA, LLC",
+  "legalLinks": [
+    { "href": "/privacy-policy.html",   "label": "Privacy" },
+    { "href": "/terms-of-service.html", "label": "Terms" },
+    { "href": "/cookie-consent.html",   "label": "Cookies" },
+    { "href": "/disclaimer.html",       "label": "Disclaimer" }
+  ]
+}

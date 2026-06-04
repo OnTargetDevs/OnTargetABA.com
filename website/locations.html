@@ -418,7 +418,7 @@ tailwind.config = {
       <div class="lg:col-span-7 relative z-10">
         <div class="reveal eyebrow"><span class="dot"></span> Ohio &amp; Utah &middot; Cleveland &middot; Columbus &middot; Salt Lake City</div>
 
-        <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[72px] leading-[1.02] font-700 tracking-tight">
+        <h1 data-editable="hero-headline" class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[72px] leading-[1.02] font-700 tracking-tight">
           <span class="relative inline-block">
             <span class="relative z-10">New Salt Lake City location</span>
             <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
@@ -428,13 +428,13 @@ tailwind.config = {
           <em class="italic font-600 text-coral">now open!</em>
         </h1>
 
-        <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
+        <p data-editable="hero-subhead" class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
           Cleveland &amp; Columbus ABA Therapy &mdash; plus our brand-new Murray, Utah clinic. Center-based and in-home services across three states.
         </p>
 
         <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
           <a href="contact.html" class="btn btn-coral">
-            Contact Us Today to Get Started
+            <span data-editable="primary-cta">Contact Us Today to Get Started</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
           <a href="murray-utah.html" class="btn btn-ghost">See more about Utah</a>
@@ -478,7 +478,7 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-5 relative">
     <div class="max-w-2xl mb-14">
       <div class="reveal eyebrow"><span class="dot"></span> Our locations</div>
-      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Center-based and in-home ABA &mdash; wherever you are.</h2>
+      <h2 data-editable="section-1-headline" class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Center-based and in-home ABA &mdash; wherever you are.</h2>
     </div>
 
     <div class="grid lg:grid-cols-3 gap-6">
@@ -656,7 +656,7 @@ tailwind.config = {
     <div class="grid lg:grid-cols-12 gap-12 items-start">
       <div class="lg:col-span-5">
         <div class="reveal eyebrow"><span class="dot"></span> Our coverage area</div>
-        <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">In-home ABA across Ohio &amp; Utah.</h2>
+        <h2 data-editable="section-2-headline" class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">In-home ABA across Ohio &amp; Utah.</h2>
         <p class="reveal reveal-delay-2 mt-5 text-ink-soft text-lg">
           From our four center-based clinics, our therapists travel to the communities we serve &mdash; bringing skills practice right into the rooms where life happens.
         </p>
@@ -730,5 +730,6 @@ tailwind.config = {
 <script src="/assets/js/header.js"></script>
 <script src="/assets/js/footer.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="/assets/js/page-overrides.js" defer></script>
 </body>
 </html>

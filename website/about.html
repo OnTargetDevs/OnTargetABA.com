@@ -429,7 +429,7 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-5 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-12 gap-12 items-center relative">
     <div class="lg:col-span-7 relative z-10">
       <div class="reveal eyebrow"><span class="dot"></span> About On Target ABA</div>
-      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[68px] leading-[1.04] font-700 tracking-tight">
+      <h1 data-editable="hero-headline" class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[68px] leading-[1.04] font-700 tracking-tight">
         Built around your <span class="italic text-coral font-600">child</span>.
         Backed by your
         <span class="relative inline-block">
@@ -439,15 +439,15 @@ tailwind.config = {
           </svg>
         </span>.
       </h1>
-      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
+      <p data-editable="hero-subhead" class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
         Evidence-based ABA therapy for children ages 2&ndash;18, delivered in the settings that work best &mdash; center, home, school, and daycare &mdash; with comprehensive support for every family we serve.
       </p>
       <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
         <a href="contact.html" class="btn btn-coral">
-          Let's Get Started
+          <span data-editable="primary-cta">Let's Get Started</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="our-services.html" class="btn btn-ghost">Learn More</a>
+        <a href="our-services.html" class="btn btn-ghost" data-editable="secondary-cta">Learn More</a>
       </div>
     </div>
 
@@ -494,7 +494,7 @@ tailwind.config = {
       <svg class="absolute -left-2 -top-6 sm:-left-10 sm:-top-10 w-16 h-16 sm:w-24 sm:h-24 text-coral opacity-90" viewBox="0 0 24 24" fill="currentColor">
         <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
       </svg>
-      <blockquote class="font-display text-3xl sm:text-4xl lg:text-5xl font-600 leading-[1.18] tracking-tight text-ink">
+      <blockquote data-editable="intro-paragraph" class="font-display text-3xl sm:text-4xl lg:text-5xl font-600 leading-[1.18] tracking-tight text-ink">
         To provide the highest quality of ABA therapy in a fun, collaborative environment for the optimal development of children with autism through <span class="italic text-coral">individualized services</span> and comprehensive support to children and their families.
       </blockquote>
       <svg class="absolute -right-2 -bottom-6 sm:-right-10 sm:-bottom-10 w-16 h-16 sm:w-24 sm:h-24 text-coral opacity-90 rotate-180" viewBox="0 0 24 24" fill="currentColor">
@@ -522,7 +522,7 @@ tailwind.config = {
 
       <div class="lg:col-span-7">
         <div class="reveal eyebrow"><span class="dot"></span> About Us</div>
-        <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">A goal as clear as it gets.</h2>
+        <h2 data-editable="section-1-headline" class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">A goal as clear as it gets.</h2>
         <p class="reveal reveal-delay-2 mt-5 text-lg text-ink-soft leading-relaxed">
           Our goal is to see children succeed within their home environment, school environment, socially, emotionally, verbally, and functionally overall.
         </p>
@@ -567,7 +567,7 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-5 relative">
     <div class="max-w-2xl mb-14">
       <div class="reveal eyebrow"><span class="dot"></span> Improving Quality of Life</div>
-      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Not just sitting at a table. <span class="italic text-coral">No way.</span></h2>
+      <h2 data-editable="section-2-headline" class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Not just sitting at a table. <span class="italic text-coral">No way.</span></h2>
       <p class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg">At On Target ABA we look to improve quality of life in multiple ways &mdash; including group interaction where kids work on appropriately taking turns, sharing, and calming strategies.</p>
     </div>
 
@@ -688,5 +688,6 @@ tailwind.config = {
 <script src="/assets/js/header.js"></script>
 <script src="/assets/js/footer.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="/assets/js/page-overrides.js" defer></script>
 </body>
 </html>

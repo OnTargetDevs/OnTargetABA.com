@@ -225,3 +225,9 @@ right column already hosts location cards. Build order in `build.sh`:
 - **Display font** is loaded via the `.font-display` utility (`Fraunces` currently). Change once in `assets/css/app.css` to swap site-wide.
 - **Animations** all gate on `prefers-reduced-motion: reduce`. Keep that pattern.
 - **Forms** in the prototype use `onsubmit="event.preventDefault(); ..."` placeholders. The real form lives in Jotform; the styled wrapper is just chrome.
+
+## Admin dashboard
+
+Lives at `/admin` (static HTML + JS in `website/admin/`). Auth is Google OAuth against `ADMIN_EMAILS`; session is a JWT in an HttpOnly cookie. CF Pages Functions in `website/functions/` implement the API + a catch-all draft-preview Function.
+
+Every edit opens a Pull Request on `Shalom-Karr/OnTargetABA.com` &mdash; content does NOT push to `main` directly. The PR is the audit log. See `docs/ADMIN_DASHBOARD.md` for the user-facing walkthrough and `docs/DEPLOYMENT.md` for the env-var checklist.

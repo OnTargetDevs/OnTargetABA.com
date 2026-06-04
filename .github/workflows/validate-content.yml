@@ -1,0 +1,141 @@
+name: validate-content
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+
+jobs:
+  validate:
+    name: Validate blog frontmatter, JSON, and build scripts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps
+        run: pip install pyyaml
+
+      - name: Validate blog frontmatter
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys, yaml
+
+          REQUIRED = {"title", "date", "category", "excerpt"}
+          blog_dir = pathlib.Path("website/assets/blog")
+          if not blog_dir.exists():
+              print(f"::warning::{blog_dir} not found, skipping")
+              sys.exit(0)
+
+          posts = sorted(blog_dir.glob("*.md"))
+          if not posts:
+              print(f"::warning::No posts found in {blog_dir}")
+              sys.exit(0)
+
+          errors = []
+          categories = set()
+          for p in posts:
+              text = p.read_text(encoding="utf-8")
+              if not text.startswith("---"):
+                  errors.append(f"{p.name}: missing frontmatter")
+                  continue
+              try:
+                  _, fm, _ = text.split("---", 2)
+              except ValueError:
+                  errors.append(f"{p.name}: malformed frontmatter delimiters")
+                  continue
+              try:
+                  data = yaml.safe_load(fm) or {}
+              except yaml.YAMLError as e:
+                  errors.append(f"{p.name}: YAML parse error: {e}")
+                  continue
+              missing = REQUIRED - set(data.keys())
+              if missing:
+                  errors.append(f"{p.name}: missing required fields: {sorted(missing)}")
+                  continue
+              if data.get("category"):
+                  categories.add(str(data["category"]))
+
+          if errors:
+              for e in errors:
+                  print(f"::error::{e}")
+              sys.exit(1)
+
+          print(f"OK: {len(posts)} posts, {len(categories)} categories")
+          PY
+
+      - name: Validate JSON data files
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+
+          roots = [
+              pathlib.Path("website/assets/data"),
+              pathlib.Path("website/assets/data/pages"),
+          ]
+          errors = []
+          count = 0
+          for root in roots:
+              if not root.exists():
+                  continue
+              for jf in sorted(root.glob("*.json")):
+                  count += 1
+                  try:
+                      json.loads(jf.read_text(encoding="utf-8"))
+                  except json.JSONDecodeError as e:
+                      errors.append(f"{jf}: {e}")
+
+          if errors:
+              for e in errors:
+                  print(f"::error::{e}")
+              sys.exit(1)
+          print(f"OK: {count} JSON files parsed cleanly")
+          PY
+
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Dry-run build-blog-index
+        run: |
+          if [ -f website/scripts/build-blog-index.py ]; then
+            python3 website/scripts/build-blog-index.py
+          else
+            echo "::warning::website/scripts/build-blog-index.py not found"
+          fi
+
+      - name: Dry-run build-sitemap
+        run: |
+          if [ -f website/scripts/build-sitemap.py ]; then
+            python3 website/scripts/build-sitemap.py
+          else
+            echo "::warning::website/scripts/build-sitemap.py not found"
+          fi
+
+      - name: Summary
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+
+          posts = list(pathlib.Path("website/assets/blog").glob("*.md")) \
+                  if pathlib.Path("website/assets/blog").exists() else []
+          idx = pathlib.Path("website/assets/blog/index.json")
+          cats = []
+          if idx.exists():
+              try:
+                  data = json.loads(idx.read_text(encoding="utf-8"))
+                  cats = data.get("categories", [])
+              except Exception:
+                  pass
+          pages = list(pathlib.Path("website").glob("*.html"))
+          print(f"Posts:      {len(posts)}")
+          print(f"Categories: {len(cats)}")
+          print(f"Pages:      {len(pages)}")
+          PY

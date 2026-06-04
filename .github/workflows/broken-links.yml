@@ -1,0 +1,87 @@
+name: broken-links
+
+on:
+  schedule:
+    # Nightly at 09:00 UTC (around 03:00 MT / 04:00 CT).
+    - cron: '0 9 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  crawl:
+    name: Crawl site for broken links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pick target URL
+        id: target
+        run: |
+          if [ -n "${{ secrets.STAGING_URL }}" ]; then
+            echo "url=${{ secrets.STAGING_URL }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "url=https://website.ontargetnotes.com/" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run Lychee
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --verbose
+            --no-progress
+            --max-retries 2
+            --retry-wait-time 5
+            --timeout 20
+            --accept 200,206,429
+            --exclude-mail
+            --include-verbatim
+            ${{ steps.target.outputs.url }}
+          fail: false
+          output: ./lychee-report.md
+
+      - name: Find existing tracking issue
+        id: existing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          num=$(gh issue list --state open --label broken-links \
+                  --search "Broken links found" \
+                  --json number --jq '.[0].number // empty')
+          echo "number=$num" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update tracking issue
+        if: steps.lychee.outputs.exit_code != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          date_str=$(date -u +%Y-%m-%d)
+          title="Broken links found ${date_str}"
+          body=$(printf '## Broken links\n\nTarget: %s\nRun: %s\n\n```\n' \
+            "${{ steps.target.outputs.url }}" \
+            "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}")
+          body+="$(cat ./lychee-report.md 2>/dev/null || echo 'See run logs for details.')"
+          body+=$'\n```\n'
+
+          if [ -n "${{ steps.existing.outputs.number }}" ]; then
+            gh issue edit "${{ steps.existing.outputs.number }}" \
+              --title "$title" \
+              --body "$body"
+          else
+            gh issue create \
+              --title "$title" \
+              --body "$body" \
+              --label broken-links
+          fi
+
+      - name: Close tracking issue when clean
+        if: steps.lychee.outputs.exit_code == '0' && steps.existing.outputs.number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue close "${{ steps.existing.outputs.number }}" \
+            --comment "All previously broken links are now resolving. Closing."
