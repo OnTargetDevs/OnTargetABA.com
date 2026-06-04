@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FAQs â€” ABA Therapy &amp; Autism Diagnosis Questions | On Target ABA</title>
+<meta name="description" content="Answers to common questions about autism diagnosis, ABA therapy, insurance, in-home sessions, getting started, and more â€” from the On Target ABA team." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing â€” most families pay $0 â†’</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center group" aria-label="On Target ABA â€” home">
+      <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="blob blob-coral w-[420px] h-[420px] -left-32 top-10"></div>
+  <div class="blob blob-sun w-[360px] h-[360px] -right-20 -top-10"></div>
+
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-16 lg:pt-24 lg:pb-20 relative">
+    <div class="max-w-3xl">
+      <div class="reveal eyebrow"><span class="dot"></span> Help center</div>
+      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[76px] leading-[1.02] font-700 tracking-tight">
+        Frequently asked
+        <span class="relative inline-block">
+          <span class="relative z-10 italic font-600">questions.</span>
+          <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
+            <path d="M2 9 C 50 1, 150 1, 198 8" stroke="#FF6B47" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+      </h1>
+      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-2xl">
+        Straight answers on diagnosis, getting started, insurance, age recommendations, and what to expect during your first sessions. Don't see your question? Just call.
+      </p>
+
+      <!-- Topic pills -->
+      <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-2">
+        <a href="#diagnosis" class="px-3 py-1.5 rounded-full bg-white ring-1 ring-line text-xs font-semibold text-ink-soft hover:bg-coral hover:text-white hover:ring-coral transition">Diagnosis</a>
+        <a href="#insurance" class="px-3 py-1.5 rounded-full bg-white ring-1 ring-line text-xs font-semibold text-ink-soft hover:bg-coral hover:text-white hover:ring-coral transition">Insurance</a>
+        <a href="#getting-started" class="px-3 py-1.5 rounded-full bg-white ring-1 ring-line text-xs font-semibold text-ink-soft hover:bg-coral hover:text-white hover:ring-coral transition">Getting started</a>
+        <a href="#sessions" class="px-3 py-1.5 rounded-full bg-white ring-1 ring-line text-xs font-semibold text-ink-soft hover:bg-coral hover:text-white hover:ring-coral transition">Sessions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ MAIN ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-50"></div>
+
+  <div class="max-w-7xl mx-auto px-5 relative">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <!-- FAQ content -->
+      <div class="lg:col-span-8">
+
+        <!-- DIAGNOSIS -->
+        <div id="diagnosis" class="scroll-mt-28">
+          <div class="reveal flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-coral text-white font-700">01</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">Diagnosis</h2>
+          </div>
+
+          <div class="space-y-3 mb-12">
+            <div class="faq-item reveal">
+              <button class="faq-q" aria-expanded="false">
+                <span>Who can provide my child with an Autism diagnosis?</span>
+                <span class="chev">+</span>
+              </button>
+              <div class="faq-a"><p>Developmental pediatricians specialize in these areas and can diagnose autism. You can also go to a psychologist. There are some regular pediatricians who will diagnose autism, but most will refer out to specialists. Your pediatrician should be able to refer you to a good developmental pediatrician or child psychologist.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INSURANCE -->
+        <div id="insurance" class="scroll-mt-28">
+          <div class="reveal flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-teal text-white font-700">02</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">Insurance</h2>
+          </div>
+
+          <div class="space-y-3 mb-12">
+            <div class="faq-item reveal">
+              <button class="faq-q" aria-expanded="false">
+                <span>Do you accept insurance and will my insurance cover ABA therapy?</span>
+                <span class="chev">+</span>
+              </button>
+              <div class="faq-a">
+                <p>We accept most insurances.</p>
+                <p>Generally, insurance companies are required by law to cover ABA therapy for children with autism diagnoses, however there are some exceptions. If you are not sure if your insurance covers ABA therapy give us a call and one of our insurance experts can verify if you are covered.</p>
+              </div>
+            </div>
+
+            <div class="faq-item reveal reveal-delay-1">
+              <button class="faq-q" aria-expanded="false">
+                <span>Do you accept Medicaid?</span>
+                <span class="chev">+</span>
+              </button>
+              <div class="faq-a"><p>Yes. We accept Medicaid plans.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GETTING STARTED -->
+        <div id="getting-started" class="scroll-mt-28">
+          <div class="reveal flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-sun text-ink font-700">03</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">Getting started</h2>
+          </div>
+
+          <div class="space-y-3 mb-12">
+            <div class="faq-item reveal">
+              <button class="faq-q" aria-expanded="false">
+                <span>At what age should ABA therapy begin?</span>
+                <span class="chev">+</span>
+              </button>
+              <div class="faq-a"><p>As early as possible. While ABA has been proven to help children of all ages, research clearly shows for those who start with early intervention, treatments have greater and longer lasting effects. We highly recommend starting as early as possible. We typically see clients starting at two years of age.</p></div>
+            </div>
+
+            <div class="faq-item reveal reveal-delay-1">
+              <button class="faq-q" aria-expanded="false">
+                <span>How soon can you start therapy with my child?</span>
+                <span class="chev">+</span>
+              </button>
+              <div class="faq-a"><p>We try to always maintain enough staff to be able to take on new clients without making them wait. We can usually start ABA therapy services as soon as your insurance sends us their approval.</p></div>
+            </div>
+
+            <div class="faq-item reveal reveal-delay-2">
+              <button class="faq-q" aria-expanded="false">
+                <span>What do I need to get started with therapy?</span>
+                <span class="chev">+</span>
+              </button>
+              <div class="faq-a">
+                <ol class="list-decimal pl-5 space-y-1">
+                  <li>An autism diagnosis report.</li>
+                  <li>Your insurance may require a doctor's recommendation for ABA therapy.</li>
+                  <li>Your insurance information so we can verify that you are covered (most insurances are required to cover ABA therapy).</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SESSIONS -->
+        <div id="sessions" class="scroll-mt-28">
+          <div class="reveal flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-teal-deep text-white font-700">04</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">Sessions &amp; expectations</h2>
+          </div>
+
+          <div class="space-y-3">
+            <div class="faq-item reveal">
+              <button class="faq-q" aria-expanded="false">
+                <span>How long will the initial assessment and parent meeting take?</span>
+                <span class="chev">+</span>
+              </button>
+              <div class="faq-a"><p>Each child is different, but it typically takes between one 1 to 2 hours.</p></div>
+            </div>
+
+            <div class="faq-item reveal reveal-delay-1">
+              <button class="faq-q" aria-expanded="false">
+                <span>Does an adult have to be home with my child during at-home therapy?</span>
+                <span class="chev">+</span>
+              </button>
+              <div class="faq-a"><p>Yes, our company policy requires that someone be in the home during therapy. You do not have to be in the room watching your child, but somebody should be home (Of course you are encouraged and welcome to observe any part of the session that you would like).</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="lg:col-span-4 space-y-5 lg:sticky lg:top-28 lg:self-start">
+        <!-- Contact card -->
+        <div class="reveal rounded-3xl bg-ink text-white p-7 relative overflow-hidden">
+          <div class="blob blob-coral w-[260px] h-[260px] -right-16 -bottom-10 opacity-50"></div>
+          <div class="relative">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs uppercase tracking-widest font-semibold text-sun">
+              <span class="w-1.5 h-1.5 rounded-full bg-sun"></span> Still have questions?
+            </div>
+            <h3 class="mt-4 font-display text-2xl font-700 leading-tight">Talk to a real person.</h3>
+            <p class="mt-2 text-white/80 text-sm">Our friendly, knowledgeable team is ready to answer any question â€” about coverage, scheduling, or your child's care.</p>
+            <a href="contact.html" class="btn btn-sun mt-5 w-full justify-center">Contact Us Today</a>
+            <div class="mt-5 space-y-2.5 text-sm">
+              <a href="tel:2163431198" class="flex items-center gap-2 text-white/90 hover:text-sun">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                <span class="font-semibold">(216) 343-1198</span><span class="text-white/50">Â· Cleveland</span>
+              </a>
+              <a href="tel:6146811030" class="flex items-center gap-2 text-white/90 hover:text-sun">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                <span class="font-semibold">(614) 681-1030</span><span class="text-white/50">Â· Columbus</span>
+              </a>
+              <a href="tel:3855503500" class="flex items-center gap-2 text-white/90 hover:text-sun">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                <span class="font-semibold">(385) 550-3500</span><span class="text-white/50">Â· Utah</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div class="reveal reveal-delay-1 rounded-3xl bg-cream ring-1 ring-line p-7">
+          <div class="text-xs uppercase tracking-widest text-mute font-semibold">Related resources</div>
+          <ul class="mt-4 space-y-3">
+            <li>
+              <a href="our-process.html" class="flex items-start gap-3 group">
+                <span class="w-9 h-9 grid place-items-center rounded-xl bg-coral-soft text-coral group-hover:bg-coral group-hover:text-white transition shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                <span>
+                  <div class="font-semibold">Our Process</div>
+                  <div class="text-xs text-mute">How sessions work, step by step.</div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="insurance.html" class="flex items-start gap-3 group">
+                <span class="w-9 h-9 grid place-items-center rounded-xl bg-teal-soft text-teal-deep group-hover:bg-teal group-hover:text-white transition shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                </span>
+                <span>
+                  <div class="font-semibold">Insurance</div>
+                  <div class="text-xs text-mute">Verify coverage, see accepted plans.</div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="autism-testing.html" class="flex items-start gap-3 group">
+                <span class="w-9 h-9 grid place-items-center rounded-xl bg-sun-soft text-ink group-hover:bg-sun transition shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+                </span>
+                <span>
+                  <div class="font-semibold">Autism Testing</div>
+                  <div class="text-xs text-mute">No waitlist. Most families pay $0.</div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="aba-therapy-guide.html" class="flex items-start gap-3 group">
+                <span class="w-9 h-9 grid place-items-center rounded-xl bg-coral-soft text-coral group-hover:bg-coral group-hover:text-white transition shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                </span>
+                <span>
+                  <div class="font-semibold">ABA Therapy Guide</div>
+                  <div class="text-xs text-mute">Everything you need to know.</div>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="py-20 lg:py-28 bg-cream relative overflow-hidden">
+  <div class="blob blob-sun w-[420px] h-[420px] left-1/2 -translate-x-1/2 top-0"></div>
+  <div class="blob blob-coral w-[320px] h-[320px] -left-10 -bottom-10 opacity-50"></div>
+
+  <div class="max-w-4xl mx-auto px-5 text-center relative">
+    <div class="reveal eyebrow inline-flex"><span class="dot"></span> Get started</div>
+    <h2 class="reveal reveal-delay-1 mt-5 font-display text-4xl sm:text-6xl font-700 tracking-tight leading-tight">
+      Still have <em class="italic text-coral">questions?</em>
+    </h2>
+    <p class="reveal reveal-delay-2 mt-5 text-ink-soft text-lg max-w-2xl mx-auto">
+      We'd love to hear from you. Our team will walk you through every step â€” diagnosis, insurance, and starting therapy.
+    </p>
+    <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="contact.html" class="btn btn-coral">Contact Us Today to Get Started</a>
+      <a href="tel:2163431198" class="btn btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center">
+        <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-11 w-auto" />
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>Â©<span data-year>2026</span> ON TARGET ABA, LLC Â· All rights reserved Â· Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

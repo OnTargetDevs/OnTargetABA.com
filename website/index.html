@@ -53,14 +53,8 @@ tailwind.config = {
 <!-- ============ NAV ============ -->
 <header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
   <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
-    <a href="index.html" class="flex items-center gap-2.5 group">
-      <span class="relative inline-grid place-items-center w-10 h-10 rounded-full bg-white shadow ring-1 ring-line">
-        <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6900 0 22%, #fff 22% 38%, #FFDD17 38% 54%, #fff 54% 70%, #00B7EA 70%)"></span>
-      </span>
-      <span class="leading-tight">
-        <span class="block font-extrabold tracking-tight text-ink">On Target<span class="text-coral">.</span></span>
-        <span class="block text-[10px] tracking-[0.22em] text-mute font-semibold">A B A &nbsp; T H E R A P Y</span>
-      </span>
+    <a href="index.html" class="flex items-center group" aria-label="On Target ABA — home">
+      <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />
     </a>
 
     <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
@@ -547,11 +541,8 @@ tailwind.config = {
 <footer class="bg-ink text-white">
   <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
     <div class="lg:col-span-4">
-      <div class="flex items-center gap-2.5">
-        <span class="inline-grid place-items-center w-10 h-10 rounded-full bg-white">
-          <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6900 0 22%, #fff 22% 38%, #FFDD17 38% 54%, #fff 54% 70%, #00B7EA 70%)"></span>
-        </span>
-        <span class="font-extrabold">On Target ABA</span>
+      <div class="flex items-center">
+        <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-11 w-auto" />
       </div>
       <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
       <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">

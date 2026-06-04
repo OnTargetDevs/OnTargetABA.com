@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ABA Therapy in Murray, Utah â€” On Target ABA</title>
+<meta name="description" content="On Target ABA's brand-new 10,000+ sq ft ABA therapy and autism testing clinic in Murray, Utah. Most insurance and Medicaid accepted. No waitlist." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing â€” most families pay $0 â†’</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center group" aria-label="On Target ABA â€” home">
+      <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="blob blob-coral w-[420px] h-[420px] -left-32 top-40"></div>
+  <div class="blob blob-sun w-[380px] h-[380px] -right-32 -top-10"></div>
+
+  <!-- Wasatch mountain silhouette at the bottom of hero -->
+  <svg class="absolute bottom-0 left-0 right-0 w-full text-teal-soft/70" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0,80 L80,40 L160,75 L240,30 L320,70 L400,20 L480,65 L560,35 L640,75 L720,25 L800,70 L880,45 L960,80 L1040,30 L1120,70 L1200,50 L1200,120 L0,120 Z"/>
+  </svg>
+
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-28 lg:pt-24 lg:pb-40 grid lg:grid-cols-12 gap-12 items-center relative">
+
+    <div class="lg:col-span-7 relative z-10">
+      <div class="reveal eyebrow"><span class="dot"></span> Murray, Utah Â· Salt Lake Valley</div>
+
+      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[72px] leading-[1.02] font-700 tracking-tight">
+        ABA Therapy<br/>
+        in
+        <span class="relative inline-block">
+          <span class="relative z-10 italic font-600">Murray, Utah!</span>
+          <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
+            <path d="M2 9 C 50 1, 150 1, 198 8" stroke="#FF6B47" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+      </h1>
+
+      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
+        A brand-new, 10,000+ sq ft clinic built for kids â€” right in the heart of the Salt Lake Valley. ABA therapy and autism testing under one roof.
+      </p>
+
+      <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
+        <a href="contact.html" class="btn btn-coral">
+          GET STARTED TODAY!
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:3855503500" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          (385) 550-3500
+        </a>
+      </div>
+
+      <div class="reveal reveal-delay-4 mt-10 grid grid-cols-3 gap-6 max-w-md">
+        <div>
+          <div class="font-display text-3xl font-700 text-teal-deep">10k+</div>
+          <div class="text-xs uppercase tracking-wider text-mute mt-1">sq ft of space</div>
+        </div>
+        <div>
+          <div class="font-display text-3xl font-700 text-teal-deep">$0</div>
+          <div class="text-xs uppercase tracking-wider text-mute mt-1">typical cost</div>
+        </div>
+        <div>
+          <div class="font-display text-3xl font-700 text-teal-deep">2â€“18</div>
+          <div class="text-xs uppercase tracking-wider text-mute mt-1">ages we serve</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero visual -->
+    <div class="lg:col-span-5 relative reveal reveal-delay-2">
+      <div class="relative w-full max-w-md mx-auto">
+        <div class="absolute -top-8 -right-8 w-40 h-40 rounded-full opacity-90 float">
+          <div class="target-mark w-full h-full"></div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-sun shadow-lg float delay-2"></div>
+        <div class="absolute top-1/2 -right-4 w-6 h-6 rounded-full bg-coral pulse-ring"></div>
+
+        <div class="relative rounded-[36px] overflow-hidden bg-white p-3 shadow-2xl rotate-1">
+          <div class="relative rounded-[28px] overflow-hidden bg-teal-soft aspect-[4/5]">
+            <img src="assets/images/jessica-rockowitz-jbiInQGY8og-unsplash.png" alt="Child smiling during therapy session in Murray, Utah" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <div class="text-xs uppercase tracking-widest opacity-80">Murray, UT</div>
+              <div class="font-display text-xl font-600 leading-tight mt-1">10,000+ sq ft. Built for kids.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-6 right-2 bg-white rounded-2xl shadow-pop px-4 py-3 flex items-center gap-3 float">
+          <div class="w-10 h-10 grid place-items-center rounded-xl bg-coral-soft">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B47" stroke-width="2.4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-mute">Right in</div>
+            <div class="text-sm font-semibold">Salt Lake Valley</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE OFFER ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-2xl mb-14">
+      <div class="reveal eyebrow"><span class="dot"></span> What we offer in Utah</div>
+      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Two services. One roof.</h2>
+      <p class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg">From first questions to lasting progress, our Murray clinic is built to support your family every step of the way.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <a href="center-based-aba-therapy.html" class="reveal lift group relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal to-teal-deep text-white p-8 lg:p-10 min-h-[320px] flex flex-col justify-between">
+        <div class="absolute -right-12 -top-12 w-72 h-72 rounded-full bg-white/10 blur-2xl"></div>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs uppercase tracking-widest font-semibold">Service 01</div>
+          <h3 class="mt-5 font-display text-3xl lg:text-4xl font-600 leading-tight">ABA Therapy Center in Murray, Utah</h3>
+          <p class="mt-3 text-white/85">A custom-designed 10,000+ sq ft space where kids learn, play, and grow with 1:1 support and peer interactions.</p>
+        </div>
+        <div class="mt-6 inline-flex items-center gap-2 font-semibold">
+          Explore center-based ABA <span class="transition-transform group-hover:translate-x-1">â†’</span>
+        </div>
+      </a>
+
+      <a href="autism-testing.html" class="reveal reveal-delay-1 lift group relative overflow-hidden rounded-3xl bg-cream ring-1 ring-line p-8 lg:p-10 min-h-[320px] flex flex-col justify-between">
+        <div class="absolute -right-16 -bottom-16 w-72 h-72 rounded-full bg-coral/10 blur-2xl"></div>
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral text-white text-xs uppercase tracking-widest font-semibold">Service 02</div>
+          <h3 class="mt-5 font-display text-3xl lg:text-4xl font-600 leading-tight text-ink">Autism Testing</h3>
+          <p class="mt-3 text-ink-soft">Fast appointments, no waitlist. Most families pay $0 for testing â€” clarity and direction within a week.</p>
+        </div>
+        <div class="mt-6 inline-flex items-center gap-2 font-semibold text-coral">
+          Explore autism testing <span class="transition-transform group-hover:translate-x-1">â†’</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT THE MURRAY CLINIC ============ -->
+<section class="py-20 lg:py-28 relative overflow-hidden">
+  <div class="blob blob-coral w-[380px] h-[380px] -left-24 top-32 opacity-50"></div>
+  <div class="blob blob-sun w-[340px] h-[340px] -right-24 bottom-12 opacity-50"></div>
+
+  <div class="max-w-7xl mx-auto px-5 relative">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal">
+        <div class="relative w-full max-w-md mx-auto lg:mx-0">
+          <div class="absolute -top-6 -left-6 w-20 h-20 rounded-full bg-sun shadow-lg float"></div>
+          <div class="absolute -bottom-4 -right-4 w-14 h-14 rounded-full bg-coral pulse-ring"></div>
+          <div class="relative rounded-[32px] overflow-hidden bg-white p-3 shadow-2xl -rotate-1">
+            <div class="relative rounded-[24px] overflow-hidden bg-teal-soft aspect-[4/5]">
+              <img src="assets/images/mom-son-thumbs-up.png" alt="Mom and son giving thumbs up at On Target ABA Murray clinic" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            </div>
+          </div>
+          <div class="absolute -bottom-6 left-2 bg-white rounded-2xl shadow-pop px-4 py-3 flex items-center gap-3 float delay-2">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-sun-soft text-ink">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+            </div>
+            <div>
+              <div class="text-[11px] uppercase tracking-wider text-mute">Brand new</div>
+              <div class="text-sm font-semibold">10,000+ sq ft</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow"><span class="dot"></span> About the Murray clinic</div>
+        <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Murray Utah's <em class="italic text-coral">best</em> ABA Therapy Clinic!</h2>
+        <p class="reveal reveal-delay-2 mt-5 text-ink-soft text-lg">
+          Our brand new clinic spans over 10,000 sq ft â€” one of the most spacious in the area! The custom-designed space offers a welcoming environment designed to encourage your child to absorb new information through 1:1 support and peer interactions, fostered in a lively atmosphere where your child can thrive socially, emotionally, and academically.
+        </p>
+
+        <div class="reveal reveal-delay-3 mt-7 grid sm:grid-cols-1 gap-3">
+          <div class="flex items-start gap-3 bg-white rounded-2xl p-4 ring-1 ring-line">
+            <div class="w-9 h-9 grid place-items-center rounded-xl bg-coral text-white shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            </div>
+            <div><div class="font-700">Over 10,000 sq ft for your child to learn, play and grow</div></div>
+          </div>
+          <div class="flex items-start gap-3 bg-white rounded-2xl p-4 ring-1 ring-line">
+            <div class="w-9 h-9 grid place-items-center rounded-xl bg-teal text-white shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+            </div>
+            <div><div class="font-700">Dedicated multiple therapy rooms</div></div>
+          </div>
+          <div class="flex items-start gap-3 bg-white rounded-2xl p-4 ring-1 ring-line">
+            <div class="w-9 h-9 grid place-items-center rounded-xl bg-sun text-ink shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div><div class="font-700">Sensory zones &amp; comfortable family spaces</div></div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-4 mt-7 inline-flex items-center gap-2 text-ink-soft">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B47" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="font-semibold">Address:</span> 5444 S Green St, Murray, Utah
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSURANCE STRIP ============ -->
+<section class="py-16 lg:py-20 bg-ink text-white relative overflow-hidden">
+  <div class="blob blob-coral w-[400px] h-[400px] -left-24 -top-24 opacity-50"></div>
+  <div class="blob blob-sun w-[300px] h-[300px] -right-20 -bottom-20 opacity-30"></div>
+
+  <div class="max-w-7xl mx-auto px-5 relative">
+    <div class="text-center mb-10">
+      <div class="reveal inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs uppercase tracking-widest font-semibold text-sun">
+        <span class="w-1.5 h-1.5 rounded-full bg-sun"></span> Coverage
+      </div>
+      <h2 class="reveal reveal-delay-1 mt-4 font-display text-3xl sm:text-5xl font-700">Medicaid and Most Insurance Accepted.</h2>
+      <p class="reveal reveal-delay-2 mt-3 text-white/80">We verify your benefits â€” so you know exactly what to expect.</p>
+    </div>
+
+    <div class="reveal reveal-delay-3 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 max-w-5xl mx-auto">
+      <div class="bg-white/10 rounded-xl p-4 text-center text-sm font-semibold">Cigma</div>
+      <div class="bg-white/10 rounded-xl p-4 text-center text-sm font-semibold">Select Home</div>
+      <div class="bg-white/10 rounded-xl p-4 text-center text-sm font-semibold">Molina</div>
+      <div class="bg-white/10 rounded-xl p-4 text-center text-sm font-semibold">UHealth</div>
+      <div class="bg-white/10 rounded-xl p-4 text-center text-sm font-semibold">Heath Choice</div>
+      <div class="bg-white/10 rounded-xl p-4 text-center text-sm font-semibold">Aetna</div>
+      <div class="bg-sun text-ink rounded-xl p-4 text-center text-sm font-bold">Medicaid</div>
+    </div>
+
+    <div class="reveal mt-10 text-center">
+      <a href="insurance.html" class="btn btn-sun">Verify your insurance â†’</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ADDRESS / CONTACT CARD ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5">
+        <div class="reveal eyebrow"><span class="dot"></span> Find us</div>
+        <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Visit our Murray clinic.</h2>
+        <p class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg">Conveniently located in the heart of the Salt Lake Valley â€” easy to reach from Salt Lake City, Sandy, West Valley, South Jordan, Taylorsville, and beyond.</p>
+
+        <div class="reveal reveal-delay-3 mt-8 grid grid-cols-2 gap-3">
+          <div class="bg-white rounded-2xl p-4 ring-1 ring-line">
+            <div class="text-[11px] uppercase tracking-wider text-mute font-semibold">Easy access</div>
+            <div class="text-sm font-bold mt-1">Salt Lake City</div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 ring-1 ring-line">
+            <div class="text-[11px] uppercase tracking-wider text-mute font-semibold">Easy access</div>
+            <div class="text-sm font-bold mt-1">Sandy</div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 ring-1 ring-line">
+            <div class="text-[11px] uppercase tracking-wider text-mute font-semibold">Easy access</div>
+            <div class="text-sm font-bold mt-1">West Valley</div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 ring-1 ring-line">
+            <div class="text-[11px] uppercase tracking-wider text-mute font-semibold">Easy access</div>
+            <div class="text-sm font-bold mt-1">Taylorsville</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 reveal reveal-delay-1">
+        <div class="rounded-[32px] overflow-hidden bg-white shadow-soft ring-1 ring-line">
+          <!-- Map block -->
+          <div class="relative h-64 bg-teal-soft">
+            <iframe
+              class="w-full h-full"
+              src="https://www.google.com/maps?q=5444+South+Green+Street,+Murray,+UT+84123&output=embed"
+              style="border:0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Map to On Target ABA Murray, Utah"></iframe>
+          </div>
+
+          <div class="p-7 grid sm:grid-cols-2 gap-6">
+            <div>
+              <div class="text-[11px] uppercase tracking-wider text-mute font-semibold mb-2 flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF6B47" stroke-width="2.4"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Address
+              </div>
+              <div class="font-700 text-lg leading-tight">5444 South Green Street<br/>Murray, UT 84123</div>
+              <a href="https://www.google.com/maps?q=5444+South+Green+Street,+Murray,+UT+84123" target="_blank" rel="noopener" class="link-uline text-coral text-sm font-semibold mt-2 inline-block">Get directions â†’</a>
+            </div>
+            <div>
+              <div class="text-[11px] uppercase tracking-wider text-mute font-semibold mb-2 flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF6B47" stroke-width="2.4"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                Phone
+              </div>
+              <a href="tel:3855503500" class="font-700 text-lg link-uline text-ink">(385) 550-3500</a>
+            </div>
+            <div class="sm:col-span-2 pt-6 border-t border-line">
+              <div class="text-[11px] uppercase tracking-wider text-mute font-semibold mb-2 flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF6B47" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Hours
+              </div>
+              <div class="font-700 text-lg">Monday â€“ Friday, 8:00 AM â€“ 5:00 PM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ACCORDION ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="mb-12 text-center">
+      <div class="reveal eyebrow inline-flex"><span class="dot"></span> Good questions, real answers</div>
+      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Murray Utah FAQs</h2>
+      <p class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg max-w-2xl mx-auto">Everything Murray parents ask about ABA therapy at On Target ABA.</p>
+    </div>
+
+    <div class="reveal space-y-3">
+      <div class="faq-item">
+        <button class="faq-q">Will my insurance or Medicaid cover ABA therapy at On Target ABA in Murray, Utah? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <p>Many families in Murray want to know whether ABA therapy at On Target ABA is covered by their insurance or Medicaid. The encouraging news is that most Utah families do have access to ABA coverage, and On Target ABA works hard to make the process simple.</p>
+          <ul class="mt-3 space-y-1.5">
+            <li>â€¢ Utah's insurance mandate requires most private insurance plans to cover ABA therapy for children with autism diagnosis</li>
+            <li>â€¢ On Target ABA accepts many insurance plans throughout Salt Lake Valley</li>
+            <li>â€¢ They verify benefits, explain out-of-pocket costs, handle prior authorization</li>
+            <li>â€¢ Medicaid coverage often available for medically necessary ABA therapy</li>
+            <li>â€¢ Multiple Medicaid plans accepted</li>
+            <li>â€¢ Located in Murray at 5444 S Green Street for convenient access</li>
+            <li>â€¢ Free benefits check available</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What does a typical ABA session look like at On Target ABA's Murray center? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <p>Sessions at On Target ABA Therapy in Murray, Utah, are structured, supportive, and engaging. While each child's program is individualized, most sessions combine play-based learning with evidence-based behavioral strategies.</p>
+          <ul class="mt-3 space-y-1.5">
+            <li>â€¢ Warm, child-friendly environment with multiple therapy rooms</li>
+            <li>â€¢ Trained behavior technician paired with child</li>
+            <li>â€¢ Communication practice, social skills, functional play</li>
+            <li>â€¢ Independent play and daily living skills activities</li>
+            <li>â€¢ Naturalistic, relationship-focused teaching approach</li>
+            <li>â€¢ Targeted support for transitions, new situations, emotional regulation</li>
+            <li>â€¢ Every activity tied to individualized treatment plan</li>
+            <li>â€¢ Built-in social opportunities</li>
+            <li>â€¢ Support for generalization into home, school, community</li>
+          </ul>
+          <p class="mt-3">At On Target ABA, every session is designed to help your child build confidence, independence, and meaningful life skills â€” all in a supportive local setting right here in Murray.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How will I know if ABA therapy at On Target ABA is working? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <p>One of the biggest strengths of ABA therapy, especially at On Target ABA in Murray, is that progress is always measured with clear, objective data. You'll never be left wondering whether therapy is helping.</p>
+          <ul class="mt-3 space-y-1.5">
+            <li>â€¢ Detailed assessment and individualized plan with measurable goals</li>
+            <li>â€¢ Data collected during every session</li>
+            <li>â€¢ Continuous review and adjustments</li>
+            <li>â€¢ Regular parent updates, monthly meetings, progress summaries, graphs</li>
+            <li>â€¢ Data-driven approach shows how and why improvements happen</li>
+          </ul>
+          <p class="mt-3 font-semibold">Progress at On Target ABA often looks like:</p>
+          <ul class="mt-2 space-y-1.5">
+            <li>â€¢ more consistent communication</li>
+            <li>â€¢ better play and social engagement</li>
+            <li>â€¢ improved independence in daily routines</li>
+            <li>â€¢ fewer behavioral challenges</li>
+            <li>â€¢ increased confidence and flexibility</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What happens if my child struggles during ABA therapy? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <p>It's completely normal for children to experience frustration or pushback at times during therapy â€” and On Target ABA is experienced in helping children work through those challenges in a supportive way.</p>
+          <ul class="mt-3 space-y-1.5">
+            <li>â€¢ BCBA carefully reviews situation and adjusts teaching</li>
+            <li>â€¢ Not "one-size-fits-all" strategies</li>
+            <li>â€¢ May switch to naturalistic methods, increase reinforcement, shorten tasks</li>
+            <li>â€¢ Incorporate child's interests</li>
+            <li>â€¢ Use sensory room breaks when needed</li>
+            <li>â€¢ Parents receive guidance for home implementation</li>
+          </ul>
+          <p class="mt-3">Struggles never mean therapy isn't working â€” they often signal that your child is learning new skills or needs a different teaching approach.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How much parent involvement is required in ABA therapy? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <p>At On Target ABA in Murray, parents are essential partners in the therapy process. While you won't need to be present during every session (especially center-based therapy), your involvement helps ensure your child's progress carries over into real life.</p>
+          <ul class="mt-3 space-y-1.5">
+            <li>â€¢ Consistent parent training</li>
+            <li>â€¢ Monthly or biweekly meetings</li>
+            <li>â€¢ Practicing communication skills at home</li>
+            <li>â€¢ Encouraging independence in daily living</li>
+            <li>â€¢ Supporting routines and transitions</li>
+            <li>â€¢ Reinforcing positive behaviors</li>
+          </ul>
+          <p class="mt-3">You don't need special experience or training to participate â€” On Target ABA teaches everything step-by-step.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Is ABA therapy at On Target ABA only for young children? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <p>While early intervention is extremely beneficial, ABA therapy at On Target ABA is not limited to toddlers or preschoolers. Many children in elementary, middle, and even high school receive ABA services to build independence, communication, life skills, and social functioning.</p>
+          <p class="mt-3 font-semibold">Older children may work on:</p>
+          <ul class="mt-2 space-y-1.5">
+            <li>â€¢ emotional regulation</li>
+            <li>â€¢ peer and social relationships</li>
+            <li>â€¢ daily living routines</li>
+            <li>â€¢ school readiness and classroom behavior</li>
+            <li>â€¢ community safety</li>
+            <li>â€¢ coping skills</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How long will my child need ABA therapy? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <p>The duration of ABA therapy varies widely depending on your child's needs, goals, and progress. At On Target ABA, therapy plans are not open-ended. They develop a personalized timeline based on assessment results and your family's goals.</p>
+          <ul class="mt-3 space-y-1.5">
+            <li>â€¢ Intensive therapy may be 20â€“40 hours per week for several years</li>
+            <li>â€¢ Part-time programs or short-term services for specific goals</li>
+            <li>â€¢ Therapy hours often decrease as children gain independence</li>
+            <li>â€¢ Regular progress review and program adjustments</li>
+          </ul>
+          <p class="mt-3">The ultimate goal is improved functioning, strong communication, increased independence, and successful participation in school and community life in Murray.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What makes On Target ABA different from other ABA providers in Murray? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <ul class="space-y-1.5">
+            <li>â€¢ Large, purpose-built therapy center in Murray with play areas, sensory rooms, safe social spaces</li>
+            <li>â€¢ Focus on naturalistic, child-driven ABA â€” not rigid drills</li>
+            <li>â€¢ Strong parent training and collaboration</li>
+            <li>â€¢ Experienced BCBAs who oversee programs closely</li>
+            <li>â€¢ Support with insurance and Medicaid navigation</li>
+            <li>â€¢ Welcoming environment built to help children feel comfortable and confident</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How do I choose the right ABA provider in Murray, Utah? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <p class="font-semibold">Questions to ask any provider:</p>
+          <ul class="mt-2 space-y-1.5">
+            <li>â€¢ Is a BCBA supervising my child's therapy regularly?</li>
+            <li>â€¢ Is data collected and reviewed often?</li>
+            <li>â€¢ Will I receive parent training?</li>
+            <li>â€¢ What does the center environment look like?</li>
+            <li>â€¢ Do therapists build relationships with the children they serve?</li>
+          </ul>
+          <p class="mt-3">On Target ABA encourages families to tour the Murray center, meet the team, and understand their approach before starting. This transparency helps you feel confident in your decision.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">How do I get started with On Target ABA in Murray? <span class="chev">+</span></button>
+        <div class="faq-a">
+          <p>Starting ABA therapy at On Target ABA is simple. Families begin with a short phone consultation or online form submission. The team completes insurance verification, schedules an intake appointment, and arranges for a BCBA assessment.</p>
+          <ol class="mt-3 space-y-1.5 list-decimal pl-5">
+            <li>Phone consultation or online form submission</li>
+            <li>Insurance verification completed</li>
+            <li>Intake appointment scheduled</li>
+            <li>BCBA assessment arranged</li>
+            <li>Customized treatment plan created</li>
+            <li>Therapy schedule assigned (flexible hours available)</li>
+            <li>Child begins therapy with assigned team</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="py-20 lg:py-28 relative overflow-hidden">
+  <div class="blob blob-sun w-[420px] h-[420px] left-1/2 -translate-x-1/2 top-0"></div>
+  <div class="blob blob-coral w-[280px] h-[280px] -left-16 bottom-0 opacity-50"></div>
+
+  <!-- Mountain silhouette accent -->
+  <svg class="absolute bottom-0 left-0 right-0 w-full text-teal-soft/60" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="currentColor" d="M0,70 L120,30 L240,60 L360,20 L480,55 L600,15 L720,55 L840,25 L960,60 L1080,30 L1200,55 L1200,120 L0,120 Z"/>
+  </svg>
+
+  <div class="max-w-4xl mx-auto px-5 text-center relative">
+    <div class="reveal eyebrow inline-flex"><span class="dot"></span> We can't wait to hear from you!</div>
+    <h2 class="reveal reveal-delay-1 mt-5 font-display text-4xl sm:text-6xl font-700 tracking-tight leading-tight">
+      Standing by to help your child <em class="italic text-coral">succeed.</em>
+    </h2>
+    <p class="reveal reveal-delay-2 mt-5 text-ink-soft text-lg max-w-2xl mx-auto">
+      On Target's friendly ABA therapists in Murray are standing by to help your child succeed!
+    </p>
+    <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="contact.html" class="btn btn-coral">GET STARTED TODAY!</a>
+      <a href="tel:3855503500" class="btn btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call (385) 550-3500
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center">
+        <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-11 w-auto" />
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>Â©<span data-year>2026</span> ON TARGET ABA, LLC Â· All rights reserved Â· Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

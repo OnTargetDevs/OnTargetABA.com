@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pre-Intake Form â€” On Target ABA | Get Started Today</title>
+<meta name="description" content="Start your child's care at On Target ABA. Complete our quick pre-intake form for ABA therapy and autism evaluation. New Salt Lake City location now open." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing â€” most families pay $0 â†’</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center group" aria-label="On Target ABA â€” home">
+      <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="blob blob-coral w-[420px] h-[420px] -left-32 top-20"></div>
+  <div class="blob blob-sun w-[380px] h-[380px] -right-32 -top-10"></div>
+
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-14 lg:pt-24 lg:pb-20 grid lg:grid-cols-12 gap-12 items-center relative">
+    <div class="lg:col-span-7 relative z-10">
+      <div class="reveal eyebrow"><span class="dot"></span> Pre-intake form</div>
+
+      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[72px] leading-[1.02] font-700 tracking-tight">
+        Get started
+        <span class="relative inline-block">
+          <span class="relative z-10 italic font-600">today!</span>
+          <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
+            <path d="M2 9 C 50 1, 150 1, 198 8" stroke="#FF6B47" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+      </h1>
+
+      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
+        A few minutes is all it takes. Share the basics about your child and family, and we'll be in touch â€” usually the same day â€” to verify benefits and schedule next steps.
+      </p>
+
+      <div class="reveal reveal-delay-3 mt-8 grid sm:grid-cols-3 gap-3 max-w-lg">
+        <div class="rounded-2xl bg-white ring-1 ring-line px-4 py-3">
+          <div class="font-display text-2xl font-700 text-teal-deep">~5<span class="text-sm">min</span></div>
+          <div class="text-[11px] uppercase tracking-wider text-mute mt-0.5">to complete</div>
+        </div>
+        <div class="rounded-2xl bg-white ring-1 ring-line px-4 py-3">
+          <div class="font-display text-2xl font-700 text-teal-deep">72<span class="text-sm">h</span></div>
+          <div class="text-[11px] uppercase tracking-wider text-mute mt-0.5">to start care</div>
+        </div>
+        <div class="rounded-2xl bg-white ring-1 ring-line px-4 py-3">
+          <div class="font-display text-2xl font-700 text-teal-deep">$0</div>
+          <div class="text-[11px] uppercase tracking-wider text-mute mt-0.5">typical cost</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 relative reveal reveal-delay-2">
+      <div class="relative w-full max-w-md mx-auto">
+        <div class="absolute -top-8 -right-8 w-40 h-40 rounded-full opacity-90 float">
+          <div class="target-mark w-full h-full"></div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-sun shadow-lg float delay-2"></div>
+
+        <div class="relative rounded-[36px] overflow-hidden bg-white p-3 shadow-2xl rotate-2">
+          <div class="relative rounded-[28px] overflow-hidden bg-teal-soft aspect-[4/5]">
+            <img src="assets/images/kid-transparent-background-13.png" alt="Happy child ready for therapy" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <div class="text-xs uppercase tracking-widest opacity-80 text-sun font-semibold">NEW SLC location</div>
+              <div class="font-display text-xl font-600 leading-tight mt-1">Now open in Murray, Utah.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-6 right-2 bg-white rounded-2xl shadow-pop px-4 py-3 flex items-center gap-3 float">
+          <div class="w-10 h-10 grid place-items-center rounded-xl bg-coral-soft">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B47" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-mute">Insurance</div>
+            <div class="text-sm font-semibold">Most plans accepted</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORM ============ -->
+<section class="py-16 lg:py-24">
+  <div class="max-w-4xl mx-auto px-5">
+    <div class="relative">
+      <div class="absolute -inset-4 lg:-inset-6 bg-coral-soft rounded-[40px] rotate-1 opacity-60"></div>
+      <form action="#" onsubmit="event.preventDefault(); alert('Thank you â€” we will be in touch.'); this.reset();" class="relative bg-white ring-1 ring-line rounded-[32px] p-6 sm:p-10 lg:p-12 shadow-soft">
+
+        <!-- progress indicator -->
+        <div class="flex items-center justify-between text-xs uppercase tracking-widest text-mute font-semibold mb-10">
+          <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-coral"></span> Child</div>
+          <div class="h-px bg-line flex-1 mx-2"></div>
+          <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-coral"></span> Parent</div>
+          <div class="h-px bg-line flex-1 mx-2"></div>
+          <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-coral"></span> Insurance</div>
+          <div class="h-px bg-line flex-1 mx-2"></div>
+          <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-coral"></span> Care</div>
+        </div>
+
+        <!-- SECTION 1: CHILD INFO -->
+        <div class="reveal">
+          <div class="flex items-baseline gap-3 mb-6">
+            <div class="eyebrow"><span class="dot"></span> Section 01</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">About your child</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Child's first name</span>
+              <input type="text" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="First name" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Child's last name</span>
+              <input type="text" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Last name" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Date of birth</span>
+              <input type="date" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Gender</span>
+              <select class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition">
+                <option value="">Selectâ€¦</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Non-binary</option>
+                <option>Prefer not to say</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="my-10 border-t border-line"></div>
+
+        <!-- SECTION 2: PARENT/GUARDIAN -->
+        <div class="reveal">
+          <div class="flex items-baseline gap-3 mb-6">
+            <div class="eyebrow"><span class="dot"></span> Section 02</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">Parent / guardian</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">First name</span>
+              <input type="text" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="First name" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Last name</span>
+              <input type="text" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Last name" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Relationship to child</span>
+              <select class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition">
+                <option>Parent</option>
+                <option>Legal guardian</option>
+                <option>Grandparent</option>
+                <option>Foster parent</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Phone</span>
+              <input type="tel" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="(555) 123-4567" />
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Email</span>
+              <input type="email" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="you@email.com" />
+            </label>
+          </div>
+        </div>
+
+        <div class="my-10 border-t border-line"></div>
+
+        <!-- SECTION 3: INSURANCE -->
+        <div class="reveal">
+          <div class="flex items-baseline gap-3 mb-6">
+            <div class="eyebrow"><span class="dot"></span> Section 03</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">Insurance information</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Insurance carrier</span>
+              <select class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition">
+                <option value="">Select carrierâ€¦</option>
+                <option>Aetna</option>
+                <option>Ambetter</option>
+                <option>Anthem Blue Cross Blue Shield</option>
+                <option>Buckeye Health Plan</option>
+                <option>Caresource</option>
+                <option>Cigna</option>
+                <option>Medicaid</option>
+                <option>Medicare</option>
+                <option>Molina Healthcare</option>
+                <option>Optum / UnitedHealthcare</option>
+                <option>Tricare</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Member / ID number</span>
+              <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Found on insurance card" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Group number (if applicable)</span>
+              <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Optional" />
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-ink mb-1.5 block">Subscriber name (if not child)</span>
+              <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Optional" />
+            </label>
+          </div>
+
+          <p class="mt-4 text-xs text-mute">Don't worry if you're not sure â€” we'll verify your benefits for you.</p>
+        </div>
+
+        <div class="my-10 border-t border-line"></div>
+
+        <!-- SECTION 4: DIAGNOSIS -->
+        <div class="reveal">
+          <div class="flex items-baseline gap-3 mb-6">
+            <div class="eyebrow"><span class="dot"></span> Section 04</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">Diagnosis status</h2>
+          </div>
+
+          <p class="text-sm text-mute mb-5">Has your child received an autism diagnosis?</p>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <label class="relative cursor-pointer">
+              <input type="radio" name="dx" class="peer sr-only" checked />
+              <div class="rounded-2xl border-2 border-line bg-cream p-5 peer-checked:border-coral peer-checked:bg-coral-soft transition">
+                <div class="font-semibold text-ink">Yes, diagnosed</div>
+                <div class="text-xs text-mute mt-1">We have documentation.</div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="dx" class="peer sr-only" />
+              <div class="rounded-2xl border-2 border-line bg-cream p-5 peer-checked:border-coral peer-checked:bg-coral-soft transition">
+                <div class="font-semibold text-ink">Need evaluation</div>
+                <div class="text-xs text-mute mt-1">We'd like testing first.</div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="dx" class="peer sr-only" />
+              <div class="rounded-2xl border-2 border-line bg-cream p-5 peer-checked:border-coral peer-checked:bg-coral-soft transition">
+                <div class="font-semibold text-ink">Not sure yet</div>
+                <div class="text-xs text-mute mt-1">Let's talk it through.</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="my-10 border-t border-line"></div>
+
+        <!-- SECTION 5: PREFERRED LOCATION -->
+        <div class="reveal">
+          <div class="flex items-baseline gap-3 mb-6">
+            <div class="eyebrow"><span class="dot"></span> Section 05</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">Preferred location</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <label class="relative cursor-pointer">
+              <input type="radio" name="loc" class="peer sr-only" checked />
+              <div class="rounded-2xl border-2 border-line bg-white p-5 peer-checked:border-coral peer-checked:bg-coral-soft transition h-full">
+                <div class="text-[11px] uppercase tracking-widest text-mute font-semibold">Ohio</div>
+                <div class="font-semibold text-ink mt-1">Cleveland / Mayfield</div>
+                <div class="text-xs text-mute mt-1">(216) 343-1198</div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="loc" class="peer sr-only" />
+              <div class="rounded-2xl border-2 border-line bg-white p-5 peer-checked:border-coral peer-checked:bg-coral-soft transition h-full">
+                <div class="text-[11px] uppercase tracking-widest text-mute font-semibold">Ohio</div>
+                <div class="font-semibold text-ink mt-1">Columbus / Gahanna</div>
+                <div class="text-xs text-mute mt-1">(614) 681-1030</div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="loc" class="peer sr-only" />
+              <div class="rounded-2xl border-2 border-line bg-white p-5 peer-checked:border-coral peer-checked:bg-coral-soft transition h-full">
+                <div class="text-[11px] uppercase tracking-widest text-mute font-semibold">Ohio</div>
+                <div class="font-semibold text-ink mt-1">Columbus / Worthington</div>
+                <div class="text-xs text-mute mt-1">(614) 681-1030</div>
+              </div>
+            </label>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="loc" class="peer sr-only" />
+              <div class="rounded-2xl border-2 border-line bg-white p-5 peer-checked:border-coral peer-checked:bg-coral-soft transition h-full">
+                <div class="flex items-center justify-between">
+                  <div class="text-[11px] uppercase tracking-widest text-mute font-semibold">Utah</div>
+                  <span class="text-[10px] font-bold bg-sun text-ink rounded-full px-2 py-0.5">NEW</span>
+                </div>
+                <div class="font-semibold text-ink mt-1">Murray, UT</div>
+                <div class="text-xs text-mute mt-1">(385) 550-3500</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="my-10 border-t border-line"></div>
+
+        <!-- SECTION 6: CONTACT METHOD + NOTES -->
+        <div class="reveal">
+          <div class="flex items-baseline gap-3 mb-6">
+            <div class="eyebrow"><span class="dot"></span> Section 06</div>
+            <h2 class="font-display text-2xl sm:text-3xl font-700">How should we reach you?</h2>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-3 mb-6">
+            <label class="relative cursor-pointer">
+              <input type="radio" name="contact" class="peer sr-only" checked />
+              <div class="rounded-2xl border-2 border-line bg-cream p-4 peer-checked:border-coral peer-checked:bg-coral-soft transition flex items-center gap-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                <span class="font-semibold">Phone call</span>
+              </div>
+            </label>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="contact" class="peer sr-only" />
+              <div class="rounded-2xl border-2 border-line bg-cream p-4 peer-checked:border-coral peer-checked:bg-coral-soft transition flex items-center gap-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span class="font-semibold">Text message</span>
+              </div>
+            </label>
+            <label class="relative cursor-pointer">
+              <input type="radio" name="contact" class="peer sr-only" />
+              <div class="rounded-2xl border-2 border-line bg-cream p-4 peer-checked:border-coral peer-checked:bg-coral-soft transition flex items-center gap-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span class="font-semibold">Email</span>
+              </div>
+            </label>
+          </div>
+
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Additional notes (optional)</span>
+            <textarea rows="5" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Anything else you'd like us to know? Schedule preferences, transportation, school details, or questions you have for usâ€¦"></textarea>
+          </label>
+        </div>
+
+        <div class="my-10 border-t border-line"></div>
+
+        <!-- CONSENT + SUBMIT -->
+        <div class="reveal flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+          <label class="flex items-start gap-3 text-sm text-ink-soft max-w-xl">
+            <input type="checkbox" required class="mt-1 w-5 h-5 rounded border-line text-coral focus:ring-coral" />
+            <span>I consent to be contacted by On Target ABA about my child's care, including by phone, text, or email.</span>
+          </label>
+          <button type="submit" class="btn btn-coral text-lg px-8 py-4 shrink-0">
+            Submit intake form
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HELP / CTAs ============ -->
+<section class="py-16 lg:py-20 bg-white border-y border-line">
+  <div class="max-w-5xl mx-auto px-5 text-center">
+    <div class="reveal eyebrow inline-flex"><span class="dot"></span> Prefer to talk first?</div>
+    <h2 class="reveal reveal-delay-1 mt-4 font-display text-3xl sm:text-4xl font-700 tracking-tight">We're happy to walk you through it.</h2>
+    <p class="reveal reveal-delay-2 mt-3 text-ink-soft max-w-2xl mx-auto">Our intake team can answer benefits questions, schedule autism testing, or just listen. No pressure.</p>
+
+    <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="tel:8889895011" class="btn btn-coral">Call (888) 989-5011</a>
+      <a href="aba-therapy-guide.html" class="btn btn-ghost">ABA Therapy Guide</a>
+      <a href="contact.html" class="btn btn-ink">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center">
+        <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-11 w-auto" />
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>Â©<span data-year>2026</span> ON TARGET ABA, LLC Â· All rights reserved Â· Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
