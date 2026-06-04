@@ -4,20 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Pretty URL support: when the host rewrites /blog/posts/{slug}
-     to /blog/post.html, relative paths like "../assets/..." would
-     resolve against /blog/posts/{slug}/ instead of /blog/. A <base>
-     element anchored at /blog/ makes them resolve correctly. -->
-<script>
-  (function () {
-    if (location.pathname.indexOf('/blog/posts/') === 0) {
-      var b = document.createElement('base');
-      b.href = '/blog/';
-      document.head.appendChild(b);
-    }
-  })();
-</script>
-
 <title>On Target ABA &mdash; Blog</title>
 <meta name="description" id="seo-description" content="ABA therapy &amp; autism resources for families &mdash; On Target ABA." />
 <link rel="canonical" id="seo-canonical" href="https://ontargetaba.com/blogs/" />
@@ -25,11 +11,11 @@
 <meta property="og:site_name" content="On Target ABA" />
 <meta property="og:title" id="seo-og-title" content="On Target ABA Blog" />
 <meta property="og:description" id="seo-og-description" content="ABA therapy &amp; autism resources for families." />
-<meta property="og:image" id="seo-og-image" content="../assets/images/footerImg.png" />
+<meta property="og:image" id="seo-og-image" content="/assets/images/footerImg.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" id="seo-tw-title" content="On Target ABA Blog" />
 <meta name="twitter:description" id="seo-tw-description" content="ABA therapy &amp; autism resources for families." />
-<meta name="twitter:image" id="seo-tw-image" content="../assets/images/footerImg.png" />
+<meta name="twitter:image" id="seo-tw-image" content="/assets/images/footerImg.png" />
 <script id="seo-jsonld" type="application/ld+json"></script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -54,8 +40,8 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/plus-jakarta-sans-600.woff2">
-<link rel="stylesheet" href="../assets/css/app.css" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/plus-jakarta-sans-600.woff2">
+<link rel="stylesheet" href="/assets/css/app.css" />
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js"></script>
 
@@ -142,7 +128,7 @@ tailwind.config = {
 <div id="notfound" class="hidden max-w-3xl mx-auto px-5 py-24 text-center">
   <h1 class="font-display text-4xl font-700 mb-3">Post not found</h1>
   <p class="text-mute mb-8">We couldn't find that article. It may have moved or been renamed.</p>
-  <a href="../blog.html" class="btn btn-coral">Browse all articles</a>
+  <a href="/blog.html" class="btn btn-coral">Browse all articles</a>
 </div>
 
 <!-- ============ ARTICLE ============ -->
@@ -152,7 +138,7 @@ tailwind.config = {
     <div class="blob blob-coral w-[360px] h-[360px] -left-32 top-40"></div>
     <div class="blob blob-sun w-[320px] h-[320px] -right-32 -top-10"></div>
     <div class="max-w-4xl mx-auto px-5 pt-12 pb-16 lg:pt-20 lg:pb-24 relative">
-      <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-teal-deep hover:text-coral mb-6 transition">
+      <a href="/blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-teal-deep hover:text-coral mb-6 transition">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 19l-7-7 7-7"/></svg>
         All articles
       </a>
@@ -208,8 +194,8 @@ tailwind.config = {
             <h3 class="font-display text-3xl font-700 mb-3 leading-tight">Ready to get started?</h3>
             <p class="text-white/80 mb-6 max-w-lg">Most families start in under 72 hours. We'll verify your insurance and help you skip the wait.</p>
             <div class="flex flex-wrap gap-3">
-              <a href="../contact.html" class="btn btn-sun">Get started today</a>
-              <a href="../autism-testing.html" class="btn btn-ghost text-white border-white/30 hover:bg-white/10">Schedule autism testing</a>
+              <a href="/contact.html" class="btn btn-sun">Get started today</a>
+              <a href="/autism-testing.html" class="btn btn-ghost text-white border-white/30 hover:bg-white/10">Schedule autism testing</a>
             </div>
           </div>
         </aside>
@@ -247,9 +233,9 @@ tailwind.config = {
 <!-- ============ FOOTER ============ -->
 <div id="site-footer" aria-busy="true"></div>
 
-<script src="../assets/js/header.js"></script>
-<script src="../assets/js/footer.js"></script>
-<script src="../assets/js/app.js"></script>
+<script src="/assets/js/header.js"></script>
+<script src="/assets/js/footer.js"></script>
+<script src="/assets/js/app.js"></script>
 <script>
 /* ============================================================
    Runtime markdown blog post renderer.
@@ -363,7 +349,7 @@ tailwind.config = {
     // Image() and fall back to footerImg.png if the request fails
     // (the SVG hasn't been generated yet, CDN misroute, etc.).
     const ogImg = '/assets/og/blog-' + slug + '.svg';
-    const fallbackImg = '../assets/images/footerImg.png';
+    const fallbackImg = '/assets/images/footerImg.png';
     const probe = new Image();
     probe.onload = () => {
       set('seo-og-image', 'content', ogImg);
@@ -553,7 +539,7 @@ tailwind.config = {
   }
 
   function loadRelated(currentSlug, currentCategory) {
-    fetch('../assets/blog/index.json', { cache: 'no-cache' })
+    fetch('/assets/blog/index.json', { cache: 'no-cache' })
       .then(r => r.ok ? r.json() : null)
       .then(idx => {
         if (!idx || !Array.isArray(idx.posts)) return;
@@ -575,7 +561,7 @@ tailwind.config = {
       .catch(() => { /* index optional */ });
   }
 
-  fetch('../assets/blog/' + slug + '.md', { cache: 'no-cache' })
+  fetch('/assets/blog/' + slug + '.md', { cache: 'no-cache' })
     .then(r => {
       if (!r.ok) throw new Error('not found: ' + r.status);
       return r.text();
