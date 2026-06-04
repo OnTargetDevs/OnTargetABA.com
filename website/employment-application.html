@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Employment Application â€” On Target ABA</title>
+<meta name="description" content="Complete the full employment application for On Target ABA. Tell us about your experience, education, and what role you're seeking." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing â€” most families pay $0 â†’</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center group" aria-label="On Target ABA â€” home">
+      <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="blob blob-coral w-[420px] h-[420px] -left-32 top-20"></div>
+  <div class="blob blob-sun w-[380px] h-[380px] -right-24 -top-10"></div>
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-16 lg:pt-24 lg:pb-24 relative grid lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7 relative z-10">
+      <div class="reveal eyebrow"><span class="dot"></span> Careers Â· Full application</div>
+      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[68px] leading-[1.04] font-700 tracking-tight">
+        Employment <span class="italic text-coral font-600">application.</span>
+      </h1>
+      <p class="reveal reveal-delay-2 mt-5 text-lg text-ink-soft max-w-xl">
+        Please fill out this and submit together with your resume. If you have any questions please call <a href="tel:2163431198" class="link-uline text-coral font-semibold">(216) 343-1198</a> or email <strong>[email protected]</strong>.
+      </p>
+      <div class="reveal reveal-delay-3 mt-6 flex flex-wrap gap-3">
+        <a href="#form" class="btn btn-coral">Start the application <span>â†“</span></a>
+        <a href="job-application.html" class="btn btn-ghost">Short form instead</a>
+      </div>
+    </div>
+    <div class="lg:col-span-5 reveal reveal-delay-2">
+      <div class="relative max-w-sm mx-auto">
+        <div class="absolute -top-6 -left-6 w-28 h-28 rounded-full bg-coral shadow-lg float"></div>
+        <div class="absolute -bottom-6 -right-6 w-36 h-36 rounded-full opacity-90 float delay-2"><div class="target-mark w-full h-full"></div></div>
+        <div class="relative rounded-[36px] overflow-hidden bg-white p-3 shadow-2xl rotate-1">
+          <div class="relative rounded-[28px] overflow-hidden bg-sun-soft aspect-[4/5]">
+            <img src="assets/images/kid-transparent-background-13.png" alt="ABA therapy in action" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <div class="text-xs uppercase tracking-widest opacity-80">We're hiring</div>
+              <div class="font-display text-xl font-600 leading-tight mt-1">Cleveland Â· Columbus Â· Salt Lake City</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORM ============ -->
+<section id="form" class="py-20 lg:py-28">
+  <div class="max-w-3xl mx-auto px-5">
+
+    <div class="reveal text-center mb-10">
+      <div class="eyebrow inline-flex"><span class="dot"></span> Full application</div>
+      <h2 class="mt-4 font-display text-3xl sm:text-4xl font-700 tracking-tight">A complete picture of you.</h2>
+      <p class="mt-3 text-ink-soft">Fields marked with an asterisk are required.</p>
+    </div>
+
+    <form action="#" onsubmit="event.preventDefault(); alert('Thank you â€” we will be in touch.'); this.reset();" class="reveal reveal-delay-1 bg-white rounded-3xl ring-1 ring-line shadow-soft p-7 lg:p-10 grid gap-10">
+
+      <!-- 1. Personal Info -->
+      <fieldset class="grid gap-5">
+        <legend class="font-display text-xl font-700">1. Personal information</legend>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">First name <span class="text-coral">*</span></span>
+            <input type="text" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Last name <span class="text-coral">*</span></span>
+            <input type="text" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Email <span class="text-coral">*</span></span>
+            <input type="email" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Phone <span class="text-coral">*</span></span>
+            <input type="tel" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Street address</span>
+            <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">City</span>
+            <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">State</span>
+            <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">ZIP</span>
+            <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Date of birth</span>
+            <input type="date" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+        </div>
+      </fieldset>
+
+      <hr class="border-line">
+
+      <!-- 2. Position -->
+      <fieldset class="grid gap-5">
+        <legend class="font-display text-xl font-700">2. Position</legend>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Position applying for <span class="text-coral">*</span></span>
+            <select required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition">
+              <option value="">Please Select</option>
+              <option>BCBA</option>
+              <option>BCaBA</option>
+              <option>RBT</option>
+              <option>Behavior Technician</option>
+              <option>Clinical Director</option>
+              <option>Speech-Language Pathologist</option>
+              <option>Occupational Therapist</option>
+              <option>Front Office / Administrative</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Location applying for</span>
+            <select class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition">
+              <option>Cleveland / Akron, OH</option>
+              <option>Columbus, OH</option>
+              <option>Salt Lake City / Murray, UT</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Desired salary</span>
+            <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="$ / year or hour" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-ink mb-1.5 block">Available start date</span>
+            <input type="date" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+          </label>
+        </div>
+      </fieldset>
+
+      <hr class="border-line">
+
+      <!-- 3. Education -->
+      <fieldset class="grid gap-5">
+        <legend class="font-display text-xl font-700">3. Education history</legend>
+        <p class="text-sm text-mute">Most recent first.</p>
+
+        <div class="grid gap-4">
+          <div class="grid sm:grid-cols-3 gap-3 rounded-xl bg-cream p-4">
+            <label class="block sm:col-span-2">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">School / Institution</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Year completed</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block sm:col-span-3">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Degree / Certificate</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-3 rounded-xl bg-cream p-4">
+            <label class="block sm:col-span-2">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">School / Institution</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Year completed</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block sm:col-span-3">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Degree / Certificate</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-3 rounded-xl bg-cream p-4">
+            <label class="block sm:col-span-2">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">School / Institution</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Year completed</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block sm:col-span-3">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Degree / Certificate</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <hr class="border-line">
+
+      <!-- 4. Employment History -->
+      <fieldset class="grid gap-5">
+        <legend class="font-display text-xl font-700">4. Employment history</legend>
+        <p class="text-sm text-mute">Most recent first.</p>
+
+        <div class="grid gap-4">
+          <div class="grid sm:grid-cols-2 gap-3 rounded-xl bg-cream p-4">
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Employer</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Role / Title</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Dates of employment</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="e.g. Aug 2022 â€“ present" />
+            </label>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3 rounded-xl bg-cream p-4">
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Employer</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Role / Title</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Dates of employment</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-3 rounded-xl bg-cream p-4">
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Employer</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Role / Title</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Dates of employment</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <hr class="border-line">
+
+      <!-- 5. Credentials -->
+      <fieldset class="grid gap-5">
+        <legend class="font-display text-xl font-700">5. Credentials &amp; certifications</legend>
+        <label class="block">
+          <span class="text-sm font-semibold text-ink mb-1.5 block">Active certifications</span>
+          <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="BCBA, BCaBA, RBT, OT, SLP, etc." />
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold text-ink mb-1.5 block">License numbers / states</span>
+          <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold text-ink mb-1.5 block">Other relevant trainings</span>
+          <textarea rows="4" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition resize-y"></textarea>
+        </label>
+      </fieldset>
+
+      <hr class="border-line">
+
+      <!-- 6. References -->
+      <fieldset class="grid gap-5">
+        <legend class="font-display text-xl font-700">6. References</legend>
+
+        <div class="grid gap-4">
+          <div class="grid sm:grid-cols-3 gap-3 rounded-xl bg-cream p-4">
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Name</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Relationship</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Phone / Email</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-3 rounded-xl bg-cream p-4">
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Name</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Relationship</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Phone / Email</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-3 rounded-xl bg-cream p-4">
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Name</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Relationship</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+            <label class="block">
+              <span class="text-xs font-semibold text-mute mb-1 block uppercase tracking-wide">Phone / Email</span>
+              <input type="text" class="w-full rounded-lg border border-line bg-white px-3 py-2.5 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" />
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <hr class="border-line">
+
+      <!-- 7. Resume + extras -->
+      <fieldset class="grid gap-5">
+        <legend class="font-display text-xl font-700">7. Resume &amp; additional info</legend>
+        <label class="block">
+          <span class="text-sm font-semibold text-ink mb-1.5 block">Attach your resume (PDF or DOCX)</span>
+          <input type="file" accept=".pdf,.doc,.docx" class="w-full rounded-xl border border-line bg-white px-4 py-3 file:mr-4 file:rounded-lg file:border-0 file:bg-coral-soft file:text-coral file:font-semibold file:px-4 file:py-2 hover:file:bg-coral hover:file:text-white transition focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-semibold text-ink mb-1.5 block">Why are you interested in On Target ABA?</span>
+          <textarea rows="5" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition resize-y"></textarea>
+        </label>
+      </fieldset>
+
+      <div class="pt-4 flex flex-wrap gap-3 items-center justify-between">
+        <p class="text-xs text-mute max-w-md">By submitting you certify the information provided is accurate and agree to be contacted by On Target ABA about employment.</p>
+        <button type="submit" class="btn btn-coral">Submit application <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+      </div>
+    </form>
+
+    <div class="reveal mt-12 grid sm:grid-cols-3 gap-4 text-sm">
+      <a href="tel:2163431198" class="rounded-2xl bg-white ring-1 ring-line p-5 lift">
+        <div class="text-xs uppercase tracking-widest text-mute font-semibold">Cleveland, OH</div>
+        <div class="mt-1 font-semibold text-coral">(216) 343-1198</div>
+      </a>
+      <a href="tel:6146811030" class="rounded-2xl bg-white ring-1 ring-line p-5 lift">
+        <div class="text-xs uppercase tracking-widest text-mute font-semibold">Columbus, OH</div>
+        <div class="mt-1 font-semibold text-coral">(614) 681-1030</div>
+      </a>
+      <a href="tel:3855503500" class="rounded-2xl bg-white ring-1 ring-line p-5 lift">
+        <div class="text-xs uppercase tracking-widest text-mute font-semibold">Salt Lake City, UT</div>
+        <div class="mt-1 font-semibold text-coral">(385) 550-3500</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center">
+        <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-11 w-auto" />
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>Â©<span data-year>2026</span> ON TARGET ABA, LLC Â· All rights reserved Â· Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
