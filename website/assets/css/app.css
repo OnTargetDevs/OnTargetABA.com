@@ -429,11 +429,15 @@ body {
   box-shadow: 0 0 0 4px var(--c-coral-soft);
 }
 
-/* =========== Sticky nav scroll style =========== */
+/* =========== Sticky nav scroll style ===========
+   The header keeps a solid background at every scroll position so the
+   nav stays readable over any underlying section. Cream at top blends
+   into the page bg; white-with-shadow on scroll signals lift-off. */
+.nav-bar {
+  background: var(--c-cream);
+}
 .nav-bar.scrolled {
-  background: rgba(255,255,255,.85);
-  backdrop-filter: saturate(180%) blur(14px);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  background: #ffffff;
   border-color: var(--c-line);
   box-shadow: var(--shadow-soft);
 }
