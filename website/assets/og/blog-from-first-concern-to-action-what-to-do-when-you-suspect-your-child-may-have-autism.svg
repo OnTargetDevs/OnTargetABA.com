@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14"/>
+      <feOffset dx="0" dy="10" result="offsetBlur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#FAF5E6"/>
+
+  <!-- Decorative sun circle anchored top-right, partially off-canvas -->
+  <circle cx="1140" cy="60" r="260" fill="#F4C842" opacity="0.95"/>
+
+  <!-- Decorative coral blob anchored bottom-left, partially off-canvas -->
+  <circle cx="60" cy="600" r="180" fill="#E84F3B" opacity="0.9"/>
+  <circle cx="160" cy="640" r="120" fill="#E84F3B" opacity="0.6"/>
+
+  <!-- White rounded card with shadow -->
+  <g filter="url(#cardShadow)">
+    <rect x="120" y="95" width="960" height="440" rx="32" ry="32" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Eyebrow -->
+  <text x="176" y="165" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="22" fill="#0E5E6E" letter-spacing="3">ON TARGET ABA  &#183;  BLOG</text>
+
+  <!-- Title (up to 3 wrapped lines) -->
+  <text x="176" y="293.0" font-family="'Fraunces', Georgia, serif" font-weight="700" font-size="60" fill="#163243" letter-spacing="-0.5">From First Concern to Action:</text>
+    <text x="176" y="360.0" font-family="'Fraunces', Georgia, serif" font-weight="700" font-size="60" fill="#163243" letter-spacing="-0.5">What to Do When You Suspect Your</text>
+    <text x="176" y="427.0" font-family="'Fraunces', Georgia, serif" font-weight="700" font-size="60" fill="#163243" letter-spacing="-0.5">Child May Have Autism</text>
+
+  <!-- Footer attribution -->
+  <text x="176" y="485" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="500" font-size="24" fill="#34495E">On Target ABA &#8212; ABA Therapy &amp; Autism Testing</text>
+
+  <!-- Target / bullseye brand mark in bottom-right of card -->
+  <circle cx="1010" cy="465" r="34" fill="none" stroke="#0E5E6E" stroke-width="3"/>
+  <circle cx="1010" cy="465" r="22" fill="none" stroke="#0E5E6E" stroke-width="3"/>
+  <circle cx="1010" cy="465" r="11" fill="none" stroke="#0E5E6E" stroke-width="3"/>
+  <circle cx="1010" cy="465" r="5" fill="#E84F3B"/>
+</svg>

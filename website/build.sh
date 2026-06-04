@@ -8,8 +8,10 @@
 #
 # Steps:
 #   1. Re-scan assets/blog/*.md and rebuild assets/blog/index.json
-#   2. Re-generate sitemap.xml from index.json + the static-page registry
-#   3. Push fresh URLs to IndexNow (Bing / Yandex / Seznam / Naver)
+#   2. Generate per-page Open Graph SVGs into assets/og/ (Node, no deps)
+#   3. Re-inject schema.org JSON-LD + OG/Twitter meta into every HTML page
+#   4. Re-generate sitemap.xml from index.json + the static-page registry
+#   5. Push fresh URLs to IndexNow (Bing / Yandex / Seznam / Naver)
 #
 # The IndexNow ping is non-fatal: if the API is down or rate-limits the
 # deploy still succeeds. Pass `--all` (via SITEMAP_FULL_PING=1) on first
@@ -21,6 +23,12 @@ cd "$(dirname "$0")"
 
 echo "==> Building blog index..."
 python3 scripts/build-blog-index.py
+
+echo "==> Generating per-page Open Graph SVGs..."
+node scripts/gen-og-images.mjs
+
+echo "==> Re-injecting SEO meta + JSON-LD..."
+python3 scripts/inject-seo.py
 
 echo "==> Building sitemap.xml + robots.txt..."
 python3 scripts/build-sitemap.py

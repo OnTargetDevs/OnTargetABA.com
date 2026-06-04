@@ -31,11 +31,6 @@
 <meta name="twitter:description" id="seo-tw-description" content="ABA therapy &amp; autism resources for families." />
 <meta name="twitter:image" id="seo-tw-image" content="../assets/images/footerImg.png" />
 <script id="seo-jsonld" type="application/ld+json"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
-
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -59,6 +54,7 @@ tailwind.config = {
   }
 }
 </script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../assets/fonts/plus-jakarta-sans-600.woff2">
 <link rel="stylesheet" href="../assets/css/app.css" />
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js"></script>
@@ -128,6 +124,8 @@ tailwind.config = {
 </style>
 </head>
 <body class="bg-cream text-ink antialiased">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 <div id="progress"></div>
 
 <!-- ============ ANNOUNCEMENT BAR ============ -->
@@ -216,7 +214,7 @@ tailwind.config = {
 <!-- ============ ARTICLE ============ -->
 <article id="article" class="hidden">
   <!-- Hero -->
-  <section class="hero-bg relative overflow-hidden">
+  <section id="main-content" class="hero-bg relative overflow-hidden">
     <div class="blob blob-coral w-[360px] h-[360px] -left-32 top-40"></div>
     <div class="blob blob-sun w-[320px] h-[320px] -right-32 -top-10"></div>
     <div class="max-w-4xl mx-auto px-5 pt-12 pb-16 lg:pt-20 lg:pb-24 relative">
@@ -366,7 +364,7 @@ tailwind.config = {
   </div>
   <div class="border-t border-white/10">
     <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
-      <div>&copy;<span data-year>2026</span> ON TARGET ABA, LLC &middot; All rights reserved &middot; Operated by Target ABA, LLC</div>
+      <div>&copy;<span data-year>2026</span> ON TARGET ABA, LLC &middot; All rights reserved &middot; Operated by Target ABA, LLC &middot; Built by <a href="https://shalomkarr.pages.dev/" target="_blank" rel="noopener" class="hover:text-white underline underline-offset-2 transition">Shalom Karr</a></div>
       <div class="flex gap-5">
         <a href="../privacy-policy.html" class="hover:text-white">Privacy</a>
         <a href="../terms-of-service.html" class="hover:text-white">Terms</a>
@@ -485,10 +483,28 @@ tailwind.config = {
     set('seo-og-description', 'content', meta.excerpt || '');
     set('seo-tw-title', 'content', title);
     set('seo-tw-description', 'content', meta.excerpt || '');
-    if (meta.hero_image) {
-      set('seo-og-image', 'content', meta.hero_image);
-      set('seo-tw-image', 'content', meta.hero_image);
-    }
+
+    // Per-post Open Graph image: generated at build time by
+    // scripts/gen-og-images.mjs as a 1200x630 SVG. We probe it with
+    // Image() and fall back to footerImg.png if the request fails
+    // (the SVG hasn't been generated yet, CDN misroute, etc.).
+    const ogImg = '/assets/og/blog-' + slug + '.svg';
+    const fallbackImg = '../assets/images/footerImg.png';
+    const probe = new Image();
+    probe.onload = () => {
+      set('seo-og-image', 'content', ogImg);
+      set('seo-tw-image', 'content', ogImg);
+    };
+    probe.onerror = () => {
+      set('seo-og-image', 'content', fallbackImg);
+      set('seo-tw-image', 'content', fallbackImg);
+    };
+    probe.src = ogImg;
+    // Set immediately so crawlers reading the static head see the per-post
+    // image even before the probe resolves; the onerror fallback runs after.
+    set('seo-og-image', 'content', ogImg);
+    set('seo-tw-image', 'content', ogImg);
+
     if (meta.source_url) {
       set('seo-canonical', 'href', meta.source_url);
     }
@@ -508,8 +524,8 @@ tailwind.config = {
         logo: { '@type': 'ImageObject', url: 'https://ontargetaba.com/wp-content/uploads/2022/04/footerImg.png' }
       },
       mainEntityOfPage: meta.source_url || location.href,
+      image: [ogImg, fallbackImg],
     };
-    if (meta.hero_image) ld.image = meta.hero_image;
     const ldEl = document.getElementById('seo-jsonld');
     if (ldEl) ldEl.textContent = JSON.stringify(ld);
   }
@@ -575,6 +591,93 @@ tailwind.config = {
     update();
   }
 
+  // ---- Auto internal-linking --------------------------------------------
+  // Wrap the FIRST occurrence of each key phrase (case-insensitive, word
+  // boundary) in an <a> pointing at the matching internal page. Skips text
+  // inside existing <a>, <code>, <pre>, and heading tags. One link per
+  // phrase across the whole article.
+  const INTERNAL_LINK_MAP = [
+    ['ABA therapy',         '/our-services'],
+    ['autism testing',      '/autism-testing'],
+    ['autism evaluation',   '/autism-testing'],
+    ['BCBA',                '/our-process'],
+    ['early intervention',  '/early-intervention-autism-program'],
+    ['in-home ABA',         '/in-home-aba-therapy'],
+    ['center-based ABA',    '/center-based-aba-therapy'],
+    ['potty training',      '/potty-training-program'],
+    ['Salt Lake City',      '/murray-utah'],
+    ['Murray',              '/murray-utah'],
+    ['Cleveland',           '/locations'],
+    ['Columbus',            '/locations'],
+    ['insurance',           '/insurance'],
+  ];
+
+  function addInternalLinks(rootEl, map) {
+    if (!rootEl || !map || !map.length) return;
+    const SKIP = new Set(['A', 'CODE', 'PRE', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6']);
+    const linked = new Set(); // phrases already linked once
+
+    // Collect text nodes up front (TreeWalker can't be mutated mid-walk).
+    const nodes = [];
+    const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, {
+      acceptNode(n) {
+        if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        let p = n.parentNode;
+        while (p && p !== rootEl) {
+          if (p.nodeType === 1 && SKIP.has(p.tagName)) return NodeFilter.FILTER_REJECT;
+          p = p.parentNode;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    });
+    let cur;
+    while ((cur = walker.nextNode())) nodes.push(cur);
+
+    function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+    for (const node of nodes) {
+      let text = node.nodeValue;
+      // Find the earliest unlinked match in this node, repeat until none.
+      // Each phrase can be linked at most once across the whole article.
+      let mutated = false;
+      // We rebuild the node as a fragment so we can insert anchors.
+      const frag = document.createDocumentFragment();
+      let remaining = text;
+      // Find earliest match across all remaining phrases.
+      while (remaining.length) {
+        let bestPhrase = null;
+        let bestIdx = -1;
+        let bestLen = 0;
+        for (const [phrase, ] of map) {
+          if (linked.has(phrase)) continue;
+          const re = new RegExp('\\b' + escapeRe(phrase) + '\\b', 'i');
+          const m = re.exec(remaining);
+          if (m && (bestIdx === -1 || m.index < bestIdx)) {
+            bestPhrase = phrase;
+            bestIdx = m.index;
+            bestLen = m[0].length;
+          }
+        }
+        if (bestPhrase === null) break;
+        mutated = true;
+        const url = map.find(([p]) => p === bestPhrase)[1];
+        if (bestIdx > 0) frag.appendChild(document.createTextNode(remaining.slice(0, bestIdx)));
+        const a = document.createElement('a');
+        a.href = url;
+        a.textContent = remaining.substr(bestIdx, bestLen);
+        frag.appendChild(a);
+        linked.add(bestPhrase);
+        remaining = remaining.slice(bestIdx + bestLen);
+        if (linked.size === map.length) break;
+      }
+      if (mutated) {
+        if (remaining) frag.appendChild(document.createTextNode(remaining));
+        node.parentNode.replaceChild(frag, node);
+      }
+      if (linked.size === map.length) break;
+    }
+  }
+
   function loadRelated(currentSlug, currentCategory) {
     fetch('../assets/blog/index.json', { cache: 'no-cache' })
       .then(r => r.ok ? r.json() : null)
@@ -631,6 +734,9 @@ tailwind.config = {
         ADD_ATTR: ['target', 'rel'],
       });
       els.content.innerHTML = html;
+
+      // Auto-link key phrases to their canonical pages (one each, max).
+      addInternalLinks(els.content, INTERNAL_LINK_MAP);
 
       // External links open in new tab
       els.content.querySelectorAll('a[href^="http"]').forEach(a => {

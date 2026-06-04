@@ -4,6 +4,84 @@
    custom tokens, scroll animations, decorative effects.
    ========================================================= */
 
+/* =========================================================
+   Self-hosted fonts (Latin subset).
+   Files live in /assets/fonts/ and are fetched at build time
+   by scripts/setup-fonts.sh. Both families are variable
+   fonts; we still ship per-weight filenames so each
+   @font-face has a stable preload target.
+   ========================================================= */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('../fonts/plus-jakarta-sans-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('../fonts/plus-jakarta-sans-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('../fonts/plus-jakarta-sans-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('../fonts/plus-jakarta-sans-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Plus Jakarta Sans'), url('../fonts/plus-jakarta-sans-800.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Fraunces'), url('../fonts/fraunces-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Fraunces'), url('../fonts/fraunces-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Fraunces'), url('../fonts/fraunces-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Fraunces'), url('../fonts/fraunces-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Fraunces'), url('../fonts/fraunces-800.woff2') format('woff2');
+}
+
 :root {
   /* ====== On Target ABA brand palette ======
      Warmer / Figma-aligned tokens. Bright cyan kept as accent;
@@ -387,6 +465,26 @@ body {
   outline: 3px solid var(--c-sun);
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+/* =========== Skip-to-content link (a11y) =========== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 200;
+  background: var(--c-ink);
+  color: #fff;
+  padding: .75rem 1.2rem;
+  border-radius: 0 0 14px 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: top .2s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--c-sun);
+  outline-offset: 2px;
 }
 
 /* =========== Typography rhythm =========== */

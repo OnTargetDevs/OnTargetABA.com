@@ -145,6 +145,27 @@ the CF dashboard) to ping every URL after a large content change.
 
 **Order when running a refresh:** `download-assets` → `swap-logo` → `recolor` → `sync-tailwind-config` → `fix-encoding` → `inject-seo` → `build-blog-index` → `qa-check`.
 
+### Open Graph image pipeline
+
+Per-page 1200x630 OG share images are generated at build time by
+`scripts/gen-og-images.mjs` (Node ESM, stdlib only — CF Pages always has
+Node). Output lives in `website/assets/og/`: `home.svg`, `about.svg`,
+`autism-testing.svg`, `our-services.svg`, `locations.svg`, `contact.svg`,
+plus `blog-{slug}.svg` for every entry in `assets/blog/index.json`.
+
+The SVGs are pure templated XML — cream background, a sun arc top-right, a
+coral blob bottom-left, a white rounded card with the post title (Fraunces,
+wrapped to 3 lines), the "ON TARGET ABA · BLOG" eyebrow, and a bullseye mark
+in the corner. No Pillow/Sharp/Canvas dependency.
+
+`inject-seo.py` picks up the per-page SVG automatically (its
+`resolve_og_image()` looks for `assets/og/{page-slug}.svg` and falls back
+to `footerImg.png` if none exists). The blog post template
+(`blog/post.html`) sets `og:image`/`twitter:image` to
+`/assets/og/blog-${slug}.svg` at runtime and falls back to `footerImg.png`
+if the SVG fails to load. The script is idempotent (mtime-vs-index.json
+check) and runs after `build-blog-index.py` in `build.sh`.
+
 ## Things the user has corrected / preferred
 
 - **Real customer reviews only** — don't fabricate testimonials. Currently in the marquee (sources are real Google reviews provided by the user): S. R., A. D., C. S., D. M., Carmen E., Jack M., **Andreana Tadaj**, **Ruchie Kaplan** (Cleveland), **Zi Zi World Tarpeh** (Columbus airport).

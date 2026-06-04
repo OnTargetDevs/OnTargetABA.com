@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Pre-Intake Form &mdash; On Target ABA | Get Started Today</title>
 <meta name="description" content="Start your child's care at On Target ABA. Complete our quick pre-intake form for ABA therapy and autism evaluation. New Salt Lake City location now open." />
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
-
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -33,6 +28,7 @@ tailwind.config = {
   }
 }
 </script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/plus-jakarta-sans-600.woff2">
 <link rel="stylesheet" href="assets/css/app.css" />
 <!-- auto-seo-start -->
 <link rel="canonical" href="https://ontargetaba.com/pre-intake-form/" />
@@ -44,14 +40,14 @@ tailwind.config = {
 <meta property="og:site_name" content="On Target ABA" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content="https://ontargetaba.com/pre-intake-form/" />
-<meta property="og:title" content="Pre-Intake Form &mdash; Start Your ABA Therapy Journey" />
+<meta property="og:title" content="Pre-Intake Form — Start Your ABA Therapy Journey" />
 <meta property="og:description" content="Get started with On Target ABA in under 30 seconds. Quick pre-intake form so we can verify benefits and schedule fast." />
 <meta property="og:image" content="https://ontargetaba.com/wp-content/uploads/2022/04/footerImg.png" />
 <meta property="og:image:width" content="500" />
 <meta property="og:image:height" content="175" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@ontargetaba" />
-<meta name="twitter:title" content="Pre-Intake Form &mdash; Start Your ABA Therapy Journey" />
+<meta name="twitter:title" content="Pre-Intake Form — Start Your ABA Therapy Journey" />
 <meta name="twitter:description" content="Get started with On Target ABA in under 30 seconds. Quick pre-intake form so we can verify benefits and schedule fast." />
 <meta name="twitter:image" content="https://ontargetaba.com/wp-content/uploads/2022/04/footerImg.png" />
 <meta name="geo.region" content="US-UT" />
@@ -363,7 +359,7 @@ tailwind.config = {
       "@type": "WebPage",
       "@id": "https://ontargetaba.com/pre-intake-form/#webpage",
       "url": "https://ontargetaba.com/pre-intake-form/",
-      "name": "Pre-Intake Form &mdash; Start Your ABA Therapy Journey",
+      "name": "Pre-Intake Form — Start Your ABA Therapy Journey",
       "description": "Get started with On Target ABA in under 30 seconds. Quick pre-intake form so we can verify benefits and schedule fast.",
       "isPartOf": {
         "@id": "https://ontargetaba.com/#website"
@@ -410,6 +406,8 @@ tailwind.config = {
 <!-- auto-seo-end -->
 </head>
 <body class="bg-cream text-ink antialiased">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 
 <!-- ============ ANNOUNCEMENT BAR ============ -->
 <div class="bg-ink text-white text-sm">
@@ -482,9 +480,8 @@ tailwind.config = {
 </nav>
 <!-- auto-crumb-end -->
 
-
 <!-- ============ HERO ============ -->
-<section class="hero-bg relative overflow-hidden">
+<section id="main-content" class="hero-bg relative overflow-hidden">
   <div class="blob blob-coral w-[420px] h-[420px] -left-32 top-20"></div>
   <div class="blob blob-sun w-[380px] h-[380px] -right-32 -top-10"></div>
 
@@ -556,18 +553,38 @@ tailwind.config = {
 
 <!-- ============ FORM ============ -->
 <section class="py-16 lg:py-24">
-  <div class="max-w-4xl mx-auto px-5">
-    <div class="relative">
-      <div class="absolute -inset-4 lg:-inset-6 bg-coral-soft rounded-[40px] rotate-1 opacity-60"></div>
-      <div class="relative bg-white ring-1 ring-line rounded-[32px] p-4 sm:p-6 lg:p-8 shadow-soft overflow-hidden" data-jotform-wrap>
-        <script type="text/javascript" src="https://form.jotform.com/jsform/213614603878157"></script>
-        <noscript>
-          <div class="text-center py-10">
-            <p class="text-ink-soft mb-4">Our form needs JavaScript to load.</p>
-            <a href="https://form.jotform.com/213614603878157" target="_blank" rel="noopener" class="btn btn-coral">Open the form &rarr;</a>
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="grid lg:grid-cols-3 gap-8 items-start">
+      <!-- LEFT: Jotform -->
+      <div class="lg:col-span-2">
+        <div class="relative">
+          <div class="absolute -inset-4 lg:-inset-6 bg-coral-soft rounded-[40px] rotate-1 opacity-60"></div>
+          <div class="relative bg-white ring-1 ring-line rounded-[32px] p-4 sm:p-6 lg:p-8 shadow-soft overflow-hidden" data-jotform-wrap>
+            <script type="text/javascript" src="https://form.jotform.com/jsform/213614603878157"></script>
+            <noscript>
+              <div class="text-center py-10">
+                <p class="text-ink-soft mb-4">Our form needs JavaScript to load.</p>
+                <a href="https://form.jotform.com/213614603878157" target="_blank" rel="noopener" class="btn btn-coral">Open the form &rarr;</a>
+              </div>
+            </noscript>
           </div>
-        </noscript>
+        </div>
       </div>
+      <!-- RIGHT: Prefer to call -->
+      <aside class="lg:col-span-1 lg:sticky lg:top-24 bg-white ring-1 ring-line rounded-[28px] shadow-soft p-7" data-call-cta>
+        <div class="eyebrow inline-flex"><span class="dot"></span> Prefer to talk?</div>
+        <h3 class="mt-3 font-display text-2xl lg:text-3xl font-700 leading-tight">Skip the form. Call us and we&rsquo;ll do the rest.</h3>
+        <ul class="bullet-coral mt-5 text-[15px]">
+          <li>We pick up live during business hours</li>
+          <li>We verify insurance on the call</li>
+          <li>Get started in under 72 hours</li>
+        </ul>
+        <a href="tel:8889895011" class="btn btn-coral mt-6 w-full justify-center text-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          (888) 989-5011
+        </a>
+        <p class="mt-4 text-sm text-ink-soft text-center">Mon&ndash;Fri, 8:00 AM &ndash; 5:00 PM</p>
+      </aside>
     </div>
   </div>
 </section>
@@ -646,7 +663,7 @@ tailwind.config = {
 
   <div class="border-t border-white/10">
     <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
-      <div>&copy;<span data-year>2026</span> ON TARGET ABA, LLC &middot; All rights reserved &middot; Operated by Target ABA, LLC</div>
+      <div>&copy;<span data-year>2026</span> ON TARGET ABA, LLC &middot; All rights reserved &middot; Operated by Target ABA, LLC &middot; Built by <a href="https://shalomkarr.pages.dev/" target="_blank" rel="noopener" class="hover:text-white underline underline-offset-2 transition">Shalom Karr</a></div>
       <div class="flex gap-5">
         <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
         <a href="terms-of-service.html" class="hover:text-white">Terms</a>

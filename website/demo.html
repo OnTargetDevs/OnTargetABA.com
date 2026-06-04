@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Demo &mdash; Display font &amp; Hero device preview</title>
+
+<!-- Both display fonts loaded so the toggle is instant -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+
+<!-- Shared site stylesheet (unmodified) -->
+<link rel="stylesheet" href="assets/css/app.css">
+
+<!-- Tailwind via CDN, same config the rest of the site uses -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: { extend: { colors: {
+    ink:   { DEFAULT: '#163243', soft: '#34495E' },
+    teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+    coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+    sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+    sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+    cream: '#FAF5E6', mute: '#6B7E8F', line: '#E8DFD0'
+  }, fontFamily: {
+    sans:    ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+    display: ['Fraunces', 'Georgia', 'serif']
+  }}}
+}
+</script>
+
+<style>
+  /* =========================================================
+     DEMO-LOCAL OVERRIDES (scoped to this page only)
+     None of this leaks into the live site &mdash; demo.html is private.
+     ========================================================= */
+
+  :root {
+    --demo-display-font: 'Fraunces', Georgia, serif;
+    --demo-letter-spacing: -0.02em;
+  }
+
+  /* Honour the toggle. The shared .font-display rule in app.css
+     hard-codes Fraunces; this selector wins because of specificity
+     + same-cascade order (this stylesheet loads after app.css). */
+  body .font-display {
+    font-family: var(--demo-display-font) !important;
+    letter-spacing: var(--demo-letter-spacing);
+  }
+
+  /* When Bricolage is active, dial letter-spacing back &mdash; grotesques
+     don't want as much negative tracking as Fraunces. */
+  body[data-display="bricolage"] {
+    --demo-letter-spacing: -0.015em;
+  }
+
+  /* ============= Demo chrome ============= */
+  .demo-banner {
+    background: repeating-linear-gradient(135deg,
+      #163243 0 14px, #1d3e52 14px 28px);
+    color: #FAF5E6;
+  }
+  .demo-banner strong { color: #F4C842; }
+
+  .demo-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(250,245,230,.86);
+    border-bottom: 1px solid var(--c-line);
+  }
+
+  .seg {
+    display: inline-flex;
+    padding: 4px;
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: 999px;
+    box-shadow: var(--shadow-soft);
+  }
+  .seg button {
+    padding: .55rem 1.05rem;
+    border-radius: 999px;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--c-ink-soft);
+    transition: background .25s, color .25s, transform .15s;
+    white-space: nowrap;
+  }
+  .seg button:hover { color: var(--c-ink); }
+  .seg button[aria-pressed="true"] {
+    background: var(--c-ink);
+    color: #fff;
+  }
+  .seg button .meta {
+    font-size: .7rem;
+    font-weight: 500;
+    opacity: .7;
+    margin-left: .35rem;
+  }
+  .seg button[aria-pressed="true"] .meta { opacity: .85; }
+
+  .demo-card {
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .demo-section-tag {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .25rem .75rem;
+    border-radius: 999px;
+    font-size: .72rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase;
+  }
+  .tag-current  { background: #EEF2F6; color: var(--c-ink-soft); }
+  .tag-proposed { background: var(--c-sun-soft); color: #6E5612; }
+
+  /* =========================================================
+     YELLOW-SUN HERO DEVICE  (Change 2 &mdash; proposed)
+     A 520px sun disk + child photo + bullseye dots + squiggle.
+     ========================================================= */
+  .sun-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.05;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+  .sun-disk {
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    width: 92%;
+    aspect-ratio: 1/1;
+    transform: translate(-50%, -50%);
+    background: #F4C842;
+    border-radius: 999px;
+    box-shadow:
+      0 24px 60px rgba(244,200,66,.40),
+      0 8px 18px rgba(11,34,51,.06);
+  }
+  /* Inner highlight ring on the disk &mdash; subtle, just to give weight */
+  .sun-disk::after {
+    content: '';
+    position: absolute;
+    inset: 18px;
+    border-radius: 999px;
+    border: 1px dashed rgba(255,255,255,.55);
+    opacity: .65;
+  }
+  .sun-child {
+    position: absolute;
+    left: 50%;
+    bottom: -2%;
+    transform: translateX(-50%);
+    width: 78%;
+    z-index: 2;
+    /* Soft drop so the child reads off the yellow */
+    filter: drop-shadow(0 18px 28px rgba(11,34,51,.18));
+    /* Crop a little &mdash; the asset has background; mask isn't reliable,
+       so we just rely on the photo's content and bring it forward. */
+    border-radius: 24px;
+  }
+
+  /* Bullseye ornaments &mdash; small concentric dots scattered around */
+  .ornament {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .ornament svg { display: block; }
+
+  /* Soft coral squiggle behind the disk corner */
+  .squiggle {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Tiny floating loop on one bullseye */
+  @keyframes demo-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+  }
+  .demo-float { animation: demo-float 6s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .demo-float { animation: none; }
+  }
+
+  /* =========================================================
+     TARGET-MARK HERO  (Change 2 &mdash; current/status quo)
+     Re-uses .target-mark from app.css; only adds layout chrome.
+     ========================================================= */
+  .target-stage {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+    aspect-ratio: 1/1;
+  }
+  .target-stage .target-mark { width: 100%; height: 100%; }
+
+  /* =========================================================
+     Stat cards for Section B
+     ========================================================= */
+  .stat-card {
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: var(--r-lg);
+    padding: 1.25rem 1.4rem;
+    box-shadow: var(--shadow-soft);
+  }
+  .stat-card .num {
+    font-family: var(--demo-display-font);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    line-height: 1;
+    color: var(--c-coral);
+    letter-spacing: var(--demo-letter-spacing);
+  }
+
+  /* Side label down the page edge */
+  .edge-label {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--c-ink-soft);
+    background: rgba(255,255,255,.7);
+    padding: .35rem .7rem;
+    border-radius: 999px;
+    border: 1px solid var(--c-line);
+  }
+
+  /* Diff bar separating each scenario */
+  .diff-bar {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--c-line), transparent);
+    margin: 4rem auto 0;
+    max-width: 60rem;
+  }
+
+  /* Side-by-side font sample */
+  .font-sample {
+    border: 1px solid var(--c-line);
+    border-radius: var(--r-md);
+    padding: 1rem 1.2rem;
+    background: #fff;
+  }
+  .font-sample .fs-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--c-mute);
+    margin-bottom: .35rem;
+  }
+  .font-sample .fs-line-fraunces {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .font-sample .fs-line-bricolage {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+</style>
+</head>
+
+<body class="font-sans text-ink" data-display="fraunces" data-hero="target">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+<!-- ============================================================
+     1) Local-preview banner
+     ============================================================ -->
+<div class="demo-banner text-center text-sm py-2 px-4 font-medium">
+  <strong>LOCAL PREVIEW</strong>
+  &nbsp;&middot;&nbsp; This file is private to your machine. It is <em>not</em> deployed,
+  <em>not</em> in the sitemap, and <em>not</em> linked from any other page.
+  &nbsp;&middot;&nbsp; <span class="opacity-80">Open with <code class="bg-black/30 px-1.5 py-0.5 rounded">start website/demo.html</code></span>
+</div>
+
+<!-- ============================================================
+     2) Sticky toolbar with the two A/B segmented controls
+     ============================================================ -->
+<div class="demo-toolbar">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col lg:flex-row gap-3 lg:gap-6 lg:items-center lg:justify-between">
+
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-7 w-auto" />
+      <span class="text-xs font-bold tracking-[.18em] text-ink-soft uppercase">UI Preview</span>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-5 sm:items-center">
+
+      <!-- Display font control -->
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-bold tracking-[.14em] text-ink-soft uppercase">Display font</span>
+        <div class="seg" role="group" aria-label="Display font">
+          <button type="button" data-font="fraunces"  aria-pressed="true">Fraunces<span class="meta">current</span></button>
+          <button type="button" data-font="bricolage" aria-pressed="false">Bricolage<span class="meta">proposed</span></button>
+        </div>
+      </div>
+
+      <!-- Hero visual control -->
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-bold tracking-[.14em] text-ink-soft uppercase">Hero visual</span>
+        <div class="seg" role="group" aria-label="Hero visual">
+          <button type="button" data-hero="target" aria-pressed="true">Target mark<span class="meta">current</span></button>
+          <button type="button" data-hero="sun"    aria-pressed="false">Yellow sun<span class="meta">proposed</span></button>
+        </div>
+      </div>
+
+      <button type="button" id="resetBtn"
+              class="text-xs font-semibold text-ink-soft hover:text-coral underline underline-offset-2 decoration-dotted">
+        Reset to current
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     3) Intro card &mdash; what the user is comparing
+     ============================================================ -->
+<section id="main-content" class="max-w-5xl mx-auto px-4 sm:px-6 pt-10 pb-2">
+  <div class="demo-card p-6 sm:p-8">
+    <div class="flex items-start gap-4">
+      <div class="hidden sm:flex w-12 h-12 rounded-full bg-sun-soft items-center justify-center flex-shrink-0">
+        <svg viewBox="0 0 24 24" class="w-6 h-6" fill="none" stroke="#163243" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      </div>
+      <div>
+        <h1 class="font-display text-2xl sm:text-3xl font-bold leading-tight">Two changes, side-by-side</h1>
+        <p class="text-ink-soft mt-2 max-w-3xl">
+          Flip the toggles above to swap between the current look and the proposed look.
+          Choices are remembered between refreshes. Below you&rsquo;ll find two mock hero
+          sections &mdash; one for the homepage, one for the autism-testing page &mdash;
+          rendered with whatever combination is active.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs">
+          <span class="px-3 py-1 rounded-full bg-teal-soft text-teal-deep font-semibold">Change&nbsp;1 &middot; Display font</span>
+          <span class="px-3 py-1 rounded-full bg-coral-soft text-coral font-semibold">Change&nbsp;2 &middot; Hero device</span>
+          <span class="px-3 py-1 rounded-full bg-sage-soft text-ink-soft font-semibold">No other pages touched</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4) DISPLAY-FONT side-by-side comparison card
+     ============================================================ -->
+<section class="max-w-5xl mx-auto px-4 sm:px-6 pt-8">
+  <div class="demo-card p-6 sm:p-8">
+    <div class="flex flex-wrap items-baseline justify-between gap-3 mb-5">
+      <h2 class="font-display text-xl sm:text-2xl font-bold">Display font, head-to-head</h2>
+      <span class="text-xs text-mute">Same headline, same weight, same size.</span>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="font-sample">
+        <div class="fs-label">Fraunces &middot; current</div>
+        <div class="fs-line-fraunces text-3xl sm:text-4xl leading-tight">
+          ABA therapy to help your child <em class="text-coral not-italic" style="font-style:italic">succeed</em>.
+        </div>
+        <p class="text-xs text-mute mt-2">Refined, slightly old-style. Wider counters; more contrast in stroke width.</p>
+      </div>
+      <div class="font-sample">
+        <div class="fs-label">Bricolage Grotesque &middot; proposed</div>
+        <div class="fs-line-bricolage text-3xl sm:text-4xl leading-tight">
+          ABA therapy to help your child <em class="text-coral not-italic" style="font-style:italic">succeed</em>.
+        </div>
+        <p class="text-xs text-mute mt-2">Chunkier humanist sans &mdash; closer to the Figma direction. Bolder presence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     5) SECTION A &mdash; Homepage-style hero (responds to toggles)
+     ============================================================ -->
+<section class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-14">
+  <div class="flex items-center justify-between mb-4">
+    <span class="demo-section-tag tag-current">Section A &middot; Homepage hero</span>
+    <span class="text-xs text-mute">Both toggles affect this section.</span>
+  </div>
+
+  <div class="hero-bg relative overflow-hidden rounded-[32px] border border-line">
+    <span class="edge-label">Live preview</span>
+
+    <!-- decorative blobs (same pattern as the live site) -->
+    <div class="blob blob-sun"   style="width:320px;height:320px;right:-60px;top:-60px;"></div>
+    <div class="blob blob-coral" style="width:280px;height:280px;left:-80px;bottom:-80px;"></div>
+
+    <div class="relative grid lg:grid-cols-12 gap-10 lg:gap-8 items-center px-6 sm:px-10 py-14 lg:py-20">
+
+      <!-- Copy column -->
+      <div class="lg:col-span-7">
+        <span class="eyebrow"><span class="dot"></span>Trusted by Utah families since 2010</span>
+
+        <h2 class="font-display font-bold mt-5 leading-[1.05] text-4xl sm:text-5xl lg:text-6xl text-ink">
+          ABA therapy to help your child <em class="text-coral" style="font-style:italic">succeed</em>
+          at home, at school&hellip; and at all times.
+        </h2>
+
+        <p class="mt-5 text-lg text-ink-soft max-w-xl">
+          One-to-one, in-home and clinic-based applied behavior analysis from a team
+          that treats every family like their first. Most major insurances accepted.
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#" class="btn btn-coral">Start a free consult &rarr;</a>
+          <a href="#" class="btn btn-ghost">See our locations</a>
+        </div>
+
+        <!-- Proof row -->
+        <div class="mt-10 grid grid-cols-3 gap-4 max-w-lg">
+          <div>
+            <div class="font-display font-bold text-3xl text-ink">15+</div>
+            <div class="text-xs uppercase tracking-wider text-mute mt-1">Years serving families</div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-3xl text-ink">4 clinics</div>
+            <div class="text-xs uppercase tracking-wider text-mute mt-1">UT &amp; OH locations</div>
+          </div>
+          <div>
+            <div class="font-display font-bold text-3xl text-ink">No waitlist</div>
+            <div class="text-xs uppercase tracking-wider text-mute mt-1">Eval within 2 weeks</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual column &mdash; flips between target mark and yellow sun -->
+      <div class="lg:col-span-5 relative">
+
+        <!-- Variant 1: TARGET MARK (current) -->
+        <div data-variant="target" class="target-stage">
+          <div class="target-mark">
+            <div class="target-overlay">
+              <div>
+                <div class="tm-kicker">On Target</div>
+                <div class="tm-figure">A+</div>
+                <div class="tm-foot">Outcomes that matter</div>
+              </div>
+            </div>
+          </div>
+          <!-- the pulsing ring around it -->
+          <div class="absolute inset-0 pulse-ring pointer-events-none rounded-full"></div>
+        </div>
+
+        <!-- Variant 2: YELLOW-SUN DEVICE (proposed) -->
+        <div data-variant="sun" class="sun-stage hidden">
+
+          <!-- Coral squiggle tucked behind the disk -->
+          <svg class="squiggle" style="bottom:8%; right:-4%; width:38%;" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 30 C 30 4, 60 56, 90 30 S 150 4, 196 30"
+                  stroke="#E84F3B" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </svg>
+
+          <!-- The disk -->
+          <div class="sun-disk"></div>
+
+          <!-- The child -->
+          <img class="sun-child"
+               src="assets/images/jessica-rockowitz-jbiInQGY8og-unsplash.png"
+               alt="Smiling child"
+               loading="lazy" />
+
+          <!-- Bullseye ornaments &mdash; small concentric dots -->
+          <span class="ornament demo-float" style="top:6%; left:4%;">
+            <svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true">
+              <circle cx="28" cy="28" r="26" fill="none" stroke="#00B7EA" stroke-width="3"/>
+              <circle cx="28" cy="28" r="16" fill="none" stroke="#00B7EA" stroke-width="3"/>
+              <circle cx="28" cy="28" r="6"  fill="#00B7EA"/>
+            </svg>
+          </span>
+
+          <span class="ornament" style="top:14%; right:2%;">
+            <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="20" r="18" fill="none" stroke="#E84F3B" stroke-width="2.5"/>
+              <circle cx="20" cy="20" r="6"  fill="#E84F3B"/>
+            </svg>
+          </span>
+
+          <span class="ornament" style="bottom:8%; left:1%;">
+            <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+              <circle cx="17" cy="17" r="15" fill="none" stroke="#0E5E6E" stroke-width="2"/>
+              <circle cx="17" cy="17" r="5"  fill="#0E5E6E"/>
+            </svg>
+          </span>
+
+          <!-- A loose star/sparkle for warmth -->
+          <span class="ornament demo-float" style="top:40%; right:-3%;">
+            <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M16 2 L18 14 L30 16 L18 18 L16 30 L14 18 L2 16 L14 14 Z"
+                    fill="#F4C842" stroke="#163243" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Explainer beneath Section A -->
+  <div class="demo-card p-5 sm:p-6 mt-5">
+    <div class="flex items-start gap-4">
+      <div class="w-9 h-9 rounded-full bg-coral-soft text-coral flex items-center justify-center font-bold flex-shrink-0">A</div>
+      <div>
+        <h3 class="font-semibold text-ink">What you&rsquo;re looking at</h3>
+        <p class="text-sm text-ink-soft mt-1 leading-relaxed">
+          This is the current homepage headline rendered with the active toggles.
+          Switch &ldquo;Display font&rdquo; to see the chunkier Bricolage Grotesque applied
+          to the H1, the stat figures, and the eyebrow numerals. Switch &ldquo;Hero visual&rdquo;
+          to swap the target-mark roundel for the new yellow-sun device with child photo.
+        </p>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">
+          <strong class="text-ink">Tradeoff &mdash; font:</strong>
+          Fraunces feels editorial and clinical-trustworthy; Bricolage feels modern,
+          tactile, and closer to the Figma board. Body type stays Plus Jakarta Sans
+          in both cases so paragraph rhythm is identical.
+        </p>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">
+          <strong class="text-ink">Tradeoff &mdash; hero:</strong>
+          The target mark is brand-distinctive and works without photography.
+          The yellow-sun device leads with a child&rsquo;s face &mdash; warmer, more emotional,
+          stronger on real outcomes. It also needs a curated photo per page.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="diff-bar"></div>
+
+<!-- ============================================================
+     6) SECTION B &mdash; Autism-testing-style hero
+     ============================================================ -->
+<section class="relative max-w-7xl mx-auto px-4 sm:px-6 pt-14 pb-4">
+  <div class="flex items-center justify-between mb-4">
+    <span class="demo-section-tag tag-proposed">Section B &middot; Autism-testing hero</span>
+    <span class="text-xs text-mute">Same toggles apply.</span>
+  </div>
+
+  <div class="relative overflow-hidden rounded-[32px] border border-line"
+       style="background: linear-gradient(180deg, #FFFDF6 0%, var(--c-cream) 100%);">
+
+    <span class="edge-label">Live preview</span>
+
+    <!-- decorative blobs -->
+    <div class="blob blob-teal" style="width:320px;height:320px;right:-90px;bottom:-90px;opacity:.35;"></div>
+    <div class="blob blob-sun"  style="width:240px;height:240px;left:30%;top:-100px;opacity:.4;"></div>
+
+    <div class="relative grid lg:grid-cols-12 gap-10 lg:gap-8 items-center px-6 sm:px-10 py-14 lg:py-20">
+
+      <!-- Visual column FIRST on this hero so the layout differs from A -->
+      <div class="lg:col-span-5 relative order-2 lg:order-1">
+
+        <!-- Variant 1: TARGET MARK (current) -->
+        <div data-variant="target" class="target-stage">
+          <div class="target-mark">
+            <div class="target-overlay">
+              <div>
+                <div class="tm-kicker">Waitlist?</div>
+                <div class="tm-figure">0</div>
+                <div class="tm-foot">Days. We&rsquo;re scheduling now.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Variant 2: YELLOW-SUN DEVICE (proposed) -->
+        <div data-variant="sun" class="sun-stage hidden">
+
+          <svg class="squiggle" style="top:8%; left:-6%; width:42%;" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 30 C 30 4, 60 56, 90 30 S 150 4, 196 30"
+                  stroke="#E84F3B" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </svg>
+
+          <div class="sun-disk"></div>
+
+          <img class="sun-child"
+               src="assets/images/jessica-rockowitz-jbiInQGY8og-unsplash.png"
+               alt="Smiling child"
+               loading="lazy" />
+
+          <span class="ornament" style="top:8%; right:6%;">
+            <svg width="58" height="58" viewBox="0 0 58 58" aria-hidden="true">
+              <circle cx="29" cy="29" r="27" fill="none" stroke="#00B7EA" stroke-width="3"/>
+              <circle cx="29" cy="29" r="17" fill="none" stroke="#00B7EA" stroke-width="3"/>
+              <circle cx="29" cy="29" r="7"  fill="#00B7EA"/>
+            </svg>
+          </span>
+
+          <span class="ornament demo-float" style="bottom:14%; right:-2%;">
+            <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+              <circle cx="22" cy="22" r="20" fill="none" stroke="#E84F3B" stroke-width="3"/>
+              <circle cx="22" cy="22" r="7"  fill="#E84F3B"/>
+            </svg>
+          </span>
+
+          <span class="ornament" style="bottom:4%; left:8%;">
+            <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+              <circle cx="15" cy="15" r="13" fill="none" stroke="#0E5E6E" stroke-width="2"/>
+              <circle cx="15" cy="15" r="4"  fill="#0E5E6E"/>
+            </svg>
+          </span>
+
+          <span class="ornament demo-float" style="top:46%; left:-4%;">
+            <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+              <path d="M14 2 L16 12 L26 14 L16 16 L14 26 L12 16 L2 14 L12 12 Z"
+                    fill="#F4C842" stroke="#163243" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- Copy column -->
+      <div class="lg:col-span-7 order-1 lg:order-2">
+        <span class="eyebrow"><span class="dot"></span>Utah autism evaluations</span>
+
+        <h2 class="font-display font-bold mt-5 leading-[1.05] text-4xl sm:text-5xl lg:text-6xl text-ink">
+          Autism Testing with <em class="text-coral" style="font-style:italic">NO Waitlist.</em>
+        </h2>
+
+        <p class="mt-5 text-lg text-ink-soft max-w-xl">
+          Full diagnostic evaluation in days, not months. Board-certified clinicians,
+          insurance coordination, and a written report you can hand to a school district
+          the same week.
+        </p>
+
+        <!-- Stat row (3 cards) -->
+        <div class="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="stat-card">
+            <div class="num">0</div>
+            <div class="text-sm font-semibold text-ink mt-1">Day waitlist</div>
+            <div class="text-xs text-mute mt-1">Schedule this week.</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">2&ndash;3</div>
+            <div class="text-sm font-semibold text-ink mt-1">Hour evaluation</div>
+            <div class="text-xs text-mute mt-1">In one session, not five.</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">7d</div>
+            <div class="text-sm font-semibold text-ink mt-1">Report turnaround</div>
+            <div class="text-xs text-mute mt-1">Hand-delivered, school-ready.</div>
+          </div>
+        </div>
+
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="#" class="btn btn-coral">Book an evaluation &rarr;</a>
+          <a href="#" class="btn btn-sun">Call (888) 989-5011</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explainer beneath Section B -->
+  <div class="demo-card p-5 sm:p-6 mt-5">
+    <div class="flex items-start gap-4">
+      <div class="w-9 h-9 rounded-full bg-teal-soft text-teal-deep flex items-center justify-center font-bold flex-shrink-0">B</div>
+      <div>
+        <h3 class="font-semibold text-ink">What you&rsquo;re looking at</h3>
+        <p class="text-sm text-ink-soft mt-1 leading-relaxed">
+          A second hero treatment for the autism-testing page, with the visual moved to
+          the left and three stat cards anchoring the right column. This is the layout
+          where the yellow-sun device shines &mdash; the child&rsquo;s face directly answers the
+          question &ldquo;will my kid be okay here?&rdquo; faster than any roundel can.
+        </p>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">
+          <strong class="text-ink">Notice how the stat numerals (0, 2&ndash;3, 7d)</strong>
+          pick up the active display font. With Bricolage the figures feel chunkier
+          and more poster-like; with Fraunces they feel editorial.
+        </p>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">
+          <strong class="text-ink">Decision criteria:</strong> if the brand wants to
+          lean into &ldquo;warm, modern, family-first,&rdquo; Bricolage + yellow-sun is
+          the move. If it wants to stay closer to the medical/clinical lane it&rsquo;s in
+          today, Fraunces + target-mark stays.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7) Summary footer
+     ============================================================ -->
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-14">
+  <div class="demo-card p-6 sm:p-8">
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div>
+        <div class="text-xs font-bold tracking-[.18em] text-mute uppercase">Currently viewing</div>
+        <div class="font-display font-bold text-2xl mt-2">
+          <span id="summary-font">Fraunces</span>
+          &nbsp;<span class="text-mute">+</span>&nbsp;
+          <span id="summary-hero">Target mark</span>
+        </div>
+        <p class="text-sm text-ink-soft mt-2">
+          To make this the site-wide default, the relevant change is a one-line swap
+          in <code class="bg-cream px-1.5 py-0.5 rounded text-xs">assets/css/app.css</code>
+          for the font, and a per-page hero refactor for the visual.
+        </p>
+      </div>
+      <div class="border-l border-line pl-6">
+        <div class="text-xs font-bold tracking-[.18em] text-mute uppercase">Notes</div>
+        <ul class="text-sm text-ink-soft mt-2 space-y-1.5 list-disc list-inside">
+          <li>Your choice persists in <code class="bg-cream px-1.5 py-0.5 rounded text-xs">localStorage</code>.</li>
+          <li>Both fonts are loaded up front so the swap is instant.</li>
+          <li>No other file on the site has been edited.</li>
+          <li>Delete <code class="bg-cream px-1.5 py-0.5 rounded text-xs">demo.html</code> when you&rsquo;re done.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-center text-xs text-mute mt-8">
+    Demo built for On Target ABA &middot; <span id="dt"></span> &middot; not committed, not deployed.
+  </p>
+</section>
+
+<!-- ============================================================
+     8) Toggle logic
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  var STORAGE_KEY_FONT = 'demo.displayFont';
+  var STORAGE_KEY_HERO = 'demo.heroVisual';
+
+  var body = document.body;
+
+  var fontMap = {
+    fraunces:  "'Fraunces', Georgia, serif",
+    bricolage: "'Bricolage Grotesque', 'Plus Jakarta Sans', system-ui, sans-serif"
+  };
+  var fontLabel = {
+    fraunces:  'Fraunces',
+    bricolage: 'Bricolage Grotesque'
+  };
+  var heroLabel = {
+    target: 'Target mark',
+    sun:    'Yellow sun'
+  };
+
+  function applyFont(val) {
+    if (!fontMap[val]) val = 'fraunces';
+    body.setAttribute('data-display', val);
+    document.documentElement.style.setProperty('--demo-display-font', fontMap[val]);
+    document.querySelectorAll('[data-font]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.dataset.font === val ? 'true' : 'false');
+    });
+    var s = document.getElementById('summary-font');
+    if (s) s.textContent = fontLabel[val];
+  }
+
+  function applyHero(val) {
+    if (!heroLabel[val]) val = 'target';
+    body.setAttribute('data-hero', val);
+    document.querySelectorAll('[data-variant]').forEach(function (el) {
+      if (el.dataset.variant === val) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+    document.querySelectorAll('[data-hero]').forEach(function (b) {
+      // skip the body which also has data-hero
+      if (b === body) return;
+      b.setAttribute('aria-pressed', b.dataset.hero === val ? 'true' : 'false');
+    });
+    var s = document.getElementById('summary-hero');
+    if (s) s.textContent = heroLabel[val];
+  }
+
+  function read(key, fallback) {
+    try {
+      var v = localStorage.getItem(key);
+      return v || fallback;
+    } catch (e) { return fallback; }
+  }
+  function write(key, val) {
+    try { localStorage.setItem(key, val); } catch (e) {}
+  }
+
+  // Initial state from localStorage (defaults to current site look)
+  applyFont(read(STORAGE_KEY_FONT, 'fraunces'));
+  applyHero(read(STORAGE_KEY_HERO, 'target'));
+
+  // Wire the segmented controls
+  document.querySelectorAll('.seg button[data-font]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      applyFont(b.dataset.font);
+      write(STORAGE_KEY_FONT, b.dataset.font);
+    });
+  });
+  document.querySelectorAll('.seg button[data-hero]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      applyHero(b.dataset.hero);
+      write(STORAGE_KEY_HERO, b.dataset.hero);
+    });
+  });
+
+  // Reset button
+  var resetBtn = document.getElementById('resetBtn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      applyFont('fraunces'); write(STORAGE_KEY_FONT, 'fraunces');
+      applyHero('target');   write(STORAGE_KEY_HERO, 'target');
+    });
+  }
+
+  // Footer timestamp
+  var dt = document.getElementById('dt');
+  if (dt) {
+    var d = new Date();
+    dt.textContent = d.toLocaleDateString(undefined,
+      { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+})();
+</script>
+
+</body>
+</html>
