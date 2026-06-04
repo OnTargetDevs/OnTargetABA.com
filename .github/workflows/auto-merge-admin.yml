@@ -1,0 +1,110 @@
+name: Auto-merge admin PRs
+
+# Fires when the validate-content workflow finishes on any branch.
+# If the run was on a PR whose head branch starts with "admin/" and the
+# validate-content workflow succeeded, this workflow squash-merges the
+# PR automatically. Combined with the auto-purge-cache workflow on the
+# resulting push to main, an admin edit becomes a fully hands-off
+# round trip: Save in the UI → PR opens → checks run → PR merges →
+# CF Pages rebuilds → CDN cache purges → live.
+#
+# This is the free-plan equivalent of GitHub's native auto-merge (which
+# requires Pro on a private repo).
+
+on:
+  workflow_run:
+    workflows: ["validate-content"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to evaluate (debug)'
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+jobs:
+  evaluate-and-merge:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Find the PR for this workflow run
+        id: find
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            const event = context.eventName;
+            let pr = null;
+
+            if (event === 'workflow_dispatch') {
+              const num = parseInt(context.payload.inputs?.pr_number || '0', 10);
+              if (num) {
+                pr = (await github.rest.pulls.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: num,
+                })).data;
+              }
+            } else {
+              // workflow_run gives us head_branch + head_sha. Find an open
+              // PR whose head matches.
+              const branch = run.head_branch;
+              if (!branch || !branch.startsWith('admin/')) {
+                core.notice(`head branch "${branch}" doesn't start with admin/ — skipping`);
+                return;
+              }
+              const list = await github.rest.pulls.list({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                head: `${context.repo.owner}:${branch}`,
+              });
+              pr = list.data[0] || null;
+            }
+
+            if (!pr) {
+              core.notice('no matching open PR — nothing to merge');
+              return;
+            }
+            if (!pr.head.ref.startsWith('admin/')) {
+              core.notice(`PR #${pr.number} head "${pr.head.ref}" not an admin/* branch — skipping`);
+              return;
+            }
+            core.setOutput('number', pr.number);
+            core.setOutput('head_ref', pr.head.ref);
+            core.setOutput('mergeable', String(pr.mergeable_state || ''));
+            core.info(`will merge PR #${pr.number} (${pr.head.ref}) state=${pr.mergeable_state}`);
+
+      - name: Squash-merge the PR
+        if: ${{ steps.find.outputs.number != '' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const number = parseInt('${{ steps.find.outputs.number }}', 10);
+            // Give GitHub a moment to compute mergeable state after the run.
+            for (let i = 0; i < 6; i++) {
+              const { data } = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: number,
+              });
+              if (data.mergeable === true) break;
+              if (data.mergeable === false) {
+                core.setFailed(`PR #${number} is not mergeable (conflicts)`);
+                return;
+              }
+              core.info(`mergeable=${data.mergeable} mergeable_state=${data.mergeable_state} — waiting...`);
+              await new Promise(r => setTimeout(r, 5000));
+            }
+            const res = await github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: number,
+              merge_method: 'squash',
+            });
+            core.info(`merged: ${res.data.sha}`);
