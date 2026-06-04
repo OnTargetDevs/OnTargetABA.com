@@ -1,0 +1,7 @@
+# On Target ABA
+User-agent: *
+Allow: /
+
+# Bots that misbehave can be blocked individually here.
+
+Sitemap: https://ontargetaba.com/sitemap.xml
