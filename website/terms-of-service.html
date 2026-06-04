@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of Service — On Target ABA</title>
+<meta name="description" content="On Target ABA Terms of Service: prohibited uses, warranties, liability, intellectual property, governing law, and more." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing — most families pay $0 →</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center gap-2.5 group">
+      <span class="relative inline-grid place-items-center w-10 h-10 rounded-full bg-white shadow ring-1 ring-line">
+        <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6B47 0 22%, #fff 22% 38%, #0E4D6E 38% 54%, #fff 54% 70%, #0A3A55 70%)"></span>
+      </span>
+      <span class="leading-tight">
+        <span class="block font-extrabold tracking-tight text-ink">On Target<span class="text-coral">.</span></span>
+        <span class="block text-[10px] tracking-[0.22em] text-mute font-semibold">A B A &nbsp; T H E R A P Y</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="relative overflow-hidden border-b border-line bg-white">
+  <div class="blob blob-sun w-[380px] h-[380px] -left-24 -top-16 opacity-40"></div>
+  <div class="blob blob-coral w-[320px] h-[320px] -right-24 top-10 opacity-40"></div>
+  <div class="max-w-4xl mx-auto px-5 pt-16 pb-14 lg:pt-24 lg:pb-20 relative">
+    <div class="reveal eyebrow"><span class="dot"></span> Legal</div>
+    <h1 class="reveal reveal-delay-1 mt-5 font-display text-[42px] sm:text-[56px] lg:text-[64px] leading-[1.05] font-700 tracking-tight">
+      Terms of <span class="italic text-coral font-600">Service</span>
+    </h1>
+    <p class="reveal reveal-delay-2 mt-5 text-lg text-ink-soft max-w-2xl">
+      Rules and conditions for using the On Target ABA website. By accessing the Website you agree to these Terms.
+    </p>
+    <div class="reveal reveal-delay-3 mt-6 flex flex-wrap items-center gap-4 text-sm text-mute">
+      <span class="inline-flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-coral"></span> On Target ABA LLC</span>
+      <span class="hidden sm:inline text-line">•</span>
+      <span>Governed by the laws of the State of Ohio</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTENT ============ -->
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-12 gap-12">
+
+    <!-- Sticky TOC -->
+    <aside class="lg:col-span-3 hidden lg:block">
+      <div class="sticky top-24">
+        <div class="text-xs uppercase tracking-widest text-mute font-semibold mb-4">On this page</div>
+        <nav class="grid gap-1.5 text-sm">
+          <a href="#prohibited" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Prohibited uses</a>
+          <a href="#warranty" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">No warranty</a>
+          <a href="#availability" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Availability &amp; errors</a>
+          <a href="#liability" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Damages &amp; liability</a>
+          <a href="#links" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Third party links</a>
+          <a href="#ip" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Intellectual property</a>
+          <a href="#sms-opt-out" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">SMS opt-out</a>
+          <a href="#frequency" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Message frequency</a>
+          <a href="#code" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Code of conduct</a>
+          <a href="#governing" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Governing law</a>
+          <a href="#changes" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Changes</a>
+          <a href="#age" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Age restriction</a>
+          <a href="#contact" class="text-ink-soft hover:text-coral py-1.5 border-l-2 border-line hover:border-coral pl-3 transition">Contact</a>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- Article -->
+    <article class="lg:col-span-9 max-w-4xl prose-soft">
+
+      <section id="prohibited" class="reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight mt-0">Prohibited uses</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">You agree that you will use this Website in accordance with all applicable laws, rules, regulations and these Terms at all times. The following is a non-exhaustive list of prohibited uses of this Website. You agree that you will not perform any of the following prohibited uses:</p>
+        <ol class="mt-6 space-y-3 text-ink-soft leading-relaxed list-decimal pl-5">
+          <li>Impersonating or attempting to impersonate On Target ABA LLC or its employees, representatives, subsidiaries or divisions;</li>
+          <li>Misrepresenting your identity or affiliation with any person or entity;</li>
+          <li>Sending or attempting to send any advertising or promotional material, including but not limited to spam, junk mail, chain mail or any similar material;</li>
+          <li>Engaging in any conduct that restricts or inhibits any person's use or enjoyment of the Website, or which, as determined in our sole discretion, may harm us or the users of this Website or expose us or other users to liability;</li>
+          <li>Using the Website in any manner that could disable, overburden, damage or impair the Website or interfere with another party's use of the Website;</li>
+          <li>Using any robot, spider or other similar automatic technology, process or means to access or use the Website for any purpose, including monitoring or copying any of the material on this Website;</li>
+          <li>Using any manual process or means to monitor or copy any of the material on this Website or for any other unauthorized purpose;</li>
+          <li>Using any device, software, means or routine that interferes with the proper working of the Website, including but not limited to viruses, trojan horses, worms, logic bombs or other such materials;</li>
+          <li>Attempting to gain unauthorized access to, interfering with, damaging or disrupting any parts of the Website, the server(s) on which the Website is stored, or any server, computer or database connected to the Website;</li>
+          <li>Attempting to attack or attacking the Website via a denial-of-service attack or a distributed denial-of-service attack;</li>
+          <li>Otherwise attempting to interfere with the proper working of the Website;</li>
+          <li>Using the Website in any way that violates any applicable federal, state or local laws, rules or regulations.</li>
+        </ol>
+      </section>
+
+      <section id="warranty" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">NO WARRANTY ON WEBSITE</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">THIS WEBSITE IS PROVIDED "AS IS". NO WARRANTY, EXPRESS OR IMPLIED (INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, OF SATISFACTORY QUALITY OR FITNESS FOR A PARTICULAR PURPOSE OR USE) SHALL APPLY TO THIS WEBSITE, WHETHER ARISING BY LAW, COURSE OF DEALING, COURSE OF PERFORMANCE, USAGE OF TRADE OR OTHERWISE.</p>
+      </section>
+
+      <section id="availability" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Availability, errors and inaccuracies</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">We assume no liability for the availability, errors or inaccuracies of the information, products or services provided on this Website. We may experience delays in updating information on this Website and in our advertising on other websites. The information, products and services found on the Website may contain errors or inaccuracies or may not be complete or current. Products or services may be incorrectly priced or unavailable. We expressly reserve the right to correct any pricing errors on our Website. The inclusion or offering of any product or service on this Website does not constitute an endorsement or recommendation of such product or service by us.</p>
+      </section>
+
+      <section id="liability" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">DAMAGES AND LIMITATION OF LIABILITY</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">IN NO EVENT SHALL ON TARGET ABA LLC BE LIABLE FOR ANY DIRECT, INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF, RELATING TO OR IN ANY WAY CONNECTED WITH YOUR ACCESS TO, DISPLAY OF OR USE OF THIS WEBSITE OR WITH THE DELAY OR INABILITY TO ACCESS, DISPLAY OR USE THIS WEBSITE, INCLUDING BUT NOT LIMITED TO YOUR RELIANCE UPON OPINIONS OR INFORMATION APPEARING ON THIS WEBSITE; ANY COMPUTER VIRUSES, INFORMATION, SOFTWARE, LINKED WEBSITES OPERATED BY THIRD PARTIES, PRODUCTS OR SERVICES OBTAINED THROUGH THIS WEBSITE, WHETHER BASED ON A THEORY OF NEGLIGENCE, CONTRACT, TORT, STRICT LIABILITY, CONSUMER PROTECTION STATUTES OR OTHERWISE, EVEN IF ON TARGET ABA LLC HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">THE AGGREGATE LIABILITY OF ON TARGET ABA LLC ARISING OUT OF OR RELATING TO THIS WEBSITE, WHETHER ARISING OUT OF OR RELATED TO BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE) OR OTHERWISE SHALL BE LIMITED TO THE AMOUNT OF FEES ACTUALLY RECEIVED BY ON TARGET ABA LLC FROM YOU.</p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">THIS LIMITATION OF LIABILITY REFLECTS THE ALLOCATION OF RISK BETWEEN YOU AND US. THE LIMITATIONS SPECIFIED IN THIS SECTION WILL SURVIVE AND APPLY EVEN IF ANY LIMITED REMEDY SPECIFIED IN THESE TERMS OF USE IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE. THE LIMITATIONS OF LIABILITY PROVIDED IN THESE TERMS OF USE INURE TO THE BENEFIT OF ON TARGET ABA LLC.</p>
+      </section>
+
+      <section id="links" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Links to third party websites</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">This Website may contain hyperlinks to websites operated by third parties and not by us. We provide such hyperlinks for your reference only. We do not control such websites and are not responsible for their contents or the privacy or other practices of such websites. Further, it is your responsibility to take precautions to ensure that whatever links you click on or software that you download, whether from this Website or other websites or applications, is free of such items as viruses, worms, trojan horses, defects and other items of a destructive nature. Our inclusion of hyperlinks to such websites does not imply any endorsement of the material on such websites or any association with their operators.</p>
+      </section>
+
+      <section id="ip" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Intellectual property and DMCA notice and procedure for intellectual property infringement claims</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">All contents of this Website are © 2022 - 2026 On Target ABA LLC or third parties. All rights reserved. Unless specified otherwise, this Website and all content and other materials on this Website including but not limited to all logos, designs, text, graphics, pictures, information, data, software, sound files and arrangement thereof (collectively, "Content") are the proprietary property of On Target ABA LLC and are either registered trademarks, trademarks or otherwise protected intellectual property of On Target ABA LLC or third parties in the United States and/or other countries.</p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">If you are aware of a potential infringement of our intellectual property, please contact On Target ABA LLC at <strong>[email protected]</strong></p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">We respect the intellectual property rights of others. It is our policy to respond to any claim that Content posted on the Website infringes on the copyright, trademark or other intellectual property rights of any person or entity.</p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">If you believe in good faith that the Content infringes on your intellectual property rights, you or your agent may send us a written notice of such infringement titled "Infringement of Intellectual Property Rights - DMCA." Your notice to us must include the following information:</p>
+        <ol class="mt-4 space-y-2 text-ink-soft list-decimal pl-5">
+          <li>An electronic or physical signature of the person authorized to act on behalf of the owner of the intellectual property right's interest;</li>
+          <li>A description of the work that you claim has been infringed, including the URL (i.e., web page address) of the location where the work exists or a copy of the work;</li>
+          <li>Your name, email, address and telephone number; and</li>
+          <li>A statement by you that you have a good faith belief that the disputed use is not authorized by the owner of the work, its agent or the law.</li>
+        </ol>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">Please note that we will not process your complaint if it is not properly filled out or is incomplete. You may be held accountable for damages, including but not limited to costs and attorneys' fees for any misrepresentation or bad faith claims regarding the infringement of your intellectual property rights by the Content on this Website.</p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">You may submit your claim to us by contacting us at:</p>
+        <div class="mt-4 rounded-2xl bg-white ring-1 ring-line p-6">
+          <div class="font-semibold">On Target ABA LLC</div>
+          <div class="text-ink-soft">[email protected]<br/>888-989-5011<br/>28800 Calrk Dr<br/>Willoughby Hills OH 44092<br/>United States</div>
+        </div>
+      </section>
+
+      <section id="sms-opt-out" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Opt-Out &amp; Support Mechanisms</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">You can cancel the SMS service at any time. Just text "STOP" to 385-533-6843. After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again. If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly at 888-989-5011.</p>
+      </section>
+
+      <section id="frequency" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Message Frequency Clause</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">As always, message and data rates may apply for any messages sent to you from us and to us from you. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.</p>
+      </section>
+
+      <section id="code" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Industry or trade code of conduct</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">We subscribe to the OCCUPATIONAL THERAPY LAWS AND RULES, which can be found at the following link: <a href="https://dam.assets.ohio.gov/image/upload/otptat.ohio.gov/PracticeActs/OT_Practice_Act_December_2025.pdf" class="link-uline text-coral break-all">https://dam.assets.ohio.gov/image/upload/otptat.ohio.gov/PracticeActs/OT_Practice_Act_December_2025.pdf</a></p>
+      </section>
+
+      <section id="governing" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Governing law, severability, dispute resolution, venue and class action waiver</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">These Terms shall be governed and construed in accordance with the laws of the state of Ohio, United States, without regard to its conflict of laws provisions. THESE TERMS SHALL NOT BE GOVERNED BY THE UNITED NATIONS CONVENTION ON CONTRACTS FOR THE SALE OF INTERNATIONAL GOODS, THE UNIFORM COMMERCIAL CODE, NOR INCOTERMS.</p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">Our failure to enforce any right or provision of these Terms will not be considered a waiver of that right or provision. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between you and us regarding our Website, and supersede and replace any prior agreements we might have had with you regarding the Website.</p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">Any controversy or claim arising out of or relating to these Terms including but not limited to the interpretation or breach thereof shall be resolved in a court of competent jurisdiction in Cuyahoga County, Ohio.</p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">YOU AND ON TARGET ABA LLC AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY CLASS OR REPRESENTATIVE ACTION.</p>
+      </section>
+
+      <section id="changes" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Changes to Terms of Service</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">We reserve the right to make changes to these Terms of Service at any time. We will not provide you with any notice when we make changes to this Terms of Service.</p>
+      </section>
+
+      <section class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">TARGET ABA, LLC (dba On Target ABA)</h2>
+        <ol class="mt-4 space-y-3 text-ink-soft leading-relaxed list-decimal pl-5">
+          <li>Target ABA, LLC (dba On Target ABA) sends promotional SMS messages to individuals who have provided prior express consent through approved opt-in methods such as website forms, service requests, or direct customer interactions. Messages may include special offers, discounts, service promotions, product updates, and limited-time announcements related to Target ABA, LLC. (dba On Target ABA)'s services.</li>
+          <li>You can cancel the SMS service at any time. Simply text "STOP" to the shortcode. Upon sending "STOP," we will confirm your unsubscribe status via SMS. Following this confirmation, you will no longer receive SMS messages from us. To rejoin, sign up as you did initially, and we will resume sending SMS messages to you.</li>
+          <li>If you experience issues with the messaging program, reply with the keyword HELP for more assistance, or reach out directly to [email protected] or 888-989-5011.</li>
+          <li>Carriers are not liable for delayed or undelivered messages.</li>
+          <li>As always, message and data rates may apply for messages sent to you from us and to us from you. Message frequency varies. For questions about your text plan or data plan, contact your wireless provider.</li>
+          <li>For privacy-related inquiries, please refer to our <a href="privacy-policy.html" class="link-uline text-coral">privacy policy</a>.</li>
+        </ol>
+      </section>
+
+      <section class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">SMS Communications</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">If you provide your phone number and opt in to receive text messages from On Target ABA, we may send you appointment confirmations, reminders, and service-related notifications. Message frequency varies. Message and data rates may apply. You may opt out of receiving SMS messages at any time by replying STOP. For assistance, reply HELP or contact us directly. SMS consent is not shared with third parties or affiliates for marketing purposes.</p>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">If you have any questions regarding privacy, please read our <a href="privacy-policy.html" class="link-uline text-coral">privacy policy</a>.</p>
+      </section>
+
+      <section id="age" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Age restriction</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">Users must be 18 years or older to use this site.</p>
+      </section>
+
+      <section id="contact" class="mt-16 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-700 tracking-tight">Questions &amp; Contact</h2>
+        <p class="mt-4 text-ink-soft text-lg leading-relaxed">If you have any questions about our Terms of Service, please contact us at <strong>[email protected]</strong>.</p>
+
+        <div class="mt-8 rounded-3xl bg-teal text-white p-8 lg:p-10">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <div class="text-xs uppercase tracking-widest text-white/60 font-semibold">Email</div>
+              <div class="mt-1 font-semibold">[email protected]</div>
+              <div class="text-xs uppercase tracking-widest text-white/60 font-semibold mt-5">Primary Phone</div>
+              <a href="tel:8889895011" class="mt-1 font-semibold block">888-989-5011</a>
+              <div class="text-xs uppercase tracking-widest text-white/60 font-semibold mt-5">SMS Shortcode</div>
+              <div class="mt-1 font-semibold">385-533-6843</div>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-widest text-white/60 font-semibold">Locations</div>
+              <ul class="mt-2 space-y-3 text-sm">
+                <li><span class="font-semibold">Cleveland, OH</span> · <a href="tel:2163431198" class="link-uline">(216) 343-1198</a><br/><span class="text-white/70">767 Beta Dr, Suite C, Mayfield, OH 44143</span></li>
+                <li><span class="font-semibold">Columbus, OH</span> · <a href="tel:6146811030" class="link-uline">(614) 681-1030</a><br/><span class="text-white/70">2760 Airport Dr, Suite 110, Columbus, OH 43219<br/>130 E Wilson Bridge Rd, Suite 200, Worthington, OH 43085</span></li>
+                <li><span class="font-semibold">Salt Lake City, UT</span> · <a href="tel:3855503500" class="link-uline">(385) 550-3500</a><br/><span class="text-white/70">5444 South Green St, Murray, UT 84123</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-grid place-items-center w-10 h-10 rounded-full bg-white">
+          <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6B47 0 22%, #fff 22% 38%, #0E4D6E 38% 54%, #fff 54% 70%, #0A3A55 70%)"></span>
+        </span>
+        <span class="font-extrabold">On Target ABA</span>
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>©<span data-year>2026</span> ON TARGET ABA, LLC · All rights reserved · Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

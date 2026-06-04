@@ -1,0 +1,13 @@
+# OS / editor cruft
+Thumbs.db
+ehthumbs.db
+.DS_Store
+*~
+*.swp
+*.bak
+
+# Local Claude config (project-level)
+.claude/
+
+# Logs
+*.log

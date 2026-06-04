@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 420" role="img" aria-label="On Target ABA — Autism Testing in Utah — ontargetaba.com">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00B7EA"/>
+      <stop offset="1" stop-color="#009EC3"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B2F45"/>
+      <stop offset="1" stop-color="#082638"/>
+    </linearGradient>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF8C2E"/>
+      <stop offset="1" stop-color="#FF6900"/>
+    </linearGradient>
+    <linearGradient id="cta" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFDD17"/>
+      <stop offset="1" stop-color="#FFC107"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFDD17" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#FFDD17" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="420" fill="url(#sky)"/>
+
+  <!-- Utah mountain silhouette -->
+  <path d="M0 340 L120 270 L210 305 L300 240 L420 295 L520 250 L640 300 L760 245 L880 290 L1000 255 L1120 295 L1240 260 L1360 300 L1440 280 L1440 420 L0 420 Z" fill="url(#ridge)"/>
+  <path d="M0 365 L160 335 L290 355 L430 325 L560 350 L700 330 L840 355 L980 330 L1120 355 L1260 335 L1440 360 L1440 420 L0 420 Z" fill="#06202F" opacity="0.85"/>
+
+  <!-- Subtle radial glow behind target -->
+  <circle cx="245" cy="210" r="180" fill="url(#glow)"/>
+
+  <!-- Target mark (On Target motif) -->
+  <g transform="translate(245 210)">
+    <circle r="135" fill="#FFFFFF"/>
+    <circle r="135" fill="none" stroke="#009EC3" stroke-width="6"/>
+    <circle r="102" fill="none" stroke="#00B7EA" stroke-width="10"/>
+    <circle r="70" fill="none" stroke="#00B7EA" stroke-width="10"/>
+    <circle r="38" fill="url(#coral)"/>
+    <!-- Arrow striking the bullseye -->
+    <g transform="rotate(-28)">
+      <rect x="-10" y="-6" width="190" height="12" rx="3" fill="#1B1B1F"/>
+      <polygon points="-10,-14 -42,0 -10,14" fill="url(#coral)"/>
+      <polygon points="180,-18 215,0 180,18 188,0" fill="#FFDD17"/>
+      <rect x="178" y="-2" width="6" height="4" fill="#009EC3"/>
+    </g>
+  </g>
+
+  <!-- Headline block -->
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" fill="#FFFFFF">
+    <text x="445" y="135" font-size="64" letter-spacing="-1.5">Wondering if it's</text>
+    <text x="445" y="225" font-size="132" letter-spacing="-4" fill="#FFDD17">autism?</text>
+  </g>
+
+  <!-- Sub-headline -->
+  <g font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#E6F1F8">
+    <text x="448" y="272" font-size="30" font-weight="500" letter-spacing="0.5">
+      Utah's trusted autism evaluations for kids &amp; teens.
+    </text>
+    <text x="448" y="308" font-size="24" font-weight="400" fill="#9FC3DB" letter-spacing="0.3">
+      Most insurance accepted &#8226; Short wait times &#8226; Compassionate care
+    </text>
+  </g>
+
+  <!-- CTA pill -->
+  <g transform="translate(448 332)">
+    <rect width="430" height="64" rx="32" fill="url(#cta)"/>
+    <rect width="430" height="64" rx="32" fill="none" stroke="#7A4A0A" stroke-opacity="0.25" stroke-width="2"/>
+    <text x="30" y="42" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#1B1B1F" letter-spacing="0.5">
+      ontargetaba.com
+    </text>
+    <g transform="translate(360 32)">
+      <circle r="22" fill="#1B1B1F"/>
+      <path d="M-9 -2 L0 7 L9 -2" fill="none" stroke="#FFDD17" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Brand lockup top-right -->
+  <g transform="translate(1180 60)" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" fill="#FFFFFF">
+    <g transform="translate(0 -8)">
+      <circle cx="22" cy="22" r="22" fill="#FFFFFF"/>
+      <circle cx="22" cy="22" r="16" fill="none" stroke="#00B7EA" stroke-width="3"/>
+      <circle cx="22" cy="22" r="9" fill="none" stroke="#00B7EA" stroke-width="3"/>
+      <circle cx="22" cy="22" r="4" fill="url(#coral)"/>
+    </g>
+    <text x="58" y="22" font-size="26" font-weight="800" letter-spacing="0.5">ON TARGET</text>
+    <text x="58" y="46" font-size="16" font-weight="500" letter-spacing="6" fill="#9FC3DB">A B A   T H E R A P Y</text>
+  </g>
+
+  <!-- Service badge bottom-right -->
+  <g transform="translate(1180 360)">
+    <rect x="-4" y="-26" width="232" height="44" rx="6" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.25"/>
+    <text x="12" y="3" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#FFDD17" letter-spacing="2">SERVING UTAH</text>
+    <text x="12" y="24" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="500" fill="#E6F1F8" letter-spacing="1">SLC &#8226; PROVO &#8226; OGDEN &#8226; ST. GEORGE</text>
+  </g>
+</svg>

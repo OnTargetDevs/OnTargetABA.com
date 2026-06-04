@@ -1,0 +1,332 @@
+/* =========================================================
+   On Target ABA — shared styles
+   Tailwind handles utility classes via CDN; this file adds
+   custom tokens, scroll animations, decorative effects.
+   ========================================================= */
+
+:root {
+  /* ====== On Target ABA brand palette (from live site) ======
+     Primary cyan-blue #00b7ea / deep #009ec3
+     Accent yellow    #ffdd17
+     Accent orange    #FF6900
+     Warm cream bg    #EEEADD
+  */
+  --c-ink:        #1B2733;
+  --c-ink-soft:   #34495E;
+  --c-teal:       #00B7EA;
+  --c-teal-deep:  #009EC3;
+  --c-teal-soft:  #D6F0F8;
+  --c-coral:      #FF6900;
+  --c-coral-soft: #FFE0CC;
+  --c-sun:        #FFDD17;
+  --c-sun-soft:   #FFF6C8;
+  --c-cream:      #EEEADD;
+  --c-paper:      #FFFFFF;
+  --c-mute:       #6B7E8F;
+  --c-line:       #E2E0D4;
+
+  --shadow-soft:  0 1px 2px rgba(11,34,51,.04), 0 8px 24px rgba(11,34,51,.06);
+  --shadow-pop:   0 1px 2px rgba(11,34,51,.06), 0 18px 48px rgba(11,34,51,.12);
+  --shadow-coral: 0 16px 40px rgba(255,105,0,.30);
+
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 32px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--c-ink);
+  background: var(--c-cream);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: 'Fraunces', 'Plus Jakarta Sans', Georgia, serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+
+/* =========== Decorative target rings (used in hero/marks) =========== */
+.target-mark {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 999px;
+  background: radial-gradient(circle at center,
+    var(--c-coral) 0%, var(--c-coral) 18%,
+    #fff 18%, #fff 32%,
+    var(--c-sun) 32%, var(--c-sun) 46%,
+    #fff 46%, #fff 60%,
+    var(--c-teal) 60%, var(--c-teal) 74%,
+    #fff 74%, #fff 100%);
+  box-shadow: var(--shadow-pop);
+}
+
+/* =========== Subtle blob backgrounds =========== */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: .55;
+  pointer-events: none;
+  z-index: 0;
+}
+.blob-coral { background: var(--c-coral); }
+.blob-sun   { background: var(--c-sun); }
+.blob-teal  { background: var(--c-teal); }
+
+/* =========== Scroll-reveal =========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: .08s; }
+.reveal-delay-2 { transition-delay: .16s; }
+.reveal-delay-3 { transition-delay: .24s; }
+.reveal-delay-4 { transition-delay: .32s; }
+.reveal-delay-5 { transition-delay: .40s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+  .float, .pulse-ring, .marquee-track { animation: none !important; }
+}
+
+/* =========== Floating decorations =========== */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50%      { transform: translateY(-12px) rotate(2deg); }
+}
+.float { animation: float-y 7s ease-in-out infinite; }
+.float.delay-1 { animation-delay: 1.2s; }
+.float.delay-2 { animation-delay: 2.4s; }
+
+/* =========== Pulsing bullseye =========== */
+@keyframes pulse-ring {
+  0%   { transform: scale(0.92); opacity: .6; }
+  100% { transform: scale(1.6);  opacity: 0; }
+}
+.pulse-ring::before,
+.pulse-ring::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 2px solid var(--c-coral);
+  animation: pulse-ring 2.6s cubic-bezier(.2,.7,.2,1) infinite;
+}
+.pulse-ring::after { animation-delay: 1.3s; }
+
+/* =========== Marquee (insurance logos / locations) =========== */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 3.5rem;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+/* =========== Soft card hover =========== */
+.lift {
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
+}
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-pop);
+}
+
+/* =========== Underline link =========== */
+.link-uline {
+  position: relative;
+  display: inline-block;
+}
+.link-uline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.link-uline:hover::after { transform: scaleX(1); }
+
+/* =========== Buttons =========== */
+.btn {
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .85rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s, background-color .25s, color .25s;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn-coral {
+  background: var(--c-coral); color: #fff;
+  box-shadow: var(--shadow-coral);
+}
+.btn-coral:hover { background: #FF8429; transform: translateY(-2px); }
+.btn-ink {
+  background: var(--c-ink); color: #fff;
+}
+.btn-ink:hover { background: var(--c-teal-deep); transform: translateY(-2px); }
+.btn-ghost {
+  background: transparent; color: var(--c-ink);
+  border: 1.5px solid rgba(11,34,51,.18);
+}
+.btn-ghost:hover { background: rgba(11,34,51,.05); }
+.btn-sun {
+  background: var(--c-sun); color: var(--c-ink);
+}
+.btn-sun:hover { background: #FFE752; transform: translateY(-2px); }
+
+/* =========== Section labels (eyebrow) =========== */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .35rem .8rem;
+  font-size: .78rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--c-teal-deep);
+  background: var(--c-teal-soft);
+  border-radius: 999px;
+}
+.eyebrow .dot {
+  width: .5rem; height: .5rem; border-radius: 999px;
+  background: var(--c-coral);
+}
+
+/* =========== Hero gradient background =========== */
+.hero-bg {
+  background:
+    radial-gradient(60% 80% at 90% 0%, rgba(255,221,23,.28), transparent 60%),
+    radial-gradient(50% 70% at 0% 100%, rgba(255,105,0,.16), transparent 60%),
+    radial-gradient(40% 60% at 50% 50%, rgba(0,183,234,.10), transparent 70%),
+    linear-gradient(180deg, #FBF8EE 0%, var(--c-cream) 100%);
+}
+
+/* =========== FAQ accordion =========== */
+.faq-item {
+  border-bottom: 1px solid var(--c-line);
+}
+.faq-q {
+  width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 0;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--c-ink);
+  cursor: pointer;
+}
+.faq-q .chev {
+  width: 1.5rem; height: 1.5rem;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: var(--c-teal-soft);
+  color: var(--c-teal-deep);
+  transition: transform .35s cubic-bezier(.2,.7,.2,1), background-color .35s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-q .chev {
+  transform: rotate(45deg);
+  background: var(--c-coral);
+  color: #fff;
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s cubic-bezier(.2,.7,.2,1), padding-bottom .3s ease;
+  color: var(--c-mute);
+  line-height: 1.65;
+}
+.faq-item.open .faq-a {
+  max-height: 800px;
+  padding-bottom: 1.5rem;
+}
+
+/* =========== Pretty bullets =========== */
+.bullet-coral li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: .55rem;
+  color: var(--c-ink-soft);
+  line-height: 1.6;
+}
+.bullet-coral li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: .55rem;
+  width: .55rem; height: .55rem; border-radius: 999px;
+  background: var(--c-coral);
+  box-shadow: 0 0 0 4px var(--c-coral-soft);
+}
+
+/* =========== Sticky nav scroll style =========== */
+.nav-bar.scrolled {
+  background: rgba(255,255,255,.85);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-color: var(--c-line);
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========== Mobile nav slide =========== */
+.mnav {
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.mnav.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =========== Subtle grid background =========== */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(14,77,110,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,77,110,.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(60% 60% at 50% 50%, #000, transparent);
+}
+
+/* =========== Focus =========== */
+:focus-visible {
+  outline: 3px solid var(--c-sun);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* =========== Typography rhythm =========== */
+.prose-soft p { color: var(--c-ink-soft); line-height: 1.72; }
+.prose-soft h2 { font-family: 'Fraunces', Georgia, serif; letter-spacing: -.02em; }
+.prose-soft h3 { font-weight: 700; }
+
+/* =========== Spinner =========== */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 1s linear infinite; }

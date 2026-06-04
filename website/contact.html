@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — On Target ABA | Cleveland, Columbus &amp; Salt Lake City</title>
+<meta name="description" content="We'd love to hear from you. Reach On Target ABA in Cleveland/Akron, Columbus, or Salt Lake City — or send us a message and our team will get back to you." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing — most families pay $0 →</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center gap-2.5 group">
+      <span class="relative inline-grid place-items-center w-10 h-10 rounded-full bg-white shadow ring-1 ring-line">
+        <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6B47 0 22%, #fff 22% 38%, #0E4D6E 38% 54%, #fff 54% 70%, #0A3A55 70%)"></span>
+      </span>
+      <span class="leading-tight">
+        <span class="block font-extrabold tracking-tight text-ink">On Target<span class="text-coral">.</span></span>
+        <span class="block text-[10px] tracking-[0.22em] text-mute font-semibold">A B A &nbsp; T H E R A P Y</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="blob blob-coral w-[420px] h-[420px] -left-32 top-20"></div>
+  <div class="blob blob-sun w-[380px] h-[380px] -right-32 -top-10"></div>
+
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-14 lg:pt-24 lg:pb-20 relative">
+    <div class="max-w-3xl">
+      <div class="reveal eyebrow"><span class="dot"></span> Contact us</div>
+      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[72px] leading-[1.02] font-700 tracking-tight">
+        We'd love to
+        <span class="relative inline-block">
+          <span class="relative z-10 italic font-600">hear from you.</span>
+          <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
+            <path d="M2 9 C 50 1, 150 1, 198 8" stroke="#FF6B47" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+      </h1>
+      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-2xl">
+        Our friendly, knowledgeable staff is ready to answer any questions or concerns you may have. Reach out by phone, drop into a location, or send us a message below.
+      </p>
+
+      <div class="reveal reveal-delay-3 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl">
+        <a href="tel:8889895011" class="group bg-white ring-1 ring-line rounded-2xl px-4 py-3 hover:ring-coral transition">
+          <div class="text-[11px] uppercase tracking-widest text-mute">General</div>
+          <div class="font-semibold text-ink group-hover:text-coral">(888) 989-5011</div>
+        </a>
+        <a href="tel:2163431198" class="group bg-white ring-1 ring-line rounded-2xl px-4 py-3 hover:ring-coral transition">
+          <div class="text-[11px] uppercase tracking-widest text-mute">Cleveland</div>
+          <div class="font-semibold text-ink group-hover:text-coral">(216) 343-1198</div>
+        </a>
+        <a href="tel:6146811030" class="group bg-white ring-1 ring-line rounded-2xl px-4 py-3 hover:ring-coral transition">
+          <div class="text-[11px] uppercase tracking-widest text-mute">Columbus</div>
+          <div class="font-semibold text-ink group-hover:text-coral">(614) 681-1030</div>
+        </a>
+        <a href="tel:3855503500" class="group bg-white ring-1 ring-line rounded-2xl px-4 py-3 hover:ring-coral transition">
+          <div class="text-[11px] uppercase tracking-widest text-mute">Salt Lake City</div>
+          <div class="font-semibold text-ink group-hover:text-coral">(385) 550-3500</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORM + LOCATIONS ============ -->
+<section class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-12 gap-10">
+
+      <!-- LEFT: CONTACT FORM -->
+      <div class="lg:col-span-7 reveal">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-coral-soft rounded-[40px] -rotate-1 opacity-60"></div>
+          <div class="relative bg-white ring-1 ring-line rounded-[32px] p-8 lg:p-10 shadow-soft">
+            <div class="flex items-start gap-4 mb-6">
+              <div class="w-12 h-12 grid place-items-center rounded-2xl bg-coral text-white shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="eyebrow"><span class="dot"></span> Send a message</div>
+                <h2 class="mt-2 font-display text-3xl font-700 leading-tight">Tell us about your family.</h2>
+                <p class="mt-2 text-ink-soft text-sm">We'll get back to you with answers, options, and next steps — usually the same day.</p>
+              </div>
+            </div>
+
+            <form action="#" onsubmit="event.preventDefault(); alert('Thank you — we will be in touch.'); this.reset();" class="grid gap-5">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="block">
+                  <span class="text-sm font-semibold text-ink mb-1.5 block">First name</span>
+                  <input type="text" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Jane" />
+                </label>
+                <label class="block">
+                  <span class="text-sm font-semibold text-ink mb-1.5 block">Last name</span>
+                  <input type="text" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Doe" />
+                </label>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label class="block">
+                  <span class="text-sm font-semibold text-ink mb-1.5 block">Email</span>
+                  <input type="email" required class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="jane@email.com" />
+                </label>
+                <label class="block">
+                  <span class="text-sm font-semibold text-ink mb-1.5 block">Phone</span>
+                  <input type="tel" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="(555) 123-4567" />
+                </label>
+              </div>
+
+              <label class="block">
+                <span class="text-sm font-semibold text-ink mb-1.5 block">Preferred location</span>
+                <select class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition">
+                  <option>Cleveland / Akron, OH</option>
+                  <option>Columbus / Gahanna, OH</option>
+                  <option>Columbus / Worthington, OH</option>
+                  <option>Salt Lake City / Murray, UT</option>
+                  <option>I'm not sure yet</option>
+                </select>
+              </label>
+
+              <label class="block">
+                <span class="text-sm font-semibold text-ink mb-1.5 block">How can we help?</span>
+                <textarea rows="5" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Tell us a little about your child and what brings you to On Target ABA…"></textarea>
+              </label>
+
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <button type="submit" class="btn btn-coral">
+                  Send message
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </button>
+                <a href="pre-intake-form.html" class="btn btn-ghost">Or use our intake form</a>
+              </div>
+              <p class="text-xs text-mute mt-1">By submitting, you agree to be contacted about ABA therapy and autism evaluation services. We never share your information.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: LOCATION CARDS -->
+      <div class="lg:col-span-5 grid gap-5">
+
+        <!-- Cleveland -->
+        <article class="reveal lift bg-white ring-1 ring-line rounded-3xl p-7 relative overflow-hidden">
+          <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-coral-soft opacity-50"></div>
+          <div class="relative">
+            <div class="flex items-center justify-between">
+              <div class="text-xs uppercase tracking-widest text-mute font-semibold">Ohio</div>
+              <span class="text-[11px] font-bold bg-coral text-white rounded-full px-2.5 py-1">New Expanded Center</span>
+            </div>
+            <h3 class="mt-2 font-display text-2xl font-700">Cleveland / Akron</h3>
+            <p class="mt-1 text-sm text-mute">Center-Based and In-Home ABA Therapy</p>
+
+            <div class="mt-5 space-y-3 text-sm">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 grid place-items-center rounded-lg bg-coral-soft text-coral shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>767 Beta Dr, Suite C<br/>Mayfield Village, OH 44143</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 grid place-items-center rounded-lg bg-coral-soft text-coral shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                </div>
+                <a href="tel:2163431198" class="font-semibold text-ink hover:text-coral">(216) 343-1198</a>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 grid place-items-center rounded-lg bg-coral-soft text-coral shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>Monday – Friday<br/>8:00 AM – 5:00 PM</div>
+              </div>
+              <div class="pt-3 border-t border-line text-mute text-xs leading-relaxed">
+                Providing home &amp; school based ABA throughout Greater Cleveland and Akron
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Utah -->
+        <article class="reveal reveal-delay-1 lift bg-ink text-white rounded-3xl p-7 relative overflow-hidden">
+          <div class="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-sun/20 opacity-80"></div>
+          <div class="relative">
+            <div class="flex items-center justify-between">
+              <div class="text-xs uppercase tracking-widest text-sun font-semibold">Utah</div>
+              <span class="text-[11px] font-bold bg-sun text-ink rounded-full px-2.5 py-1">NEW!</span>
+            </div>
+            <h3 class="mt-2 font-display text-2xl font-700">Salt Lake Valley</h3>
+            <p class="mt-1 text-sm text-white/70">Center-Based and In-Home ABA Therapy</p>
+
+            <div class="mt-5 space-y-3 text-sm">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 grid place-items-center rounded-lg bg-white/10 text-sun shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="text-white/90">5444 South Green Street<br/>Murray, UT 84123</div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 grid place-items-center rounded-lg bg-white/10 text-sun shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                </div>
+                <a href="tel:8889895011" class="font-semibold text-sun hover:underline">(888) 989-5011</a>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 grid place-items-center rounded-lg bg-white/10 text-sun shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="text-white/90">Monday – Friday<br/>8:00 AM – 5:00 PM</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Columbus -->
+        <article class="reveal reveal-delay-2 lift bg-white ring-1 ring-line rounded-3xl p-7 relative overflow-hidden">
+          <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-teal-soft opacity-50"></div>
+          <div class="relative">
+            <div class="text-xs uppercase tracking-widest text-mute font-semibold">Ohio</div>
+            <h3 class="mt-2 font-display text-2xl font-700">Columbus</h3>
+            <p class="mt-1 text-sm text-mute">Center-Based and In-Home ABA Therapy</p>
+
+            <div class="mt-5 grid sm:grid-cols-2 gap-3 text-sm">
+              <div class="rounded-2xl bg-cream p-4">
+                <div class="text-xs font-bold text-teal-deep">Gahanna/Airport ABA Center</div>
+                <div class="mt-1 text-ink-soft text-xs leading-relaxed">2760 Airport Dr, Suite 110<br/>Columbus, OH 43209</div>
+              </div>
+              <div class="rounded-2xl bg-cream p-4">
+                <div class="text-xs font-bold text-teal-deep">Worthington ABA Center</div>
+                <div class="mt-1 text-ink-soft text-xs leading-relaxed">130 E Wilson Bridge Rd, Suite 200<br/>Worthington, OH 43085</div>
+              </div>
+            </div>
+
+            <div class="mt-5 space-y-3 text-sm">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 grid place-items-center rounded-lg bg-teal-soft text-teal-deep shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                </div>
+                <a href="tel:6146811030" class="font-semibold text-ink hover:text-coral">(614) 681-1030</a>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 grid place-items-center rounded-lg bg-teal-soft text-teal-deep shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>Monday – Friday<br/>8:00 AM – 5:00 PM</div>
+              </div>
+              <div class="pt-3 border-t border-line text-mute text-xs leading-relaxed">
+                Providing home &amp; school based ABA therapy in Franklin, Union, Delaware, Newark, and Licking counties
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ADDITIONAL CTAs ============ -->
+<section class="py-16 lg:py-20 bg-white border-y border-line">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid md:grid-cols-2 gap-5">
+      <a href="aba-therapy-guide.html" class="reveal lift group block rounded-3xl bg-gradient-to-br from-teal to-teal-deep text-white p-8 relative overflow-hidden">
+        <div class="absolute -right-12 -top-12 w-72 h-72 rounded-full bg-white/10 blur-2xl"></div>
+        <div class="relative">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs uppercase tracking-widest font-semibold">Resource</div>
+          <h3 class="mt-4 font-display text-3xl font-600 leading-tight">ABA Therapy Guide</h3>
+          <p class="mt-3 text-white/85">Everything you need to know about autism and ABA therapy.</p>
+          <div class="mt-5 inline-flex items-center gap-2 font-semibold">Read the guide <span class="transition-transform group-hover:translate-x-1">→</span></div>
+        </div>
+      </a>
+      <a href="pre-intake-form.html" class="reveal reveal-delay-1 lift group block rounded-3xl bg-coral text-white p-8 relative overflow-hidden">
+        <div class="absolute -right-12 -bottom-12 w-72 h-72 rounded-full bg-white/15 blur-2xl"></div>
+        <div class="relative">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-xs uppercase tracking-widest font-semibold">Get started</div>
+          <h3 class="mt-4 font-display text-3xl font-600 leading-tight">Pre-Intake Form</h3>
+          <p class="mt-3 text-white/90">Skip the phone tag — start your intake online in just a few minutes.</p>
+          <div class="mt-5 inline-flex items-center gap-2 font-semibold">Start the form <span class="transition-transform group-hover:translate-x-1">→</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-grid place-items-center w-10 h-10 rounded-full bg-white">
+          <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6B47 0 22%, #fff 22% 38%, #0E4D6E 38% 54%, #fff 54% 70%, #0A3A55 70%)"></span>
+        </span>
+        <span class="font-extrabold">On Target ABA</span>
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>©<span data-year>2026</span> ON TARGET ABA, LLC · All rights reserved · Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

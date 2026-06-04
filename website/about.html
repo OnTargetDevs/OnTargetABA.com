@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About On Target ABA — Mission, Story &amp; Meet Our Founder Ilana Gross, BCBA</title>
+<meta name="description" content="On Target ABA delivers compassionate, evidence-based ABA therapy for children ages 2–18. Meet our founder Ilana Gross, BCBA, and learn how we improve quality of life every day." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing — most families pay $0 →</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center gap-2.5 group">
+      <span class="relative inline-grid place-items-center w-10 h-10 rounded-full bg-white shadow ring-1 ring-line">
+        <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6B47 0 22%, #fff 22% 38%, #0E4D6E 38% 54%, #fff 54% 70%, #0A3A55 70%)"></span>
+      </span>
+      <span class="leading-tight">
+        <span class="block font-extrabold tracking-tight text-ink">On Target<span class="text-coral">.</span></span>
+        <span class="block text-[10px] tracking-[0.22em] text-mute font-semibold">A B A &nbsp; T H E R A P Y</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="blob blob-coral w-[420px] h-[420px] -left-32 top-20"></div>
+  <div class="blob blob-teal w-[360px] h-[360px] -right-20 -top-10"></div>
+
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-12 gap-12 items-center relative">
+    <div class="lg:col-span-7 relative z-10">
+      <div class="reveal eyebrow"><span class="dot"></span> About On Target ABA</div>
+      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[68px] leading-[1.04] font-700 tracking-tight">
+        Built around your <span class="italic text-coral font-600">child</span>.
+        Backed by your
+        <span class="relative inline-block">
+          <span class="relative z-10 italic font-600">whole family</span>
+          <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
+            <path d="M2 9 C 50 1, 150 1, 198 8" stroke="#FF6B47" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>.
+      </h1>
+      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
+        Evidence-based ABA therapy for children ages 2–18, delivered in the settings that work best — center, home, school, and daycare — with comprehensive support for every family we serve.
+      </p>
+      <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
+        <a href="contact.html" class="btn btn-coral">
+          Let's Get Started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="our-services.html" class="btn btn-ghost">Learn More</a>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 relative reveal reveal-delay-2">
+      <div class="relative w-full max-w-md mx-auto">
+        <div class="absolute -top-6 -right-6 w-32 h-32 rounded-full float">
+          <div class="target-mark w-full h-full"></div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-20 h-20 rounded-full bg-sun shadow-lg float delay-2"></div>
+
+        <div class="relative rounded-[36px] overflow-hidden bg-white p-3 shadow-2xl -rotate-1">
+          <div class="relative rounded-[28px] overflow-hidden bg-teal-soft aspect-[4/5]">
+            <img src="assets/images/NewAbout.png" alt="On Target ABA family-focused care" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <div class="text-xs uppercase tracking-widest opacity-80">Since day one</div>
+              <div class="font-display text-xl font-600 leading-tight mt-1">Quality care without the wait.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-6 right-2 bg-white rounded-2xl shadow-pop px-4 py-3 flex items-center gap-3 float">
+          <div class="w-10 h-10 grid place-items-center rounded-xl bg-coral-soft">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6B47" stroke-width="2.4"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-mute">Ages</div>
+            <div class="text-sm font-semibold">We serve 2–18</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSION QUOTE ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line relative overflow-hidden">
+  <div class="blob blob-sun w-[420px] h-[420px] -right-32 -top-20 opacity-60"></div>
+  <div class="blob blob-coral w-[320px] h-[320px] -left-20 -bottom-10 opacity-50"></div>
+
+  <div class="max-w-5xl mx-auto px-5 text-center relative">
+    <div class="reveal eyebrow inline-flex"><span class="dot"></span> Our Mission</div>
+    <div class="reveal reveal-delay-1 mt-8 relative">
+      <svg class="absolute -left-2 -top-6 sm:-left-10 sm:-top-10 w-16 h-16 sm:w-24 sm:h-24 text-coral opacity-90" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+      </svg>
+      <blockquote class="font-display text-3xl sm:text-4xl lg:text-5xl font-600 leading-[1.18] tracking-tight text-ink">
+        To provide the highest quality of ABA therapy in a fun, collaborative environment for the optimal development of children with autism through <span class="italic text-coral">individualized services</span> and comprehensive support to children and their families.
+      </blockquote>
+      <svg class="absolute -right-2 -bottom-6 sm:-right-10 sm:-bottom-10 w-16 h-16 sm:w-24 sm:h-24 text-coral opacity-90 rotate-180" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT US ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal">
+        <div class="relative">
+          <div class="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-teal-soft -z-10"></div>
+          <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-coral-soft -z-10"></div>
+          <div class="relative rounded-[36px] overflow-hidden bg-white p-3 shadow-2xl rotate-1">
+            <div class="relative rounded-[28px] overflow-hidden bg-cream aspect-[5/6]">
+              <img src="assets/images/mission-s13.png" alt="Children in collaborative ABA therapy" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow"><span class="dot"></span> About Us</div>
+        <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">A goal as clear as it gets.</h2>
+        <p class="reveal reveal-delay-2 mt-5 text-lg text-ink-soft leading-relaxed">
+          Our goal is to see children succeed within their home environment, school environment, socially, emotionally, verbally, and functionally overall.
+        </p>
+        <p class="reveal reveal-delay-3 mt-4 text-ink-soft leading-relaxed">
+          We provide evidence-based ABA therapy to children, ages 2–18, across multiple service settings — including center-based, in-home, school-based and daycare-based ABA therapy.
+        </p>
+        <p class="reveal reveal-delay-3 mt-4 text-ink-soft leading-relaxed">
+          We specialize in early intervention for children with autism and offer a collaborative approach across three core service paths.
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-3 gap-3">
+          <a href="early-intervention-autism-program.html" class="reveal lift group rounded-2xl bg-white ring-1 ring-line p-5 hover:bg-sun-soft transition">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-sun text-ink mb-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+            </div>
+            <div class="text-sm font-700">Early Intervention Day Program</div>
+            <div class="text-xs text-coral mt-2 inline-flex items-center gap-1">Explore <span class="transition-transform group-hover:translate-x-0.5">→</span></div>
+          </a>
+          <a href="center-based-aba-therapy.html" class="reveal reveal-delay-1 lift group rounded-2xl bg-white ring-1 ring-line p-5 hover:bg-teal-soft transition">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-teal text-white mb-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            </div>
+            <div class="text-sm font-700">Center-Based ABA Therapy</div>
+            <div class="text-xs text-coral mt-2 inline-flex items-center gap-1">Explore <span class="transition-transform group-hover:translate-x-0.5">→</span></div>
+          </a>
+          <a href="in-home-aba-therapy.html" class="reveal reveal-delay-2 lift group rounded-2xl bg-white ring-1 ring-line p-5 hover:bg-coral-soft transition">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-coral text-white mb-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3"/></svg>
+            </div>
+            <div class="text-sm font-700">In-Home ABA Therapy</div>
+            <div class="text-xs text-coral mt-2 inline-flex items-center gap-1">Explore <span class="transition-transform group-hover:translate-x-0.5">→</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMPROVING QUALITY OF LIFE ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-60"></div>
+  <div class="max-w-7xl mx-auto px-5 relative">
+    <div class="max-w-2xl mb-14">
+      <div class="reveal eyebrow"><span class="dot"></span> Improving Quality of Life</div>
+      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Not just sitting at a table. <span class="italic text-coral">No way.</span></h2>
+      <p class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg">At On Target ABA we look to improve quality of life in multiple ways — including group interaction where kids work on appropriately taking turns, sharing, and calming strategies.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <article class="reveal lift bg-cream rounded-3xl p-7 ring-1 ring-line">
+        <div class="w-12 h-12 grid place-items-center rounded-2xl bg-coral-soft text-coral">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="4"/><circle cx="17" cy="7" r="3"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M17 14a4 4 0 014 4v3"/></svg>
+        </div>
+        <h3 class="mt-5 text-xl font-700">Group interaction</h3>
+        <p class="mt-2 text-ink-soft leading-relaxed">Kids work on appropriately taking turns, sharing, and calming strategies alongside peers.</p>
+      </article>
+
+      <article class="reveal reveal-delay-1 lift bg-cream rounded-3xl p-7 ring-1 ring-line">
+        <div class="w-12 h-12 grid place-items-center rounded-2xl bg-teal-soft text-teal-deep">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3 class="mt-5 text-xl font-700">Different areas to work &amp; play</h3>
+        <p class="mt-2 text-ink-soft leading-relaxed">Plus, we have different areas for children to work and play in. They're not just sitting at a table. No way. Not here. Not at On Target ABA.</p>
+      </article>
+
+      <article class="reveal reveal-delay-2 lift bg-cream rounded-3xl p-7 ring-1 ring-line">
+        <div class="w-12 h-12 grid place-items-center rounded-2xl bg-sun-soft text-ink">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3 class="mt-5 text-xl font-700">Real-world experiences</h3>
+        <p class="mt-2 text-ink-soft leading-relaxed">A comprehensive, collaborative approach rooted in behavioral and developmental techniques that incorporate real-world experiences to prepare your child for life beyond our clinic.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOUNDER ============ -->
+<section class="py-20 lg:py-28 relative overflow-hidden">
+  <div class="blob blob-teal w-[420px] h-[420px] -right-32 top-20"></div>
+  <div class="blob blob-coral w-[320px] h-[320px] -left-10 -bottom-10 opacity-60"></div>
+
+  <div class="max-w-7xl mx-auto px-5 relative">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5 reveal">
+        <div class="relative max-w-sm mx-auto">
+          <!-- Big circle photo -->
+          <div class="relative rounded-full overflow-hidden aspect-square bg-gradient-to-br from-teal to-teal-deep ring-8 ring-white shadow-2xl">
+            <img src="assets/images/mother-1.png" alt="Ilana Gross, BCBA — Clinical Director and Founder" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            <div class="absolute inset-0 grid place-items-center text-white">
+              <div class="text-center pointer-events-none">
+                <div class="font-display text-6xl font-700 opacity-25">IG</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative target -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 rounded-full float">
+            <div class="target-mark w-full h-full"></div>
+          </div>
+
+          <!-- BCBA badge -->
+          <div class="absolute -bottom-3 -left-3 bg-white rounded-2xl shadow-pop px-4 py-3 flex items-center gap-3">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-coral text-white font-700">B</div>
+            <div>
+              <div class="text-[11px] uppercase tracking-wider text-mute">Credential</div>
+              <div class="text-sm font-semibold">BCBA Certified</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow"><span class="dot"></span> Meet Our Founder and Director</div>
+        <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl lg:text-6xl font-700 tracking-tight leading-[1.05]">
+          Ilana Gross,
+          <span class="italic text-coral font-600">BCBA</span>
+        </h2>
+        <div class="reveal reveal-delay-2 mt-3 text-lg font-semibold text-teal-deep">Clinical Director</div>
+
+        <div class="mt-6 space-y-4 text-ink-soft leading-relaxed text-[17px]">
+          <p class="reveal reveal-delay-2">Ilana received her bachelor's degree in Speech and Language Pathology from Touro College in Brooklyn, NY and went on to earn a dual Master's in Education and Special Education from Mercy College in Yonkers, NY.</p>
+          <p class="reveal reveal-delay-3">She has an advanced certificate in Applied Behavior Analysis from the Florida Institute of Technology. Ilana is a Board Certified Behavior Analyst and has over a decade of experience in Special Education and ABA.</p>
+          <p class="reveal reveal-delay-3">She has advanced training and vast experience in Early Intervention, Verbal Behavior, Natural Environment Teaching (NET) and Functional Behavior Assessment (FBA).</p>
+        </div>
+
+        <!-- Credential pills -->
+        <div class="reveal reveal-delay-3 mt-7 flex flex-wrap gap-2">
+          <span class="px-3 py-1.5 rounded-full bg-teal-soft text-teal-deep text-xs font-semibold">BCBA</span>
+          <span class="px-3 py-1.5 rounded-full bg-coral-soft text-coral text-xs font-semibold">Early Intervention</span>
+          <span class="px-3 py-1.5 rounded-full bg-sun-soft text-ink text-xs font-semibold">Verbal Behavior</span>
+          <span class="px-3 py-1.5 rounded-full bg-teal-soft text-teal-deep text-xs font-semibold">NET</span>
+          <span class="px-3 py-1.5 rounded-full bg-coral-soft text-coral text-xs font-semibold">FBA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="py-20 lg:py-28 bg-cream relative overflow-hidden">
+  <div class="blob blob-sun w-[420px] h-[420px] left-1/2 -translate-x-1/2 top-0"></div>
+  <div class="max-w-4xl mx-auto px-5 text-center relative">
+    <div class="reveal eyebrow inline-flex"><span class="dot"></span> Get started</div>
+    <h2 class="reveal reveal-delay-1 mt-5 font-display text-4xl sm:text-6xl font-700 tracking-tight leading-tight">
+      Improve your child's life today with <em class="italic text-coral">ABA therapy.</em>
+    </h2>
+    <p class="reveal reveal-delay-2 mt-5 text-ink-soft text-lg max-w-2xl mx-auto">
+      Friendly, knowledgeable staff ready to answer any question. We'd love to hear from you.
+    </p>
+    <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="contact.html" class="btn btn-coral">Contact Us Today to Get Started</a>
+      <a href="tel:2163431198" class="btn btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-grid place-items-center w-10 h-10 rounded-full bg-white">
+          <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6B47 0 22%, #fff 22% 38%, #0E4D6E 38% 54%, #fff 54% 70%, #0A3A55 70%)"></span>
+        </span>
+        <span class="font-extrabold">On Target ABA</span>
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>©<span data-year>2026</span> ON TARGET ABA, LLC · All rights reserved · Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Center-Based ABA Therapy | On Target ABA</title>
+<meta name="description" content="Warm, safe, and encouraging center-based ABA therapy. Small ratios, sensory rooms, social skills, preschool readiness, and themed days kids love." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing — most families pay $0 →</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center gap-2.5 group">
+      <span class="relative inline-grid place-items-center w-10 h-10 rounded-full bg-white shadow ring-1 ring-line">
+        <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6B47 0 22%, #fff 22% 38%, #0E4D6E 38% 54%, #fff 54% 70%, #0A3A55 70%)"></span>
+      </span>
+      <span class="leading-tight">
+        <span class="block font-extrabold tracking-tight text-ink">On Target<span class="text-coral">.</span></span>
+        <span class="block text-[10px] tracking-[0.22em] text-mute font-semibold">A B A &nbsp; T H E R A P Y</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="blob blob-teal w-[420px] h-[420px] -left-32 top-40" style="background:radial-gradient(closest-side, rgba(14,77,110,.22), transparent 70%)"></div>
+  <div class="blob blob-sun w-[380px] h-[380px] -right-32 -top-10"></div>
+
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-12 gap-12 items-center relative">
+    <div class="lg:col-span-7 relative z-10">
+      <div class="reveal eyebrow"><span class="dot"></span> Center-Based Care</div>
+      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[40px] sm:text-[56px] lg:text-[68px] leading-[1.04] font-700 tracking-tight">
+        Center-Based
+        <span class="relative inline-block">
+          <span class="relative z-10 italic font-600 text-teal">ABA Therapy</span>
+          <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
+            <path d="M2 9 C 50 1, 150 1, 198 8" stroke="#FF6B47" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+      </h1>
+      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
+        Our ABA centers provide a warm, safe, and encouraging environment where children learn through play, exploration, and individualized support.
+      </p>
+      <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
+        <a href="contact.html" class="btn btn-coral">
+          Let's Get Started
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:2163431198" class="btn btn-ghost">Call Now</a>
+      </div>
+
+      <div class="reveal reveal-delay-4 mt-10 grid grid-cols-3 gap-6 max-w-md">
+        <div>
+          <div class="font-display text-3xl font-700 text-teal-deep"><span data-count="20">0</span>–<span data-count="40">0</span></div>
+          <div class="text-xs uppercase tracking-wider text-mute mt-1">hours / week</div>
+        </div>
+        <div>
+          <div class="font-display text-3xl font-700 text-teal-deep">8a–6p</div>
+          <div class="text-xs uppercase tracking-wider text-mute mt-1">center hours</div>
+        </div>
+        <div>
+          <div class="font-display text-3xl font-700 text-teal-deep">1:1</div>
+          <div class="text-xs uppercase tracking-wider text-mute mt-1">therapist ratio</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 relative reveal reveal-delay-2">
+      <div class="relative w-full max-w-md mx-auto">
+        <div class="absolute -top-8 -right-8 w-40 h-40 rounded-full opacity-90 float">
+          <div class="target-mark w-full h-full"></div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-coral shadow-lg float delay-2"></div>
+        <div class="absolute top-1/2 -right-4 w-6 h-6 rounded-full bg-sun pulse-ring"></div>
+
+        <div class="relative rounded-[36px] overflow-hidden bg-white p-3 shadow-2xl rotate-1">
+          <div class="relative rounded-[28px] overflow-hidden bg-teal-soft aspect-[4/5]">
+            <img src="assets/images/NewCBAT.png" alt="Child engaged with therapist in clinic" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <div class="text-xs uppercase tracking-widest opacity-80">Built for kids</div>
+              <div class="font-display text-xl font-600 leading-tight mt-1">A clinic kids love walking into.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-6 right-2 bg-white rounded-2xl shadow-pop px-4 py-3 flex items-center gap-3 float">
+          <div class="w-10 h-10 grid place-items-center rounded-xl bg-teal-soft">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E4D6E" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-mute">Sensory Rooms</div>
+            <div class="text-sm font-semibold">Designed for autism</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT TO EXPECT ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mb-12">
+      <div class="reveal eyebrow"><span class="dot"></span> What to expect</div>
+      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">What to Expect From Local, Center-Based ABA Therapy</h2>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div class="reveal space-y-5 text-ink-soft text-lg leading-relaxed">
+        <p>Our ABA centers provide a warm, safe, and encouraging environment where children learn through play, exploration, and individualized support. Instead of sitting at a desk doing repetitive tasks, your child will engage in fun, meaningful activities that build confidence and promote learning across all areas of development.</p>
+        <p>Center-based ABA therapy offers a community setting that encourages age-appropriate learning and social interaction. We see amazing progress in communication, peer relationships, academics, self-regulation, potty training, and many other essential life skills — all through personalized programs designed for each child's unique needs.</p>
+      </div>
+      <div class="reveal reveal-delay-1 bg-white rounded-3xl p-7 ring-1 ring-line shadow-soft">
+        <div class="text-xs uppercase tracking-widest text-mute font-semibold mb-4">Advantages of Center-Based ABA Therapy</div>
+        <ul class="space-y-3">
+          <li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-coral grid place-items-center text-[10px] font-bold text-white shrink-0">✓</span><span>Customized ABA environment improves therapy sessions</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-coral grid place-items-center text-[10px] font-bold text-white shrink-0">✓</span><span>Constant session oversight by our Autism Clinical Leadership Team</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-coral grid place-items-center text-[10px] font-bold text-white shrink-0">✓</span><span>Gross motor and sensory rooms designed for young children with autism</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-coral grid place-items-center text-[10px] font-bold text-white shrink-0">✓</span><span>Group times to work on social skills</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-coral grid place-items-center text-[10px] font-bold text-white shrink-0">✓</span><span>Preschool readiness program, including circle times</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-5 h-5 rounded-full bg-coral grid place-items-center text-[10px] font-bold text-white shrink-0">✓</span><span>Themed days your child will love</span></li>
+        </ul>
+        <p class="mt-5 text-ink-soft">Our center-based ABA therapy ensures your child receives the focused care they need in a nurturing environment, right in your community.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAILY ROUTINE TIMELINE ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg opacity-60"></div>
+  <div class="max-w-7xl mx-auto px-5 relative">
+    <div class="max-w-2xl mb-14">
+      <div class="reveal eyebrow"><span class="dot"></span> A day at the center</div>
+      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Three skill areas. One full day of learning.</h2>
+      <p class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg">Every session is mapped to evidence-based goals across language, play, and school readiness — and adjusted as your child grows.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 relative">
+      <div class="hidden md:block absolute top-12 left-12 right-12 h-0.5 bg-line"></div>
+
+      <article class="reveal lift relative bg-cream rounded-3xl p-7 ring-1 ring-line">
+        <div class="w-12 h-12 grid place-items-center rounded-2xl bg-teal text-white font-700 font-display text-xl relative z-10">01</div>
+        <h3 class="mt-5 text-xl font-700">Language, Communication &amp; Social Skills</h3>
+        <ul class="mt-3 space-y-1.5 text-ink-soft text-sm">
+          <li>· Making eye contact</li>
+          <li>· Tacting (labeling items)</li>
+          <li>· Manding (expressing requests and needs)</li>
+          <li>· Imitation</li>
+          <li>· Listener responding skills</li>
+          <li>· Responding to greetings &amp; farewells</li>
+          <li>· Initiating farewells and greetings</li>
+          <li>· Communicative exchanges with peers</li>
+          <li>· Joint attention</li>
+          <li>· Intraverbal skills</li>
+          <li>· Higher-level intraverbal skills (carrying on conversations)</li>
+        </ul>
+      </article>
+
+      <article class="reveal reveal-delay-1 lift relative bg-cream rounded-3xl p-7 ring-1 ring-line">
+        <div class="w-12 h-12 grid place-items-center rounded-2xl bg-coral text-white font-700 font-display text-xl relative z-10">02</div>
+        <h3 class="mt-5 text-xl font-700">Play Skills</h3>
+        <ul class="mt-3 space-y-1.5 text-ink-soft text-sm">
+          <li>· Creative play (incorporating imagination into play)</li>
+          <li>· Functional play (playing with items in their intended way)</li>
+          <li>· Independent play (ability to play with toys by themselves)</li>
+          <li>· Social play (playing with peers)</li>
+        </ul>
+        <div class="mt-6 rounded-2xl bg-coral-soft p-4 text-coral text-sm font-semibold">
+          Learning happens best when it feels like fun.
+        </div>
+      </article>
+
+      <article class="reveal reveal-delay-2 lift relative bg-cream rounded-3xl p-7 ring-1 ring-line">
+        <div class="w-12 h-12 grid place-items-center rounded-2xl bg-sun text-ink font-700 font-display text-xl relative z-10">03</div>
+        <h3 class="mt-5 text-xl font-700">School Readiness &amp; Academic Goals</h3>
+        <ul class="mt-3 space-y-1.5 text-ink-soft text-sm">
+          <li>· Transitioning smoothly (between activities, situations and locations)</li>
+          <li>· Task completion</li>
+          <li>· Recognizing numbers and letters</li>
+          <li>· Matching</li>
+          <li>· Counting</li>
+          <li>· Reading</li>
+          <li>· Vocabulary</li>
+          <li>· Math skills</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLEXIBLE SCHEDULING ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <div class="reveal eyebrow"><span class="dot"></span> Flexible Scheduling</div>
+        <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">We work with your schedule.</h2>
+        <p class="reveal reveal-delay-2 mt-5 text-ink-soft text-lg leading-relaxed">
+          We know you have a busy schedule but also want your child to receive the help they need. That's why our centers open at 8 am and close at 6 pm. We work with each parent to develop a set therapy schedule that's both convenient for them and promotes the success of their child.
+        </p>
+        <p class="reveal reveal-delay-3 mt-4 text-ink-soft text-lg leading-relaxed">
+          Need to drop off your child at 8:00 AM? No problem. Need your child to stay till 5:30 PM? No problem. We're here for you. You shouldn't have to worry about scheduling your child's therapy. You have enough to worry about. We'll work with your schedule. Because receiving ABA therapy services should be easy and convenient. We'd want it no other way.
+        </p>
+      </div>
+      <div class="lg:col-span-5 reveal reveal-delay-1">
+        <div class="relative">
+          <div class="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-sun shadow-lg float"></div>
+          <div class="bg-gradient-to-br from-teal to-teal-deep text-white rounded-[28px] p-8 shadow-2xl">
+            <div class="text-xs uppercase tracking-widest text-white/70 font-semibold mb-4">Center hours</div>
+            <div class="font-display text-5xl font-700 leading-none">8a — 6p</div>
+            <div class="mt-2 text-white/80">Monday through Friday</div>
+            <div class="mt-6 pt-6 border-t border-white/15 space-y-2 text-white/85">
+              <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-sun"></span> Drop off as early as 8:00 AM</div>
+              <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-coral"></span> Stay until 5:30 PM</div>
+              <div class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-white"></span> Schedules built around your family</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line">
+  <div class="max-w-4xl mx-auto px-5 text-center">
+    <svg class="mx-auto" width="44" height="44" viewBox="0 0 24 24" fill="#FF6B47"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+    <blockquote class="reveal mt-6 font-display text-3xl sm:text-4xl font-600 leading-snug text-ink">
+      "My child runs off to his therapist every time. It's amazing."
+    </blockquote>
+    <figcaption class="reveal reveal-delay-1 mt-8 inline-flex items-center gap-3">
+      <div class="w-12 h-12 rounded-full bg-coral-soft grid place-items-center font-700 text-coral">SR</div>
+      <div class="text-left"><div class="font-semibold">S. R.</div><div class="text-sm text-mute">Parent · Center-based</div></div>
+    </figcaption>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="py-20 lg:py-28 bg-cream relative overflow-hidden">
+  <div class="blob blob-coral w-[420px] h-[420px] left-1/2 -translate-x-1/2 top-0"></div>
+  <div class="max-w-4xl mx-auto px-5 text-center relative">
+    <div class="reveal eyebrow inline-flex"><span class="dot"></span> Ready to begin?</div>
+    <h2 class="reveal reveal-delay-1 mt-5 font-display text-4xl sm:text-6xl font-700 tracking-tight leading-tight">
+      A space designed for <em class="italic text-coral">your child to thrive.</em>
+    </h2>
+    <p class="reveal reveal-delay-2 mt-5 text-ink-soft text-lg max-w-2xl mx-auto">
+      Tour the center, meet our team, and see why families across three states choose On Target ABA.
+    </p>
+    <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="contact.html" class="btn btn-coral">Contact Us Today</a>
+      <a href="aba-therapy-guide.html" class="btn btn-ghost">Learn More About ABA Therapy</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-grid place-items-center w-10 h-10 rounded-full bg-white">
+          <span class="block w-7 h-7 rounded-full" style="background:radial-gradient(circle at center, #FF6B47 0 22%, #fff 22% 38%, #0E4D6E 38% 54%, #fff 54% 70%, #0A3A55 70%)"></span>
+        </span>
+        <span class="font-extrabold">On Target ABA</span>
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>©<span data-year>2026</span> ON TARGET ABA, LLC · All rights reserved · Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
