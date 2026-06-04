@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog &amp; Resources â€” On Target ABA | Autism &amp; ABA Therapy Insights</title>
+<meta name="description" content="Insights, guides, and resources from the On Target ABA team â€” covering autism, ABA therapy, parenting, and the science of evidence-based care." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing â€” most families pay $0 â†’</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center group" aria-label="On Target ABA â€” home">
+      <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="blob blob-coral w-[420px] h-[420px] -left-32 top-20"></div>
+  <div class="blob blob-sun w-[380px] h-[380px] -right-32 -top-10"></div>
+
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-14 lg:pt-24 lg:pb-20 relative">
+    <div class="max-w-3xl">
+      <div class="reveal eyebrow"><span class="dot"></span> Blog &amp; resources</div>
+      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[72px] leading-[1.02] font-700 tracking-tight">
+        Real insights for
+        <span class="relative inline-block">
+          <span class="relative z-10 italic font-600">real families.</span>
+          <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
+            <path d="M2 9 C 50 1, 150 1, 198 8" stroke="#FF6B47" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+      </h1>
+      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-2xl">
+        Practical guides, parenting strategies, and evidence-based perspectives on autism and ABA therapy â€” written by our clinical team.
+      </p>
+
+      <div class="reveal reveal-delay-3 mt-7 flex flex-wrap gap-2 text-xs uppercase tracking-widest font-semibold">
+        <span class="px-3 py-1 rounded-full bg-coral text-white">All posts</span>
+        <span class="px-3 py-1 rounded-full bg-white ring-1 ring-line text-ink-soft">ABA Therapy Basics</span>
+        <span class="px-3 py-1 rounded-full bg-white ring-1 ring-line text-ink-soft">Parent Resources</span>
+        <span class="px-3 py-1 rounded-full bg-white ring-1 ring-line text-ink-soft">Developmental Milestones</span>
+        <span class="px-3 py-1 rounded-full bg-white ring-1 ring-line text-ink-soft">Community &amp; Events</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED POST ============ -->
+<section class="py-12 lg:py-16">
+  <div class="max-w-7xl mx-auto px-5">
+    <a href="#" class="reveal group block">
+      <article class="relative overflow-hidden rounded-[36px] bg-white ring-1 ring-line shadow-soft grid lg:grid-cols-12">
+        <div class="lg:col-span-7 relative aspect-[16/10] lg:aspect-auto bg-teal-soft">
+          <img src="assets/images/pexels-olia-danilevich-4762767-300x200.jpg" alt="How to Talk to an Autistic Teenager" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+          <div class="absolute inset-0 bg-gradient-to-tr from-ink/30 via-transparent to-transparent"></div>
+          <div class="absolute top-5 left-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 text-xs uppercase tracking-widest font-bold text-coral">
+            <span class="w-1.5 h-1.5 rounded-full bg-coral"></span> Featured
+          </div>
+        </div>
+        <div class="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-center">
+          <div class="flex items-center gap-3 text-xs uppercase tracking-widest font-semibold text-mute">
+            <span class="text-coral">Developmental Milestones</span>
+            <span>Â·</span>
+            <span>June 3, 2026</span>
+          </div>
+          <h2 class="mt-4 font-display text-3xl lg:text-4xl font-700 leading-tight">
+            How to Talk to an Autistic Teenager: A Guide for Parents, Educators, and Caregivers
+          </h2>
+          <p class="mt-4 text-ink-soft leading-relaxed">
+            AI Summary: Communicating with an autistic teenager requires patience, flexibility, and a genuine understanding of how autism shapes languageâ€¦
+          </p>
+          <div class="mt-6 inline-flex items-center gap-2 font-semibold text-coral">
+            Read more <span class="transition-transform group-hover:translate-x-1">â†’</span>
+          </div>
+        </div>
+      </article>
+    </a>
+  </div>
+</section>
+
+<!-- ============ POST GRID ============ -->
+<section class="py-12 lg:py-16">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <div class="reveal eyebrow"><span class="dot"></span> Latest posts</div>
+        <h2 class="reveal reveal-delay-1 mt-3 font-display text-3xl sm:text-4xl font-700">More to read.</h2>
+      </div>
+      <a href="#" class="hidden sm:inline-flex link-uline text-coral font-semibold text-sm">See all posts â†’</a>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Post 2 -->
+      <a href="#" class="reveal lift group block bg-white ring-1 ring-line rounded-3xl overflow-hidden">
+        <div class="relative aspect-[16/10] bg-teal-soft overflow-hidden">
+          <img src="assets/images/pexels-anastasia-shuraeva-8467265-300x200.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold">
+            <span class="text-coral">Community &amp; Events</span>
+            <span class="text-mute">Â·</span>
+            <span class="text-mute">Jun 2, 2026</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-700 leading-snug group-hover:text-coral transition">How General Education Teachers Can Support Students with Autism: A Complete Guide</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">AI Summary: This guide breaks down practical, evidence-based strategies for general education teachers to confidently support students with Autismâ€¦</p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">Read more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+
+      <!-- Post 3 -->
+      <a href="#" class="reveal reveal-delay-1 lift group block bg-white ring-1 ring-line rounded-3xl overflow-hidden">
+        <div class="relative aspect-[16/10] bg-coral-soft overflow-hidden">
+          <img src="assets/images/pexels-anastasia-shuraeva-8466162-300x200.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold">
+            <span class="text-coral">Developmental Milestones</span>
+            <span class="text-mute">Â·</span>
+            <span class="text-mute">Jun 1, 2026</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-700 leading-snug group-hover:text-coral transition">Autism and School: Your Child's Rights â€” A Complete Guide for Families</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">AI Summary: Every autistic child in the United States has federally protected rights to a free, appropriate public educationâ€¦</p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">Read more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+
+      <!-- Post 4 -->
+      <a href="#" class="reveal reveal-delay-2 lift group block bg-white ring-1 ring-line rounded-3xl overflow-hidden">
+        <div class="relative aspect-[16/10] bg-sun-soft overflow-hidden">
+          <img src="assets/images/pexels-kampus-8185877-300x200.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold">
+            <span class="text-coral">Parent Resources</span>
+            <span class="text-mute">Â·</span>
+            <span class="text-mute">May 29, 2026</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-700 leading-snug group-hover:text-coral transition">Virtual Activities for Kids with Autism: The Complete Guide for Families</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">AI Summary: In today's digital world, virtual and online activities have become a powerful â€” and often underutilized â€”â€¦</p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">Read more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+
+      <!-- Post 5 -->
+      <a href="#" class="reveal lift group block bg-white ring-1 ring-line rounded-3xl overflow-hidden">
+        <div class="relative aspect-[16/10] bg-teal-soft overflow-hidden">
+          <img src="assets/images/pexels-andreevaleksandar-25748909-300x200.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold">
+            <span class="text-coral">ABA Therapy Basics</span>
+            <span class="text-mute">Â·</span>
+            <span class="text-mute">May 28, 2026</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-700 leading-snug group-hover:text-coral transition">Real-World Autism Interventions: How ABA Therapy Meets Children Where They Actually Live</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">AI Summary: The most powerful autism interventions are not the ones that happen at a table in a therapyâ€¦</p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">Read more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+
+      <!-- Post 6 -->
+      <a href="#" class="reveal reveal-delay-1 lift group block bg-white ring-1 ring-line rounded-3xl overflow-hidden">
+        <div class="relative aspect-[16/10] bg-coral-soft overflow-hidden">
+          <img src="assets/images/pexels-mikhail-nilov-8923078-300x200.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold">
+            <span class="text-coral">ABA Therapy Basics</span>
+            <span class="text-mute">Â·</span>
+            <span class="text-mute">May 27, 2026</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-700 leading-snug group-hover:text-coral transition">What Is a BCBA? Understanding the Clinical Heart of ABA Therapy</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">AI Summary: If you are navigating ABA therapy for your child, you will encounter the acronym BCBA early andâ€¦</p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">Read more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+
+      <!-- Post 7 -->
+      <a href="#" class="reveal reveal-delay-2 lift group block bg-white ring-1 ring-line rounded-3xl overflow-hidden">
+        <div class="relative aspect-[16/10] bg-sun-soft overflow-hidden">
+          <img src="assets/images/pexels-karola-g-8107703-300x200.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold">
+            <span class="text-coral">ABA Therapy Basics</span>
+            <span class="text-mute">Â·</span>
+            <span class="text-mute">May 26, 2026</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-700 leading-snug group-hover:text-coral transition">Signs of Autism in Women and Girls: What to Know and Why It Matters</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">AI Summary: Autism in women and girls has been systemically missed for decades â€” by clinicians, by schools, byâ€¦</p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">Read more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+
+      <!-- Post 8 -->
+      <a href="#" class="reveal lift group block bg-white ring-1 ring-line rounded-3xl overflow-hidden">
+        <div class="relative aspect-[16/10] bg-teal-soft overflow-hidden">
+          <img src="assets/images/pexels-shvetsa-11286043-300x200.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold">
+            <span class="text-coral">ABA Therapy Basics</span>
+            <span class="text-mute">Â·</span>
+            <span class="text-mute">May 25, 2026</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-700 leading-snug group-hover:text-coral transition">Life Skills and Autism: A Complete Guide to Building Independence at Every Age</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">AI Summary: Life skills are the invisible foundation of adult independence â€” and for autistic individuals, they require deliberate,â€¦</p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">Read more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+
+      <!-- Post 9 -->
+      <a href="#" class="reveal reveal-delay-1 lift group block bg-white ring-1 ring-line rounded-3xl overflow-hidden">
+        <div class="relative aspect-[16/10] bg-coral-soft overflow-hidden">
+          <img src="assets/images/pexels-guiirossi-2553410-scaled-e1779439292226-300x194.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold">
+            <span class="text-coral">ABA Therapy Basics</span>
+            <span class="text-mute">Â·</span>
+            <span class="text-mute">May 22, 2026</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-700 leading-snug group-hover:text-coral transition">Autism and Driving: What Families Need to Know</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">AI Summary: Driving represents one of the most significant independence milestones in adolescence and young adulthood â€” and forâ€¦</p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">Read more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+
+      <!-- Post 10 -->
+      <a href="#" class="reveal reveal-delay-2 lift group block bg-white ring-1 ring-line rounded-3xl overflow-hidden">
+        <div class="relative aspect-[16/10] bg-sun-soft overflow-hidden">
+          <img src="assets/images/pexels-brett-sayles-3633710-300x200.jpg" alt="" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 text-[11px] uppercase tracking-widest font-bold">
+            <span class="text-coral">ABA Therapy Basics</span>
+            <span class="text-mute">Â·</span>
+            <span class="text-mute">May 21, 2026</span>
+          </div>
+          <h3 class="mt-3 font-display text-xl font-700 leading-snug group-hover:text-coral transition">Autism and Trains: Why So Many Autistic Children Love Them â€” and How to Use That Love</h3>
+          <p class="mt-3 text-sm text-ink-soft leading-relaxed">AI Summary: If you have an autistic child who is passionately, intensely, encyclopedically interested in trains, you are inâ€¦</p>
+          <div class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">Read more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-14 flex items-center justify-center gap-2 text-sm">
+      <span class="px-4 py-2 rounded-full bg-coral text-white font-bold">1</span>
+      <a href="#" class="px-4 py-2 rounded-full bg-white ring-1 ring-line hover:bg-cream font-semibold">2</a>
+      <a href="#" class="px-4 py-2 rounded-full bg-white ring-1 ring-line hover:bg-cream font-semibold">3</a>
+      <span class="px-2 text-mute">â€¦</span>
+      <a href="#" class="px-4 py-2 rounded-full bg-white ring-1 ring-line hover:bg-cream font-semibold">17</a>
+      <a href="#" class="ml-3 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-ink text-white font-semibold">Next <span>â†’</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBSCRIBE ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line relative overflow-hidden">
+  <div class="blob blob-coral w-[300px] h-[300px] -left-20 top-10"></div>
+  <div class="blob blob-sun w-[280px] h-[280px] -right-20 bottom-10"></div>
+
+  <div class="max-w-4xl mx-auto px-5 text-center relative">
+    <div class="reveal eyebrow inline-flex"><span class="dot"></span> Stay in the loop</div>
+    <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight leading-tight">
+      New guides. <em class="italic text-coral">Straight to your inbox.</em>
+    </h2>
+    <p class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg max-w-2xl mx-auto">
+      Once-a-month roundup of fresh writing on autism, ABA, and parenting â€” no spam, easy to unsubscribe.
+    </p>
+
+    <form action="#" onsubmit="event.preventDefault(); alert('Thank you â€” we will be in touch.'); this.reset();" class="reveal reveal-delay-3 mt-8 max-w-xl mx-auto">
+      <div class="flex flex-col sm:flex-row gap-2 bg-cream ring-1 ring-line rounded-2xl p-2 shadow-soft">
+        <label class="flex-1 block">
+          <span class="sr-only">Email address</span>
+          <input type="email" required class="w-full rounded-xl border-0 bg-transparent px-4 py-3 focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="you@email.com" />
+        </label>
+        <button type="submit" class="btn btn-coral justify-center">
+          Subscribe
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <p class="mt-3 text-xs text-mute">By subscribing, you agree to receive occasional emails from On Target ABA. Unsubscribe anytime.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ DEEP-DIVE RESOURCES ============ -->
+<section class="py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-2xl mb-12">
+      <div class="reveal eyebrow"><span class="dot"></span> Go deeper</div>
+      <h2 class="reveal reveal-delay-1 mt-3 font-display text-4xl sm:text-5xl font-700 tracking-tight">Cornerstone resources.</h2>
+      <p class="reveal reveal-delay-2 mt-3 text-ink-soft text-lg">Three resources we recommend every parent and caregiver start with.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <a href="autism-testing.html" class="reveal lift group block rounded-3xl bg-ink text-white p-7 relative overflow-hidden">
+        <div class="absolute -right-12 -top-12 w-60 h-60 rounded-full bg-coral/30 blur-2xl"></div>
+        <div class="relative">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-[11px] uppercase tracking-widest font-semibold text-sun">Diagnosis</div>
+          <h3 class="mt-5 font-display text-2xl font-700 leading-snug">Autism testing â€” no waitlist</h3>
+          <p class="mt-3 text-white/80 text-sm leading-relaxed">Fast, evidence-based autism evaluations. Most families pay $0 and are scheduled within a week.</p>
+          <div class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">Learn more <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+      <a href="aba-therapy-guide.html" class="reveal reveal-delay-1 lift group block rounded-3xl bg-coral text-white p-7 relative overflow-hidden">
+        <div class="absolute -right-12 -bottom-12 w-60 h-60 rounded-full bg-white/15 blur-2xl"></div>
+        <div class="relative">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-[11px] uppercase tracking-widest font-semibold">Guide</div>
+          <h3 class="mt-5 font-display text-2xl font-700 leading-snug">The complete ABA therapy guide</h3>
+          <p class="mt-3 text-white/90 text-sm leading-relaxed">Everything you need to know about autism, ABA, techniques, parent training, and finding the right therapist.</p>
+          <div class="mt-5 inline-flex items-center gap-2 font-semibold">Read the guide <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+      <a href="faqs.html" class="reveal reveal-delay-2 lift group block rounded-3xl bg-cream ring-1 ring-line p-7 relative overflow-hidden">
+        <div class="absolute -right-12 -top-12 w-60 h-60 rounded-full bg-sun/30 blur-2xl"></div>
+        <div class="relative">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sun text-ink text-[11px] uppercase tracking-widest font-semibold">FAQs</div>
+          <h3 class="mt-5 font-display text-2xl font-700 leading-snug text-ink">Answers to the most-asked questions</h3>
+          <p class="mt-3 text-ink-soft text-sm leading-relaxed">Insurance, scheduling, what to expect, how to prepare â€” straight answers, no jargon.</p>
+          <div class="mt-5 inline-flex items-center gap-2 font-semibold text-coral">See FAQs <span class="transition-transform group-hover:translate-x-1">â†’</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center">
+        <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-11 w-auto" />
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>Â©<span data-year>2026</span> ON TARGET ABA, LLC Â· All rights reserved Â· Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
