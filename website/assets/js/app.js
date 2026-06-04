@@ -431,8 +431,11 @@
     setTimeout(hideBubble, 11000);
   }
 
-  // Close panel on outside click (mobile)
-  document.addEventListener('click', (e) => {
+  // Close panel on outside click (mobile).
+  // Use mousedown so the check runs BEFORE any in-panel button handler
+  // re-renders the body — otherwise the clicked element is detached by the
+  // time we inspect it, and panel.contains() falsely reads "outside."
+  document.addEventListener('mousedown', (e) => {
     if (!panelOpen) return;
     if (panel.contains(e.target) || launcher.contains(e.target)) return;
     closePanel();
