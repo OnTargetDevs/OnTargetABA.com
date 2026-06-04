@@ -16,6 +16,14 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Added
 
+- update blog post "test" (#4)
+- update blog post "test" (#3)
+
+
+## [Unreleased] &mdash; 2026-06-04
+
+### Added
+
 - new blog post "test" (#2)
 
 
