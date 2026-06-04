@@ -139,34 +139,6 @@
 })();
 
 /* ============================================================
-   Shared footer loader.
-   Pages ship a `<div id="site-footer"></div>` placeholder; this
-   IIFE swaps it for the canonical /assets/partials/footer.html so
-   the footer markup lives in exactly one place.
-   ============================================================ */
-(() => {
-  'use strict';
-  const slot = document.getElementById('site-footer');
-  if (!slot) return;
-
-  fetch('/assets/partials/footer.html', { cache: 'default' })
-    .then((r) => (r.ok ? r.text() : ''))
-    .then((html) => {
-      if (!html) return;
-      const wrapper = document.createElement('div');
-      wrapper.innerHTML = html;
-      const parent = slot.parentNode;
-      while (wrapper.firstChild) parent.insertBefore(wrapper.firstChild, slot);
-      slot.remove();
-      // Re-stamp year placeholders on the injected content.
-      document.querySelectorAll('[data-year]').forEach((el) => {
-        el.textContent = new Date().getFullYear();
-      });
-    })
-    .catch(() => { /* fail silently — the page still renders. */ });
-})();
-
-/* ============================================================
    Site enhancements (runs after the main behavior IIFE).
    - Mirror any single-row review marquee into a 2-row pattern
      with the mirror scrolling the opposite direction. Pages that

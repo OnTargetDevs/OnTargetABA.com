@@ -865,6 +865,14 @@ def build_head_block(slug: str, page: dict) -> str:
 
 
 def build_breadcrumb_html(page: dict) -> str:
+    # Visible breadcrumbs are now rendered by assets/js/header.js so each
+    # page only ever has one. The BreadcrumbList JSON-LD still ships via
+    # the @graph in build_head_block(). Keep this function as a no-op so
+    # the sweep logic continues to strip any stale auto-crumb blocks.
+    return ""
+
+
+def _old_build_breadcrumb_html(page: dict) -> str:
     crumbs = page["crumbs"]
     if len(crumbs) <= 1:
         return ""  # don't render on homepage
