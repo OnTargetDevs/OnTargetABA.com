@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Potty Training Program â€” On Target ABA</title>
+<meta name="description" content="A structured, gentle, evidence-based ABA potty training program for children with autism. Individualized plans, patient therapists, real results." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#0B2233', soft: '#1F3A52' },
+        teal:  { DEFAULT: '#0E4D6E', deep: '#0A3A55', soft: '#DCEBF4' },
+        coral: { DEFAULT: '#FF6B47', soft: '#FFE3D7' },
+        sun:   { DEFAULT: '#FFC857', soft: '#FFF1CF' },
+        cream: '#FAF7F2',
+        mute:  '#6B7E8F',
+        line:  '#E4ECF2'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing â€” most families pay $0 â†’</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="index.html" class="flex items-center group" aria-label="On Target ABA â€” home">
+      <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a data-nav-link href="our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a data-nav-link href="autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a data-nav-link href="about.html" class="link-uline hover:text-coral">About</a>
+      <a data-nav-link href="insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B2233" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile panel -->
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero-bg relative overflow-hidden">
+  <div class="blob blob-coral w-[420px] h-[420px] -left-32 top-40"></div>
+  <div class="blob blob-sun w-[380px] h-[380px] -right-32 -top-10"></div>
+
+  <div class="max-w-7xl mx-auto px-5 pt-16 pb-20 lg:pt-24 lg:pb-32 grid lg:grid-cols-12 gap-12 items-center relative">
+
+    <div class="lg:col-span-7 relative z-10">
+      <div class="reveal eyebrow"><span class="dot"></span> Potty Training Program</div>
+
+      <h1 class="reveal reveal-delay-1 mt-5 font-display text-[44px] sm:text-[58px] lg:text-[72px] leading-[1.02] font-700 tracking-tight">
+        A gentle,<br/>
+        <span class="relative inline-block">
+          <span class="relative z-10 italic font-600">structured</span>
+          <svg class="absolute -bottom-2 left-0 w-full" height="14" viewBox="0 0 200 14" preserveAspectRatio="none">
+            <path d="M2 9 C 50 1, 150 1, 198 8" stroke="#FF6B47" stroke-width="4" stroke-linecap="round" fill="none"/>
+          </svg>
+        </span>
+        approach to potty training.
+      </h1>
+
+      <p class="reveal reveal-delay-2 mt-6 text-lg text-ink-soft max-w-xl">
+        Using the toilet is one of the major milestones of early childhood â€” a critical life skill necessary for independent living. For children with autism, it can be delayed. We help your child get there.
+      </p>
+
+      <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
+        <a href="contact.html" class="btn btn-coral">
+          Schedule Your Free Initial Consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:2163431198" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          Call Now
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero visual -->
+    <div class="lg:col-span-5 relative reveal reveal-delay-2">
+      <div class="relative w-full max-w-md mx-auto">
+        <div class="absolute -top-8 -right-8 w-40 h-40 rounded-full opacity-90 float">
+          <div class="target-mark w-full h-full"></div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-sun shadow-lg float delay-2"></div>
+        <div class="absolute top-1/2 -right-4 w-6 h-6 rounded-full bg-coral pulse-ring"></div>
+
+        <div class="relative rounded-[36px] overflow-hidden bg-white p-3 shadow-2xl rotate-1">
+          <div class="relative rounded-[28px] overflow-hidden bg-coral-soft aspect-[4/5]">
+            <img src="assets/images/white-child-with-toy-showing-blonde-female-therapist-1.png" alt="Child with therapist working on skills" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <div class="text-xs uppercase tracking-widest opacity-80">Warm. Patient. Experienced.</div>
+              <div class="font-display text-xl font-600 leading-tight mt-1">Built for independence.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-6 right-2 bg-white rounded-2xl shadow-pop px-4 py-3 flex items-center gap-3 float">
+          <div class="w-10 h-10 grid place-items-center rounded-xl bg-sun-soft text-ink">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-wider text-mute">Approach</div>
+            <div class="text-sm font-semibold">Evidence-based ABA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IT IS ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+      <div class="lg:col-span-5">
+        <div class="reveal eyebrow"><span class="dot"></span> About the program</div>
+        <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Potty Training Program</h2>
+        <p class="reveal reveal-delay-2 mt-5 text-ink-soft text-lg">
+          One of the major milestones of early childhood is using the toilet. It's a critical life skill necessary for independent living. For children with autism, toileting acquisition (potty training) may be delayed, and in some cases never achieved.
+        </p>
+        <p class="reveal reveal-delay-3 mt-4 text-ink-soft text-lg">
+          ABA therapy is one of several toilet training techniques for children with autism that research has shown to be <strong class="text-ink">extremely effective.</strong>
+        </p>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="reveal mb-6 text-sm uppercase tracking-widest font-semibold text-mute">A wide range of issues can contribute to the difficulties</div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="reveal lift bg-cream rounded-2xl p-5 ring-1 ring-line">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-coral text-white mb-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+            </div>
+            <div class="font-700">Sensory overload</div>
+          </div>
+          <div class="reveal reveal-delay-1 lift bg-cream rounded-2xl p-5 ring-1 ring-line">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-teal text-white mb-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08A2.5 2.5 0 0 1 2 14.5a2.5 2.5 0 0 1 2.5-2.5A2.5 2.5 0 0 1 7 9.5a2.5 2.5 0 0 1 2.5-7.5z"/></svg>
+            </div>
+            <div class="font-700">Cognition</div>
+          </div>
+          <div class="reveal reveal-delay-2 lift bg-cream rounded-2xl p-5 ring-1 ring-line">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-sun text-ink mb-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"/></svg>
+            </div>
+            <div class="font-700">Restricted &amp; repetitive behaviors</div>
+          </div>
+          <div class="reveal reveal-delay-3 lift bg-cream rounded-2xl p-5 ring-1 ring-line">
+            <div class="w-10 h-10 grid place-items-center rounded-xl bg-teal-deep text-white mb-3">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="font-700">Deficits in communication &amp; social skills</div>
+          </div>
+          <div class="reveal lift bg-cream rounded-2xl p-5 ring-1 ring-line sm:col-span-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 grid place-items-center rounded-xl bg-ink text-white shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z"/></svg>
+              </div>
+              <div>
+                <div class="font-700">Limited motor skills</div>
+                <p class="text-sm text-ink-soft mt-1">These and other characteristics associated with the autism spectrum can all play a role. Essentially, the underlying cause of potty training issues will depend on the child.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="py-20 lg:py-28 relative overflow-hidden">
+  <div class="blob blob-coral w-[380px] h-[380px] -left-24 top-20 opacity-50"></div>
+  <div class="blob blob-sun w-[340px] h-[340px] -right-24 bottom-12 opacity-50"></div>
+
+  <div class="max-w-7xl mx-auto px-5 relative">
+    <div class="grid lg:grid-cols-2 gap-10">
+
+      <div class="reveal bg-white rounded-3xl p-8 lg:p-10 ring-1 ring-line shadow-soft">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-coral text-white text-xs uppercase tracking-widest font-semibold">How it works</div>
+        <h2 class="mt-4 font-display text-3xl sm:text-4xl font-700">How Does ABA Therapy Teach Potty Training?</h2>
+        <p class="mt-4 text-ink-soft text-lg">ABA therapy teaches potty training in a way specific to your child based on their needs and skills.</p>
+        <p class="mt-4 text-ink-soft">
+          Since there are a variety of techniques, a trained BCBA will help identify which methods will likely be the most appropriate and effective for your child based on the skills your child already posseses.
+        </p>
+        <p class="mt-4 text-ink-soft">
+          For example, some children with autism must be taught to first tolerate sitting on a toilet before a toileting procedure can start. Others may use the toilet when instructed but will not initiate. Sometimes, a child will urinate in the toilet but not have a bowel movement.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-1 bg-ink text-white rounded-3xl p-8 lg:p-10 relative overflow-hidden">
+        <div class="blob blob-sun w-[280px] h-[280px] -right-20 -top-20 opacity-30"></div>
+
+        <div class="relative">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-xs uppercase tracking-widest font-semibold text-sun">
+            <span class="w-1.5 h-1.5 rounded-full bg-sun"></span> Individualized
+          </div>
+          <h2 class="mt-4 font-display text-3xl sm:text-4xl font-700">Individualized Potty-Training Plan</h2>
+          <p class="mt-4 text-white/85 text-lg">
+            We individualize the potty training based on your child's unique skillset. There's no "one-size-fits-all" potty training technique or magic method that we use for all children.
+          </p>
+
+          <div class="mt-6 grid grid-cols-3 gap-3">
+            <div class="bg-white/10 rounded-2xl p-4 text-center">
+              <div class="font-display text-xl font-700 text-sun">Super</div>
+              <div class="text-xs uppercase tracking-wider mt-1 opacity-80">nice</div>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-4 text-center">
+              <div class="font-display text-xl font-700 text-sun">Super</div>
+              <div class="text-xs uppercase tracking-wider mt-1 opacity-80">patient</div>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-4 text-center">
+              <div class="font-display text-xl font-700 text-sun">Super</div>
+              <div class="text-xs uppercase tracking-wider mt-1 opacity-80">experienced</div>
+            </div>
+          </div>
+
+          <p class="mt-6 text-white/85">
+            Our therapists are super nice, super patient, and super experienced in potty training. We have a <strong class="text-sun">great track record</strong> of potty training success and can do the same for your child.
+          </p>
+
+          <div class="mt-7">
+            <a href="contact.html" class="btn btn-sun">Lets Get Started</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQs ============ -->
+<section class="py-20 lg:py-28 bg-white border-y border-line">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="mb-12 text-center">
+      <div class="reveal eyebrow inline-flex"><span class="dot"></span> Good questions, real answers</div>
+      <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Potty Training Program FAQs</h2>
+    </div>
+
+    <div class="reveal space-y-3">
+      <div class="faq-item">
+        <button class="faq-q">What is the Potty Training Program at On Target ABA? <span class="chev">+</span></button>
+        <div class="faq-a">The Potty Training Program at On Target ABA uses evidence-based ABA strategies to teach children essential toilet skills in a structured and supportive environment. This program focuses on individualized plans to address each child's unique needs, ensuring a positive and effective learning experience.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Who can benefit from the Potty Training Program? <span class="chev">+</span></button>
+        <div class="faq-a">This program is designed for children with autism or other developmental delays who face challenges with traditional toilet training methods. It's especially beneficial for children who need a consistent, tailored approach to develop independent toilet skills.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What techniques are used in the Potty Training Program? <span class="chev">+</span></button>
+        <div class="faq-a">The program incorporates ABA-based techniques such as positive reinforcement to encourage success, consistent routines to establish habits, and step-by-step teaching to help children master using the toilet. Also, sometimes we use visual aids to facilitate their understanding.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does potty training take? <span class="chev">+</span></button>
+        <div class="faq-a">The duration of potty training varies depending on the child's readiness, learning pace, and consistency in applying the strategies. Some children may show progress within weeks, while others may require a few months to develop and maintain the skills.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can parents be involved in the potty training process? <span class="chev">+</span></button>
+        <div class="faq-a">Absolutely. Parent involvement is essential for success. Parents are trained to implement strategies at home and reinforce skills learned during therapy sessions, creating consistency that helps children generalize their skills across settings.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if my child has sensory challenges related to potty training? <span class="chev">+</span></button>
+        <div class="faq-a">For children with sensory challenges, the program includes customized strategies to address discomfort, fear, or aversions. Therapists work closely with families to ensure a supportive approach that helps the child feel secure and confident.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does the Potty Training Program include nighttime training? <span class="chev">+</span></button>
+        <div class="faq-a">Yes, nighttime training can be included as part of the program if needed. Therapists assess the child's progress and readiness, gradually introducing strategies to support dry nights alongside daytime training.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What should I bring to potty training sessions? <span class="chev">+</span></button>
+        <div class="faq-a">Parents should bring extra clothing for accidents, preferred reinforcers (such as snacks or small toys) to motivate the child, and any additional supplies the child is accustomed to using, such as specific wipes or a training seat.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is potty training covered by insurance? <span class="chev">+</span></button>
+        <div class="faq-a">Insurance coverage for potty training programs depends on the specifics of your policy and whether it is part of an ABA therapy plan. Contact On Target ABA for guidance on verifying coverage and understanding your benefits.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I know if my child is ready for potty training? <span class="chev">+</span></button>
+        <div class="faq-a">Signs of readiness include staying dry for extended periods, showing interest in using the toilet, and being able to communicate basic needs, either verbally or through gestures. Therapists can also help assess readiness during an initial consultation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="py-20 lg:py-28 bg-cream relative overflow-hidden">
+  <div class="blob blob-sun w-[420px] h-[420px] left-1/2 -translate-x-1/2 top-0"></div>
+  <div class="blob blob-coral w-[280px] h-[280px] -left-16 bottom-0 opacity-50"></div>
+
+  <div class="max-w-4xl mx-auto px-5 text-center relative">
+    <div class="reveal eyebrow inline-flex"><span class="dot"></span> Get started</div>
+    <h2 class="reveal reveal-delay-1 mt-5 font-display text-4xl sm:text-6xl font-700 tracking-tight leading-tight">
+      Ready when <em class="italic text-coral">you are.</em>
+    </h2>
+    <p class="reveal reveal-delay-2 mt-5 text-ink-soft text-lg max-w-2xl mx-auto">
+      Reach out for a free initial consultation. We'll talk through your child's readiness and what a personalized potty training plan could look like.
+    </p>
+    <div class="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3 justify-center">
+      <a href="contact.html" class="btn btn-coral">Schedule Your Free Initial Consultation</a>
+      <a href="tel:2163431198" class="btn btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center">
+        <img src="assets/images/footerImg.png" alt="On Target ABA" class="h-11 w-auto" />
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="about.html" class="link-uline">About</a></li>
+        <li><a href="our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="locations.html" class="link-uline">Locations</a></li>
+        <li><a href="careers.html" class="link-uline">Careers</a></li>
+        <li><a href="blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="contact.html" class="link-uline">Contact</a></li>
+        <li><a href="pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>Â©<span data-year>2026</span> ON TARGET ABA, LLC Â· All rights reserved Â· Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
