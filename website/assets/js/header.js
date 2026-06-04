@@ -166,9 +166,8 @@
             '<span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>' +
             '<span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>' +
           '</span>' +
-          '<span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>' +
+          '<span class="font-semibold tracking-wide">NEW LOCATION IN CLEVELAND OPENING SOON!</span>' +
         '</span>' +
-        '<a href="/autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing &mdash; most families pay $0 &rarr;</a>' +
       '</div>' +
     '</div>';
 
