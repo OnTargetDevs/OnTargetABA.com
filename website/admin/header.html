@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Header &mdash; Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body class="admin font-sans">
+  <header class="admin-topbar">
+    <a class="admin-topbar__brand" href="/admin/">
+      <span class="dot" aria-hidden="true"></span>
+      <span>On Target Admin</span>
+    </a>
+    <nav class="admin-topbar__nav" aria-label="Admin">
+      <a href="/admin/">Dashboard</a>
+      <a href="/admin/pages.html">Pages</a>
+      <a href="/admin/posts.html">Posts</a>
+      <a href="/admin/header.html">Header</a>
+      <a href="/admin/footer.html">Footer</a>
+    </nav>
+    <div class="admin-topbar__right">
+      <span data-user-email class="admin-muted"></span>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="admin-page" style="max-width:1080px;">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-5">
+      <div>
+        <p class="admin-eyebrow mb-1">Site chrome</p>
+        <h1 class="admin-h1">Header</h1>
+        <p class="admin-muted">Announcement bar, logo, navigation, CTAs, breadcrumbs &mdash; everything above the fold.</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <span data-saving class="admin-muted" style="font-size:0.85rem;"></span>
+        <button class="btn btn-ghost" type="button" id="reload-btn">Discard</button>
+        <button class="btn btn-primary" type="button" id="save-btn">Save &amp; open PR</button>
+      </div>
+    </div>
+
+    <div id="loading" class="empty">Loading header.json&hellip;</div>
+
+    <form id="header-form" class="grid gap-5" hidden>
+      <!-- 1. Announcement bar -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head"><h2 class="admin-h2">Announcement bar</h2></div>
+        <div class="admin-card__body field-grid">
+          <div class="field" style="grid-column:1/-1;">
+            <label>Text</label>
+            <input class="input" data-bind="announcementBar.text" type="text" />
+          </div>
+          <div class="field">
+            <label>Link label</label>
+            <input class="input" data-bind="announcementBar.linkLabel" type="text" />
+          </div>
+          <div class="field">
+            <label>Link href</label>
+            <input class="input" data-bind="announcementBar.linkHref" type="text" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Logo -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head"><h2 class="admin-h2">Logo</h2></div>
+        <div class="admin-card__body field-grid">
+          <div class="field">
+            <label>Image src</label>
+            <input class="input" data-bind="logo.src" type="text" />
+          </div>
+          <div class="field">
+            <label>Alt text</label>
+            <input class="input" data-bind="logo.alt" type="text" />
+          </div>
+          <div class="field" style="grid-column:1/-1;">
+            <label>Click href</label>
+            <input class="input" data-bind="logo.href" type="text" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Nav links -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head">
+          <h2 class="admin-h2">Navigation links</h2>
+          <button class="btn btn-ghost btn-sm" type="button" data-add="navLinks">+ Add link</button>
+        </div>
+        <div class="admin-card__body">
+          <div class="repeater" data-repeater="navLinks"></div>
+        </div>
+      </section>
+
+      <!-- 4. CTAs -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head"><h2 class="admin-h2">Call-to-action buttons</h2></div>
+        <div class="admin-card__body grid gap-4">
+          <div class="field-grid">
+            <div class="field"><label>Phone href</label><input class="input" data-bind="cta.phone.href" type="text" placeholder="tel:+18889895011" /></div>
+            <div class="field"><label>Phone label</label><input class="input" data-bind="cta.phone.label" type="text" /></div>
+          </div>
+          <div class="field-grid">
+            <div class="field"><label>Primary CTA href</label><input class="input" data-bind="cta.primary.href" type="text" /></div>
+            <div class="field"><label>Primary CTA label</label><input class="input" data-bind="cta.primary.label" type="text" /></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Breadcrumbs -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head">
+          <h2 class="admin-h2">Breadcrumbs</h2>
+          <button class="btn btn-ghost btn-sm" type="button" id="add-breadcrumb-path">+ Add path</button>
+        </div>
+        <div class="admin-card__body">
+          <p class="admin-muted" style="font-size:0.85rem;margin-bottom:0.85rem;">
+            Each path defines the breadcrumb trail shown on that route. The last crumb can have an empty link (current page).
+          </p>
+          <div id="breadcrumbs-list" class="grid gap-2"></div>
+        </div>
+      </section>
+
+      <!-- 6. Active section map -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head">
+          <h2 class="admin-h2">Active section map</h2>
+          <button class="btn btn-ghost btn-sm" type="button" id="add-section-map">+ Add mapping</button>
+        </div>
+        <div class="admin-card__body">
+          <p class="admin-muted" style="font-size:0.85rem;margin-bottom:0.85rem;">
+            Maps a URL path (or path prefix) to the nav section that should appear active.
+          </p>
+          <div id="section-map" class="grid gap-2"></div>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    await Admin.requireAuth();
+    const form = document.getElementById('header-form');
+    const loading = document.getElementById('loading');
+    const saving = document.querySelector('[data-saving]');
+    const saveBtn = document.getElementById('save-btn');
+    const reloadBtn = document.getElementById('reload-btn');
+    const dirty = Admin.dirtyGuard();
+
+    let state = null;
+    let sha = null;
+
+    function get(path) {
+      return path.split('.').reduce(function (acc, k) {
+        return acc && acc[k] != null ? acc[k] : '';
+      }, state);
+    }
+    function set(path, value) {
+      const parts = path.split('.');
+      let cur = state;
+      for (let i = 0; i < parts.length - 1; i++) {
+        if (cur[parts[i]] == null || typeof cur[parts[i]] !== 'object') cur[parts[i]] = {};
+        cur = cur[parts[i]];
+      }
+      cur[parts[parts.length - 1]] = value;
+    }
+
+    function bindInputs() {
+      form.querySelectorAll('[data-bind]').forEach(function (el) {
+        const path = el.dataset.bind;
+        el.value = get(path) || '';
+        el.addEventListener('input', function () {
+          set(path, el.value);
+          dirty.set(true);
+        });
+      });
+    }
+
+    // --- Nav links repeater ---
+    function renderNavLinks() {
+      const box = form.querySelector('[data-repeater="navLinks"]');
+      const items = (state.navLinks = state.navLinks || []);
+      box.innerHTML = '';
+      items.forEach(function (item, idx) {
+        const row = document.createElement('div');
+        row.className = 'repeater__row';
+        row.innerHTML =
+          '<div class="repeater__handle">' +
+            '<button type="button" data-move="up" aria-label="Move up">&uarr;</button>' +
+            '<button type="button" data-move="down" aria-label="Move down">&darr;</button>' +
+          '</div>' +
+          '<div class="repeater__fields">' +
+            '<div class="field"><label>Label</label><input class="input" data-k="label" type="text"></div>' +
+            '<div class="field"><label>Href</label><input class="input" data-k="href" type="text"></div>' +
+            '<div class="field full"><label>Section (nav highlight key)</label><input class="input" data-k="section" type="text"></div>' +
+          '</div>' +
+          '<button class="repeater__remove" type="button" data-remove aria-label="Remove">&times;</button>';
+        row.querySelector('[data-k="label"]').value = item.label || '';
+        row.querySelector('[data-k="href"]').value  = item.href || '';
+        row.querySelector('[data-k="section"]').value = item.section || '';
+        row.querySelectorAll('[data-k]').forEach(function (inp) {
+          inp.addEventListener('input', function () {
+            item[inp.dataset.k] = inp.value;
+            dirty.set(true);
+          });
+        });
+        row.querySelector('[data-move="up"]').disabled = idx === 0;
+        row.querySelector('[data-move="down"]').disabled = idx === items.length - 1;
+        row.querySelector('[data-move="up"]').addEventListener('click', function () { move(items, idx, -1); renderNavLinks(); dirty.set(true); });
+        row.querySelector('[data-move="down"]').addEventListener('click', function () { move(items, idx, 1); renderNavLinks(); dirty.set(true); });
+        row.querySelector('[data-remove]').addEventListener('click', function () {
+          items.splice(idx, 1); renderNavLinks(); dirty.set(true);
+        });
+        box.appendChild(row);
+      });
+      if (!items.length) box.innerHTML = '<div class="empty">No links yet. Click "Add link" to create one.</div>';
+    }
+    function move(arr, idx, delta) {
+      const j = idx + delta;
+      if (j < 0 || j >= arr.length) return;
+      const tmp = arr[idx]; arr[idx] = arr[j]; arr[j] = tmp;
+    }
+
+    form.querySelector('[data-add="navLinks"]').addEventListener('click', function () {
+      state.navLinks = state.navLinks || [];
+      state.navLinks.push({ label: '', href: '', section: '' });
+      renderNavLinks();
+      dirty.set(true);
+    });
+
+    // --- Breadcrumbs ---
+    function renderBreadcrumbs() {
+      const box = document.getElementById('breadcrumbs-list');
+      const map = (state.breadcrumbs = state.breadcrumbs || {});
+      box.innerHTML = '';
+      const paths = Object.keys(map);
+      if (!paths.length) { box.innerHTML = '<div class="empty">No breadcrumb paths defined.</div>'; return; }
+      paths.forEach(function (path) {
+        const crumbs = map[path] || [];
+        const det = document.createElement('details');
+        det.className = 'collapsible';
+        det.innerHTML =
+          '<summary><span></span></summary>' +
+          '<div class="collapsible__body grid gap-3">' +
+            '<div class="field"><label>Path</label><input class="input" data-path-key type="text"></div>' +
+            '<div class="field"><label>Crumbs</label><div class="repeater" data-crumbs></div><button class="btn btn-ghost btn-sm mt-2" type="button" data-add-crumb>+ Add crumb</button></div>' +
+            '<div><button class="btn btn-danger btn-sm" type="button" data-remove-path>Remove this path</button></div>' +
+          '</div>';
+        det.querySelector('summary span').textContent = path;
+        const pathInp = det.querySelector('[data-path-key]');
+        pathInp.value = path;
+        pathInp.addEventListener('change', function () {
+          const newPath = pathInp.value.trim();
+          if (!newPath || newPath === path) { pathInp.value = path; return; }
+          if (map[newPath]) { Admin.toast('Path already exists', 'error'); pathInp.value = path; return; }
+          map[newPath] = map[path];
+          delete map[path];
+          dirty.set(true);
+          renderBreadcrumbs();
+        });
+        const crumbsBox = det.querySelector('[data-crumbs]');
+        function renderCrumbs() {
+          crumbsBox.innerHTML = '';
+          crumbs.forEach(function (pair, ci) {
+            const cr = document.createElement('div');
+            cr.className = 'repeater__row';
+            cr.innerHTML =
+              '<div class="repeater__handle">' +
+                '<button type="button" data-move="up">&uarr;</button>' +
+                '<button type="button" data-move="down">&darr;</button>' +
+              '</div>' +
+              '<div class="repeater__fields">' +
+                '<div class="field"><label>Label</label><input class="input" data-k="label" type="text"></div>' +
+                '<div class="field"><label>Href (blank = current)</label><input class="input" data-k="href" type="text"></div>' +
+              '</div>' +
+              '<button class="repeater__remove" type="button">&times;</button>';
+            cr.querySelector('[data-k="label"]').value = (pair && pair[0]) || '';
+            cr.querySelector('[data-k="href"]').value  = (pair && pair[1]) || '';
+            cr.querySelector('[data-k="label"]').addEventListener('input', function (e) { pair[0] = e.target.value; dirty.set(true); });
+            cr.querySelector('[data-k="href"]').addEventListener('input', function (e) { pair[1] = e.target.value || null; dirty.set(true); });
+            cr.querySelector('[data-move="up"]').disabled = ci === 0;
+            cr.querySelector('[data-move="down"]').disabled = ci === crumbs.length - 1;
+            cr.querySelector('[data-move="up"]').addEventListener('click', function () { move(crumbs, ci, -1); renderCrumbs(); dirty.set(true); });
+            cr.querySelector('[data-move="down"]').addEventListener('click', function () { move(crumbs, ci, 1); renderCrumbs(); dirty.set(true); });
+            cr.querySelector('.repeater__remove').addEventListener('click', function () { crumbs.splice(ci, 1); renderCrumbs(); dirty.set(true); });
+            crumbsBox.appendChild(cr);
+          });
+          if (!crumbs.length) crumbsBox.innerHTML = '<div class="empty">No crumbs.</div>';
+        }
+        renderCrumbs();
+        det.querySelector('[data-add-crumb]').addEventListener('click', function () {
+          crumbs.push(['', null]); renderCrumbs(); dirty.set(true);
+        });
+        det.querySelector('[data-remove-path]').addEventListener('click', function () {
+          if (!confirm('Remove breadcrumbs for ' + path + '?')) return;
+          delete map[path]; renderBreadcrumbs(); dirty.set(true);
+        });
+        box.appendChild(det);
+      });
+    }
+
+    document.getElementById('add-breadcrumb-path').addEventListener('click', function () {
+      const p = prompt('Path (e.g. /our-services)');
+      if (!p) return;
+      state.breadcrumbs = state.breadcrumbs || {};
+      if (state.breadcrumbs[p]) { Admin.toast('Path already exists', 'error'); return; }
+      state.breadcrumbs[p] = [['Home', '/'], ['', null]];
+      renderBreadcrumbs();
+      dirty.set(true);
+    });
+
+    // --- Active section map ---
+    function renderSectionMap() {
+      const box = document.getElementById('section-map');
+      const map = (state.activeSectionMap = state.activeSectionMap || {});
+      box.innerHTML = '';
+      const keys = Object.keys(map);
+      if (!keys.length) box.innerHTML = '<div class="empty">No mappings defined.</div>';
+      keys.forEach(function (key) {
+        const row = document.createElement('div');
+        row.className = 'repeater__row';
+        row.innerHTML =
+          '<div></div>' +
+          '<div class="repeater__fields">' +
+            '<div class="field"><label>Path</label><input class="input" data-k="key" type="text"></div>' +
+            '<div class="field"><label>Section name</label><input class="input" data-k="val" type="text"></div>' +
+          '</div>' +
+          '<button class="repeater__remove" type="button">&times;</button>';
+        row.querySelector('[data-k="key"]').value = key;
+        row.querySelector('[data-k="val"]').value = map[key];
+        row.querySelector('[data-k="key"]').addEventListener('change', function (e) {
+          const v = e.target.value.trim();
+          if (!v || v === key) { e.target.value = key; return; }
+          if (map[v]) { Admin.toast('Path already mapped', 'error'); e.target.value = key; return; }
+          map[v] = map[key]; delete map[key]; dirty.set(true); renderSectionMap();
+        });
+        row.querySelector('[data-k="val"]').addEventListener('input', function (e) {
+          map[key] = e.target.value; dirty.set(true);
+        });
+        row.querySelector('.repeater__remove').addEventListener('click', function () {
+          delete map[key]; dirty.set(true); renderSectionMap();
+        });
+        box.appendChild(row);
+      });
+    }
+    document.getElementById('add-section-map').addEventListener('click', function () {
+      const p = prompt('Path (e.g. /our-services)');
+      if (!p) return;
+      state.activeSectionMap = state.activeSectionMap || {};
+      state.activeSectionMap[p] = '';
+      renderSectionMap();
+      dirty.set(true);
+    });
+
+    function renderAll() {
+      bindInputs();
+      renderNavLinks();
+      renderBreadcrumbs();
+      renderSectionMap();
+    }
+
+    async function load() {
+      loading.hidden = false;
+      form.hidden = true;
+      try {
+        const data = await Admin.api.get('/api/header');
+        sha = data && data.sha;
+        // strip sha from the editable state
+        state = JSON.parse(JSON.stringify(data || {}));
+        delete state.sha;
+        loading.hidden = true;
+        form.hidden = false;
+        renderAll();
+        dirty.set(false);
+      } catch (err) {
+        loading.textContent = 'Could not load header.json.';
+        Admin.toast(err.message || 'Load failed', 'error');
+      }
+    }
+
+    saveBtn.addEventListener('click', async function () {
+      saveBtn.disabled = true;
+      const done = Admin.saving(saving, 'Submitting PR&hellip;');
+      try {
+        const body = JSON.parse(JSON.stringify(state));
+        body.sha = sha;
+        const res = await Admin.api.put('/api/header', body);
+        done('Saved');
+        dirty.set(false);
+        if (res && res.pr) {
+          Admin.showPrSubmittedModal(res.pr, {
+            title: 'Header updates — PR #' + res.pr.number,
+            secondaryLabel: 'Back to dashboard'
+          });
+        } else {
+          Admin.toast('Saved', 'success');
+        }
+      } catch (err) {
+        Admin.toast(err.message || 'Save failed', 'error');
+        done();
+      } finally {
+        saveBtn.disabled = false;
+      }
+    });
+
+    reloadBtn.addEventListener('click', function () {
+      if (dirty.get() && !confirm('Discard unsaved changes?')) return;
+      load();
+    });
+
+    await load();
+  })();
+  </script>
+</body>
+</html>

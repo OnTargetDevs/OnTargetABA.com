@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Footer &mdash; Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body class="admin font-sans">
+  <header class="admin-topbar">
+    <a class="admin-topbar__brand" href="/admin/">
+      <span class="dot" aria-hidden="true"></span>
+      <span>On Target Admin</span>
+    </a>
+    <nav class="admin-topbar__nav" aria-label="Admin">
+      <a href="/admin/">Dashboard</a>
+      <a href="/admin/pages.html">Pages</a>
+      <a href="/admin/posts.html">Posts</a>
+      <a href="/admin/header.html">Header</a>
+      <a href="/admin/footer.html">Footer</a>
+    </nav>
+    <div class="admin-topbar__right">
+      <span data-user-email class="admin-muted"></span>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="admin-page" style="max-width:1080px;">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-5">
+      <div>
+        <p class="admin-eyebrow mb-1">Site chrome</p>
+        <h1 class="admin-h1">Footer</h1>
+        <p class="admin-muted">Columns, legal links, credit chip, copyright text.</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <span data-saving class="admin-muted" style="font-size:0.85rem;"></span>
+        <button class="btn btn-ghost" type="button" id="reload-btn">Discard</button>
+        <button class="btn btn-primary" type="button" id="save-btn">Save &amp; open PR</button>
+      </div>
+    </div>
+
+    <div id="loading" class="empty">Loading footer.json&hellip;</div>
+
+    <form id="footer-form" class="grid gap-5" hidden>
+      <!-- 1. Logo + intro -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head"><h2 class="admin-h2">Logo &amp; intro</h2></div>
+        <div class="admin-card__body field-grid">
+          <div class="field"><label>Logo src</label><input class="input" data-bind="logo.src" type="text"></div>
+          <div class="field"><label>Logo alt</label><input class="input" data-bind="logo.alt" type="text"></div>
+          <div class="field" style="grid-column:1/-1;"><label>Tagline</label><input class="input" data-bind="tagline" type="text"></div>
+          <div class="field"><label>Phone</label><input class="input" data-bind="phone" type="text"></div>
+        </div>
+      </section>
+
+      <!-- 2. Columns -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head">
+          <h2 class="admin-h2">Columns</h2>
+          <button class="btn btn-ghost btn-sm" type="button" id="add-column">+ Add column</button>
+        </div>
+        <div class="admin-card__body">
+          <div id="columns" class="grid gap-3"></div>
+        </div>
+      </section>
+
+      <!-- 3. Credit -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head"><h2 class="admin-h2">Credit chip</h2></div>
+        <div class="admin-card__body field-grid">
+          <div class="field"><label>Name</label><input class="input" data-bind="credit.name" type="text"></div>
+          <div class="field"><label>URL</label><input class="input" data-bind="credit.url" type="text"></div>
+        </div>
+      </section>
+
+      <!-- 4. Copyright -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head"><h2 class="admin-h2">Copyright</h2></div>
+        <div class="admin-card__body">
+          <div class="field"><label>Copyright text</label><input class="input" data-bind="copyright" type="text"></div>
+        </div>
+      </section>
+
+      <!-- 5. Legal links -->
+      <section class="admin-card section-block">
+        <div class="admin-card__head">
+          <h2 class="admin-h2">Legal links</h2>
+          <button class="btn btn-ghost btn-sm" type="button" id="add-legal">+ Add link</button>
+        </div>
+        <div class="admin-card__body">
+          <div class="repeater" id="legal-links"></div>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    await Admin.requireAuth();
+    const form = document.getElementById('footer-form');
+    const loading = document.getElementById('loading');
+    const savingSlot = document.querySelector('[data-saving]');
+    const saveBtn = document.getElementById('save-btn');
+    const reloadBtn = document.getElementById('reload-btn');
+    const dirty = Admin.dirtyGuard();
+
+    let state = null;
+    let sha = null;
+
+    function get(path) {
+      return path.split('.').reduce(function (acc, k) { return acc && acc[k] != null ? acc[k] : ''; }, state);
+    }
+    function set(path, value) {
+      const parts = path.split('.');
+      let cur = state;
+      for (let i = 0; i < parts.length - 1; i++) {
+        if (cur[parts[i]] == null || typeof cur[parts[i]] !== 'object') cur[parts[i]] = {};
+        cur = cur[parts[i]];
+      }
+      cur[parts[parts.length - 1]] = value;
+    }
+    function move(arr, idx, delta) {
+      const j = idx + delta;
+      if (j < 0 || j >= arr.length) return;
+      const tmp = arr[idx]; arr[idx] = arr[j]; arr[j] = tmp;
+    }
+
+    function bindInputs() {
+      form.querySelectorAll('[data-bind]').forEach(function (el) {
+        const path = el.dataset.bind;
+        el.value = get(path) || '';
+        el.addEventListener('input', function () { set(path, el.value); dirty.set(true); });
+      });
+    }
+
+    // --- Columns ---
+    function renderColumns() {
+      const box = document.getElementById('columns');
+      const cols = (state.columns = state.columns || []);
+      box.innerHTML = '';
+      if (!cols.length) box.innerHTML = '<div class="empty">No columns yet.</div>';
+      cols.forEach(function (col, idx) {
+        col.links = col.links || [];
+        const det = document.createElement('details');
+        det.className = 'collapsible';
+        det.open = true;
+        det.innerHTML =
+          '<summary><span></span></summary>' +
+          '<div class="collapsible__body grid gap-3">' +
+            '<div class="field"><label>Column title</label><input class="input" data-k="title" type="text"></div>' +
+            '<div class="field"><label>Links</label><div class="repeater" data-links></div><button class="btn btn-ghost btn-sm mt-2" type="button" data-add-link>+ Add link</button></div>' +
+            '<div class="flex gap-2">' +
+              '<button class="btn btn-ghost btn-sm" type="button" data-move="up">&uarr; Move up</button>' +
+              '<button class="btn btn-ghost btn-sm" type="button" data-move="down">&darr; Move down</button>' +
+              '<button class="btn btn-danger btn-sm" type="button" style="margin-left:auto;" data-remove-col>Remove column</button>' +
+            '</div>' +
+          '</div>';
+        det.querySelector('summary span').textContent = col.title || ('Column ' + (idx + 1));
+        const titleInp = det.querySelector('[data-k="title"]');
+        titleInp.value = col.title || '';
+        titleInp.addEventListener('input', function () {
+          col.title = titleInp.value;
+          det.querySelector('summary span').textContent = col.title || ('Column ' + (idx + 1));
+          dirty.set(true);
+        });
+        const linksBox = det.querySelector('[data-links]');
+        function renderLinks() {
+          linksBox.innerHTML = '';
+          col.links.forEach(function (link, li) {
+            const row = document.createElement('div');
+            row.className = 'repeater__row';
+            row.innerHTML =
+              '<div class="repeater__handle">' +
+                '<button type="button" data-mv="up">&uarr;</button>' +
+                '<button type="button" data-mv="down">&darr;</button>' +
+              '</div>' +
+              '<div class="repeater__fields">' +
+                '<div class="field"><label>Label</label><input class="input" data-k="label" type="text"></div>' +
+                '<div class="field"><label>Href</label><input class="input" data-k="href" type="text"></div>' +
+              '</div>' +
+              '<button class="repeater__remove" type="button">&times;</button>';
+            row.querySelector('[data-k="label"]').value = link.label || '';
+            row.querySelector('[data-k="href"]').value  = link.href || '';
+            row.querySelector('[data-k="label"]').addEventListener('input', function (e) { link.label = e.target.value; dirty.set(true); });
+            row.querySelector('[data-k="href"]').addEventListener('input', function (e) { link.href = e.target.value; dirty.set(true); });
+            row.querySelector('[data-mv="up"]').disabled = li === 0;
+            row.querySelector('[data-mv="down"]').disabled = li === col.links.length - 1;
+            row.querySelector('[data-mv="up"]').addEventListener('click', function () { move(col.links, li, -1); renderLinks(); dirty.set(true); });
+            row.querySelector('[data-mv="down"]').addEventListener('click', function () { move(col.links, li, 1); renderLinks(); dirty.set(true); });
+            row.querySelector('.repeater__remove').addEventListener('click', function () { col.links.splice(li, 1); renderLinks(); dirty.set(true); });
+            linksBox.appendChild(row);
+          });
+          if (!col.links.length) linksBox.innerHTML = '<div class="empty">No links.</div>';
+        }
+        renderLinks();
+        det.querySelector('[data-add-link]').addEventListener('click', function () {
+          col.links.push({ label: '', href: '' }); renderLinks(); dirty.set(true);
+        });
+        det.querySelector('[data-move="up"]').disabled = idx === 0;
+        det.querySelector('[data-move="down"]').disabled = idx === cols.length - 1;
+        det.querySelector('[data-move="up"]').addEventListener('click', function () { move(cols, idx, -1); renderColumns(); dirty.set(true); });
+        det.querySelector('[data-move="down"]').addEventListener('click', function () { move(cols, idx, 1); renderColumns(); dirty.set(true); });
+        det.querySelector('[data-remove-col]').addEventListener('click', function () {
+          if (!confirm('Remove this column?')) return;
+          cols.splice(idx, 1); renderColumns(); dirty.set(true);
+        });
+        box.appendChild(det);
+      });
+    }
+    document.getElementById('add-column').addEventListener('click', function () {
+      state.columns = state.columns || [];
+      state.columns.push({ title: 'New column', links: [] });
+      renderColumns(); dirty.set(true);
+    });
+
+    // --- Legal links ---
+    function renderLegal() {
+      const box = document.getElementById('legal-links');
+      const items = (state.legalLinks = state.legalLinks || []);
+      box.innerHTML = '';
+      if (!items.length) box.innerHTML = '<div class="empty">No legal links.</div>';
+      items.forEach(function (item, idx) {
+        const row = document.createElement('div');
+        row.className = 'repeater__row';
+        row.innerHTML =
+          '<div class="repeater__handle">' +
+            '<button type="button" data-mv="up">&uarr;</button>' +
+            '<button type="button" data-mv="down">&darr;</button>' +
+          '</div>' +
+          '<div class="repeater__fields">' +
+            '<div class="field"><label>Label</label><input class="input" data-k="label" type="text"></div>' +
+            '<div class="field"><label>Href</label><input class="input" data-k="href" type="text"></div>' +
+          '</div>' +
+          '<button class="repeater__remove" type="button">&times;</button>';
+        row.querySelector('[data-k="label"]').value = item.label || '';
+        row.querySelector('[data-k="href"]').value  = item.href || '';
+        row.querySelector('[data-k="label"]').addEventListener('input', function (e) { item.label = e.target.value; dirty.set(true); });
+        row.querySelector('[data-k="href"]').addEventListener('input', function (e) { item.href = e.target.value; dirty.set(true); });
+        row.querySelector('[data-mv="up"]').disabled = idx === 0;
+        row.querySelector('[data-mv="down"]').disabled = idx === items.length - 1;
+        row.querySelector('[data-mv="up"]').addEventListener('click', function () { move(items, idx, -1); renderLegal(); dirty.set(true); });
+        row.querySelector('[data-mv="down"]').addEventListener('click', function () { move(items, idx, 1); renderLegal(); dirty.set(true); });
+        row.querySelector('.repeater__remove').addEventListener('click', function () { items.splice(idx, 1); renderLegal(); dirty.set(true); });
+        box.appendChild(row);
+      });
+    }
+    document.getElementById('add-legal').addEventListener('click', function () {
+      state.legalLinks = state.legalLinks || [];
+      state.legalLinks.push({ label: '', href: '' });
+      renderLegal(); dirty.set(true);
+    });
+
+    function renderAll() {
+      bindInputs();
+      renderColumns();
+      renderLegal();
+    }
+
+    async function load() {
+      loading.hidden = false;
+      form.hidden = true;
+      try {
+        const data = await Admin.api.get('/api/footer');
+        sha = data && data.sha;
+        state = JSON.parse(JSON.stringify(data || {}));
+        delete state.sha;
+        loading.hidden = true;
+        form.hidden = false;
+        renderAll();
+        dirty.set(false);
+      } catch (err) {
+        loading.textContent = 'Could not load footer.json.';
+        Admin.toast(err.message || 'Load failed', 'error');
+      }
+    }
+
+    saveBtn.addEventListener('click', async function () {
+      saveBtn.disabled = true;
+      const done = Admin.saving(savingSlot, 'Submitting PR&hellip;');
+      try {
+        const body = JSON.parse(JSON.stringify(state));
+        body.sha = sha;
+        const res = await Admin.api.put('/api/footer', body);
+        done('Saved');
+        dirty.set(false);
+        if (res && res.pr) {
+          Admin.showPrSubmittedModal(res.pr, {
+            title: 'Footer updates — PR #' + res.pr.number,
+            secondaryLabel: 'Back to dashboard'
+          });
+        } else {
+          Admin.toast('Saved', 'success');
+        }
+      } catch (err) {
+        Admin.toast(err.message || 'Save failed', 'error');
+        done();
+      } finally {
+        saveBtn.disabled = false;
+      }
+    });
+
+    reloadBtn.addEventListener('click', function () {
+      if (dirty.get() && !confirm('Discard unsaved changes?')) return;
+      load();
+    });
+
+    await load();
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Edit post &mdash; Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+</head>
+<body class="admin font-sans">
+  <header class="admin-topbar">
+    <a class="admin-topbar__brand" href="/admin/posts.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span>On Target Admin</span>
+    </a>
+    <div class="admin-topbar__right" style="margin-left:auto;gap:0.5rem;">
+      <span id="post-id" class="admin-muted" style="font-weight:600;color:var(--ink);">New post</span>
+      <span data-saving class="admin-muted" style="font-size:0.8rem;"></span>
+      <a class="btn btn-ghost btn-sm" href="/admin/posts.html">Back</a>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="admin-page" style="max-width:1400px;">
+    <form id="post-form" class="grid gap-5">
+      <!-- Frontmatter -->
+      <section class="admin-card">
+        <div class="admin-card__head">
+          <h2 class="admin-h2">Post details</h2>
+          <label class="checkbox"><input id="fm-draft" type="checkbox" /> Save as draft</label>
+        </div>
+        <div class="admin-card__body">
+          <div class="field-grid">
+            <div class="field" style="grid-column:1/-1;">
+              <label for="fm-title">Title</label>
+              <input id="fm-title" class="input" type="text" required />
+            </div>
+            <div class="field">
+              <label for="fm-slug">Slug</label>
+              <input id="fm-slug" class="input" type="text" required pattern="[a-z0-9\-]+" />
+            </div>
+            <div class="field">
+              <label for="fm-date">Date</label>
+              <input id="fm-date" class="input" type="date" required />
+            </div>
+            <div class="field">
+              <label for="fm-category">Category</label>
+              <input id="fm-category" class="input" type="text" list="cat-list" placeholder="e.g. Autism Testing" />
+              <datalist id="cat-list"></datalist>
+            </div>
+            <div class="field">
+              <label for="fm-author">Author</label>
+              <input id="fm-author" class="input" type="text" value="On Target ABA" />
+            </div>
+            <div class="field">
+              <label for="fm-read-time">Read time</label>
+              <input id="fm-read-time" class="input" type="text" placeholder="e.g. 5 min read" />
+            </div>
+            <div class="field">
+              <label for="fm-hero">Hero image URL</label>
+              <input id="fm-hero" class="input" type="url" placeholder="/assets/images/&hellip;.jpg" />
+            </div>
+            <div class="field" style="grid-column:1/-1;">
+              <label for="fm-excerpt">Excerpt</label>
+              <textarea id="fm-excerpt" class="textarea" rows="2" placeholder="One- or two-sentence summary for the index page and meta description."></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Markdown + preview -->
+      <section>
+        <div class="post-split">
+          <div class="admin-card">
+            <div class="admin-card__head">
+              <h2 class="admin-h2">Markdown</h2>
+              <span class="admin-muted" style="font-size:0.8rem;">Supports headings, lists, links, images, code, quotes.</span>
+            </div>
+            <div class="admin-card__body" style="padding:0;">
+              <textarea id="md-body" class="textarea textarea--mono" style="border:0;border-radius:0;min-height:60vh;" placeholder="# Heading&#10;&#10;Write the post here&hellip;"></textarea>
+            </div>
+          </div>
+          <div class="admin-card">
+            <div class="admin-card__head">
+              <h2 class="admin-h2">Preview</h2>
+              <span class="admin-muted" style="font-size:0.8rem;">Sanitized via DOMPurify.</span>
+            </div>
+            <div class="admin-card__body" style="padding:0;">
+              <div id="preview" class="markdown-preview" style="border:0;border-radius:0;max-height:60vh;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Actions -->
+      <div class="flex flex-wrap gap-2 justify-end items-center">
+        <span data-saving class="admin-muted" style="margin-right:auto;font-size:0.85rem;"></span>
+        <a class="btn btn-ghost" href="/admin/posts.html">Cancel</a>
+        <button class="btn btn-secondary" type="button" id="save-draft-btn">Save as draft</button>
+        <button class="btn btn-primary" type="submit" id="publish-btn">Save &amp; open PR</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    await Admin.requireAuth();
+
+    const params = new URLSearchParams(location.search);
+    const isNew = params.get('new') === '1' || !params.get('slug');
+    const slug = params.get('slug');
+    const postIdLabel = document.getElementById('post-id');
+
+    const f = {
+      title:    document.getElementById('fm-title'),
+      slug:     document.getElementById('fm-slug'),
+      date:     document.getElementById('fm-date'),
+      category: document.getElementById('fm-category'),
+      author:   document.getElementById('fm-author'),
+      readTime: document.getElementById('fm-read-time'),
+      hero:     document.getElementById('fm-hero'),
+      excerpt:  document.getElementById('fm-excerpt'),
+      draft:    document.getElementById('fm-draft'),
+      body:     document.getElementById('md-body')
+    };
+    const savingSlots = document.querySelectorAll('[data-saving]');
+    function setSaving(label, idle) {
+      savingSlots.forEach(function (n) {
+        const done = Admin.saving(n, label);
+        if (idle) setTimeout(function () { done(idle); }, 1);
+      });
+    }
+    const preview = document.getElementById('preview');
+    const saveDraftBtn = document.getElementById('save-draft-btn');
+    const publishBtn = document.getElementById('publish-btn');
+
+    const dirty = Admin.dirtyGuard();
+    let originalSha = null;
+    let slugManuallyEdited = !isNew;
+
+    // Categories suggestion list
+    try {
+      const data = await Admin.api.get('/api/posts').catch(() => ({ posts: [] }));
+      const cats = Array.from(new Set((data.posts || []).map(function (p) { return p.category; }).filter(Boolean))).sort();
+      const list = document.getElementById('cat-list');
+      list.innerHTML = cats.map(function (c) { return '<option value="' + c.replace(/"/g, '&quot;') + '">'; }).join('');
+    } catch (_) {}
+
+    // Marked + DOMPurify renderer
+    function rerender() {
+      const md = f.body.value || '';
+      let html = '';
+      try {
+        html = window.marked ? window.marked.parse(md) : md;
+      } catch (err) { html = '<p>Markdown parse error.</p>'; }
+      preview.innerHTML = window.DOMPurify ? DOMPurify.sanitize(html) : html;
+    }
+
+    function readForm() {
+      return {
+        frontmatter: {
+          title: f.title.value.trim(),
+          slug:  f.slug.value.trim(),
+          date:  f.date.value,
+          category: f.category.value.trim(),
+          author: f.author.value.trim(),
+          read_time: f.readTime.value.trim(),
+          hero_image: f.hero.value.trim(),
+          excerpt: f.excerpt.value.trim(),
+          draft: !!f.draft.checked
+        },
+        body: f.body.value
+      };
+    }
+
+    function writeForm(fm, body) {
+      f.title.value    = fm.title || '';
+      f.slug.value     = fm.slug || slug || '';
+      f.date.value     = (fm.date || '').slice(0, 10);
+      f.category.value = fm.category || '';
+      f.author.value   = fm.author || 'On Target ABA';
+      f.readTime.value = fm.read_time || '';
+      f.hero.value     = fm.hero_image || '';
+      f.excerpt.value  = fm.excerpt || '';
+      f.draft.checked  = !!fm.draft;
+      f.body.value     = body || '';
+    }
+
+    // Frontmatter parser
+    function parseFrontmatter(md) {
+      const out = { frontmatter: {}, body: md || '' };
+      if (!md) return out;
+      const m = md.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
+      if (!m) return out;
+      m[1].split(/\r?\n/).forEach(function (ln) {
+        const kv = ln.match(/^([A-Za-z0-9_]+)\s*:\s*(.*)$/);
+        if (!kv) return;
+        let v = kv[2].trim();
+        if (v === 'true') v = true;
+        else if (v === 'false') v = false;
+        else if (/^".*"$/.test(v) || /^'.*'$/.test(v)) v = v.slice(1, -1);
+        out.frontmatter[kv[1]] = v;
+      });
+      out.body = m[2] || '';
+      return out;
+    }
+
+    const draftKey = 'post-editor:' + (slug || 'new');
+
+    if (!isNew && slug) {
+      postIdLabel.textContent = slug;
+      try {
+        const data = await Admin.api.get('/api/posts/' + encodeURIComponent(slug));
+        originalSha = data.sha;
+        const parsed = parseFrontmatter(data.markdown);
+        writeForm(parsed.frontmatter, parsed.body);
+        rerender();
+      } catch (err) {
+        Admin.toast('Could not load post', 'error');
+      }
+    } else {
+      // New post defaults
+      f.date.value = new Date().toISOString().slice(0, 10);
+      // Restore localStorage draft if present
+      const restored = Admin.drafts.load(draftKey);
+      if (restored && restored.frontmatter) {
+        writeForm(restored.frontmatter, restored.body || '');
+        Admin.toast('Restored unsaved draft', 'info');
+      }
+      rerender();
+    }
+
+    // Auto-slug
+    f.title.addEventListener('input', function () {
+      if (!slugManuallyEdited && isNew) {
+        f.slug.value = Admin.slugify(f.title.value);
+      }
+      markDirty();
+    });
+    f.slug.addEventListener('input', function () {
+      slugManuallyEdited = true;
+      f.slug.value = Admin.slugify(f.slug.value);
+      markDirty();
+    });
+
+    [f.date, f.category, f.author, f.readTime, f.hero, f.excerpt, f.draft]
+      .forEach(function (el) { el.addEventListener('change', markDirty); el.addEventListener('input', markDirty); });
+    f.body.addEventListener('input', function () { markDirty(); rerender(); });
+
+    function markDirty() {
+      dirty.set(true);
+    }
+
+    // Auto-save to localStorage every 3s
+    setInterval(function () {
+      if (!dirty.get()) return;
+      const state = readForm();
+      Admin.drafts.save(draftKey, { frontmatter: state.frontmatter, body: state.body, ts: Date.now() });
+    }, 3000);
+
+    async function submit(asDraft) {
+      const state = readForm();
+      if (asDraft) state.frontmatter.draft = true;
+      if (!state.frontmatter.title) { Admin.toast('Title is required', 'error'); return; }
+      if (!state.frontmatter.slug)  { Admin.toast('Slug is required', 'error'); return; }
+      if (!state.frontmatter.date)  { Admin.toast('Date is required', 'error'); return; }
+
+      saveDraftBtn.disabled = true;
+      publishBtn.disabled = true;
+      setSaving('Submitting PR&hellip;');
+      try {
+        let res;
+        if (isNew) {
+          res = await Admin.api.post('/api/posts', {
+            slug: state.frontmatter.slug,
+            frontmatter: state.frontmatter,
+            body: state.body
+          });
+        } else {
+          res = await Admin.api.put('/api/posts/' + encodeURIComponent(slug), {
+            frontmatter: state.frontmatter,
+            body: state.body,
+            sha: originalSha
+          });
+        }
+        setSaving('Saved');
+        dirty.set(false);
+        Admin.drafts.clear(draftKey);
+        if (res && res.pr) {
+          Admin.showPrSubmittedModal(res.pr, {
+            title: (asDraft ? 'Draft saved' : 'Post saved') + ' — PR #' + res.pr.number,
+            secondaryLabel: 'Back to posts',
+            secondaryHref: '/admin/posts.html'
+          });
+        } else {
+          Admin.toast('Saved', 'success');
+        }
+      } catch (err) {
+        Admin.toast(err.message || 'Save failed', 'error');
+      } finally {
+        saveDraftBtn.disabled = false;
+        publishBtn.disabled = false;
+      }
+    }
+
+    saveDraftBtn.addEventListener('click', function () { submit(true); });
+    document.getElementById('post-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      submit(false);
+    });
+  })();
+  </script>
+</body>
+</html>
