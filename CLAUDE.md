@@ -231,3 +231,42 @@ right column already hosts location cards. Build order in `build.sh`:
 Lives at `/admin` (static HTML + JS in `website/admin/`). Auth is Google OAuth against `ADMIN_EMAILS`; session is a JWT in an HttpOnly cookie. CF Pages Functions in `website/functions/` implement the API + a catch-all draft-preview Function.
 
 Every edit opens a Pull Request on `Shalom-Karr/OnTargetABA.com` &mdash; content does NOT push to `main` directly. The PR is the audit log. See `docs/ADMIN_DASHBOARD.md` for the user-facing walkthrough and `docs/DEPLOYMENT.md` for the env-var checklist.
+
+### Capabilities (as of editor v2)
+
+1. **Create a new page** — `/admin/new-page.html`. Pick a template (built-ins `page-basic`, `page-long-form`, `page-landing` + any custom ones), fill in slug + title + description, optionally mark as draft. Function scaffolds the new `.html`, registers it in `pages.json`, regenerates `sitemap.xml`.
+2. **Visually edit any text** — `/admin/page-editor.html?slug=<x>` loads the live URL in an iframe and overlays edit handles on **every** text-bearing element (h1-h6, p, li, td, button, a, span/strong/em with direct text, etc.). Hand-tagged `data-editable` keys take precedence; everything else uses auto-walk keys `auto:t<N>`. Edits queue in the right pane and submit as one PR.
+3. **Visual Tailwind text styling** — when a text element is being edited, a floating toolbar appears with toggles for bold/italic/underline/line-through/uppercase, mutually-exclusive groups for size (xs–7xl), font family (sans / display), brand color (8 swatches), and border-radius. Stores the resulting full `className` string on the override so the runtime applies it on every public view.
+4. **Hide any section** — every `<section>`, `<aside>`, `<header>`, `<footer>`, `<article>`, `<main>` gets a coral corner toolbar in the editor. Hide writes a `{ type: "section-hide", hidden: true }` override.
+5. **Save a section as a template** — same toolbar's "Save as template" action POSTs the section's `outerHTML` to `/api/section-templates/save`, which commits to `assets/templates/sections/{name}.html` via PR.
+6. **Replace or insert a saved section template** — the toolbar lists every saved section template; choose Replace (swap in place) or Insert after.
+7. **Image edits** — every `<img>` gets an Image handle. Modal accepts file upload (committed to `assets/images/uploads/{yyyy-mm}/{slug}-{hash}.{ext}` via `/api/images/upload`) **or** direct URL paste.
+8. **SEO per page** — collapsible panel in the page editor for title, meta description, keywords, canonical, OG title/description/image, Twitter image. Saves to `assets/data/pages/{slug}.seo.json` via `/api/pages/{slug}/seo`; `page-overrides.js` applies them on DOMContentLoaded.
+9. **Hide / draft / delete page** — `/admin/pages.html` row actions. Hide / draft flip the corresponding bool in `pages.json` (always serialized as `{ schemaVersion: 1, pages: [...] }`) and regenerate sitemap.xml in the same PR. Delete removes the `.html`, overrides, and registry entry.
+10. **Edit header + footer** — form-driven editors at `/admin/header.html` and `/admin/footer.html` that round-trip `assets/data/header.json` / `footer.json`.
+11. **Mobile / Tablet / Desktop preview** — viewport toggle in the editor topbar resizes the iframe to 390 / 820 / full-width so you can sanity-check layout on each form factor without leaving the admin.
+
+### The full automation loop
+
+  Save in /admin  →  Function commits files to `admin/<kind>-<slug>-<uuid>` branch
+                  →  Function opens PR with the change(s) + regenerated artifacts
+                  →  `validate-content.yml` workflow lints frontmatter + JSON
+                  →  `auto-merge-admin.yml` watches workflow_run; on success
+                     it squash-merges the PR (free-plan equivalent of GitHub's
+                     native auto-merge, which Pro-gates private repos)
+                  →  push to main triggers CF Pages deploy
+                  →  `purge-cache.yml` polls CF deployments for the matching
+                     commit; on success it purges the ontargetnotes.com zone
+                  →  custom domain serves the new state.
+
+End-to-end is typically 60–120 s. The PR is the audit log; nothing pushes
+straight to `main`.
+
+### Architecture quirks worth remembering
+
+- **REPO_PREFIX = "website/"** in `functions/_utils.js`. The site lives in a `website/` subdirectory but CF Pages builds from `website/` as the deploy root — so static fetches at `/assets/...` work, but every GitHub Contents API call from a Function needs the full path. The helper functions prepend it automatically; callers stay clean.
+- **All CF Pages env vars must be `secret_text`.** Mixing `plain_text` and `secret_text` in one PATCH to `deployment_configs.production.env_vars` silently drops the `plain_text` ones. Use `secret_text` for everything, even URLs and email allow-lists.
+- **OAuth callback URL is `/OAuth/Callback` — case sensitive.** Matches the file-system route at `functions/OAuth/Callback.js`. If you change it, you must change all three: Google Cloud Console allow-list, `GOOGLE_REDIRECT_URI` env var, and the Function file name.
+- **`pages.json` shape** is `{ schemaVersion: 1, pages: [...] }`. Every mutation Function writes the wrapper, not a bare array.
+- **`assets/blog/index.json`** is the source of truth for `/api/posts`. With 161 posts, walking each `.md` via the Contents API blows CF's per-Function subrequest budget; the pre-built index works in one call. `scripts/normalize-posts.py` keeps all frontmatter on the canonical shape.
+- **Auto-walk keys** (`auto:t<N>`, `auto:s<N>`, `auto:i<N>`) are computed by a deterministic DOM walk performed by **both** the editor and the runtime (`page-overrides.js`). They're stable across content edits but shift if the static markup's element structure changes. Hand-tag a critical region with `data-editable="something-stable"` if you want a key that survives layout refactors.

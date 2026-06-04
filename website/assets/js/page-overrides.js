@@ -66,6 +66,12 @@
     switch (override.type) {
       case 'text':
         if ('value' in override) node.textContent = override.value;
+        // classList override carries the full className string. Apply
+        // wholesale so admin choices (bold, color, size, etc.) replace
+        // the original.
+        if (typeof override.classList === 'string' && override.classList) {
+          node.className = override.classList;
+        }
         break;
       case 'image':
         if (override.src) node.setAttribute('src', override.src);

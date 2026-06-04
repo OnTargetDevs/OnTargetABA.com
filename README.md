@@ -128,6 +128,112 @@ These were run once during initial migration, their changes are baked into the H
 - **Endpoint:** `https://api.indexnow.org/IndexNow` (fans out to Bing, Yandex, Seznam, Naver)
 - **Override window:** set `SITEMAP_FULL_PING=1` in CF dashboard env vars to ping every URL on the next deploy.
 
+## Admin dashboard
+
+`/admin` is a private Google-OAuth&ndash;gated UI for editing every page,
+post, header, and footer in this repo without leaving the browser.
+
+**Sign in** with any allow-listed Google account (configured via the
+`ADMIN_EMAILS` env var). After OAuth, you land on a dashboard with four
+tiles: Pages, Posts, Header, Footer. Every save becomes a Pull Request
+on `Shalom-Karr/OnTargetABA.com` so the repo history is the audit log
+&mdash; nothing pushes straight to `main`.
+
+### What the editor can do
+
+- **Edit any text on the page.** The editor walks the live page in an
+  iframe and overlays Edit handles on every text-bearing element
+  (h1&ndash;h6, p, li, td, button, a, span/strong/em). Click, type,
+  press Enter to commit.
+- **Visual Tailwind styling.** When you click into a text node, a
+  floating toolbar offers bold / italic / underline / line-through /
+  uppercase toggles, font-size cycle (xs&ndash;7xl), font-family
+  (sans / display), brand color swatches, and border-radius. Changes
+  are saved as a full Tailwind className string on the override and
+  replayed at runtime on every public view.
+- **Mobile / tablet / desktop preview.** Topbar viewport toggle
+  resizes the iframe to 390 / 820 / full-width so you can verify
+  layouts on every form factor without opening DevTools.
+- **Hide any section.** Every `<section>`, `<aside>`, `<header>`,
+  `<footer>`, `<article>`, `<main>` gets a coral corner toolbar with
+  Hide / Save as template / Replace / Insert after.
+- **Save a section as a template.** Captures the section's `outerHTML`
+  into `assets/templates/sections/{name}.html` via PR. The Replace
+  and Insert-after options on every section toolbar list every saved
+  section template for one-click reuse.
+- **Image upload.** Every `<img>` gets an Image handle. The modal lets
+  you upload a file (committed to `assets/images/uploads/{yyyy-mm}/`
+  via PR) or paste a URL.
+- **Per-page SEO panel.** Collapsible details box with title,
+  description, keywords, canonical, OG title/description/image,
+  Twitter image. Stored at `assets/data/pages/{slug}.seo.json` and
+  applied at runtime by `page-overrides.js`.
+- **Page registry actions.** `/admin/pages.html` lists every page;
+  per-row toggles for Hide, Draft, Delete. Each flips a flag in
+  `assets/data/pages.json` (always written as
+  `{ schemaVersion: 1, pages: [...] }`) and regenerates `sitemap.xml`
+  in the same PR so search engines drop hidden pages.
+- **Blog post editor.** `/admin/post-editor.html` has form-driven
+  frontmatter (title, slug, date, category dropdown, author,
+  excerpt, read_time, hero_image URL) plus a markdown textarea with
+  live `marked.js` + `DOMPurify` preview. Save Draft or Publish
+  both submit a PR; on merge, CF Pages rebuilds the blog index and
+  sitemap.
+- **Header / Footer editors.** Form-driven, round-trips
+  `assets/data/header.json` and `footer.json`. Drag-reorder for
+  nav links and footer columns; per-page breadcrumb chain editor.
+- **Drafts visible to admins on the real URL.** When you toggle a
+  page to draft, the public gets 404, but a logged-in admin sees
+  the latest draft content at `/{slug}` &mdash; no special preview
+  path. Powered by the catch-all `functions/[[path]].js` Function.
+
+### The automation loop
+
+```
+Save in /admin
+  -> Function commits files to admin/<kind>-<slug>-<uuid> branch
+  -> Function opens PR with the change(s) + regenerated artifacts
+  -> validate-content workflow lints frontmatter + JSON
+  -> auto-merge-admin workflow squash-merges on success
+     (the free-plan equivalent of GitHub's native auto-merge,
+      which Pro-gates private repos)
+  -> push to main triggers CF Pages deploy
+  -> purge-cache workflow waits for the matching deploy then
+     purges the ontargetnotes.com Cloudflare zone
+  -> custom domain serves the new state
+```
+
+Typical end-to-end: 60&ndash;120 s. You can watch the PR list at
+[github.com/Shalom-Karr/OnTargetABA.com/pulls](https://github.com/Shalom-Karr/OnTargetABA.com/pulls)
+if a change isn't appearing &mdash; merge conflicts or validation
+failures stop here without affecting `main`.
+
+### Configuration
+
+Required env vars in the Cloudflare Pages dashboard (all marked as
+**secret_text** &mdash; CF's API silently drops `plain_text` mixed
+into a multi-value PATCH):
+
+| Name | Purpose |
+|---|---|
+| `GOOGLE_CLIENT_ID` | Web OAuth client ID |
+| `GOOGLE_CLIENT_SECRET` | Web OAuth client secret |
+| `GOOGLE_REDIRECT_URI` | `https://website.ontargetnotes.com/OAuth/Callback` &mdash; case-sensitive, must match Google Cloud Console allow-list |
+| `ADMIN_EMAILS` | Comma-separated Google accounts permitted to sign in |
+| `JWT_SECRET` | 64-char hex used to sign the `ota_admin` cookie. Rotate to invalidate all sessions. |
+| `GITHUB_TOKEN` | Fine-grained PAT scoped to `Shalom-Karr/OnTargetABA.com` with Contents R/W + Pull requests R/W + Metadata R |
+| `GITHUB_REPO` | `Shalom-Karr/OnTargetABA.com` |
+| `GITHUB_BRANCH` | `main` |
+
+### When something feels stuck
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| `/api/auth/google` returns 1101 Worker exception | Env vars not set in CF dashboard | PATCH each one (all as `secret_text`) and trigger a fresh deploy |
+| Google says `redirect_uri_mismatch` after sign-in | Case mismatch with the URI in Google Cloud Console | Console allow-list must read exactly `https://website.ontargetnotes.com/OAuth/Callback` (capital `O` and `C`) |
+| Pages / posts list is empty in the admin | A Function tried to call the GitHub Contents API without the `website/` prefix | Already handled by `REPO_PREFIX` in `functions/_utils.js`; if you saw this, the deploy hasn't picked up the latest yet |
+| Edits don't appear after merging | The Cloudflare CDN zone hasn't flushed | The `purge-cache.yml` workflow handles this automatically; if it didn't run, purge manually via the CF dashboard |
+
 ## Notes
 
 - Jotform IDs and other production integration IDs are documented in `CLAUDE.md`.
