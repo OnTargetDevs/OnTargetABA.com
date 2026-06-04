@@ -8,4 +8,5 @@ read_time: ""
 hero_image: ""
 excerpt: ""
 draft: true
+hidden: true
 ---
