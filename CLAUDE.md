@@ -166,6 +166,42 @@ to `footerImg.png` if none exists). The blog post template
 if the SVG fails to load. The script is idempotent (mtime-vs-index.json
 check) and runs after `build-blog-index.py` in `build.sh`.
 
+## UX + perf improvements (June 2026)
+
+Four shipped changes that the build pipeline now enforces on every deploy:
+**Self-hosted fonts** — `assets/fonts/` holds Latin-only woff2 files for
+Plus Jakarta Sans + Fraunces (five weights each; both families are
+variable fonts so the per-weight files are copies of one master).
+`scripts/setup-fonts.sh` downloads them with a Chrome UA at build time,
+`scripts/selfhost-fonts.mjs` strips the Google Fonts `<link>` and
+`<preconnect>` tags from every HTML page and injects a
+`<link rel="preload" as="font" ...plus-jakarta-sans-600.woff2 crossorigin>`
+above the `app.css` link. `@font-face` declarations live at the top of
+`assets/css/app.css`. **Skip-to-content link** — `scripts/add-skip-link.mjs`
+inserts `<a href="#main-content" class="skip-link">Skip to main content</a>`
+as the very first element inside `<body>` of every page, and adds
+`id="main-content"` to the first `<section>` after `</header>` (which is
+the first section after the breadcrumb on pages that have one); CSS lives
+in `app.css` under the `:focus-visible` block. **Deferred lead-bot** —
+the chat widget moved from `app.js` IIFE 2 into its own
+`assets/js/leadbot.js`. `app.js` now lazy-loads it via
+`requestIdleCallback` (or `setTimeout(1500)`) and on first user
+interaction (`mousemove`/`touchstart`/`keydown`/`scroll`). The loader
+prefixes the src with `../` when `location.pathname` includes `/blog/`,
+covering both `/blog/post.html` and the `/blog/posts/{slug}` rewrite
+(which sets `<base href="/blog/">`). **Call-CTA on form pages** —
+`pre-intake-form.html`, `contact.html`, and `autism-testing.html` each
+have a `data-call-cta` sidebar card next to the Jotform with the
+"Prefer to talk?" eyebrow, a 3-bullet reassurance list (live pickup /
+insurance on the call / start in 72 hours), a coral phone button
+(`(888) 989-5011` on the first two pages, `(385) 550-3500` on
+autism-testing) and "Mon–Fri 8:00 AM – 5:00 PM" hours. The standard
+layout is `grid lg:grid-cols-3 gap-8 items-start` with Jotform
+`lg:col-span-2` and the sticky aside `lg:col-span-1 lg:sticky lg:top-24`;
+`contact.html` stacks the call card under the form instead because its
+right column already hosts location cards. Build order in `build.sh`:
+`setup-fonts.sh` → `selfhost-fonts.mjs` → `add-skip-link.mjs`.
+
 ## Things the user has corrected / preferred
 
 - **Real customer reviews only** — don't fabricate testimonials. Currently in the marquee (sources are real Google reviews provided by the user): S. R., A. D., C. S., D. M., Carmen E., Jack M., **Andreana Tadaj**, **Ruchie Kaplan** (Cleveland), **Zi Zi World Tarpeh** (Columbus airport).

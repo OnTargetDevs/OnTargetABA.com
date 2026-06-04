@@ -139,13 +139,40 @@
 })();
 
 /* ============================================================
+   Shared footer loader.
+   Pages ship a `<div id="site-footer"></div>` placeholder; this
+   IIFE swaps it for the canonical /assets/partials/footer.html so
+   the footer markup lives in exactly one place.
+   ============================================================ */
+(() => {
+  'use strict';
+  const slot = document.getElementById('site-footer');
+  if (!slot) return;
+
+  fetch('/assets/partials/footer.html', { cache: 'default' })
+    .then((r) => (r.ok ? r.text() : ''))
+    .then((html) => {
+      if (!html) return;
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html;
+      const parent = slot.parentNode;
+      while (wrapper.firstChild) parent.insertBefore(wrapper.firstChild, slot);
+      slot.remove();
+      // Re-stamp year placeholders on the injected content.
+      document.querySelectorAll('[data-year]').forEach((el) => {
+        el.textContent = new Date().getFullYear();
+      });
+    })
+    .catch(() => { /* fail silently — the page still renders. */ });
+})();
+
+/* ============================================================
    Site enhancements (runs after the main behavior IIFE).
    - Mirror any single-row review marquee into a 2-row pattern
      with the mirror scrolling the opposite direction. Pages that
      already shipped a 2-row layout (e.g. index.html) are left alone.
-   - Inject a "Built by Shalom Karr" credit into every footer as a
-     defensive fallback (the static HTML footer already carries the
-     link; this catches any page that misses it).
+   - Inject a "Built by Shalom Karr" credit fallback in case a page
+     ships without the shared footer for some reason.
    ============================================================ */
 (() => {
   'use strict';
@@ -177,17 +204,22 @@
     m.insertAdjacentElement('afterend', clone);
   });
 
-  // ---- "Built by Shalom Karr" footer credit (JS fallback) ----
+  // ---- "Built by Shalom Karr" credit (JS fallback only) ----
+  // The canonical chip lives in /assets/partials/footer.html. This
+  // fallback fires if a page somehow renders without the partial.
   const footer = document.querySelector('footer');
-  if (footer && !footer.querySelector('[data-built-by]') &&
-      !/shalomkarr\.pages\.dev/i.test(footer.innerHTML)) {
+  if (footer && !/shalomkarr\.pages\.dev/i.test(footer.innerHTML)) {
     const credit = document.createElement('div');
     credit.setAttribute('data-built-by', '');
-    credit.className = 'text-center text-xs text-white/45 pb-4';
+    credit.className = 'text-center pb-4';
     credit.innerHTML =
-      'Built by <a href="https://shalomkarr.pages.dev/" target="_blank" rel="noopener" ' +
-      'class="text-white/70 hover:text-[color:var(--c-sun)] underline underline-offset-2 transition">' +
-      'Shalom Karr</a>';
+      '<a href="https://shalomkarr.pages.dev/" target="_blank" rel="noopener" ' +
+      'class="group inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white/65 hover:text-white text-xs transition-colors">' +
+        '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-3.5 w-3.5 text-[color:var(--c-coral)] group-hover:text-[color:var(--c-sun)] transition-colors"><path d="M12 2l2.39 7.36H22l-6.18 4.49 2.36 7.36L12 16.71l-6.18 4.5 2.36-7.36L2 9.36h7.61L12 2z"/></svg>' +
+        '<span class="tracking-wide">Built by</span>' +
+        '<span class="font-display italic font-semibold text-white">Shalom Karr</span>' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3"><path d="M7 17L17 7M7 7h10v10"/></svg>' +
+      '</a>';
     const bottomBar = footer.querySelector('.border-t.border-white\\/10') ||
                       footer.querySelector('.border-t') ||
                       footer;

@@ -399,6 +399,27 @@ SEO_PAGES = {
         "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Murray, Utah", None)],
         "primary_type": "LocalLocation",
     },
+    "mayfield-ohio.html": {
+        "title": "ABA Therapy in Mayfield Village &amp; Cleveland, Ohio &mdash; On Target ABA",
+        "desc": "Center-based and in-home ABA therapy plus autism testing at our expanded Mayfield Village clinic. Serving Greater Cleveland and Akron.",
+        "keywords": "ABA therapy Cleveland OH, ABA therapy Mayfield Village, autism clinic Cleveland, autism services Akron Ohio",
+        "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Mayfield Village, Ohio", None)],
+        "primary_type": "LocalLocation",
+    },
+    "gahanna-ohio.html": {
+        "title": "ABA Therapy in Gahanna &amp; Columbus, Ohio &mdash; On Target ABA Airport Center",
+        "desc": "Center-based and in-home ABA therapy plus autism testing at our Gahanna / Columbus Airport center. Serving east Columbus and Franklin County.",
+        "keywords": "ABA therapy Gahanna OH, ABA therapy Columbus, autism clinic east Columbus, ABA New Albany Westerville",
+        "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Gahanna, Ohio", None)],
+        "primary_type": "LocalLocation",
+    },
+    "worthington-ohio.html": {
+        "title": "ABA Therapy in Worthington &amp; North Columbus, Ohio &mdash; On Target ABA",
+        "desc": "Center-based and in-home ABA therapy plus autism testing at our Worthington center. Serving Dublin, Powell, Lewis Center, and the north Columbus suburbs.",
+        "keywords": "ABA therapy Worthington OH, ABA therapy north Columbus, autism clinic Dublin Powell, ABA Delaware County",
+        "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Worthington, Ohio", None)],
+        "primary_type": "LocalLocation",
+    },
     "locations.html": {
         "title": "Our Locations — ABA Therapy Clinics in Utah &amp; Ohio",
         "desc": "Four On Target ABA clinics serving Salt Lake City, Cleveland, and Columbus. Addresses, phone numbers, hours, and coverage areas.",
@@ -624,24 +645,67 @@ def per_page_extras(slug: str, page: dict, page_url: str) -> list[dict]:
         if info:
             nodes.append(service_node(info[0], page_url, info[1]))
     elif t == "LocalLocation":
+        clinics = {
+            "murray-utah.html": {
+                "name": "On Target ABA &mdash; Murray (Salt Lake Valley)",
+                "telephone": "+1-385-550-3500",
+                "streetAddress": "5444 South Green Street",
+                "addressLocality": "Murray",
+                "addressRegion": "UT",
+                "postalCode": "84123",
+                "latitude": 40.6510,
+                "longitude": -111.8889,
+            },
+            "mayfield-ohio.html": {
+                "name": "On Target ABA &mdash; Cleveland / Mayfield Village",
+                "telephone": "+1-216-343-1198",
+                "streetAddress": "767 Beta Dr, Suite C",
+                "addressLocality": "Mayfield Village",
+                "addressRegion": "OH",
+                "postalCode": "44143",
+                "latitude": 41.5187,
+                "longitude": -81.4413,
+            },
+            "gahanna-ohio.html": {
+                "name": "On Target ABA &mdash; Columbus / Gahanna (Airport)",
+                "telephone": "+1-614-681-1030",
+                "streetAddress": "2760 Airport Dr, Suite 110",
+                "addressLocality": "Columbus",
+                "addressRegion": "OH",
+                "postalCode": "43219",
+                "latitude": 39.9939,
+                "longitude": -82.8859,
+            },
+            "worthington-ohio.html": {
+                "name": "On Target ABA &mdash; Columbus / Worthington",
+                "telephone": "+1-614-681-1030",
+                "streetAddress": "130 E Wilson Bridge Rd, Suite 200",
+                "addressLocality": "Worthington",
+                "addressRegion": "OH",
+                "postalCode": "43085",
+                "latitude": 40.0934,
+                "longitude": -83.0179,
+            },
+        }
+        c = clinics.get(slug, clinics["murray-utah.html"])
         nodes.append({
             "@type": "MedicalClinic",
             "@id": f"{page_url}#localbusiness",
-            "name": "On Target ABA &mdash; Murray (Salt Lake Valley)",
+            "name": c["name"],
             "url": page_url,
-            "telephone": "+1-385-550-3500",
+            "telephone": c["telephone"],
             "image": f"{SITE}/wp-content/uploads/2022/04/footerImg.png",
             "priceRange": "$$",
             "openingHours": "Mo-Fr 08:00-17:00",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "5444 South Green Street",
-                "addressLocality": "Murray",
-                "addressRegion": "UT",
-                "postalCode": "84123",
+                "streetAddress": c["streetAddress"],
+                "addressLocality": c["addressLocality"],
+                "addressRegion": c["addressRegion"],
+                "postalCode": c["postalCode"],
                 "addressCountry": "US",
             },
-            "geo": {"@type": "GeoCoordinates", "latitude": 40.6510, "longitude": -111.8889},
+            "geo": {"@type": "GeoCoordinates", "latitude": c["latitude"], "longitude": c["longitude"]},
             "parentOrganization": {"@id": f"{SITE}/#organization"},
         })
     elif t == "Article":
