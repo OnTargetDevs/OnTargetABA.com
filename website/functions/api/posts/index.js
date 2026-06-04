@@ -18,25 +18,27 @@ import {
 } from "../../_utils.js";
 
 export const onRequestGet = async ({ env }) => {
+  // Read from the pre-built blog index instead of iterating every .md
+  // file via the Contents API. With 161+ posts, the per-file approach
+  // blows past CF Pages Functions' subrequest budget and times out.
+  // The index.json is rebuilt on every push by scripts/build-blog-index.py
+  // (and by /api/posts mutations regenerating it in-memory), so it's
+  // always current.
   try {
-    const items = await ghTree("assets/blog", env);
-    const mds = items.filter((i) => i.type === "blob" && i.path.endsWith(".md"));
-    const posts = [];
-    for (const it of mds) {
-      const file = await ghGet(it.path, env);
-      if (!file || !file.content) continue;
-      const { frontmatter } = parseFrontmatter(file.content);
-      const slug = it.path.split("/").pop().replace(/\.md$/, "");
-      posts.push({
-        slug,
-        title:    frontmatter.title    || "",
-        date:     frontmatter.date     || "",
-        category: frontmatter.category || "",
-        excerpt:  frontmatter.excerpt  || "",
-        draft:    frontmatter.draft === "true" || frontmatter.draft === true,
-        hidden:   frontmatter.hidden === "true" || frontmatter.hidden === true,
-      });
-    }
+    const file = await ghGet("assets/blog/index.json", env);
+    if (!file || !file.content) return json({ posts: [] });
+    let data;
+    try { data = JSON.parse(file.content); } catch { return json({ posts: [] }); }
+    const raw = Array.isArray(data) ? data : (Array.isArray(data.posts) ? data.posts : []);
+    const posts = raw.map((p) => ({
+      slug:     p.slug     || "",
+      title:    p.title    || "",
+      date:     p.date     || "",
+      category: p.category || "",
+      excerpt:  p.excerpt  || "",
+      draft:    p.draft === "true" || p.draft === true,
+      hidden:   p.hidden === "true" || p.hidden === true,
+    })).filter((p) => p.slug);
     posts.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
     return json({ posts });
   } catch (e) {

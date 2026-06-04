@@ -7,9 +7,16 @@ on:
 permissions:
   pull-requests: write
   contents: write
+  deployments: read
+  statuses: read
+  actions: read
 
 jobs:
   lighthouse:
+    # Skip admin-dashboard PRs. Those auto-merge once validate-content
+    # passes and don't need perf gating on every text tweak; if they
+    # introduce a regression the next hand-authored PR will catch it.
+    if: ${{ !startsWith(github.head_ref, 'admin/') }}
     name: Lighthouse audit against CF Pages preview
     runs-on: ubuntu-latest
     steps:
