@@ -1,8 +1,0 @@
-{
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/blog/posts/:slug", "destination": "/blog/post.html" },
-    { "source": "/blog/posts/:slug/", "destination": "/blog/post.html" }
-  ]
-}

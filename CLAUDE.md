@@ -11,7 +11,7 @@ that were made, and integrations that are wired up to specific live IDs.
 - **Client:** On Target ABA (the user's own company). User email: `nate.karr@ontargetaba.com`.
 - **Live legacy site:** https://ontargetaba.com (WordPress + Elementor + Fluent Forms + Jotform + Hotjar + Facebook Pixel + GTM-N2RP5GST / GTM-W42536PM).
 - **Redesigned static site (this repo):** https://github.com/Shalom-Karr/OnTargetABA.com — `main` branch.
-- **Deployed preview** referenced by the user: `website.ontargetnotes.com` (deploy target — not configured in this repo, the user handles deployment elsewhere).
+- **Deployed preview:** `website.ontargetnotes.com`, hosted on **Cloudflare Pages**. The CF project is wired to the GitHub repo; pushes to `main` trigger a build + deploy.
 - **Figma source of truth** for visual direction: file `1BS1Qg0H4ToqKZXLAeNX1P` ("On Target ABA"). Node IDs we screenshotted into `website/figma-refs/`: `32-2` (home), `634-2` (about), `634-194` (services), `634-457` (Cleveland location), `634-666` (careers). Figma proto links require login — fetch via Playwright (`scripts/figma-shot.py`).
 
 ## Locations + phone numbers (real, not placeholders)
@@ -85,6 +85,44 @@ If you're stuck on a pattern, check these in order:
 2. **`~/Downloads/Claude/newbridgesaba/`** — Tailwind-via-CDN + AOS + Alpine.js patterns, glass-nav backdrop, schema.org JSON-LD breadcrumbs.
 3. **`~/Downloads/Claude/Darabaner-ABA-Website/`** — another ABA brand site by the same user; useful for cross-checking voice and CTA patterns.
 
+## Deployment (Cloudflare Pages)
+
+Host is CF Pages — **not Vercel**. Don't ship `vercel.json`; it's noise.
+
+Project settings to verify in the CF dashboard:
+- **Root directory:** `/website` (the project lives in a subfolder)
+- **Build command:** `bash build.sh`
+- **Build output directory:** `.` (deploy from `/website` itself)
+
+`build.sh` chains the maintenance scripts so every push refreshes the
+derived artifacts (blog index → sitemap → IndexNow ping). Override the
+default 14-day IndexNow window with `SITEMAP_FULL_PING=1` (env var in
+the CF dashboard) to ping every URL after a large content change.
+
+### Routing files (CF Pages reads these from the deploy root)
+
+- **`_redirects`** — rewrites `/blog/posts/{slug}` → `/blog/post` (status 200).
+  **Do not** use `/blog/post.html` as the destination: CF Pages strips
+  `.html` from anything it serves, which would turn the rewrite into a
+  308 redirect and drop the slug. The extensionless destination resolves
+  to `/blog/post.html` internally without changing the URL bar.
+- **`_headers`** — security headers (CSP-lite), correct MIME types for
+  `sitemap.xml` / `robots.txt` / the IndexNow key file, long cache for
+  immutable images, short cache for blog markdown.
+
+### IndexNow
+
+- **Key:** `c8f5d3a1e947b2f6a4c1b9d8e6f3a2b5`
+- **Key file:** `website/c8f5d3a1e947b2f6a4c1b9d8e6f3a2b5.txt` at the
+  deploy root (search engines GET this to verify ownership).
+- **Endpoint:** `https://api.indexnow.org/IndexNow` (fan-out to Bing,
+  Yandex, Seznam, Naver, and any other participating crawlers).
+- **Default behavior:** `scripts/indexnow-ping.py` parses `sitemap.xml`
+  and submits every URL whose `<lastmod>` falls within the last 14 days.
+  Pass `--all` for an initial submission of every URL.
+- **Failure mode:** non-fatal. A failed ping logs a warning but doesn't
+  break the deploy.
+
 ## The scripts folder is load-bearing
 
 `website/scripts/` holds idempotent maintenance scripts. Each one operates on `website/` from a sibling directory:
@@ -100,6 +138,10 @@ If you're stuck on a pattern, check these in order:
 | `figma-shot.py` | Playwright headless screenshot of the 5 Figma proto pages → `website/figma-refs/`. Needs `pip install playwright && playwright install chromium`. |
 | `inject-seo.py` | Re-injects schema.org JSON-LD `@graph` + OpenGraph + Twitter + canonical + breadcrumb HTML into every page. Idempotent (uses `<!-- auto-seo-start -->` / `<!-- auto-seo-end -->` markers). |
 | `build-blog-index.py` | Generates `assets/blog/index.json` from `assets/blog/*.md` frontmatter. |
+| `build-sitemap.py` | Reads `index.json` + the static-page registry → emits `sitemap.xml` and `robots.txt`. |
+| `indexnow-ping.py` | Submits recent (last 14d) URLs from `sitemap.xml` to api.indexnow.org. `--all` pings every URL. |
+| `embed-jotforms.py` | Swaps placeholder forms for real Jotform `jsform` embeds. Idempotent. |
+| `add-blog-nav.py` | Inserts a Blog link into the desktop nav on every page. Idempotent. |
 
 **Order when running a refresh:** `download-assets` → `swap-logo` → `recolor` → `sync-tailwind-config` → `fix-encoding` → `inject-seo` → `build-blog-index` → `qa-check`.
 

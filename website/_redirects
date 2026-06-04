@@ -1,3 +1,14 @@
-# Netlify / Cloudflare Pages rewrites
-# Pretty blog post URLs: /blog/posts/{slug} -> the runtime renderer
-/blog/posts/*  /blog/post.html  200
+# Cloudflare Pages routing
+#
+# Pretty blog URLs: /blog/posts/{slug} should serve /blog/post.html
+# content while keeping the slug in the URL bar.
+#
+# IMPORTANT: the destination is `/blog/post` (no .html). CF Pages
+# auto-strips `.html` from any URL it serves directly — if we used
+# `/blog/post.html` here, the auto-strip would turn this rewrite into
+# a 308 redirect to `/blog/post`, dropping the slug. Using the
+# extensionless form means CF Pages internally resolves `/blog/post`
+# to `/blog/post.html` without changing the URL.
+
+/blog/posts/*   /blog/post   200
+/blog/posts/*/  /blog/post   200
