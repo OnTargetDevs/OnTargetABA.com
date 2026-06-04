@@ -571,7 +571,15 @@ tailwind.config = {
 
       // Header content
       els.title.textContent = meta.title || 'Article';
-      els.crumbTitle.textContent = meta.title || 'Article';
+      // The breadcrumb is now rendered by /assets/js/header.js, so the
+      // static #crumb-title slot is gone. Guard the lookup; when the
+      // dynamic header crumb is present, update its current-page span.
+      if (els.crumbTitle) {
+        els.crumbTitle.textContent = meta.title || 'Article';
+      } else {
+        const last = document.querySelector('nav[aria-label="Breadcrumb"] [aria-current="page"]');
+        if (last) last.textContent = meta.title || 'Article';
+      }
       els.excerpt.textContent = meta.excerpt || '';
       els.date.textContent = formatDate(meta.date);
       if (meta.read_time) {
