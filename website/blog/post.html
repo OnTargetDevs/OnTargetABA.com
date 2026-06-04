@@ -3,6 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Pretty URL support: when the host rewrites /blog/posts/{slug}
+     to /blog/post.html, relative paths like "../assets/..." would
+     resolve against /blog/posts/{slug}/ instead of /blog/. A <base>
+     element anchored at /blog/ makes them resolve correctly. -->
+<script>
+  (function () {
+    if (location.pathname.indexOf('/blog/posts/') === 0) {
+      var b = document.createElement('base');
+      b.href = '/blog/';
+      document.head.appendChild(b);
+    }
+  })();
+</script>
+
 <title>On Target ABA &mdash; Blog</title>
 <meta name="description" id="seo-description" content="ABA therapy &amp; autism resources for families &mdash; On Target ABA." />
 <link rel="canonical" id="seo-canonical" href="https://ontargetaba.com/blogs/" />
@@ -376,8 +391,17 @@ tailwind.config = {
 (function () {
   'use strict';
 
-  const params = new URLSearchParams(location.search);
-  const slug = (params.get('slug') || '').trim().replace(/[^a-z0-9-]/gi, '');
+  // Prefer the path form (/blog/posts/{slug}); fall back to the legacy
+  // query form (/blog/post.html?slug={slug}) for backwards compatibility.
+  let slug = '';
+  const pathMatch = location.pathname.match(/\/blog\/posts\/([^/?#]+)/);
+  if (pathMatch) {
+    try { slug = decodeURIComponent(pathMatch[1]); } catch (_) { slug = pathMatch[1]; }
+  } else {
+    const params = new URLSearchParams(location.search);
+    slug = (params.get('slug') || '').trim();
+  }
+  slug = slug.replace(/[^a-z0-9-]/gi, '');
 
   const els = {
     loading: document.getElementById('loading'),
@@ -562,7 +586,7 @@ tailwind.config = {
         const picks = (sameCat.length >= 3 ? sameCat : others).slice(0, 3);
         if (!picks.length) return;
         els.relatedGrid.innerHTML = picks.map(p => (
-          '<a href="post.html?slug=' + encodeURIComponent(p.slug) + '" class="lift block bg-cream ring-1 ring-line rounded-3xl p-6 hover:bg-sage-soft transition">' +
+          '<a href="posts/' + encodeURIComponent(p.slug) + '" class="lift block bg-cream ring-1 ring-line rounded-3xl p-6 hover:bg-sage-soft transition">' +
             (p.category ? '<div class="text-xs uppercase tracking-widest text-coral font-semibold mb-2">' + escapeHtml(p.category) + '</div>' : '') +
             '<h3 class="font-display text-lg font-700 leading-snug">' + escapeHtml(p.title) + '</h3>' +
             (p.excerpt ? '<p class="mt-2 text-sm text-ink-soft line-clamp-3">' + escapeHtml(p.excerpt) + '</p>' : '') +

@@ -136,6 +136,7 @@ tailwind.config = {
       <a data-nav-link href="locations.html" class="link-uline hover:text-coral">Locations</a>
       <a data-nav-link href="faqs.html" class="link-uline hover:text-coral">FAQs</a>
       <a data-nav-link href="careers.html" class="link-uline hover:text-coral">Careers</a>
+      <a data-nav-link href="blog.html" class="link-uline hover:text-coral">Blog</a>
     </nav>
     <div class="hidden lg:flex items-center gap-2">
       <a href="tel:8889895011" class="btn btn-ghost text-sm">
@@ -416,7 +417,7 @@ tailwind.config = {
   function cardHtml(p) {
     const img = p.hero_image || FALLBACK_IMG;
     return (
-      '<a href="blog/post.html?slug=' + encodeURIComponent(p.slug) + '" class="post-card">' +
+      '<a href="blog/posts/' + encodeURIComponent(p.slug) + '" class="post-card">' +
         '<div class="img-wrap"><img loading="lazy" src="' + escapeHtml(img) + '" alt="' + escapeHtml(p.title) + '" onerror="this.src=\'' + FALLBACK_IMG + '\'" /></div>' +
         (p.category ? '<span class="cat-tag">' + escapeHtml(p.category) + '</span>' : '') +
         '<div class="body">' +
@@ -432,7 +433,7 @@ tailwind.config = {
   }
   function renderFeatured(post) {
     if (!post) { els.featuredWrap.classList.add('hidden'); return; }
-    els.featuredCard.href = 'blog/post.html?slug=' + encodeURIComponent(post.slug);
+    els.featuredCard.href = 'blog/posts/' + encodeURIComponent(post.slug);
     els.featuredImg.src = post.hero_image || FALLBACK_IMG;
     els.featuredImg.onerror = function () { this.src = FALLBACK_IMG; };
     els.featuredImg.alt = post.title;

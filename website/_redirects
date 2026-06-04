@@ -1,0 +1,3 @@
+# Netlify / Cloudflare Pages rewrites
+# Pretty blog post URLs: /blog/posts/{slug} -> the runtime renderer
+/blog/posts/*  /blog/post.html  200
