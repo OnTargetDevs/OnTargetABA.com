@@ -42,7 +42,9 @@ Source: the user's Figma board for the redesign (the live WordPress CSS uses a b
 | `sun` | `#F4C842` | Big circle hero device, secondary CTA |
 | `sage` | `#C5E0D5` | 5th accent — backgrounds, sage-soft cards |
 
-The display font in the Figma is a chunky humanist (Recoleta-style). Closest free fit is **Bricolage Grotesque** or **Caprasimo**. The current site uses Fraunces — slightly more refined than the design board. If the user asks for the "real" type, swap to Bricolage Grotesque.
+The display font in the Figma is a chunky humanist (Recoleta-style). Closest free fit is Bricolage Grotesque or Caprasimo. **The current site uses Fraunces and stays on Fraunces** — the user previewed a Bricolage Grotesque swap in `demo.html` and explicitly rejected it. Don't propose this swap again.
+
+Similarly, the user **rejected the big yellow-sun hero device** (large `#F4C842` circle behind a child photo, riffed from the Figma board). Keep the existing target-mark + blob hero treatments.
 
 ## Logo — IMPORTANT
 
