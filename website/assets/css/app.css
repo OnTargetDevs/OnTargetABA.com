@@ -52,20 +52,63 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* =========== Decorative target rings (used in hero/marks) =========== */
+/* =========== Decorative target rings (used in hero/marks) ===========
+   The CENTER of the bullseye is a large solid coral disk so overlay
+   text reads cleanly. Rings sit in the outer half — they still read as
+   a target without the white bands cutting through the type. */
 .target-mark {
   position: relative;
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 999px;
   background: radial-gradient(circle at center,
-    var(--c-coral) 0%, var(--c-coral) 18%,
-    #fff 18%, #fff 32%,
-    var(--c-sun) 32%, var(--c-sun) 46%,
-    #fff 46%, #fff 60%,
-    var(--c-teal) 60%, var(--c-teal) 74%,
-    #fff 74%, #fff 100%);
+    var(--c-coral)    0%,  var(--c-coral)    50%,
+    #ffffff           50%, #ffffff           58%,
+    var(--c-sun)      58%, var(--c-sun)      68%,
+    #ffffff           68%, #ffffff           76%,
+    var(--c-teal)     76%, var(--c-teal)     86%,
+    #ffffff           86%, #ffffff           100%);
   box-shadow: var(--shadow-pop);
+}
+
+/* Helper for text content that sits ON TOP of a .target-mark.
+   Constrains text to the coral center disk so it never overlaps a ring. */
+.target-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  pointer-events: none;
+}
+.target-overlay > * {
+  max-width: 56%;   /* keep type inside the solid coral center */
+}
+.target-overlay .tm-kicker {
+  font-size: clamp(.7rem, 1.1vw, .85rem);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(11,34,51,.25);
+  margin-bottom: .35rem;
+}
+.target-overlay .tm-figure {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 2px 6px rgba(11,34,51,.25);
+  font-size: clamp(3.5rem, 9vw, 7rem);
+}
+.target-overlay .tm-foot {
+  font-size: clamp(.75rem, 1.2vw, .95rem);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(11,34,51,.25);
+  margin-top: .35rem;
 }
 
 /* =========== Subtle blob backgrounds =========== */
