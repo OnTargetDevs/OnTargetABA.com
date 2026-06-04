@@ -1,7 +1,7 @@
 # Sweep all HTML files and replace any old palette hex values with the new On Target ABA brand palette.
 # Idempotent — safe to run multiple times.
 
-$root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 
 $swaps = @{
   '#0B2233' = '#1B2733'   # ink

@@ -5,7 +5,7 @@ from pathlib import Path
 
 from playwright.async_api import async_playwright
 
-OUT_DIR = Path(__file__).parent / "figma-refs"
+OUT_DIR = Path(__file__).parent.parent / "figma-refs"
 OUT_DIR.mkdir(exist_ok=True)
 
 TARGETS = [

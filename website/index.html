@@ -16,13 +16,14 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        ink:   { DEFAULT: '#1B2733', soft: '#34495E' },
-        teal:  { DEFAULT: '#00B7EA', deep: '#009EC3', soft: '#D6F0F8' },
-        coral: { DEFAULT: '#FF6900', soft: '#FFE0CC' },
-        sun:   { DEFAULT: '#FFDD17', soft: '#FFF6C8' },
-        cream: '#EEEADD',
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
         mute:  '#6B7E8F',
-        line:  '#E2E0D4'
+        line:  '#E8DFD0'
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
@@ -766,38 +767,622 @@ tailwind.config = {
 <!-- ============ TESTIMONIALS ============ -->
 <section class="py-20 lg:py-28">
   <div class="max-w-7xl mx-auto px-5">
-    <div class="max-w-2xl mb-14">
-      <div class="reveal eyebrow"><span class="dot"></span> Parent voices</div>
+    <div class="max-w-2xl mb-12 text-center mx-auto">
+      <div class="reveal eyebrow inline-flex"><span class="dot"></span> Parent voices</div>
       <h2 class="reveal reveal-delay-1 mt-4 font-display text-4xl sm:text-5xl font-700 tracking-tight">Words from the families we serve.</h2>
+      <p class="reveal reveal-delay-2 mt-4 text-ink-soft text-lg">Real 5-star reviews from parents across our Ohio and Utah locations.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-5">
-      <figure class="reveal lift bg-white rounded-3xl p-7 ring-1 ring-line">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="#FF6900"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-        <blockquote class="mt-4 text-lg leading-relaxed text-ink">My child runs off to his therapist every time. It's amazing.</blockquote>
-        <figcaption class="mt-6 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-coral-soft grid place-items-center font-700 text-coral">SR</div>
-          <div><div class="font-semibold">S. R.</div><div class="text-sm text-mute">Parent</div></div>
-        </figcaption>
-      </figure>
+    <!-- Top row: scrolls right-to-left -->
+    <div class="review-marquee reveal mb-5" aria-label="Parent reviews, row 1">
+      <div class="review-track" style="--dur: 55s;">
+        <!-- ===== Pass 1 ===== -->
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My child runs off to his therapist every time. It's amazing.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral-soft);color:var(--c-coral);">SR</div>
+            <div>
+              <div class="review-name">S. R.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;This is a phenomenal ABA center. Everyone at the center is really kind and patient with my son. I have seen a huge improvement with him. I'm truly grateful for everyone at On Target. Thank you.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal-soft);color:var(--c-teal-deep);">AT</div>
+            <div>
+              <div class="review-name">Andreana Tadaj</div>
+              <div class="review-source">Google review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Beautifully renovated. Fresh and clean. Attentive, experienced staff. Always a pleasure to go there!&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sage);color:var(--c-teal-deep);">RK</div>
+            <div>
+              <div class="review-name">Ruchie Kaplan</div>
+              <div class="review-source">Google &middot; Cleveland, OH</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;The therapists are so warm and really knowledgeable.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun-soft);color:var(--c-ink);">AD</div>
+            <div>
+              <div class="review-name">A. D.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My son is a level 3 autistic. He has improved SO much here! He even found 2 of the therapists he really loves making him want to come to school.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral);color:#fff;">CE</div>
+            <div>
+              <div class="review-name">Carmen E.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My child loves his therapist. When I pick him up, he doesn't want to leave!&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal);color:#fff;">CS</div>
+            <div>
+              <div class="review-name">C. S.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My twins are currently attending one of the centers. We have had an amazing experience with On Target, especially the airport location. 5 stars all around &mdash; my family appreciates you guys so much. Very quickly responds to any concerns we have, and always meets with solutions!&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun);color:var(--c-ink);">ZT</div>
+            <div>
+              <div class="review-name">Zi Zi World Tarpeh</div>
+              <div class="review-source">Google &middot; Columbus, OH</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Very professional staff who are very knowledgeable about Autism. Highly recommend to any parent who wants excellent therapy for their child.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral-soft);color:var(--c-coral);">DM</div>
+            <div>
+              <div class="review-name">D. M.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Beautiful facility. Clean, updated, safe, spacious, with great equipment.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal-soft);color:var(--c-teal-deep);">JM</div>
+            <div>
+              <div class="review-name">Jack M.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <!-- ===== Pass 2 (duplicate for seamless loop) ===== -->
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My child runs off to his therapist every time. It's amazing.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral-soft);color:var(--c-coral);">SR</div>
+            <div>
+              <div class="review-name">S. R.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;This is a phenomenal ABA center. Everyone at the center is really kind and patient with my son. I have seen a huge improvement with him. I'm truly grateful for everyone at On Target. Thank you.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal-soft);color:var(--c-teal-deep);">AT</div>
+            <div>
+              <div class="review-name">Andreana Tadaj</div>
+              <div class="review-source">Google review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Beautifully renovated. Fresh and clean. Attentive, experienced staff. Always a pleasure to go there!&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sage);color:var(--c-teal-deep);">RK</div>
+            <div>
+              <div class="review-name">Ruchie Kaplan</div>
+              <div class="review-source">Google &middot; Cleveland, OH</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;The therapists are so warm and really knowledgeable.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun-soft);color:var(--c-ink);">AD</div>
+            <div>
+              <div class="review-name">A. D.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My son is a level 3 autistic. He has improved SO much here! He even found 2 of the therapists he really loves making him want to come to school.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral);color:#fff;">CE</div>
+            <div>
+              <div class="review-name">Carmen E.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My child loves his therapist. When I pick him up, he doesn't want to leave!&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal);color:#fff;">CS</div>
+            <div>
+              <div class="review-name">C. S.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My twins are currently attending one of the centers. We have had an amazing experience with On Target, especially the airport location. 5 stars all around &mdash; my family appreciates you guys so much. Very quickly responds to any concerns we have, and always meets with solutions!&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun);color:var(--c-ink);">ZT</div>
+            <div>
+              <div class="review-name">Zi Zi World Tarpeh</div>
+              <div class="review-source">Google &middot; Columbus, OH</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Very professional staff who are very knowledgeable about Autism. Highly recommend to any parent who wants excellent therapy for their child.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral-soft);color:var(--c-coral);">DM</div>
+            <div>
+              <div class="review-name">D. M.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Beautiful facility. Clean, updated, safe, spacious, with great equipment.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal-soft);color:var(--c-teal-deep);">JM</div>
+            <div>
+              <div class="review-name">Jack M.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
 
-      <figure class="reveal reveal-delay-1 lift bg-white rounded-3xl p-7 ring-1 ring-line">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="#FF6900"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-        <blockquote class="mt-4 text-lg leading-relaxed text-ink">The therapists are so warm and really knowledgeable.</blockquote>
-        <figcaption class="mt-6 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-teal-soft grid place-items-center font-700 text-teal-deep">AD</div>
-          <div><div class="font-semibold">A. D.</div><div class="text-sm text-mute">Parent</div></div>
-        </figcaption>
-      </figure>
+    <!-- Bottom row: scrolls left-to-right (reversed) -->
+    <div class="review-marquee reveal reveal-delay-1" aria-label="Parent reviews, row 2">
+      <div class="review-track reverse" style="--dur: 70s;">
+        <!-- ===== Pass 1 (reordered for visual variety) ===== -->
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Beautiful facility. Clean, updated, safe, spacious, with great equipment.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun);color:var(--c-ink);">JM</div>
+            <div>
+              <div class="review-name">Jack M.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;The therapists are so warm and really knowledgeable.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral);color:#fff;">AD</div>
+            <div>
+              <div class="review-name">A. D.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My twins are currently attending one of the centers &mdash; we have had an amazing experience.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal-soft);color:var(--c-teal-deep);">ZW</div>
+            <div>
+              <div class="review-name">Zi Zi W.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My child loves his therapist. When I pick him up, he doesn't want to leave!&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun-soft);color:var(--c-ink);">CS</div>
+            <div>
+              <div class="review-name">C. S.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Very professional staff who are very knowledgeable about Autism. Highly recommend to any parent who wants excellent therapy for their child.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral-soft);color:var(--c-coral);">DM</div>
+            <div>
+              <div class="review-name">D. M.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My child runs off to his therapist every time. It's amazing.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal);color:#fff;">SR</div>
+            <div>
+              <div class="review-name">S. R.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My son is a level 3 autistic. He has improved SO much here! He even found 2 of the therapists he really loves making him want to come to school.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun);color:var(--c-ink);">CE</div>
+            <div>
+              <div class="review-name">Carmen E.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;This is a phenomenal ABA center. Everyone at the center is really kind and patient.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral);color:#fff;">AT</div>
+            <div>
+              <div class="review-name">Andreana T.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <!-- ===== Pass 2 (duplicate for seamless loop) ===== -->
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Beautiful facility. Clean, updated, safe, spacious, with great equipment.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun);color:var(--c-ink);">JM</div>
+            <div>
+              <div class="review-name">Jack M.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;The therapists are so warm and really knowledgeable.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral);color:#fff;">AD</div>
+            <div>
+              <div class="review-name">A. D.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My twins are currently attending one of the centers &mdash; we have had an amazing experience.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal-soft);color:var(--c-teal-deep);">ZW</div>
+            <div>
+              <div class="review-name">Zi Zi W.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My child loves his therapist. When I pick him up, he doesn't want to leave!&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun-soft);color:var(--c-ink);">CS</div>
+            <div>
+              <div class="review-name">C. S.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;Very professional staff who are very knowledgeable about Autism. Highly recommend to any parent who wants excellent therapy for their child.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral-soft);color:var(--c-coral);">DM</div>
+            <div>
+              <div class="review-name">D. M.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My child runs off to his therapist every time. It's amazing.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-teal);color:#fff;">SR</div>
+            <div>
+              <div class="review-name">S. R.</div>
+              <div class="review-source">Parent review</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;My son is a level 3 autistic. He has improved SO much here! He even found 2 of the therapists he really loves making him want to come to school.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-sun);color:var(--c-ink);">CE</div>
+            <div>
+              <div class="review-name">Carmen E.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <p class="review-quote">&ldquo;This is a phenomenal ABA center. Everyone at the center is really kind and patient.&rdquo;</p>
+          <div class="review-meta">
+            <div class="review-avatar" style="background:var(--c-coral);color:#fff;">AT</div>
+            <div>
+              <div class="review-name">Andreana T.</div>
+              <div class="review-source">Google &middot; Ohio</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
 
-      <figure class="reveal reveal-delay-2 lift bg-white rounded-3xl p-7 ring-1 ring-line">
-        <svg width="34" height="34" viewBox="0 0 24 24" fill="#FF6900"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
-        <blockquote class="mt-4 text-lg leading-relaxed text-ink">My child loves his therapist. When I pick him up, he doesn't want to leave!</blockquote>
-        <figcaption class="mt-6 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-sun-soft grid place-items-center font-700 text-ink">CS</div>
-          <div><div class="font-semibold">C. S.</div><div class="text-sm text-mute">Parent</div></div>
-        </figcaption>
-      </figure>
+    <!-- Aggregate rating callout -->
+    <div class="reveal reveal-delay-2 mt-12 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8 bg-white rounded-3xl border border-line px-6 py-6 max-w-3xl mx-auto shadow-soft">
+      <div class="flex items-center gap-4">
+        <div class="font-display text-5xl font-700 text-ink leading-none">5.0</div>
+        <div>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+          </div>
+          <div class="text-sm text-mute mt-1">Based on 8 parent reviews across Ohio &amp; Utah</div>
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn-coral">Become our next 5-star story <span>&rarr;</span></a>
     </div>
   </div>
 </section>

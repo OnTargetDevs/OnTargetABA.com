@@ -5,29 +5,30 @@
    ========================================================= */
 
 :root {
-  /* ====== On Target ABA brand palette (from live site) ======
-     Primary cyan-blue #00b7ea / deep #009ec3
-     Accent yellow    #ffdd17
-     Accent orange    #FF6900
-     Warm cream bg    #EEEADD
+  /* ====== On Target ABA brand palette ======
+     Warmer / Figma-aligned tokens. Bright cyan kept as accent;
+     a deeper teal carries body emphasis. Coral nudged toward red.
+     New sage accent added for the 5th color in the Figma board.
   */
-  --c-ink:        #1B2733;
+  --c-ink:        #163243;
   --c-ink-soft:   #34495E;
   --c-teal:       #00B7EA;
-  --c-teal-deep:  #009EC3;
+  --c-teal-deep:  #0E5E6E;
   --c-teal-soft:  #D6F0F8;
-  --c-coral:      #FF6900;
-  --c-coral-soft: #FFE0CC;
-  --c-sun:        #FFDD17;
-  --c-sun-soft:   #FFF6C8;
-  --c-cream:      #EEEADD;
+  --c-coral:      #E84F3B;
+  --c-coral-soft: #FCE0DA;
+  --c-sun:        #F4C842;
+  --c-sun-soft:   #FFF1C2;
+  --c-sage:       #C5E0D5;
+  --c-sage-soft:  #E6F1EB;
+  --c-cream:      #FAF5E6;
   --c-paper:      #FFFFFF;
   --c-mute:       #6B7E8F;
-  --c-line:       #E2E0D4;
+  --c-line:       #E8DFD0;
 
   --shadow-soft:  0 1px 2px rgba(11,34,51,.04), 0 8px 24px rgba(11,34,51,.06);
   --shadow-pop:   0 1px 2px rgba(11,34,51,.06), 0 18px 48px rgba(11,34,51,.12);
-  --shadow-coral: 0 16px 40px rgba(255,105,0,.30);
+  --shadow-coral: 0 16px 40px rgba(232,79,59,.28);
 
   --r-sm: 8px;
   --r-md: 14px;
@@ -187,7 +188,7 @@ body {
   background: var(--c-coral); color: #fff;
   box-shadow: var(--shadow-coral);
 }
-.btn-coral:hover { background: #FF8429; transform: translateY(-2px); }
+.btn-coral:hover { background: #F26A57; transform: translateY(-2px); }
 .btn-ink {
   background: var(--c-ink); color: #fff;
 }
@@ -200,7 +201,7 @@ body {
 .btn-sun {
   background: var(--c-sun); color: var(--c-ink);
 }
-.btn-sun:hover { background: #FFE752; transform: translateY(-2px); }
+.btn-sun:hover { background: #FFD75E; transform: translateY(-2px); }
 
 /* =========== Section labels (eyebrow) =========== */
 .eyebrow {
@@ -220,10 +221,33 @@ body {
 /* =========== Hero gradient background =========== */
 .hero-bg {
   background:
-    radial-gradient(60% 80% at 90% 0%, rgba(255,221,23,.28), transparent 60%),
-    radial-gradient(50% 70% at 0% 100%, rgba(255,105,0,.16), transparent 60%),
-    radial-gradient(40% 60% at 50% 50%, rgba(0,183,234,.10), transparent 70%),
-    linear-gradient(180deg, #FBF8EE 0%, var(--c-cream) 100%);
+    radial-gradient(60% 80% at 90% 0%, rgba(244,200,66,.32), transparent 60%),
+    radial-gradient(50% 70% at 0% 100%, rgba(232,79,59,.14), transparent 60%),
+    radial-gradient(40% 60% at 50% 50%, rgba(197,224,213,.30), transparent 70%),
+    linear-gradient(180deg, #FDFAEF 0%, var(--c-cream) 100%);
+}
+
+/* Big yellow sun behind hero subject — Figma signature device */
+.hero-sun {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--c-sun);
+  z-index: 0;
+}
+
+/* Curved squiggle underline — Figma decoration */
+.headline-wave {
+  position: relative;
+  display: inline-block;
+}
+.headline-wave::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -.5rem;
+  height: .5rem;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 9 C 50 1, 150 1, 198 8' stroke='%23E84F3B' stroke-width='4' stroke-linecap='round' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 /* =========== FAQ accordion =========== */
@@ -330,3 +354,44 @@ body {
 /* =========== Spinner =========== */
 @keyframes spin { to { transform: rotate(360deg); } }
 .spin { animation: spin 1s linear infinite; }
+
+/* === Scrolling review marquee === */
+.review-marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.review-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: review-scroll var(--dur, 60s) linear infinite;
+}
+.review-track.reverse { animation-direction: reverse; }
+.review-marquee:hover .review-track { animation-play-state: paused; }
+@keyframes review-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+.review-card {
+  flex: 0 0 320px;
+  background: #fff;
+  border-radius: 1.25rem;
+  border: 1px solid var(--c-line);
+  padding: 1.25rem 1.4rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+}
+.review-stars { display: inline-flex; gap: 2px; }
+.review-stars svg { width: 18px; height: 18px; fill: #FFC107; }
+.review-quote { color: var(--c-ink-soft); line-height: 1.55; font-size: .98rem; }
+.review-meta { display: flex; align-items: center; gap: .65rem; margin-top: auto; padding-top: .65rem; border-top: 1px solid var(--c-line); }
+.review-avatar { width: 36px; height: 36px; border-radius: 999px; display: grid; place-items: center; font-weight: 800; font-size: .8rem; flex-shrink: 0; }
+.review-name { font-weight: 700; font-size: .92rem; color: var(--c-ink); }
+.review-source { font-size: .72rem; color: var(--c-mute); text-transform: uppercase; letter-spacing: .08em; }
+@media (prefers-reduced-motion: reduce) {
+  .review-track { animation: none; }
+}

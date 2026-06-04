@@ -14,7 +14,7 @@ import json
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent.parent
 SITE = "https://ontargetaba.com"
 
 # ---------------------------------------------------------------- shared blocks

@@ -1,7 +1,7 @@
 # Replace the placeholder bullseye+wordmark with the real On Target ABA logo
 # across every HTML page in the project. Idempotent.
 
-$root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $pages = Get-ChildItem -Path $root -Filter *.html -File
 
 # Nav placeholder -> real logo (matches both old palette and new palette variants)

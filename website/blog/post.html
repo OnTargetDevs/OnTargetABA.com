@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>On Target ABA &mdash; Blog</title>
+<meta name="description" id="seo-description" content="ABA therapy &amp; autism resources for families &mdash; On Target ABA." />
+<link rel="canonical" id="seo-canonical" href="https://ontargetaba.com/blogs/" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="On Target ABA" />
+<meta property="og:title" id="seo-og-title" content="On Target ABA Blog" />
+<meta property="og:description" id="seo-og-description" content="ABA therapy &amp; autism resources for families." />
+<meta property="og:image" id="seo-og-image" content="../assets/images/footerImg.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" id="seo-tw-title" content="On Target ABA Blog" />
+<meta name="twitter:description" id="seo-tw-description" content="ABA therapy &amp; autism resources for families." />
+<meta name="twitter:image" id="seo-tw-image" content="../assets/images/footerImg.png" />
+<script id="seo-jsonld" type="application/ld+json"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="../assets/css/app.css" />
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js"></script>
+
+<style>
+  #progress { position: fixed; top: 0; left: 0; height: 3px;
+              background: linear-gradient(90deg, var(--c-coral), var(--c-teal-deep));
+              width: 0%; z-index: 60; transition: width .1s linear; }
+
+  /* Long-form article styling */
+  .post-prose { color: var(--c-ink-soft); line-height: 1.78; font-size: 1.07rem; }
+  .post-prose > * + * { margin-top: 1.1em; }
+  .post-prose h1 { display: none; } /* hide the H1 in body since hero shows it */
+  .post-prose h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 700;
+                   font-size: 1.85rem; color: var(--c-ink); letter-spacing: -.01em;
+                   margin-top: 2.2em; scroll-margin-top: 6rem; }
+  .post-prose h3 { font-weight: 700; font-size: 1.3rem; color: var(--c-ink);
+                   margin-top: 1.8em; scroll-margin-top: 6rem; }
+  .post-prose p { line-height: 1.78; }
+  .post-prose strong { color: var(--c-ink); }
+  .post-prose a { color: var(--c-teal-deep); text-decoration: underline;
+                  text-decoration-color: rgba(14,94,110,.35);
+                  text-underline-offset: 3px;
+                  transition: color .2s; }
+  .post-prose a:hover { color: var(--c-coral); text-decoration-color: var(--c-coral); }
+  .post-prose ul, .post-prose ol { padding-left: 1.6em; }
+  .post-prose ul li, .post-prose ol li { margin-bottom: .55em; line-height: 1.7; }
+  .post-prose ul li::marker { color: var(--c-coral); }
+  .post-prose ol li::marker { color: var(--c-teal-deep); font-weight: 700; }
+  .post-prose blockquote {
+    margin: 1.6em 0;
+    padding: 1.1em 1.3em;
+    background: var(--c-sage-soft);
+    border-left: 4px solid var(--c-teal-deep);
+    border-radius: 0 16px 16px 0;
+    color: var(--c-ink);
+    font-style: italic;
+  }
+  .post-prose img {
+    border-radius: 1rem;
+    box-shadow: var(--shadow-soft);
+    margin: 1.8em auto;
+    max-width: 100%;
+    height: auto;
+  }
+  .post-prose code { background: var(--c-cream); padding: .12em .4em;
+                      border-radius: 4px; font-size: .9em;
+                      border: 1px solid var(--c-line); }
+  .post-prose hr { border: 0; height: 1px; background: var(--c-line); margin: 2.5em 0; }
+  .post-prose table { width: 100%; border-collapse: collapse; margin: 1.5em 0; }
+  .post-prose th, .post-prose td {
+    border-bottom: 1px solid var(--c-line);
+    padding: .6em .8em; text-align: left;
+  }
+
+  /* TOC */
+  .toc-link { display: block; padding: .4rem .7rem .4rem 1rem;
+              font-size: 13.5px; color: var(--c-mute);
+              border-left: 2px solid transparent;
+              transition: color .15s, border-color .15s, background .15s;
+              line-height: 1.4;
+              border-radius: 0 6px 6px 0; }
+  .toc-link:hover { color: var(--c-ink); background: var(--c-cream); }
+  .toc-link.toc-h3 { padding-left: 1.9rem; font-size: 12.5px; }
+  .toc-link.active { color: var(--c-teal-deep); font-weight: 600;
+                      border-left-color: var(--c-coral); background: var(--c-cream); }
+</style>
+</head>
+<body class="bg-cream text-ink antialiased">
+<div id="progress"></div>
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="bg-ink text-white text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+    <span class="inline-flex items-center gap-2">
+      <span class="relative flex h-2 w-2">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-coral opacity-75 animate-ping"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-coral"></span>
+      </span>
+      <span class="font-semibold tracking-wide">NEW SALT LAKE CITY LOCATION NOW OPEN</span>
+    </span>
+    <a href="../autism-testing.html" class="link-uline text-sun font-semibold">Free autism testing &mdash; most families pay $0 &rarr;</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">
+  <div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">
+    <a href="../index.html" class="flex items-center group" aria-label="On Target ABA &mdash; home">
+      <img src="../assets/images/footerImg.png" alt="On Target ABA" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85">
+      <a href="../our-services.html" class="link-uline hover:text-coral">Services</a>
+      <a href="../autism-testing.html" class="link-uline hover:text-coral">Autism Testing</a>
+      <a href="../about.html" class="link-uline hover:text-coral">About</a>
+      <a href="../insurance.html" class="link-uline hover:text-coral">Insurance</a>
+      <a href="../locations.html" class="link-uline hover:text-coral">Locations</a>
+      <a href="../faqs.html" class="link-uline hover:text-coral">FAQs</a>
+      <a href="../careers.html" class="link-uline hover:text-coral">Careers</a>
+      <a href="../blog.html" class="link-uline hover:text-coral text-coral font-semibold">Blog</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-2">
+      <a href="tel:8889895011" class="btn btn-ghost text-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        (888) 989-5011
+      </a>
+      <a href="../contact.html" class="btn btn-coral text-sm">Get Started</a>
+    </div>
+    <button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#163243" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>
+    <div class="px-5 py-5 grid gap-1 text-[15px]">
+      <a href="../our-services.html" class="py-2.5 border-b border-line">Services</a>
+      <a href="../autism-testing.html" class="py-2.5 border-b border-line">Autism Testing</a>
+      <a href="../about.html" class="py-2.5 border-b border-line">About</a>
+      <a href="../insurance.html" class="py-2.5 border-b border-line">Insurance</a>
+      <a href="../locations.html" class="py-2.5 border-b border-line">Locations</a>
+      <a href="../faqs.html" class="py-2.5 border-b border-line">FAQs</a>
+      <a href="../careers.html" class="py-2.5 border-b border-line">Careers</a>
+      <a href="../blog.html" class="py-2.5 border-b border-line">Blog</a>
+      <div class="grid grid-cols-2 gap-2 mt-3">
+        <a href="tel:8889895011" class="btn btn-ghost justify-center text-sm">Call</a>
+        <a href="../contact.html" class="btn btn-coral justify-center text-sm">Get Started</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- breadcrumbs -->
+<nav aria-label="Breadcrumb" class="bg-cream/60 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 py-3 text-sm text-mute flex items-center gap-2 flex-wrap">
+    <a href="../index.html" class="hover:text-coral">Home</a>
+    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+    <a href="../blog.html" class="hover:text-coral">Blog</a>
+    <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+    <span id="crumb-title" class="text-ink font-semibold" aria-current="page">Loading&hellip;</span>
+  </div>
+</nav>
+
+<!-- Loading state -->
+<div id="loading" class="max-w-3xl mx-auto px-5 py-24 text-center">
+  <div class="inline-block w-10 h-10 rounded-full border-2 border-line border-t-coral spin"></div>
+  <p class="mt-4 text-mute">Loading article&hellip;</p>
+</div>
+
+<!-- Not found state -->
+<div id="notfound" class="hidden max-w-3xl mx-auto px-5 py-24 text-center">
+  <h1 class="font-display text-4xl font-700 mb-3">Post not found</h1>
+  <p class="text-mute mb-8">We couldn't find that article. It may have moved or been renamed.</p>
+  <a href="../blog.html" class="btn btn-coral">Browse all articles</a>
+</div>
+
+<!-- ============ ARTICLE ============ -->
+<article id="article" class="hidden">
+  <!-- Hero -->
+  <section class="hero-bg relative overflow-hidden">
+    <div class="blob blob-coral w-[360px] h-[360px] -left-32 top-40"></div>
+    <div class="blob blob-sun w-[320px] h-[320px] -right-32 -top-10"></div>
+    <div class="max-w-4xl mx-auto px-5 pt-12 pb-16 lg:pt-20 lg:pb-24 relative">
+      <a href="../blog.html" class="inline-flex items-center gap-2 text-sm font-semibold text-teal-deep hover:text-coral mb-6 transition">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 19l-7-7 7-7"/></svg>
+        All articles
+      </a>
+
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span id="post-category" class="eyebrow hidden"><span class="dot"></span> <span data-cat>Category</span></span>
+        <time id="post-date" class="text-sm text-mute"></time>
+        <span id="post-read-time" class="text-sm text-mute hidden">&middot; <span data-rt></span></span>
+      </div>
+
+      <h1 id="post-title" class="font-display text-4xl sm:text-5xl lg:text-6xl font-700 leading-[1.05] tracking-tight text-ink mb-5"></h1>
+      <p id="post-excerpt" class="text-lg text-ink-soft max-w-2xl"></p>
+    </div>
+  </section>
+
+  <!-- Hero image -->
+  <div id="post-hero-wrap" class="hidden max-w-5xl mx-auto px-5 -mt-6 relative z-10">
+    <div class="rounded-3xl overflow-hidden shadow-pop">
+      <img id="post-hero-img" src="" alt="" class="w-full h-auto object-cover aspect-[16/9]" onerror="document.getElementById('post-hero-wrap').classList.add('hidden')">
+    </div>
+  </div>
+
+  <!-- Body + TOC -->
+  <section class="py-12 lg:py-16">
+    <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-[240px_minmax(0,1fr)] gap-12">
+
+      <!-- TOC sidebar (desktop) -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-mute mb-3">On this page</p>
+          <nav id="toc-nav" class="border-l border-line"></nav>
+        </div>
+      </aside>
+
+      <!-- Article body -->
+      <div class="max-w-3xl">
+        <!-- mobile TOC -->
+        <details id="toc-mobile" class="lg:hidden mb-8 bg-white border border-line rounded-xl overflow-hidden">
+          <summary class="px-4 py-3 cursor-pointer font-semibold text-sm text-ink list-none flex items-center justify-between">
+            <span>Jump to section</span>
+            <svg class="w-4 h-4 text-mute" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <nav id="toc-mobile-nav" class="border-t border-line px-2 py-2"></nav>
+        </details>
+
+        <div id="post-content" class="post-prose"></div>
+
+        <!-- CTA -->
+        <aside class="mt-16 p-8 bg-gradient-to-br from-teal-deep to-ink text-white rounded-3xl relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-sun/20 blur-2xl"></div>
+          <div class="relative">
+            <div class="text-xs uppercase tracking-widest font-semibold text-sun mb-3">Quality care without the wait</div>
+            <h3 class="font-display text-3xl font-700 mb-3 leading-tight">Ready to get started?</h3>
+            <p class="text-white/80 mb-6 max-w-lg">Most families start in under 72 hours. We'll verify your insurance and help you skip the wait.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="../contact.html" class="btn btn-sun">Get started today</a>
+              <a href="../autism-testing.html" class="btn btn-ghost text-white border-white/30 hover:bg-white/10">Schedule autism testing</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Source attribution + share -->
+        <div class="mt-10 pt-6 border-t border-line flex flex-wrap items-center justify-between gap-4">
+          <a id="post-source" href="#" class="text-sm text-mute hover:text-coral link-uline" target="_blank" rel="noopener">Originally published on ontargetaba.com</a>
+          <div class="flex items-center gap-2 text-sm text-mute">
+            <span>Share:</span>
+            <a id="share-fb" href="#" target="_blank" rel="noopener" class="hover:text-coral" aria-label="Share on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            </a>
+            <a id="share-tw" href="#" target="_blank" rel="noopener" class="hover:text-coral" aria-label="Share on X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a id="share-li" href="#" target="_blank" rel="noopener" class="hover:text-coral" aria-label="Share on LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.42v6.32zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related posts -->
+  <section id="related-section" class="py-16 lg:py-20 bg-white border-t border-line hidden">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="eyebrow inline-flex"><span class="dot"></span> Keep reading</div>
+      <h2 class="mt-4 font-display text-3xl sm:text-4xl font-700 mb-10">More from On Target ABA</h2>
+      <div id="related-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </div>
+  </section>
+</article>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="flex items-center">
+        <img src="../assets/images/footerImg.png" alt="On Target ABA" class="h-11 w-auto" />
+      </div>
+      <p class="mt-4 text-white/70 max-w-sm">Compassionate, evidence-based ABA therapy and autism evaluations. Quality care without the wait.</p>
+      <a href="tel:8889895011" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        1-888-989-5011
+      </a>
+    </div>
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Services</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="../center-based-aba-therapy.html" class="link-uline">Center-Based ABA</a></li>
+        <li><a href="../in-home-aba-therapy.html" class="link-uline">In-Home ABA</a></li>
+        <li><a href="../early-intervention-autism-program.html" class="link-uline">Early Intervention</a></li>
+        <li><a href="../potty-training-program.html" class="link-uline">Potty Training</a></li>
+        <li><a href="../autism-testing.html" class="link-uline">Autism Testing</a></li>
+      </ul>
+    </div>
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Company</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="../about.html" class="link-uline">About</a></li>
+        <li><a href="../our-process.html" class="link-uline">Our Process</a></li>
+        <li><a href="../locations.html" class="link-uline">Locations</a></li>
+        <li><a href="../careers.html" class="link-uline">Careers</a></li>
+        <li><a href="../blog.html" class="link-uline">Blog</a></li>
+      </ul>
+    </div>
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Resources</div>
+      <ul class="space-y-2.5 text-white/80">
+        <li><a href="../aba-therapy-guide.html" class="link-uline">ABA Therapy Guide</a></li>
+        <li><a href="../insurance.html" class="link-uline">Insurance</a></li>
+        <li><a href="../faqs.html" class="link-uline">FAQs</a></li>
+        <li><a href="../contact.html" class="link-uline">Contact</a></li>
+        <li><a href="../pre-intake-form.html" class="link-uline">Pre-Intake Form</a></li>
+      </ul>
+    </div>
+    <div class="lg:col-span-2">
+      <div class="text-xs uppercase tracking-widest text-white/50 font-semibold mb-4">Locations</div>
+      <ul class="space-y-2.5 text-white/80 text-sm">
+        <li><span class="text-white font-semibold">Utah</span><br/>Murray, UT</li>
+        <li><span class="text-white font-semibold">Cleveland</span><br/>Mayfield Village, OH</li>
+        <li><span class="text-white font-semibold">Columbus</span><br/>Gahanna &amp; Worthington, OH</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div>&copy;<span data-year>2026</span> ON TARGET ABA, LLC &middot; All rights reserved &middot; Operated by Target ABA, LLC</div>
+      <div class="flex gap-5">
+        <a href="../privacy-policy.html" class="hover:text-white">Privacy</a>
+        <a href="../terms-of-service.html" class="hover:text-white">Terms</a>
+        <a href="../cookie-consent.html" class="hover:text-white">Cookies</a>
+        <a href="../disclaimer.html" class="hover:text-white">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+<script>
+/* ============================================================
+   Runtime markdown blog post renderer.
+   - Reads ?slug= from the URL
+   - Fetches ../assets/blog/{slug}.md
+   - Parses YAML-ish frontmatter (simple regex; the scraper agents
+     write a predictable shape with known keys).
+   - Renders the body via marked.js, sanitized by DOMPurify.
+   - Builds a sticky table of contents from H2/H3.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  const params = new URLSearchParams(location.search);
+  const slug = (params.get('slug') || '').trim().replace(/[^a-z0-9-]/gi, '');
+
+  const els = {
+    loading: document.getElementById('loading'),
+    notfound: document.getElementById('notfound'),
+    article: document.getElementById('article'),
+    title: document.getElementById('post-title'),
+    excerpt: document.getElementById('post-excerpt'),
+    date: document.getElementById('post-date'),
+    readTime: document.getElementById('post-read-time'),
+    category: document.getElementById('post-category'),
+    crumbTitle: document.getElementById('crumb-title'),
+    heroImg: document.getElementById('post-hero-img'),
+    heroWrap: document.getElementById('post-hero-wrap'),
+    content: document.getElementById('post-content'),
+    source: document.getElementById('post-source'),
+    tocNav: document.getElementById('toc-nav'),
+    tocMobile: document.getElementById('toc-mobile'),
+    tocMobileNav: document.getElementById('toc-mobile-nav'),
+    progress: document.getElementById('progress'),
+    related: document.getElementById('related-section'),
+    relatedGrid: document.getElementById('related-grid'),
+  };
+
+  if (!slug) {
+    showNotFound();
+    return;
+  }
+
+  // Parse a string that looks like:  key: "value"
+  function parseFrontmatter(text) {
+    const m = text.match(/^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/);
+    if (!m) return { meta: {}, body: text };
+    const yaml = m[1];
+    const body = m[2];
+    const meta = {};
+    yaml.split('\n').forEach(line => {
+      const kv = line.match(/^([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(.*)$/);
+      if (!kv) return;
+      let v = kv[2].trim();
+      if ((v.startsWith('"') && v.endsWith('"')) ||
+          (v.startsWith("'") && v.endsWith("'"))) {
+        v = v.slice(1, -1);
+      }
+      meta[kv[1]] = v;
+    });
+    return { meta, body };
+  }
+
+  function escapeHtml(s) {
+    return String(s ?? '').replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+  }
+
+  function slugify(s) {
+    return (s || '').toLowerCase().trim()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .slice(0, 80);
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '';
+    const d = new Date(iso + 'T00:00:00Z');
+    if (isNaN(d.getTime())) return iso;
+    return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+  }
+
+  function showNotFound() {
+    els.loading.classList.add('hidden');
+    els.notfound.classList.remove('hidden');
+  }
+
+  function applySeo(meta) {
+    const title = (meta.title || 'On Target ABA Blog') + ' — On Target ABA';
+    document.title = title;
+    const set = (id, attr, val) => { const el = document.getElementById(id); if (el) el.setAttribute(attr, val); };
+    set('seo-description', 'content', meta.excerpt || '');
+    set('seo-og-title', 'content', title);
+    set('seo-og-description', 'content', meta.excerpt || '');
+    set('seo-tw-title', 'content', title);
+    set('seo-tw-description', 'content', meta.excerpt || '');
+    if (meta.hero_image) {
+      set('seo-og-image', 'content', meta.hero_image);
+      set('seo-tw-image', 'content', meta.hero_image);
+    }
+    if (meta.source_url) {
+      set('seo-canonical', 'href', meta.source_url);
+    }
+
+    // Article JSON-LD
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: meta.title,
+      description: meta.excerpt,
+      datePublished: meta.date,
+      dateModified: meta.date,
+      author: { '@type': 'Organization', name: meta.author || 'On Target ABA' },
+      publisher: {
+        '@type': 'Organization',
+        name: 'On Target ABA',
+        logo: { '@type': 'ImageObject', url: 'https://ontargetaba.com/wp-content/uploads/2022/04/footerImg.png' }
+      },
+      mainEntityOfPage: meta.source_url || location.href,
+    };
+    if (meta.hero_image) ld.image = meta.hero_image;
+    const ldEl = document.getElementById('seo-jsonld');
+    if (ldEl) ldEl.textContent = JSON.stringify(ld);
+  }
+
+  function buildToc(content) {
+    const headings = Array.from(content.querySelectorAll('h2, h3'));
+    const used = new Set();
+    const items = headings.map((h, i) => {
+      let s = slugify(h.textContent) || ('section-' + i);
+      let uniq = s, n = 1;
+      while (used.has(uniq)) uniq = s + '-' + (++n);
+      used.add(uniq);
+      h.id = uniq;
+      return { id: uniq, text: h.textContent || '', tag: h.tagName.toLowerCase() };
+    });
+
+    if (!items.length) return;
+
+    const html = items.map(it => (
+      '<a class="toc-link ' + (it.tag === 'h3' ? 'toc-h3' : '') + '" href="#' + it.id + '">' +
+        escapeHtml(it.text) +
+      '</a>'
+    )).join('');
+    if (els.tocNav) els.tocNav.innerHTML = html;
+    if (els.tocMobileNav) els.tocMobileNav.innerHTML = html;
+    if (els.tocMobile && items.length >= 3) els.tocMobile.classList.remove('hidden');
+
+    // Highlight active section as you scroll
+    if (!('IntersectionObserver' in window)) return;
+    const tocLinks = Array.from(document.querySelectorAll('.toc-link'));
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          tocLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+        }
+      });
+    }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
+    headings.forEach(h => obs.observe(h));
+  }
+
+  function setShareLinks(meta) {
+    const url = encodeURIComponent(location.href);
+    const text = encodeURIComponent(meta.title || '');
+    const fb = document.getElementById('share-fb');
+    const tw = document.getElementById('share-tw');
+    const li = document.getElementById('share-li');
+    if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+    if (tw) tw.href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
+    if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+    if (meta.source_url && els.source) {
+      els.source.href = meta.source_url;
+    }
+  }
+
+  function setProgressBar() {
+    const update = () => {
+      const h = document.documentElement;
+      const scrolled = h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight);
+      els.progress.style.width = (scrolled * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  function loadRelated(currentSlug, currentCategory) {
+    fetch('../assets/blog/index.json', { cache: 'no-cache' })
+      .then(r => r.ok ? r.json() : null)
+      .then(idx => {
+        if (!idx || !Array.isArray(idx.posts)) return;
+        // Prefer same category; fall back to most recent. Exclude current.
+        const others = idx.posts.filter(p => p.slug !== currentSlug);
+        const sameCat = others.filter(p => p.category && p.category === currentCategory);
+        const picks = (sameCat.length >= 3 ? sameCat : others).slice(0, 3);
+        if (!picks.length) return;
+        els.relatedGrid.innerHTML = picks.map(p => (
+          '<a href="post.html?slug=' + encodeURIComponent(p.slug) + '" class="lift block bg-cream ring-1 ring-line rounded-3xl p-6 hover:bg-sage-soft transition">' +
+            (p.category ? '<div class="text-xs uppercase tracking-widest text-coral font-semibold mb-2">' + escapeHtml(p.category) + '</div>' : '') +
+            '<h3 class="font-display text-lg font-700 leading-snug">' + escapeHtml(p.title) + '</h3>' +
+            (p.excerpt ? '<p class="mt-2 text-sm text-ink-soft line-clamp-3">' + escapeHtml(p.excerpt) + '</p>' : '') +
+            '<div class="mt-4 text-sm font-semibold text-teal-deep">Read article &rarr;</div>' +
+          '</a>'
+        )).join('');
+        els.related.classList.remove('hidden');
+      })
+      .catch(() => { /* index optional */ });
+  }
+
+  fetch('../assets/blog/' + slug + '.md', { cache: 'no-cache' })
+    .then(r => {
+      if (!r.ok) throw new Error('not found: ' + r.status);
+      return r.text();
+    })
+    .then(text => {
+      const { meta, body } = parseFrontmatter(text);
+
+      // Header content
+      els.title.textContent = meta.title || 'Article';
+      els.crumbTitle.textContent = meta.title || 'Article';
+      els.excerpt.textContent = meta.excerpt || '';
+      els.date.textContent = formatDate(meta.date);
+      if (meta.read_time) {
+        els.readTime.querySelector('[data-rt]').textContent = meta.read_time;
+        els.readTime.classList.remove('hidden');
+      }
+      if (meta.category) {
+        els.category.querySelector('[data-cat]').textContent = meta.category;
+        els.category.classList.remove('hidden');
+      }
+      if (meta.hero_image) {
+        els.heroImg.src = meta.hero_image;
+        els.heroImg.alt = meta.title || '';
+        els.heroWrap.classList.remove('hidden');
+      }
+
+      // Render markdown -> HTML -> sanitize
+      marked.setOptions({ gfm: true, breaks: false });
+      const html = DOMPurify.sanitize(marked.parse(body || ''), {
+        ADD_ATTR: ['target', 'rel'],
+      });
+      els.content.innerHTML = html;
+
+      // External links open in new tab
+      els.content.querySelectorAll('a[href^="http"]').forEach(a => {
+        try {
+          const u = new URL(a.getAttribute('href'), location.href);
+          if (u.host !== location.host && !u.host.includes('ontargetaba.com')) {
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+          }
+        } catch (_) {}
+      });
+
+      // Lazy-load images, hide broken ones gracefully
+      els.content.querySelectorAll('img').forEach(img => {
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.addEventListener('error', () => { img.style.display = 'none'; });
+      });
+
+      buildToc(els.content);
+      applySeo(meta);
+      setShareLinks(meta);
+      setProgressBar();
+      loadRelated(slug, meta.category);
+
+      els.loading.classList.add('hidden');
+      els.article.classList.remove('hidden');
+    })
+    .catch(err => {
+      console.warn('blog load failed:', err);
+      showNotFound();
+    });
+})();
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 # script can be re-saved by any encoding without breaking.
 # Idempotent.
 
-$root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $pages = Get-ChildItem -Path $root -Filter *.html -File
 
 # Build special chars from code points (ASCII-safe source)

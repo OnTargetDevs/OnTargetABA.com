@@ -2,7 +2,7 @@
 # Skips already-downloaded files. Writes a manifest URL -> local path mapping.
 
 $ErrorActionPreference = 'Continue'
-$root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $scraped = Join-Path $root 'scraped'
 $out = Join-Path $root 'assets\images'
 $manifest = Join-Path $root 'assets\asset-manifest.json'

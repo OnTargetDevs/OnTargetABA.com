@@ -1,7 +1,7 @@
 # QA sweep across all generated HTML files.
 # Checks: broken local links, missing local images, leftover old palette hex values.
 
-$root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $pages = Get-ChildItem -Path $root -Filter *.html -File
 $imageDir = Join-Path $root 'assets\images'
 $existingPages = $pages.Name + 'index.html' | Sort-Object -Unique
