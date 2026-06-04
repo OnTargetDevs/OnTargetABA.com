@@ -12,6 +12,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-06-04
+
+### Added
+
+- new blog post "test" (#2)
+
+
 ### Added
 
 - 2026-06-04 &mdash; Admin dashboard release. Static admin UI at `/admin`
