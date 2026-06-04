@@ -1,14 +1,15 @@
 ---
-title: "What Does a Typical Day in ABA Therapy Look Like?"
-date: "2025-11-10"
-category: "Getting Started with ABA, Parent Resources"
-author: "On Target ABA Team"
+title: What Does a Typical Day in ABA Therapy Look Like?
+date: 2025-11-10
+category: Getting Started with ABA, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-shvetsa-11286163-1024x683.jpg"
-excerpt: "Parents often wonder what their child experiences during ABA therapy sessions. This guide reveals how structure, play, learning, and positive reinforcement combine throughout the day to support children's growth and development."
-read_time: "8 min read"
+excerpt: Parents often wonder what their child experiences during ABA therapy sessions. This guide reveals how structure, play, learning, and positive reinforcement combine throughout the day to support children's growth and development.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/10/what-does-a-typical-day-in-aba-therapy-look-like/"
+draft: false
+hidden: false
 ---
-
 # What Does a Typical Day in ABA Therapy Look Like?
 
 ## Inside an ABA Therapy Day

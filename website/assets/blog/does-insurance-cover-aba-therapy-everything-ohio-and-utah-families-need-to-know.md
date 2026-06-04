@@ -1,14 +1,15 @@
 ---
-title: "Does Insurance Cover ABA Therapy? Everything Ohio and Utah Families Need to Know"
-date: "2026-04-06"
-category: "Insurance & Funding"
-author: "On Target ABA Team"
+title: Does Insurance Cover ABA Therapy? Everything Ohio and Utah Families Need to Know
+date: 2026-04-06
+category: Insurance & Funding
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-leeloothefirst-7163942-scaled-e1775445621712-1024x707.jpg"
-excerpt: "Insurance represents a major barrier families face when pursuing ABA therapy for autism, but federal and state laws now require coverage for most families, with at least 200 million Americans having access to this protection."
-read_time: ""
+excerpt: Insurance represents a major barrier families face when pursuing ABA therapy for autism, but federal and state laws now require coverage for most families, with at least 200 million Americans having access to this protection.
+read_time: 10 min read
 source_url: "https://ontargetaba.com/2026/04/06/does-insurance-cover-aba-therapy-everything-ohio-and-utah-families-need-to-know/"
+draft: false
+hidden: false
 ---
-
 # Does Insurance Cover ABA Therapy? Everything Ohio and Utah Families Need to Know
 
 ## AI Summary

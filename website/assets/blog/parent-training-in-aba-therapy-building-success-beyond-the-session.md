@@ -1,14 +1,15 @@
 ---
 title: "Parent Training in ABA Therapy: Building Success Beyond the Session"
-date: "2025-11-07"
-category: "Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-07
+category: Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-mikhail-nilov-6972642-1024x683.jpg"
-excerpt: "Parent training in ABA therapy enables families to reinforce therapeutic strategies at home, helping children generalize skills beyond structured sessions."
-read_time: "6 min read"
+excerpt: Parent training in ABA therapy enables families to reinforce therapeutic strategies at home, helping children generalize skills beyond structured sessions.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/11/07/parent-training-in-aba-therapy-building-success-beyond-the-session/"
+draft: false
+hidden: false
 ---
-
 # Parent Training in ABA Therapy: Building Success Beyond the Session
 
 ## Why Parent Involvement Matters in ABA

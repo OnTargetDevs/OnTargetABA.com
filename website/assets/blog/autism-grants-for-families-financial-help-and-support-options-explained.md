@@ -1,14 +1,15 @@
 ---
 title: "Autism Grants for Families: Financial Help and Support Options Explained"
-date: "2026-03-06"
-category: "Insurance & Funding"
-author: "On Target ABA Team"
+date: 2026-03-06
+category: Insurance & Funding
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-cottonbro-3943720-1024x683.jpg"
-excerpt: "When families receive an autism diagnosis, they face immediate costs for therapy and services. Autism grants provide financial assistance to help bridge gaps between insurance coverage and actual expenses."
-read_time: "7 min read"
+excerpt: When families receive an autism diagnosis, they face immediate costs for therapy and services. Autism grants provide financial assistance to help bridge gaps between insurance coverage and actual expenses.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/03/06/autism-grants-for-families-financial-help-and-support-options-explained/"
+draft: false
+hidden: false
 ---
-
 # Autism Grants for Families: Financial Help and Support Options Explained
 
 When your child is diagnosed with autism, your focus immediately shifts to support.

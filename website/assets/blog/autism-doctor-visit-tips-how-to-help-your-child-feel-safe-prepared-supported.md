@@ -1,14 +1,15 @@
 ---
-title: "Autism Doctor Visit Tips — How to Help Your Child Feel Safe, Prepared & Supported"
-date: "2025-11-26"
-category: "Getting Started with ABA, Parent Resources"
-author: "On Target ABA Team"
+title: Autism Doctor Visit Tips — How to Help Your Child Feel Safe, Prepared & Supported
+date: 2025-11-26
+category: Getting Started with ABA, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-cristian-rojas-8460033-1024x683.jpg"
-excerpt: "This guide offers practical strategies to help children with autism prepare for and successfully navigate doctor visits, addressing sensory needs, communication barriers, and behavioral support through ABA-based approaches."
-read_time: "8 min read"
+excerpt: This guide offers practical strategies to help children with autism prepare for and successfully navigate doctor visits, addressing sensory needs, communication barriers, and behavioral support through ABA-based approaches.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/26/autism-doctor-visit-tips-how-to-help-your-child-feel-safe-prepared-supported/"
+draft: false
+hidden: false
 ---
-
 # Autism Doctor Visit Tips — How to Help Your Child Feel Safe, Prepared & Supported
 
 ## Caring for Your Child's Health Shouldn't Feel Overwhelming

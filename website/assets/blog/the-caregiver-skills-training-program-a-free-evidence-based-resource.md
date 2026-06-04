@@ -1,14 +1,15 @@
 ---
 title: "The Caregiver Skills Training Program: A Free, Evidence-Based Resource"
-date: "2026-04-20"
-category: "Parent Resources"
-author: "On Target ABA Team"
+date: 2026-04-20
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-ketut-subiyanto-4934774-1024x683.jpg"
-excerpt: "The Caregiver Skills Training (CST) Program, developed by WHO and Autism Speaks, teaches parents to use everyday play and routines to build their child's communication and skills. This blog explains what CST is, how it works, the research supporting it, and how families can access it free."
-read_time: ""
+excerpt: The Caregiver Skills Training (CST) Program, developed by WHO and Autism Speaks, teaches parents to use everyday play and routines to build their child's communication and skills. This blog explains what CST is, how it works, the research supporting it, and how families can access it free.
+read_time: 10 min read
 source_url: "https://ontargetaba.com/2026/04/20/the-caregiver-skills-training-program-a-free-evidence-based-resource/"
+draft: false
+hidden: false
 ---
-
 # The Caregiver Skills Training Program: A Free, Evidence-Based Resource
 
 ### The Most Powerful Therapy Happens at Home

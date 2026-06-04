@@ -1,14 +1,15 @@
 ---
 title: "Emotion Cards in ABA Therapy: How Parents Can Introduce Them at Home"
-date: "2026-02-18"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-02-18
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/emotional_regulation_for_children.jpg"
-excerpt: "Emotion cards serve as visual supports helping children with autism recognize and express feelings. This guide provides step-by-step strategies for parents to introduce emotion cards at home naturally and consistently."
-read_time: "8 min read"
+excerpt: Emotion cards serve as visual supports helping children with autism recognize and express feelings. This guide provides step-by-step strategies for parents to introduce emotion cards at home naturally and consistently.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/02/18/emotion-cards-in-aba-therapy-how-parents-can-introduce-them-at-home/"
+draft: false
+hidden: false
 ---
-
 # Emotion Cards in ABA Therapy: How Parents Can Introduce Them at Home
 
 Understanding emotions is not always easy for children with autism. While some children may feel emotions deeply, they may struggle to identify what those feelings are called. Others may find it difficult to read facial expressions or recognize how someone else feels. As a result, frustration, meltdowns, or withdrawal can happen simply because a child cannot express what is going on inside.

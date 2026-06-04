@@ -1,14 +1,15 @@
 ---
 title: "Finding the Right ABA Agencies Near Me: How to Choose the Best Support for Your Child"
-date: "2025-10-28"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+date: 2025-10-28
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-cottonbro-3661391-1024x683.jpg"
-excerpt: "This guide helps parents navigate selecting ABA agencies by explaining what to look for in quality care, how to compare local providers, and why personalized, family-centered therapy matters most."
-read_time: "5 min read"
+excerpt: This guide helps parents navigate selecting ABA agencies by explaining what to look for in quality care, how to compare local providers, and why personalized, family-centered therapy matters most.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2025/10/28/finding-the-right-aba-agencies-near-me-how-to-choose-the-best-support-for-your-child/"
+draft: false
+hidden: false
 ---
-
 # Finding the Right ABA Agencies Near Me: How to Choose the Best Support for Your Child
 
 ### Introduction: Where Do I Start?

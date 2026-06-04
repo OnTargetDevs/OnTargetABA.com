@@ -1,14 +1,15 @@
 ---
 title: "Stimming and Autism: What It Is, What It Means, and Why It Should Never Be Suppressed"
-date: "2026-04-22"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-04-22
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-artempodrez-8088104-1024x576.jpg"
-excerpt: "Stimming—repetitive movements and sounds used by autistic children to regulate their nervous systems—is often misunderstood as misbehavior. The post explains that stimming is communication and coping, not a behavior that should be suppressed."
-read_time: ""
+excerpt: Stimming—repetitive movements and sounds used by autistic children to regulate their nervous systems—is often misunderstood as misbehavior. The post explains that stimming is communication and coping, not a behavior that should be suppressed.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/22/stimming-and-autism-what-it-is-what-it-means-and-why-it-should-never-be-suppressedby-the-numbers-what-the-latest-data-means-for-families/"
+draft: false
+hidden: false
 ---
-
 # Stimming and Autism: What It Is, What It Means, and Why It Should Never Be Suppressed
 
 ### AI Summary

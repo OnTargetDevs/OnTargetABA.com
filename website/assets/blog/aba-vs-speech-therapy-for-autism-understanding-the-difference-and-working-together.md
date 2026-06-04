@@ -1,14 +1,15 @@
 ---
 title: "ABA vs Speech Therapy for Autism: Understanding the Difference and Working Together"
-date: "2025-10-28"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+date: 2025-10-28
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-cottonbro-3661348-1024x683.jpg"
-excerpt: "The article explains how ABA therapy and speech therapy serve complementary roles in supporting children with autism, with both addressing communication and behavioral development through different methodologies."
-read_time: "6 min read"
+excerpt: The article explains how ABA therapy and speech therapy serve complementary roles in supporting children with autism, with both addressing communication and behavioral development through different methodologies.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/10/28/aba-vs-speech-therapy-for-autism-understanding-the-difference-and-working-together/"
+draft: false
+hidden: false
 ---
-
 # ABA vs Speech Therapy for Autism: Understanding the Difference and Working Together
 
 ### Introduction: Two Paths to One Goal

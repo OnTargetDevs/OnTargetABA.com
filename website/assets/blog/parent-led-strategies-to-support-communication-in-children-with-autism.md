@@ -1,14 +1,15 @@
 ---
-title: "Parent-Led Strategies to Support Communication in Children with Autism"
-date: "2025-12-09"
-category: "ABA Therapy Basics, Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+title: Parent-Led Strategies to Support Communication in Children with Autism
+date: 2025-12-09
+category: ABA Therapy Basics, Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-polesietoys-31152765-scaled-e1765299194544-1024x768.jpg"
-excerpt: "Supporting children's communication with autism begins through everyday moments and connection rather than specialized training. The blog shares practical parent-led strategies rooted in ABA principles to help children express needs and build confidence."
-read_time: "6 min read"
+excerpt: Supporting children's communication with autism begins through everyday moments and connection rather than specialized training. The blog shares practical parent-led strategies rooted in ABA principles to help children express needs and build confidence.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/12/09/parent-led-strategies-to-support-communication-in-children-with-autism/"
+draft: false
+hidden: false
 ---
-
 # Parent-Led Strategies to Support Communication in Children with Autism
 
 ### The Power of Meeting Your Child Where They Are

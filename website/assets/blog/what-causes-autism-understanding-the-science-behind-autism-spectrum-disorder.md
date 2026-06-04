@@ -1,14 +1,15 @@
 ---
-title: "What Causes Autism? Understanding the Science Behind Autism Spectrum Disorder"
-date: "2026-03-09"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+title: What Causes Autism? Understanding the Science Behind Autism Spectrum Disorder
+date: 2026-03-09
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-polina-kovaleva-8709295-1024x769.jpg"
-excerpt: "The article explains that autism spectrum disorder results from a combination of genetic and environmental factors affecting early brain development, not from vaccines or parenting styles, and emphasizes the importance of early intervention support."
-read_time: "8 min read"
+excerpt: The article explains that autism spectrum disorder results from a combination of genetic and environmental factors affecting early brain development, not from vaccines or parenting styles, and emphasizes the importance of early intervention support.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/03/09/what-causes-autism-understanding-the-science-behind-autism-spectrum-disorder/"
+draft: false
+hidden: false
 ---
-
 # What Causes Autism? Understanding the Science Behind Autism Spectrum Disorder
 
 ## What Causes Autism? A Question Many Parents Ask

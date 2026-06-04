@@ -1,14 +1,15 @@
 ---
-title: "Parent-Teacher Communication for Autism — How to Build a Supportive Team"
-date: "2025-12-20"
-category: "Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+title: Parent-Teacher Communication for Autism — How to Build a Supportive Team
+date: 2025-12-20
+category: Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-pavel-danilyuk-7221016-1024x684.jpg"
-excerpt: "Effective parent–teacher communication can make a huge difference in a child's progress, especially for children with autism who thrive on consistency. This blog shares simple, practical strategies parents can use to build strong, positive partnerships with teachers, therapists, and school teams."
-read_time: "6 min read"
+excerpt: Effective parent–teacher communication can make a huge difference in a child's progress, especially for children with autism who thrive on consistency. This blog shares simple, practical strategies parents can use to build strong, positive partnerships with teachers, therapists, and school teams.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/12/20/on-target-aba-blog-parent-teacher-communication-for-autism-how-to-build-a-supportive-team/"
+draft: false
+hidden: false
 ---
-
 # Parent-Teacher Communication for Autism — How to Build a Supportive Team
 
 If your child is in school — or preparing to enter school — you already know how important teamwork is. When parents, [teachers, and ABA therapy providers](https://ontargetaba.com/2025/12/04/who-works-with-my-child-in-aba-therapy-understanding-the-aba-therapy-team/) communicate clearly and consistently, your child receives support that feels predictable, safe, and aligned. And when expectations are clear on both sides? That's when progress really starts to take shape.

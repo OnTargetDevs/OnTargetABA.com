@@ -1,14 +1,15 @@
 ---
-title: "How Can I Set My Child With Autism Up for Success in Adulthood?"
-date: "2026-01-13"
-category: "Community & Events, Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+title: How Can I Set My Child With Autism Up for Success in Adulthood?
+date: 2026-01-13
+category: Community & Events, Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-rdne-7104218-1024x683.jpg"
-excerpt: "Preparing a child with autism for adulthood requires building communication, daily living abilities, emotional regulation, social confidence, and independence through small, consistent actions over time."
-read_time: ""
+excerpt: Preparing a child with autism for adulthood requires building communication, daily living abilities, emotional regulation, social confidence, and independence through small, consistent actions over time.
+read_time: 3 min read
 source_url: "https://ontargetaba.com/2026/01/13/how-can-i-set-my-child-with-autism-up-for-success-in-adulthood/"
+draft: false
+hidden: false
 ---
-
 # How Can I Set My Child With Autism Up for Success in Adulthood?
 
 ### Why Thinking About Adulthood Starts Now

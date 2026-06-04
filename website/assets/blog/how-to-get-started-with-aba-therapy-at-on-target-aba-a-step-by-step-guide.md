@@ -1,14 +1,15 @@
 ---
 title: "How to Get Started with ABA Therapy at On Target ABA: A Step-by-Step Guide"
-date: "2026-05-07"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+date: 2026-05-07
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-pavel-danilyuk-8441839-1024x684.jpg"
-excerpt: "Families often feel uncertain about beginning ABA therapy, struggling with where to start and what the process entails. This comprehensive guide removes that uncertainty by walking families through each step from initial contact to the first session."
-read_time: ""
+excerpt: Families often feel uncertain about beginning ABA therapy, struggling with where to start and what the process entails. This comprehensive guide removes that uncertainty by walking families through each step from initial contact to the first session.
+read_time: 14 min read
 source_url: "https://ontargetaba.com/2026/05/07/how-to-get-started-with-aba-therapy-at-on-target-aba-a-step-by-step-guide/"
+draft: false
+hidden: false
 ---
-
 # How to Get Started with ABA Therapy at On Target ABA: A Step-by-Step Guide
 
 ### AI Summary

@@ -1,14 +1,15 @@
 ---
-title: "Who Works With My Child in ABA Therapy? Understanding the ABA Therapy Team"
-date: "2025-12-04"
-category: "Getting Started with ABA, Parent Resources"
-author: "On Target ABA Team"
+title: Who Works With My Child in ABA Therapy? Understanding the ABA Therapy Team
+date: 2025-12-04
+category: Getting Started with ABA, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-pavel-danilyuk-8422248-1024x684.jpg"
-excerpt: "When a child begins ABA therapy, parents often wonder who will be working with their child. The article explains that ABA isn't a one-person job but rather a coordinated, highly trained team working together to support a child's communication, independence, emotional regulation, and confidence."
-read_time: "7 min read"
+excerpt: When a child begins ABA therapy, parents often wonder who will be working with their child. The article explains that ABA isn't a one-person job but rather a coordinated, highly trained team working together to support a child's communication, independence, emotional regulation, and confidence.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/12/04/who-works-with-my-child-in-aba-therapy-understanding-the-aba-therapy-team/"
+draft: false
+hidden: false
 ---
-
 # Who Works With My Child in ABA Therapy? Understanding the ABA Therapy Team
 
 ### You're Not Alone—Your Child Has a Whole Team Behind Them

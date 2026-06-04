@@ -1,14 +1,15 @@
 ---
 title: "Physical Fitness and Autism: How Movement Supports Learning"
-date: "2026-01-26"
-category: "ABA Therapy Basics, Developmental Milestones"
-author: "On Target ABA Team"
+date: 2026-01-26
+category: ABA Therapy Basics, Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-goumbik-296302-1024x678.jpg"
-excerpt: "The blog explores how physical fitness supports autistic children's development through sensory regulation and emotional well-being. It explains why movement is essential for communication, behavior management, and motor skill development."
-read_time: ""
+excerpt: The blog explores how physical fitness supports autistic children's development through sensory regulation and emotional well-being. It explains why movement is essential for communication, behavior management, and motor skill development.
+read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/01/26/why-physical-fitness-matters-for-autistic-children/"
+draft: false
+hidden: false
 ---
-
 # Physical Fitness and Autism: How Movement Supports Learning
 
 ### Why Physical Fitness Matters for Autistic Children

@@ -1,14 +1,15 @@
 ---
 title: "Long-Distance Grandparenting: 8 Ways to Stay Connected with Your Grandchild with Autism"
-date: "2026-05-20"
-category: "Community & Events"
-author: "On Target ABA Team"
+date: 2026-05-20
+category: Community & Events
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-marcell-palmai-136439112-10361021-1024x684.jpg"
-excerpt: "Distance doesn't necessitate disconnection for grandparents of autistic children. The article presents eight practical strategies for long-distance grandparents to build meaningful relationships with their grandchildren with autism."
-read_time: ""
+excerpt: Distance doesn't necessitate disconnection for grandparents of autistic children. The article presents eight practical strategies for long-distance grandparents to build meaningful relationships with their grandchildren with autism.
+read_time: 13 min read
 source_url: "https://ontargetaba.com/2026/05/20/long-distance-grandparenting-8-ways-to-stay-connected-with-your-grandchild-with-autism/"
+draft: false
+hidden: false
 ---
-
 # Long-Distance Grandparenting: 8 Ways to Stay Connected with Your Grandchild with Autism
 
 ## The Distance Between You Doesn't Define the Relationship

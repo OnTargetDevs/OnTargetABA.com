@@ -1,14 +1,15 @@
 ---
 title: "What to Do When Your Child Resists New Foods: ABA Tips for Picky Eating"
-date: "2025-11-29"
-category: "Developmental Milestones, Early Intervention, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-29
+category: Developmental Milestones, Early Intervention, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-ekaterina-bolovtsova-4866887-1024x683.jpg"
-excerpt: "For many families raising a child with autism, picky eating becomes one of the biggest daily challenges. The good news is that autism picky eating ABA strategies can help your child move toward healthier, more flexible eating habits."
-read_time: "8 min read"
+excerpt: For many families raising a child with autism, picky eating becomes one of the biggest daily challenges. The good news is that autism picky eating ABA strategies can help your child move toward healthier, more flexible eating habits.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/29/what-to-do-when-your-child-resists-new-foods-aba-tips-for-picky-eating/"
+draft: false
+hidden: false
 ---
-
 # What to Do When Your Child Resists New Foods: ABA Tips for Picky Eating
 
 ### When Mealtime Feels Stressful, You're Not Alone

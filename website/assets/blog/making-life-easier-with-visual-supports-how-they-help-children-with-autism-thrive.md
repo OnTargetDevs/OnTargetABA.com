@@ -1,14 +1,15 @@
 ---
 title: "Making Life Easier With Visual Supports: How They Help Children With Autism Thrive"
-date: "2026-01-31"
-category: "ABA Therapy Basics, Getting Started with ABA, Parent Resources"
-author: "On Target ABA Team"
+date: 2026-01-31
+category: ABA Therapy Basics, Getting Started with ABA, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-towfiqu-barbhuiya-3440682-11200121-1024x683.jpg"
-excerpt: "Visual supports—like pictures, symbols, schedules, and 'First-Then' boards—help children with autism understand expectations, reduce anxiety, follow routines, and communicate more confidently."
-read_time: ""
+excerpt: Visual supports—like pictures, symbols, schedules, and 'First-Then' boards—help children with autism understand expectations, reduce anxiety, follow routines, and communicate more confidently.
+read_time: 3 min read
 source_url: "https://ontargetaba.com/2026/01/31/making-life-easier-with-visual-supports-how-they-help-children-with-autism-thrive/"
+draft: false
+hidden: false
 ---
-
 # Making Life Easier With Visual Supports: How They Help Children With Autism Thrive
 
 ### Why Visual Supports Matter in ABA Therapy

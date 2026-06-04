@@ -1,14 +1,15 @@
 ---
-title: "How ABA Therapy Helps Children Build Communication Skills"
-date: "2025-11-11"
-category: "ABA Therapy Basics, Parent Resources"
-author: "On Target ABA Team"
+title: How ABA Therapy Helps Children Build Communication Skills
+date: 2025-11-11
+category: ABA Therapy Basics, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-ron-lach-10601908-1024x683.jpg"
-excerpt: "This guide explains how ABA therapy empowers children with autism to express themselves through individualized strategies. Parents will learn how ABA teaches speech, gestures, and social language through play, reinforcement, and family collaboration."
-read_time: "7 min read"
+excerpt: This guide explains how ABA therapy empowers children with autism to express themselves through individualized strategies. Parents will learn how ABA teaches speech, gestures, and social language through play, reinforcement, and family collaboration.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/11/11/how-aba-therapy-helps-children-build-communication-skills/"
+draft: false
+hidden: false
 ---
-
 # How ABA Therapy Helps Children Build Communication Skills
 
 ## Communication: The Heart of Connection

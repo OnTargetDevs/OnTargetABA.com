@@ -1,14 +1,15 @@
 ---
-title: "Does My Child Really Need ABA Therapy or Something Else?"
-date: "2025-11-06"
-category: "Early Intervention, Getting Started with ABA, Insurance & Funding, Parent Resources"
-author: "On Target ABA Team"
+title: Does My Child Really Need ABA Therapy or Something Else?
+date: 2025-11-06
+category: Early Intervention, Getting Started with ABA, Insurance & Funding, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-eren-li-7168983-1024x683.jpg"
-excerpt: "This guide helps parents uncertain about whether their child needs ABA therapy, explaining when it's appropriate, how it works alongside other therapies, and what to expect from an evaluation."
-read_time: "7 min read"
+excerpt: This guide helps parents uncertain about whether their child needs ABA therapy, explaining when it's appropriate, how it works alongside other therapies, and what to expect from an evaluation.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/11/06/does-my-child-really-need-aba-therapy-or-something-else/"
+draft: false
+hidden: false
 ---
-
 # Does My Child Really Need ABA Therapy or Something Else?
 
 ## When You're Not Sure What Comes Next

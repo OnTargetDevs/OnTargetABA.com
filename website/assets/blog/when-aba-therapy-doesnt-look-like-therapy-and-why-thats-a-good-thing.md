@@ -1,14 +1,15 @@
 ---
-title: "When ABA Therapy Doesn't Look Like Therapy (And Why That's a Good Thing)"
-date: "2026-02-12"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+title: When ABA Therapy Doesn't Look Like Therapy (And Why That's a Good Thing)
+date: 2026-02-12
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-rdne-7104207-1024x683.jpg"
-excerpt: "Parents expecting clinical therapy settings are often surprised to find children laughing while playing games and crafts instead, which represents effective play-based ABA learning in natural environments."
-read_time: "7 min read"
+excerpt: Parents expecting clinical therapy settings are often surprised to find children laughing while playing games and crafts instead, which represents effective play-based ABA learning in natural environments.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/02/12/when-aba-therapy-doesnt-look-like-therapy-and-why-thats-a-good-thing/"
+draft: false
+hidden: false
 ---
-
 # When ABA Therapy Doesn't Look Like Therapy (And Why That's a Good Thing)
 
 When most parents first hear the words "ABA therapy," they imagine something very clinical. They picture a child sitting at a table. Maybe flashcards. Maybe drills. Maybe something that feels structured and serious.

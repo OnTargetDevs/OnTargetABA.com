@@ -1,14 +1,15 @@
 ---
 title: "Finding the Right ABA Centers Near Me: What Parents Should Know Before Choosing a Provider"
-date: "2025-11-04"
-category: "ABA Therapy Basics, Getting Started with ABA, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-04
+category: ABA Therapy Basics, Getting Started with ABA, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-anastasia-shuraeva-4079281-1024x683.jpg"
-excerpt: "This guide helps parents searching for local ABA centers understand what to evaluate when selecting therapy for their child. It explains how to assess staff qualifications, environment quality, communication practices, and progress tracking methods."
-read_time: "7 min read"
+excerpt: This guide helps parents searching for local ABA centers understand what to evaluate when selecting therapy for their child. It explains how to assess staff qualifications, environment quality, communication practices, and progress tracking methods.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/11/04/finding-the-right-aba-centers-near-me-what-parents-should-know-before-choosing-a-provider/"
+draft: false
+hidden: false
 ---
-
 # Finding the Right ABA Centers Near Me: What Parents Should Know Before Choosing a Provider
 
 ## Introduction: The Search That Matters Most

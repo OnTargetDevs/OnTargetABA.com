@@ -1,14 +1,15 @@
 ---
 title: "Understanding the ABCs of Behavior in ABA Therapy: Antecedent, Behavior, and Consequence Explained"
-date: "2026-03-14"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+date: 2026-03-14
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-pavel-danilyuk-8422205-1024x684.jpg"
-excerpt: "The ABCs of behavior in ABA therapy refer to three steps—Antecedent, Behavior, and Consequence—that help therapists understand why behaviors occur. By observing what happens before, during, and after a behavior, ABA professionals can identify patterns and create effective strategies that support a child's growth."
-read_time: "8 min read"
+excerpt: The ABCs of behavior in ABA therapy refer to three steps—Antecedent, Behavior, and Consequence—that help therapists understand why behaviors occur. By observing what happens before, during, and after a behavior, ABA professionals can identify patterns and create effective strategies that support a child's growth.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/03/14/understanding-the-abcs-of-behavior-in-aba-therapy-antecedent-behavior-and-consequence-explained/"
+draft: false
+hidden: false
 ---
-
 # Understanding the ABCs of Behavior in ABA Therapy: Antecedent, Behavior, and Consequence Explained
 
 Applied Behavior Analysis (ABA) therapy is one of the most widely used and research-supported approaches for helping children with autism develop meaningful skills and positive behaviors. One of the foundational concepts in ABA therapy is the ABCs of behavior: **Antecedent, Behavior, and Consequence.**

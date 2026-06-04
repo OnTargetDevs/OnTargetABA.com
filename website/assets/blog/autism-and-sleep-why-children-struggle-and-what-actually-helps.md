@@ -1,14 +1,15 @@
 ---
 title: "Autism and Sleep: Why Children Struggle and What Actually Helps"
-date: "2026-05-05"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-05-05
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-rdne-10566182-1024x683.jpg"
-excerpt: "Sleep problems affect over 80% of autistic children, making them one of the most common and undertreated challenges in autism care. This article explores the neurobiological causes of sleep difficulties and evidence-based interventions that can help families achieve better rest."
-read_time: ""
+excerpt: Sleep problems affect over 80% of autistic children, making them one of the most common and undertreated challenges in autism care. This article explores the neurobiological causes of sleep difficulties and evidence-based interventions that can help families achieve better rest.
+read_time: 14 min read
 source_url: "https://ontargetaba.com/2026/05/05/autism-and-sleep-why-children-struggle-and-what-actually-helps/"
+draft: false
+hidden: false
 ---
-
 # Autism and Sleep: Why Children Struggle and What Actually Helps
 
 ### The Night That Never Ends

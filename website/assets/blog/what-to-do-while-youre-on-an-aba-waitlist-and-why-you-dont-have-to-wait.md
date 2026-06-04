@@ -1,14 +1,15 @@
 ---
-title: "What to Do While You're on an ABA Waitlist (And Why You Don't Have To Wait)"
-date: "2026-03-21"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+title: What to Do While You're on an ABA Waitlist (And Why You Don't Have To Wait)
+date: 2026-03-21
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-tima-miroshnichenko-6321633-1024x683.jpg"
-excerpt: "Parents facing ABA therapy waitlists can take productive steps while waiting, from exploring multiple providers to learning behavioral principles at home—and at On Target ABA, most families begin therapy within weeks rather than months."
-read_time: ""
+excerpt: Parents facing ABA therapy waitlists can take productive steps while waiting, from exploring multiple providers to learning behavioral principles at home—and at On Target ABA, most families begin therapy within weeks rather than months.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2026/03/21/what-to-do-while-youre-on-an-aba-waitlist-and-why-you-dont-have-to-wait/"
+draft: false
+hidden: false
 ---
-
 # What to Do While You're on an ABA Waitlist (And Why You Don't Have To Wait)
 
 You made the calls. You filled out the forms. And then came the news no parent wants to hear: "We'll add you to our waitlist. It could be six months. It could be longer."

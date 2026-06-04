@@ -1,14 +1,15 @@
 ---
 title: "The Power of Reinforcement: How Positive ABA Strategies Motivate Real Change"
-date: "2025-10-22"
-category: "Early Intervention"
-author: "On Target ABA Team"
+date: 2025-10-22
+category: Early Intervention
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-anastasia-shuraeva-6978756-scaled-e1761150028181-1024x732.jpg"
-excerpt: "The article explores how ABA therapy uses positive reinforcement to teach children meaningful skills and reduce challenging behaviors. Parents learn how rewards—from praise to playtime—motivate learning and strengthen confidence."
-read_time: "7 min read"
+excerpt: The article explores how ABA therapy uses positive reinforcement to teach children meaningful skills and reduce challenging behaviors. Parents learn how rewards—from praise to playtime—motivate learning and strengthen confidence.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/10/22/the-power-of-reinforcement-how-positive-aba-strategies-motivate-real-change/"
+draft: false
+hidden: false
 ---
-
 # The Power of Reinforcement: How Positive ABA Strategies Motivate Real Change
 
 ### Introduction: Why Motivation Matters

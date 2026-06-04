@@ -1,14 +1,15 @@
 ---
-title: "How Technology Is Transforming ABA Therapy for Children with Autism"
-date: "2025-10-22"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+title: How Technology Is Transforming ABA Therapy for Children with Autism
+date: 2025-10-22
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-mikhail-nilov-8121121-1024x683.jpg"
-excerpt: "Modern technology is revolutionizing ABA therapy for children with autism through digital tools, apps, and telehealth platforms that enhance engagement and data precision while maintaining compassionate, human-centered care."
-read_time: "6 min read"
+excerpt: Modern technology is revolutionizing ABA therapy for children with autism through digital tools, apps, and telehealth platforms that enhance engagement and data precision while maintaining compassionate, human-centered care.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/10/22/how-technology-is-transforming-aba-therapy-for-children-with-autism/"
+draft: false
+hidden: false
 ---
-
 # How Technology Is Transforming ABA Therapy for Children with Autism
 
 ### Introduction: When Innovation Meets Compassion

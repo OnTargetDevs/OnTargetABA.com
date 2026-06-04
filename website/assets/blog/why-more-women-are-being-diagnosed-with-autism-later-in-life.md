@@ -1,14 +1,15 @@
 ---
-title: "Why More Women Are Being Diagnosed with Autism Later in Life"
-date: "2026-04-28"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+title: Why More Women Are Being Diagnosed with Autism Later in Life
+date: 2026-04-28
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-koolshooters-8531227-1024x683.jpg"
-excerpt: "For decades, autism diagnosis relied primarily on how it presents in boys and men, causing girls and women to be missed entirely. A growing body of research reveals that autism looks different in women, and the diagnostic system wasn't designed to recognize these differences."
-read_time: ""
+excerpt: For decades, autism diagnosis relied primarily on how it presents in boys and men, causing girls and women to be missed entirely. A growing body of research reveals that autism looks different in women, and the diagnostic system wasn't designed to recognize these differences.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/28/why-more-women-are-being-diagnosed-with-autism-later-in-life/"
+draft: false
+hidden: false
 ---
-
 # Why More Women Are Being Diagnosed with Autism Later in Life
 
 ### The Diagnosis That Came Decades Too Late

@@ -1,14 +1,15 @@
 ---
-title: "7 Potty Training Tips for Nonverbal Kids with Autism"
-date: "2026-03-19"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+title: 7 Potty Training Tips for Nonverbal Kids with Autism
+date: 2026-03-19
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-samir-383795290-14866682-scaled-e1773912795499-1024x768.jpg"
-excerpt: "Toilet training a nonverbal child with autism can feel overwhelming, but it's absolutely achievable with the right strategies. This expert-backed guide breaks down 7 proven toilet training tips to help parents and caregivers navigate this milestone with confidence and compassion."
-read_time: ""
+excerpt: Toilet training a nonverbal child with autism can feel overwhelming, but it's absolutely achievable with the right strategies. This expert-backed guide breaks down 7 proven toilet training tips to help parents and caregivers navigate this milestone with confidence and compassion.
+read_time: 9 min read
 source_url: "https://ontargetaba.com/2026/03/19/7-potty-training-tips-for-nonverbal-kids-with-autism/"
+draft: false
+hidden: false
 ---
-
 # 7 Potty Training Tips for Nonverbal Kids with Autism
 
 ## Why Potty Training Looks Different for Nonverbal Children with Autism

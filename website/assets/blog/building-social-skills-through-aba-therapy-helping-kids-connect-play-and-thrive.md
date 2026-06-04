@@ -1,14 +1,15 @@
 ---
 title: "Building Social Skills Through ABA Therapy: Helping Kids Connect, Play, and Thrive"
-date: "2025-10-23"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+date: 2025-10-23
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-pavel-danilyuk-8422259-1024x684.jpg"
-excerpt: "Social skills form the foundation of relationships and community for children with autism, and ABA therapy provides evidence-based strategies to teach social interaction in ways that feel natural and rewarding."
-read_time: "5 min read"
+excerpt: Social skills form the foundation of relationships and community for children with autism, and ABA therapy provides evidence-based strategies to teach social interaction in ways that feel natural and rewarding.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2025/10/23/building-social-skills-through-aba-therapy-helping-kids-connect-play-and-thrive/"
+draft: false
+hidden: false
 ---
-
 # Building Social Skills Through ABA Therapy: Helping Kids Connect, Play, and Thrive
 
 ### Introduction: The Heart of Connection

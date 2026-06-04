@@ -1,14 +1,15 @@
 ---
-title: "8 Practical Tips for Daily Life When Caring for a Child with Autism"
-date: "2026-04-07"
-category: "Parent Resources"
-author: "On Target ABA Team"
+title: 8 Practical Tips for Daily Life When Caring for a Child with Autism
+date: 2026-04-07
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-gustavo-fring-3985034-1024x683.jpg"
-excerpt: "The guide provides evidence-based strategies for parents of children with autism, offering practical tips for making everyday life more predictable, more manageable, and more joyful for both child and caregiver. From visual routines to self-care, these strategies help reduce anxiety and support smoother daily transitions."
-read_time: ""
+excerpt: The guide provides evidence-based strategies for parents of children with autism, offering practical tips for making everyday life more predictable, more manageable, and more joyful for both child and caregiver. From visual routines to self-care, these strategies help reduce anxiety and support smoother daily transitions.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/07/8-practical-tips-for-daily-life-when-caring-for-a-child-with-autism/"
+draft: false
+hidden: false
 ---
-
 # 8 Practical Tips for Daily Life When Caring for a Child with Autism
 
 ## There's No Perfect Playbook — But There Are Strategies That Work

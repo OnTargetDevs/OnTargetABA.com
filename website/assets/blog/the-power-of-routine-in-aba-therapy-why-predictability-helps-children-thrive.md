@@ -1,14 +1,15 @@
 ---
-title: "The Power of Routine in ABA Therapy — Why Predictability Helps Children Thrive"
-date: "2026-01-06"
-category: "ABA Therapy Basics, Parent Resources"
-author: "On Target ABA Team"
+title: The Power of Routine in ABA Therapy — Why Predictability Helps Children Thrive
+date: 2026-01-06
+category: ABA Therapy Basics, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-goumbik-296301-1-1024x678.jpg"
-excerpt: "For families raising children with autism, routine is essential. Inside ABA therapy, structured predictability helps children feel safe enough to learn, explore, and grow while building confidence in their abilities."
-read_time: "7 min read"
+excerpt: For families raising children with autism, routine is essential. Inside ABA therapy, structured predictability helps children feel safe enough to learn, explore, and grow while building confidence in their abilities.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/01/06/the-power-of-routine-in-aba-therapy-why-predictability-helps-children-thrive/"
+draft: false
+hidden: false
 ---
-
 # The Power of Routine in ABA Therapy — Why Predictability Helps Children Thrive
 
 For many families raising a child with autism, one thing becomes clear pretty quickly: routine isn't just helpful — it's essential. And inside ABA therapy, routine becomes even more powerful. The way a day is structured, the order activities follow, the predictability in transitions, and the consistency in expectations all work together to help children feel safe enough to learn, explore, and grow.

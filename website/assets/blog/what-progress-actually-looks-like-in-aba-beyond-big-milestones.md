@@ -1,14 +1,15 @@
 ---
-title: "What Progress Actually Looks Like in ABA (Beyond Big Milestones)"
-date: "2025-12-06"
-category: "Getting Started with ABA, Parent Resources"
-author: "On Target ABA Team"
+title: What Progress Actually Looks Like in ABA (Beyond Big Milestones)
+date: 2025-12-06
+category: Getting Started with ABA, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-polesietoys-4488148-1024x683.jpg"
-excerpt: "The blog examines how genuine progress in ABA therapy often manifests through small, everyday improvements rather than dramatic breakthroughs. It reassures families that foundational changes like improved imitation, easier transitions, and reduced frustration are meaningful indicators that therapy is working."
-read_time: "8 min read"
+excerpt: The blog examines how genuine progress in ABA therapy often manifests through small, everyday improvements rather than dramatic breakthroughs. It reassures families that foundational changes like improved imitation, easier transitions, and reduced frustration are meaningful indicators that therapy is working.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/12/06/what-progress-actually-looks-like-in-aba-beyond-big-milestones/"
+draft: false
+hidden: false
 ---
-
 # What Progress Actually Looks Like in ABA (Beyond Big Milestones)
 
 ### The Progress Most Parents Don't Realize "Counts" — But Absolutely Does

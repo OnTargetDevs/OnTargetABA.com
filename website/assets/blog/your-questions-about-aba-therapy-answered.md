@@ -1,14 +1,15 @@
 ---
-title: "Your Questions About ABA Therapy — Answered"
-date: "2026-05-15"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+title: Your Questions About ABA Therapy — Answered
+date: 2026-05-15
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-ann-h-45017-1887995-1024x683.jpg"
-excerpt: "Families approaching ABA therapy often have numerous questions about what the intervention entails and whether it suits their child. This blog provides straightforward, jargon-free explanations addressing common concerns about ABA therapy's nature, methodology, delivery, costs, and how to identify quality providers."
-read_time: ""
+excerpt: Families approaching ABA therapy often have numerous questions about what the intervention entails and whether it suits their child. This blog provides straightforward, jargon-free explanations addressing common concerns about ABA therapy's nature, methodology, delivery, costs, and how to identify quality providers.
+read_time: 13 min read
 source_url: "https://ontargetaba.com/2026/05/15/your-questions-about-aba-therapy-answered/"
+draft: false
+hidden: false
 ---
-
 # Your Questions About ABA Therapy — Answered
 
 ## You Have Questions. We Have Answers.

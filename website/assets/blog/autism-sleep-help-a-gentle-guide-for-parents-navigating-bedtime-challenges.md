@@ -1,14 +1,15 @@
 ---
-title: "Autism Sleep Help — A Gentle Guide for Parents Navigating Bedtime Challenges"
-date: "2026-01-08"
-category: "Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+title: Autism Sleep Help — A Gentle Guide for Parents Navigating Bedtime Challenges
+date: 2026-01-08
+category: Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-artempodrez-6941080-1024x683.jpg"
-excerpt: "Sleep challenges affect up to 80% of autistic children, but with proper supports and structured routines, bedtime can become calmer and more predictable. On Target ABA partners with families across multiple locations to build effective sleep strategies."
-read_time: ""
+excerpt: Sleep challenges affect up to 80% of autistic children, but with proper supports and structured routines, bedtime can become calmer and more predictable. On Target ABA partners with families across multiple locations to build effective sleep strategies.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2026/01/08/autism-sleep-help-a-gentle-guide-for-parents-navigating-bedtime-challenges/"
+draft: false
+hidden: false
 ---
-
 # Autism Sleep Help — A Gentle Guide for Parents Navigating Bedtime Challenges
 
 ### AI Summary

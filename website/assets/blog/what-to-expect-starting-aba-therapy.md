@@ -1,14 +1,15 @@
 ---
 title: "What to Expect When Starting ABA Therapy: A Parent's Step-by-Step Guide"
-date: "2025-08-06"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+date: 2025-08-06
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/07/pexels-alexander-dummer-37646-1912868-1024x683.jpg"
-excerpt: "When children receive autism diagnoses, families often hear 'Start ABA therapy' as a recommendation. This guide walks parents through the intake process to therapy start, explaining what to expect at each stage."
-read_time: "6 min read"
+excerpt: When children receive autism diagnoses, families often hear 'Start ABA therapy' as a recommendation. This guide walks parents through the intake process to therapy start, explaining what to expect at each stage.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/08/06/what-to-expect-starting-aba-therapy/"
+draft: false
+hidden: false
 ---
-
 # What to Expect When Starting ABA Therapy: A Parent's Step-by-Step Guide
 
 ### AI Summary:

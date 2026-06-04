@@ -1,14 +1,15 @@
 ---
 title: "Life Skills and Autism: A Complete Guide to Building Independence at Every Age"
-date: "2026-05-25"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-05-25
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-shvetsa-11286043-1024x683.jpg"
-excerpt: "Life skills are the practical foundation of adult independence that autistic individuals often require systematic instruction to develop. These daily living competencies — from personal care to financial management — are frequently under-prioritized in childhood despite their critical importance for functional adulthood."
-read_time: ""
+excerpt: Life skills are the practical foundation of adult independence that autistic individuals often require systematic instruction to develop. These daily living competencies — from personal care to financial management — are frequently under-prioritized in childhood despite their critical importance for functional adulthood.
+read_time: 15 min read
 source_url: "https://ontargetaba.com/2026/05/25/life-skills-and-autism-a-complete-guide-to-building-independence-at-every-age/"
+draft: false
+hidden: false
 ---
-
 # Life Skills and Autism: A Complete Guide to Building Independence at Every Age
 
 ## The Skills Nobody Thinks to Teach

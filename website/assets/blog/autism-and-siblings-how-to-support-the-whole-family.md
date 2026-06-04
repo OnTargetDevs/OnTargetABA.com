@@ -1,14 +1,15 @@
 ---
 title: "Autism and Siblings: How to Support the Whole Family"
-date: "2026-05-08"
-category: "Community & Events"
-author: "On Target ABA Team"
+date: 2026-05-08
+category: Community & Events
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-shvetsa-3771660-1024x683.jpg"
-excerpt: "When a child receives an autism diagnosis, siblings navigate complex emotions and unique challenges that often go unaddressed. The blog explores research on sibling experiences and practical strategies families can use to support all children in the household."
-read_time: ""
+excerpt: When a child receives an autism diagnosis, siblings navigate complex emotions and unique challenges that often go unaddressed. The blog explores research on sibling experiences and practical strategies families can use to support all children in the household.
+read_time: 13 min read
 source_url: "https://ontargetaba.com/2026/05/08/autism-and-siblings-how-to-support-the-whole-family/"
+draft: false
+hidden: false
 ---
-
 # Autism and Siblings: How to Support the Whole Family
 
 ### The Children Nobody Talks About

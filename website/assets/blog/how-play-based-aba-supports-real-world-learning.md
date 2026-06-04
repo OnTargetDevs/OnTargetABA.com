@@ -1,14 +1,15 @@
 ---
-title: "How Play-Based ABA Supports Real-World Learning"
-date: "2026-02-05"
-category: "ABA Therapy Basics, Community & Events"
-author: "On Target ABA Team"
+title: How Play-Based ABA Supports Real-World Learning
+date: 2026-02-05
+category: ABA Therapy Basics, Community & Events
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-rdne-8363119-1024x683.jpg"
-excerpt: "When parents observe ABA sessions, they often see children playing with bubbles and toys and wonder if this constitutes actual therapy. The post explains that play-based ABA uses engaging activities to teach communication, social skills, and emotional regulation through joy and meaningful connection."
-read_time: ""
+excerpt: When parents observe ABA sessions, they often see children playing with bubbles and toys and wonder if this constitutes actual therapy. The post explains that play-based ABA uses engaging activities to teach communication, social skills, and emotional regulation through joy and meaningful connection.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2026/02/05/how-play-based-aba-supports-real-world-learning/"
+draft: false
+hidden: false
 ---
-
 # How Play-Based ABA Supports Real-World Learning
 
 When parents peek into an ABA session, they often notice something surprising:

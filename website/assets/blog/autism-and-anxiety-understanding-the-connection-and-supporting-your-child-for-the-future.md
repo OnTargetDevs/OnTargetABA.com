@@ -1,14 +1,15 @@
 ---
 title: "Autism and Anxiety: Understanding the Connection and Supporting Your Child for the Future"
-date: "2026-01-22"
-category: "Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+date: 2026-01-22
+category: Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-andrew-5255996-1024x683.jpg"
-excerpt: "The blog explains why anxiety commonly affects autistic teens and adults, discussing how early warning signs appear during childhood and outlining parental strategies to foster emotional regulation and coping skills that support long-term independence."
-read_time: ""
+excerpt: The blog explains why anxiety commonly affects autistic teens and adults, discussing how early warning signs appear during childhood and outlining parental strategies to foster emotional regulation and coping skills that support long-term independence.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2026/01/22/autism-and-anxiety-understanding-the-connection-and-supporting-your-child-for-the-future/"
+draft: false
+hidden: false
 ---
-
 # Autism and Anxiety: Understanding the Connection and Supporting Your Child for the Future
 
 ### AI Summary

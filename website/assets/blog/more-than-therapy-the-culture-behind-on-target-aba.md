@@ -1,14 +1,15 @@
 ---
 title: "More Than Therapy: The Culture Behind On Target ABA"
-date: "2026-05-14"
-category: "Life at On Target ABA"
-author: "On Target ABA Team"
+date: 2026-05-14
+category: Life at On Target ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-yankrukov-8613057-1024x683.jpg"
-excerpt: "The organization distinguishes itself through clinical excellence grounded in a strong company culture. This post explains how On Target ABA was built, the values guiding their work, and why smaller caseloads and rapid service access produce better outcomes for children and families."
-read_time: ""
+excerpt: The organization distinguishes itself through clinical excellence grounded in a strong company culture. This post explains how On Target ABA was built, the values guiding their work, and why smaller caseloads and rapid service access produce better outcomes for children and families.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/05/14/more-than-therapy-the-culture-behind-on-target-aba/"
+draft: false
+hidden: false
 ---
-
 # More Than Therapy: The Culture Behind On Target ABA
 
 ### AI Summary

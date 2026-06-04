@@ -1,14 +1,15 @@
 ---
 title: "Rest. Breathe. You've Got This: An Easter Message for Autism Caregivers"
-date: "2026-04-01"
-category: "Community & Events"
-author: "Dovid Rotshtein"
+date: 2026-04-01
+category: Community & Events
+author: Dovid Rotshtein
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-guvo59-31695266-1024x683.jpg"
-excerpt: "Easter brings joy but also unique pressures for autism caregivers. This guide offers practical strategies for caregivers to genuinely unwind, protect themselves from burnout, and help their children feel calm and regulated during the holiday season."
-read_time: ""
+excerpt: Easter brings joy but also unique pressures for autism caregivers. This guide offers practical strategies for caregivers to genuinely unwind, protect themselves from burnout, and help their children feel calm and regulated during the holiday season.
+read_time: 9 min read
 source_url: "https://ontargetaba.com/2026/04/01/rest-breathe-youve-got-this-an-easter-message-for-autism-caregivers/"
+draft: false
+hidden: false
 ---
-
 # Rest. Breathe. You've Got This: An Easter Message for Autism Caregivers
 
 ## AI Summary

@@ -1,14 +1,15 @@
 ---
-title: "Can I Cancel ABA Therapy? What Parents Need to Know Before Making a Decision"
-date: "2026-03-18"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+title: Can I Cancel ABA Therapy? What Parents Need to Know Before Making a Decision
+date: 2026-03-18
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-yankrukov-6209897-1024x683.jpg"
-excerpt: "Parents have the right to cancel ABA therapy at any time, though it's important to consider the potential impact and explore alternatives before discontinuing. The post emphasizes consulting with a BCBA and reviewing progress data before making this decision."
-read_time: ""
+excerpt: Parents have the right to cancel ABA therapy at any time, though it's important to consider the potential impact and explore alternatives before discontinuing. The post emphasizes consulting with a BCBA and reviewing progress data before making this decision.
+read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/03/18/can-i-cancel-aba-therapy-what-parents-need-to-know-before-making-a-decision/"
+draft: false
+hidden: false
 ---
-
 # Can I Cancel ABA Therapy?
 
 If you're a parent or caregiver, it's completely natural to ask:

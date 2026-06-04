@@ -1,14 +1,15 @@
 ---
-title: "How to Create a Calm Home Environment for a Child With Autism"
-date: "2025-11-27"
-category: "ABA Therapy Basics, Parent Resources"
-author: "On Target ABA Team"
+title: How to Create a Calm Home Environment for a Child With Autism
+date: 2025-11-27
+category: ABA Therapy Basics, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-mikhail-nilov-6957732-scaled-e1764263148666-1024x641.jpg"
-excerpt: "Every parent desires a peaceful home where their child feels safe and secure. For families raising a child with autism, intentional sensory-friendly adjustments and predictable routines become essential tools for creating calm without expensive renovations."
-read_time: "8 min read"
+excerpt: Every parent desires a peaceful home where their child feels safe and secure. For families raising a child with autism, intentional sensory-friendly adjustments and predictable routines become essential tools for creating calm without expensive renovations.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/27/how-to-create-a-calm-home-environment-for-a-child-with-autism/"
+draft: false
+hidden: false
 ---
-
 # How to Create a Calm Home Environment for a Child With Autism
 
 ### Creating a Home Where Your Child Feels Safe, Supported & Calm

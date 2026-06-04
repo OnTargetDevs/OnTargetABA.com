@@ -1,14 +1,15 @@
 ---
 title: "How to Talk to an Autistic Teenager: A Guide for Parents, Educators, and Caregivers"
-date: "2026-06-03"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+date: 2026-06-03
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/06/pexels-olia-danilevich-4762767-1024x683.jpg"
-excerpt: "Communicating with autistic teenagers requires understanding how autism shapes language and social interaction. The guide offers evidence-based strategies for parents, educators, and caregivers to build stronger connections with autistic teens."
-read_time: ""
+excerpt: Communicating with autistic teenagers requires understanding how autism shapes language and social interaction. The guide offers evidence-based strategies for parents, educators, and caregivers to build stronger connections with autistic teens.
+read_time: 9 min read
 source_url: "https://ontargetaba.com/2026/06/03/how-to-talk-to-an-autistic-teenager-a-guide-for-parents-educators-and-caregivers/"
+draft: false
+hidden: false
 ---
-
 # How to Talk to an Autistic Teenager: A Guide for Parents, Educators, and Caregivers
 
 ### AI Summary

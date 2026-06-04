@@ -256,7 +256,16 @@ tailwind.config = {
             '<p style="margin-top:0.25rem;"></p>' +
           '</div>' +
           '<div class="modal__body" style="padding:0.5rem 1.25rem 0;">' +
-            '<div class="field"><label>Image URL</label><input class="input" type="url" data-field="src" placeholder="/assets/images/&hellip;.jpg"></div>' +
+            '<div class="field">' +
+              '<label>Upload a new image</label>' +
+              '<input class="input" type="file" data-field="file" accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml,image/avif">' +
+              '<p class="admin-muted" style="font-size:0.78rem;margin-top:0.35rem;">' +
+                'Opens an upload PR; the image goes to ' +
+                '<code>/assets/images/uploads/&hellip;</code> and the URL below auto-fills.' +
+              '</p>' +
+              '<p data-upload-status class="admin-muted" style="font-size:0.78rem;margin-top:0.35rem;display:none;"></p>' +
+            '</div>' +
+            '<div class="field" style="margin-top:0.85rem;"><label>Image URL</label><input class="input" type="url" data-field="src" placeholder="/assets/images/&hellip;.jpg"></div>' +
             '<div class="field" style="margin-top:0.6rem;"><label>Alt text</label><input class="input" type="text" data-field="alt" placeholder="What the image shows"></div>' +
           '</div>' +
           '<div class="modal__foot" style="flex-direction:row;justify-content:flex-end;gap:0.5rem;">' +
@@ -269,8 +278,50 @@ tailwind.config = {
       backdrop.querySelector('[data-field="alt"]').value = existing.alt || '';
       backdrop.querySelector('[data-cancel]').addEventListener('click', function () { backdrop.remove(); });
       backdrop.addEventListener('click', function (e) { if (e.target === backdrop) backdrop.remove(); });
-      backdrop.querySelector('[data-save]').addEventListener('click', function () {
-        const src = backdrop.querySelector('[data-field="src"]').value.trim();
+
+      const fileInput = backdrop.querySelector('[data-field="file"]');
+      const srcInput = backdrop.querySelector('[data-field="src"]');
+      const status = backdrop.querySelector('[data-upload-status]');
+      const saveBtn = backdrop.querySelector('[data-save]');
+
+      fileInput.addEventListener('change', async function () {
+        const f = fileInput.files && fileInput.files[0];
+        if (!f) return;
+        status.style.display = '';
+        status.textContent = 'Uploading ' + f.name + ' (' + Math.round(f.size / 1024) + ' KB)…';
+        saveBtn.disabled = true;
+        try {
+          const dataUrl = await new Promise(function (resolve, reject) {
+            const r = new FileReader();
+            r.onload = function () { resolve(r.result); };
+            r.onerror = function () { reject(new Error('could not read file')); };
+            r.readAsDataURL(f);
+          });
+          // Strip the "data:<mime>;base64," prefix; backend only wants the
+          // base64 payload itself.
+          const b64 = String(dataUrl || '').replace(/^data:[^;]+;base64,/, '');
+          const res = await Admin.api.post('/api/images/upload', {
+            filename: f.name,
+            contentType: f.type || 'application/octet-stream',
+            data: b64,
+          });
+          if (res && res.path) {
+            srcInput.value = res.path;
+            status.textContent = 'Uploaded — PR #' + (res.pr && res.pr.number) +
+              ' opened. Path filled in below.';
+          } else {
+            status.textContent = 'Upload succeeded but no path returned. Paste a URL manually.';
+          }
+        } catch (err) {
+          status.textContent = 'Upload failed: ' + (err.message || err);
+          Admin.toast(err.message || 'Upload failed', 'error');
+        } finally {
+          saveBtn.disabled = false;
+        }
+      });
+
+      saveBtn.addEventListener('click', function () {
+        const src = srcInput.value.trim();
         const alt = backdrop.querySelector('[data-field="alt"]').value.trim();
         if (!src) { Admin.toast('Image URL is required', 'error'); return; }
         pendingOverrides[key] = { type: 'image', src: src, alt: alt };

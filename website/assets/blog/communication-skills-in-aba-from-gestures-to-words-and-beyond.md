@@ -1,14 +1,15 @@
 ---
 title: "Teaching Communication in ABA: From Gestures to Words and Beyond"
-date: "2025-10-21"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+date: 2025-10-21
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-jep-gambardella-6222764-1024x683.jpg"
-excerpt: "This piece explores how ABA therapy helps children with autism develop communication skills, moving from nonverbal gestures and picture cards to spoken language and conversation abilities. The article emphasizes that therapists use evidence-based strategies like reinforcement, modeling, and play-based learning."
-read_time: "6 min read"
+excerpt: This piece explores how ABA therapy helps children with autism develop communication skills, moving from nonverbal gestures and picture cards to spoken language and conversation abilities. The article emphasizes that therapists use evidence-based strategies like reinforcement, modeling, and play-based learning.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/10/21/communication-skills-in-aba-from-gestures-to-words-and-beyond/"
+draft: false
+hidden: false
 ---
-
 # Teaching Communication in ABA: From Gestures to Words and Beyond
 
 ### Introduction: Every Voice Deserves to Be Heard

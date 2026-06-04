@@ -1,14 +1,15 @@
 ---
 title: "Autism and Driving: What Families Need to Know"
-date: "2026-05-22"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-05-22
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-guiirossi-2553410-scaled-e1779439292226-1024x663.jpg"
-excerpt: "Only 24% of autistic adults hold driver's licenses compared to 75% of the general population, yet research indicates many autistic individuals can drive safely with proper preparation and specialized instruction."
-read_time: ""
+excerpt: Only 24% of autistic adults hold driver's licenses compared to 75% of the general population, yet research indicates many autistic individuals can drive safely with proper preparation and specialized instruction.
+read_time: 13 min read
 source_url: "https://ontargetaba.com/2026/05/22/autism-and-driving-what-families-need-to-know/"
+draft: false
+hidden: false
 ---
-
 # Autism and Driving: Challenges, Readiness, and How to Support Your Teen
 
 ### AI Summary

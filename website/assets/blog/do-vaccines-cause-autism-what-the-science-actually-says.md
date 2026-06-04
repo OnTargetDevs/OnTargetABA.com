@@ -1,14 +1,15 @@
 ---
-title: "Do Vaccines Cause Autism? What the Science Actually Says"
-date: "2026-04-27"
-category: "Parent Resources"
-author: "On Target ABA Team"
+title: Do Vaccines Cause Autism? What the Science Actually Says
+date: 2026-04-27
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-maksgelatin-5995049-scaled-e1777269030857-1024x546.jpg"
-excerpt: "The scientific consensus, established through over two decades of rigorous research involving millions of children across dozens of countries, conclusively shows that vaccines do not cause autism. This comprehensive guide traces the discredited origins of the vaccine-autism claim and explains what evidence actually reveals about autism's causes."
-read_time: ""
+excerpt: The scientific consensus, established through over two decades of rigorous research involving millions of children across dozens of countries, conclusively shows that vaccines do not cause autism. This comprehensive guide traces the discredited origins of the vaccine-autism claim and explains what evidence actually reveals about autism's causes.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/27/do-vaccines-cause-autism-what-the-science-actually-says/"
+draft: false
+hidden: false
 ---
-
 # Do Vaccines Cause Autism? What the Science Actually Says
 
 ### AI Summary

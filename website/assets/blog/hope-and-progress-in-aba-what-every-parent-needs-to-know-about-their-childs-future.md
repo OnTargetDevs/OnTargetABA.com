@@ -1,14 +1,15 @@
 ---
-title: "Will My Child Be Okay? Hope and Progress Through ABA Therapy"
-date: "2025-10-29"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+title: Will My Child Be Okay? Hope and Progress Through ABA Therapy
+date: 2025-10-29
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-yankrukov-6210257-1024x683.jpg"
-excerpt: "Parents of newly diagnosed autistic children often wonder if their child will be okay. The article offers encouragement that with time, therapy, and proper support, every child can grow meaningfully through ABA therapy."
-read_time: "5 min read"
+excerpt: Parents of newly diagnosed autistic children often wonder if their child will be okay. The article offers encouragement that with time, therapy, and proper support, every child can grow meaningfully through ABA therapy.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2025/10/29/hope-and-progress-in-aba-what-every-parent-needs-to-know-about-their-childs-future/"
+draft: false
+hidden: false
 ---
-
 # Will My Child Be Okay? Hope and Progress Through ABA Therapy
 
 ### Introduction: Every Parent's Question

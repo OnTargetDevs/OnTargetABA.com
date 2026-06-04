@@ -1,14 +1,15 @@
 ---
-title: "Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing in Utah"
-date: "2026-02-28"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+title: Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing in Utah
+date: 2026-02-28
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/Understanding-Autism-1024x640.webp"
-excerpt: "Parents seeking autism diagnosis answers can access evidence-based testing in Utah's Salt Lake City Valley without lengthy waitlists. The guide explains the evaluation process and how early diagnosis enables children to access timely intervention."
-read_time: "7 min read"
+excerpt: Parents seeking autism diagnosis answers can access evidence-based testing in Utah's Salt Lake City Valley without lengthy waitlists. The guide explains the evaluation process and how early diagnosis enables children to access timely intervention.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/02/28/where-can-i-get-an-autism-diagnosis-a-parents-guide-to-autism-testing-in-utah/"
+draft: false
+hidden: false
 ---
-
 # Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing in Utah
 
 If you've found yourself typing "where can I get an autism diagnosis" into Google, you're not alone.

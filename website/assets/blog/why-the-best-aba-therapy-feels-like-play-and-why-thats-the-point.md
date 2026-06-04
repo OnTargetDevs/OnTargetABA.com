@@ -1,14 +1,15 @@
 ---
-title: "Why the Best ABA Therapy Feels Like Play (And Why That's the Point)"
-date: "2026-04-10"
-category: "Life at On Target ABA"
-author: "On Target ABA Team"
+title: Why the Best ABA Therapy Feels Like Play (And Why That's the Point)
+date: 2026-04-10
+category: Life at On Target ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-yankrukov-8612893-1024x683.jpg"
-excerpt: "The blog explores how play-based ABA therapy enables children to learn effectively through enjoyable activities. It explains the science behind using play as a therapeutic vehicle for skill development."
-read_time: ""
+excerpt: The blog explores how play-based ABA therapy enables children to learn effectively through enjoyable activities. It explains the science behind using play as a therapeutic vehicle for skill development.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/10/why-the-best-aba-therapy-feels-like-play-and-why-thats-the-point/"
+draft: false
+hidden: false
 ---
-
 # Why the Best ABA Therapy Feels Like Play (And Why That's the Point)
 
 ## AI Summary

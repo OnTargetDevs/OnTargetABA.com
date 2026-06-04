@@ -1,14 +1,15 @@
 ---
-title: "Building Confidence in Children With Autism Through ABA Therapy"
-date: "2026-02-17"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+title: Building Confidence in Children With Autism Through ABA Therapy
+date: 2026-02-17
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-yankrukov-8612891-1024x683.jpg"
-excerpt: "The post explains that confidence is one of the most important outcomes of ABA therapy for children with autism. It develops through communication skills, independence, emotional management, and repeated success experiences across home, school, and social contexts."
-read_time: "7 min read"
+excerpt: The post explains that confidence is one of the most important outcomes of ABA therapy for children with autism. It develops through communication skills, independence, emotional management, and repeated success experiences across home, school, and social contexts.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/02/17/building-confidence-in-children-with-autism-through-aba-therapy/"
+draft: false
+hidden: false
 ---
-
 # Building Confidence in Children With Autism Through ABA Therapy
 
 Every parent wants their child to feel confident.

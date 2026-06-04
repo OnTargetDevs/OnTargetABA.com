@@ -1,14 +1,15 @@
 ---
-title: "Is My Child Making Progress? A Parent's Guide to Understanding ABA Data"
-date: "2026-02-07"
-category: "Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+title: Is My Child Making Progress? A Parent's Guide to Understanding ABA Data
+date: 2026-02-07
+category: Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-a-darmel-7710124-1024x683.jpg"
-excerpt: "This guide explains how ABA data collection works and why therapists track skills like communication and emotional regulation. Parents learn to interpret progress graphs, understand natural variability in learning, and recognize meaningful improvements beyond numerical metrics."
-read_time: ""
+excerpt: This guide explains how ABA data collection works and why therapists track skills like communication and emotional regulation. Parents learn to interpret progress graphs, understand natural variability in learning, and recognize meaningful improvements beyond numerical metrics.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2026/02/07/is-my-child-making-progress-a-parents-guide-to-understanding-aba-data/"
+draft: false
+hidden: false
 ---
-
 # Is My Child Making Progress? A Parent's Guide to Understanding ABA Data
 
 ### AI Summary

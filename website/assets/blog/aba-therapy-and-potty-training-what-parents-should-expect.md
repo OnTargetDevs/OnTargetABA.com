@@ -1,14 +1,15 @@
 ---
 title: "ABA Therapy and Potty Training: What Parents Should Expect"
-date: "2025-11-27"
-category: "Developmental Milestones, Early Intervention, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-27
+category: Developmental Milestones, Early Intervention, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-fotios-photos-5247758-1024x683.jpg"
-excerpt: "Potty training represents a significant milestone for all children, but presents unique challenges for autistic children. ABA breaks the skill into small, achievable steps, gives children the structure they need, and supports families with practical tools."
-read_time: "8 min read"
+excerpt: Potty training represents a significant milestone for all children, but presents unique challenges for autistic children. ABA breaks the skill into small, achievable steps, gives children the structure they need, and supports families with practical tools.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/27/aba-therapy-and-potty-training-what-parents-should-expect/"
+draft: false
+hidden: false
 ---
-
 # ABA Therapy and Potty Training: What Parents Should Expect
 
 ## Helping Your Child Learn Toileting Skills With Confidence

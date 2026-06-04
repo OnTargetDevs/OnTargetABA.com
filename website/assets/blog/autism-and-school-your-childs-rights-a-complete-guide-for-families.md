@@ -1,14 +1,15 @@
 ---
 title: "Autism and School: Your Child's Rights — A Complete Guide for Families"
-date: "2026-06-01"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+date: 2026-06-01
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/06/pexels-anastasia-shuraeva-8466162-1024x684.jpg"
-excerpt: "Every autistic child in the United States has federally protected rights to a free, appropriate public education, yet many families lack understanding of these rights and how to enforce them. This guide explains IDEA, Section 504, IEPs, and parent advocacy strategies."
-read_time: ""
+excerpt: Every autistic child in the United States has federally protected rights to a free, appropriate public education, yet many families lack understanding of these rights and how to enforce them. This guide explains IDEA, Section 504, IEPs, and parent advocacy strategies.
+read_time: 9 min read
 source_url: "https://ontargetaba.com/2026/06/01/autism-and-school-your-childs-rights-a-complete-guide-for-families/"
+draft: false
+hidden: false
 ---
-
 # Autism and School: Your Child's Rights — A Complete Guide for Families
 
 ## You Have More Power Than You Think

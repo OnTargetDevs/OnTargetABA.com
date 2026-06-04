@@ -1,14 +1,15 @@
 ---
 title: "How General Education Teachers Can Support Students with Autism: A Complete Guide"
-date: "2026-06-02"
-category: "Community & Events"
-author: "On Target ABA Team"
+date: 2026-06-02
+category: Community & Events
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/06/pexels-anastasia-shuraeva-8467265-1024x684.jpg"
-excerpt: "This guide provides general education teachers with practical, evidence-based strategies for supporting autistic students in inclusive classrooms, covering topics from understanding IEPs and 504 plans to creating sensory-friendly environments and building collaborative relationships with support staff."
-read_time: ""
+excerpt: This guide provides general education teachers with practical, evidence-based strategies for supporting autistic students in inclusive classrooms, covering topics from understanding IEPs and 504 plans to creating sensory-friendly environments and building collaborative relationships with support staff.
+read_time: 12 min read
 source_url: "https://ontargetaba.com/2026/06/02/how-general-education-teachers-can-support-students-with-autism-a-complete-guide/"
+draft: false
+hidden: false
 ---
-
 # How General Education Teachers Can Support Students with Autism: A Complete Guide
 
 ### AI Summary

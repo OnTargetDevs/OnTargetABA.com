@@ -1,0 +1,9 @@
+# Admin-uploaded images land here via /api/images/upload.
+#
+# Path convention: assets/images/uploads/{yyyy}-{mm}/{slug}-{short-hash}.{ext}
+# so a year's worth of uploads stays browsable in the GitHub tree without
+# scrolling forever.
+#
+# Files in this folder are committed as part of admin PRs along with the
+# content edit that references them. They are not deleted automatically
+# when an override stops referencing them.

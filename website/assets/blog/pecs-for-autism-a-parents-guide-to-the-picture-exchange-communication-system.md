@@ -1,14 +1,15 @@
 ---
 title: "PECS for Autism: A Parent's Guide to the Picture Exchange Communication System"
-date: "2025-12-22"
-category: "ABA Therapy Basics, Getting Started with ABA, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-12-22
+category: ABA Therapy Basics, Getting Started with ABA, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-karola-g-8910421-scaled-e1766416682138-1024x724.jpg"
-excerpt: "This guide explains how PECS supports communication for autistic children, breaking down how it works through six phases and how On Target ABA incorporates it into therapy to build meaningful communication skills."
-read_time: "7 min read"
+excerpt: This guide explains how PECS supports communication for autistic children, breaking down how it works through six phases and how On Target ABA incorporates it into therapy to build meaningful communication skills.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/12/22/pecs-for-autism-a-parents-guide-to-the-picture-exchange-communication-system/"
+draft: false
+hidden: false
 ---
-
 # PECS for Autism: A Parent's Guide to the Picture Exchange Communication System
 
 ### PECS for Autism: A Parent's Guide to the Picture Exchange Communication System

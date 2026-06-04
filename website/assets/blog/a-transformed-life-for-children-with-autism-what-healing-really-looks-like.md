@@ -1,14 +1,15 @@
 ---
 title: "A Transformed Life for Children With Autism: What Healing Really Looks Like"
-date: "2026-01-15"
-category: "Developmental Milestones, Early Intervention, Parent Resources"
-author: "On Target ABA Team"
+date: 2026-01-15
+category: Developmental Milestones, Early Intervention, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-ketut-subiyanto-4474010-1024x683.jpg"
-excerpt: "The article explores what 'healing' truly means for children with autism—not changing who they are, but helping them grow with confidence, joy, and meaningful support through understanding, skills-building, and family partnership."
-read_time: ""
+excerpt: The article explores what 'healing' truly means for children with autism—not changing who they are, but helping them grow with confidence, joy, and meaningful support through understanding, skills-building, and family partnership.
+read_time: 3 min read
 source_url: "https://ontargetaba.com/2026/01/15/a-transformed-life-for-children-with-autism-what-healing-really-looks-like/"
+draft: false
+hidden: false
 ---
-
 # A Transformed Life for Children With Autism: What Healing Really Looks Like
 
 ### AI Summary

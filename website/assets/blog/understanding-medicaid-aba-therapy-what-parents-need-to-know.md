@@ -1,14 +1,15 @@
 ---
 title: "Understanding Medicaid ABA Therapy: What Parents Need to Know"
-date: "2025-11-05"
-category: "ABA Therapy Basics, Getting Started with ABA, Insurance & Funding, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-05
+category: ABA Therapy Basics, Getting Started with ABA, Insurance & Funding, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-mikhail-nilov-6962993-scaled-e1762330672689-1024x671.jpg"
-excerpt: "This guide helps parents understand Medicaid ABA therapy coverage for children with autism, explaining how it works and what documentation is needed to begin treatment."
-read_time: "8 min read"
+excerpt: This guide helps parents understand Medicaid ABA therapy coverage for children with autism, explaining how it works and what documentation is needed to begin treatment.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/05/understanding-medicaid-aba-therapy-what-parents-need-to-know/"
+draft: false
+hidden: false
 ---
-
 # Understanding Medicaid ABA Therapy: What Parents Need to Know
 
 ## Making ABA Therapy Accessible for Every Family

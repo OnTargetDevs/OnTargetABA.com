@@ -1,14 +1,15 @@
 ---
 title: "ABA Therapy Myths vs. Facts: What Every Parent Needs to Know"
-date: "2026-03-25"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-03-25
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-ann-h-45017-6266316-1024x683.jpg"
-excerpt: "ABA therapy is frequently misunderstood, with misconceptions preventing families from accessing beneficial treatment. This guide addresses common myths with research-backed facts about modern, ethical ABA practice."
-read_time: ""
+excerpt: ABA therapy is frequently misunderstood, with misconceptions preventing families from accessing beneficial treatment. This guide addresses common myths with research-backed facts about modern, ethical ABA practice.
+read_time: 14 min read
 source_url: "https://ontargetaba.com/2026/03/25/aba-therapy-is-not-what-you-think-it-is-debunking-the-most-common-myths/"
+draft: false
+hidden: false
 ---
-
 # ABA Therapy Is Not What You Think It Is: Debunking the Most Common Myths
 
 ## The Myths That Are Getting in the Way

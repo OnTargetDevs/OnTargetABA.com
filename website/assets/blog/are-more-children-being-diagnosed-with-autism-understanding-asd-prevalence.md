@@ -1,14 +1,15 @@
 ---
-title: "Are More Children Being Diagnosed with Autism? Understanding ASD Prevalence"
-date: "2026-03-12"
-category: "Parent Resources"
-author: "On Target ABA Team"
+title: Are More Children Being Diagnosed with Autism? Understanding ASD Prevalence
+date: 2026-03-12
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-magda-ehlers-pexels-1337387-1024x656.jpg"
-excerpt: "The CDC has tracked autism prevalence among 8-year-olds since 2000, with increases in most years, though these rises likely reflect improved awareness, expanded diagnostic criteria, and better service access rather than a sudden surge in the condition itself."
-read_time: "8 min read"
+excerpt: The CDC has tracked autism prevalence among 8-year-olds since 2000, with increases in most years, though these rises likely reflect improved awareness, expanded diagnostic criteria, and better service access rather than a sudden surge in the condition itself.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/03/12/are-more-children-being-diagnosed-with-autism-understanding-asd-prevalence/"
+draft: false
+hidden: false
 ---
-
 # Are More Children Being Diagnosed with Autism? Understanding ASD Prevalence
 
 This is a question many parents quietly ask:

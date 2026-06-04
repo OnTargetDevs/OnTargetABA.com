@@ -1,14 +1,15 @@
 ---
-title: "What Is Pivotal Response Treatment (PRT)? A Complete Guide for Autism Families"
-date: "2026-05-12"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+title: What Is Pivotal Response Treatment (PRT)? A Complete Guide for Autism Families
+date: 2026-05-12
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-vlada-karpovich-7031293-1024x683.jpg"
-excerpt: "PRT is described as one of the most researched, most naturalistic, and most family-friendly approaches within ABA therapy that identifies and strengthens foundational developmental areas to unlock broad gains across communication, social skills, behavior, and learning."
-read_time: ""
+excerpt: PRT is described as one of the most researched, most naturalistic, and most family-friendly approaches within ABA therapy that identifies and strengthens foundational developmental areas to unlock broad gains across communication, social skills, behavior, and learning.
+read_time: 14 min read
 source_url: "https://ontargetaba.com/2026/05/12/what-is-pivotal-response-treatment-prt-a-complete-guide-for-autism-families/"
+draft: false
+hidden: false
 ---
-
 # What Is Pivotal Response Treatment (PRT)? A Complete Guide for Autism Families
 
 ### The Therapy That Follows the Child's Lead

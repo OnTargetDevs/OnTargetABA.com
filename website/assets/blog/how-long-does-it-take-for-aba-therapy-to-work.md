@@ -1,14 +1,15 @@
 ---
-title: "How Long Does It Take for ABA Therapy to Work?"
-date: "2025-11-11"
-category: "Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+title: How Long Does It Take for ABA Therapy to Work?
+date: 2025-11-11
+category: Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-tima-miroshnichenko-8327971-1024x683.jpg"
-excerpt: "Parents frequently ask how long ABA therapy takes to show results. The guide explains that while progress doesn't happen overnight, children often begin showing early improvements within just a few months with consistent therapy and family involvement."
-read_time: "8 min read"
+excerpt: Parents frequently ask how long ABA therapy takes to show results. The guide explains that while progress doesn't happen overnight, children often begin showing early improvements within just a few months with consistent therapy and family involvement.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/11/how-long-does-it-take-for-aba-therapy-to-work/"
+draft: false
+hidden: false
 ---
-
 # How Long Does It Take for ABA Therapy to Work?
 
 ## The Question Every Parent Asks

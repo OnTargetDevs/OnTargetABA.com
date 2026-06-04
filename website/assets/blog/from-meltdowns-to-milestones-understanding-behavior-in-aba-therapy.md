@@ -1,14 +1,15 @@
 ---
 title: "From Meltdowns to Milestones: Understanding Behavior in ABA Therapy"
-date: "2025-10-18"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2025-10-18
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-keira-burton-6624327-1024x683.jpg"
-excerpt: "Understanding behavior through the lens of Applied Behavior Analysis (ABA) transforms frustration into opportunity — and meltdowns into milestones. This piece explains how ABA helps parents understand and address challenging behaviors in autistic children."
-read_time: "7 min read"
+excerpt: Understanding behavior through the lens of Applied Behavior Analysis (ABA) transforms frustration into opportunity — and meltdowns into milestones. This piece explains how ABA helps parents understand and address challenging behaviors in autistic children.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/10/18/from-meltdowns-to-milestones-understanding-behavior-in-aba-therapy/"
+draft: false
+hidden: false
 ---
-
 # From Meltdowns to Milestones: Understanding Behavior in ABA Therapy
 
 ### Introduction: Every Behavior Has a Story

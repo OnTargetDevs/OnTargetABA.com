@@ -1,14 +1,15 @@
 ---
-title: "How to Advocate for Your Child During IEP Meetings"
-date: "2025-08-18"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+title: How to Advocate for Your Child During IEP Meetings
+date: 2025-08-18
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/08/pexels-alex-green-5699456-1024x683.jpg"
-excerpt: "Navigating IEP meetings can feel overwhelming, but parents have legal rights and responsibilities to advocate effectively for their children. Through preparation, confidence, and strategic communication, families can ensure their child receives necessary educational supports."
-read_time: "6 min read"
+excerpt: Navigating IEP meetings can feel overwhelming, but parents have legal rights and responsibilities to advocate effectively for their children. Through preparation, confidence, and strategic communication, families can ensure their child receives necessary educational supports.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/08/18/how-to-advocate-for-your-child-during-iep-meetings/"
+draft: false
+hidden: false
 ---
-
 # How to Advocate for Your Child During IEP Meetings
 
 ### Introduction

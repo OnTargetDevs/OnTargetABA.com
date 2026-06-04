@@ -1,14 +1,15 @@
 ---
 title: "Break Cards in ABA Therapy: Giving Children a Voice When They Need It Most"
-date: "2025-12-15"
-category: "Parent Resources"
-author: "On Target ABA Team"
+date: 2025-12-15
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-purrfect-meowtastic-685207996-17925153-1024x683.jpg"
-excerpt: "One of the most powerful moments in ABA therapy is when a child learns how to communicate 'I need a break' through a break card—a simple visual tool rather than through disruptive behaviors. Break cards serve as a pathway to independence, emotional regulation, and self-advocacy."
-read_time: "6 min read"
+excerpt: One of the most powerful moments in ABA therapy is when a child learns how to communicate 'I need a break' through a break card—a simple visual tool rather than through disruptive behaviors. Break cards serve as a pathway to independence, emotional regulation, and self-advocacy.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/12/15/break-cards-in-aba-therapy-giving-children-a-voice-when-they-need-it-most/"
+draft: false
+hidden: false
 ---
-
 # Break Cards in ABA Therapy: Giving Children a Voice When They Need It Most
 
 One of the most powerful moments in ABA therapy is when a child learns how to say, "I need a break."

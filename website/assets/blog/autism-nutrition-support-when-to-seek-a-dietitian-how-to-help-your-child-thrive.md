@@ -1,14 +1,15 @@
 ---
 title: "Autism Nutrition Support: When to Seek a Dietitian & How to Help Your Child Thrive"
-date: "2025-12-16"
-category: "Parent Resources, Specialized Programs"
-author: "On Target ABA Team"
+date: 2025-12-16
+category: Parent Resources, Specialized Programs
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-kampus-7414380-1024x683.jpg"
-excerpt: "Many children with autism experience feeding challenges stemming from sensory sensitivities, limited food preferences, and GI issues. Understanding when to seek professional nutrition support and how ABA therapy can complement dietitian care helps families address these concerns effectively."
-read_time: "8 min read"
+excerpt: Many children with autism experience feeding challenges stemming from sensory sensitivities, limited food preferences, and GI issues. Understanding when to seek professional nutrition support and how ABA therapy can complement dietitian care helps families address these concerns effectively.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/12/16/autism-nutrition-support-when-to-seek-a-dietitian-how-to-help-your-child-thrive/"
+draft: false
+hidden: false
 ---
-
 # Autism Nutrition Support: When to Seek a Dietitian & How to Help Your Child Thrive
 
 ### Autism Nutrition Support: When to Seek a Dietitian & How to Help Your Child Thrive

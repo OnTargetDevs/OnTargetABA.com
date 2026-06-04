@@ -1,14 +1,15 @@
 ---
 title: "Home Meets Therapy: Simple ABA Strategies Parents Can Use Every Day"
-date: "2025-10-18"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2025-10-18
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-fotios-photos-5435599-1024x683.jpg"
-excerpt: "The article explores how parents can apply simple ABA therapy strategies at home to support their child's progress through daily routines and consistent reinforcement techniques."
-read_time: "6 min read"
+excerpt: The article explores how parents can apply simple ABA therapy strategies at home to support their child's progress through daily routines and consistent reinforcement techniques.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/10/18/home-meets-therapy-simple-aba-strategies-parents-can-use-every-day/"
+draft: false
+hidden: false
 ---
-
 # Home Meets Therapy: Simple ABA Strategies Parents Can Use Every Day
 
 ### Introduction: Where Learning and Daily Life Meet

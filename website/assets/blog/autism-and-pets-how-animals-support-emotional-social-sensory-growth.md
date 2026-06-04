@@ -1,14 +1,15 @@
 ---
-title: "Autism and Pets — How Animals Support Emotional, Social & Sensory Growth"
-date: "2025-11-26"
-category: "ABA Therapy Basics, Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+title: Autism and Pets — How Animals Support Emotional, Social & Sensory Growth
+date: 2025-11-26
+category: ABA Therapy Basics, Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-qjpioneer-332974-1024x683.jpg"
-excerpt: "The article explores how pets help children with autism through emotional regulation, communication improvement, and sensory support, while providing ABA-aligned strategies and safety guidance for families considering adding a pet to their home."
-read_time: "7 min read"
+excerpt: The article explores how pets help children with autism through emotional regulation, communication improvement, and sensory support, while providing ABA-aligned strategies and safety guidance for families considering adding a pet to their home.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/11/26/autism-and-pets-how-animals-support-emotional-social-sensory-growth/"
+draft: false
+hidden: false
 ---
-
 # Autism and Pets — How Animals Support Emotional, Social & Sensory Growth
 
 ## The Special Bond Between Autism and Pets

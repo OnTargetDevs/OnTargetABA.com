@@ -1,14 +1,15 @@
 ---
-title: "What Is an Autism Scholarship Program (ASP) and How Can It Help Your Child?"
-date: "2026-03-04"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+title: What Is an Autism Scholarship Program (ASP) and How Can It Help Your Child?
+date: 2026-03-04
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/what-is-aba-therapy-1024x682.jpg"
-excerpt: "The Autism Scholarship Program Ohio gives parents of children with autism the option to choose a special education provider outside their home school district. Eligible children (ages 3-21) can receive services outlined in their IEP or Autism Education Plan (AEP) using state-funded scholarship dollars."
-read_time: "7 min read"
+excerpt: The Autism Scholarship Program Ohio gives parents of children with autism the option to choose a special education provider outside their home school district. Eligible children (ages 3-21) can receive services outlined in their IEP or Autism Education Plan (AEP) using state-funded scholarship dollars.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/03/04/what-is-an-autism-scholarship-program-asp-and-how-can-it-help-your-child/"
+draft: false
+hidden: false
 ---
-
 # What Is an Autism Scholarship Program (ASP) and How Can It Help Your Child?
 
 If you're a parent of a child with autism in Ohio, you may have heard the term ASP — the Autism Scholarship Program.

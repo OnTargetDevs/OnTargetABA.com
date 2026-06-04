@@ -1,14 +1,15 @@
 ---
 title: "Holiday Air Travel with Autistic Children: Tips to Make the Journey Smoother"
-date: "2026-05-13"
-category: "Parent Resources"
-author: "On Target ABA Team"
+date: 2026-05-13
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-xt7core-19479134-scaled-e1778665694240-1024x696.jpg"
-excerpt: "The holiday season brings airports and airplanes with sensory complexity that requires specific preparation strategies for autistic children. With proper planning—including social stories, airline accommodations, and sensory kits—families can successfully navigate air travel."
-read_time: ""
+excerpt: The holiday season brings airports and airplanes with sensory complexity that requires specific preparation strategies for autistic children. With proper planning—including social stories, airline accommodations, and sensory kits—families can successfully navigate air travel.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/05/13/holiday-air-travel-with-autistic-children-tips-to-make-the-journey-smoother/"
+draft: false
+hidden: false
 ---
-
 # Holiday Air Travel with Autistic Children: Tips to Make the Journey Smoother
 
 ### The Airport Does Not Have to Be the Hard Part

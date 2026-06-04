@@ -1,14 +1,15 @@
 ---
-title: "Why Families Love In-Home ABA Therapy for Personalized Autism Support"
-date: "2025-10-23"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+title: Why Families Love In-Home ABA Therapy for Personalized Autism Support
+date: 2025-10-23
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-arina-krasnikova-5103408-1024x684.jpg"
-excerpt: "In-home ABA therapy blends applied behavior analysis with the comfort of a child's home environment, helping skills develop naturally while strengthening family involvement in the therapeutic process."
-read_time: "5 min read"
+excerpt: In-home ABA therapy blends applied behavior analysis with the comfort of a child's home environment, helping skills develop naturally while strengthening family involvement in the therapeutic process.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2025/10/23/why-families-love-in-home-aba-therapy-for-personalized-autism-support/"
+draft: false
+hidden: false
 ---
-
 # Why Families Love In-Home ABA Therapy for Personalized Autism Support
 
 ### Introduction: Where Comfort Meets Progress

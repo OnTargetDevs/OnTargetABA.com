@@ -1,14 +1,15 @@
 ---
-title: "How ABA Helps Children With Autism Manage Big Feelings"
-date: "2026-02-09"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+title: How ABA Helps Children With Autism Manage Big Feelings
+date: 2026-02-09
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-mikhail-nilov-7929420-1024x683.jpg"
-excerpt: "Children with autism often struggle with overwhelming emotions. ABA therapy teaches predictable routines, communication skills, and coping strategies to help children manage transitions, frustration, and unexpected changes more successfully."
-read_time: "7 min read"
+excerpt: Children with autism often struggle with overwhelming emotions. ABA therapy teaches predictable routines, communication skills, and coping strategies to help children manage transitions, frustration, and unexpected changes more successfully.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/02/09/how-aba-helps-children-with-autism-manage-big-feelings/"
+draft: false
+hidden: false
 ---
-
 # How ABA Helps Children With Autism Manage Big Feelings
 
 Every parent of a child with autism has witnessed moments of big feelings — the kind that appear suddenly and take over the entire moment.

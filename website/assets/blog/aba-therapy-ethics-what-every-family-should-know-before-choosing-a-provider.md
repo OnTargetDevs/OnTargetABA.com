@@ -1,14 +1,15 @@
 ---
 title: "ABA Therapy Ethics: What Every Family Should Know Before Choosing a Provider"
-date: "2026-04-08"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-04-08
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-cottonbro-7339327-scaled-e1775627429245-1024x735.jpg"
-excerpt: "Not all ABA therapy is created equal—ethics separates good providers from great ones. This guide explains the ethical framework governing ABA therapy, including the four core principles every BCBA must uphold and what families should know when choosing a provider."
-read_time: ""
+excerpt: Not all ABA therapy is created equal—ethics separates good providers from great ones. This guide explains the ethical framework governing ABA therapy, including the four core principles every BCBA must uphold and what families should know when choosing a provider.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/08/aba-therapy-ethics-what-every-family-should-know-before-choosing-a-provider/"
+draft: false
+hidden: false
 ---
-
 # ABA Therapy Ethics: What Every Family Should Know Before Choosing a Provider
 
 ## AI Summary

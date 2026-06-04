@@ -1,14 +1,15 @@
 ---
-title: "What Is a BCBA? Understanding the Clinical Heart of ABA Therapy"
-date: "2026-05-27"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+title: What Is a BCBA? Understanding the Clinical Heart of ABA Therapy
+date: 2026-05-27
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-mikhail-nilov-8923078-1024x683.jpg"
-excerpt: "Board Certified Behavior Analysts serve as the clinical backbone of quality ABA therapy programs, designing individualized treatment plans and supervising therapy teams. Most families beginning ABA therapy have limited understanding of what a BCBA credential entails or their practical role in their child's program."
-read_time: ""
+excerpt: Board Certified Behavior Analysts serve as the clinical backbone of quality ABA therapy programs, designing individualized treatment plans and supervising therapy teams. Most families beginning ABA therapy have limited understanding of what a BCBA credential entails or their practical role in their child's program.
+read_time: 15 min read
 source_url: "https://ontargetaba.com/2026/05/27/what-is-a-bcba-understanding-the-clinical-heart-of-aba-therapy/"
+draft: false
+hidden: false
 ---
-
 # What Is a BCBA? Understanding the Clinical Heart of ABA Therapy
 
 ### AI Summary

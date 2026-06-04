@@ -1,14 +1,15 @@
 ---
-title: "What to Expect When Getting an Adult Autism Diagnosis"
-date: "2025-12-24"
-category: "ABA Therapy Basics, Parent Resources"
-author: "On Target ABA Team"
+title: What to Expect When Getting an Adult Autism Diagnosis
+date: 2025-12-24
+category: ABA Therapy Basics, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-tara-winstead-8386136-1024x683.jpg"
-excerpt: "Getting an autism diagnosis as an adult can feel overwhelming, confusing, or even relieving — and many people aren't sure what actually happens during the process. This guide explains what to expect, how evaluations work, and how adults can finally gain clarity and support."
-read_time: "7 min read"
+excerpt: Getting an autism diagnosis as an adult can feel overwhelming, confusing, or even relieving — and many people aren't sure what actually happens during the process. This guide explains what to expect, how evaluations work, and how adults can finally gain clarity and support.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/12/24/on-target-aba-blog-what-to-expect-when-getting-an-adult-autism-diagnosis/"
+draft: false
+hidden: false
 ---
-
 # What to Expect When Getting an Adult Autism Diagnosis
 
 ### What to Expect When Getting an Adult Autism Diagnosis

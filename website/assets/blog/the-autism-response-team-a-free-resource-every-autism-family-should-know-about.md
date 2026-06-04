@@ -1,14 +1,15 @@
 ---
 title: "The Autism Response Team: A Free Resource Every Autism Family Should Know About"
-date: "2026-04-17"
-category: "Parent Resources"
-author: "On Target ABA Team"
+date: 2026-04-17
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-mikhail-nilov-8923256-scaled-e1776403358827-1024x709.jpg"
-excerpt: "The Autism Response Team (ART) from Autism Speaks is a free, nationwide resource staffed by specially trained specialists who can help families find local services, navigate the system, understand their rights, and access the tools they need."
-read_time: ""
+excerpt: The Autism Response Team (ART) from Autism Speaks is a free, nationwide resource staffed by specially trained specialists who can help families find local services, navigate the system, understand their rights, and access the tools they need.
+read_time: 10 min read
 source_url: "https://ontargetaba.com/2026/04/17/the-autism-response-team-a-free-resource-every-autism-family-should-know-about/"
+draft: false
+hidden: false
 ---
-
 # The Autism Response Team: A Free Resource Every Autism Family Should Know About
 
 When an autism diagnosis arrives — or when life with autism gets overwhelming — many families don't know where to turn first. The Autism Response Team (ART) from Autism Speaks is a free, nationwide resource staffed by specially trained specialists who can help families find local services, navigate the system, understand their rights, and access the tools they need. This blog explains exactly what the ART is, who it serves, what it can help with, and how to reach it — because every family deserves to know this resource exists.

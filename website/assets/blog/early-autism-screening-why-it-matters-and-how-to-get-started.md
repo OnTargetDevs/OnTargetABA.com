@@ -1,14 +1,15 @@
 ---
 title: "Early Autism Screening: Why It Matters and How to Get Started"
-date: "2026-04-23"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-04-23
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-marina-abrosimova-3319804-8397971-1024x683.jpg"
-excerpt: "The article emphasizes that autism can be reliably detected as early as 18 months, yet the average U.S. diagnosis occurs at age 5—a gap that costs children critical early intervention years during peak brain development."
-read_time: ""
+excerpt: The article emphasizes that autism can be reliably detected as early as 18 months, yet the average U.S. diagnosis occurs at age 5—a gap that costs children critical early intervention years during peak brain development.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/23/early-autism-screening-why-it-matters-and-how-to-get-started/"
+draft: false
+hidden: false
 ---
-
 # Early Autism Screening: Why It Matters and How to Get Started
 
 ### The Feeling You Can't Ignore

@@ -1,14 +1,15 @@
 ---
 title: "Caring Without Burning Out: A Parent's Guide to Supporting a Child With Autism and Yourself"
-date: "2025-11-24"
-category: "Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-24
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-ketut-subiyanto-4474035-1024x683.jpg"
-excerpt: "Parenting a child with autism is deeply rewarding yet deeply demanding. The piece explores parent burnout as a real phenomenon and offers practical strategies for self-care while maintaining support for one's child."
-read_time: "9 min read"
+excerpt: Parenting a child with autism is deeply rewarding yet deeply demanding. The piece explores parent burnout as a real phenomenon and offers practical strategies for self-care while maintaining support for one's child.
+read_time: 9 min read
 source_url: "https://ontargetaba.com/2025/11/24/caring-without-burning-out-a-parents-guide-to-supporting-a-child-with-autism-and-yourself/"
+draft: false
+hidden: false
 ---
-
 # Caring Without Burning Out: A Parent's Guide to Supporting a Child With Autism and Yourself
 
 ## You Can Care For Your Child _Without_ Losing Yourself

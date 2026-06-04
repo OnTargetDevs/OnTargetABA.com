@@ -1,14 +1,15 @@
 ---
 title: "Virtual Activities for Kids with Autism: The Complete Guide for Families"
-date: "2026-05-29"
-category: "Parent Resources"
-author: "On Target ABA Team"
+date: 2026-05-29
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-kampus-8185877-1024x683.jpg"
-excerpt: "Digital tools have become a powerful resource for families supporting autistic children. Virtual activities ranging from sensory-friendly museum tours to structured social skills games offer engaging, personalized experiences designed to support development."
-read_time: ""
+excerpt: Digital tools have become a powerful resource for families supporting autistic children. Virtual activities ranging from sensory-friendly museum tours to structured social skills games offer engaging, personalized experiences designed to support development.
+read_time: 14 min read
 source_url: "https://ontargetaba.com/2026/05/29/virtual-activities-for-kids-with-autism-the-complete-guide-for-families/"
+draft: false
+hidden: false
 ---
-
 # Virtual Activities for Kids with Autism: The Complete Guide for Families
 
 ### AI Summary

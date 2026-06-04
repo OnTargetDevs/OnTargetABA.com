@@ -1,14 +1,15 @@
 ---
-title: "How Can I Help My Child with Autism Enjoy Thanksgiving? A Parent's Guide to Stress-Free Family Gatherings"
-date: "2025-10-30"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+title: How Can I Help My Child with Autism Enjoy Thanksgiving? A Parent's Guide to Stress-Free Family Gatherings
+date: 2025-10-30
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-shvetsa-11369126-1024x683.jpg"
-excerpt: "Thanksgiving presents unique challenges for families with autistic children due to sensory sensitivities and routine disruptions. This guide offers practical ABA-based strategies to help families navigate the holiday with greater calm and joy."
-read_time: "5 min read"
+excerpt: Thanksgiving presents unique challenges for families with autistic children due to sensory sensitivities and routine disruptions. This guide offers practical ABA-based strategies to help families navigate the holiday with greater calm and joy.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2025/10/30/how-can-i-help-my-child-with-autism-enjoy-thanksgiving-a-parents-guide-to-stress-free-family-gatherings/"
+draft: false
+hidden: false
 ---
-
 # How Can I Help My Child with Autism Enjoy Thanksgiving? A Parent's Guide to Stress-Free Family Gatherings
 
 ### Introduction: When Gratitude Meets Sensitivity

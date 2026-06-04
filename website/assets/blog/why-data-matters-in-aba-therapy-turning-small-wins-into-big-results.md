@@ -1,14 +1,15 @@
 ---
 title: "Why Data Matters in ABA Therapy: Turning Small Wins into Big Results"
-date: "2025-11-13"
-category: "Developmental Milestones, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-13
+category: Developmental Milestones, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-karola-g-6255737-1024x683.jpg"
-excerpt: "This blog explains how data collection in ABA therapy transforms everyday progress into meaningful results, helping parents understand how therapists track progress and personalize treatment for each child's unique developmental journey."
-read_time: "7 min read"
+excerpt: This blog explains how data collection in ABA therapy transforms everyday progress into meaningful results, helping parents understand how therapists track progress and personalize treatment for each child's unique developmental journey.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/11/13/why-data-matters-in-aba-therapy-turning-small-wins-into-big-results/"
+draft: false
+hidden: false
 ---
-
 # Why Data Matters in ABA Therapy: Turning Small Wins into Big Results
 
 ## Why Data Is at the Heart of ABA Therapy

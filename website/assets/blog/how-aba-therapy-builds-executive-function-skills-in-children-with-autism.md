@@ -1,14 +1,15 @@
 ---
-title: "How ABA Therapy Builds Executive Function Skills in Children with Autism"
-date: "2026-03-03"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+title: How ABA Therapy Builds Executive Function Skills in Children with Autism
+date: 2026-03-03
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-cottonbro-6651150-1024x683.jpg"
-excerpt: "Executive function skills in ABA therapy help children with autism improve organization, planning, flexibility, working memory, and task initiation. These capabilities are foundational for managing daily routines and building independence."
-read_time: "8 min read"
+excerpt: Executive function skills in ABA therapy help children with autism improve organization, planning, flexibility, working memory, and task initiation. These capabilities are foundational for managing daily routines and building independence.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/03/03/how-aba-therapy-builds-executive-function-skills-in-children-with-autism/"
+draft: false
+hidden: false
 ---
-
 # How ABA Therapy Builds Executive Function Skills in Children with Autism
 
 You may have heard the phrase executive functioning before. It sounds technical. Almost corporate.

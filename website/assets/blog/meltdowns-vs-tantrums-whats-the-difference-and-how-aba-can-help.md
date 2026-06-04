@@ -1,14 +1,15 @@
 ---
 title: "Meltdowns vs. Tantrums: What's the Difference and How ABA Can Help"
-date: "2026-04-06"
-category: "Getting Started with ABA, Parent Resources"
-author: "On Target ABA Team"
+date: 2026-04-06
+category: Getting Started with ABA, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-polina-zimmerman-3958458-scaled-e1775454522741-1024x762.jpg"
-excerpt: "The article explains the critical distinction between meltdowns and tantrums in autistic children, noting they have different causes and require different parental responses. Understanding this difference and applying ABA strategies helps parents respond with greater confidence and compassion."
-read_time: ""
+excerpt: The article explains the critical distinction between meltdowns and tantrums in autistic children, noting they have different causes and require different parental responses. Understanding this difference and applying ABA strategies helps parents respond with greater confidence and compassion.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2026/04/06/meltdowns-vs-tantrums-whats-the-difference-and-how-aba-can-help/"
+draft: false
+hidden: false
 ---
-
 # Meltdowns vs. Tantrums: What's the Difference and How ABA Can Help
 
 ## AI Summary

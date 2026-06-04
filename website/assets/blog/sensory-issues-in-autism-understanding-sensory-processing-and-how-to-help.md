@@ -1,14 +1,15 @@
 ---
 title: "Sensory Issues in Autism: Understanding Sensory Processing and How to Help"
-date: "2026-03-11"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+date: 2026-03-11
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-pavel-danilyuk-8422174-1024x684.jpg"
-excerpt: "Many children with autism experience sensory sensitivities that affect their responses to sounds, lights, textures, and movement. Understanding these processing differences enables caregivers to implement practical strategies and support meaningful progress."
-read_time: "8 min read"
+excerpt: Many children with autism experience sensory sensitivities that affect their responses to sounds, lights, textures, and movement. Understanding these processing differences enables caregivers to implement practical strategies and support meaningful progress.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/03/11/sensory-issues-in-autism-understanding-sensory-processing-and-how-to-help/"
+draft: false
+hidden: false
 ---
-
 # Sensory Issues in Autism: Understanding Sensory Processing and How to Help
 
 ## What Are Sensory Issues in Autism?

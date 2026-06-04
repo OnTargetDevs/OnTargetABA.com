@@ -1,14 +1,15 @@
 ---
 title: "How to Talk to Your Child's School About Autism: IEP Tips, Scripts, and Everything You Need to Know"
-date: "2026-05-04"
-category: "Parent Resources"
-author: "On Target ABA Team"
+date: 2026-05-04
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-yankrukov-8613298-1024x683.jpg"
-excerpt: "The guide helps autism families navigate school conversations by providing knowledge, confidence, and advocacy strategies—from initial teacher discussions through formal IEP meetings—ensuring parents understand their legal rights and know exactly what to communicate."
-read_time: ""
+excerpt: The guide helps autism families navigate school conversations by providing knowledge, confidence, and advocacy strategies—from initial teacher discussions through formal IEP meetings—ensuring parents understand their legal rights and know exactly what to communicate.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/05/04/how-to-talk-to-your-childs-school-about-autism-iep-tips-scripts-and-everything-you-need-to-know/"
+draft: false
+hidden: false
 ---
-
 # How to Talk to Your Child's School About Autism: IEP Tips, Scripts, and Everything You Need to Know
 
 ### AI Summary

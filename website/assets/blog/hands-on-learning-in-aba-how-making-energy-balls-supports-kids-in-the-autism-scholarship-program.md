@@ -1,14 +1,15 @@
 ---
 title: "Hands-On Learning in ABA: How Making Energy Balls Supports Kids in the Autism Scholarship Program"
-date: "2025-10-20"
-category: "Life at On Target ABA"
-author: "On Target ABA Team"
+date: 2025-10-20
+category: Life at On Target ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/Image_20250918_142923_489-scaled-e1761055444374-1024x709.jpeg"
-excerpt: "On Target ABA's Autism Scholarship Program uses hands-on activities like making energy balls to teach life skills while combining creativity, play, and evidence-based ABA practices. The activity allowed children to practice fine motor coordination, follow directions, and build confidence through sensory-rich learning experiences."
-read_time: "5 min read"
+excerpt: On Target ABA's Autism Scholarship Program uses hands-on activities like making energy balls to teach life skills while combining creativity, play, and evidence-based ABA practices. The activity allowed children to practice fine motor coordination, follow directions, and build confidence through sensory-rich learning experiences.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2025/10/20/hands-on-learning-in-aba-how-making-energy-balls-supports-kids-in-the-autism-scholarship-program/"
+draft: false
+hidden: false
 ---
-
 # Hands-On Learning in ABA: How Making Energy Balls Supports Kids in the Autism Scholarship Program
 
 ### Introduction

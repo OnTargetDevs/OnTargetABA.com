@@ -1,14 +1,15 @@
 ---
-title: "What Is the Best Medicine for Autism Aggression? A Parent's Guide"
-date: "2026-03-17"
-category: "Parent Resources"
-author: "On Target ABA Team"
+title: What Is the Best Medicine for Autism Aggression? A Parent's Guide
+date: 2026-03-17
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-rdne-6936164-1024x683.jpg"
-excerpt: "Aggression in children with autism can manifest as hitting, kicking, or emotional outbursts. There is no single best medication for this behavior; treatment depends on identifying underlying causes and often prioritizes behavioral therapy like ABA."
-read_time: ""
+excerpt: Aggression in children with autism can manifest as hitting, kicking, or emotional outbursts. There is no single best medication for this behavior; treatment depends on identifying underlying causes and often prioritizes behavioral therapy like ABA.
+read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/03/17/what-is-the-best-medicine-for-autism-aggression/"
+draft: false
+hidden: false
 ---
-
 # What Is the Best Medicine for Autism Aggression? A Parent's Guide
 
 Aggression can be one of the most challenging behaviors for families of children with [autism spectrum disorder (ASD)](https://ontargetaba.com/2026/03/12/are-more-children-being-diagnosed-with-autism-understanding-asd-prevalence/). It can show up as hitting, kicking, biting, or intense emotional outbursts, often leaving parents feeling overwhelmed and unsure of the best way to help.

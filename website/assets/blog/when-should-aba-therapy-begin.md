@@ -1,14 +1,15 @@
 ---
-title: "When Should ABA Therapy Begin?"
-date: "2025-10-27"
-category: "Early Intervention"
-author: "On Target ABA Team"
+title: When Should ABA Therapy Begin?
+date: 2025-10-27
+category: Early Intervention
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-vlada-karpovich-7025567-1024x683.jpg"
-excerpt: "The article explains that ABA therapy should begin as early as possible, with research showing children starting between ages 2-5 make faster progress. Early intervention leverages childhood neuroplasticity to develop stronger communication, learning, and social skills."
-read_time: "5 min read"
+excerpt: The article explains that ABA therapy should begin as early as possible, with research showing children starting between ages 2-5 make faster progress. Early intervention leverages childhood neuroplasticity to develop stronger communication, learning, and social skills.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2025/10/27/when-should-aba-therapy-begin/"
+draft: false
+hidden: false
 ---
-
 # When Should ABA Therapy Begin?
 
 ### Introduction: The Earlier, the Better

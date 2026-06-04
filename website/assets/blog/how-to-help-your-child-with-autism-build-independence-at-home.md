@@ -1,14 +1,15 @@
 ---
-title: "How to Help Your Child With Autism Build Independence at Home"
-date: "2025-11-29"
-category: "Developmental Milestones, Early Intervention, Parent Resources"
-author: "On Target ABA Team"
+title: How to Help Your Child With Autism Build Independence at Home
+date: 2025-11-29
+category: Developmental Milestones, Early Intervention, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-jep-gambardella-6212570-1024x683.jpg"
-excerpt: "Parents can help autistic children develop independence skills through ABA strategies, visual supports, and structured routines. The process involves breaking tasks into manageable steps and celebrating small victories along the way."
-read_time: "8 min read"
+excerpt: Parents can help autistic children develop independence skills through ABA strategies, visual supports, and structured routines. The process involves breaking tasks into manageable steps and celebrating small victories along the way.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/29/how-to-help-your-child-with-autism-build-independence-at-home/"
+draft: false
+hidden: false
 ---
-
 # How to Help Your Child With Autism Build Independence at Home
 
 ### Helping Your Child Build Real Independence, One Small Step at a Time

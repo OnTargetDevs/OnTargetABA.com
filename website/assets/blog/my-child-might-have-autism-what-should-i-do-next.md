@@ -1,14 +1,15 @@
 ---
-title: "My Child Might Have Autism — What Should I Do Next?"
-date: "2025-11-06"
-category: "Early Intervention, Getting Started with ABA, Insurance & Funding, Parent Resources"
-author: "On Target ABA Team"
+title: My Child Might Have Autism — What Should I Do Next?
+date: 2025-11-06
+category: Early Intervention, Getting Started with ABA, Insurance & Funding, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-mikhail-nilov-8653455-1024x683.jpg"
-excerpt: "Parents beginning to notice potential autism signs in their child learn how to recognize early indicators, navigate the evaluation process, and understand how ABA therapy can support development even before formal diagnosis."
-read_time: "7 min read"
+excerpt: Parents beginning to notice potential autism signs in their child learn how to recognize early indicators, navigate the evaluation process, and understand how ABA therapy can support development even before formal diagnosis.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/11/06/my-child-might-have-autism-what-should-i-do-next/"
+draft: false
+hidden: false
 ---
-
 # My Child Might Have Autism — What Should I Do Next?
 
 ## When You First Begin to Wonder

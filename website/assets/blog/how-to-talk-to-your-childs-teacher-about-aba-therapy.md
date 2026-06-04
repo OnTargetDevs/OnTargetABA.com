@@ -1,14 +1,15 @@
 ---
 title: "How to Talk to Your Child's Teacher About ABA Therapy: A Parent's Guide"
-date: "2026-04-02"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-04-02
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-arina-krasnikova-6016370-1024x683.jpg"
-excerpt: "When school and therapy environments aren't coordinated, skills learned in one setting often fail to transfer to the other. This guide helps parents align their child's ABA therapy program with classroom instruction for better outcomes."
-read_time: ""
+excerpt: When school and therapy environments aren't coordinated, skills learned in one setting often fail to transfer to the other. This guide helps parents align their child's ABA therapy program with classroom instruction for better outcomes.
+read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/04/02/how-to-talk-to-your-childs-teacher-about-aba-therapy/"
+draft: false
+hidden: false
 ---
-
 # How to Talk to Your Child's Teacher About ABA Therapy
 
 Your child has started ABA therapy — or they're about to. And now you're wondering: how do I bring this into the school conversation? How do I make sure the teacher knows what's working at home and in therapy? How do I get everyone on the same page?

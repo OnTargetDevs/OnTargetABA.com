@@ -1,14 +1,15 @@
 ---
 title: "Mitochondrial Disease & Autism: Understanding the Connection"
-date: "2026-01-10"
-category: "ABA Therapy Basics, Getting Started with ABA"
-author: "On Target ABA Team"
+date: 2026-01-10
+category: ABA Therapy Basics, Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-shvetsa-3905794-scaled-e1768062574880-1024x770.jpg"
-excerpt: "The article explores whether mitochondrial disease and autism can occur together, explaining that while possible, this combination is rare and that each child's presentation is unique."
-read_time: ""
+excerpt: The article explores whether mitochondrial disease and autism can occur together, explaining that while possible, this combination is rare and that each child's presentation is unique.
+read_time: 3 min read
 source_url: "https://ontargetaba.com/2026/01/10/mitochondrial-disease-autism-what-parents-should-know/"
+draft: false
+hidden: false
 ---
-
 # Mitochondrial Disease & Autism: Understanding the Connection
 
 ### AI Summary

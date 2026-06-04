@@ -1,14 +1,15 @@
 ---
 title: "Navigating Family Gatherings: How to Handle Relatives' Reactions When Your Child Has Autism"
-date: "2025-11-01"
-category: "ABA Therapy Basics, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-01
+category: ABA Therapy Basics, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-shvetsa-11368600-1024x683.jpg"
-excerpt: "This article guides parents through managing family gatherings when their child has autism, offering practical strategies for handling relatives' reactions and helping children feel comfortable in social settings."
-read_time: "8 min read"
+excerpt: This article guides parents through managing family gatherings when their child has autism, offering practical strategies for handling relatives' reactions and helping children feel comfortable in social settings.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/01/navigating-family-gatherings-how-to-handle-relatives-reactions-when-your-child-has-autism/"
+draft: false
+hidden: false
 ---
-
 # Navigating Family Gatherings: How to Handle Relatives' Reactions When Your Child Has Autism
 
 ## Introduction: The Heart Behind Every Gathering

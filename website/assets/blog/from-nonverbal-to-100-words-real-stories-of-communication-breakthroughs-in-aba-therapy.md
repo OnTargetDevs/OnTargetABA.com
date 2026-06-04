@@ -1,14 +1,15 @@
 ---
 title: "From Nonverbal to 100 Words: Real Stories of Communication Breakthroughs in ABA Therapy"
-date: "2026-04-06"
-category: "Success Stories & Communication"
-author: "On Target ABA Team"
+date: 2026-04-06
+category: Success Stories & Communication
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-helenalopes-27177498-1024x683.jpg"
-excerpt: "Many parents of nonverbal children with autism describe a pivotal moment—sometimes a purposeful sound or eye contact rather than a first word. With proper support, communication breakthroughs become possible for children currently nonverbal or minimally verbal."
-read_time: "8 min read"
+excerpt: Many parents of nonverbal children with autism describe a pivotal moment—sometimes a purposeful sound or eye contact rather than a first word. With proper support, communication breakthroughs become possible for children currently nonverbal or minimally verbal.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/04/06/from-nonverbal-to-100-words-real-stories-of-communication-breakthroughs-in-aba-therapy/"
+draft: false
+hidden: false
 ---
-
 # From Nonverbal to 100 Words: Real Stories of Communication Breakthroughs in ABA Therapy
 
 There is a moment that many parents of nonverbal children with autism describe in almost identical terms. It's not always the first word — sometimes it's a sound that's different, a point that's purposeful, a moment of eye contact that says: I see you.

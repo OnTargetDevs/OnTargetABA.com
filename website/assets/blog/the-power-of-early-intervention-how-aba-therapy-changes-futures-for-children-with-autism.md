@@ -1,14 +1,15 @@
 ---
 title: "The Power of Early Intervention: How ABA Therapy Changes Futures for Children with Autism"
-date: "2025-10-25"
-category: "Early Intervention"
-author: "On Target ABA Team"
+date: 2025-10-25
+category: Early Intervention
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-keira-burton-6624269-1024x683.jpg"
-excerpt: "When it comes to supporting children with autism, time is one of the most powerful tools we have. The earlier a child receives intervention, the stronger the foundation for learning and growth becomes."
-read_time: "5 min read"
+excerpt: When it comes to supporting children with autism, time is one of the most powerful tools we have. The earlier a child receives intervention, the stronger the foundation for learning and growth becomes.
+read_time: 5 min read
 source_url: "https://ontargetaba.com/2025/10/25/the-power-of-early-intervention-how-aba-therapy-changes-futures-for-children-with-autism/"
+draft: false
+hidden: false
 ---
-
 # The Power of Early Intervention: How ABA Therapy Changes Futures for Children with Autism
 
 ### Introduction: Every Day Counts in a Child's Journey

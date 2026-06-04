@@ -1,14 +1,15 @@
 ---
 title: "Emotional Regulation in ABA Therapy: Helping Children Manage Big Feelings"
-date: "2026-02-16"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-02-16
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-karola-g-8909644-1024x683.jpg"
-excerpt: "The piece explains how emotional regulation in ABA therapy helps children with autism recognize, understand, and manage intense feelings through coping skills and communication strategies rather than behavioral suppression alone."
-read_time: "7 min read"
+excerpt: The piece explains how emotional regulation in ABA therapy helps children with autism recognize, understand, and manage intense feelings through coping skills and communication strategies rather than behavioral suppression alone.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/02/16/emotional-regulation-in-aba-therapy-helping-children-manage-big-feelings/"
+draft: false
+hidden: false
 ---
-
 # Emotional Regulation in ABA Therapy: Helping Children Manage Big Feelings
 
 If you've ever watched your child go from calm to overwhelmed in seconds, you know how intense big feelings can be.

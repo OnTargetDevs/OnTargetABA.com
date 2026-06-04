@@ -1,14 +1,15 @@
 ---
-title: "Why Parent Training in ABA Therapy Makes All the Difference"
-date: "2026-03-02"
-category: "Parent Resources"
-author: "On Target ABA Team"
+title: Why Parent Training in ABA Therapy Makes All the Difference
+date: 2026-03-02
+category: Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/Autism-Treatment-Parent-Training.jpg"
-excerpt: "Parent training empowers caregivers with practical strategies to support their child's growth at home. Real progress depends on consistency across environments beyond therapy sessions."
-read_time: "8 min read"
+excerpt: Parent training empowers caregivers with practical strategies to support their child's growth at home. Real progress depends on consistency across environments beyond therapy sessions.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/03/02/why-parent-training-in-aba-therapy-makes-all-the-difference/"
+draft: false
+hidden: false
 ---
-
 # Why Parent Training in ABA Therapy Makes All the Difference
 
 When families begin ABA therapy, most of the attention naturally focuses on the child.

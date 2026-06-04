@@ -1,14 +1,15 @@
 ---
-title: "Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing"
-date: "2026-02-26"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+title: Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing
+date: 2026-02-26
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-keira-burton-6624269-1-1024x683.jpg"
-excerpt: "Many parents notice developmental differences in their children but are uncertain where to start seeking diagnosis. This guide explains qualified professionals who can diagnose autism, what testing involves, insurance coverage options, and how to begin the evaluation process."
-read_time: "8 min read"
+excerpt: Many parents notice developmental differences in their children but are uncertain where to start seeking diagnosis. This guide explains qualified professionals who can diagnose autism, what testing involves, insurance coverage options, and how to begin the evaluation process.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/02/26/where-can-i-get-an-autism-diagnosis-a-parents-guide-to-autism-testing/"
+draft: false
+hidden: false
 ---
-
 # Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing
 
 If you're reading this, chances are you've noticed something.

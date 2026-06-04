@@ -1,14 +1,15 @@
 ---
-title: "When It Comes to Your Child's Progress, We Move Mountains"
-date: "2026-05-01"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+title: When It Comes to Your Child's Progress, We Move Mountains
+date: 2026-05-01
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-artempodrez-8088089-scaled-e1777621399854-1024x808.jpg"
 excerpt: "At On Target ABA, therapy represents genuine investment in each child's future through personalized, evidence-based care. The organization approaches development across four core skill areas: communication, social and play skills, emotional regulation, and positive behavior support."
-read_time: ""
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/05/01/when-it-comes-to-your-childs-progress-we-move-mountains/"
+draft: false
+hidden: false
 ---
-
 # When It Comes to Your Child's Progress, We Move Mountains
 
 ### More Than a Program. A Partnership.

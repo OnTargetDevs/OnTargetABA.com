@@ -1,14 +1,15 @@
 ---
 title: "Finding Your Community: A Guide for Families of Children With Autism"
-date: "2026-01-27"
-category: "Community & Events, Developmental Milestones"
-author: "On Target ABA Team"
+date: 2026-01-27
+category: Community & Events, Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-fauxels-3184396-1024x694.jpg"
-excerpt: "The article explains why finding community is essential for families of children with autism and how connection reduces stress, builds confidence, and supports both parents and children through practical approaches to building community."
-read_time: ""
+excerpt: The article explains why finding community is essential for families of children with autism and how connection reduces stress, builds confidence, and supports both parents and children through practical approaches to building community.
+read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/01/27/finding-your-community-a-guide-for-families-of-children-with-autism/"
+draft: false
+hidden: false
 ---
-
 # Finding Your Community: A Guide for Families of Children With Autism
 
 Raising a child with autism brings incredible joy, growth, and love — but it can also bring moments that feel isolating or overwhelming. Many parents share that they didn't realize how much they needed a community until they finally found one.

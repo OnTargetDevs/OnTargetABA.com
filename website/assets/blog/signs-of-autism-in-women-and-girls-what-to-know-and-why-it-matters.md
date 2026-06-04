@@ -1,14 +1,15 @@
 ---
 title: "Signs of Autism in Women and Girls: What to Know and Why It Matters"
-date: "2026-05-26"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-05-26
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-karola-g-8107703-1024x683.jpg"
-excerpt: "Autism in women and girls has been systematically missed for decades due to male-biased diagnostic criteria, the female tendency to mask autistic traits, and differing presentations from the typical male phenotype."
-read_time: ""
+excerpt: Autism in women and girls has been systematically missed for decades due to male-biased diagnostic criteria, the female tendency to mask autistic traits, and differing presentations from the typical male phenotype.
+read_time: 12 min read
 source_url: "https://ontargetaba.com/2026/05/26/signs-of-autism-in-women-and-girls-what-to-know-and-why-it-matters/"
+draft: false
+hidden: false
 ---
-
 # Signs of Autism in Women and Girls: What to Know and Why It Matters
 
 ## The Diagnosis That Never Came

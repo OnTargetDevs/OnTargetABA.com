@@ -1,14 +1,15 @@
 ---
 title: "ABA Therapy in Public Settings: Teaching Real-World Skills That Last"
-date: "2026-02-27"
-category: "Community & Events"
-author: "On Target ABA Team"
+date: 2026-02-27
+category: Community & Events
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-minh-ng-c-105197823-11598997-1024x681.jpg"
-excerpt: "ABA therapy in public settings helps children practice real-life skills outside structured environments. The blog explains why generalization matters, how therapists teach public skills safely, and how parents can support real-world learning."
-read_time: "8 min read"
+excerpt: ABA therapy in public settings helps children practice real-life skills outside structured environments. The blog explains why generalization matters, how therapists teach public skills safely, and how parents can support real-world learning.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/02/27/aba-therapy-in-public-settings-teaching-real-world-skills-that-last/"
+draft: false
+hidden: false
 ---
-
 # ABA Therapy in Public Settings: Teaching Real-World Skills That Last
 
 When parents first begin ABA therapy, most sessions happen in a structured environment — either at a center, at home, or in a clinic setting. There's a table. There are visuals. There are clear goals.

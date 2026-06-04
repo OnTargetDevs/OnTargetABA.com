@@ -1,14 +1,15 @@
 ---
 title: "Early Signs of Autism: A Parent-Friendly Guide to Understanding Development"
-date: "2026-01-17"
-category: "ABA Therapy Basics, Early Intervention, Parent Resources"
-author: "On Target ABA Team"
+date: 2026-01-17
+category: ABA Therapy Basics, Early Intervention, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-pnw-prod-7677888-scaled-e1768663030719-1024x724.jpg"
-excerpt: "The blog explains common early signs of autism in communication, social interaction, play, and sensory responses. It emphasizes that early awareness helps families access support sooner and provides guidance on when to seek evaluation."
-read_time: ""
+excerpt: The blog explains common early signs of autism in communication, social interaction, play, and sensory responses. It emphasizes that early awareness helps families access support sooner and provides guidance on when to seek evaluation.
+read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/01/17/early-signs-of-autism-a-parent-friendly-guide-to-understanding-development/"
+draft: false
+hidden: false
 ---
-
 # Early Signs of Autism: A Parent-Friendly Guide to Understanding Development
 
 ### Early Signs of Autism: A Parent-Friendly Guide to Understanding Development

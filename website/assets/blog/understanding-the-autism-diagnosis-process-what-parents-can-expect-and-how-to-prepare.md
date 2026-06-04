@@ -1,14 +1,15 @@
 ---
 title: "Understanding the Autism Diagnosis Process: What Parents Can Expect and How to Prepare"
-date: "2025-11-07"
-category: "Getting Started with ABA, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-07
+category: Getting Started with ABA, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-karola-g-7283493-1024x683.jpg"
-excerpt: "This guide helps parents understand the autism diagnosis journey from early screenings through developmental evaluations to starting therapy."
-read_time: "8 min read"
+excerpt: This guide helps parents understand the autism diagnosis journey from early screenings through developmental evaluations to starting therapy.
+read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/07/understanding-the-autism-diagnosis-process-what-parents-can-expect-and-how-to-prepare/"
+draft: false
+hidden: false
 ---
-
 # Understanding the Autism Diagnosis Process: What Parents Can Expect and How to Prepare
 
 ## When You First Begin to Wonder

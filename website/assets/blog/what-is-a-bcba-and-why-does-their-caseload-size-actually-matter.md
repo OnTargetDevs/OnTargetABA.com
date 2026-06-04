@@ -1,14 +1,15 @@
 ---
-title: "What Is a BCBA and Why Does Their Caseload Size Actually Matter?"
-date: "2026-03-23"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+title: What Is a BCBA and Why Does Their Caseload Size Actually Matter?
+date: 2026-03-23
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-cottonbro-6333743-1024x683.jpg"
-excerpt: "The post explains how BCBA caseload size directly impacts the quality of ABA therapy for children with autism, emphasizing that smaller caseloads enable better supervision, personalization, and parent communication."
-read_time: ""
+excerpt: The post explains how BCBA caseload size directly impacts the quality of ABA therapy for children with autism, emphasizing that smaller caseloads enable better supervision, personalization, and parent communication.
+read_time: 3 min read
 source_url: "https://ontargetaba.com/2026/03/23/what-is-a-bcba-and-why-does-their-caseload-size-actually-matter/"
+draft: false
+hidden: false
 ---
-
 # What Is a BCBA and Why Does Their Caseload Size Actually Matter?
 
 > "Not all ABA therapy is created equal — and one of the biggest factors most parents never think to ask about is BCBA caseload size."

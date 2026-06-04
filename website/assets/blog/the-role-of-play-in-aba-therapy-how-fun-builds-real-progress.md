@@ -1,14 +1,15 @@
 ---
 title: "The Role of Play in ABA Therapy: How Fun Builds Real Progress"
-date: "2025-11-13"
-category: "Early Intervention, Parent Resources"
-author: "On Target ABA Team"
+date: 2025-11-13
+category: Early Intervention, Parent Resources
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-kseniachernaya-8535193-1024x684.jpg"
-excerpt: "Play serves as a foundational learning tool in ABA therapy, enabling children with autism to develop communication, social, and problem-solving skills through joyful, engaging activities rather than traditional structured worksheets and repetition."
-read_time: "7 min read"
+excerpt: Play serves as a foundational learning tool in ABA therapy, enabling children with autism to develop communication, social, and problem-solving skills through joyful, engaging activities rather than traditional structured worksheets and repetition.
+read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/11/13/the-role-of-play-in-aba-therapy-how-fun-builds-real-progress/"
+draft: false
+hidden: false
 ---
-
 # The Role of Play in ABA Therapy: How Fun Builds Real Progress
 
 ## Play Is the Heart of Learning

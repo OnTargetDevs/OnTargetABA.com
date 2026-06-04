@@ -1,14 +1,15 @@
 ---
 title: "Executive Functioning and Autism: What It Is, Why It Matters, and How ABA Therapy Helps"
-date: "2026-05-19"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+date: 2026-05-19
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-natalie-bond-320378-4090006-1024x683.jpg"
-excerpt: "Executive functioning represents the invisible scaffolding behind planning, organizing, starting tasks, managing emotions, shifting between activities, and remembering what to do next. For autistic children, these challenges frequently create more daily difficulty than other behavioral or communication issues."
-read_time: ""
+excerpt: Executive functioning represents the invisible scaffolding behind planning, organizing, starting tasks, managing emotions, shifting between activities, and remembering what to do next. For autistic children, these challenges frequently create more daily difficulty than other behavioral or communication issues.
+read_time: 13 min read
 source_url: "https://ontargetaba.com/2026/05/19/executive-functioning-and-autism-what-it-is-why-it-matters-and-how-aba-therapy-helps/"
+draft: false
+hidden: false
 ---
-
 # Executive Functioning and Autism: What It Is, Why It Matters, and How ABA Therapy Helps
 
 ## The Invisible Challenge

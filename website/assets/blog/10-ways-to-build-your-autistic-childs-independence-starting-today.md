@@ -1,14 +1,15 @@
 ---
-title: "10 Ways to Build Your Autistic Child's Independence — Starting Today"
-date: "2026-05-18"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+title: 10 Ways to Build Your Autistic Child's Independence — Starting Today
+date: 2026-05-18
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-kseniachernaya-7301144-1024x684.jpg"
-excerpt: "Independence requires deliberate, intentional building for autistic children through evidence-based strategies. The article presents ten approaches spanning communication, routines, self-care, and vocational readiness across developmental stages."
-read_time: ""
+excerpt: Independence requires deliberate, intentional building for autistic children through evidence-based strategies. The article presents ten approaches spanning communication, routines, self-care, and vocational readiness across developmental stages.
+read_time: 16 min read
 source_url: "https://ontargetaba.com/2026/05/18/10-ways-to-build-your-autistic-childs-independence-starting-today/"
+draft: false
+hidden: false
 ---
-
 # 10 Ways to Build Your Autistic Child's Independence — Starting Today
 
 ### AI Summary

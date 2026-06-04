@@ -1,14 +1,15 @@
 ---
-title: "\"If My Child Can Talk, They Don't Need ABA\" — Why This Myth Is Holding Families Back"
-date: "2026-05-06"
-category: "Getting Started with ABA"
-author: "On Target ABA Team"
+title: "\\\"If My Child Can Talk, They Don't Need ABA\\\" — Why This Myth Is Holding Families Back"
+date: 2026-05-06
+category: Getting Started with ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-bruno-miranda-photography-1724266-12920698-1024x683.jpg"
-excerpt: "One persistent myth in autism support is that verbal children don't need ABA therapy. This misconception is incorrect and can delay access to evidence-based interventions that meaningfully improve outcomes across the full autism spectrum."
-read_time: ""
+excerpt: One persistent myth in autism support is that verbal children don't need ABA therapy. This misconception is incorrect and can delay access to evidence-based interventions that meaningfully improve outcomes across the full autism spectrum.
+read_time: 13 min read
 source_url: "https://ontargetaba.com/2026/05/06/if-my-child-can-talk-they-dont-need-aba-why-this-myth-is-holding-families-back/"
+draft: false
+hidden: false
 ---
-
 # "If My Child Can Talk, They Don't Need ABA" — Why This Myth Is Holding Families Back
 
 ### Myth That Gets in the Way

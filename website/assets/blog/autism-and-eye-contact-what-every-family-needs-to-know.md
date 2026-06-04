@@ -1,14 +1,15 @@
 ---
 title: "Autism and Eye Contact: What Every Family Needs to Know"
-date: "2026-04-14"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+date: 2026-04-14
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-laziccvanja-14490820-1024x683.jpg"
-excerpt: "Eye contact is frequently misunderstood in autism contexts. This guide explains the neuroscience behind why autistic children may avoid eye contact and examines how forcing it can cause harm."
-read_time: ""
+excerpt: Eye contact is frequently misunderstood in autism contexts. This guide explains the neuroscience behind why autistic children may avoid eye contact and examines how forcing it can cause harm.
+read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/14/autism-and-eye-contact-what-every-family-needs-to-know/"
+draft: false
+hidden: false
 ---
-
 # Autism and Eye Contact: What Every Family Needs to Know
 
 ### AI Summary

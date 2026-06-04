@@ -1,14 +1,15 @@
 ---
 title: "Beyond the Clinic: How ABA Therapy Builds Confidence in Everyday Life"
-date: "2025-10-21"
-category: "Developmental Milestones"
-author: "On Target ABA Team"
+date: 2025-10-21
+category: Developmental Milestones
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-polesietoys-31136698-scaled-e1761064793769-1024x704.jpg"
-excerpt: "The piece explores how ABA therapy extends beyond clinical sessions into real-world settings. The greatest measure of success isn't just mastered goals on a data sheet but watching a child use those skills in real life."
-read_time: "6 min read"
+excerpt: The piece explores how ABA therapy extends beyond clinical sessions into real-world settings. The greatest measure of success isn't just mastered goals on a data sheet but watching a child use those skills in real life.
+read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/10/21/beyond-the-clinic-how-aba-therapy-builds-confidence-in-everyday-life/"
+draft: false
+hidden: false
 ---
-
 # Beyond the Clinic: How ABA Therapy Builds Confidence in Everyday Life
 
 ### Introduction: Progress That Lasts Beyond Session Time

@@ -1,14 +1,15 @@
 ---
 title: "2025 Autism by the Numbers: What the Latest Data Means for Families"
-date: "2026-04-21"
-category: "Community & Events"
-author: "On Target ABA Team"
+date: 2026-04-21
+category: Community & Events
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-yankrukov-8613146-1024x683.jpg"
-excerpt: "Autism Speaks' 2025 annual report reveals the prevalence rate has reached 1 in 31 children, with persistent gaps in early diagnosis, healthcare access, and adult employment. The report provides critical data families need to understand the current landscape and advocate for better support."
-read_time: ""
+excerpt: Autism Speaks' 2025 annual report reveals the prevalence rate has reached 1 in 31 children, with persistent gaps in early diagnosis, healthcare access, and adult employment. The report provides critical data families need to understand the current landscape and advocate for better support.
+read_time: 9 min read
 source_url: "https://ontargetaba.com/2026/04/21/2025-autism-by-the-numbers-what-the-latest-data-means-for-families/"
+draft: false
+hidden: false
 ---
-
 # 2025 Autism by the Numbers: What the Latest Data Means for Families
 
 ### AI Summary

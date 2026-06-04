@@ -1,14 +1,15 @@
 ---
 title: "Autism and Mental Health: Understanding Co-Occurring Conditions and How to Get Support"
-date: "2026-04-30"
-category: "ABA Therapy Basics"
-author: "On Target ABA Team"
+date: 2026-04-30
+category: ABA Therapy Basics
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-nataliaolivera-30594012-1024x683.jpg"
-excerpt: "The majority of autistic children and adults experience at least one co-occurring mental health condition — with anxiety, ADHD, depression, OCD, and sleep disorders among the most common."
-read_time: ""
+excerpt: The majority of autistic children and adults experience at least one co-occurring mental health condition — with anxiety, ADHD, depression, OCD, and sleep disorders among the most common.
+read_time: 12 min read
 source_url: "https://ontargetaba.com/2026/04/30/autism-and-mental-health-understanding-co-occurring-conditions-and-how-to-get-support/"
+draft: false
+hidden: false
 ---
-
 # Autism and Mental Health: Understanding Co-Occurring Conditions and How to Get Support
 
 ### AI Summary

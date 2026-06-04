@@ -1,14 +1,15 @@
 ---
 title: "Why a Simple Game of Bowling Is Actually Serious Therapy: Turn-Taking and Pretend Play in ABA"
-date: "2026-03-24"
-category: "Life at On Target ABA"
-author: "On Target ABA Team"
+date: 2026-03-24
+category: Life at On Target ABA
+author: On Target ABA Team
 hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-pavel-danilyuk-7429599-scaled-e1774330817987-1024x686.jpg"
-excerpt: "A game of pretend bowling looks like pure fun to passersby, but inside an ABA therapy center it represents carefully designed skill-building in disguise — targeting developmental goals like turn-taking and cooperative play for children with autism."
-read_time: ""
+excerpt: A game of pretend bowling looks like pure fun to passersby, but inside an ABA therapy center it represents carefully designed skill-building in disguise — targeting developmental goals like turn-taking and cooperative play for children with autism.
+read_time: 9 min read
 source_url: "https://ontargetaba.com/2026/03/24/why-a-simple-game-of-bowling-is-actually-serious-therapy-turn-taking-and-pretend-play-in-aba/"
+draft: false
+hidden: false
 ---
-
 # Why a Simple Game of Bowling Is Actually Serious Therapy: Turn-Taking and Pretend Play in ABA
 
 ## It Doesn't Always Look Like Therapy — and That's the Point
