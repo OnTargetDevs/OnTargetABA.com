@@ -1,78 +1,174 @@
 /* ============================================================
-   On Target ABA — per-page content overrides
-   On DOMContentLoaded:
-     - derive slug from location.pathname ("/" -> "index")
-     - fetch /assets/data/pages/{slug}.overrides.json (404 OK, silent)
-     - for each key in `overrides`, find [data-editable="{key}"] and
-       apply: text -> textContent, image -> src + alt
-     - fetch /assets/data/pages.json; if this page is hidden, inject
-       <meta name="robots" content="noindex,nofollow"> into <head>
+   page-overrides.js
+   Runs on every public page right after app.js. Fetches three
+   per-page JSON files (if present) and patches the live DOM:
+
+     - assets/data/pages/{slug}.overrides.json  -> text + image edits
+     - assets/data/pages/{slug}.seo.json        -> head meta / title
+     - assets/data/pages.json                   -> hidden -> noindex
+
+   Override keys can be either:
+     * "<data-editable attribute value>"   - tag-based, original style
+     * "auto:t<index>"  / "auto:s<index>"  - auto-walk index used by
+                                             the admin page-editor
+
+   Override entry shapes:
+     { type: "text",         value: "..." }
+     { type: "image",        src: "...", alt: "..." }
+     { type: "section-hide", hidden: true }
+     { type: "section-html", html: "<section>...</section>" }
    ============================================================ */
 (() => {
   'use strict';
 
   function pageSlug() {
-    let p = location.pathname || '/';
+    let p = location.pathname;
     if (p === '' || p === '/' || p === '/index.html') return 'index';
     if (p.length > 1 && p.endsWith('/')) p = p.slice(0, -1);
-    if (p.endsWith('/index.html')) p = p.slice(0, -11);
-    if (p.endsWith('.html')) p = p.slice(0, -5);
-    if (p.startsWith('/')) p = p.slice(1);
+    p = p.replace(/^\//, '').replace(/\.html$/, '');
     return p || 'index';
   }
 
-  function applyOverrides(payload) {
-    if (!payload || !payload.overrides || typeof payload.overrides !== 'object') return;
-    Object.keys(payload.overrides).forEach((key) => {
-      const entry = payload.overrides[key];
-      if (!entry || typeof entry !== 'object') return;
-      const el = document.querySelector('[data-editable="' + CSS.escape(key) + '"]');
-      if (!el) return;
-      if (entry.type === 'text' && typeof entry.value === 'string') {
-        el.textContent = entry.value;
-      } else if (entry.type === 'image') {
-        const img = el.tagName === 'IMG' ? el : el.querySelector('img');
-        if (!img) return;
-        if (typeof entry.src === 'string') img.src = entry.src;
-        if (typeof entry.alt === 'string') img.alt = entry.alt;
+  // Auto-walk every text-bearing leaf + every section. The page-editor
+  // performs the SAME walk and assigns the same indexes, so an
+  // "auto:t12" key in the overrides JSON refers to the 13th text leaf
+  // in this DOM. Stable as long as the static markup doesn't change
+  // shape — content edits don't shift the index.
+  function autoWalk(doc) {
+    const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'IFRAME']);
+    const TEXT_TAGS = new Set([
+      'H1','H2','H3','H4','H5','H6','P','LI','TD','TH','BLOCKQUOTE',
+      'BUTTON','A','SUMMARY','FIGCAPTION','LABEL','DD','DT',
+      'STRONG','EM','SPAN'
+    ]);
+    const SECTION_TAGS = new Set(['SECTION', 'ASIDE', 'HEADER', 'FOOTER', 'ARTICLE', 'MAIN']);
+
+    const texts = [];
+    const sections = [];
+    function walk(el) {
+      if (!el || SKIP_TAGS.has(el.tagName)) return;
+      if (el.tagName && SECTION_TAGS.has(el.tagName) && el !== doc.body) {
+        sections.push(el);
       }
+      const isTextLeaf =
+        TEXT_TAGS.has(el.tagName) &&
+        el.children.length === 0 &&
+        el.textContent && el.textContent.trim().length > 0;
+      if (isTextLeaf) texts.push(el);
+      for (const c of el.children) walk(c);
+    }
+    walk(doc.body);
+    return { texts, sections };
+  }
+
+  function applyOverride(node, override) {
+    if (!node || !override) return;
+    switch (override.type) {
+      case 'text':
+        if ('value' in override) node.textContent = override.value;
+        break;
+      case 'image':
+        if (override.src) node.setAttribute('src', override.src);
+        if (override.alt != null) node.setAttribute('alt', override.alt);
+        break;
+      case 'section-hide':
+        if (override.hidden) {
+          node.style.display = 'none';
+          node.setAttribute('aria-hidden', 'true');
+        }
+        break;
+      case 'section-html':
+        if (override.html) node.outerHTML = override.html;
+        break;
+    }
+  }
+
+  function cssEscape(s) {
+    return String(s).replace(/(["\\])/g, '\\$1');
+  }
+
+  function applyOverrides(overrides) {
+    if (!overrides) return;
+    const { texts, sections } = autoWalk(document);
+    // Pass 1: data-editable keys.
+    Object.keys(overrides).forEach((key) => {
+      if (key.startsWith('auto:')) return;
+      const node = document.querySelector('[data-editable="' + cssEscape(key) + '"]');
+      if (node) applyOverride(node, overrides[key]);
+    });
+    // Pass 2: auto-walk keys.
+    Object.keys(overrides).forEach((key) => {
+      if (!key.startsWith('auto:')) return;
+      const tag = key.slice(5, 6);
+      const idx = parseInt(key.slice(6), 10);
+      const node = tag === 't' ? texts[idx]
+                  : tag === 's' ? sections[idx]
+                  : null;
+      if (node) applyOverride(node, overrides[key]);
     });
   }
 
-  function injectNoindex() {
-    if (document.querySelector('meta[name="robots"]')) return;
-    const meta = document.createElement('meta');
-    meta.setAttribute('name', 'robots');
-    meta.setAttribute('content', 'noindex,nofollow');
-    (document.head || document.documentElement).appendChild(meta);
+  function applySeo(seo) {
+    if (!seo) return;
+    if (seo.title) document.title = seo.title;
+    setMeta('description', seo.description);
+    setMeta('keywords', seo.keywords);
+    setOg('og:title', seo.ogTitle || seo.title);
+    setOg('og:description', seo.ogDescription || seo.description);
+    setOg('og:image', seo.ogImage);
+    setMeta('twitter:title', seo.twitterTitle || seo.title);
+    setMeta('twitter:description', seo.twitterDescription || seo.description);
+    setMeta('twitter:image', seo.twitterImage || seo.ogImage);
+    setCanonical(seo.canonical);
+  }
+  function setMeta(name, value) {
+    if (!value) return;
+    let el = document.querySelector('meta[name="' + name + '"]');
+    if (!el) { el = document.createElement('meta'); el.setAttribute('name', name); document.head.appendChild(el); }
+    el.setAttribute('content', value);
+  }
+  function setOg(property, value) {
+    if (!value) return;
+    let el = document.querySelector('meta[property="' + property + '"]');
+    if (!el) { el = document.createElement('meta'); el.setAttribute('property', property); document.head.appendChild(el); }
+    el.setAttribute('content', value);
+  }
+  function setCanonical(href) {
+    if (!href) return;
+    let el = document.querySelector('link[rel="canonical"]');
+    if (!el) { el = document.createElement('link'); el.setAttribute('rel', 'canonical'); document.head.appendChild(el); }
+    el.setAttribute('href', href);
   }
 
-  function run() {
+  function applyRegistry(pages) {
+    if (!Array.isArray(pages)) return;
     const slug = pageSlug();
-
-    // Overrides — 404 is fine.
-    fetch('/assets/data/pages/' + encodeURIComponent(slug) + '.overrides.json', {
-      credentials: 'same-origin',
-      cache: 'no-cache',
-    })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => { if (data) applyOverrides(data); })
-      .catch(() => { /* silent */ });
-
-    // Pages registry — used to set noindex on hidden pages.
-    fetch('/assets/data/pages.json', { credentials: 'same-origin' })
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (!data || !Array.isArray(data.pages)) return;
-        const entry = data.pages.find((p) => p.slug === slug);
-        if (entry && entry.hidden) injectNoindex();
-      })
-      .catch(() => { /* silent */ });
+    const entry = pages.find((p) => p && (p.slug || '').toLowerCase() === slug.toLowerCase());
+    if (entry && entry.hidden) {
+      const m = document.createElement('meta');
+      m.name = 'robots';
+      m.content = 'noindex,nofollow';
+      document.head.appendChild(m);
+    }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', run);
-  } else {
-    run();
+  function jsonOrNull(url) {
+    return fetch(url, { credentials: 'same-origin' })
+      .then((r) => r.ok ? r.json() : null)
+      .catch(() => null);
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const slug = pageSlug();
+    Promise.all([
+      jsonOrNull('/assets/data/pages/' + slug + '.overrides.json'),
+      jsonOrNull('/assets/data/pages/' + slug + '.seo.json'),
+      jsonOrNull('/assets/data/pages.json'),
+    ]).then(([over, seo, pages]) => {
+      const overrides = over && (over.overrides || over) ? (over.overrides || over) : null;
+      applyOverrides(overrides);
+      applySeo(seo);
+      applyRegistry(pages && pages.pages ? pages.pages : pages);
+    });
+  });
 })();

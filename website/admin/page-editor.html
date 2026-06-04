@@ -33,6 +33,21 @@ tailwind.config = {
 <style>
   html, body { height: 100%; }
   body.admin { display: flex; flex-direction: column; }
+  .edit-badge { position: absolute; z-index: 10; pointer-events: auto; }
+  .section-toolbar {
+    position: absolute; z-index: 11; display: flex; gap: 4px;
+    background: rgba(232,79,59,.95); color: white; padding: 4px 6px;
+    border-radius: 6px; font-size: 11px; font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,.15); pointer-events: auto;
+  }
+  .section-toolbar button { background: rgba(255,255,255,.18); border: 0; color: inherit; padding: 3px 7px; border-radius: 4px; cursor: pointer; font-weight: inherit; }
+  .section-toolbar button:hover { background: rgba(255,255,255,.32); }
+  .section-toolbar.preview-hidden, .edit-badge.preview-hidden { display: none !important; }
+  .seo-panel { border: 1px solid var(--line); border-radius: 12px; padding: 1rem; margin-bottom: 1rem; background: var(--cream); }
+  .seo-panel summary { font-weight: 600; cursor: pointer; color: var(--ink); }
+  .seo-panel .field { margin-top: .6rem; }
+  .seo-panel input, .seo-panel textarea { width: 100%; }
+  .seo-panel textarea { min-height: 60px; }
 </style>
 </head>
 <body class="admin font-sans">
@@ -60,13 +75,30 @@ tailwind.config = {
       <div class="panel-head">
         <div>
           <p class="admin-eyebrow">Editing</p>
-          <h2 class="admin-h2" id="panel-slug">—</h2>
+          <h2 class="admin-h2" id="panel-slug">&mdash;</h2>
         </div>
-        <button class="btn btn-ghost btn-sm" type="button" id="save-template-btn" title="Save current page as a reusable template">Save as template</button>
+        <button class="btn btn-ghost btn-sm" type="button" id="save-template-btn" title="Save current page as a reusable template">Save as page template</button>
       </div>
       <div class="panel-body">
+
+        <details class="seo-panel" id="seo-box">
+          <summary>SEO &amp; meta tags</summary>
+          <div class="field"><label>Title (browser tab + Google snippet)</label><input class="input" type="text" data-seo="title" maxlength="120" placeholder="On Target ABA &mdash; ..."></div>
+          <div class="field"><label>Meta description</label><textarea class="input" data-seo="description" maxlength="320" placeholder="One or two sentences search engines show."></textarea></div>
+          <div class="field"><label>Keywords (comma-separated)</label><input class="input" type="text" data-seo="keywords" placeholder="aba therapy, autism testing, ..."></div>
+          <div class="field"><label>Canonical URL</label><input class="input" type="url" data-seo="canonical" placeholder="https://ontargetaba.com/this-page"></div>
+          <div class="field"><label>OG title (share previews)</label><input class="input" type="text" data-seo="ogTitle" maxlength="120"></div>
+          <div class="field"><label>OG description</label><textarea class="input" data-seo="ogDescription" maxlength="320"></textarea></div>
+          <div class="field"><label>OG image URL</label><input class="input" type="url" data-seo="ogImage" placeholder="/assets/og/...svg or full URL"></div>
+          <div class="field"><label>Twitter image URL</label><input class="input" type="url" data-seo="twitterImage"></div>
+          <div style="margin-top:.8rem;display:flex;gap:.5rem;">
+            <button class="btn btn-primary btn-sm" type="button" id="save-seo-btn">Save SEO &amp; open PR</button>
+            <span class="admin-muted" id="seo-status" style="font-size:.78rem;align-self:center;"></span>
+          </div>
+        </details>
+
         <p class="admin-muted" style="font-size:0.85rem;margin-bottom:0.85rem;">
-          Click any pink <strong>Edit</strong> badge on the page to change copy or swap an image. Edits queue up here and submit as one pull request.
+          Click any pink badge to edit text or an image. Each section in the page has its own toolbar &mdash; hide it, save it as a template, replace it with one, or insert another template after it. Edits queue here and submit as one pull request.
         </p>
         <div id="changes-list">
           <div class="empty">No pending changes.</div>
@@ -104,6 +136,8 @@ tailwind.config = {
     const discardBtn = document.getElementById('discard-btn');
     const previewToggle = document.getElementById('preview-toggle');
     const saveTemplateBtn = document.getElementById('save-template-btn');
+    const saveSeoBtn = document.getElementById('save-seo-btn');
+    const seoStatus = document.getElementById('seo-status');
 
     const dirty = Admin.dirtyGuard();
     const draftKey = 'page-editor:' + slug;
@@ -111,43 +145,66 @@ tailwind.config = {
     let initialOverrides = {};
     let pageSha = null;
     let badges = [];
+    let toolbars = [];
+    let textNodes = [];
+    let sectionNodes = [];
     let previewMode = false;
+    let sectionTemplates = [];
+    let pendingSeo = {};
+    let initialSeo = {};
 
-    // Restore localStorage draft if present
     const restored = Admin.drafts.load(draftKey);
     if (restored && restored.pendingOverrides) {
       pendingOverrides = restored.pendingOverrides;
       Admin.toast('Restored unsaved changes from your last session', 'info');
     }
 
-    // Fetch page data
     try {
       const data = await Admin.api.get('/api/pages/' + encodeURIComponent(slug));
       initialOverrides = (data && data.overrides) || {};
       pageSha = data && data.sha && (data.sha.overrides || data.sha);
       if (data && data.registry && data.registry.path) liveLink.href = data.registry.path;
-    } catch (err) {
-      console.error(err);
-      Admin.toast('Could not load page overrides', 'error');
-    }
+    } catch (err) { console.error(err); Admin.toast('Could not load page overrides', 'error'); }
 
-    // Load the iframe with the live page
+    try {
+      const seoRes = await Admin.api.get('/api/pages/' + encodeURIComponent(slug) + '/seo');
+      initialSeo = (seoRes && seoRes.seo) || {};
+      Object.keys(initialSeo).forEach(function (k) {
+        const el = document.querySelector('[data-seo="' + k + '"]');
+        if (el) el.value = initialSeo[k];
+      });
+    } catch (err) { console.warn('seo load:', err); }
+
+    try {
+      const tpl = await Admin.api.get('/api/section-templates');
+      sectionTemplates = (tpl && tpl.templates) || [];
+    } catch (err) { sectionTemplates = []; }
+
     iframe.src = liveLink.href + (liveLink.href.includes('?') ? '&' : '?') + 'admin=1';
-
     iframe.addEventListener('load', function () {
-      try {
-        annotateIframe();
-      } catch (err) {
-        console.error(err);
-        Admin.toast('Could not attach editor (iframe origin?)', 'error');
-      }
+      try { annotateIframe(); } catch (err) { console.error(err); Admin.toast('Could not attach editor (iframe origin?)', 'error'); }
       renderChanges();
     });
 
-    // Reposition badges on iframe scroll/resize
+    function autoWalk(doc) {
+      const SKIP = new Set(['SCRIPT','STYLE','NOSCRIPT','TEMPLATE','IFRAME']);
+      const TEXT_TAGS = new Set(['H1','H2','H3','H4','H5','H6','P','LI','TD','TH','BLOCKQUOTE','BUTTON','A','SUMMARY','FIGCAPTION','LABEL','DD','DT','STRONG','EM','SPAN']);
+      const SECTION_TAGS = new Set(['SECTION','ASIDE','HEADER','FOOTER','ARTICLE','MAIN']);
+      const texts = []; const sections = [];
+      (function walk(el) {
+        if (!el || SKIP.has(el.tagName)) return;
+        if (el.tagName && SECTION_TAGS.has(el.tagName) && el !== doc.body) sections.push(el);
+        const isLeaf = TEXT_TAGS.has(el.tagName) && el.children.length === 0 &&
+                       el.textContent && el.textContent.trim().length > 0;
+        if (isLeaf) texts.push(el);
+        for (const c of el.children) walk(c);
+      })(doc.body);
+      return { texts, sections };
+    }
+
     function attachBadgeReflow(doc) {
       const win = doc.defaultView;
-      const onChange = Admin.debounce(positionBadges, 30);
+      const onChange = Admin.debounce(positionOverlays, 30);
       win.addEventListener('scroll', onChange, { passive: true });
       win.addEventListener('resize', onChange);
       const ro = new ResizeObserver(onChange);
@@ -155,59 +212,191 @@ tailwind.config = {
     }
 
     function annotateIframe() {
-      // Wipe any prior badges
       badges.forEach(function (b) { if (b.node) b.node.remove(); });
-      badges = [];
-
+      toolbars.forEach(function (t) { if (t.node) t.node.remove(); });
+      badges = []; toolbars = [];
       const doc = iframe.contentDocument;
       if (!doc) return;
-      const nodes = doc.querySelectorAll('[data-editable]');
-      nodes.forEach(function (node) {
-        const key = node.getAttribute('data-editable');
-        if (!key) return;
-        const isImage = node.tagName === 'IMG' || node.hasAttribute('data-editable-image');
-        // Apply already-pending edits visually so the iframe reflects the queue
-        applyOverride(node, key, pendingOverrides[key] || initialOverrides[key]);
 
-        const badge = document.createElement('button');
-        badge.type = 'button';
-        badge.className = 'edit-badge';
-        badge.textContent = isImage ? 'Image' : 'Edit';
-        badge.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          if (isImage) openImageModal(node, key);
-          else activateTextEdit(node, key);
+      const { texts, sections } = autoWalk(doc);
+      textNodes = texts; sectionNodes = sections;
+
+      // 1) Manual data-editable tags (existing pattern) take precedence.
+      const tagged = doc.querySelectorAll('[data-editable]');
+      const taggedSet = new Set(Array.from(tagged));
+      tagged.forEach(function (node) {
+        const key = node.getAttribute('data-editable');
+        const isImage = node.tagName === 'IMG' || node.hasAttribute('data-editable-image');
+        applyOverride(node, key, pendingOverrides[key] || initialOverrides[key]);
+        const badge = mkBadge(isImage ? 'Image' : 'Edit', '#E84F3B', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          if (isImage) openImageModal(node, key); else activateTextEdit(node, key);
         });
         iframeWrap.appendChild(badge);
         badges.push({ node: badge, target: node, key: key });
       });
 
+      // 2) Auto-walk text leaves: any text not already tagged.
+      texts.forEach(function (node, idx) {
+        if (taggedSet.has(node)) return;
+        const key = 'auto:t' + idx;
+        applyOverride(node, key, pendingOverrides[key]);
+        const badge = mkBadge('Edit', '#0E5E6E', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          activateTextEdit(node, key);
+        });
+        iframeWrap.appendChild(badge);
+        badges.push({ node: badge, target: node, key: key });
+      });
+
+      // 3) Images that aren't tagged: walk all <img> and offer Image swap.
+      const imgs = doc.querySelectorAll('img');
+      imgs.forEach(function (node, idx) {
+        if (taggedSet.has(node)) return;
+        const key = 'auto:i' + idx;
+        applyOverride(node, key, pendingOverrides[key]);
+        const badge = mkBadge('Image', '#00B7EA', function (e) {
+          e.preventDefault(); e.stopPropagation();
+          openImageModal(node, key);
+        });
+        iframeWrap.appendChild(badge);
+        badges.push({ node: badge, target: node, key: key });
+      });
+
+      // 4) Per-section toolbar.
+      sections.forEach(function (node, idx) {
+        const key = 'auto:s' + idx;
+        applyOverride(node, key, pendingOverrides[key]);
+        const tb = mkSectionToolbar(node, key);
+        iframeWrap.appendChild(tb);
+        toolbars.push({ node: tb, target: node, key: key });
+      });
+
       attachBadgeReflow(doc);
-      positionBadges();
+      positionOverlays();
     }
 
-    function positionBadges() {
+    function mkBadge(label, color, onClick) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'edit-badge';
+      b.textContent = label;
+      b.style.background = color;
+      b.style.color = '#fff';
+      b.style.padding = '2px 8px';
+      b.style.borderRadius = '999px';
+      b.style.fontSize = '10px';
+      b.style.fontWeight = '700';
+      b.style.lineHeight = '1';
+      b.style.border = '2px solid #fff';
+      b.style.cursor = 'pointer';
+      b.style.boxShadow = '0 2px 6px rgba(0,0,0,.18)';
+      b.addEventListener('click', onClick);
+      return b;
+    }
+
+    function mkSectionToolbar(node, key) {
+      const tb = document.createElement('div');
+      tb.className = 'section-toolbar';
+      const isHidden = (pendingOverrides[key] && pendingOverrides[key].type === 'section-hide' && pendingOverrides[key].hidden);
+      tb.innerHTML =
+        '<button data-act="hide">' + (isHidden ? 'Unhide' : 'Hide') + '</button>' +
+        '<button data-act="save">Save as template</button>' +
+        '<button data-act="replace">Replace</button>' +
+        '<button data-act="insert">Insert after</button>';
+      tb.querySelector('[data-act="hide"]').addEventListener('click', function () {
+        const isHiddenNow = pendingOverrides[key] && pendingOverrides[key].type === 'section-hide' && pendingOverrides[key].hidden;
+        if (isHiddenNow) {
+          delete pendingOverrides[key];
+          node.style.display = '';
+          node.removeAttribute('aria-hidden');
+        } else {
+          pendingOverrides[key] = { type: 'section-hide', hidden: true };
+          node.style.display = 'none';
+          node.setAttribute('aria-hidden', 'true');
+        }
+        markDirty(); renderChanges(); annotateIframe();
+      });
+      tb.querySelector('[data-act="save"]').addEventListener('click', async function () {
+        const name = prompt('Save this section as a template named (lowercase, e.g. "feature-grid")', '');
+        if (!name) return;
+        const slug = Admin.slugify(name);
+        if (!slug) { Admin.toast('Invalid name', 'error'); return; }
+        const html = node.outerHTML;
+        try {
+          const res = await Admin.api.post('/api/section-templates/save', { name: slug, html: html });
+          if (res && res.pr) Admin.showPrSubmittedModal(res.pr, { title: 'Section template "' + slug + '"' });
+        } catch (err) { Admin.toast(err.message || 'Save failed', 'error'); }
+      });
+      tb.querySelector('[data-act="replace"]').addEventListener('click', async function () { await pickTemplateAndApply('replace', node, key); });
+      tb.querySelector('[data-act="insert"]').addEventListener('click', async function () { await pickTemplateAndApply('insert', node, key); });
+      return tb;
+    }
+
+    async function pickTemplateAndApply(mode, node, key) {
+      if (!sectionTemplates.length) {
+        try {
+          const tpl = await Admin.api.get('/api/section-templates');
+          sectionTemplates = (tpl && tpl.templates) || [];
+        } catch (e) { /* ignore */ }
+      }
+      if (!sectionTemplates.length) { Admin.toast('No section templates yet — save one first via Save as template.', 'info'); return; }
+      const name = prompt('Pick a section template (' + sectionTemplates.map(function(t){return t.name;}).join(', ') + ')', sectionTemplates[0].name);
+      if (!name) return;
+      let html;
+      try {
+        const r = await fetch('/api/section-templates/' + encodeURIComponent(name), { credentials: 'same-origin' });
+        if (!r.ok) throw new Error('not found');
+        html = await r.text();
+      } catch (err) { Admin.toast('Could not load template', 'error'); return; }
+      if (mode === 'replace') {
+        pendingOverrides[key] = { type: 'section-html', html: html };
+        const wrapper = node.ownerDocument.createElement('div');
+        wrapper.innerHTML = html;
+        const fresh = wrapper.firstElementChild;
+        if (fresh) node.replaceWith(fresh);
+      } else {
+        // Insert after: append a parallel override under a new synthetic key based on position.
+        const newIdx = sectionNodes.length;
+        const k = 'auto:s' + newIdx;
+        pendingOverrides[k] = { type: 'section-insert', html: html, afterIdx: sectionNodes.indexOf(node) };
+        const wrapper = node.ownerDocument.createElement('div');
+        wrapper.innerHTML = html;
+        const fresh = wrapper.firstElementChild;
+        if (fresh) node.parentNode.insertBefore(fresh, node.nextSibling);
+      }
+      markDirty(); renderChanges(); annotateIframe();
+    }
+
+    function positionOverlays() {
       const wrapRect = iframeWrap.getBoundingClientRect();
       badges.forEach(function (b) {
         if (!b.target || !b.target.getBoundingClientRect) return;
         const r = b.target.getBoundingClientRect();
-        // Coordinates inside the iframe — translate to outer wrap
-        const top = r.top + wrapRect.top - wrapRect.top; // relative to iframeWrap because iframe fills it
-        b.node.style.top  = (r.top + (r.height / 2)) + 'px';
+        b.node.style.top  = (r.top - 8) + 'px';
         b.node.style.left = (r.left) + 'px';
         b.node.style.display = (r.width === 0 && r.height === 0) ? 'none' : '';
-        if (previewMode) b.node.style.display = 'none';
+        b.node.classList.toggle('preview-hidden', previewMode);
+      });
+      toolbars.forEach(function (t) {
+        if (!t.target || !t.target.getBoundingClientRect) return;
+        const r = t.target.getBoundingClientRect();
+        t.node.style.top  = (r.top + 6) + 'px';
+        t.node.style.left = (r.right - 240) + 'px';
+        t.node.style.display = (r.width === 0 && r.height === 0) ? 'none' : '';
+        t.node.classList.toggle('preview-hidden', previewMode);
       });
     }
 
     function applyOverride(node, key, override) {
       if (!override) return;
-      if (override.type === 'text' && 'value' in override) {
-        node.textContent = override.value;
-      } else if (override.type === 'image') {
+      if (override.type === 'text' && 'value' in override) node.textContent = override.value;
+      else if (override.type === 'image') {
         if (override.src) node.setAttribute('src', override.src);
         if (override.alt != null) node.setAttribute('alt', override.alt);
+      } else if (override.type === 'section-hide' && override.hidden) {
+        node.style.display = 'none';
+        node.setAttribute('aria-hidden', 'true');
       }
     }
 
@@ -219,28 +408,18 @@ tailwind.config = {
       const range = node.ownerDocument.createRange();
       range.selectNodeContents(node);
       const sel = node.ownerDocument.getSelection();
-      sel.removeAllRanges();
-      sel.addRange(range);
+      sel.removeAllRanges(); sel.addRange(range);
       function commit() {
         node.removeAttribute('contenteditable');
-        node.style.outline = '';
-        node.style.outlineOffset = '';
+        node.style.outline = ''; node.style.outlineOffset = '';
         const value = node.textContent.trim();
         pendingOverrides[key] = { type: 'text', value: value };
-        markDirty();
-        renderChanges();
-        positionBadges();
+        markDirty(); renderChanges(); positionOverlays();
       }
       node.addEventListener('blur', commit, { once: true });
       node.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' && !e.shiftKey) {
-          e.preventDefault();
-          node.blur();
-        }
-        if (e.key === 'Escape') {
-          e.preventDefault();
-          node.blur();
-        }
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); node.blur(); }
+        if (e.key === 'Escape') { e.preventDefault(); node.blur(); }
       });
     }
 
@@ -248,27 +427,15 @@ tailwind.config = {
       const existing = pendingOverrides[key] || initialOverrides[key] || { src: node.getAttribute('src') || '', alt: node.getAttribute('alt') || '' };
       const backdrop = document.createElement('div');
       backdrop.className = 'modal-backdrop';
-      backdrop.dataset.adminModal = '1';
       backdrop.innerHTML =
         '<div class="modal" role="dialog" aria-modal="true">' +
-          '<div class="modal__head" style="text-align:left;padding:1.25rem 1.25rem 0;">' +
-            '<h2>Edit image</h2>' +
-            '<p style="margin-top:0.25rem;"></p>' +
-          '</div>' +
+          '<div class="modal__head" style="text-align:left;padding:1.25rem 1.25rem 0;"><h2>Edit image</h2><p style="margin-top:0.25rem;"></p></div>' +
           '<div class="modal__body" style="padding:0.5rem 1.25rem 0;">' +
-            '<div class="field">' +
-              '<label>Upload a new image</label>' +
-              '<input class="input" type="file" data-field="file" accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml,image/avif">' +
-              '<p class="admin-muted" style="font-size:0.78rem;margin-top:0.35rem;">' +
-                'Opens an upload PR; the image goes to ' +
-                '<code>/assets/images/uploads/&hellip;</code> and the URL below auto-fills.' +
-              '</p>' +
-              '<p data-upload-status class="admin-muted" style="font-size:0.78rem;margin-top:0.35rem;display:none;"></p>' +
-            '</div>' +
-            '<div class="field" style="margin-top:0.85rem;"><label>Image URL</label><input class="input" type="url" data-field="src" placeholder="/assets/images/&hellip;.jpg"></div>' +
-            '<div class="field" style="margin-top:0.6rem;"><label>Alt text</label><input class="input" type="text" data-field="alt" placeholder="What the image shows"></div>' +
+            '<div class="field"><label>Upload</label><input class="input" type="file" data-field="file" accept="image/*"><p data-upload-status class="admin-muted" style="font-size:.78rem;margin-top:.35rem;display:none;"></p></div>' +
+            '<div class="field" style="margin-top:.85rem;"><label>Image URL</label><input class="input" type="url" data-field="src"></div>' +
+            '<div class="field" style="margin-top:.6rem;"><label>Alt text</label><input class="input" type="text" data-field="alt"></div>' +
           '</div>' +
-          '<div class="modal__foot" style="flex-direction:row;justify-content:flex-end;gap:0.5rem;">' +
+          '<div class="modal__foot" style="flex-direction:row;justify-content:flex-end;gap:.5rem;">' +
             '<button class="btn btn-ghost" type="button" data-cancel>Cancel</button>' +
             '<button class="btn btn-primary" type="button" data-save>Apply</button>' +
           '</div>' +
@@ -278,58 +445,29 @@ tailwind.config = {
       backdrop.querySelector('[data-field="alt"]').value = existing.alt || '';
       backdrop.querySelector('[data-cancel]').addEventListener('click', function () { backdrop.remove(); });
       backdrop.addEventListener('click', function (e) { if (e.target === backdrop) backdrop.remove(); });
-
       const fileInput = backdrop.querySelector('[data-field="file"]');
-      const srcInput = backdrop.querySelector('[data-field="src"]');
-      const status = backdrop.querySelector('[data-upload-status]');
-      const saveBtn = backdrop.querySelector('[data-save]');
-
+      const srcInput  = backdrop.querySelector('[data-field="src"]');
+      const status    = backdrop.querySelector('[data-upload-status]');
+      const saveBtnX  = backdrop.querySelector('[data-save]');
       fileInput.addEventListener('change', async function () {
-        const f = fileInput.files && fileInput.files[0];
-        if (!f) return;
-        status.style.display = '';
-        status.textContent = 'Uploading ' + f.name + ' (' + Math.round(f.size / 1024) + ' KB)…';
-        saveBtn.disabled = true;
+        const f = fileInput.files && fileInput.files[0]; if (!f) return;
+        status.style.display = ''; status.textContent = 'Uploading ' + f.name + '...';
+        saveBtnX.disabled = true;
         try {
-          const dataUrl = await new Promise(function (resolve, reject) {
-            const r = new FileReader();
-            r.onload = function () { resolve(r.result); };
-            r.onerror = function () { reject(new Error('could not read file')); };
-            r.readAsDataURL(f);
-          });
-          // Strip the "data:<mime>;base64," prefix; backend only wants the
-          // base64 payload itself.
-          const b64 = String(dataUrl || '').replace(/^data:[^;]+;base64,/, '');
-          const res = await Admin.api.post('/api/images/upload', {
-            filename: f.name,
-            contentType: f.type || 'application/octet-stream',
-            data: b64,
-          });
-          if (res && res.path) {
-            srcInput.value = res.path;
-            status.textContent = 'Uploaded — PR #' + (res.pr && res.pr.number) +
-              ' opened. Path filled in below.';
-          } else {
-            status.textContent = 'Upload succeeded but no path returned. Paste a URL manually.';
-          }
-        } catch (err) {
-          status.textContent = 'Upload failed: ' + (err.message || err);
-          Admin.toast(err.message || 'Upload failed', 'error');
-        } finally {
-          saveBtn.disabled = false;
-        }
+          const dataUrl = await new Promise(function(res, rej) { const r = new FileReader(); r.onload = function() { res(r.result); }; r.onerror = function() { rej(new Error('read failed')); }; r.readAsDataURL(f); });
+          const b64 = String(dataUrl||'').replace(/^data:[^;]+;base64,/, '');
+          const res = await Admin.api.post('/api/images/upload', { filename: f.name, contentType: f.type || 'application/octet-stream', data: b64 });
+          if (res && res.path) { srcInput.value = res.path; status.textContent = 'Uploaded — PR #' + (res.pr && res.pr.number); }
+        } catch (err) { status.textContent = 'Upload failed: ' + (err.message||err); }
+        finally { saveBtnX.disabled = false; }
       });
-
-      saveBtn.addEventListener('click', function () {
+      saveBtnX.addEventListener('click', function () {
         const src = srcInput.value.trim();
         const alt = backdrop.querySelector('[data-field="alt"]').value.trim();
-        if (!src) { Admin.toast('Image URL is required', 'error'); return; }
+        if (!src) { Admin.toast('URL required', 'error'); return; }
         pendingOverrides[key] = { type: 'image', src: src, alt: alt };
         applyOverride(node, key, pendingOverrides[key]);
-        markDirty();
-        renderChanges();
-        positionBadges();
-        backdrop.remove();
+        markDirty(); renderChanges(); positionOverlays(); backdrop.remove();
       });
       document.body.appendChild(backdrop);
     }
@@ -338,8 +476,7 @@ tailwind.config = {
       const keys = Object.keys(pendingOverrides);
       if (!keys.length) {
         changesList.innerHTML = '<div class="empty">No pending changes.</div>';
-        saveBtn.disabled = true;
-        return;
+        saveBtn.disabled = true; return;
       }
       saveBtn.disabled = false;
       changesList.innerHTML = '';
@@ -347,71 +484,42 @@ tailwind.config = {
         const o = pendingOverrides[k];
         const row = document.createElement('div');
         row.className = 'change-row';
-        let valHtml;
-        if (o.type === 'image') {
-          valHtml = '<span class="change-row__val">' +
-            '<span class="pill pill-info">image</span> ' +
-            '<code></code>' +
-            (o.alt ? '<div class="admin-muted" style="font-size:0.78rem;margin-top:0.2rem;"></div>' : '') +
-          '</span>';
-        } else {
-          valHtml = '<span class="change-row__val"></span>';
-        }
+        const label = o.type === 'text' ? (o.value||'').slice(0, 80)
+                    : o.type === 'image' ? (o.src||'')
+                    : o.type === 'section-hide' ? 'hidden'
+                    : o.type === 'section-html' ? 'replaced with template'
+                    : o.type === 'section-insert' ? 'inserted template'
+                    : '';
         row.innerHTML =
           '<span class="change-row__key"></span>' +
-          valHtml +
-          '<div class="change-row__bar">' +
-            '<button class="btn btn-ghost btn-sm" type="button" data-act="revert">Revert</button>' +
-          '</div>';
+          '<span class="change-row__val"><span class="pill pill-info"></span> <span></span></span>' +
+          '<div class="change-row__bar"><button class="btn btn-ghost btn-sm" type="button" data-act="revert">Revert</button></div>';
         row.querySelector('.change-row__key').textContent = k;
-        if (o.type === 'image') {
-          row.querySelector('code').textContent = o.src;
-          if (o.alt) row.querySelector('.admin-muted').textContent = 'alt: ' + o.alt;
-        } else {
-          row.querySelector('.change-row__val').textContent = o.value || '';
-        }
+        row.querySelector('.pill').textContent = o.type;
+        row.querySelectorAll('.change-row__val span')[1].textContent = label;
         row.querySelector('[data-act="revert"]').addEventListener('click', function () {
           delete pendingOverrides[k];
-          // Restore initial value in the iframe DOM
-          const target = badges.find(function (b) { return b.key === k; });
-          if (target) {
-            const orig = initialOverrides[k];
-            if (orig) applyOverride(target.target, k, orig);
-            // No easy way to restore original DOM text without re-render — leave the override applied/cleared.
-          }
-          markDirty();
-          renderChanges();
-          positionBadges();
+          markDirty(); renderChanges();
+          iframe.src = iframe.src; // reload to revert visually
         });
         changesList.appendChild(row);
       });
     }
 
-    function markDirty() {
-      dirty.set(true);
-      Admin.drafts.save(draftKey, { pendingOverrides: pendingOverrides, ts: Date.now() });
-    }
-
-    // Auto-save draft to localStorage every 3s
-    setInterval(function () {
-      if (dirty.get()) Admin.drafts.save(draftKey, { pendingOverrides: pendingOverrides, ts: Date.now() });
-    }, 3000);
+    function markDirty() { dirty.set(true); Admin.drafts.save(draftKey, { pendingOverrides: pendingOverrides, ts: Date.now() }); }
+    setInterval(function () { if (dirty.get()) Admin.drafts.save(draftKey, { pendingOverrides: pendingOverrides, ts: Date.now() }); }, 3000);
 
     discardBtn.addEventListener('click', function () {
       if (!Object.keys(pendingOverrides).length) return;
       if (!confirm('Discard all pending changes?')) return;
-      pendingOverrides = {};
-      Admin.drafts.clear(draftKey);
-      dirty.set(false);
-      // Reload iframe to re-render original DOM
-      iframe.src = iframe.src;
-      renderChanges();
+      pendingOverrides = {}; Admin.drafts.clear(draftKey); dirty.set(false);
+      iframe.src = iframe.src; renderChanges();
     });
 
     previewToggle.addEventListener('click', function () {
       previewMode = !previewMode;
       previewToggle.textContent = previewMode ? 'Show edit handles' : 'Preview';
-      positionBadges();
+      positionOverlays();
     });
 
     saveBtn.addEventListener('click', async function () {
@@ -419,66 +527,47 @@ tailwind.config = {
       saveBtn.disabled = true;
       const done = Admin.saving(savingSlot, 'Submitting PR&hellip;');
       try {
-        // Merge pending into a full overrides map so the server overwrites
         const fullOverrides = Object.assign({}, initialOverrides, pendingOverrides);
-        const res = await Admin.api.put('/api/pages/' + encodeURIComponent(slug), {
-          overrides: fullOverrides,
-          sha: pageSha
-        });
-        done('Saved');
-        dirty.set(false);
-        Admin.drafts.clear(draftKey);
-        if (res && res.pr) {
-          Admin.showPrSubmittedModal(res.pr, {
-            title: 'Page changes — PR #' + res.pr.number,
-            secondaryLabel: 'Back to pages',
-            secondaryHref: '/admin/pages.html'
-          });
-        } else {
-          Admin.toast('Saved', 'success');
-        }
-      } catch (err) {
-        console.error(err);
-        Admin.toast(err.message || 'Save failed', 'error');
-        done();
-      } finally {
-        saveBtn.disabled = false;
-      }
+        const res = await Admin.api.put('/api/pages/' + encodeURIComponent(slug), { overrides: fullOverrides, sha: pageSha });
+        done('Saved'); dirty.set(false); Admin.drafts.clear(draftKey);
+        if (res && res.pr) Admin.showPrSubmittedModal(res.pr, { title: 'Page changes &mdash; PR #' + res.pr.number, secondaryLabel: 'Back to pages', secondaryHref: '/admin/pages.html' });
+        else Admin.toast('Saved', 'success');
+      } catch (err) { console.error(err); Admin.toast(err.message || 'Save failed', 'error'); done(); }
+      finally { saveBtn.disabled = false; }
     });
 
     saveTemplateBtn.addEventListener('click', async function () {
-      const name = prompt('Template name (lowercase, e.g. "location-page")', '');
+      const name = prompt('Page template name (lowercase, e.g. "location-page")', '');
       if (!name) return;
       const tplName = Admin.slugify(name);
-      if (!tplName) { Admin.toast('Invalid template name', 'error'); return; }
+      if (!tplName) { Admin.toast('Invalid name', 'error'); return; }
       saveTemplateBtn.disabled = true;
       const done = Admin.saving(savingSlot, 'Submitting PR&hellip;');
       try {
-        const res = await Admin.api.post('/api/templates/from-page', {
-          pageSlug: slug,
-          templateName: tplName
-        });
+        const res = await Admin.api.post('/api/templates/from-page', { pageSlug: slug, templateName: tplName });
         done('Saved');
-        if (res && res.pr) {
-          Admin.showPrSubmittedModal(res.pr, {
-            title: 'Template saved — PR #' + res.pr.number,
-            description: 'After the PR merges, this template will be available when creating new pages.',
-            secondaryLabel: 'Back to editor',
-            onSecondary: function () { document.querySelector('.modal-backdrop').remove(); }
-          });
-        } else {
-          Admin.toast('Template saved', 'success');
-        }
-      } catch (err) {
-        console.error(err);
-        Admin.toast(err.message || 'Could not save template', 'error');
-        done();
-      } finally {
-        saveTemplateBtn.disabled = false;
-      }
+        if (res && res.pr) Admin.showPrSubmittedModal(res.pr, { title: 'Page template saved &mdash; PR #' + res.pr.number });
+      } catch (err) { Admin.toast(err.message || 'Save failed', 'error'); done(); }
+      finally { saveTemplateBtn.disabled = false; }
     });
 
-    window.addEventListener('resize', Admin.debounce(positionBadges, 60));
+    saveSeoBtn.addEventListener('click', async function () {
+      const seo = {};
+      document.querySelectorAll('[data-seo]').forEach(function (el) {
+        const k = el.getAttribute('data-seo');
+        const v = el.value.trim();
+        if (v) seo[k] = v;
+      });
+      saveSeoBtn.disabled = true; seoStatus.textContent = 'Submitting PR...';
+      try {
+        const res = await Admin.api.put('/api/pages/' + encodeURIComponent(slug) + '/seo', seo);
+        if (res && res.pr) { seoStatus.textContent = 'PR #' + res.pr.number + ' opened'; Admin.showPrSubmittedModal(res.pr, { title: 'SEO changes &mdash; PR #' + res.pr.number }); }
+        else seoStatus.textContent = 'Saved';
+      } catch (err) { seoStatus.textContent = 'Failed: ' + (err.message||err); }
+      finally { saveSeoBtn.disabled = false; }
+    });
+
+    window.addEventListener('resize', Admin.debounce(positionOverlays, 60));
   })();
   </script>
 </body>
