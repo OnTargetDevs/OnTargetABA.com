@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-06-04
 
+### Added
+
+- new page "test" (#5)
+
+
+## [Unreleased] &mdash; 2026-06-04
+
 ### Chore
 
 - remove orphan assets/blog/test.md (was at repo root, not under website/)
