@@ -1,0 +1,23 @@
+{
+  "generated_at": null,
+  "post_count": 1,
+  "categories": [
+    {
+      "name": "test",
+      "count": 1
+    }
+  ],
+  "posts": [
+    {
+      "title": "Test",
+      "date": "2026-06-04",
+      "category": "test",
+      "author": "On Target ABA",
+      "hero_image": "",
+      "excerpt": "",
+      "read_time": "",
+      "source_url": "",
+      "slug": "test"
+    }
+  ]
+}
