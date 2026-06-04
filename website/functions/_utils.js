@@ -259,6 +259,19 @@ export function clearAdminCookie() {
 
 const GH_API = "https://api.github.com";
 
+// Every site file lives under `website/` in the repo (the rest of the
+// repo root holds docs, LICENSE, .github/, etc.). CF Pages serves
+// from `website/` as the deploy root, which is why callers think in
+// paths like "assets/data/header.json" — but the GitHub Contents +
+// Git Data APIs need the *repo*-relative path. So we prepend this
+// prefix in every API-side helper. Callers stay clean.
+const REPO_PREFIX = "website/";
+
+function repoPath(p) {
+  const s = String(p || "").replace(/^\/+/, "");
+  return s.startsWith(REPO_PREFIX) ? s : REPO_PREFIX + s;
+}
+
 function ghHeaders(env) {
   return {
     accept: "application/vnd.github+json",
@@ -305,7 +318,7 @@ async function ghJson(url, init, env) {
 // or null if the file is missing.
 export async function ghGet(path, env, ref) {
   const branch = ref || mainBranch(env);
-  const url = `${repoBase(env)}/contents/${encodeContentsPath(path)}?ref=${encodeURIComponent(branch)}`;
+  const url = `${repoBase(env)}/contents/${encodeContentsPath(repoPath(path))}?ref=${encodeURIComponent(branch)}`;
   const res = await ghFetch(url, { method: "GET" }, env);
   if (res.status === 404) return null;
   if (!res.ok) {
@@ -332,7 +345,7 @@ export async function ghPutFile({ path, content, message, branch, sha }, env) {
     content: b64encodeUtf8(content),
   };
   if (sha) body.sha = sha;
-  return ghJson(`${repoBase(env)}/contents/${encodeContentsPath(path)}`, {
+  return ghJson(`${repoBase(env)}/contents/${encodeContentsPath(repoPath(path))}`, {
     method: "PUT",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
@@ -341,7 +354,7 @@ export async function ghPutFile({ path, content, message, branch, sha }, env) {
 
 // DELETE a file via Contents API.
 export async function ghDeleteFile({ path, sha, message, branch }, env) {
-  return ghJson(`${repoBase(env)}/contents/${encodeContentsPath(path)}`, {
+  return ghJson(`${repoBase(env)}/contents/${encodeContentsPath(repoPath(path))}`, {
     method: "DELETE",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ message, sha, branch }),
@@ -414,7 +427,7 @@ export async function commitMultipleFiles({ branch, files, message, parentSha },
   for (const f of files) {
     if (f.delete) {
       treeItems.push({
-        path: f.path,
+        path: repoPath(f.path),
         mode: f.mode || "100644",
         type: "blob",
         sha: null,
@@ -430,7 +443,7 @@ export async function commitMultipleFiles({ branch, files, message, parentSha },
       }),
     }, env);
     treeItems.push({
-      path: f.path,
+      path: repoPath(f.path),
       mode: f.mode || "100644",
       type: "blob",
       sha: blob.sha,
@@ -475,9 +488,15 @@ export async function ghTree(prefix, env, ref) {
     method: "GET",
   }, env);
   const items = tree.tree || [];
-  if (!prefix) return items;
+  // Strip the website/ prefix from each path so callers see logical
+  // paths matching what they passed in.
+  const stripped = items.map((i) => ({
+    ...i,
+    path: i.path.startsWith(REPO_PREFIX) ? i.path.slice(REPO_PREFIX.length) : i.path,
+  }));
+  if (!prefix) return stripped;
   const pfx = prefix.replace(/\/+$/, "") + "/";
-  return items.filter((i) => i.path.startsWith(pfx));
+  return stripped.filter((i) => i.path.startsWith(pfx));
 }
 
 // -----------------------------------------------------------------------------

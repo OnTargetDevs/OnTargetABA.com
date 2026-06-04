@@ -31,7 +31,7 @@ export const onRequestPost = async ({ params, request, env, data }) => {
     const sitemap = buildSitemapXml(newPages, posts);
 
     const files = [
-      { path: "assets/data/pages.json", content: JSON.stringify(newPages, null, 2) + "\n" },
+      { path: "assets/data/pages.json", content: JSON.stringify({ schemaVersion: 1, pages: newPages }, null, 2) + "\n" },
       { path: "sitemap.xml", content: sitemap },
     ];
 

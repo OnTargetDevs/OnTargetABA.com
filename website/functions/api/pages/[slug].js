@@ -83,7 +83,7 @@ export const onRequestDelete = async ({ params, env, data }) => {
     const sitemap = buildSitemapXml(newPages, posts);
 
     const files = [
-      { path: "assets/data/pages.json", content: JSON.stringify(newPages, null, 2) + "\n" },
+      { path: "assets/data/pages.json", content: JSON.stringify({ schemaVersion: 1, pages: newPages }, null, 2) + "\n" },
       { path: "sitemap.xml", content: sitemap },
     ];
     if (htmlFile) files.push({ path: `${slug}.html`, delete: true });
