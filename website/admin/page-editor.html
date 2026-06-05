@@ -49,11 +49,29 @@ tailwind.config = {
   .seo-panel input, .seo-panel textarea { width: 100%; }
   .seo-panel textarea { min-height: 60px; }
 
-  /* Mobile / tablet / desktop responsive preview frame */
-  #iframe-wrap { transition: max-width .25s ease; margin: 0 auto; background: #f3f4f6; }
-  body.viewport-mobile  #iframe-wrap { max-width: 390px;  border: 8px solid #1f2937; border-radius: 24px; }
-  body.viewport-tablet  #iframe-wrap { max-width: 820px;  border: 6px solid #1f2937; border-radius: 16px; }
-  body.viewport-desktop #iframe-wrap { max-width: none; }
+  /* Mobile / tablet / desktop responsive preview frame.
+     The .split__iframe in admin.css uses flex: 1, so max-width gets
+     overridden by flex-basis. We need to win against that with both
+     flex-basis AND width, plus !important to beat the original. */
+  body.admin .split #iframe-wrap.split__iframe {
+    transition: flex-basis .25s ease, max-width .25s ease, width .25s ease;
+    margin: 0 auto;
+    background: #f3f4f6;
+  }
+  body.admin .split #iframe-wrap.split__iframe > iframe { width: 100% !important; height: 100% !important; }
+
+  body.viewport-mobile.admin .split #iframe-wrap.split__iframe {
+    flex: 0 0 390px !important; max-width: 390px !important; width: 390px !important;
+    border: 8px solid #1f2937; border-radius: 28px; box-shadow: 0 20px 50px rgba(0,0,0,.2);
+  }
+  body.viewport-tablet.admin .split #iframe-wrap.split__iframe {
+    flex: 0 0 820px !important; max-width: 820px !important; width: 820px !important;
+    border: 6px solid #1f2937; border-radius: 18px; box-shadow: 0 16px 36px rgba(0,0,0,.18);
+  }
+  body.viewport-desktop.admin .split #iframe-wrap.split__iframe {
+    flex: 1 !important; max-width: none !important; width: auto !important;
+    border: 0; border-radius: 0; box-shadow: none;
+  }
   .viewport-toggle { display: inline-flex; align-items: center; background: var(--cream); border: 1px solid var(--line); border-radius: 999px; padding: 2px; gap: 2px; }
   .viewport-toggle button { background: transparent; border: 0; padding: .35rem .75rem; border-radius: 999px; font-size: .78rem; font-weight: 600; color: var(--ink-soft); cursor: pointer; }
   .viewport-toggle button.active { background: var(--ink); color: white; }
