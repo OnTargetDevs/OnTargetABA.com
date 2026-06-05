@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-06-05
 
+### Chore
+
+- upload image assets/images/uploads/2026-06/cmh-schedule-2026-06-05-d11a2a7f.webp
+
+
+## [Unreleased] &mdash; 2026-06-05
+
 ### Added
 
 - section template "header" (#6)
