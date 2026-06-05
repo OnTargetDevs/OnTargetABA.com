@@ -88,6 +88,13 @@ tailwind.config = {
   #tw-toolbar button:hover { border-color: var(--coral); }
   #tw-toolbar .swatch { width: 22px; height: 22px; padding: 0; border-radius: 999px; }
   #tw-toolbar label { font-size: .68rem; color: var(--mute); text-transform: uppercase; letter-spacing: .04em; font-weight: 700; margin-right: .3rem; }
+
+  /* Modal text editor — used when an Edit badge is clicked. */
+  .modal-tw-btn { background: var(--cream); border: 1px solid var(--line); border-radius: 6px; padding: .35rem .65rem; cursor: pointer; font-weight: 700; color: var(--ink); font-size: .8rem; min-width: 38px; }
+  .modal-tw-btn:hover { border-color: var(--coral); }
+  .modal-tw-btn.active { background: var(--ink); color: white; border-color: var(--ink); }
+  .modal-tw-btn.swatch { width: 26px; height: 26px; padding: 0; border-radius: 999px; min-width: 0; }
+  .modal-tw-btn.swatch.active { box-shadow: 0 0 0 3px var(--coral); }
 </style>
 </head>
 <body class="admin font-sans">
@@ -573,40 +580,196 @@ tailwind.config = {
     }
 
     function activateTextEdit(node, key) {
-      activeEditNode = node; activeEditKey = key;
-      node.setAttribute('contenteditable', 'true');
-      node.style.outline = '2px solid var(--coral, #E84F3B)';
-      node.style.outlineOffset = '2px';
-      node.focus();
-      const range = node.ownerDocument.createRange();
-      range.selectNodeContents(node);
-      const sel = node.ownerDocument.getSelection();
-      sel.removeAllRanges(); sel.addRange(range);
-      showTwToolbar(node);
-      function commit() {
-        node.removeAttribute('contenteditable');
-        node.style.outline = ''; node.style.outlineOffset = '';
-        const value = node.textContent.trim();
-        const prior = pendingOverrides[key] || {};
+      openTextEditorModal(node, key);
+    }
+
+    // Visual text editor modal — opens when an Edit handle is clicked.
+    // Shows: live preview, the raw text in a textarea, and the same
+    // Tailwind control rows the floating toolbar uses (bold, italic,
+    // underline, line-through, uppercase + size / family / color /
+    // radius groups). Apply commits both the new text AND the new
+    // className wholesale to the override and closes the modal.
+    function openTextEditorModal(node, key) {
+      const prior = pendingOverrides[key] || initialOverrides[key] || {};
+      const initialText = prior.type === 'text' && 'value' in prior ? prior.value : node.textContent.trim();
+      const initialClass = (prior.type === 'text' && prior.classList) ? prior.classList : (node.className || '');
+      // Apply currentClassWorking to the live element so the preview rectangle
+      // in the iframe reflects edits in real time.
+      let currentClass = initialClass;
+      let currentText = initialText;
+      const originalText = node.textContent;
+      const originalClass = node.className;
+
+      const backdrop = document.createElement('div');
+      backdrop.className = 'modal-backdrop';
+      backdrop.innerHTML =
+        '<div class="modal text-editor-modal" role="dialog" aria-modal="true" style="max-width: 720px; width: 95vw;">' +
+          '<div class="modal__head" style="text-align:left;padding:1.1rem 1.25rem .25rem;">' +
+            '<div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;">' +
+              '<h2 style="font-size:1.05rem;margin:0;">Edit ' + (node.tagName || 'text').toLowerCase() + '</h2>' +
+              '<span class="admin-muted" data-key style="font-size:.72rem;"></span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="modal__body" style="padding:0 1.25rem 0;display:flex;flex-direction:column;gap:.85rem;">' +
+
+            '<div>' +
+              '<label class="admin-muted" style="font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;">Live preview</label>' +
+              '<div data-preview style="margin-top:.35rem;padding:.9rem 1rem;background:var(--cream);border:1px solid var(--line);border-radius:10px;min-height:3rem;display:flex;align-items:center;"></div>' +
+            '</div>' +
+
+            '<div>' +
+              '<label class="admin-muted" style="font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;">Text</label>' +
+              '<textarea class="input" data-text style="margin-top:.35rem;width:100%;min-height:90px;font:inherit;"></textarea>' +
+            '</div>' +
+
+            '<div data-controls></div>' +
+
+          '</div>' +
+          '<div class="modal__foot" style="flex-direction:row;justify-content:space-between;gap:.5rem;padding:1rem 1.25rem 1.1rem;">' +
+            '<button class="btn btn-ghost" type="button" data-reset>Reset to original</button>' +
+            '<div style="display:flex;gap:.5rem;">' +
+              '<button class="btn btn-ghost" type="button" data-cancel>Cancel</button>' +
+              '<button class="btn btn-primary" type="button" data-apply>Apply</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+
+      const keySlot = backdrop.querySelector('[data-key]');
+      const previewEl = backdrop.querySelector('[data-preview]');
+      const textEl = backdrop.querySelector('[data-text]');
+      const controlsEl = backdrop.querySelector('[data-controls]');
+      const applyBtn = backdrop.querySelector('[data-apply]');
+      const cancelBtn = backdrop.querySelector('[data-cancel]');
+      const resetBtn = backdrop.querySelector('[data-reset]');
+
+      keySlot.textContent = 'key: ' + key;
+      textEl.value = initialText;
+
+      // Build the control rows inside the modal — same set as the
+      // floating toolbar, but here they sit in a grid so the user can
+      // see every option at a glance.
+      controlsEl.innerHTML =
+        '<div class="modal-tw-rows" style="display:flex;flex-direction:column;gap:.55rem;">' +
+          twRow('Style', [
+            ['font-bold', 'B', 'font-weight:700;'],
+            ['italic', 'I', 'font-style:italic;'],
+            ['underline', 'U', 'text-decoration:underline;'],
+            ['line-through', 'S', 'text-decoration:line-through;'],
+            ['uppercase', 'AA', 'text-transform:uppercase;'],
+          ], 'toggle') +
+          twRow('Size', [
+            ['text-sm','SM'],['text-base','M'],['text-lg','LG'],['text-xl','XL'],
+            ['text-2xl','2XL'],['text-3xl','3XL'],['text-4xl','4XL'],['text-5xl','5XL'],['text-6xl','6XL'],
+          ], 'size') +
+          twRow('Font', [
+            ['font-sans','Sans'],
+            ['font-display','Display','font-family:Fraunces,Georgia,serif;'],
+          ], 'family') +
+          twRow('Color', [
+            ['text-ink','','background:#163243;'],
+            ['text-ink-soft','','background:#34495E;'],
+            ['text-coral','','background:#E84F3B;'],
+            ['text-teal','','background:#00B7EA;'],
+            ['text-teal-deep','','background:#0E5E6E;'],
+            ['text-sun','','background:#F4C842;'],
+            ['text-sage','','background:#C5E0D5;'],
+            ['text-white','','background:#fff;border-color:#1f2937 !important;'],
+          ], 'color') +
+          twRow('Radius', [
+            ['rounded','SM'],['rounded-lg','LG'],['rounded-xl','XL'],['rounded-2xl','2XL'],['rounded-full','Full'],
+          ], 'radius') +
+        '</div>';
+
+      function twRow(label, options, group) {
+        const buttons = options.map(function (opt) {
+          const cls = opt[0]; const text = opt[1] || ''; const style = opt[2] || '';
+          const isSwatch = group === 'color';
+          const klass = 'modal-tw-btn' + (isSwatch ? ' swatch' : '');
+          return '<button type="button" data-tw-class="' + cls + '" data-tw-group="' + group + '" class="' + klass + '" style="' + style + '">' + text + '</button>';
+        }).join('');
+        return '<div style="display:flex;align-items:flex-start;gap:.6rem;">' +
+          '<span class="admin-muted" style="font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700;width:56px;flex-shrink:0;padding-top:.45rem;">' + label + '</span>' +
+          '<div style="display:flex;flex-wrap:wrap;gap:.3rem;flex:1;">' + buttons + '</div>' +
+        '</div>';
+      }
+
+      function refreshPreview() {
+        previewEl.className = '';
+        previewEl.style.cssText = 'margin-top:.35rem;padding:.9rem 1rem;background:var(--cream);border:1px solid var(--line);border-radius:10px;min-height:3rem;display:flex;align-items:center;';
+        // Wrap the preview text in a span carrying the working className
+        // so we can see exactly how it'll look at runtime.
+        previewEl.innerHTML = '';
+        const span = document.createElement('span');
+        span.className = currentClass;
+        span.textContent = currentText || ' ';
+        previewEl.appendChild(span);
+        // Reflect active state on every button
+        controlsEl.querySelectorAll('[data-tw-class]').forEach(function (b) {
+          const cls = b.getAttribute('data-tw-class');
+          const has = currentClass.split(/\s+/).includes(cls);
+          b.classList.toggle('active', has);
+        });
+      }
+
+      controlsEl.addEventListener('click', function (e) {
+        const b = e.target.closest('[data-tw-class]'); if (!b) return;
+        e.preventDefault();
+        const cls = b.getAttribute('data-tw-class');
+        const group = b.getAttribute('data-tw-group');
+        if (group === 'toggle') {
+          const parts = currentClass.split(/\s+/).filter(Boolean);
+          if (parts.includes(cls)) currentClass = parts.filter(function (p) { return p !== cls; }).join(' ');
+          else currentClass = (currentClass + ' ' + cls).trim();
+        } else {
+          // Mutually exclusive: drop any other class in the group
+          const groupClasses = TW_GROUPS[group] || [];
+          const parts = currentClass.split(/\s+/).filter(function (p) { return p && !groupClasses.includes(p); });
+          parts.push(cls);
+          currentClass = parts.join(' ');
+        }
+        refreshPreview();
+      });
+
+      textEl.addEventListener('input', function () {
+        currentText = textEl.value;
+        refreshPreview();
+      });
+
+      resetBtn.addEventListener('click', function () {
+        currentText = node.textContent || '';
+        currentClass = originalClass;
+        textEl.value = currentText;
+        refreshPreview();
+      });
+
+      function close() { backdrop.remove(); activeEditNode = null; activeEditKey = null; }
+      cancelBtn.addEventListener('click', function () {
+        // Revert the live element to its pre-modal state
+        node.textContent = originalText;
+        node.className = originalClass;
+        close();
+      });
+      backdrop.addEventListener('click', function (e) { if (e.target === backdrop) cancelBtn.click(); });
+
+      applyBtn.addEventListener('click', function () {
+        // Push the new text + className onto the live element AND into
+        // the pending overrides, so the editor reflects the change
+        // immediately and Save & open PR will pick it up.
+        node.textContent = currentText.trim();
+        node.className = currentClass;
         pendingOverrides[key] = {
           type: 'text',
-          value: value,
-          classList: node.className || (prior.classList || '')
+          value: currentText.trim(),
+          classList: currentClass
         };
         markDirty(); renderChanges(); positionOverlays();
-        hideTwToolbar();
-        activeEditNode = null; activeEditKey = null;
-      }
-      node.addEventListener('blur', function (e) {
-        // Don't commit while the user is interacting with the toolbar.
-        const next = e.relatedTarget;
-        if (next && twToolbar.contains(next)) return;
-        commit();
-      }, { once: true });
-      node.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); node.blur(); }
-        if (e.key === 'Escape') { e.preventDefault(); node.blur(); }
+        close();
       });
+
+      activeEditNode = node; activeEditKey = key;
+      document.body.appendChild(backdrop);
+      refreshPreview();
+      setTimeout(function () { textEl.focus(); textEl.select(); }, 30);
     }
 
     function openImageModal(node, key) {
