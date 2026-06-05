@@ -62,7 +62,6 @@ tailwind.config = {
       </a>
       <nav class="admin-topbar__nav" aria-label="Admin">
         <a href="/admin/">Dashboard</a>
-        <a href="/admin/pages.html">Pages</a>
         <a href="/admin/posts.html">Posts</a>
         <a href="/admin/header.html">Header</a>
         <a href="/admin/footer.html">Footer</a>
@@ -80,31 +79,23 @@ tailwind.config = {
           <h1 class="admin-h1">Edit ontargetaba.com</h1>
           <p class="admin-muted mt-1">All changes open a pull request for your review &mdash; nothing goes live without a merge.</p>
         </div>
-        <a class="btn btn-primary" href="/admin/new-page.html">
+        <a class="btn btn-primary" href="/admin/post-editor.html?new=1">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 5v14M5 12h14"/>
           </svg>
-          New page
+          New post
         </a>
       </div>
 
       <!-- Stats -->
       <section class="stat-grid mb-7" id="stats">
-        <div class="stat"><span class="stat__label">Pages</span><span class="stat__value" data-stat="pages">&mdash;</span></div>
+        <div class="stat"><span class="stat__label">Posts</span><span class="stat__value" data-stat="posts">&mdash;</span></div>
         <div class="stat"><span class="stat__label">Drafts</span><span class="stat__value" data-stat="drafts">&mdash;</span></div>
         <div class="stat"><span class="stat__label">Hidden</span><span class="stat__value" data-stat="hidden">&mdash;</span></div>
-        <div class="stat"><span class="stat__label">Posts</span><span class="stat__value" data-stat="posts">&mdash;</span></div>
       </section>
 
       <!-- Tiles -->
-      <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
-        <a class="tile" href="/admin/pages.html">
-          <div class="tile__icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13l3 3v13a1 1 0 0 1-1 1H4Z"/><path d="M9 4v6h7"/></svg>
-          </div>
-          <div class="tile__title">Pages</div>
-          <div class="tile__desc">Marketing pages, locations, services. Edit copy or template-scaffold a new page.</div>
-        </a>
+      <section class="grid sm:grid-cols-1 lg:grid-cols-3 gap-3 mb-8">
         <a class="tile" href="/admin/posts.html">
           <div class="tile__icon tile__icon--coral" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h14M3 10h14M3 15h9"/></svg>
@@ -161,20 +152,15 @@ tailwind.config = {
 
     dash.hidden = false;
 
-    // Stats
+    // Stats — posts only.
     try {
-      const [pagesResp, postsResp] = await Promise.all([
-        Admin.api.get('/api/pages').catch(() => ({ pages: [] })),
-        Admin.api.get('/api/posts').catch(() => ({ posts: [] }))
-      ]);
-      const pages = (pagesResp && pagesResp.pages) || [];
+      const postsResp = await Admin.api.get('/api/posts').catch(() => ({ posts: [] }));
       const posts = (postsResp && postsResp.posts) || [];
-      const drafts = pages.filter(p => p.draft).length + posts.filter(p => p.draft).length;
-      const hidden = pages.filter(p => p.hidden).length + posts.filter(p => p.hidden).length;
-      document.querySelector('[data-stat="pages"]').textContent  = pages.length;
+      const drafts = posts.filter(p => p.draft).length;
+      const hidden = posts.filter(p => p.hidden).length;
+      document.querySelector('[data-stat="posts"]').textContent  = posts.length;
       document.querySelector('[data-stat="drafts"]').textContent = drafts;
       document.querySelector('[data-stat="hidden"]').textContent = hidden;
-      document.querySelector('[data-stat="posts"]').textContent  = posts.length;
     } catch (err) {
       console.warn('[admin] stats failed', err);
     }

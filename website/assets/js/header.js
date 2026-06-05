@@ -164,33 +164,20 @@
     );
   }
 
-  // Filter nav links: drop any whose href maps to a hidden page entry.
-  function filterNavLinks(navLinks, pagesData) {
-    const pages = (pagesData && Array.isArray(pagesData.pages)) ? pagesData.pages : [];
-    const hidden = new Set(pages.filter((p) => p.hidden).map((p) => p.path));
-    return navLinks.filter((l) => !hidden.has(hrefToPath(l.href)));
-  }
-
-  Promise.all([
-    fetch('/assets/data/header.json', { credentials: 'same-origin' }).then((r) => {
+  fetch('/assets/data/header.json', { credentials: 'same-origin' })
+    .then((r) => {
       if (!r.ok) throw new Error('header.json ' + r.status);
       return r.json();
-    }),
-    fetch('/assets/data/pages.json', { credentials: 'same-origin' }).then((r) => {
-      if (!r.ok) throw new Error('pages.json ' + r.status);
-      return r.json();
-    }),
-  ]).then(([headerData, pagesData]) => {
-    const navLinks = filterNavLinks(headerData.navLinks || [], pagesData);
-    const html =
-      renderAnnouncement(headerData.announcementBar) +
-      renderHeader(headerData, navLinks) +
-      renderCrumbs(headerData);
-    slot.outerHTML = html;
-    // After injection, app.js (which runs after this script) finds the
-    // freshly-added sticky-nav and mobile-toggle elements.
-  }).catch((err) => {
-    console.warn('[header] failed to load header data:', err);
-    // Render nothing on failure — leave the empty slot in place.
-  });
+    })
+    .then((headerData) => {
+      const navLinks = headerData.navLinks || [];
+      const html =
+        renderAnnouncement(headerData.announcementBar) +
+        renderHeader(headerData, navLinks) +
+        renderCrumbs(headerData);
+      slot.outerHTML = html;
+    })
+    .catch((err) => {
+      console.warn('[header] failed to load header data:', err);
+    });
 })();
