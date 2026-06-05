@@ -395,6 +395,15 @@ tailwind.config = {
       const { texts, sections } = autoWalk(doc);
       textNodes = texts; sectionNodes = sections;
 
+      // Bind a single click delegate on the iframe document. Clicking
+      // anywhere on a text-bearing leaf triggers inline edit; clicking
+      // an <img> opens the image modal. Links and buttons don't navigate
+      // in admin mode — we preventDefault on them so the editor wins.
+      // The little "⋯" badge stays as an explicit affordance for the
+      // rich modal editor when the user wants the full surface area.
+      const editableForNode = new WeakMap();
+      function registerNode(node, key, kind) { editableForNode.set(node, { key, kind }); }
+
       // 1) Manual data-editable tags (existing pattern) take precedence.
       const tagged = doc.querySelectorAll('[data-editable]');
       const taggedSet = new Set(Array.from(tagged));
@@ -402,9 +411,10 @@ tailwind.config = {
         const key = node.getAttribute('data-editable');
         const isImage = node.tagName === 'IMG' || node.hasAttribute('data-editable-image');
         applyOverride(node, key, pendingOverrides[key] || initialOverrides[key]);
-        const badge = mkBadge(isImage ? 'Image' : 'Edit', '#E84F3B', function (e) {
+        registerNode(node, key, isImage ? 'image' : 'text');
+        const badge = mkBadge(isImage ? '✎ img' : '⋯', '#E84F3B', function (e) {
           e.preventDefault(); e.stopPropagation();
-          if (isImage) openImageModal(node, key); else activateTextEdit(node, key);
+          if (isImage) openImageModal(node, key); else openTextEditorModal(node, key);
         });
         iframeWrap.appendChild(badge);
         badges.push({ node: badge, target: node, key: key });
@@ -415,9 +425,10 @@ tailwind.config = {
         if (taggedSet.has(node)) return;
         const key = 'auto:t' + idx;
         applyOverride(node, key, pendingOverrides[key]);
-        const badge = mkBadge('Edit', '#0E5E6E', function (e) {
+        registerNode(node, key, 'text');
+        const badge = mkBadge('⋯', '#0E5E6E', function (e) {
           e.preventDefault(); e.stopPropagation();
-          activateTextEdit(node, key);
+          openTextEditorModal(node, key);
         });
         iframeWrap.appendChild(badge);
         badges.push({ node: badge, target: node, key: key });
@@ -429,13 +440,33 @@ tailwind.config = {
         if (taggedSet.has(node)) return;
         const key = 'auto:i' + idx;
         applyOverride(node, key, pendingOverrides[key]);
-        const badge = mkBadge('Image', '#00B7EA', function (e) {
+        registerNode(node, key, 'image');
+        const badge = mkBadge('✎ img', '#00B7EA', function (e) {
           e.preventDefault(); e.stopPropagation();
           openImageModal(node, key);
         });
         iframeWrap.appendChild(badge);
         badges.push({ node: badge, target: node, key: key });
       });
+
+      // Click delegate inside the iframe — click anywhere on an editable
+      // text leaf to start typing immediately. Skips clicks that bubble
+      // through a section toolbar / edit badge by checking the target's
+      // direct registration in editableForNode.
+      doc.addEventListener('click', function (e) {
+        if (previewMode) return;
+        // Skip our own overlays
+        let n = e.target;
+        // Walk up to find the closest registered node.
+        while (n && n !== doc.body && !editableForNode.has(n)) n = n.parentElement;
+        if (!n || !editableForNode.has(n)) return;
+        const info = editableForNode.get(n);
+        if (n === activeEditNode) return; // already editing
+        e.preventDefault();
+        e.stopPropagation();
+        if (info.kind === 'image') openImageModal(n, info.key);
+        else activateTextEdit(n, info.key);
+      }, true);
 
       // 4) Per-section toolbar.
       sections.forEach(function (node, idx) {
@@ -455,16 +486,22 @@ tailwind.config = {
       b.type = 'button';
       b.className = 'edit-badge';
       b.textContent = label;
+      b.title = 'Open editor modal';
       b.style.background = color;
       b.style.color = '#fff';
-      b.style.padding = '2px 8px';
+      b.style.padding = '0';
+      b.style.minWidth = '22px';
+      b.style.height = '22px';
       b.style.borderRadius = '999px';
-      b.style.fontSize = '10px';
+      b.style.fontSize = '12px';
       b.style.fontWeight = '700';
       b.style.lineHeight = '1';
       b.style.border = '2px solid #fff';
       b.style.cursor = 'pointer';
       b.style.boxShadow = '0 2px 6px rgba(0,0,0,.18)';
+      b.style.opacity = '0.55';
+      b.addEventListener('mouseenter', function () { b.style.opacity = '1'; });
+      b.addEventListener('mouseleave', function () { b.style.opacity = '0.55'; });
       b.addEventListener('click', onClick);
       return b;
     }
@@ -579,8 +616,52 @@ tailwind.config = {
       }
     }
 
+    // Inline text editing: just click anywhere on the text and start
+    // typing. The floating Tailwind toolbar attaches above the active
+    // element so you can change styling without leaving the keyboard.
     function activateTextEdit(node, key) {
-      openTextEditorModal(node, key);
+      activeEditNode = node; activeEditKey = key;
+      const originalText = node.textContent;
+      const originalClass = node.className;
+      node.setAttribute('contenteditable', 'true');
+      node.style.outline = '2px solid var(--coral, #E84F3B)';
+      node.style.outlineOffset = '2px';
+      node.focus();
+      const range = node.ownerDocument.createRange();
+      range.selectNodeContents(node);
+      const sel = node.ownerDocument.getSelection();
+      sel.removeAllRanges(); sel.addRange(range);
+      showTwToolbar(node);
+      function commit() {
+        node.removeAttribute('contenteditable');
+        node.style.outline = ''; node.style.outlineOffset = '';
+        const value = node.textContent.trim();
+        const prior = pendingOverrides[key] || {};
+        // Only queue an override if something actually changed.
+        const textChanged = value !== originalText.trim();
+        const classChanged = (node.className || '') !== originalClass;
+        if (textChanged || classChanged || (prior.type === 'text')) {
+          pendingOverrides[key] = {
+            type: 'text',
+            value: value,
+            classList: node.className || (prior.classList || '')
+          };
+          markDirty(); renderChanges();
+        }
+        positionOverlays();
+        hideTwToolbar();
+        activeEditNode = null; activeEditKey = null;
+      }
+      node.addEventListener('blur', function (e) {
+        // Stay editing while the user is in the floating toolbar.
+        const next = e.relatedTarget;
+        if (next && twToolbar.contains(next)) return;
+        commit();
+      }, { once: true });
+      node.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); node.blur(); }
+        if (e.key === 'Escape') { e.preventDefault(); node.blur(); }
+      });
     }
 
     // Visual text editor modal — opens when an Edit handle is clicked.
