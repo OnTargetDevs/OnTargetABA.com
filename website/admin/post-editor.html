@@ -83,8 +83,13 @@ tailwind.config = {
               <input id="fm-read-time" class="input" type="text" placeholder="e.g. 5 min read" />
             </div>
             <div class="field">
-              <label for="fm-hero">Hero image URL</label>
-              <input id="fm-hero" class="input" type="url" placeholder="/assets/images/&hellip;.jpg" />
+              <label for="fm-hero">Hero image</label>
+              <div style="display:flex;gap:.4rem;align-items:stretch;">
+                <input id="fm-hero" class="input" type="url" placeholder="/assets/images/uploads/&hellip; or full URL" style="flex:1;" />
+                <button type="button" class="btn btn-ghost btn-sm" id="hero-pick" style="white-space:nowrap;">Pick / upload</button>
+              </div>
+              <p class="admin-muted" style="font-size:.72rem;margin-top:.25rem;">Pick an existing image or upload a new one (auto-optimized to WebP, EXIF stripped, resized to 2000px).</p>
+              <div id="hero-preview" style="margin-top:.5rem;display:none;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--cream);"><img alt="hero preview" style="width:100%;display:block;max-height:200px;object-fit:cover;" /></div>
             </div>
             <div class="field" style="grid-column:1/-1;">
               <label for="fm-excerpt">Excerpt</label>
@@ -146,6 +151,8 @@ tailwind.config = {
       author:   document.getElementById('fm-author'),
       readTime: document.getElementById('fm-read-time'),
       hero:     document.getElementById('fm-hero'),
+      heroPick: document.getElementById('hero-pick'),
+      heroPreview: document.getElementById('hero-preview'),
       excerpt:  document.getElementById('fm-excerpt'),
       draft:    document.getElementById('fm-draft'),
       body:     document.getElementById('md-body')
@@ -164,6 +171,23 @@ tailwind.config = {
     const dirty = Admin.dirtyGuard();
     let originalSha = null;
     let slugManuallyEdited = !isNew;
+
+    // Hero image picker + live preview
+    function refreshHeroPreview() {
+      const url = f.hero.value.trim();
+      if (!url) { f.heroPreview.style.display = 'none'; return; }
+      const img = f.heroPreview.querySelector('img');
+      img.src = url;
+      f.heroPreview.style.display = '';
+    }
+    f.hero.addEventListener('input', refreshHeroPreview);
+    f.heroPick.addEventListener('click', function () {
+      Admin.openImagePicker(function (img) {
+        f.hero.value = img.path;
+        refreshHeroPreview();
+        dirty.set(true);
+      });
+    });
 
     // Categories suggestion list
     try {
@@ -208,6 +232,7 @@ tailwind.config = {
       f.author.value   = fm.author || 'On Target ABA';
       f.readTime.value = fm.read_time || '';
       f.hero.value     = fm.hero_image || '';
+      refreshHeroPreview();
       f.excerpt.value  = fm.excerpt || '';
       f.draft.checked  = !!fm.draft;
       f.body.value     = body || '';
