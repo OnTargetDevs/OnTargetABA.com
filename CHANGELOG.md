@@ -12,6 +12,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-06-05
+
+### Added
+
+- section template "header" (#6)
+
+
 ## [Unreleased] &mdash; 2026-06-04
 
 ### Added
