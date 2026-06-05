@@ -35,23 +35,31 @@
     onScroll();
   }
 
-  // ---------- Mobile nav ----------
-  const mToggle = document.querySelector('[data-mnav-toggle]');
-  const mPanel  = document.querySelector('[data-mnav-panel]');
-  if (mToggle && mPanel) {
-    mToggle.addEventListener('click', () => {
-      const open = mPanel.classList.toggle('open');
-      mToggle.setAttribute('aria-expanded', String(open));
-      document.body.style.overflow = open ? 'hidden' : '';
-    });
-    mPanel.querySelectorAll('a').forEach((a) =>
-      a.addEventListener('click', () => {
-        mPanel.classList.remove('open');
-        mToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      })
-    );
-  }
+  // ---------- Mobile nav (event-delegated) ----------
+  // header.js injects the toggle + panel after fetching header.json, so a
+  // direct querySelector at DOMContentLoaded time misses them. Delegate
+  // on document so the handler works no matter when the markup lands.
+  document.addEventListener('click', (e) => {
+    const toggle = e.target.closest('[data-mnav-toggle]');
+    if (toggle) {
+      const panel = document.querySelector('[data-mnav-panel]');
+      if (panel) {
+        const open = panel.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      return;
+    }
+    // Close the mobile panel when a nav link inside it is clicked.
+    const linkInPanel = e.target.closest('[data-mnav-panel] a');
+    if (linkInPanel) {
+      const panel = document.querySelector('[data-mnav-panel]');
+      const t = document.querySelector('[data-mnav-toggle]');
+      if (panel) panel.classList.remove('open');
+      if (t) t.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
 
   // ---------- FAQ accordion ----------
   document.querySelectorAll('.faq-item').forEach((item) => {
