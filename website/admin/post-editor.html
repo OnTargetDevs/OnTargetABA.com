@@ -172,18 +172,50 @@ tailwind.config = {
     let originalSha = null;
     let slugManuallyEdited = !isNew;
 
-    // Hero image picker + live preview
+    // Hero image picker + live preview. A pending upload is held in memory
+    // and shipped with the post Save / Publish — image + .md land in the
+    // same PR atomically, no orphan blob on main.
+    let pendingHeroUpload = null;
+    function setPendingBadge(label) {
+      let badge = document.getElementById('hero-pending-badge');
+      if (!label) { if (badge) badge.remove(); return; }
+      if (!badge) {
+        badge = document.createElement('span');
+        badge.id = 'hero-pending-badge';
+        badge.className = 'pill pill-draft';
+        badge.style.marginLeft = '.5rem';
+        f.hero.parentElement.appendChild(badge);
+      }
+      badge.textContent = label;
+    }
     function refreshHeroPreview() {
       const url = f.hero.value.trim();
-      if (!url) { f.heroPreview.style.display = 'none'; return; }
       const img = f.heroPreview.querySelector('img');
+      if (pendingHeroUpload) {
+        img.src = pendingHeroUpload.dataUrl;
+        f.heroPreview.style.display = '';
+        return;
+      }
+      if (!url) { f.heroPreview.style.display = 'none'; return; }
       img.src = url;
       f.heroPreview.style.display = '';
     }
-    f.hero.addEventListener('input', refreshHeroPreview);
+    f.hero.addEventListener('input', function () {
+      // User edited the URL manually -> drop any pending upload.
+      if (f.hero.value.trim()) { pendingHeroUpload = null; setPendingBadge(''); }
+      refreshHeroPreview();
+    });
     f.heroPick.addEventListener('click', function () {
       Admin.openImagePicker(function (img) {
-        f.hero.value = img.path;
+        if (img.isPending) {
+          pendingHeroUpload = img;
+          f.hero.value = '';
+          setPendingBadge('Pending — uploads with Save');
+        } else {
+          pendingHeroUpload = null;
+          setPendingBadge('');
+          f.hero.value = img.path;
+        }
         refreshHeroPreview();
         dirty.set(true);
       });
@@ -322,18 +354,30 @@ tailwind.config = {
       setSaving('Submitting PR&hellip;');
       try {
         let res;
+        const payload = {
+          frontmatter: state.frontmatter,
+          body: state.body
+        };
+        if (pendingHeroUpload) {
+          payload.heroImageUpload = {
+            filename: pendingHeroUpload.filename,
+            mimeType: pendingHeroUpload.mimeType,
+            base64: pendingHeroUpload.base64
+          };
+        }
         if (isNew) {
-          res = await Admin.api.post('/api/posts', {
-            slug: state.frontmatter.slug,
-            frontmatter: state.frontmatter,
-            body: state.body
-          });
+          payload.slug = state.frontmatter.slug;
+          res = await Admin.api.post('/api/posts', payload);
         } else {
-          res = await Admin.api.put('/api/posts/' + encodeURIComponent(slug), {
-            frontmatter: state.frontmatter,
-            body: state.body,
-            sha: originalSha
-          });
+          payload.sha = originalSha;
+          res = await Admin.api.put('/api/posts/' + encodeURIComponent(slug), payload);
+        }
+        // Server may have rewritten hero_image to the generated path.
+        if (res && res.hero_image) {
+          f.hero.value = res.hero_image;
+          pendingHeroUpload = null;
+          setPendingBadge('');
+          refreshHeroPreview();
         }
         setSaving('Saved');
         dirty.set(false);

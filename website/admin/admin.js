@@ -425,7 +425,7 @@
         '</div>' +
         '<div style="font-size:.72rem;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + (img.name || '') + '</div>' +
         '<div class="admin-muted" style="font-size:.66rem;">' + (img.month || '') + ' &middot; ' + Math.round((img.size || 0) / 1024) + ' KB</div>';
-      t.addEventListener('click', function () { onPick(img); backdrop.remove(); });
+      t.addEventListener('click', function () { onPick({ isPending: false, path: img.path, name: img.name, size: img.size, month: img.month }); backdrop.remove(); });
       t.addEventListener('mouseenter', function () { t.style.borderColor = 'var(--coral)'; });
       t.addEventListener('mouseleave', function () { t.style.borderColor = 'var(--line)'; });
       return t;
@@ -453,26 +453,26 @@
       try {
         const opt = await optimizeImage(file, { maxDim: 2000, quality: 0.85 });
         const saved = ((opt.originalSize - opt.optimizedSize) / opt.originalSize * 100);
-        status.textContent = 'Uploading ' + opt.filename + ' (' + Math.round(opt.optimizedSize / 1024) + ' KB, ' + (saved > 0 ? '-' + saved.toFixed(0) + '%' : 'no shrink') + ')...';
-        const res = await api.post('/api/images/upload', {
+        status.textContent = 'Ready (' + Math.round(opt.optimizedSize / 1024) + ' KB' +
+          (saved > 0 ? ', -' + saved.toFixed(0) + '% from original' : '') +
+          '). Will upload with your next Save / Publish.';
+        // Pending: don't POST yet. The caller (post editor) bundles this
+        // into the next post Save so the image + post land in the same PR.
+        onPick({
+          isPending: true,
+          dataUrl: 'data:' + opt.mimeType + ';base64,' + opt.base64,
+          base64: opt.base64,
           filename: opt.filename,
-          contentType: opt.mimeType,
-          data: opt.base64,
+          mimeType: opt.mimeType,
+          originalSize: opt.originalSize,
+          optimizedSize: opt.optimizedSize,
+          width: opt.width,
+          height: opt.height
         });
-        if (res && res.path) {
-          const month = (res.path.match(/\/(\d{4}-\d{2})\//) || [, ''])[1];
-          const newEntry = { path: res.path, name: opt.filename, size: opt.optimizedSize, month: month };
-          images.unshift(newEntry);
-          render(images);
-          status.textContent = 'Uploaded.';
-          onPick(newEntry);
-          backdrop.remove();
-        } else {
-          status.textContent = 'Upload returned no path.';
-        }
+        backdrop.remove();
       } catch (err) {
         status.textContent = 'Failed: ' + (err.message || err);
-        toast(err.message || 'Upload failed', 'error');
+        toast(err.message || 'Optimization failed', 'error');
       }
       uploadInput.value = '';
     });

@@ -4,19 +4,54 @@
 
 import {
   badRequest,
-  buildBlogIndex,
   buildPostFile,
   buildSitemapXml,
-  fetchAllBlogPosts,
   ghGet,
   json,
+  loadBlogIndex,
   loadPagesJson,
   notFound,
   openPrWithFiles,
-  parseFrontmatter,
   serverError,
+  shortUuid,
   slugify,
 } from "../../_utils.js";
+
+const ALLOWED_IMG_EXT = new Set(["jpg","jpeg","png","webp","gif","svg","avif"]);
+function extOf(name) { const m = /\.([a-zA-Z0-9]+)$/.exec(name||""); return m ? m[1].toLowerCase() : ""; }
+function isoMonth() { const d = new Date(); return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,"0")}`; }
+
+function makeAttachmentFile(slug, upload) {
+  if (!upload || !upload.base64 || !upload.filename) return null;
+  const ext = extOf(upload.filename);
+  if (!ALLOWED_IMG_EXT.has(ext)) throw new Error(`unsupported image extension ".${ext}"`);
+  const base = slugify(upload.filename.replace(/\.[^.]+$/, "")) || slug || "image";
+  const tag = shortUuid();
+  const path = `assets/images/uploads/${isoMonth()}/${base}-${tag}.${ext}`;
+  let binaryStr;
+  try { binaryStr = atob(String(upload.base64).replace(/\s+/g, "")); }
+  catch { throw new Error("attachment data is not valid base64"); }
+  return { path, content: binaryStr, publicPath: `/${path}` };
+}
+
+function mergedIndexUpsert(existingPosts, updatedEntry) {
+  const posts = existingPosts.slice();
+  const slug = updatedEntry.slug;
+  const i = posts.findIndex((p) => p.slug === slug);
+  if (i >= 0) posts[i] = updatedEntry; else posts.push(updatedEntry);
+  return rebuildIndex(posts);
+}
+function mergedIndexDelete(existingPosts, slug) { return rebuildIndex(existingPosts.filter((p) => p.slug !== slug)); }
+function rebuildIndex(posts) {
+  const cleaned = posts.filter((p)=>p && p.title && p.slug).map((p)=>({
+    title:p.title||"",date:p.date||"",category:p.category||"",author:p.author||"",
+    hero_image:p.hero_image||"",excerpt:p.excerpt||"",read_time:p.read_time||"",
+    source_url:p.source_url||"",slug:p.slug||"",
+  })).sort((a,b)=>(b.date||"").localeCompare(a.date||""));
+  const counts={}; for (const p of cleaned) if (p.category) counts[p.category]=(counts[p.category]||0)+1;
+  const categories = Object.entries(counts).map(([name,count])=>({name,count})).sort((a,b)=>b.count-a.count||a.name.localeCompare(b.name));
+  return { generated_at:null, post_count:cleaned.length, categories, posts:cleaned };
+}
 
 function readSlug(params) {
   return slugify(params.slug || "");
@@ -35,7 +70,7 @@ export const onRequestPut = async ({ params, request, env, data }) => {
   if (!slug) return badRequest("missing slug");
   let body;
   try { body = await request.json(); } catch { return badRequest("invalid JSON"); }
-  const fm = body.frontmatter || {};
+  const fm = { ...(body.frontmatter || {}) };
   if (!fm.title) return badRequest("frontmatter.title is required");
   const postBody = body.body || "";
 
@@ -44,29 +79,41 @@ export const onRequestPut = async ({ params, request, env, data }) => {
     const existing = await ghGet(path, env);
     if (!existing) return notFound(`post "${slug}" not found`);
 
-    const allPosts = await fetchAllBlogPosts(env);
-    const merged = allPosts.map((p) => p.slug === slug ? { ...fm, slug } : p);
-    if (!merged.some((p) => p.slug === slug)) merged.push({ ...fm, slug });
-    const newIndex = buildBlogIndex(merged);
+    const filesToCommit = [];
+    if (body.heroImageUpload) {
+      try {
+        const att = makeAttachmentFile(slug, body.heroImageUpload);
+        if (att) {
+          filesToCommit.push({ path: att.path, content: att.content });
+          fm.hero_image = att.publicPath;
+        }
+      } catch (err) { return badRequest(err.message); }
+    }
+
+    // ONE call to index.json. fetchAllBlogPosts (161 ghGets) blew through
+    // CF's 50-subrequest budget on the free plan.
+    const existingPosts = await loadBlogIndex(env);
+    const newIndex = mergedIndexUpsert(existingPosts, { ...fm, slug });
     const pages = await loadPagesJson(env);
     const sitemap = buildSitemapXml(pages, newIndex.posts);
 
-    const files = [
+    filesToCommit.push(
       { path, content: buildPostFile(fm, postBody) },
       { path: "assets/blog/index.json", content: JSON.stringify(newIndex, null, 2) + "\n" },
       { path: "sitemap.xml", content: sitemap },
-    ];
+    );
 
     const pr = await openPrWithFiles({
       branchPrefix: `admin/post-update-${slug}`,
-      files,
+      files: filesToCommit,
       message: `content: update blog post "${slug}"`,
       prTitle: `content: update blog post "${fm.title}"`,
-      prSummary: `Updates \`${slug}.md\` and regenerates blog index + sitemap.`,
+      prSummary: `Updates \`${slug}.md\` and regenerates blog index + sitemap.` +
+        (body.heroImageUpload ? `\nBundles new hero image at \`${fm.hero_image}\`.` : ""),
       email: data?.admin?.email,
     }, env);
 
-    return json({ ok: true, pr });
+    return json({ ok: true, pr, hero_image: fm.hero_image || null });
   } catch (e) {
     return serverError(`failed to update post: ${e.message}`);
   }
@@ -80,9 +127,8 @@ export const onRequestDelete = async ({ params, env, data }) => {
     const existing = await ghGet(path, env);
     if (!existing) return notFound(`post "${slug}" not found`);
 
-    const allPosts = await fetchAllBlogPosts(env);
-    const remaining = allPosts.filter((p) => p.slug !== slug);
-    const newIndex = buildBlogIndex(remaining);
+    const existingPosts = await loadBlogIndex(env);
+    const newIndex = mergedIndexDelete(existingPosts, slug);
     const pages = await loadPagesJson(env);
     const sitemap = buildSitemapXml(pages, newIndex.posts);
 
