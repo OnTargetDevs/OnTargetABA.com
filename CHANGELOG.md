@@ -12,6 +12,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-06-16
+
+### Changed
+
+- self-host Tailwind + nav preload/prefetch + repo move docs
+
+
 ## [Unreleased] &mdash; 2026-06-05
 
 ### Chore
