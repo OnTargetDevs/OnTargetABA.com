@@ -136,7 +136,7 @@ post, header, and footer in this repo without leaving the browser.
 **Sign in** with any allow-listed Google account (configured via the
 `ADMIN_EMAILS` env var). After OAuth, you land on a dashboard with four
 tiles: Pages, Posts, Header, Footer. Every save becomes a Pull Request
-on `Shalom-Karr/OnTargetABA.com` so the repo history is the audit log
+on `OnTargetDevs/OnTargetABA.com` so the repo history is the audit log
 &mdash; nothing pushes straight to `main`.
 
 ### What the editor can do
@@ -204,7 +204,7 @@ Save in /admin
 ```
 
 Typical end-to-end: 60&ndash;120 s. You can watch the PR list at
-[github.com/Shalom-Karr/OnTargetABA.com/pulls](https://github.com/Shalom-Karr/OnTargetABA.com/pulls)
+[github.com/OnTargetDevs/OnTargetABA.com/pulls](https://github.com/OnTargetDevs/OnTargetABA.com/pulls)
 if a change isn't appearing &mdash; merge conflicts or validation
 failures stop here without affecting `main`.
 
@@ -221,8 +221,8 @@ into a multi-value PATCH):
 | `GOOGLE_REDIRECT_URI` | `https://website.ontargetnotes.com/OAuth/Callback` &mdash; case-sensitive, must match Google Cloud Console allow-list |
 | `ADMIN_EMAILS` | Comma-separated Google accounts permitted to sign in |
 | `JWT_SECRET` | 64-char hex used to sign the `ota_admin` cookie. Rotate to invalidate all sessions. |
-| `GITHUB_TOKEN` | Fine-grained PAT scoped to `Shalom-Karr/OnTargetABA.com` with Contents R/W + Pull requests R/W + Metadata R |
-| `GITHUB_REPO` | `Shalom-Karr/OnTargetABA.com` |
+| `GITHUB_TOKEN` | Fine-grained PAT scoped to `OnTargetDevs/OnTargetABA.com` with Contents R/W + Pull requests R/W + Metadata R |
+| `GITHUB_REPO` | `OnTargetDevs/OnTargetABA.com` |
 | `GITHUB_BRANCH` | `main` |
 
 ### When something feels stuck

@@ -24,7 +24,7 @@ In the CF dashboard → Pages → your project → **Settings → Builds & deplo
 | Python version (env var)    | `PYTHON_VERSION=3.11`              |
 
 The project's source is set under **Source** → Git → connect to GitHub →
-pick `Shalom-Karr/OnTargetABA.com` → branch `main`.
+pick `OnTargetDevs/OnTargetABA.com` → branch `main`.
 
 Pushes to `main` deploy to production. Pushes to any other branch deploy
 to a preview URL (`{branch}.{project}.pages.dev`). PRs auto-build a preview.
@@ -47,7 +47,7 @@ at `ontargetaba.com`; Preview values run on the auto-built PR previews.
 | `ADMIN_EMAILS`       | Comma-separated allow-list of Google account emails permitted into `/admin`. Anyone not on the list is bounced. |
 | `JWT_SECRET`         | Random 32+ char string used to sign admin session JWTs. Rotating it logs everyone out.          |
 | `GITHUB_TOKEN`       | Fine-grained GitHub PAT scoped to this repo. `Contents: R/W` + `Pull requests: R/W`. Used by every write Function. |
-| `GITHUB_REPO`        | `Shalom-Karr/OnTargetABA.com`. Identifies the repo for the GitHub Contents API.                |
+| `GITHUB_REPO`        | `OnTargetDevs/OnTargetABA.com`. Identifies the repo for the GitHub Contents API.                |
 | `GITHUB_BRANCH`      | Base branch for admin PRs. Always `main`.                                                       |
 
 ### Build (optional)
@@ -59,6 +59,14 @@ at `ontargetaba.com`; Preview values run on the auto-built PR previews.
 | `PYTHON_VERSION`     | Pin Python version on the build VM.                                                            |
 
 ### Setting them
+
+> ⚠️ **Setting an env var does NOT update existing deployments.** CF Pages
+> bakes the env-var snapshot in at deploy time; live Functions on the
+> currently-serving deploy continue to see the *old* values until a
+> fresh deploy is triggered. After any env-var change, manually
+> **Retry deployment** on the latest, or push a commit, or `POST
+> /pages/projects/{name}/deployments` (see
+> `docs/TROUBLESHOOTING.md` → Error 1101 for the API recipe).
 
 For each var:
 
@@ -123,9 +131,9 @@ They need a token scoped only as far as needed.
    Fine-grained tokens → Generate new token**.
 2. **Token name:** "OnTargetABA admin writes".
 3. **Expiration:** 90 days or 1 year. Set a calendar reminder to rotate.
-4. **Resource owner:** `Shalom-Karr` (or the org that owns the repo).
+4. **Resource owner:** `OnTargetDevs` (the org that owns the repo).
 5. **Repository access:** **Only select repositories** →
-   `Shalom-Karr/OnTargetABA.com`.
+   `OnTargetDevs/OnTargetABA.com`.
 6. **Repository permissions:**
    - **Contents:** Read and write
    - **Pull requests:** Read and write

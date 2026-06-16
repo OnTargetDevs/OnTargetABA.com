@@ -42,6 +42,9 @@ node scripts/selfhost-fonts.mjs
 echo "==> Sweeping HTML for skip-to-content links..."
 node scripts/add-skip-link.mjs
 
+echo "==> Optimizing pages (Tailwind self-host + preload/prefetch)..."
+python3 scripts/optimize-pages.py
+
 echo "==> Building sitemap.xml + robots.txt..."
 python3 scripts/build-sitemap.py
 

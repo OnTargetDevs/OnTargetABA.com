@@ -10,8 +10,8 @@ that were made, and integrations that are wired up to specific live IDs.
 
 - **Client:** On Target ABA (the user's own company). User email: `nate.karr@ontargetaba.com`.
 - **Live legacy site:** https://ontargetaba.com (WordPress + Elementor + Fluent Forms + Jotform + Hotjar + Facebook Pixel + GTM-N2RP5GST / GTM-W42536PM).
-- **Redesigned static site (this repo):** https://github.com/Shalom-Karr/OnTargetABA.com — `main` branch.
-- **Deployed preview:** `website.ontargetnotes.com`, hosted on **Cloudflare Pages**. The CF project is wired to the GitHub repo; pushes to `main` trigger a build + deploy.
+- **Redesigned static site (this repo):** https://github.com/OnTargetDevs/OnTargetABA.com — `main` branch. (Originally forked from `Shalom-Karr/OnTargetABA.com`; the company-org fork is now canonical and deploys from there.)
+- **Deployed preview:** originally `website.ontargetnotes.com` on a personal CF account. The project has since moved to a **company CF account** (`Joshua@ontargetaba.com's Account`, account ID `8c5c2baf2cd46499b5989ef288febd82`), Pages project name **`ontargetaba`** (not `ontargetaba-com`), serving at `https://ontargetaba.pages.dev` and the custom domain `https://beta.ontargetaba.com`. Production source: `OnTargetDevs/OnTargetABA.com`, branch `main`.
 - **Figma source of truth** for visual direction: file `1BS1Qg0H4ToqKZXLAeNX1P` ("On Target ABA"). The node IDs we previewed in earlier sessions were `32-2` (home), `634-2` (about), `634-194` (services), `634-457` (Cleveland location), `634-666` (careers). Figma proto links require login — if a future session needs to look at the board again, drive Chromium via Playwright and re-introduce a small screenshot helper.
 
 ## Locations + phone numbers (real, not placeholders)
@@ -91,10 +91,27 @@ If you're stuck on a pattern, check these in order:
 
 Host is CF Pages — **not Vercel**. Don't ship `vercel.json`; it's noise.
 
-Project settings to verify in the CF dashboard:
+Project settings to verify in the CF dashboard
+(account `8c5c2baf2cd46499b5989ef288febd82`, project `ontargetaba`):
 - **Root directory:** `/website` (the project lives in a subfolder)
 - **Build command:** `bash build.sh`
 - **Build output directory:** `.` (deploy from `/website` itself)
+
+⚠️ The new CF account inherited the source connection but **NOT** the
+build settings. After any new-account migration (or any time you find
+that `sitemap.xml` is stale or OG images are missing for new posts),
+verify `build_command` is set to `bash build.sh` and `destination_dir`
+to `.`. The PATCH:
+
+```bash
+TOKEN=$(awk -F'"' '/oauth_token/{print $2}' \
+  "$APPDATA/xdg.config/.wrangler/config/default.toml")
+curl --ssl-no-revoke -X PATCH \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"build_config":{"build_command":"bash build.sh","destination_dir":".","root_dir":"website"}}' \
+  https://api.cloudflare.com/client/v4/accounts/8c5c2baf2cd46499b5989ef288febd82/pages/projects/ontargetaba
+```
 
 `build.sh` chains the maintenance scripts so every push refreshes the
 derived artifacts (blog index → sitemap → IndexNow ping). Override the
@@ -143,8 +160,18 @@ the CF dashboard) to ping every URL after a large content change.
 | `indexnow-ping.py` | Submits recent (last 14d) URLs from `sitemap.xml` to api.indexnow.org. `--all` pings every URL. |
 | `embed-jotforms.py` | Swaps placeholder forms for real Jotform `jsform` embeds. Idempotent. |
 | `add-blog-nav.py` | Inserts a Blog link into the desktop nav on every page. Idempotent. |
+| `optimize-pages.py` | Self-hosts Tailwind (`assets/vendor/tailwind.js` — production warning stripped), injects `<meta name="view-transition">`, preloads `header.json`/`pages.json`, and prefetches top-nav destinations. Idempotent via `auto-perf-start`/`auto-perf-end` markers. |
 
 **Order when running a refresh:** `download-assets` → `swap-logo` → `recolor` → `sync-tailwind-config` → `fix-encoding` → `inject-seo` → `build-blog-index` → `qa-check`.
+
+`optimize-pages.py` MUST run *after* every HTML-touching script
+(`inject-seo`, `selfhost-fonts`, `add-skip-link`) or its idempotent
+markers can be clobbered. `build.sh` orders it correctly between
+`add-skip-link.mjs` and `build-sitemap.py` — don't reorder.
+
+For end-to-end common-issue diagnosis (1101, redirect_uri_mismatch,
+NXDOMAIN caching, empty `build_command`, wrangler-login deadlocks),
+see `docs/TROUBLESHOOTING.md`.
 
 ### Open Graph image pipeline
 
@@ -230,7 +257,7 @@ right column already hosts location cards. Build order in `build.sh`:
 
 Lives at `/admin` (static HTML + JS in `website/admin/`). Auth is Google OAuth against `ADMIN_EMAILS`; session is a JWT in an HttpOnly cookie. CF Pages Functions in `website/functions/` implement the API + a catch-all draft-preview Function.
 
-Every edit opens a Pull Request on `Shalom-Karr/OnTargetABA.com` &mdash; content does NOT push to `main` directly. The PR is the audit log. See `docs/ADMIN_DASHBOARD.md` for the user-facing walkthrough and `docs/DEPLOYMENT.md` for the env-var checklist.
+Every edit opens a Pull Request on `OnTargetDevs/OnTargetABA.com` &mdash; content does NOT push to `main` directly. The PR is the audit log. See `docs/ADMIN_DASHBOARD.md` for the user-facing walkthrough and `docs/DEPLOYMENT.md` for the env-var checklist.
 
 ### Capabilities (as of editor v2)
 

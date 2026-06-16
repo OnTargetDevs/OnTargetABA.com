@@ -10,7 +10,7 @@ working in the codebase (including the admin dashboard's automated PRs).
   directly &mdash; not hand-authored commits, and not content edits made
   through the admin dashboard.
 - The admin dashboard at `/admin` opens PRs against
-  `Shalom-Karr/OnTargetABA.com` on your behalf. The PR itself is the audit
+  `OnTargetDevs/OnTargetABA.com` on your behalf. The PR itself is the audit
   log for any content change.
 - Keep PRs scoped. One feature, one fix, or one content change per PR.
 - Wait for CI (`validate-content`, `lighthouse`, `broken-links`) to pass
