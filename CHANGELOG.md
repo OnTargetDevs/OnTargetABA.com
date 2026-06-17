@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Added
 
+- publish /meet-the-team
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Added
+
 - update header.json (#7)
 
 
