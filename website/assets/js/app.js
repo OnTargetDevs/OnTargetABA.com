@@ -131,6 +131,45 @@
   // auto-resize handler once so the iframe grows with its content.
   const jotPlaceholders = document.querySelectorAll('[data-jotform-id]');
   if (jotPlaceholders.length) {
+    // ---------- GA4 form_submission tracking ----------
+    // Jotform iframes broadcast a postMessage like "submission-completed:<id>"
+    // (and a JSON variant) when a form submits successfully. Listen once
+    // and fire a GA4 conversion event with form metadata. Map known form
+    // IDs to friendly labels so analytics is readable.
+    const formTypeById = {
+      '213614603878157': 'pre_intake',
+      '210615141890045': 'contact',
+      '260534406459156': 'autism_testing_eval'
+    };
+    const knownFormIds = Array.from(jotPlaceholders).map((el) => el.dataset.jotformId);
+    const fireFormSubmission = (formId) => {
+      if (!formId) return;
+      if (typeof window.gtag !== 'function') return;
+      window.gtag('event', 'form_submission', {
+        form_id: formId,
+        form_type: formTypeById[formId] || 'jotform',
+        page_path: location.pathname
+      });
+    };
+    window.addEventListener('message', (ev) => {
+      // Only trust Jotform origins.
+      if (!ev.origin || ev.origin.indexOf('jotform') === -1) return;
+      const data = ev.data;
+      if (typeof data === 'string') {
+        // Plain string form: "submission-completed:<formID>"
+        if (data.indexOf('submission-completed') === 0) {
+          const parts = data.split(':');
+          const id = parts[1] || (knownFormIds.length === 1 ? knownFormIds[0] : '');
+          fireFormSubmission(id);
+        }
+      } else if (data && typeof data === 'object') {
+        // Object form: { action: "submission-completed", formID: "..." }
+        if (data.action === 'submission-completed') {
+          fireFormSubmission(data.formID || (knownFormIds.length === 1 ? knownFormIds[0] : ''));
+        }
+      }
+    });
+
     let handlerLoaded = false;
     const loadHandler = () => {
       if (handlerLoaded) return Promise.resolve();

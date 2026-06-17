@@ -147,7 +147,7 @@
             '<a href="' + esc(phone.href) + '" class="btn btn-ghost text-sm">' + phoneSvg + ' ' + esc(phone.label) + '</a>' +
             '<a href="' + esc(primary.href) + '" class="btn btn-coral text-sm">' + esc(primary.label) + '</a>' +
           '</div>' +
-          '<button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu">' +
+          '<button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu" style="margin-right: env(safe-area-inset-right, 0px);">' +
             '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#163243" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
           '</button>' +
         '</div>' +
@@ -171,7 +171,7 @@
     const primary = (data.cta && data.cta.primary) || { href: '/contact.html',  label: 'Get Started' };
     return (
       '<div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-line shadow-[0_-4px_18px_rgba(22,50,67,.08)]" data-mobile-cta' +
-        ' style="padding-bottom: max(env(safe-area-inset-bottom), 0px); padding-right: env(safe-area-inset-right); padding-left: env(safe-area-inset-left);">' +
+        ' style="padding-bottom: max(env(safe-area-inset-bottom), .625rem); padding-right: env(safe-area-inset-right); padding-left: env(safe-area-inset-left);">' +
         '<div class="grid grid-cols-2 gap-2 px-3 py-2.5 max-w-[640px] mx-auto">' +
           '<a href="' + esc(phone.href) + '" class="btn btn-ghost justify-center text-sm py-2.5" aria-label="Call ' + esc(phone.label) + '">' +
             '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>' +
@@ -199,6 +199,83 @@
       });
   }
 
+  // Keyboard focus management for the mobile nav panel.
+  // The open/close click handler lives in app.js (it toggles .open on the
+  // panel). We observe that class change here and:
+  //   - on open: move focus to the first focusable item in the panel
+  //   - on close: return focus to the toggle button
+  //   - while open: trap Tab/Shift+Tab inside the panel and close on Escape
+  function wireMobileNavFocus() {
+    const toggle = document.querySelector('[data-mnav-toggle]');
+    const panel  = document.querySelector('[data-mnav-panel]');
+    if (!toggle || !panel) return;
+
+    const focusableSel =
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"]), input:not([disabled]), select:not([disabled])';
+    const getFocusable = () => Array.prototype.slice
+      .call(panel.querySelectorAll(focusableSel))
+      .filter((el) => el.offsetParent !== null || el === document.activeElement);
+
+    function closePanel() {
+      if (!panel.classList.contains('open')) return;
+      panel.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!panel.classList.contains('open')) return;
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        e.preventDefault();
+        closePanel();
+        try { toggle.focus(); } catch (_) {}
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const items = getFocusable();
+      if (items.length === 0) return;
+      const first = items[0];
+      const last  = items[items.length - 1];
+      const active = document.activeElement;
+      // If focus has escaped the panel entirely, pull it back in.
+      if (!panel.contains(active)) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+        return;
+      }
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
+    let wasOpen = panel.classList.contains('open');
+    const obs = new MutationObserver(() => {
+      const isOpen = panel.classList.contains('open');
+      if (isOpen === wasOpen) return;
+      wasOpen = isOpen;
+      if (isOpen) {
+        // Defer one frame so the panel is laid out / visible before focusing.
+        requestAnimationFrame(() => {
+          const items = getFocusable();
+          if (items.length > 0) {
+            try { items[0].focus(); } catch (_) {}
+          }
+        });
+      } else {
+        // Only restore focus to the toggle if focus is currently inside the
+        // panel (avoid stealing focus from wherever the user clicked next).
+        if (panel.contains(document.activeElement) || document.activeElement === document.body) {
+          try { toggle.focus(); } catch (_) {}
+        }
+      }
+    });
+    obs.observe(panel, { attributes: true, attributeFilter: ['class'] });
+  }
+
   loadHeaderData()
     .then((headerData) => {
       const navLinks = headerData.navLinks || [];
@@ -207,6 +284,7 @@
         renderHeader(headerData, navLinks) +
         renderCrumbs(headerData);
       slot.outerHTML = html;
+      wireMobileNavFocus();
       // Sticky mobile CTA: append once, after the rest of the body's
       // already-rendered footer/leadbot, so it floats above them.
       if (!document.querySelector('[data-mobile-cta]')) {

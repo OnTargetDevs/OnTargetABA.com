@@ -40,12 +40,20 @@
 <meta property="og:site_name" content="On Target ABA" />
 <meta property="og:title" id="seo-og-title" content="On Target ABA Blog" />
 <meta property="og:description" id="seo-og-description" content="ABA therapy &amp; autism resources for families." />
-<meta property="og:image" id="seo-og-image" content="/assets/images/footerImg.png" />
+<meta property="og:image" id="seo-og-image" content="https://ontargetaba.com/assets/images/footerImg.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="article:published_time" id="seo-article-pub" content="" />
+<meta property="article:modified_time" id="seo-article-mod" content="" />
+<meta property="article:author" id="seo-article-author" content="On Target ABA" />
+<meta property="article:section" id="seo-article-section" content="" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" id="seo-tw-title" content="On Target ABA Blog" />
 <meta name="twitter:description" id="seo-tw-description" content="ABA therapy &amp; autism resources for families." />
-<meta name="twitter:image" id="seo-tw-image" content="/assets/images/footerImg.png" />
-<script id="seo-jsonld" type="application/ld+json"></script>
+<meta name="twitter:image" id="seo-tw-image" content="https://ontargetaba.com/assets/images/footerImg.png" />
+<meta name="twitter:image:width" content="1200" />
+<meta name="twitter:image:height" content="630" />
+<script id="seo-jsonld" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"On Target ABA Blog","description":"ABA therapy & autism resources for families.","publisher":{"@type":"Organization","name":"On Target ABA","logo":{"@type":"ImageObject","url":"https://ontargetaba.com/assets/images/footerImg.png"}},"image":["https://ontargetaba.com/assets/images/footerImg.png"]}</script>
 <script src="/assets/vendor/tailwind.js"></script>
 <script>
 tailwind.config = {
@@ -137,8 +145,14 @@ tailwind.config = {
   .toc-link.active { color: var(--c-teal-deep); font-weight: 600;
                       border-left-color: var(--c-coral); background: var(--c-cream); }
 </style>
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/images/footerImg.png">
+<link rel="apple-touch-icon" href="/assets/images/footerImg.png">
   <!-- auto-perf-start -->
 <meta name="view-transition" content="same-origin">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/images/footerImg.png">
 <link rel="preconnect" href="https://form.jotform.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jotfor.ms" crossorigin>
 <link rel="dns-prefetch" href="https://app.leadtrap.ai">
@@ -149,6 +163,33 @@ tailwind.config = {
 <link rel="prefetch" href="/our-services.html">
 <link rel="prefetch" href="/autism-testing.html">
 <link rel="prefetch" href="/locations.html">
+<!-- auto-perf head-scripts start -->
+<!-- Google tag (gtag.js) -- handles both GA4 properties and Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHLC29WGVN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PHLC29WGVN');
+  gtag('config', 'G-D3RBZZ5WPL');
+  gtag('config', 'AW-354317910');
+</script>
+
+<!-- Hotjar Tracking Code -->
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:5016360,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- WhatConverts call tracking (account 159348) -->
+<script async type="text/javascript" src="//s.wc-data.com/159348/wc.js"></script>
+<!-- auto-perf head-scripts end -->
 <!-- auto-perf-end -->
 </head>
 <body class="bg-cream text-ink antialiased">
@@ -374,6 +415,26 @@ tailwind.config = {
   function showNotFound() {
     els.loading.classList.add('hidden');
     els.notfound.classList.remove('hidden');
+    // Signal "this is an error page" to crawlers so the 200-status response
+    // isn't indexed as thin/duplicate content. A proper 404 status code
+    // requires a CF Pages Function or static 404.html; this is the best
+    // we can do from a single static template.
+    document.title = 'Post not found — On Target ABA';
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement('meta');
+      robots.name = 'robots';
+      document.head.appendChild(robots);
+    }
+    robots.setAttribute('content', 'noindex, follow');
+    // Hint to Googlebot via the unofficial-but-honored "prerender" status meta.
+    let st = document.querySelector('meta[name="prerender-status-code"]');
+    if (!st) {
+      st = document.createElement('meta');
+      st.name = 'prerender-status-code';
+      document.head.appendChild(st);
+    }
+    st.setAttribute('content', '404');
   }
 
   function applySeo(meta) {
@@ -390,8 +451,12 @@ tailwind.config = {
     // scripts/gen-og-images.mjs as a 1200x630 SVG. We probe it with
     // Image() and fall back to footerImg.png if the request fails
     // (the SVG hasn't been generated yet, CDN misroute, etc.).
-    const ogImg = '/assets/og/blog-' + slug + '.svg';
-    const fallbackImg = '/assets/images/footerImg.png';
+    // Absolute URLs required by Open Graph spec — social platforms
+    // (Facebook, Twitter, LinkedIn) need fully qualified URLs to fetch/cache.
+    const ORIGIN = 'https://ontargetaba.com';
+    const ogImgRel = '/assets/og/blog-' + slug + '.svg';
+    const ogImg = ORIGIN + ogImgRel;
+    const fallbackImg = ORIGIN + '/assets/images/footerImg.png';
     const probe = new Image();
     probe.onload = () => {
       set('seo-og-image', 'content', ogImg);
@@ -401,7 +466,7 @@ tailwind.config = {
       set('seo-og-image', 'content', fallbackImg);
       set('seo-tw-image', 'content', fallbackImg);
     };
-    probe.src = ogImg;
+    probe.src = ogImgRel;
     // Set immediately so crawlers reading the static head see the per-post
     // image even before the probe resolves; the onerror fallback runs after.
     set('seo-og-image', 'content', ogImg);
@@ -411,6 +476,16 @@ tailwind.config = {
       set('seo-canonical', 'href', meta.source_url);
     }
 
+    // article:* OpenGraph tags (populated from frontmatter)
+    if (meta.date) {
+      set('seo-article-pub', 'content', meta.date);
+      // dateModified prefers frontmatter `modified` / `updated`, falling back
+      // to the original publish date if no explicit modification was recorded.
+      set('seo-article-mod', 'content', meta.modified || meta.updated || meta.date);
+    }
+    if (meta.author) set('seo-article-author', 'content', meta.author);
+    if (meta.category) set('seo-article-section', 'content', meta.category);
+
     // Article JSON-LD
     const ld = {
       '@context': 'https://schema.org',
@@ -418,12 +493,12 @@ tailwind.config = {
       headline: meta.title,
       description: meta.excerpt,
       datePublished: meta.date,
-      dateModified: meta.date,
+      dateModified: meta.modified || meta.updated || meta.date,
       author: { '@type': 'Organization', name: meta.author || 'On Target ABA' },
       publisher: {
         '@type': 'Organization',
         name: 'On Target ABA',
-        logo: { '@type': 'ImageObject', url: 'https://ontargetaba.com/wp-content/uploads/2022/04/footerImg.png' }
+        logo: { '@type': 'ImageObject', url: ORIGIN + '/assets/images/footerImg.png' }
       },
       mainEntityOfPage: meta.source_url || location.href,
       image: [ogImg, fallbackImg],

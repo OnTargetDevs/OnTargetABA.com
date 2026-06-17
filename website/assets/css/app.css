@@ -228,6 +228,16 @@ body {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
   .float, .pulse-ring, .marquee-track { animation: none !important; }
+  /* Defense-in-depth: neutralize any CSS animation/transition that JS
+     might trigger (counter tweens, scroll reveals, leadbot fades, etc.)
+     so motion-sensitive users get a still UI even if a JS path forgets
+     to check matchMedia('(prefers-reduced-motion: reduce)'). */
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* =========== Floating decorations =========== */

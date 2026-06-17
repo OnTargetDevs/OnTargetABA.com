@@ -1,0 +1,28 @@
+{
+  "name": "On Target ABA",
+  "short_name": "On Target ABA",
+  "description": "Compassionate, evidence-based ABA therapy and autism testing for children. Quality care without the wait, serving Cleveland, Columbus, and the Salt Lake Valley.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en-US",
+  "dir": "ltr",
+  "theme_color": "#00B7EA",
+  "background_color": "#FAF5E6",
+  "categories": ["health", "medical", "education"],
+  "icons": [
+    {
+      "src": "/assets/images/footerImg.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/newLogo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

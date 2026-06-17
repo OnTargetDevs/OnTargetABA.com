@@ -90,6 +90,11 @@ def build_perf_block(page_path: str) -> str:
     lines = [
         START,
         '<meta name="view-transition" content="same-origin">',
+        # PWA + favicon/touch icons. The manifest is small and same-
+        # origin so no CORS hint needed.
+        '<link rel="manifest" href="/manifest.json">',
+        '<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">',
+        '<link rel="apple-touch-icon" href="/assets/images/footerImg.png">',
         # Warm DNS+TLS for the third-party hosts the page will hit later
         # (Jotform forms, LeadTrap chat). Cheap on first paint, saves
         # 200-500ms when those resources actually start fetching.

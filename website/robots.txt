@@ -1,6 +1,7 @@
 # On Target ABA
 User-agent: *
 Allow: /
+Disallow: /test.html
 
 # Bots that misbehave can be blocked individually here.
 

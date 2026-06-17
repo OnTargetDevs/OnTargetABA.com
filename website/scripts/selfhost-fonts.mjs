@@ -39,6 +39,7 @@ const PRECONNECT_GSTATIC = /^\s*<link rel="preconnect" href="https:\/\/fonts\.gs
 const GFONTS_STYLESHEET = /^\s*<link href="https:\/\/fonts\.googleapis\.com\/css2\?[^"]*" rel="stylesheet">\s*\r?\n/gm;
 
 const PRELOAD_MARK = 'assets/fonts/plus-jakarta-sans-600.woff2';
+const PRELOAD_MARK_BODY = 'assets/fonts/plus-jakarta-sans-400.woff2';
 
 const files = walk(SITE_ROOT);
 let touched = 0;
@@ -53,6 +54,7 @@ for (const path of files) {
   // is "assets/fonts/..." relative to the page.
   const isInBlogDir = /[\\/]blog[\\/]/.test(path) && !path.endsWith(`${'blog'}.html`);
   const preloadHref = (isInBlogDir ? '../' : '') + PRELOAD_MARK;
+  const preloadHrefBody = (isInBlogDir ? '../' : '') + PRELOAD_MARK_BODY;
 
   // Strip Google Fonts requests.
   html = html.replace(PRECONNECT_GFONTS, '');
@@ -73,6 +75,20 @@ for (const path of files) {
     } else {
       // Fall back: inject just before </head>.
       html = html.replace(/<\/head>/i, `${preloadTag}\n</head>`);
+    }
+  }
+
+  // Also preload the 400 (body) weight — fonts at 400 are used for body
+  // text on every page, so paying the byte cost up-front prevents the
+  // brief FOIT/swap at first paint. Anchored to the 600 preload so they
+  // stay adjacent in <head>.
+  if (!html.includes(preloadHrefBody)) {
+    const bodyPreloadTag = `<link rel="preload" as="font" type="font/woff2" crossorigin href="${preloadHrefBody}">`;
+    const sixHundredRe = new RegExp(`(<link rel="preload" as="font" type="font/woff2" crossorigin href="${preloadHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">)`);
+    if (sixHundredRe.test(html)) {
+      html = html.replace(sixHundredRe, `$1\n${bodyPreloadTag}`);
+    } else {
+      html = html.replace(/<\/head>/i, `${bodyPreloadTag}\n</head>`);
     }
   }
 

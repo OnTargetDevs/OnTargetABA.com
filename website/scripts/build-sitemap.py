@@ -124,6 +124,7 @@ def main() -> int:
         "# On Target ABA\n"
         "User-agent: *\n"
         "Allow: /\n"
+        "Disallow: /test.html\n"
         "\n"
         "# Bots that misbehave can be blocked individually here.\n"
         "\n"

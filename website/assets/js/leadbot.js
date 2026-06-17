@@ -45,11 +45,26 @@
   const launcher = document.createElement('div');
   launcher.className = 'lb-launcher';
   launcher.setAttribute('aria-live', 'polite');
-  launcher.innerHTML = (
-    '<div class="lb-bubble" role="button" tabindex="0" aria-label="Open intake assistant">' +
-      'Hi! Looking for help getting started?' +
-      '<span class="lb-close" role="button" tabindex="0" aria-label="Dismiss">&times;</span>' +
-    '</div>' +
+  // Build the bubble as a native <button> so it gets free Enter/Space keyboard
+  // activation and proper focus semantics. The close affordance is also a
+  // native <button>; we append it via the DOM API (rather than via the HTML
+  // parser, which would auto-close the outer button) so it sits inside the
+  // bubble and the existing `.lb-bubble .lb-close` CSS selector still matches.
+  const bubbleEl = document.createElement('button');
+  bubbleEl.type = 'button';
+  bubbleEl.className = 'lb-bubble';
+  bubbleEl.setAttribute('aria-label', 'Open intake assistant');
+  bubbleEl.appendChild(document.createTextNode('Hi! Looking for help getting started?'));
+  const closeEl = document.createElement('button');
+  closeEl.type = 'button';
+  closeEl.className = 'lb-close';
+  closeEl.setAttribute('aria-label', 'Dismiss');
+  closeEl.innerHTML = '&times;';
+  bubbleEl.appendChild(closeEl);
+  launcher.appendChild(bubbleEl);
+
+  const avatarHtml = document.createElement('div');
+  avatarHtml.innerHTML = (
     '<button class="lb-avatar" type="button" aria-label="Open intake assistant" aria-expanded="false">' +
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
         '<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>' +
@@ -57,6 +72,7 @@
       '<span class="lb-dot" aria-hidden="true"></span>' +
     '</button>'
   );
+  launcher.appendChild(avatarHtml.firstChild);
 
   const panel = document.createElement('aside');
   panel.className = 'lb-panel';
@@ -279,11 +295,46 @@
         }
 
         saveState({ submitted: Date.now() });
+
+        // GA4: fire view_form when the user is handed off to the Jotform
+        // (or the careers page). Mirrors the generate_lead event fired in
+        // finish() — kept here so we capture even when finish() is bypassed
+        // (e.g. user lands directly on step 4 via persisted state).
+        try {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'view_form', {
+              form_destination: route.jot ? ('jotform:' + route.jot) : route.local,
+              intent: state.intent || '',
+              region: state.region || '',
+              age: state.age || '',
+              source: 'leadbot',
+            });
+          }
+        } catch (_) { /* never block UX on analytics */ }
       },
     },
   ];
 
-  function finish() { go(4); }
+  function finish() {
+    // GA4: lead generated. Mark this event as a conversion in GA4 Admin >
+    // Events. Wrapped in try/catch + typeof check so the widget keeps working
+    // when gtag isn't loaded (preview pages, blockers, dev mode).
+    try {
+      if (typeof window.gtag === 'function') {
+        const route = ROUTES[state.intent] || ROUTES.general;
+        window.gtag('event', 'generate_lead', {
+          intent: state.intent || '',
+          region: state.region || '',
+          age: state.age || '',
+          route: route.label || '',
+          has_phone: !!state.phone,
+          has_email: !!state.email,
+          source: 'leadbot',
+        });
+      }
+    } catch (_) { /* never block UX on analytics */ }
+    go(4);
+  }
 
   // ---- open/close + first-time popup ----
   const bubble = launcher.querySelector('.lb-bubble');
