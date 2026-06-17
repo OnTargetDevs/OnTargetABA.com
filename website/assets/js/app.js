@@ -123,6 +123,62 @@
     counters.forEach((c) => cio.observe(c));
   }
 
+  // ---------- Lazy-load Jotform iframes ----------
+  // Replaces the old <script src="form.jotform.com/jsform/{id}"> sync
+  // tag, which used document.write and blocked render. We render an
+  // iframe when the placeholder is within ~800px of the viewport (or
+  // 2.5s after first paint as a failsafe), then attach Jotform's
+  // auto-resize handler once so the iframe grows with its content.
+  const jotPlaceholders = document.querySelectorAll('[data-jotform-id]');
+  if (jotPlaceholders.length) {
+    let handlerLoaded = false;
+    const loadHandler = () => {
+      if (handlerLoaded) return Promise.resolve();
+      handlerLoaded = true;
+      return new Promise((resolve) => {
+        const s = document.createElement('script');
+        s.src = 'https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js';
+        s.async = true;
+        s.onload = () => resolve();
+        s.onerror = () => resolve();
+        document.head.appendChild(s);
+      });
+    };
+    const mountForm = async (host) => {
+      if (host.dataset.jotMounted) return;
+      host.dataset.jotMounted = '1';
+      const id = host.dataset.jotformId;
+      const minH = host.dataset.jotformMinHeight || '600';
+      const iframe = document.createElement('iframe');
+      iframe.id = 'JotFormIFrame-' + id;
+      iframe.title = 'Form';
+      iframe.allowTransparency = 'true';
+      iframe.setAttribute('allow', 'geolocation; microphone; camera; fullscreen; payment');
+      iframe.src = 'https://form.jotform.com/' + id;
+      iframe.setAttribute('frameborder', '0');
+      iframe.scrolling = 'no';
+      iframe.setAttribute('style',
+        'min-width:100%;max-width:100%;width:100%;height:' + minH + 'px;border:none;'
+      );
+      const ph = host.querySelector('[data-jotform-placeholder]');
+      if (ph) ph.remove();
+      host.appendChild(iframe);
+      await loadHandler();
+      if (window.jotformEmbedHandler) {
+        try {
+          window.jotformEmbedHandler("iframe[id='JotFormIFrame-" + id + "']", "https://form.jotform.com/");
+        } catch (e) { /* swallow */ }
+      }
+    };
+    const jotIo = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { mountForm(e.target); obs.unobserve(e.target); }
+      });
+    }, { rootMargin: '800px' });
+    jotPlaceholders.forEach(el => jotIo.observe(el));
+    setTimeout(() => jotPlaceholders.forEach(mountForm), 2500);
+  }
+
   // ---------- Lazy-load the configured chat widget ----------
   // Which widget loads is controlled by assets/data/widget.json (inlined
   // into <script id="ota-widget-data"> at build time by optimize-pages.py).

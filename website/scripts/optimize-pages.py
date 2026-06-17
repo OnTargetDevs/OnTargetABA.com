@@ -90,6 +90,12 @@ def build_perf_block(page_path: str) -> str:
     lines = [
         START,
         '<meta name="view-transition" content="same-origin">',
+        # Warm DNS+TLS for the third-party hosts the page will hit later
+        # (Jotform forms, LeadTrap chat). Cheap on first paint, saves
+        # 200-500ms when those resources actually start fetching.
+        '<link rel="preconnect" href="https://form.jotform.com" crossorigin>',
+        '<link rel="preconnect" href="https://cdn.jotfor.ms" crossorigin>',
+        '<link rel="dns-prefetch" href="https://app.leadtrap.ai">',
         f'<script id="ota-header-data" type="application/json">{HEADER_DATA}</script>',
         f'<script id="ota-footer-data" type="application/json">{FOOTER_DATA}</script>',
         f'<script id="ota-widget-data" type="application/json">{WIDGET_DATA}</script>',
