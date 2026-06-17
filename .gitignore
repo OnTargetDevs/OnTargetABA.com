@@ -21,3 +21,4 @@ website/.dev.vars.*
 .wrangler/
 node_modules/
 .lighthouseci/
+__pycache__/
