@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-06-17
 
+### Fixed
+
+- fail fast in purge-cache workflow when CF secrets missing
+
+
+## [Unreleased] &mdash; 2026-06-17
+
 ### Added
 
 - server-render visible breadcrumbs + BreadcrumbList on blog posts
