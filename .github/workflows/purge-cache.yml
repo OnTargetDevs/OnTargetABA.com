@@ -27,10 +27,21 @@ jobs:
         run: |
           python3 <<'PY'
           import json, os, sys, time, urllib.request, urllib.error
-          tok = os.environ['CF_API_TOKEN']
-          acct = os.environ['CF_ACCOUNT_ID']
-          proj = os.environ['CF_PAGES_PROJECT']
-          sha = os.environ['COMMIT_SHA']
+          tok = os.environ.get('CF_API_TOKEN', '')
+          acct = os.environ.get('CF_ACCOUNT_ID', '')
+          proj = os.environ.get('CF_PAGES_PROJECT', '')
+          sha = os.environ.get('COMMIT_SHA', '')
+          # Fail fast and loud when secrets are missing. The earlier
+          # behavior built a URL with empty placeholders and looped
+          # against it for 12 minutes producing useless 7003 errors.
+          missing = [n for n, v in
+                     (('CF_API_TOKEN', tok), ('CF_ACCOUNT_ID', acct),
+                      ('CF_PAGES_PROJECT', proj))
+                     if not v]
+          if missing:
+              print(f"::error::Missing required GitHub Actions secret(s): {', '.join(missing)}. "
+                    "Set them at /settings/secrets/actions on this repo.", file=sys.stderr)
+              sys.exit(2)
           h = {'Authorization': f'Bearer {tok}', 'Accept': 'application/json'}
           base = f'https://api.cloudflare.com/client/v4/accounts/{acct}/pages/projects/{proj}/deployments'
 
