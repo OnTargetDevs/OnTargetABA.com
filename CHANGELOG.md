@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-06-17
 
+### Added
+
+- server-render visible breadcrumbs + BreadcrumbList on blog posts
+
+
+## [Unreleased] &mdash; 2026-06-17
+
 ### Fixed
 
 - meta write regexes also need [^"]* (not [^"']*)
