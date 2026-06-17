@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- real LinkedIn slug is /ontargetaba/ (no hyphen)
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - broken-links cleanup — recurse, exclude socials, kill .html 308s
 
 
