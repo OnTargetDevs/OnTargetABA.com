@@ -425,7 +425,49 @@
       ]
     ],
     "/thank-you": null,
-    "/thank-you-confirmation": null
+    "/thank-you-confirmation": null,
+    "/clinical-philosophy": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "About",
+        "/about"
+      ],
+      [
+        "Clinical Philosophy",
+        null
+      ]
+    ],
+    "/become-an-rbt": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Careers",
+        "/careers"
+      ],
+      [
+        "Become an RBT",
+        null
+      ]
+    ],
+    "/why-work-at-on-target-aba": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "Careers",
+        "/careers"
+      ],
+      [
+        "Why Work Here",
+        null
+      ]
+    ]
   },
   "activeSectionMap": {
     "/our-services": "Services",
@@ -446,6 +488,9 @@
     "/careers": "Careers",
     "/job-application": "Careers",
     "/employment-application": "Careers",
-    "/blog": "Blog"
+    "/blog": "Blog",
+    "/clinical-philosophy": "About",
+    "/become-an-rbt": "Careers",
+    "/why-work-at-on-target-aba": "Careers"
   }
 }

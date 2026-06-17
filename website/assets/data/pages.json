@@ -1,4 +1,12 @@
 {
   "schemaVersion": 1,
-  "pages": []
+  "pages": [
+    {
+      "slug": "meet-the-team",
+      "title": "Meet the On Target ABA Team",
+      "draft": true,
+      "hidden": false,
+      "note": "Scaffold with founder bio + placeholder cards. Replace placeholder bios with real names/credentials before flipping draft=false."
+    }
+  ]
 }

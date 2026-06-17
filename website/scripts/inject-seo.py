@@ -355,6 +355,13 @@ SEO_PAGES = {
         "crumbs": [("Home", "index.html"), ("About", "about.html"), ("Our Process", None)],
         "primary_type": "WebPage",
     },
+    "clinical-philosophy.html": {
+        "title": "Our Clinical Philosophy — What ABA Looks Like at On Target",
+        "desc": "Play-based, family-centered ABA from a BCBA-led team. How we differ from compliance-training ABA and what that means for your child's care.",
+        "keywords": "On Target ABA philosophy, play-based ABA, naturalistic ABA, family-centered ABA, Ilana Gross BCBA approach",
+        "crumbs": [("Home", "index.html"), ("About", "about.html"), ("Clinical Philosophy", None)],
+        "primary_type": "AboutPage",
+    },
     "our-services.html": {
         "title": "ABA Therapy Programs &amp; Services | On Target ABA",
         "desc": "Center-based, in-home, school-based, and daycare-based ABA therapy. Early intervention, potty training, autism testing — all evidence-based, all family-focused.",
@@ -451,6 +458,20 @@ SEO_PAGES = {
         "desc": "Join On Target ABA. Open BCBA, RBT, and operations roles. Family-focused culture, flexible scheduling, real impact.",
         "keywords": "BCBA jobs, RBT jobs, ABA careers, autism therapist jobs Ohio Utah",
         "crumbs": [("Home", "index.html"), ("Careers", None)],
+        "primary_type": "WebPage",
+    },
+    "become-an-rbt.html": {
+        "title": "Become an RBT at On Target ABA — Training &amp; Hiring",
+        "desc": "How to become a Registered Behavior Technician (RBT) at On Target ABA. We provide the 40-hour training, mentor you through the exam, and hire in Utah and Ohio.",
+        "keywords": "become an RBT, RBT training, RBT jobs Utah Ohio, behavior technician training, BCBA pathway",
+        "crumbs": [("Home", "index.html"), ("Careers", "careers.html"), ("Become an RBT", None)],
+        "primary_type": "WebPage",
+    },
+    "why-work-at-on-target-aba.html": {
+        "title": "Why Work at On Target ABA — A BCBA-Led Team",
+        "desc": "Lower caseloads, real BCBA mentorship, and a clear growth path from RBT to BCBA. What it's actually like to work at On Target ABA.",
+        "keywords": "why work at On Target ABA, ABA company culture, BCBA mentorship, RBT growth pathway",
+        "crumbs": [("Home", "index.html"), ("Careers", "careers.html"), ("Why Work Here", None)],
         "primary_type": "WebPage",
     },
     "contact.html": {
