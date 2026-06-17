@@ -11,11 +11,16 @@ and the SEO injection's canonical links.
 from __future__ import annotations
 import datetime as _dt
 import json
+import os
 from pathlib import Path
 from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).parent.parent
-SITE = "https://ontargetaba.com"
+# Mirror inject-seo.py: SITE_DOMAIN env var (set on CF Pages to the
+# current deploy host) overrides the legacy ontargetaba.com default
+# so the sitemap reflects beta.ontargetaba.com until production
+# cuts over from the WP install.
+SITE = (os.environ.get("SITE_DOMAIN") or "https://ontargetaba.com").rstrip("/")
 SITEMAP_PATH = ROOT / "sitemap.xml"
 ROBOTS_PATH = ROOT / "robots.txt"
 INDEX_JSON = ROOT / "assets" / "blog" / "index.json"
