@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-06-17
 
+### Fixed
+
+- shorter cache-control on /assets/js + css
+
+
+## [Unreleased] &mdash; 2026-06-17
+
 ### Changed
 
 - lazy-load Jotform iframes + preconnect to form hosts
