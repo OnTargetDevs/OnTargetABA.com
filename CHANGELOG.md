@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Added
 
+- wire all 21 new SEO landing pages + fix girls-page issues
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Added
+
 - 3 culture pages live + meet-the-team draft + WP-gap audit
 
 
