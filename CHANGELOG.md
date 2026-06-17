@@ -16,6 +16,15 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Added
 
+- chat widget chooser + head scripts editor
+- update blog post "test" (#2)
+- new blog post "test" (#1)
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Added
+
 - landing.html — Google Ads-targeted conversion page
 
 
