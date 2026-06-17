@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-06-17
 
+### Fixed
+
+- cover LeadTrap full dep tree (fonts.bunny.net, github.io, doubleclick)
+
+
+## [Unreleased] &mdash; 2026-06-17
+
 ### Chore
 
 - gitignore __pycache__
