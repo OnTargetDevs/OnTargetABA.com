@@ -12,6 +12,17 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-06-17
+
+### Changed
+
+- fix reveal flash, inline header/footer JSON
+
+### Fixed
+
+- preload only the JSON files actually fetched, match CORS mode
+
+
 ## [Unreleased] &mdash; 2026-06-16
 
 ### Changed
