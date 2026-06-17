@@ -213,8 +213,7 @@ ORG_LD = {
     "sameAs": [
         "https://www.facebook.com/ontargetaba",
         "https://www.instagram.com/ontargetaba",
-        # LinkedIn presence not yet confirmed at this slug — Lychee
-        # caught it as a 404. Re-add when the real company URL is known.
+        "https://www.linkedin.com/company/ontargetaba/",
     ],
 }
 
