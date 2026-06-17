@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- broken-links — feed sitemap.xml + fail loudly when lychee crashes
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - real LinkedIn slug is /ontargetaba/ (no hyphen)
 
 
