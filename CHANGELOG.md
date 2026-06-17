@@ -16,6 +16,17 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Added
 
+- set chat widget to leadtrap (#3)
+
+### Fixed
+
+- WebP/PNG/JPG uploads were UTF-8 double-encoded + add /api/recent-prs
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Added
+
 - chat widget chooser + head scripts editor
 - update blog post "test" (#2)
 - new blog post "test" (#1)
