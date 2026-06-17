@@ -44,11 +44,15 @@
 /assets/images/*
   Cache-Control: public, max-age=31536000, immutable
 
-# CSS / JS: shorter, since we edit these.
+# CSS / JS: short cache because we edit these frequently and the perf
+# block + dispatcher behavior is keyed on shipping the latest. 86400 (a
+# day) was painful in practice — a fix would land but users would still
+# get yesterday's app.js for up to 24h. 5 min revalidate is a better
+# trade until we move to content-hashed filenames.
 /assets/css/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=300, must-revalidate
 /assets/js/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=300, must-revalidate
 
 # Blog markdown source files: short cache so updates are picked up.
 /assets/blog/*
