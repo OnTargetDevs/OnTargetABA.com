@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- broken-links cleanup — recurse, exclude socials, kill .html 308s
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - drop --exclude-mail from lychee args (default in current release)
 
 
