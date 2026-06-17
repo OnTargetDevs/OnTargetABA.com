@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-06-17
 
+### Added
+
+- round-3 implementation (Wave 7) + per-page SEO admin
+
+
+## [Unreleased] &mdash; 2026-06-17
+
 ### Fixed
 
 - cover LeadTrap full dep tree (fonts.bunny.net, github.io, doubleclick)
