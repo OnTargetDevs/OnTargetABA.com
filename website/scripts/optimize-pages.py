@@ -2,15 +2,17 @@
 Page-load optimization sweep. Idempotent.
 
 For every HTML page under website/ (excluding /admin/ which doesn't need
-prefetch/transition niceties), this script does four things:
+prefetch/transition niceties), this script does these things:
 
 1. Swap the Tailwind CDN <script> for the self-hosted vendored copy at
    /assets/vendor/tailwind.js (production-warning already patched out at
    download time).
 
-2. Inject a <link rel="preload"> for assets/data/header.json and
-   pages.json so header.js can start fetching them in parallel with the
-   rest of the page parse, removing ~100-300ms from every nav.
+2. Inline the contents of assets/data/header.json and footer.json into
+   each page as <script type="application/json"> blocks. header.js and
+   footer.js read these synchronously — removes the network round-trip
+   from every page load and lets the nav paint before app.js even
+   downloads.
 
 3. Add <meta name="view-transition" content="same-origin"> so Chromium
    browsers cross-fade between pages instead of white-flashing.
@@ -24,6 +26,7 @@ Idempotent — re-injectable blocks are wrapped in
 before re-injection. Safe to run as part of build.sh.
 """
 from __future__ import annotations
+import json
 import re
 from pathlib import Path
 
@@ -37,6 +40,21 @@ PREFETCH_TARGETS = [
     "/autism-testing.html",
     "/locations.html",
 ]
+
+
+def load_json_safe(rel_path: str) -> str:
+    """Read a JSON file and return its compact serialization with `<`
+    escaped, so it's safe to drop verbatim inside an HTML <script> tag."""
+    try:
+        with (ROOT / rel_path).open(encoding="utf-8") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        return "null"
+    return json.dumps(data, separators=(",", ":")).replace("<", "\\u003c")
+
+
+HEADER_DATA = load_json_safe("assets/data/header.json")
+FOOTER_DATA = load_json_safe("assets/data/footer.json")
 
 START = "<!-- auto-perf-start -->"
 END = "<!-- auto-perf-end -->"
@@ -52,16 +70,14 @@ PERF_BLOCK_RE = re.compile(
 
 
 def build_perf_block(page_path: str) -> str:
-    # header.js / footer.js fetch with `credentials: 'same-origin'` and no
-    # explicit CORS mode. The preload must NOT have `crossorigin` or the
-    # browser won't reuse the cached response and warns "preloaded but not
-    # used". pages.json is only consumed by /admin pages, so we don't
-    # preload it on the public site.
+    # header.js and footer.js read their data from these inlined script
+    # blocks before any network. This removes two fetch round-trips
+    # per page and lets the nav paint as soon as header.js executes.
     lines = [
         START,
         '<meta name="view-transition" content="same-origin">',
-        '<link rel="preload" as="fetch" href="/assets/data/header.json">',
-        '<link rel="preload" as="fetch" href="/assets/data/footer.json">',
+        f'<script id="ota-header-data" type="application/json">{HEADER_DATA}</script>',
+        f'<script id="ota-footer-data" type="application/json">{FOOTER_DATA}</script>',
     ]
     for target in PREFETCH_TARGETS:
         if target == page_path:

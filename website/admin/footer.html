@@ -73,7 +73,8 @@ tailwind.config = {
           <div class="field"><label>Logo src</label><input class="input" data-bind="logo.src" type="text"></div>
           <div class="field"><label>Logo alt</label><input class="input" data-bind="logo.alt" type="text"></div>
           <div class="field" style="grid-column:1/-1;"><label>Tagline</label><input class="input" data-bind="tagline" type="text"></div>
-          <div class="field"><label>Phone</label><input class="input" data-bind="phone" type="text"></div>
+          <div class="field"><label>Phone (display label)</label><input class="input" data-bind="phone.label" type="text" placeholder="1-888-989-5011"></div>
+          <div class="field"><label>Phone (tel: link)</label><input class="input" data-bind="phone.href" type="text" placeholder="tel:8889895011"></div>
         </div>
       </section>
 

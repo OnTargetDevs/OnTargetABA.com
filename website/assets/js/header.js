@@ -182,11 +182,23 @@
     );
   }
 
-  fetch('/assets/data/header.json', { credentials: 'same-origin' })
-    .then((r) => {
-      if (!r.ok) throw new Error('header.json ' + r.status);
-      return r.json();
-    })
+  // Prefer header data inlined at build time by scripts/optimize-pages.py
+  // (no network round-trip). Fall back to fetch if the inline block was
+  // stripped (older deploys, dev preview, etc).
+  function loadHeaderData() {
+    const inline = document.getElementById('ota-header-data');
+    if (inline && inline.textContent.trim()) {
+      try { return Promise.resolve(JSON.parse(inline.textContent)); }
+      catch (e) { /* fall through to fetch */ }
+    }
+    return fetch('/assets/data/header.json', { credentials: 'same-origin' })
+      .then((r) => {
+        if (!r.ok) throw new Error('header.json ' + r.status);
+        return r.json();
+      });
+  }
+
+  loadHeaderData()
     .then((headerData) => {
       const navLinks = headerData.navLinks || [];
       const html =

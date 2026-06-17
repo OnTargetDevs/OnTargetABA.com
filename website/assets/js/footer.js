@@ -107,11 +107,22 @@
     );
   }
 
-  fetch('/assets/data/footer.json', { credentials: 'same-origin' })
-    .then((r) => {
-      if (!r.ok) throw new Error('footer.json ' + r.status);
-      return r.json();
-    })
+  // Prefer footer data inlined at build time by scripts/optimize-pages.py.
+  // Falls back to a real fetch if no inline block (older deploys etc).
+  function loadFooterData() {
+    const inline = document.getElementById('ota-footer-data');
+    if (inline && inline.textContent.trim()) {
+      try { return Promise.resolve(JSON.parse(inline.textContent)); }
+      catch (e) { /* fall through to fetch */ }
+    }
+    return fetch('/assets/data/footer.json', { credentials: 'same-origin' })
+      .then((r) => {
+        if (!r.ok) throw new Error('footer.json ' + r.status);
+        return r.json();
+      });
+  }
+
+  loadFooterData()
     .then((data) => {
       slot.outerHTML = render(data);
       document.querySelectorAll('[data-year]').forEach((el) => {

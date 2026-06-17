@@ -309,6 +309,45 @@ and `wrangler pages secret bulk` both use `secret_text` by default.
 
 ---
 
+## `git push` rejected — "remote contains work that you do not have locally"
+
+### Symptom
+
+You just committed a fix, push, and Git says:
+
+```
+hint: Updates were rejected because the remote contains work that you
+hint: do not have locally...
+```
+
+You didn't expect anyone else to be pushing.
+
+### Why
+
+`.github/workflows/changelog.yml` auto-commits a `CHANGELOG.md` update
+on every push to `main`. That commit (subject ends `[skip ci]`) lands
+on the remote within seconds of your push. Your next local push from
+the same branch is then non-fast-forward — the remote has the bot's
+commit, you don't.
+
+### Fix
+
+```bash
+git pull --rebase origin main
+git push origin main
+```
+
+Don't force-push — the changelog commit is real work; rebasing
+preserves both. Build this into your workflow on this repo:
+
+```bash
+git commit -m "..."
+git pull --rebase origin main   # absorb the auto-changelog if any
+git push origin main
+```
+
+---
+
 ## Conventions on this project
 
 (things that aren't obvious from reading the code, learned the hard way)

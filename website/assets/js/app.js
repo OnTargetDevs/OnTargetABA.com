@@ -13,6 +13,18 @@
   'use strict';
 
   // ---------- Scroll reveal ----------
+  // We don't hide .reveal in CSS — above-the-fold content paints
+  // immediately. Here we stamp `.r-hide` only on elements that are
+  // below the fold at first paint, and the observer removes it via
+  // `.in` as they enter the viewport.
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fold = window.innerHeight + 80;
+  document.querySelectorAll('.reveal').forEach((el) => {
+    if (!reducedMotion && el.getBoundingClientRect().top > fold) {
+      el.classList.add('r-hide');
+    }
+  });
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
