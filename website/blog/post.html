@@ -58,7 +58,7 @@
 <meta name="twitter:image:width" content="1200" />
 <meta name="twitter:image:height" content="630" />
 <script id="seo-jsonld" type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"On Target ABA Blog","description":"ABA therapy & autism resources for families.","publisher":{"@type":"Organization","name":"On Target ABA","logo":{"@type":"ImageObject","url":"https://ontargetaba.com/assets/images/footerImg.png"}},"image":["https://ontargetaba.com/assets/images/footerImg.png"]}</script>
-<script src="/assets/vendor/tailwind.js?v=10e8bab8"></script>
+<script src="/assets/vendor/tailwind.js?v=0c6b66d5"></script>
 <script>
 tailwind.config = {
   theme: {
@@ -82,7 +82,7 @@ tailwind.config = {
 }
 </script>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/plus-jakarta-sans-600.woff2">
-<link rel="stylesheet" href="/assets/css/app.css?v=10e8bab8" />
+<link rel="stylesheet" href="/assets/css/app.css?v=0c6b66d5" />
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js" integrity="sha384-vdScihEZCfbPnBQf+lc7LgXUdJVYyhC3yWHUW5C5P5GpHRqVnaM6HJELJxT6IqwM" crossorigin="anonymous"></script>
 
@@ -323,9 +323,9 @@ tailwind.config = {
 <!-- ============ FOOTER ============ -->
 <div id="site-footer" aria-busy="true"></div>
 
-<script src="/assets/js/header.js?v=10e8bab8" defer></script>
-<script src="/assets/js/footer.js?v=10e8bab8" defer></script>
-<script src="/assets/js/app.js?v=10e8bab8" defer></script>
+<script src="/assets/js/header.js?v=0c6b66d5" defer></script>
+<script src="/assets/js/footer.js?v=0c6b66d5" defer></script>
+<script src="/assets/js/app.js?v=0c6b66d5" defer></script>
 <script>
 /* ============================================================
    Runtime markdown blog post renderer.
@@ -505,7 +505,10 @@ tailwind.config = {
     // Article + Breadcrumb JSON-LD shipped as a @graph so search engines
     // get both: BlogPosting for the article rich result, BreadcrumbList
     // for the Home > Blog > {title} pathway in SERPs.
-    const slug = (location.pathname.match(/\/blog\/posts\/([^/]+)/) || [])[1] || '';
+    // NB: `slug` is already in scope from the enclosing IIFE — declaring
+    // a new `const slug` here creates a temporal-dead-zone reference for
+    // the earlier line 464 use, throwing ReferenceError and tripping
+    // showNotFound() (which sets noindex). Use the outer slug directly.
     const canonical = (document.querySelector('link[rel="canonical"]')?.href) ||
                       (ORIGIN + '/blog/posts/' + slug);
     const ld = {
@@ -802,16 +805,27 @@ tailwind.config = {
         img.addEventListener('error', () => { img.style.display = 'none'; });
       });
 
-      buildToc(els.content);
-      applySeo(meta);
-      setShareLinks(meta);
-      setProgressBar();
-      loadRelated(slug, meta.category);
-
+      // Show the article BEFORE the optional post-processing so a bug
+      // in any of those helpers doesn't bubble up to .catch() and
+      // mistakenly trigger showNotFound() — which sets noindex. The
+      // markdown loaded successfully, the article is real, indexing
+      // should stay enabled even if SEO/share/TOC enrichments fail.
       els.loading.classList.add('hidden');
       els.article.classList.remove('hidden');
+
+      const safe = (fn, label) => {
+        try { fn(); }
+        catch (e) { console.warn('post enrichment failed (' + label + '):', e); }
+      };
+      safe(() => buildToc(els.content), 'toc');
+      safe(() => applySeo(meta), 'seo');
+      safe(() => setShareLinks(meta), 'share');
+      safe(() => setProgressBar(), 'progress');
+      safe(() => loadRelated(slug, meta.category), 'related');
     })
     .catch(err => {
+      // .catch only fires when the markdown fetch / parse genuinely
+      // failed — the post is missing or malformed. Safe to mark noindex.
       console.warn('blog load failed:', err);
       showNotFound();
     });
