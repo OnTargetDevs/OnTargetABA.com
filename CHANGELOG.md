@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-06-17
 
+### Added
+
+- round-2 implementation (Wave 6) — 42 findings
+
+
+## [Unreleased] &mdash; 2026-06-17
+
 ### Fixed
 
 - real branded favicon + per-deploy asset cache-busting
