@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- meta write regexes also need [^"]* (not [^"']*)
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - meta regex apostrophe truncation + hero image UTF-8 + post race
 
 ### Chore
