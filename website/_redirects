@@ -1,14 +1,76 @@
 # Cloudflare Pages routing
 #
-# Pretty blog URLs: /blog/posts/{slug} should serve /blog/post.html
-# content while keeping the slug in the URL bar.
-#
-# IMPORTANT: the destination is `/blog/post` (no .html). CF Pages
-# auto-strips `.html` from any URL it serves directly — if we used
-# `/blog/post.html` here, the auto-strip would turn this rewrite into
-# a 308 redirect to `/blog/post`, dropping the slug. Using the
-# extensionless form means CF Pages internally resolves `/blog/post`
-# to `/blog/post.html` without changing the URL.
+# Order matters: first match wins. WP-legacy redirects come first; the
+# pretty-URL blog rewrite is last so it doesn't shadow them.
 
+# =============================================================
+# WP date-archive permalinks -> new pretty blog URLs
+# Old: /YYYY/MM/DD/the-slug/  New: /blog/posts/the-slug
+# =============================================================
+/:year/:month/:day/:slug/   /blog/posts/:slug   301
+/:year/:month/:day/:slug    /blog/posts/:slug   301
+
+# =============================================================
+# Static-page renames (WP slug differed from the new slug)
+# =============================================================
+/aba-therapy-murray-utah/                          /murray-utah                301
+/aba-therapy-murray-utah                           /murray-utah                301
+/everything-you-need-to-know-aba-therapy/          /aba-therapy-guide          301
+/everything-you-need-to-know-aba-therapy           /aba-therapy-guide          301
+/on-target-aba-autism-testing-autism-evaluations/  /autism-testing             301
+/on-target-aba-autism-testing-autism-evaluations   /autism-testing             301
+/potty-training-progam/                            /potty-training-program     301
+/potty-training-progam                             /potty-training-program     301
+/locations_/                                       /locations                  301
+/locations_                                        /locations                  301
+/thankyou/                                         /thank-you                  301
+/thankyou                                          /thank-you                  301
+/blogs/                                            /blog                       301
+/blogs                                             /blog                       301
+
+# =============================================================
+# Legacy PPC landing pages -> new equivalents
+# =============================================================
+/aba-therapy-ut-lp-fb/                             /landing                    301
+/aba-therapy-ut-lp-g/                              /landing                    301
+/utah-pc-lp-page/                                  /landing                    301
+/utah-pc-lp-new-page/                              /landing                    301
+/aba-therapy-salt-lake-city-lp-g-new/              /landing                    301
+/aba-therapy-cleveland-lp-fb/                      /mayfield-ohio              301
+/aba-therapy-cleveland-lp-g/                       /mayfield-ohio              301
+/cleveland-aba-therapy-center-fb/                  /mayfield-ohio              301
+/cleveland-aba-therapy-center-g/                   /mayfield-ohio              301
+/aba-therapy-col-lp-fb/                            /gahanna-ohio               301
+/aba-therapy-col-lp-g/                             /gahanna-ohio               301
+/aba-therapy-columbus-lp-g-new/                    /gahanna-ohio               301
+/ontarget-aba-landing/                             /                           301
+/rbt-job-application-fb/                           /job-application            301
+/contact-test/                                     /contact                    301
+/full-day-aba-therapy-on-target-clever-bee/        /our-services               301
+/full-day-aba-therapy-on-target-clever-bee-g/      /our-services               301
+/full-day-aba-therapy-on-target-clever-bee-typ/    /thank-you                  301
+
+# =============================================================
+# WP feeds, taxonomy, author archives (no equivalent on new site)
+# =============================================================
+/feed/                                             /blog                       301
+/feed                                              /blog                       301
+/blog/feed/                                        /blog                       301
+/comments/feed/                                    /blog                       301
+/category/*                                        /blog                       301
+/author/*                                          /blog                       301
+/tag/*                                             /blog                       301
+
+# =============================================================
+# Pretty blog URLs: /blog/posts/{slug} serves /blog/post.html while
+# keeping the slug in the URL bar.
+#
+# IMPORTANT: destination is `/blog/post` (no .html). CF Pages auto-
+# strips `.html` from any URL it serves directly — if we used
+# `/blog/post.html` here, the auto-strip would turn this rewrite into
+# a 308 redirect to `/blog/post`, dropping the slug. The extensionless
+# form makes CF Pages internally resolve `/blog/post` to `/blog/post.html`
+# without changing the URL.
+# =============================================================
 /blog/posts/*   /blog/post   200
 /blog/posts/*/  /blog/post   200
