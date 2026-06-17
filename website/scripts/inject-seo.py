@@ -362,6 +362,13 @@ SEO_PAGES = {
         "crumbs": [("Home", "index.html"), ("About", "about.html"), ("Clinical Philosophy", None)],
         "primary_type": "AboutPage",
     },
+    "meet-the-team.html": {
+        "title": "Meet the On Target ABA Team — Founders, Directors &amp; Clinical Leaders",
+        "desc": "The clinicians and directors behind On Target ABA: founder Ilana Gross, BCBA; regional clinical directors in Utah and Ohio; and the clinical and center directors at every clinic.",
+        "keywords": "On Target ABA team, Ilana Gross BCBA, ABA team Utah Ohio, autism therapy clinical directors, meet the team On Target ABA",
+        "crumbs": [("Home", "index.html"), ("About", "about.html"), ("Meet the Team", None)],
+        "primary_type": "AboutPage",
+    },
     "our-services.html": {
         "title": "ABA Therapy Programs &amp; Services | On Target ABA",
         "desc": "Center-based, in-home, school-based, and daycare-based ABA therapy. Early intervention, potty training, autism testing — all evidence-based, all family-focused.",

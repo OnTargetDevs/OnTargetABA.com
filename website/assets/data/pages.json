@@ -4,9 +4,9 @@
     {
       "slug": "meet-the-team",
       "title": "Meet the On Target ABA Team",
-      "draft": true,
+      "draft": false,
       "hidden": false,
-      "note": "Scaffold with founder bio + placeholder cards. Replace placeholder bios with real names/credentials before flipping draft=false."
+      "note": "Published — placeholder bios will be filled in as ops provides them."
     }
   ]
 }

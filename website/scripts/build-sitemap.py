@@ -52,6 +52,7 @@ STATIC_PAGES = [
     ("/become-an-rbt",                    "0.65", "monthly"),
     ("/why-work-at-on-target-aba",        "0.6",  "monthly"),
     ("/clinical-philosophy",              "0.65", "monthly"),
+    ("/meet-the-team",                    "0.7",  "monthly"),
     ("/job-application",                  "0.5",  "yearly"),
     ("/employment-application",           "0.5",  "yearly"),
     ("/blog",                             "0.9",  "daily"),

@@ -761,6 +761,20 @@
         "ABA for Nonspeaking Children",
         null
       ]
+    ],
+    "/meet-the-team": [
+      [
+        "Home",
+        "/"
+      ],
+      [
+        "About",
+        "/about"
+      ],
+      [
+        "Meet the Team",
+        null
+      ]
     ]
   },
   "activeSectionMap": {
@@ -799,6 +813,7 @@
     "/aba-for-preschoolers": "Services",
     "/aba-for-school-age": "Services",
     "/aba-for-teenagers": "Services",
-    "/aba-for-nonverbal-children": "Services"
+    "/aba-for-nonverbal-children": "Services",
+    "/meet-the-team": "About"
   }
 }

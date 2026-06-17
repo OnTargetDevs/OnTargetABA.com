@@ -47,6 +47,10 @@
           "label": "Our Process"
         },
         {
+          "href": "/meet-the-team",
+          "label": "Meet the Team"
+        },
+        {
           "href": "/locations",
           "label": "Locations"
         },

@@ -139,6 +139,12 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://ontargetaba.com/meet-the-team</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://ontargetaba.com/job-application</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>yearly</changefreq>
