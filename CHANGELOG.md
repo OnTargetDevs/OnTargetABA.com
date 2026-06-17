@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- blog post ReferenceError was tripping noindex on real articles
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - fail fast in purge-cache workflow when CF secrets missing
 
 
