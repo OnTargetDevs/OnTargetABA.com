@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-06-17
 
+### Fixed
+
+- allow Google Ads conversion + WhatConverts hosts
+
+
+## [Unreleased] &mdash; 2026-06-17
+
 ### Added
 
 - implement LOW severity findings from missing.md (Wave 4)
