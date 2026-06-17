@@ -41,7 +41,6 @@ jobs:
             --retry-wait-time 5
             --timeout 20
             --accept 200,206,429
-            --exclude-mail
             --include-verbatim
             ${{ steps.target.outputs.url }}
           fail: false
