@@ -11,11 +11,16 @@ Run from the website/ directory:
 """
 from __future__ import annotations
 import json
+import os
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
-SITE = "https://ontargetaba.com"
+# SITE is the canonical origin used in canonical links, OG URLs, and JSON-LD
+# @id values. Override per environment with SITE_DOMAIN (e.g.
+# `SITE_DOMAIN=https://beta.ontargetaba.com python inject-seo.py`) so a beta
+# build does not bake production URLs into its canonical tags.
+SITE = os.environ.get("SITE_DOMAIN", "https://ontargetaba.com").rstrip("/")
 
 # ---------------------------------------------------------------- shared blocks
 

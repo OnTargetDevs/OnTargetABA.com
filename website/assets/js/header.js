@@ -170,7 +170,8 @@
     const phone   = (data.cta && data.cta.phone)   || { href: 'tel:8889895011', label: 'Call' };
     const primary = (data.cta && data.cta.primary) || { href: '/contact.html',  label: 'Get Started' };
     return (
-      '<div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-line shadow-[0_-4px_18px_rgba(22,50,67,.08)]" data-mobile-cta>' +
+      '<div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur border-t border-line shadow-[0_-4px_18px_rgba(22,50,67,.08)]" data-mobile-cta' +
+        ' style="padding-bottom: max(env(safe-area-inset-bottom), 0px); padding-right: env(safe-area-inset-right); padding-left: env(safe-area-inset-left);">' +
         '<div class="grid grid-cols-2 gap-2 px-3 py-2.5 max-w-[640px] mx-auto">' +
           '<a href="' + esc(phone.href) + '" class="btn btn-ghost justify-center text-sm py-2.5" aria-label="Call ' + esc(phone.label) + '">' +
             '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>' +
@@ -214,7 +215,7 @@
         document.body.appendChild(stick.firstElementChild);
         // Add bottom padding to clear the sticky bar on mobile only.
         const style = document.createElement('style');
-        style.textContent = '@media (max-width: 1023.98px) { body { padding-bottom: 68px; } }';
+        style.textContent = '@media (max-width: 1023.98px) { body { padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); } }';
         document.head.appendChild(style);
       }
     })

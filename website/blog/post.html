@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -6,8 +6,37 @@
 
 <title>On Target ABA &mdash; Blog</title>
 <meta name="description" id="seo-description" content="ABA therapy &amp; autism resources for families &mdash; On Target ABA." />
-<link rel="canonical" id="seo-canonical" href="https://ontargetaba.com/blogs/" />
+<link rel="canonical" id="seo-canonical" href="https://ontargetaba.com/blog" />
+<script>
+// Set a slug-aware canonical + og:url before any other script runs so static
+// crawlers that fetch HTML but evaluate minimal JS still see a unique URL
+// per post (rather than the generic /blog fallback). Runtime applySeo()
+// later overrides this with meta.source_url when the markdown frontmatter
+// resolves; this only fills the gap for the very first paint.
+(function () {
+  try {
+    var origin = 'https://ontargetaba.com';
+    var slug = '';
+    var m = location.pathname.match(/\/blog\/posts\/([^/?#]+)/);
+    if (m) {
+      try { slug = decodeURIComponent(m[1]); } catch (_) { slug = m[1]; }
+    } else {
+      var p = new URLSearchParams(location.search);
+      slug = (p.get('slug') || '').trim();
+    }
+    slug = slug.replace(/[^a-z0-9-]/gi, '');
+    if (slug) {
+      var url = origin + '/blog/posts/' + slug;
+      var el = document.getElementById('seo-canonical');
+      if (el) el.setAttribute('href', url);
+      var og = document.getElementById('seo-og-url');
+      if (og) og.setAttribute('content', url);
+    }
+  } catch (_) { /* non-fatal */ }
+})();
+</script>
 <meta property="og:type" content="article" />
+<meta property="og:url" id="seo-og-url" content="https://ontargetaba.com/blog" />
 <meta property="og:site_name" content="On Target ABA" />
 <meta property="og:title" id="seo-og-title" content="On Target ABA Blog" />
 <meta property="og:description" id="seo-og-description" content="ABA therapy &amp; autism resources for families." />
@@ -42,8 +71,8 @@ tailwind.config = {
 </script>
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/plus-jakarta-sans-600.woff2">
 <link rel="stylesheet" href="/assets/css/app.css" />
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" integrity="sha384-/TQbtLCAerC3jgaim+N78RZSDYV7ryeoBCVqTuzRrFec2akfBkHS7ACQ3PQhvMVi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js" integrity="sha384-vdScihEZCfbPnBQf+lc7LgXUdJVYyhC3yWHUW5C5P5GpHRqVnaM6HJELJxT6IqwM" crossorigin="anonymous"></script>
 
 <style>
   #progress { position: fixed; top: 0; left: 0; height: 3px;
@@ -246,9 +275,9 @@ tailwind.config = {
 <!-- ============ FOOTER ============ -->
 <div id="site-footer" aria-busy="true"></div>
 
-<script src="/assets/js/header.js"></script>
-<script src="/assets/js/footer.js"></script>
-<script src="/assets/js/app.js"></script>
+<script src="/assets/js/header.js" defer></script>
+<script src="/assets/js/footer.js" defer></script>
+<script src="/assets/js/app.js" defer></script>
 <script>
 /* ============================================================
    Runtime markdown blog post renderer.

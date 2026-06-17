@@ -15,15 +15,27 @@
   X-Robots-Tag: noindex
 
 # Admin dashboard: never cache, never index, never frame.
+# CSP allows jsdelivr (marked + dompurify in post-editor) and GitHub API
+# (admin Functions round-trip through /api/* but some clients call directly).
 /admin/*
   Cache-Control: no-cache, no-store, must-revalidate
   X-Frame-Options: DENY
   X-Robots-Tag: noindex
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://api.github.com; frame-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://form.jotform.com; object-src 'none'
 
+# Public pages CSP. Heavy use of inline <script>/<style> blocks (tailwind
+# config, JSON-LD, hero anims, page-overrides) requires 'unsafe-inline'.
+# Hosts enumerated: Jotform (embeds + form post), LeadTrap (lead-bot
+# widget), jsdelivr (marked + dompurify on blog post template), Google
+# Maps (iframe on location pages), and the common analytics hosts the
+# /admin head-scripts injector pastes (GA4, FB Pixel, Hotjar, GTM).
 /*
   X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), camera=(), microphone=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://form.jotform.com https://cdn.jotfor.ms https://app.leadtrap.ai https://www.googletagmanager.com https://www.google-analytics.com https://static.hotjar.com https://script.hotjar.com https://connect.facebook.net; script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://form.jotform.com https://cdn.jotfor.ms https://app.leadtrap.ai https://www.googletagmanager.com https://www.google-analytics.com https://static.hotjar.com https://script.hotjar.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdn.jotfor.ms; img-src 'self' data: blob: https:; font-src 'self' data: https://cdn.jotfor.ms; connect-src 'self' https://form.jotform.com https://cdn.jotfor.ms https://app.leadtrap.ai https://www.google-analytics.com https://*.analytics.google.com https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://connect.facebook.net; frame-src 'self' https://form.jotform.com https://www.jotform.com https://app.leadtrap.ai https://www.google.com https://www.youtube.com; media-src 'self' https:; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://form.jotform.com; object-src 'none'
 
 # Sitemap + robots: correct content type and a sensible cache.
 /sitemap.xml

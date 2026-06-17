@@ -1,4 +1,4 @@
 {
   "schemaVersion": 1,
-  "scripts": ""
+  "scripts": "<!-- Google tag (gtag.js) -- handles both GA4 properties and Google Ads -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-PHLC29WGVN\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n  gtag('config', 'G-PHLC29WGVN');\n  gtag('config', 'G-D3RBZZ5WPL');\n  gtag('config', 'AW-354317910');\n</script>\n"
 }
