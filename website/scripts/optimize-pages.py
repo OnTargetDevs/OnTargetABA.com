@@ -52,11 +52,16 @@ PERF_BLOCK_RE = re.compile(
 
 
 def build_perf_block(page_path: str) -> str:
+    # header.js / footer.js fetch with `credentials: 'same-origin'` and no
+    # explicit CORS mode. The preload must NOT have `crossorigin` or the
+    # browser won't reuse the cached response and warns "preloaded but not
+    # used". pages.json is only consumed by /admin pages, so we don't
+    # preload it on the public site.
     lines = [
         START,
         '<meta name="view-transition" content="same-origin">',
-        '<link rel="preload" as="fetch" href="/assets/data/header.json" crossorigin>',
-        '<link rel="preload" as="fetch" href="/assets/data/pages.json" crossorigin>',
+        '<link rel="preload" as="fetch" href="/assets/data/header.json">',
+        '<link rel="preload" as="fetch" href="/assets/data/footer.json">',
     ]
     for target in PREFETCH_TARGETS:
         if target == page_path:
