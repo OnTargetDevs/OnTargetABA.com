@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Added
 
+- implement LOW severity findings from missing.md (Wave 4)
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Added
+
 - implement MEDIUM severity findings from missing.md (Wave 3)
 
 
