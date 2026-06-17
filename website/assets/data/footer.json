@@ -13,40 +13,97 @@
     {
       "title": "Services",
       "links": [
-        { "href": "/center-based-aba-therapy.html",          "label": "Center-Based ABA" },
-        { "href": "/in-home-aba-therapy.html",               "label": "In-Home ABA" },
-        { "href": "/early-intervention-autism-program.html", "label": "Early Intervention" },
-        { "href": "/potty-training-program.html",            "label": "Potty Training" },
-        { "href": "/autism-testing.html",                    "label": "Autism Testing" }
+        {
+          "href": "/center-based-aba-therapy",
+          "label": "Center-Based ABA"
+        },
+        {
+          "href": "/in-home-aba-therapy",
+          "label": "In-Home ABA"
+        },
+        {
+          "href": "/early-intervention-autism-program",
+          "label": "Early Intervention"
+        },
+        {
+          "href": "/potty-training-program",
+          "label": "Potty Training"
+        },
+        {
+          "href": "/autism-testing",
+          "label": "Autism Testing"
+        }
       ]
     },
     {
       "title": "Company",
       "links": [
-        { "href": "/about.html",        "label": "About" },
-        { "href": "/our-process.html",  "label": "Our Process" },
-        { "href": "/locations.html",    "label": "Locations" },
-        { "href": "/careers.html",      "label": "Careers" },
-        { "href": "/blog.html",         "label": "Blog" }
+        {
+          "href": "/about",
+          "label": "About"
+        },
+        {
+          "href": "/our-process",
+          "label": "Our Process"
+        },
+        {
+          "href": "/locations",
+          "label": "Locations"
+        },
+        {
+          "href": "/careers",
+          "label": "Careers"
+        },
+        {
+          "href": "/blog",
+          "label": "Blog"
+        }
       ]
     },
     {
       "title": "Resources",
       "links": [
-        { "href": "/aba-therapy-guide.html", "label": "ABA Therapy Guide" },
-        { "href": "/insurance.html",         "label": "Insurance" },
-        { "href": "/faqs.html",              "label": "FAQs" },
-        { "href": "/contact.html",           "label": "Contact" },
-        { "href": "/pre-intake-form.html",   "label": "Pre-Intake Form" }
+        {
+          "href": "/aba-therapy-guide",
+          "label": "ABA Therapy Guide"
+        },
+        {
+          "href": "/insurance",
+          "label": "Insurance"
+        },
+        {
+          "href": "/faqs",
+          "label": "FAQs"
+        },
+        {
+          "href": "/contact",
+          "label": "Contact"
+        },
+        {
+          "href": "/pre-intake-form",
+          "label": "Pre-Intake Form"
+        }
       ]
     },
     {
       "title": "Locations",
       "links": [
-        { "href": "/murray-utah.html",       "label": "Utah | Murray, UT" },
-        { "href": "/mayfield-ohio.html",     "label": "Cleveland | Mayfield Village, OH" },
-        { "href": "/gahanna-ohio.html",      "label": "Columbus | Gahanna, OH" },
-        { "href": "/worthington-ohio.html",  "label": "Worthington | Worthington, OH" }
+        {
+          "href": "/murray-utah",
+          "label": "Utah | Murray, UT"
+        },
+        {
+          "href": "/mayfield-ohio",
+          "label": "Cleveland | Mayfield Village, OH"
+        },
+        {
+          "href": "/gahanna-ohio",
+          "label": "Columbus | Gahanna, OH"
+        },
+        {
+          "href": "/worthington-ohio",
+          "label": "Worthington | Worthington, OH"
+        }
       ]
     }
   ],
@@ -56,9 +113,21 @@
   },
   "copyright": "© ON TARGET ABA, LLC · All rights reserved · Operated by Target ABA, LLC",
   "legalLinks": [
-    { "href": "/privacy-policy.html",   "label": "Privacy" },
-    { "href": "/terms-of-service.html", "label": "Terms" },
-    { "href": "/cookie-consent.html",   "label": "Cookies" },
-    { "href": "/disclaimer.html",       "label": "Disclaimer" }
+    {
+      "href": "/privacy-policy",
+      "label": "Privacy"
+    },
+    {
+      "href": "/terms-of-service",
+      "label": "Terms"
+    },
+    {
+      "href": "/cookie-consent",
+      "label": "Cookies"
+    },
+    {
+      "href": "/disclaimer",
+      "label": "Disclaimer"
+    }
   ]
 }

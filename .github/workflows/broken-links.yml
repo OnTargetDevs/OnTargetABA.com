@@ -42,6 +42,13 @@ jobs:
             --timeout 20
             --accept 200,206,429
             --include-verbatim
+            --max-recursion-depth 3
+            --exclude '^https://ontargetaba\.com/'
+            --exclude '^https://static\.hotjar\.com/c/hotjar-$'
+            --exclude 'search_term_string'
+            --exclude '^https://(www\.)?linkedin\.com/'
+            --exclude '^https://(www\.)?instagram\.com/'
+            --exclude '^https://(www\.)?facebook\.com/'
             ${{ steps.target.outputs.url }}
           fail: false
           output: ./lychee-report.md
