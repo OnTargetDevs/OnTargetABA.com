@@ -16,6 +16,17 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- recover Executive Team cards (Brittany, Jordan, Cerys)
+
+### Chore
+
+- cache-bust refresh after exec recovery
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - restore Regional Clinical Directors + Clinic Leadership sections
 
 
