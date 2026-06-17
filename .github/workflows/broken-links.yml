@@ -61,23 +61,41 @@ jobs:
         if: steps.lychee.outputs.exit_code != '0'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_URL: ${{ steps.target.outputs.url }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           date_str=$(date -u +%Y-%m-%d)
           title="Broken links found ${date_str}"
-          body=$(printf '## Broken links\n\nTarget: %s\nRun: %s\n\n```\n' \
-            "${{ steps.target.outputs.url }}" \
-            "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}")
-          body+="$(cat ./lychee-report.md 2>/dev/null || echo 'See run logs for details.')"
-          body+=$'\n```\n'
+
+          # Build the body in a file. We previously stitched it with
+          # bash $(...) + +=, but command substitution strips trailing
+          # newlines, so when lychee-report.md didn't end with one the
+          # closing ``` ended up smushed against the last content line.
+          # Writing through printf to a real file gives us deterministic
+          # line endings — closing fence is always on its own line.
+          {
+            printf '## Broken links\n\n'
+            printf 'Target: %s\n' "$TARGET_URL"
+            printf 'Run: %s\n\n' "$RUN_URL"
+            printf '```\n'
+            if [ -s ./lychee-report.md ]; then
+              cat ./lychee-report.md
+            else
+              printf 'See run logs for details.\n'
+            fi
+            # Force a final newline before the closing fence regardless
+            # of whether the report ended with one.
+            printf '\n```\n'
+          } > /tmp/issue-body.md
 
           if [ -n "${{ steps.existing.outputs.number }}" ]; then
             gh issue edit "${{ steps.existing.outputs.number }}" \
               --title "$title" \
-              --body "$body"
+              --body-file /tmp/issue-body.md
           else
             gh issue create \
               --title "$title" \
-              --body "$body" \
+              --body-file /tmp/issue-body.md \
               --label broken-links
           fi
 
