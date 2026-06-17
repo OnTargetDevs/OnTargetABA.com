@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>On Target ABA &mdash; ABA Therapy for Kids in Cleveland, Columbus &amp; Salt Lake City</title>
+<title>ABA Therapy &amp; Autism Testing | On Target ABA</title>
 <meta name="description" content="Quality care without the wait. Compassionate, evidence-based ABA therapy and autism testing for children. Now serving the Salt Lake Valley." />
 <script src="/assets/vendor/tailwind.js"></script>
 <script>
@@ -31,8 +31,24 @@ tailwind.config = {
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/plus-jakarta-sans-600.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/plus-jakarta-sans-400.woff2">
 <link rel="stylesheet" href="assets/css/app.css" />
+<style>
+  /* View Transitions: explicit duration + easing for cross-page fades */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 250ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none;
+    }
+  }
+</style>
 <!-- auto-seo-start -->
 <link rel="canonical" href="https://ontargetaba.com/" />
+<link rel="alternate" hreflang="en-us" href="https://ontargetaba.com/" />
+<link rel="alternate" hreflang="x-default" href="https://ontargetaba.com/" />
 <meta name="theme-color" content="#00B7EA" />
 <meta name="keywords" content="ABA therapy, autism testing, applied behavior analysis, autism evaluation Salt Lake City, ABA therapy Cleveland, ABA therapy Columbus, BCBA, early intervention, autism diagnosis Utah" />
 <meta name="author" content="On Target ABA" />
@@ -41,14 +57,14 @@ tailwind.config = {
 <meta property="og:site_name" content="On Target ABA" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:url" content="https://ontargetaba.com/" />
-<meta property="og:title" content="On Target ABA — ABA Therapy &amp; Autism Testing in Cleveland, Columbus &amp; Salt Lake City" />
+<meta property="og:title" content="ABA Therapy &amp; Autism Testing | On Target ABA" />
 <meta property="og:description" content="Quality care without the wait. Compassionate, evidence-based ABA therapy and autism testing for children ages 2&ndash;18. Now serving the Salt Lake Valley." />
 <meta property="og:image" content="https://ontargetaba.com/assets/og/home.svg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@ontargetaba" />
-<meta name="twitter:title" content="On Target ABA — ABA Therapy &amp; Autism Testing in Cleveland, Columbus &amp; Salt Lake City" />
+<meta name="twitter:title" content="ABA Therapy &amp; Autism Testing | On Target ABA" />
 <meta name="twitter:description" content="Quality care without the wait. Compassionate, evidence-based ABA therapy and autism testing for children ages 2&ndash;18. Now serving the Salt Lake Valley." />
 <meta name="twitter:image" content="https://ontargetaba.com/assets/og/home.svg" />
 <meta name="geo.region" content="US-UT" />
@@ -360,7 +376,7 @@ tailwind.config = {
       "@type": "WebPage",
       "@id": "https://ontargetaba.com/#webpage",
       "url": "https://ontargetaba.com/",
-      "name": "On Target ABA — ABA Therapy &amp; Autism Testing in Cleveland, Columbus &amp; Salt Lake City",
+      "name": "ABA Therapy &amp; Autism Testing | On Target ABA",
       "description": "Quality care without the wait. Compassionate, evidence-based ABA therapy and autism testing for children ages 2&ndash;18. Now serving the Salt Lake Valley.",
       "isPartOf": {
         "@id": "https://ontargetaba.com/#website"
@@ -666,7 +682,7 @@ tailwind.config = {
         <!-- Photo frame -->
         <div class="relative rounded-[36px] overflow-hidden bg-white p-3 shadow-2xl rotate-1">
           <div class="relative rounded-[28px] overflow-hidden bg-teal-soft aspect-[4/5]">
-            <img src="assets/images/jessica-rockowitz-jbiInQGY8og-unsplash.png" alt="Child smiling during therapy session" width="372" height="399" fetchpriority="high" decoding="async" class="w-full h-full object-cover" onerror="this.style.display='none'">
+            <img src="assets/images/jessica-rockowitz-jbiInQGY8og-unsplash.png" alt="Child smiling during therapy session" width="372" height="399" fetchpriority="high" decoding="async" class="w-full h-full object-cover" data-hide-on-error>
             <div class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent"></div>
             <div class="absolute bottom-5 left-5 right-5 text-white">
               <div class="text-xs uppercase tracking-widest opacity-80">Murray, UT</div>
@@ -913,16 +929,16 @@ tailwind.config = {
     </div>
 
     <!-- Top row: scrolls right-to-left -->
-    <div class="review-marquee reveal mb-5" aria-label="Parent reviews, row 1">
+    <div class="review-marquee reveal mb-5" role="region" aria-roledescription="carousel" aria-label="Parent reviews, row 1">
       <div class="review-track" style="--dur: 55s;">
         <!-- ===== Pass 1 ===== -->
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My child runs off to his therapist every time. It's amazing.&rdquo;</p>
           <div class="review-meta">
@@ -935,11 +951,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;This is a phenomenal ABA center. Everyone at the center is really kind and patient with my son. I have seen a huge improvement with him. I'm truly grateful for everyone at On Target. Thank you.&rdquo;</p>
           <div class="review-meta">
@@ -952,11 +968,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Beautifully renovated. Fresh and clean. Attentive, experienced staff. Always a pleasure to go there!&rdquo;</p>
           <div class="review-meta">
@@ -969,11 +985,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;The therapists are so warm and really knowledgeable.&rdquo;</p>
           <div class="review-meta">
@@ -986,11 +1002,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My son is a level 3 autistic. He has improved SO much here! He even found 2 of the therapists he really loves making him want to come to school.&rdquo;</p>
           <div class="review-meta">
@@ -1003,11 +1019,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My child loves his therapist. When I pick him up, he doesn't want to leave!&rdquo;</p>
           <div class="review-meta">
@@ -1020,11 +1036,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My twins are currently attending one of the centers. We have had an amazing experience with On Target, especially the airport location. 5 stars all around &mdash; my family appreciates you guys so much. Very quickly responds to any concerns we have, and always meets with solutions!&rdquo;</p>
           <div class="review-meta">
@@ -1037,11 +1053,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Very professional staff who are very knowledgeable about Autism. Highly recommend to any parent who wants excellent therapy for their child.&rdquo;</p>
           <div class="review-meta">
@@ -1054,11 +1070,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Beautiful facility. Clean, updated, safe, spacious, with great equipment.&rdquo;</p>
           <div class="review-meta">
@@ -1072,11 +1088,11 @@ tailwind.config = {
         <!-- ===== Pass 2 (duplicate for seamless loop) ===== -->
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My child runs off to his therapist every time. It's amazing.&rdquo;</p>
           <div class="review-meta">
@@ -1089,11 +1105,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;This is a phenomenal ABA center. Everyone at the center is really kind and patient with my son. I have seen a huge improvement with him. I'm truly grateful for everyone at On Target. Thank you.&rdquo;</p>
           <div class="review-meta">
@@ -1106,11 +1122,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Beautifully renovated. Fresh and clean. Attentive, experienced staff. Always a pleasure to go there!&rdquo;</p>
           <div class="review-meta">
@@ -1123,11 +1139,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;The therapists are so warm and really knowledgeable.&rdquo;</p>
           <div class="review-meta">
@@ -1140,11 +1156,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My son is a level 3 autistic. He has improved SO much here! He even found 2 of the therapists he really loves making him want to come to school.&rdquo;</p>
           <div class="review-meta">
@@ -1157,11 +1173,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My child loves his therapist. When I pick him up, he doesn't want to leave!&rdquo;</p>
           <div class="review-meta">
@@ -1174,11 +1190,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My twins are currently attending one of the centers. We have had an amazing experience with On Target, especially the airport location. 5 stars all around &mdash; my family appreciates you guys so much. Very quickly responds to any concerns we have, and always meets with solutions!&rdquo;</p>
           <div class="review-meta">
@@ -1191,11 +1207,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Very professional staff who are very knowledgeable about Autism. Highly recommend to any parent who wants excellent therapy for their child.&rdquo;</p>
           <div class="review-meta">
@@ -1208,11 +1224,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Beautiful facility. Clean, updated, safe, spacious, with great equipment.&rdquo;</p>
           <div class="review-meta">
@@ -1227,16 +1243,16 @@ tailwind.config = {
     </div>
 
     <!-- Bottom row: scrolls left-to-right (reversed) -->
-    <div class="review-marquee reveal reveal-delay-1" aria-label="Parent reviews, row 2">
+    <div class="review-marquee reveal reveal-delay-1" role="region" aria-roledescription="carousel" aria-label="Parent reviews, row 2">
       <div class="review-track reverse" style="--dur: 70s;">
         <!-- ===== Pass 1 (reordered for visual variety) ===== -->
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Beautiful facility. Clean, updated, safe, spacious, with great equipment.&rdquo;</p>
           <div class="review-meta">
@@ -1249,11 +1265,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;The therapists are so warm and really knowledgeable.&rdquo;</p>
           <div class="review-meta">
@@ -1266,11 +1282,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My twins are currently attending one of the centers &mdash; we have had an amazing experience.&rdquo;</p>
           <div class="review-meta">
@@ -1283,11 +1299,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My child loves his therapist. When I pick him up, he doesn't want to leave!&rdquo;</p>
           <div class="review-meta">
@@ -1300,11 +1316,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Very professional staff who are very knowledgeable about Autism. Highly recommend to any parent who wants excellent therapy for their child.&rdquo;</p>
           <div class="review-meta">
@@ -1317,11 +1333,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My child runs off to his therapist every time. It's amazing.&rdquo;</p>
           <div class="review-meta">
@@ -1334,11 +1350,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My son is a level 3 autistic. He has improved SO much here! He even found 2 of the therapists he really loves making him want to come to school.&rdquo;</p>
           <div class="review-meta">
@@ -1351,11 +1367,11 @@ tailwind.config = {
         </article>
         <article class="review-card">
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;This is a phenomenal ABA center. Everyone at the center is really kind and patient.&rdquo;</p>
           <div class="review-meta">
@@ -1369,11 +1385,11 @@ tailwind.config = {
         <!-- ===== Pass 2 (duplicate for seamless loop) ===== -->
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Beautiful facility. Clean, updated, safe, spacious, with great equipment.&rdquo;</p>
           <div class="review-meta">
@@ -1386,11 +1402,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;The therapists are so warm and really knowledgeable.&rdquo;</p>
           <div class="review-meta">
@@ -1403,11 +1419,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My twins are currently attending one of the centers &mdash; we have had an amazing experience.&rdquo;</p>
           <div class="review-meta">
@@ -1420,11 +1436,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My child loves his therapist. When I pick him up, he doesn't want to leave!&rdquo;</p>
           <div class="review-meta">
@@ -1437,11 +1453,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;Very professional staff who are very knowledgeable about Autism. Highly recommend to any parent who wants excellent therapy for their child.&rdquo;</p>
           <div class="review-meta">
@@ -1454,11 +1470,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My child runs off to his therapist every time. It's amazing.&rdquo;</p>
           <div class="review-meta">
@@ -1471,11 +1487,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;My son is a level 3 autistic. He has improved SO much here! He even found 2 of the therapists he really loves making him want to come to school.&rdquo;</p>
           <div class="review-meta">
@@ -1488,11 +1504,11 @@ tailwind.config = {
         </article>
         <article class="review-card" aria-hidden="true">
           <div class="review-stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <p class="review-quote">&ldquo;This is a phenomenal ABA center. Everyone at the center is really kind and patient.&rdquo;</p>
           <div class="review-meta">
@@ -1512,11 +1528,11 @@ tailwind.config = {
         <div class="font-display text-5xl font-700 text-ink leading-none">5.0</div>
         <div>
           <div class="review-stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 7 7.4.6-5.6 4.9 1.8 7.3L12 17.8 5.5 21.8l1.8-7.3L1.7 9.6 9.1 9z"/></svg>
           </div>
           <div class="text-sm text-mute mt-1">Based on 8 parent reviews across Ohio &amp; Utah</div>
         </div>
@@ -1538,20 +1554,20 @@ tailwind.config = {
     <div class="marquee py-2">
       <div class="marquee-track">
         <div class="flex items-center gap-14 px-4">
-          <img src="assets/images/1280px-Molina_Healthcare_logo.svg.png" alt="Molina Healthcare" width="246" height="75" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" onerror="this.style.display='none'">
-          <img src="assets/images/ambetter-logo-6A24BEAC79-seeklogo.com_.png" alt="Ambetter" width="122" height="122" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" onerror="this.style.display='none'">
-          <img src="assets/images/buckeye_health_plan.png" alt="Buckeye Health Plan" width="246" height="164" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" onerror="this.style.display='none'">
-          <img src="assets/images/Logo-ode.svg.png" alt="Ohio Department of Education" width="440" height="162" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" onerror="this.style.display='none'">
-          <img src="assets/images/insurance-logo_4.png" alt="Insurance" width="297" height="47" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" onerror="this.style.display='none'">
-          <img src="assets/images/insurance-logo_5New.png" alt="Insurance" width="193" height="69" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" onerror="this.style.display='none'">
+          <img src="assets/images/1280px-Molina_Healthcare_logo.svg.png" alt="Molina Healthcare" width="246" height="75" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" data-hide-on-error>
+          <img src="assets/images/ambetter-logo-6A24BEAC79-seeklogo.com_.png" alt="Ambetter" width="122" height="122" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" data-hide-on-error>
+          <img src="assets/images/buckeye_health_plan.png" alt="Buckeye Health Plan" width="246" height="164" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" data-hide-on-error>
+          <img src="assets/images/Logo-ode.svg.png" alt="Ohio Department of Education" width="440" height="162" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" data-hide-on-error>
+          <img src="assets/images/insurance-logo_4.png" alt="Insurance" width="297" height="47" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" data-hide-on-error>
+          <img src="assets/images/insurance-logo_5New.png" alt="Insurance" width="193" height="69" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition" data-hide-on-error>
         </div>
         <div class="flex items-center gap-14 px-4" aria-hidden="true">
-          <img src="assets/images/1280px-Molina_Healthcare_logo.svg.png" alt="" width="246" height="75" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" onerror="this.style.display='none'">
-          <img src="assets/images/ambetter-logo-6A24BEAC79-seeklogo.com_.png" alt="" width="122" height="122" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" onerror="this.style.display='none'">
-          <img src="assets/images/buckeye_health_plan.png" alt="" width="246" height="164" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" onerror="this.style.display='none'">
-          <img src="assets/images/Logo-ode.svg.png" alt="" width="440" height="162" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" onerror="this.style.display='none'">
-          <img src="assets/images/insurance-logo_4.png" alt="" width="297" height="47" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" onerror="this.style.display='none'">
-          <img src="assets/images/insurance-logo_5New.png" alt="" width="193" height="69" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" onerror="this.style.display='none'">
+          <img src="assets/images/1280px-Molina_Healthcare_logo.svg.png" alt="" width="246" height="75" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" aria-hidden="true" data-hide-on-error>
+          <img src="assets/images/ambetter-logo-6A24BEAC79-seeklogo.com_.png" alt="" width="122" height="122" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" aria-hidden="true" data-hide-on-error>
+          <img src="assets/images/buckeye_health_plan.png" alt="" width="246" height="164" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" aria-hidden="true" data-hide-on-error>
+          <img src="assets/images/Logo-ode.svg.png" alt="" width="440" height="162" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" aria-hidden="true" data-hide-on-error>
+          <img src="assets/images/insurance-logo_4.png" alt="" width="297" height="47" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" aria-hidden="true" data-hide-on-error>
+          <img src="assets/images/insurance-logo_5New.png" alt="" width="193" height="69" loading="lazy" decoding="async" class="h-10 w-auto grayscale opacity-70" aria-hidden="true" data-hide-on-error>
         </div>
       </div>
     </div>
@@ -1629,5 +1645,12 @@ tailwind.config = {
 <script src="/assets/js/header.js" defer></script>
 <script src="/assets/js/footer.js" defer></script>
 <script src="assets/js/app.js" defer></script>
+<script>
+  // Hide images that fail to load (replaces legacy inline onerror handlers)
+  document.querySelectorAll('img[data-hide-on-error]').forEach(function(img){
+    img.addEventListener('error', function(){ img.style.display = 'none'; }, { once: true });
+    if (img.complete && img.naturalWidth === 0) img.style.display = 'none';
+  });
+</script>
 </body>
 </html>

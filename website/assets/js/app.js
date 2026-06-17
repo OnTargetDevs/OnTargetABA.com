@@ -74,9 +74,19 @@
   });
 
   // ---------- FAQ accordion ----------
+  let faqAutoId = 0;
   document.querySelectorAll('.faq-item').forEach((item) => {
     const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
     if (!q) return;
+    // Link the button to its answer panel for assistive tech.
+    if (a) {
+      if (!a.id) {
+        do { faqAutoId += 1; } while (document.getElementById('faq-answer-' + faqAutoId));
+        a.id = 'faq-answer-' + faqAutoId;
+      }
+      if (!q.hasAttribute('aria-controls')) q.setAttribute('aria-controls', a.id);
+    }
     q.addEventListener('click', () => {
       const opened = item.classList.toggle('open');
       q.setAttribute('aria-expanded', String(opened));

@@ -33,6 +33,8 @@ tailwind.config = {
 <link rel="stylesheet" href="assets/css/app.css" />
 <!-- auto-seo-start -->
 <link rel="canonical" href="https://ontargetaba.com/insurance/" />
+<link rel="alternate" hreflang="en-us" href="https://ontargetaba.com/insurance/" />
+<link rel="alternate" hreflang="x-default" href="https://ontargetaba.com/insurance/" />
 <meta name="theme-color" content="#00B7EA" />
 <meta name="keywords" content="ABA therapy insurance, autism insurance coverage, Medicaid ABA, Molina ABA, Ambetter ABA, Buckeye ABA" />
 <meta name="author" content="On Target ABA" />
@@ -637,17 +639,103 @@ tailwind.config = {
     </div>
 
     <!-- Autism Scholarship -->
-    <div class="reveal mt-14 rounded-3xl bg-ink text-white p-8 sm:p-10 relative overflow-hidden">
+    <div id="scholarships" class="reveal mt-14 rounded-3xl bg-ink text-white p-8 sm:p-10 relative overflow-hidden">
       <div class="blob blob-sun w-[280px] h-[280px] -right-16 -top-10 opacity-40"></div>
       <div class="relative flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
         <div class="w-16 h-16 grid place-items-center rounded-2xl bg-sun text-ink shrink-0">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
         </div>
         <div class="flex-1">
-          <h3 class="font-display text-2xl sm:text-3xl font-700">Autism Scholarship Providers</h3>
-          <p class="mt-2 text-white/80">We work with autism scholarship programs to make care accessible. Call us to learn more about scholarship eligibility for your child.</p>
+          <h3 class="font-display text-2xl sm:text-3xl font-700">Autism Scholarship &amp; Funding Programs</h3>
+          <p class="mt-2 text-white/80">We're an approved provider for state autism scholarship programs and we help families navigate Medicaid waivers and private grants. If you're worried about cost, start here &mdash; most families pay $0 out of pocket once a program is in place.</p>
         </div>
         <a href="contact.html" class="btn btn-sun shrink-0">Talk to us &rarr;</a>
+      </div>
+
+      <!-- Programs by location -->
+      <div class="relative mt-10 grid md:grid-cols-2 gap-5">
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-sun text-ink font-bold text-sm">OH</span>
+            <h4 class="font-display text-xl font-700">Ohio families</h4>
+          </div>
+          <ul class="mt-4 space-y-3 text-sm text-white/85">
+            <li>
+              <div class="font-semibold text-white">Ohio Autism Scholarship Program (ASP)</div>
+              <div class="text-white/75 mt-0.5">Up to <strong>$32,455/year</strong> for ABA, autism evaluation, speech, OT, and related services. Administered by the Ohio Department of Education and Workforce. On Target ABA is an approved ASP provider and bills the state directly.</div>
+            </li>
+            <li>
+              <div class="font-semibold text-white">Jon Peterson Special Needs Scholarship</div>
+              <div class="text-white/75 mt-0.5">Alternative funding for students on an IEP with disabilities other than (or in addition to) autism.</div>
+            </li>
+            <li>
+              <div class="font-semibold text-white">Ohio Medicaid &amp; managed-care plans</div>
+              <div class="text-white/75 mt-0.5">Buckeye, Molina, CareSource, Anthem, AmeriHealth Caritas, and Humana Healthy Horizons all cover ABA for children with an autism diagnosis.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 grid place-items-center rounded-lg bg-coral text-white font-bold text-sm">UT</span>
+            <h4 class="font-display text-xl font-700">Utah families</h4>
+          </div>
+          <ul class="mt-4 space-y-3 text-sm text-white/85">
+            <li>
+              <div class="font-semibold text-white">Utah Medicaid (ABA benefit)</div>
+              <div class="text-white/75 mt-0.5">Covers medically necessary ABA for children with an autism diagnosis, including center-based and in-home hours.</div>
+            </li>
+            <li>
+              <div class="font-semibold text-white">Medicaid Autism Waiver (DSPD)</div>
+              <div class="text-white/75 mt-0.5">Through the Division of Services for People with Disabilities &mdash; waitlist-based; we can help families understand eligibility and apply.</div>
+            </li>
+            <li>
+              <div class="font-semibold text-white">Carson Smith Special Needs Scholarship</div>
+              <div class="text-white/75 mt-0.5">State scholarship for K&ndash;12 students with disabilities; can offset costs for related services alongside private insurance.</div>
+            </li>
+            <li>
+              <div class="font-semibold text-white">Private grants</div>
+              <div class="text-white/75 mt-0.5">UnitedHealthcare Children's Foundation, ACT Today, and the Autism Care Today Family Grant accept rolling applications nationwide.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Eligibility + how to apply -->
+      <div class="relative mt-6 grid md:grid-cols-2 gap-5">
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <h4 class="font-display text-lg font-700">Eligibility at a glance</h4>
+          <ul class="mt-3 space-y-2 text-sm text-white/85">
+            <li class="flex gap-2"><span class="text-sun font-bold">&bull;</span> A current autism diagnosis from a qualified provider (we offer evaluations if you don't have one yet)</li>
+            <li class="flex gap-2"><span class="text-sun font-bold">&bull;</span> Child between roughly age 2 and 21 (varies by program)</li>
+            <li class="flex gap-2"><span class="text-sun font-bold">&bull;</span> Residency in the program's state &mdash; Ohio or Utah for the scholarships above</li>
+            <li class="flex gap-2"><span class="text-sun font-bold">&bull;</span> Most ASP and Medicaid programs are <strong>not</strong> income-restricted</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+          <h4 class="font-display text-lg font-700">How to apply (we help with every step)</h4>
+          <ol class="mt-3 space-y-2 text-sm text-white/85 list-decimal pl-5">
+            <li>Call us &mdash; we'll confirm which program your child qualifies for.</li>
+            <li>Gather the diagnostic report, IEP (if applicable), and proof of residency.</li>
+            <li>We submit the provider paperwork and you submit the family application.</li>
+            <li>Once approved, we coordinate hours, scheduling, and billing directly.</li>
+          </ol>
+          <a href="tel:8889895011" class="mt-4 inline-flex items-center gap-2 text-sun font-semibold text-sm hover:underline">
+            Call (888) 989-5011 for help applying
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Learn more / blog links -->
+      <div class="relative mt-6 rounded-2xl bg-white/5 ring-1 ring-white/10 p-6">
+        <div class="text-xs uppercase tracking-widest text-white/60 font-semibold">Learn more</div>
+        <div class="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <a href="/blog/posts/what-ohios-autism-scholarship-program-covers-and-how-to-use-it-for-aba-therapy" class="text-sun font-semibold hover:underline">What Ohio's Autism Scholarship covers &rarr;</a>
+          <a href="/blog/posts/what-is-an-autism-scholarship-program-asp-and-how-can-it-help-your-child" class="text-sun font-semibold hover:underline">What is an ASP, and how can it help? &rarr;</a>
+          <a href="/blog/posts/autism-grants-for-families-financial-help-and-support-options-explained" class="text-sun font-semibold hover:underline">Autism grants for families &rarr;</a>
+          <a href="/blog/posts/understanding-medicaid-aba-therapy-what-parents-need-to-know" class="text-sun font-semibold hover:underline">Medicaid &amp; ABA: what parents need to know &rarr;</a>
+        </div>
       </div>
     </div>
   </div>

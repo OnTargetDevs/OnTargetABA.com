@@ -335,14 +335,14 @@ WEBSITE_LD = {
 # `None` slug in a crumb tuple means "this is the current page" (no link).
 SEO_PAGES = {
     "index.html": {
-        "title": "On Target ABA — ABA Therapy &amp; Autism Testing in Cleveland, Columbus &amp; Salt Lake City",
+        "title": "ABA Therapy &amp; Autism Testing | On Target ABA",
         "desc": "Quality care without the wait. Compassionate, evidence-based ABA therapy and autism testing for children ages 2&ndash;18. Now serving the Salt Lake Valley.",
         "keywords": "ABA therapy, autism testing, applied behavior analysis, autism evaluation Salt Lake City, ABA therapy Cleveland, ABA therapy Columbus, BCBA, early intervention, autism diagnosis Utah",
         "crumbs": [("Home", None)],
         "primary_type": "WebPage",
     },
     "about.html": {
-        "title": "About On Target ABA — Our Mission, Approach &amp; Founder",
+        "title": "About Us — Mission &amp; Founder | On Target ABA",
         "desc": "Learn about On Target ABA: our mission, family-focused approach to ABA therapy, and Clinical Director &amp; BCBA Ilana Gross.",
         "keywords": "On Target ABA about, Ilana Gross BCBA, ABA clinic mission, family-focused autism therapy",
         "crumbs": [("Home", "index.html"), ("About", None)],
@@ -356,7 +356,7 @@ SEO_PAGES = {
         "primary_type": "WebPage",
     },
     "our-services.html": {
-        "title": "Our Services — ABA Therapy Programs in Cleveland, Columbus &amp; Salt Lake City",
+        "title": "ABA Therapy Programs &amp; Services | On Target ABA",
         "desc": "Center-based, in-home, school-based, and daycare-based ABA therapy. Early intervention, potty training, autism testing — all evidence-based, all family-focused.",
         "keywords": "ABA therapy services, center-based ABA, in-home ABA, school-based ABA, autism programs Ohio Utah",
         "crumbs": [("Home", "index.html"), ("Services", None)],
@@ -412,7 +412,7 @@ SEO_PAGES = {
         "primary_type": "LocalLocation",
     },
     "gahanna-ohio.html": {
-        "title": "ABA Therapy in Gahanna &amp; Columbus, Ohio &mdash; On Target ABA Airport Center",
+        "title": "ABA Therapy in Gahanna, Ohio | On Target ABA",
         "desc": "Center-based and in-home ABA therapy plus autism testing at our Gahanna / Columbus Airport center. Serving east Columbus and Franklin County.",
         "keywords": "ABA therapy Gahanna OH, ABA therapy Columbus, autism clinic east Columbus, ABA New Albany Westerville",
         "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Gahanna, Ohio", None)],
@@ -834,6 +834,12 @@ def build_head_block(slug: str, page: dict) -> str:
     head_lines = [
         START_MARK,
         f'<link rel="canonical" href="{page_url}" />',
+        # Self-referential hreflang on every page. Site is currently
+        # English-only (en-US) for US-Utah and US-Ohio regions. If/when
+        # Spanish or other language variants ship, add additional
+        # <link rel="alternate" hreflang="..."> entries here.
+        f'<link rel="alternate" hreflang="en-us" href="{page_url}" />',
+        f'<link rel="alternate" hreflang="x-default" href="{page_url}" />',
         '<meta name="theme-color" content="#00B7EA" />',
         f'<meta name="keywords" content="{keywords}" />',
         '<meta name="author" content="On Target ABA" />',

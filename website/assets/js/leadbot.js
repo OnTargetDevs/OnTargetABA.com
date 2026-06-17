@@ -38,6 +38,21 @@
     return u.toString();
   }
 
+  // Capture UTM attribution from the current URL so it survives the hand-off
+  // to Jotform. Map these param names to custom fields in each Jotform's
+  // settings to surface them alongside the lead in your CRM / reports.
+  function utmParams() {
+    const out = {};
+    try {
+      const q = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((k) => {
+        const v = q.get(k);
+        if (v) out[k] = v;
+      });
+    } catch (_) { /* no-op */ }
+    return out;
+  }
+
   // ---- DOM scaffolding ----
   const isPostPage = location.pathname.includes('/blog/post.html');
   const root = isPostPage ? '../' : '';
@@ -259,15 +274,17 @@
           : "Thanks " + (state.name || '') + "! We&rsquo;re routing you to the right form so we can verify benefits and schedule fast.";
         w.appendChild(m);
 
-        // Auto-route after a short delay so the user sees the confirmation
-        const params = {
+        // Auto-route after a short delay so the user sees the confirmation.
+        // UTM params (if present on the landing URL) are passed through so
+        // campaign attribution survives the hand-off into Jotform.
+        const params = Object.assign({
           name:       state.name,
           phone:      state.phone,
           email:      state.email,
           age:        state.age,
           region:     state.region,
           source:     'leadbot',
-        };
+        }, utmParams());
         const target = route.jot
           ? jotUrl(route.jot, params)
           : (root + route.local);

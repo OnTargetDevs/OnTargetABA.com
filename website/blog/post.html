@@ -47,6 +47,10 @@
 <meta property="article:modified_time" id="seo-article-mod" content="" />
 <meta property="article:author" id="seo-article-author" content="On Target ABA" />
 <meta property="article:section" id="seo-article-section" content="" />
+<meta property="og:article:published_time" id="seo-og-article-pub" content="" />
+<meta property="og:article:modified_time" id="seo-og-article-mod" content="" />
+<meta property="og:article:author" id="seo-og-article-author" content="On Target ABA" />
+<meta property="og:article:section" id="seo-og-article-section" content="" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" id="seo-tw-title" content="On Target ABA Blog" />
 <meta name="twitter:description" id="seo-tw-description" content="ABA therapy &amp; autism resources for families." />
@@ -479,12 +483,21 @@ tailwind.config = {
     // article:* OpenGraph tags (populated from frontmatter)
     if (meta.date) {
       set('seo-article-pub', 'content', meta.date);
+      set('seo-og-article-pub', 'content', meta.date);
       // dateModified prefers frontmatter `modified` / `updated`, falling back
       // to the original publish date if no explicit modification was recorded.
-      set('seo-article-mod', 'content', meta.modified || meta.updated || meta.date);
+      const modDate = meta.modified || meta.updated || meta.date;
+      set('seo-article-mod', 'content', modDate);
+      set('seo-og-article-mod', 'content', modDate);
     }
-    if (meta.author) set('seo-article-author', 'content', meta.author);
-    if (meta.category) set('seo-article-section', 'content', meta.category);
+    if (meta.author) {
+      set('seo-article-author', 'content', meta.author);
+      set('seo-og-article-author', 'content', meta.author);
+    }
+    if (meta.category) {
+      set('seo-article-section', 'content', meta.category);
+      set('seo-og-article-section', 'content', meta.category);
+    }
 
     // Article JSON-LD
     const ld = {
