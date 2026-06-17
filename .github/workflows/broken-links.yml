@@ -20,11 +20,14 @@ jobs:
 
       - name: Pick target URL
         id: target
+        # Default to the current preview host (beta.ontargetaba.com on
+        # the OnTargetDevs CF Pages project). Override via the STAGING_URL
+        # secret if a different host should be crawled.
         run: |
           if [ -n "${{ secrets.STAGING_URL }}" ]; then
             echo "url=${{ secrets.STAGING_URL }}" >> "$GITHUB_OUTPUT"
           else
-            echo "url=https://website.ontargetnotes.com/" >> "$GITHUB_OUTPUT"
+            echo "url=https://beta.ontargetaba.com/" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Run Lychee
