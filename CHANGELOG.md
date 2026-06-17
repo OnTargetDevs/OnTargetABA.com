@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- build-sitemap.py honors SITE_DOMAIN env override
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - broken-links — feed sitemap.xml + fail loudly when lychee crashes
 
 
