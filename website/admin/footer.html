@@ -43,6 +43,7 @@ tailwind.config = {
     <nav class="admin-topbar__nav" aria-label="Admin">
       <a href="/admin/">Dashboard</a>
       <a href="/admin/posts.html">Posts</a>
+      <a href="/admin/pages.html">Pages</a>
       <a href="/admin/header.html">Header</a>
       <a href="/admin/footer.html">Footer</a>
       <a href="/admin/widget.html">Chat Widget</a>
@@ -75,11 +76,11 @@ tailwind.config = {
       <section class="admin-card section-block">
         <div class="admin-card__head"><h2 class="admin-h2">Logo &amp; intro</h2></div>
         <div class="admin-card__body field-grid">
-          <div class="field"><label>Logo src</label><input class="input" data-bind="logo.src" type="text"></div>
-          <div class="field"><label>Logo alt</label><input class="input" data-bind="logo.alt" type="text"></div>
-          <div class="field" style="grid-column:1/-1;"><label>Tagline</label><input class="input" data-bind="tagline" type="text"></div>
-          <div class="field"><label>Phone (display label)</label><input class="input" data-bind="phone.label" type="text" placeholder="1-888-989-5011"></div>
-          <div class="field"><label>Phone (tel: link)</label><input class="input" data-bind="phone.href" type="text" placeholder="tel:8889895011"></div>
+          <div class="field"><label for="footer-logo-src">Logo src</label><input id="footer-logo-src" class="input" data-bind="logo.src" type="text"></div>
+          <div class="field"><label for="footer-logo-alt">Logo alt</label><input id="footer-logo-alt" class="input" data-bind="logo.alt" type="text"></div>
+          <div class="field" style="grid-column:1/-1;"><label for="footer-tagline">Tagline</label><input id="footer-tagline" class="input" data-bind="tagline" type="text"></div>
+          <div class="field"><label for="footer-phone-label">Phone (display label)</label><input id="footer-phone-label" class="input" data-bind="phone.label" type="text" placeholder="1-888-989-5011"></div>
+          <div class="field"><label for="footer-phone-href">Phone (tel: link)</label><input id="footer-phone-href" class="input" data-bind="phone.href" type="text" placeholder="tel:8889895011"></div>
         </div>
       </section>
 
@@ -98,8 +99,8 @@ tailwind.config = {
       <section class="admin-card section-block">
         <div class="admin-card__head"><h2 class="admin-h2">Credit chip</h2></div>
         <div class="admin-card__body field-grid">
-          <div class="field"><label>Name</label><input class="input" data-bind="credit.name" type="text"></div>
-          <div class="field"><label>URL</label><input class="input" data-bind="credit.url" type="text"></div>
+          <div class="field"><label for="footer-credit-name">Name</label><input id="footer-credit-name" class="input" data-bind="credit.name" type="text"></div>
+          <div class="field"><label for="footer-credit-url">URL</label><input id="footer-credit-url" class="input" data-bind="credit.url" type="text"></div>
         </div>
       </section>
 
@@ -107,7 +108,7 @@ tailwind.config = {
       <section class="admin-card section-block">
         <div class="admin-card__head"><h2 class="admin-h2">Copyright</h2></div>
         <div class="admin-card__body">
-          <div class="field"><label>Copyright text</label><input class="input" data-bind="copyright" type="text"></div>
+          <div class="field"><label for="footer-copyright">Copyright text</label><input id="footer-copyright" class="input" data-bind="copyright" type="text"></div>
         </div>
       </section>
 
@@ -175,11 +176,13 @@ tailwind.config = {
         const det = document.createElement('details');
         det.className = 'collapsible';
         det.open = true;
+        const colTitleId = 'col-' + idx + '-title';
+        const colLinksId = 'col-' + idx + '-links';
         det.innerHTML =
           '<summary><span></span></summary>' +
           '<div class="collapsible__body grid gap-3">' +
-            '<div class="field"><label>Column title</label><input class="input" data-k="title" type="text"></div>' +
-            '<div class="field"><label>Links</label><div class="repeater" data-links></div><button class="btn btn-ghost btn-sm mt-2" type="button" data-add-link>+ Add link</button></div>' +
+            '<div class="field"><label for="' + colTitleId + '">Column title</label><input id="' + colTitleId + '" class="input" data-k="title" type="text"></div>' +
+            '<div class="field"><label for="' + colLinksId + '">Links</label><div id="' + colLinksId + '" class="repeater" data-links></div><button class="btn btn-ghost btn-sm mt-2" type="button" data-add-link>+ Add link</button></div>' +
             '<div class="flex gap-2">' +
               '<button class="btn btn-ghost btn-sm" type="button" data-move="up">&uarr; Move up</button>' +
               '<button class="btn btn-ghost btn-sm" type="button" data-move="down">&darr; Move down</button>' +
@@ -200,14 +203,16 @@ tailwind.config = {
           col.links.forEach(function (link, li) {
             const row = document.createElement('div');
             row.className = 'repeater__row';
+            const labelId = 'col-' + idx + '-link-' + li + '-label';
+            const hrefId  = 'col-' + idx + '-link-' + li + '-href';
             row.innerHTML =
               '<div class="repeater__handle">' +
                 '<button type="button" data-mv="up">&uarr;</button>' +
                 '<button type="button" data-mv="down">&darr;</button>' +
               '</div>' +
               '<div class="repeater__fields">' +
-                '<div class="field"><label>Label</label><input class="input" data-k="label" type="text"></div>' +
-                '<div class="field"><label>Href</label><input class="input" data-k="href" type="text"></div>' +
+                '<div class="field"><label for="' + labelId + '">Label</label><input id="' + labelId + '" class="input" data-k="label" type="text"></div>' +
+                '<div class="field"><label for="' + hrefId + '">Href</label><input id="' + hrefId + '" class="input" data-k="href" type="text"></div>' +
               '</div>' +
               '<button class="repeater__remove" type="button">&times;</button>';
             row.querySelector('[data-k="label"]').value = link.label || '';
@@ -253,14 +258,16 @@ tailwind.config = {
       items.forEach(function (item, idx) {
         const row = document.createElement('div');
         row.className = 'repeater__row';
+        const labelId = 'legal-' + idx + '-label';
+        const hrefId  = 'legal-' + idx + '-href';
         row.innerHTML =
           '<div class="repeater__handle">' +
             '<button type="button" data-mv="up">&uarr;</button>' +
             '<button type="button" data-mv="down">&darr;</button>' +
           '</div>' +
           '<div class="repeater__fields">' +
-            '<div class="field"><label>Label</label><input class="input" data-k="label" type="text"></div>' +
-            '<div class="field"><label>Href</label><input class="input" data-k="href" type="text"></div>' +
+            '<div class="field"><label for="' + labelId + '">Label</label><input id="' + labelId + '" class="input" data-k="label" type="text"></div>' +
+            '<div class="field"><label for="' + hrefId + '">Href</label><input id="' + hrefId + '" class="input" data-k="href" type="text"></div>' +
           '</div>' +
           '<button class="repeater__remove" type="button">&times;</button>';
         row.querySelector('[data-k="label"]').value = item.label || '';

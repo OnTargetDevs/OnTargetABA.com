@@ -60,6 +60,7 @@ tailwind.config = {
     <nav class="admin-topbar__nav" aria-label="Admin">
       <a href="/admin/">Dashboard</a>
       <a href="/admin/posts.html">Posts</a>
+      <a href="/admin/pages.html">Pages</a>
       <a href="/admin/header.html">Header</a>
       <a href="/admin/footer.html">Footer</a>
       <a href="/admin/widget.html" aria-current="page">Chat Widget</a>
@@ -111,7 +112,7 @@ tailwind.config = {
             </p>
             <div class="choice__body grid gap-3">
               <div class="field">
-                <label>Partner ID</label>
+                <label for="leadtrap-partner">Partner ID</label>
                 <input class="input" type="text" id="leadtrap-partner"
                        placeholder="236d3498-b935-4239-91a8-f2e1d6e2787f" />
                 <p class="admin-muted mt-1" style="font-size:.78rem;">
@@ -133,7 +134,7 @@ tailwind.config = {
             </p>
             <div class="choice__body grid gap-3">
               <div class="field">
-                <label>Embed HTML</label>
+                <label for="custom-snippet">Embed HTML</label>
                 <textarea class="input font-mono text-xs" id="custom-snippet" rows="8"
                           placeholder='&lt;script src="https://example.com/widget.js"&gt;&lt;/script&gt;'></textarea>
                 <p class="admin-muted mt-1" style="font-size:.78rem;">

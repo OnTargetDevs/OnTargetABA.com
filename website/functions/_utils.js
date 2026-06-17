@@ -242,7 +242,7 @@ export async function verifyJwt(request, env) {
   const cookies = parseCookies(request);
   const tok = cookies[COOKIE_NAME];
   if (!tok) return null;
-  return verifyJwtToken(tok, env.JWT_SECRET);
+  return await verifyJwtToken(tok, env.JWT_SECRET);
 }
 
 export function adminCookie(token, maxAge = 86400) {

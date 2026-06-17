@@ -43,6 +43,7 @@ tailwind.config = {
     <nav class="admin-topbar__nav" aria-label="Admin">
       <a href="/admin/">Dashboard</a>
       <a href="/admin/posts.html">Posts</a>
+      <a href="/admin/pages.html">Pages</a>
       <a href="/admin/header.html">Header</a>
       <a href="/admin/footer.html">Footer</a>
       <a href="/admin/widget.html">Chat Widget</a>
@@ -67,14 +68,14 @@ tailwind.config = {
     </div>
 
     <div class="toolbar">
-      <input id="search" class="input" type="search" placeholder="Search title, slug, category, excerpt&hellip;" />
-      <select id="filter" class="select" style="max-width:160px;">
+      <input id="search" class="input" type="search" aria-label="Search posts" placeholder="Search title, slug, category, excerpt&hellip;" />
+      <select id="filter" class="select" aria-label="Filter by status" style="max-width:160px;">
         <option value="">All statuses</option>
         <option value="live">Live</option>
         <option value="draft">Draft</option>
         <option value="hidden">Hidden</option>
       </select>
-      <select id="cat" class="select" style="max-width:180px;">
+      <select id="cat" class="select" aria-label="Filter by category" style="max-width:180px;">
         <option value="">All categories</option>
       </select>
       <span data-saving class="admin-muted" style="margin-left:auto;font-size:0.8rem;"></span>

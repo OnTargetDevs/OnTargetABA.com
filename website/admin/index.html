@@ -66,6 +66,7 @@ tailwind.config = {
       <nav class="admin-topbar__nav" aria-label="Admin">
         <a href="/admin/">Dashboard</a>
         <a href="/admin/posts.html">Posts</a>
+        <a href="/admin/pages.html">Pages</a>
         <a href="/admin/header.html">Header</a>
         <a href="/admin/footer.html">Footer</a>
         <a href="/admin/widget.html">Chat Widget</a>
@@ -97,6 +98,23 @@ tailwind.config = {
         <div class="stat"><span class="stat__label">Posts</span><span class="stat__value" data-stat="posts">&mdash;</span></div>
         <div class="stat"><span class="stat__label">Drafts</span><span class="stat__value" data-stat="drafts">&mdash;</span></div>
         <div class="stat"><span class="stat__label">Hidden</span><span class="stat__value" data-stat="hidden">&mdash;</span></div>
+        <div class="stat"><span class="stat__label">Pages</span><span class="stat__value" data-stat="pages">&mdash;</span></div>
+        <div class="stat"><span class="stat__label">Last deploy</span><span class="stat__value" data-stat="last-deploy" style="font-size:1rem;">&mdash;</span></div>
+      </section>
+
+      <!-- Site health / external dashboards -->
+      <section class="admin-card mb-6">
+        <div class="admin-card__head">
+          <div>
+            <h2 class="admin-h2">Site health</h2>
+            <p class="admin-muted" style="font-size:0.85rem;margin-top:0.15rem;">External dashboards for traffic and session insights.</p>
+          </div>
+        </div>
+        <div class="admin-card__body" style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://dash.cloudflare.com/?to=/:account/pages/view/ontargetaba-com/analytics">Cloudflare Analytics</a>
+          <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://dash.cloudflare.com/?to=/:account/pages/view/ontargetaba-com">Cloudflare Pages deploys</a>
+          <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://insights.hotjar.com/">Hotjar dashboard</a>
+        </div>
       </section>
 
       <!-- Tiles -->
@@ -107,6 +125,13 @@ tailwind.config = {
           </div>
           <div class="tile__title">Blog posts</div>
           <div class="tile__desc">Markdown + frontmatter editor with live preview.</div>
+        </a>
+        <a class="tile" href="/admin/pages.html">
+          <div class="tile__icon tile__icon--sage" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+          </div>
+          <div class="tile__title">Pages &mdash; SEO</div>
+          <div class="tile__desc">Edit title, meta description, Open Graph &amp; Twitter tags on every static page.</div>
         </a>
         <a class="tile" href="/admin/header.html">
           <div class="tile__icon tile__icon--sun" aria-hidden="true">
@@ -157,7 +182,7 @@ tailwind.config = {
 
     dash.hidden = false;
 
-    // Stats — posts only.
+    // Stats — posts + pages.
     try {
       const postsResp = await Admin.api.get('/api/posts').catch(() => ({ posts: [] }));
       const posts = (postsResp && postsResp.posts) || [];
@@ -167,6 +192,21 @@ tailwind.config = {
       document.querySelector('[data-stat="posts"]').textContent  = live;
       document.querySelector('[data-stat="drafts"]').textContent = drafts;
       document.querySelector('[data-stat="hidden"]').textContent = hidden;
+
+      // Static pages count from pages.json (count + posts = total live URLs).
+      try {
+        const pagesResp = await fetch('/assets/data/pages.json', { cache: 'no-store' });
+        if (pagesResp.ok) {
+          const pj = await pagesResp.json();
+          const list = (pj && Array.isArray(pj.pages)) ? pj.pages : (Array.isArray(pj) ? pj : []);
+          const livePages = list.filter(p => !p.draft && !p.hidden).length;
+          document.querySelector('[data-stat="pages"]').textContent = livePages + live;
+        } else {
+          document.querySelector('[data-stat="pages"]').textContent = live;
+        }
+      } catch (_) {
+        document.querySelector('[data-stat="pages"]').textContent = live;
+      }
     } catch (err) {
       console.warn('[admin] stats failed', err);
     }
@@ -176,6 +216,31 @@ tailwind.config = {
     try {
       const data = await Admin.api.get('/api/recent-prs');
       const prs = (data && data.prs) || [];
+
+      // Surface last-deploy stat from most recent merged PR.
+      try {
+        const merged = prs.find(p => p.merged || p.state === 'merged');
+        const lastDeployEl = document.querySelector('[data-stat="last-deploy"]');
+        if (lastDeployEl) {
+          if (merged) {
+            const ts = merged.merged_at || merged.mergedAt || merged.updated_at || merged.updatedAt;
+            const when = ts ? new Date(ts) : null;
+            let label = '—';
+            if (when && !isNaN(when.getTime())) {
+              const diff = (Date.now() - when.getTime()) / 1000;
+              if (diff < 60) label = 'just now';
+              else if (diff < 3600) label = Math.round(diff / 60) + 'm ago';
+              else if (diff < 86400) label = Math.round(diff / 3600) + 'h ago';
+              else label = Math.round(diff / 86400) + 'd ago';
+            }
+            lastDeployEl.textContent = label;
+            if (merged.branch) lastDeployEl.title = 'branch: ' + merged.branch;
+          } else {
+            lastDeployEl.textContent = 'no merges';
+          }
+        }
+      } catch (_) { /* non-fatal */ }
+
       if (!prs.length) {
         prsBox.innerHTML = '<div class="empty">No recent admin PRs yet. Saves from this admin will appear here.</div>';
         return;

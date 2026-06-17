@@ -92,7 +92,7 @@ ORG_LD = {
             "@type": "MedicalClinic",
             "@id": f"{SITE}/#clinic-utah",
             "name": "On Target ABA &mdash; Murray (Salt Lake Valley)",
-            "url": f"{SITE}/aba-therapy-murray-utah/",
+            "url": f"{SITE}/murray-utah/",
             "telephone": "+1-385-550-3500",
             "image": f"{SITE}/assets/images/footerImg.png",
             "priceRange": "$$",
@@ -777,6 +777,14 @@ def build_head_block(slug: str, page: dict) -> str:
     # Prefer per-page generated OG image (1200x630 SVG); fall back to logo.
     image = page.get("image") or resolve_og_image(slug)
     noindex = page.get("noindex", False)
+    # Admin overrides (assets/data/page-seo.json) can split og:* and
+    # twitter:* away from the default title/desc. Fall back to title/desc
+    # when no override is set so the existing pages are byte-identical.
+    og_title = page.get("og_title") or title
+    og_description = page.get("og_description") or desc
+    twitter_title = page.get("twitter_title") or title
+    twitter_description = page.get("twitter_description") or desc
+    twitter_image = page.get("twitter_image") or image
 
     crumb_items = []
     for i, (label, href) in enumerate(page["crumbs"], start=1):
@@ -849,8 +857,8 @@ def build_head_block(slug: str, page: dict) -> str:
         '<meta property="og:site_name" content="On Target ABA" />',
         '<meta property="og:locale" content="en_US" />',
         f'<meta property="og:url" content="{page_url}" />',
-        f'<meta property="og:title" content="{title}" />',
-        f'<meta property="og:description" content="{desc}" />',
+        f'<meta property="og:title" content="{og_title}" />',
+        f'<meta property="og:description" content="{og_description}" />',
         f'<meta property="og:image" content="{image}" />',
         ('<meta property="og:image:width" content="1200" />'
          if image.endswith('.svg') else
@@ -860,9 +868,9 @@ def build_head_block(slug: str, page: dict) -> str:
          '<meta property="og:image:height" content="175" />'),
         '<meta name="twitter:card" content="summary_large_image" />',
         '<meta name="twitter:site" content="@ontargetaba" />',
-        f'<meta name="twitter:title" content="{title}" />',
-        f'<meta name="twitter:description" content="{desc}" />',
-        f'<meta name="twitter:image" content="{image}" />',
+        f'<meta name="twitter:title" content="{twitter_title}" />',
+        f'<meta name="twitter:description" content="{twitter_description}" />',
+        f'<meta name="twitter:image" content="{twitter_image}" />',
         '<meta name="geo.region" content="US-UT" />',
         '<meta name="geo.placename" content="Murray, Utah" />',
         '<meta name="geo.position" content="40.6510;-111.8889" />',
@@ -942,13 +950,78 @@ def inject(path: Path, slug: str, page: dict) -> bool:
     if text == orig:
         return False
 
-    out = (b"\xef\xbb\xbf" if True else b"") + text.encode("utf-8")
+    out = (b"\xef\xbb\xbf" if bom else b"") + text.encode("utf-8")
     path.write_bytes(out)
     return True
 
 
+def load_admin_overrides() -> dict:
+    """Per-page SEO overrides written by the admin dashboard
+    (/admin/page-seo-editor.html). File shape:
+        { "schemaVersion": 1,
+          "pages": {
+            "contact": { "title": "...", "description": "...",
+                         "ogTitle": "...", "ogDescription": "...",
+                         "ogImage": "...", "keywords": "...",
+                         "twitterTitle": "...", "twitterDescription": "...",
+                         "twitterImage": "..." }, ... } }
+
+    Keys here are slugs without the .html extension; the merge below
+    handles the .html lookup. Missing file = no overrides, no error.
+    """
+    f = ROOT / "assets" / "data" / "page-seo.json"
+    if not f.exists():
+        return {}
+    try:
+        with f.open("r", encoding="utf-8") as fh:
+            data = json.load(fh)
+        return data.get("pages") if isinstance(data, dict) else {}
+    except Exception as e:
+        print(f"  ! could not read assets/data/page-seo.json: {e}")
+        return {}
+
+
+def merge_overrides(slug: str, cfg: dict, overrides: dict) -> dict:
+    """Apply an admin override entry on top of the built-in SEO_PAGES row.
+    Returns a new dict; the underlying SEO_PAGES dict stays untouched.
+    """
+    key = slug.replace(".html", "")
+    o = overrides.get(key) or {}
+    if not o:
+        return cfg
+    out = dict(cfg)
+    # Map the editor's camelCase field names to inject-seo's keys.
+    # Use `in o` checks (not truthiness) so an admin clearing a field
+    # to "" actually unsets the override instead of being a no-op.
+    mapping = {
+        "title": "title",
+        "description": "desc",
+        "keywords": "keywords",
+        "ogImage": "image",
+        "ogTitle": "og_title",
+        "ogDescription": "og_description",
+        "twitterTitle": "twitter_title",
+        "twitterDescription": "twitter_description",
+        "twitterImage": "twitter_image",
+    }
+    for src, dst in mapping.items():
+        if src not in o:
+            continue
+        val = o[src]
+        if val == "" or val is None:
+            # Admin explicitly cleared this field — remove the override
+            # so the built-in default takes over again.
+            out.pop(dst, None)
+        else:
+            out[dst] = val
+    return out
+
+
 def main():
     pages = sorted(ROOT.glob("*.html"))
+    overrides = load_admin_overrides()
+    if overrides:
+        print(f"  i loaded {len(overrides)} admin SEO override(s)")
     touched = 0
     for p in pages:
         slug = p.name
@@ -956,6 +1029,7 @@ def main():
         if not cfg:
             print(f"  - {slug}: no SEO config, skipping")
             continue
+        cfg = merge_overrides(slug, cfg, overrides)
         if inject(p, slug, cfg):
             print(f"  + {slug}")
             touched += 1

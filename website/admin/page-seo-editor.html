@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Edit page SEO &mdash; Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="/assets/vendor/tailwind.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/images/footerImg.png">
+<link rel="apple-touch-icon" href="/assets/images/footerImg.png">
+</head>
+<body class="admin font-sans">
+  <header class="admin-topbar">
+    <a class="admin-topbar__brand" href="/admin/pages.html">
+      <span class="dot" aria-hidden="true"></span>
+      <span>On Target Admin</span>
+    </a>
+    <div class="admin-topbar__right" style="margin-left:auto;gap:0.5rem;">
+      <span id="page-id" class="admin-muted" style="font-weight:600;color:var(--ink);">Page</span>
+      <span data-saving class="admin-muted" style="font-size:0.8rem;"></span>
+      <a class="btn btn-ghost btn-sm" href="/admin/pages.html">Back</a>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="admin-page" style="max-width:1100px;">
+    <form id="seo-form" class="grid gap-5">
+      <section class="admin-card">
+        <div class="admin-card__head">
+          <div>
+            <h2 class="admin-h2">SEO meta tags</h2>
+            <p class="admin-muted" style="font-size:0.85rem;margin-top:0.15rem;">Live values from the deployed page. Save opens a PR; the change publishes after merge. Overrides persist across redeploys.</p>
+          </div>
+          <a id="page-link" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Open page</a>
+        </div>
+        <div class="admin-card__body">
+          <div class="field-grid">
+            <div class="field" style="grid-column:1/-1;">
+              <label for="f-title">Title</label>
+              <input id="f-title" class="input" type="text" maxlength="200" />
+              <p class="admin-muted" style="font-size:.72rem;margin-top:.25rem;">Shown in browser tabs and Google results. 50&ndash;65 characters recommended.</p>
+            </div>
+            <div class="field" style="grid-column:1/-1;">
+              <label for="f-description">Meta description</label>
+              <textarea id="f-description" class="textarea" rows="3" maxlength="320"></textarea>
+              <p class="admin-muted" style="font-size:.72rem;margin-top:.25rem;">Snippet shown beneath the page title in search results. 140&ndash;160 characters recommended.</p>
+            </div>
+            <div class="field" style="grid-column:1/-1;">
+              <label for="f-keywords">Keywords</label>
+              <input id="f-keywords" class="input" type="text" />
+              <p class="admin-muted" style="font-size:.72rem;margin-top:.25rem;">Comma-separated. Not used by Google but kept for parity with other crawlers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-card">
+        <div class="admin-card__head">
+          <h2 class="admin-h2">Open Graph (Facebook, LinkedIn, iMessage)</h2>
+        </div>
+        <div class="admin-card__body">
+          <div class="field-grid">
+            <div class="field" style="grid-column:1/-1;">
+              <label for="f-og-title">og:title</label>
+              <input id="f-og-title" class="input" type="text" />
+              <p class="admin-muted" style="font-size:.72rem;margin-top:.25rem;">Defaults to the page title above. Override when you want a different headline on social shares.</p>
+            </div>
+            <div class="field" style="grid-column:1/-1;">
+              <label for="f-og-description">og:description</label>
+              <textarea id="f-og-description" class="textarea" rows="2"></textarea>
+            </div>
+            <div class="field" style="grid-column:1/-1;">
+              <label for="f-og-image">og:image (URL)</label>
+              <input id="f-og-image" class="input" type="url" placeholder="https://ontargetaba.com/assets/og/&hellip;" />
+              <p class="admin-muted" style="font-size:.72rem;margin-top:.25rem;">1200&times;630 image used by Facebook + LinkedIn. Leave blank to use the auto-generated SVG.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-card">
+        <div class="admin-card__head">
+          <h2 class="admin-h2">Twitter / X</h2>
+        </div>
+        <div class="admin-card__body">
+          <div class="field-grid">
+            <div class="field" style="grid-column:1/-1;">
+              <label for="f-tw-title">twitter:title</label>
+              <input id="f-tw-title" class="input" type="text" />
+            </div>
+            <div class="field" style="grid-column:1/-1;">
+              <label for="f-tw-description">twitter:description</label>
+              <textarea id="f-tw-description" class="textarea" rows="2"></textarea>
+            </div>
+            <div class="field" style="grid-column:1/-1;">
+              <label for="f-tw-image">twitter:image (URL)</label>
+              <input id="f-tw-image" class="input" type="url" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="flex items-center justify-end gap-2">
+        <a class="btn btn-ghost" href="/admin/pages.html">Cancel</a>
+        <button class="btn btn-primary" type="submit" id="save-btn">Save changes (open PR)</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    await Admin.requireAuth();
+    const params = new URLSearchParams(location.search);
+    const slug = params.get('slug');
+    if (!slug) {
+      Admin.toast('Missing slug', 'error');
+      location.href = '/admin/pages.html';
+      return;
+    }
+    const form = document.getElementById('seo-form');
+    const savingSlot = document.querySelector('[data-saving]');
+    const fields = {
+      title:              document.getElementById('f-title'),
+      description:        document.getElementById('f-description'),
+      keywords:           document.getElementById('f-keywords'),
+      ogTitle:            document.getElementById('f-og-title'),
+      ogDescription:      document.getElementById('f-og-description'),
+      ogImage:            document.getElementById('f-og-image'),
+      twitterTitle:       document.getElementById('f-tw-title'),
+      twitterDescription: document.getElementById('f-tw-description'),
+      twitterImage:       document.getElementById('f-tw-image'),
+    };
+
+    function fill(meta) {
+      Object.keys(fields).forEach(function (k) {
+        fields[k].value = (meta && meta[k]) || '';
+      });
+    }
+
+    async function load() {
+      try {
+        const data = await Admin.api.get('/api/pages/' + encodeURIComponent(slug));
+        document.getElementById('page-id').textContent = '/' + (data.slug === 'index' ? '' : data.slug);
+        const link = document.getElementById('page-link');
+        link.href = data.url || ('/' + slug);
+        // Live meta from the deployed HTML; admin override (if any) takes
+        // visual priority because that's what the merge layer will publish.
+        const merged = Object.assign({}, data.meta || {}, data.override || {});
+        fill(merged);
+      } catch (err) {
+        Admin.toast(err.message || 'Could not load page', 'error');
+      }
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const btn = document.getElementById('save-btn');
+      const done = Admin.saving(savingSlot, 'Submitting PR&hellip;');
+      btn.disabled = true;
+      try {
+        const payload = {};
+        Object.keys(fields).forEach(function (k) {
+          payload[k] = fields[k].value.trim();
+        });
+        const res = await Admin.api.put('/api/pages/' + encodeURIComponent(slug), payload);
+        done('Saved');
+        Admin.toast('PR opened', 'success');
+        if (res && res.pr) {
+          Admin.showPrSubmittedModal(res.pr, {
+            title: 'SEO update &mdash; PR #' + res.pr.number,
+            secondaryLabel: 'Back to pages',
+            secondaryHref: '/admin/pages.html'
+          });
+        }
+      } catch (err) {
+        Admin.toast(err.message || 'Save failed', 'error');
+        done();
+      } finally {
+        btn.disabled = false;
+      }
+    });
+
+    await load();
+  })();
+  </script>
+</body>
+</html>

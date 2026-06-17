@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pages &mdash; Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="/assets/vendor/tailwind.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/images/footerImg.png">
+<link rel="apple-touch-icon" href="/assets/images/footerImg.png">
+</head>
+<body class="admin font-sans">
+  <header class="admin-topbar">
+    <a class="admin-topbar__brand" href="/admin/">
+      <span class="dot" aria-hidden="true"></span>
+      <span>On Target Admin</span>
+    </a>
+    <nav class="admin-topbar__nav" aria-label="Admin">
+      <a href="/admin/">Dashboard</a>
+      <a href="/admin/posts.html">Posts</a>
+      <a href="/admin/pages.html" aria-current="page">Pages</a>
+      <a href="/admin/header.html">Header</a>
+      <a href="/admin/footer.html">Footer</a>
+      <a href="/admin/widget.html">Chat Widget</a>
+      <a href="/admin/head-scripts.html">Head Scripts</a>
+    </nav>
+    <div class="admin-topbar__right">
+      <span data-user-email class="admin-muted"></span>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="admin-page">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-5">
+      <div>
+        <p class="admin-eyebrow mb-1">Pages</p>
+        <h1 class="admin-h1">Static pages &mdash; SEO meta</h1>
+        <p class="admin-muted mt-1">Edit per-page title, meta description, keywords, Open Graph, and Twitter tags. Each save opens a PR.</p>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <input id="search" class="input" type="search" aria-label="Search pages" placeholder="Search by name or slug&hellip;" />
+      <span data-saving class="admin-muted" style="margin-left:auto;font-size:0.8rem;"></span>
+    </div>
+
+    <div class="admin-card">
+      <div style="overflow-x:auto;">
+        <table class="admin-table" id="pages-table">
+          <thead>
+            <tr>
+              <th style="width:35%;">Page</th>
+              <th>URL</th>
+              <th style="width:140px;">Override saved</th>
+              <th style="text-align:right;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="4"><div class="empty">Loading pages&hellip;</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    await Admin.requireAuth();
+    const tbody = document.querySelector('#pages-table tbody');
+    const search = document.getElementById('search');
+    let allPages = [];
+
+    function render() {
+      const q = (search.value || '').toLowerCase().trim();
+      const filtered = allPages.filter(function (p) {
+        if (!q) return true;
+        return (p.label || '').toLowerCase().includes(q)
+            || (p.slug || '').toLowerCase().includes(q)
+            || (p.url || '').toLowerCase().includes(q);
+      });
+      if (!filtered.length) {
+        tbody.innerHTML = '<tr><td colspan="4"><div class="empty">No pages match.</div></td></tr>';
+        return;
+      }
+      tbody.innerHTML = '';
+      filtered.forEach(function (p) {
+        const tr = document.createElement('tr');
+        tr.dataset.slug = p.slug;
+        tr.innerHTML =
+          '<td><div style="font-weight:600;"></div><code class="admin-muted" style="font-size:0.78rem;"></code></td>' +
+          '<td><a target="_blank" rel="noopener" class="admin-link"></a></td>' +
+          '<td></td>' +
+          '<td class="row-actions">' +
+            '<a class="btn btn-primary btn-sm" data-action="edit">Edit SEO</a>' +
+          '</td>';
+        tr.children[0].children[0].textContent = p.label || p.slug;
+        tr.children[0].children[1].textContent = p.slug + '.html';
+        const a = tr.children[1].querySelector('a');
+        a.href = p.url;
+        a.textContent = p.url;
+        tr.children[2].innerHTML = p.hasOverride
+          ? '<span class="pill pill-live">Yes</span>'
+          : '<span class="pill pill-draft">Default</span>';
+        tr.querySelector('[data-action="edit"]').href =
+          '/admin/page-seo-editor.html?slug=' + encodeURIComponent(p.slug);
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function load() {
+      try {
+        const data = await Admin.api.get('/api/pages');
+        allPages = (data && data.pages) || [];
+        render();
+      } catch (err) {
+        tbody.innerHTML = '<tr><td colspan="4"><div class="empty">Failed to load pages.</div></td></tr>';
+        Admin.toast('Could not load pages', 'error');
+      }
+    }
+
+    search.addEventListener('input', Admin.debounce(render, 120));
+    await load();
+  })();
+  </script>
+</body>
+</html>

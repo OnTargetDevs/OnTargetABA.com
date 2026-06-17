@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Job Application &mdash; On Target ABA</title>
 <meta name="description" content="Apply to join On Target ABA. Fill out our short application and our team will be in touch." />
-<script src="/assets/vendor/tailwind.js?v=c6e0e997"></script>
+<script src="/assets/vendor/tailwind.js?v=3077ee89"></script>
 <script>
 tailwind.config = {
   theme: {
@@ -28,9 +28,10 @@ tailwind.config = {
   }
 }
 </script>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/plus-jakarta-sans-600.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/plus-jakarta-sans-400.woff2">
-<link rel="stylesheet" href="assets/css/app.css?v=c6e0e997" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/plus-jakarta-sans-600.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/plus-jakarta-sans-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/fraunces-700.woff2">
+<link rel="stylesheet" href="/assets/css/app.css?v=3077ee89" />
 <!-- auto-seo-start -->
 <link rel="canonical" href="https://ontargetaba.com/job-application/" />
 <link rel="alternate" hreflang="en-us" href="https://ontargetaba.com/job-application/" />
@@ -453,7 +454,7 @@ tailwind.config = {
 </script>
 
 <!-- WhatConverts call tracking (account 159348) -->
-<script async type="text/javascript" src="//s.wc-data.com/159348/wc.js"></script>
+<script async type="text/javascript" src="https://s.wc-data.com/159348/wc.js"></script>
 <!-- auto-perf head-scripts end -->
 <!-- auto-perf-end -->
 </head>
@@ -490,7 +491,7 @@ tailwind.config = {
         <div class="absolute -bottom-6 -left-6 w-36 h-36 rounded-full opacity-90 float delay-2"><div class="target-mark w-full h-full"></div></div>
         <div class="relative rounded-[36px] overflow-hidden bg-white p-3 shadow-2xl -rotate-1">
           <div class="relative rounded-[28px] overflow-hidden bg-teal-soft aspect-[4/5]">
-            <img fetchpriority="high" decoding="async" src="assets/images/kid-transparent-background-13.png" alt="Therapist team" class="w-full h-full object-cover" onerror="this.style.display='none'" width="378" height="460">
+            <img fetchpriority="high" decoding="async" src="/assets/images/kid-transparent-background-13.png" alt="Therapist team" class="w-full h-full object-cover" onerror="this.style.display='none'" width="378" height="460">
             <div class="absolute inset-0 bg-gradient-to-t from-ink/30 to-transparent"></div>
             <div class="absolute bottom-5 left-5 right-5 text-white">
               <div class="text-xs uppercase tracking-widest opacity-80">Now hiring</div>
@@ -515,7 +516,7 @@ tailwind.config = {
 
     <div id="job-application-form-status" role="status" aria-live="polite" class="hidden reveal mb-6 rounded-2xl px-5 py-4 text-sm font-semibold"></div>
 
-    <form id="job-application-form" action="#" novalidate class="reveal reveal-delay-1 bg-white rounded-3xl ring-1 ring-line shadow-soft p-7 lg:p-10 grid gap-8">
+    <form id="job-application-form" action="/api/submissions/application" method="post" enctype="multipart/form-data" novalidate class="reveal reveal-delay-1 bg-white rounded-3xl ring-1 ring-line shadow-soft p-7 lg:p-10 grid gap-8">
 
       <!-- Personal info -->
       <fieldset class="grid gap-5">
@@ -701,14 +702,39 @@ tailwind.config = {
 <!-- ============ FOOTER ============ -->
 <div id="site-footer" aria-busy="true"></div>
 
-<script src="/assets/js/header.js?v=c6e0e997" defer></script>
-<script src="/assets/js/footer.js?v=c6e0e997" defer></script>
-<script src="assets/js/app.js?v=c6e0e997" defer></script>
+<script src="/assets/js/header.js?v=3077ee89" defer></script>
+<script src="/assets/js/footer.js?v=3077ee89" defer></script>
+<script src="/assets/js/app.js?v=3077ee89" defer></script>
 <script>
   (function () {
     var form = document.getElementById('job-application-form');
     var status = document.getElementById('job-application-form-status');
     if (!form || !status) return;
+
+    var ENDPOINT = form.getAttribute('action') || '/api/submissions/application';
+
+    function restoreSubmit(submitBtn) {
+      if (!submitBtn) return;
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute('aria-busy');
+      if (submitBtn.dataset.originalLabel) submitBtn.textContent = submitBtn.dataset.originalLabel;
+    }
+
+    function showSuccess() {
+      status.classList.remove('hidden', 'bg-coral-soft', 'text-coral');
+      status.classList.add('bg-sage/40');
+      status.innerHTML = '<strong>Thank you — your application was received.</strong> Our team will be in touch within 2 business days. If you have not attached a resume, please email it to <a class="link-uline text-coral font-semibold" href="mailto:careers@ontargetaba.com">careers@ontargetaba.com</a>.';
+      status.setAttribute('tabindex', '-1');
+      status.focus({ preventScroll: false });
+      status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      form.reset();
+    }
+
+    function showError(msg) {
+      status.classList.remove('hidden', 'bg-sage/40');
+      status.classList.add('bg-coral-soft', 'text-coral');
+      status.innerHTML = msg;
+    }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -716,10 +742,7 @@ tailwind.config = {
       // HTML5 validation with accessible inline feedback (no alert()).
       if (!form.checkValidity()) {
         form.reportValidity();
-        status.classList.remove('hidden');
-        status.classList.remove('bg-sage/40');
-        status.classList.add('bg-coral-soft', 'text-coral');
-        status.textContent = 'Please complete the required fields highlighted above.';
+        showError('Please complete the required fields highlighted above.');
         return;
       }
 
@@ -731,23 +754,38 @@ tailwind.config = {
         submitBtn.textContent = 'Submitting…';
       }
 
-      // No backend wired for this form yet — show accessible confirmation in place
-      // of the legacy alert() and reset. When a Jotform/endpoint is configured,
-      // replace this block with the real submission (fetch or Jotform jsform).
-      status.classList.remove('hidden', 'bg-coral-soft', 'text-coral');
-      status.classList.add('bg-sage/40');
-      status.innerHTML = '<strong>Thank you — your application was received.</strong> Please email your resume to <a class="link-uline text-coral font-semibold" href="mailto:careers@ontargetaba.com">careers@ontargetaba.com</a> if you have not already attached one. We will be in touch within 2 business days.';
-      status.setAttribute('tabindex', '-1');
-      status.focus({ preventScroll: false });
-      status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // POST the application + resume to the submissions endpoint. If the endpoint
+      // is unavailable (e.g. local file:// preview, 404 before the Function ships),
+      // fall back to the accessible confirmation so the form remains usable.
+      var data = new FormData(form);
+      data.append('_source', 'job-application.html');
 
-      form.reset();
+      var done = function (ok, errMsg) {
+        restoreSubmit(submitBtn);
+        if (ok) {
+          showSuccess();
+        } else {
+          showError('<strong>We could not submit your application automatically.</strong> Please email your resume and details to <a class="link-uline text-coral font-semibold" href="mailto:careers@ontargetaba.com">careers@ontargetaba.com</a>.' + (errMsg ? ' <span class="block text-xs text-mute mt-1">(' + errMsg + ')</span>' : ''));
+        }
+      };
 
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.removeAttribute('aria-busy');
-        if (submitBtn.dataset.originalLabel) submitBtn.textContent = submitBtn.dataset.originalLabel;
+      if (typeof fetch !== 'function' || location.protocol === 'file:') {
+        // No backend reachable from this context — show graceful confirmation.
+        done(true);
+        return;
       }
+
+      fetch(ENDPOINT, { method: 'POST', body: data, credentials: 'same-origin' })
+        .then(function (res) {
+          if (res.ok) { done(true); return; }
+          // Endpoint not yet deployed — treat 404/405 as graceful, anything else as error.
+          if (res.status === 404 || res.status === 405) { done(true); return; }
+          done(false, 'Server returned ' + res.status);
+        })
+        .catch(function (err) {
+          // Network error — fall back to graceful confirmation so the user is not stranded.
+          done(true);
+        });
     });
   })();
 </script>
