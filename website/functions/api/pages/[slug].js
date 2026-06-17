@@ -84,45 +84,50 @@ function applyMetaToHtml(html, meta) {
     // here (preventing </title> followed by <script>).
     out = out.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escAttr(meta.title)}</title>`);
   }
+  // WRITE-side regexes must also bound on double-quote only (not
+  // apostrophe). R4 fixed the read path; without this matching write
+  // change, content="A Parent's Guide" wouldn't match the existing
+  // tag and patchMeta() would emit a duplicate (the browser then
+  // honors the first, silently dropping admin edits).
   const patches = [
     {
       val: meta.description,
-      re:  /(<meta\s+name=["']description["']\s+content=["'])([^"']*)(["'])/i,
+      re:  /(<meta\s+name=["']description["']\s+content=")([^"]*)(")/i,
       fb:  (v) => `<meta name="description" content="${escAttr(v)}" />`,
     },
     {
       val: meta.keywords,
-      re:  /(<meta\s+name=["']keywords["']\s+content=["'])([^"']*)(["'])/i,
+      re:  /(<meta\s+name=["']keywords["']\s+content=")([^"]*)(")/i,
       fb:  (v) => `<meta name="keywords" content="${escAttr(v)}" />`,
     },
     {
       val: meta.ogTitle,
-      re:  /(<meta\s+property=["']og:title["']\s+content=["'])([^"']*)(["'])/i,
+      re:  /(<meta\s+property=["']og:title["']\s+content=")([^"]*)(")/i,
       fb:  (v) => `<meta property="og:title" content="${escAttr(v)}" />`,
     },
     {
       val: meta.ogDescription,
-      re:  /(<meta\s+property=["']og:description["']\s+content=["'])([^"']*)(["'])/i,
+      re:  /(<meta\s+property=["']og:description["']\s+content=")([^"]*)(")/i,
       fb:  (v) => `<meta property="og:description" content="${escAttr(v)}" />`,
     },
     {
       val: meta.ogImage,
-      re:  /(<meta\s+property=["']og:image["']\s+content=["'])([^"']*)(["'])/i,
+      re:  /(<meta\s+property=["']og:image["']\s+content=")([^"]*)(")/i,
       fb:  (v) => `<meta property="og:image" content="${escAttr(v)}" />`,
     },
     {
       val: meta.twitterTitle,
-      re:  /(<meta\s+name=["']twitter:title["']\s+content=["'])([^"']*)(["'])/i,
+      re:  /(<meta\s+name=["']twitter:title["']\s+content=")([^"]*)(")/i,
       fb:  (v) => `<meta name="twitter:title" content="${escAttr(v)}" />`,
     },
     {
       val: meta.twitterDescription,
-      re:  /(<meta\s+name=["']twitter:description["']\s+content=["'])([^"']*)(["'])/i,
+      re:  /(<meta\s+name=["']twitter:description["']\s+content=")([^"]*)(")/i,
       fb:  (v) => `<meta name="twitter:description" content="${escAttr(v)}" />`,
     },
     {
       val: meta.twitterImage,
-      re:  /(<meta\s+name=["']twitter:image["']\s+content=["'])([^"']*)(["'])/i,
+      re:  /(<meta\s+name=["']twitter:image["']\s+content=")([^"]*)(")/i,
       fb:  (v) => `<meta name="twitter:image" content="${escAttr(v)}" />`,
     },
   ];
