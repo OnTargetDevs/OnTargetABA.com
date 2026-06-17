@@ -27,7 +27,9 @@ before re-injection. Safe to run as part of build.sh.
 """
 from __future__ import annotations
 import json
+import os
 import re
+import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -56,6 +58,46 @@ def load_json_safe(rel_path: str) -> str:
 HEADER_DATA = load_json_safe("assets/data/header.json")
 FOOTER_DATA = load_json_safe("assets/data/footer.json")
 WIDGET_DATA = load_json_safe("assets/data/widget.json")
+
+
+def cache_bust_tag() -> str:
+    """Short identifier appended as ?v=... to versioned asset URLs so
+    each deploy invalidates the CF/browser cache for JS/CSS. CF Pages
+    sets CF_PAGES_COMMIT_SHA in the build env; for local dev we fall
+    back to git rev-parse, then to a literal 'dev' (which keeps caching
+    working in normal-development too)."""
+    sha = os.environ.get("CF_PAGES_COMMIT_SHA")
+    if sha:
+        return sha[:8]
+    try:
+        out = subprocess.run(
+            ["git", "rev-parse", "--short=8", "HEAD"],
+            capture_output=True, text=True, cwd=str(ROOT.parent), timeout=4,
+        )
+        if out.returncode == 0 and out.stdout.strip():
+            return out.stdout.strip()
+    except Exception:
+        pass
+    return "dev"
+
+
+CACHE_BUST = cache_bust_tag()
+
+# Asset URLs that should have ?v=<sha> appended for cache invalidation.
+# Note: we only bust the in-repo assets, not third-party CDNs.
+VERSIONED_ASSETS_RE = re.compile(
+    r'((?:href|src)=")(/?assets/(?:js|css|vendor)/[a-zA-Z0-9._/-]+\.(?:js|css|mjs))(\?[^"]*)?(")'
+)
+
+
+def add_cache_bust(text: str) -> tuple[str, int]:
+    n = 0
+    def replace(m):
+        nonlocal n
+        n += 1
+        attr_open, path, _existing_query, attr_close = m.group(1), m.group(2), m.group(3), m.group(4)
+        return f"{attr_open}{path}?v={CACHE_BUST}{attr_close}"
+    return VERSIONED_ASSETS_RE.sub(replace, text), n
 
 
 def load_head_scripts() -> str:
@@ -90,11 +132,16 @@ def build_perf_block(page_path: str) -> str:
     lines = [
         START,
         '<meta name="view-transition" content="same-origin">',
-        # PWA + favicon/touch icons. The manifest is small and same-
-        # origin so no CORS hint needed.
+        # PWA + favicon / touch icons. The PNG variants come from the
+        # legacy WordPress favicon (real branded mark, not the generic
+        # bullseye). Browsers pick the appropriate size; SVG fallback
+        # for crisp scaling on supported browsers.
         '<link rel="manifest" href="/manifest.json">',
+        '<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">',
+        '<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">',
         '<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">',
-        '<link rel="apple-touch-icon" href="/assets/images/footerImg.png">',
+        '<link rel="apple-touch-icon" sizes="270x270" href="/assets/images/favicon-270x270.png">',
+        '<link rel="shortcut icon" href="/favicon.ico">',
         # Warm DNS+TLS for the third-party hosts the page will hit later
         # (Jotform forms, LeadTrap chat). Cheap on first paint, saves
         # 200-500ms when those resources actually start fetching.
@@ -139,7 +186,14 @@ def process(html_file: Path) -> tuple[bool, list[str]]:
         if n:
             changes.append(f"tailwind:{n}")
 
-    # 2/3/4. Wipe any prior perf block, then re-inject before </head>
+    # 2. Add ?v=<sha> cache-bust to in-repo JS/CSS so CF + browser
+    # cache invalidates per deploy. Idempotent — replaces any existing
+    # ?v=... param on the same URL with the current sha.
+    new_text, busted = add_cache_bust(new_text)
+    if busted:
+        changes.append(f"cache-bust:{busted}")
+
+    # 3/4/5. Wipe any prior perf block, then re-inject before </head>
     new_text = PERF_BLOCK_RE.sub("\n", new_text)
 
     if "</head>" not in new_text:
