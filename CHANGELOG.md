@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- broken-links issue body — closing fence on its own line
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - broken-links workflow now crawls beta.ontargetaba.com
 
 
