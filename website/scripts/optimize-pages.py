@@ -55,6 +55,20 @@ def load_json_safe(rel_path: str) -> str:
 
 HEADER_DATA = load_json_safe("assets/data/header.json")
 FOOTER_DATA = load_json_safe("assets/data/footer.json")
+WIDGET_DATA = load_json_safe("assets/data/widget.json")
+
+
+def load_head_scripts() -> str:
+    """Return the raw HTML the admin pasted into head-scripts.json."""
+    try:
+        with (ROOT / "assets/data/head-scripts.json").open(encoding="utf-8") as f:
+            data = json.load(f)
+        return (data.get("scripts") or "").strip()
+    except FileNotFoundError:
+        return ""
+
+
+HEAD_SCRIPTS = load_head_scripts()
 
 START = "<!-- auto-perf-start -->"
 END = "<!-- auto-perf-end -->"
@@ -70,19 +84,26 @@ PERF_BLOCK_RE = re.compile(
 
 
 def build_perf_block(page_path: str) -> str:
-    # header.js and footer.js read their data from these inlined script
-    # blocks before any network. This removes two fetch round-trips
-    # per page and lets the nav paint as soon as header.js executes.
+    # header.js / footer.js / app.js read their data from these inlined
+    # script blocks. Removes per-page fetch round-trips and lets the nav
+    # paint as soon as the script tags are parsed.
     lines = [
         START,
         '<meta name="view-transition" content="same-origin">',
         f'<script id="ota-header-data" type="application/json">{HEADER_DATA}</script>',
         f'<script id="ota-footer-data" type="application/json">{FOOTER_DATA}</script>',
+        f'<script id="ota-widget-data" type="application/json">{WIDGET_DATA}</script>',
     ]
     for target in PREFETCH_TARGETS:
         if target == page_path:
             continue
         lines.append(f'<link rel="prefetch" href="{target}">')
+    # Admin-pasted scripts (GA, GTag, FB Pixel, etc.) go LAST so they
+    # have access to any DOM in head that earlier perf-block items set up.
+    if HEAD_SCRIPTS:
+        lines.append("<!-- auto-perf head-scripts start -->")
+        lines.append(HEAD_SCRIPTS)
+        lines.append("<!-- auto-perf head-scripts end -->")
     lines.append(END)
     return "\n".join(lines)
 

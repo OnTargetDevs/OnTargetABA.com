@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Head Scripts &mdash; Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="/assets/vendor/tailwind.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body class="admin font-sans">
+  <header class="admin-topbar">
+    <a class="admin-topbar__brand" href="/admin/">
+      <span class="dot" aria-hidden="true"></span>
+      <span>On Target Admin</span>
+    </a>
+    <nav class="admin-topbar__nav" aria-label="Admin">
+      <a href="/admin/">Dashboard</a>
+      <a href="/admin/posts.html">Posts</a>
+      <a href="/admin/header.html">Header</a>
+      <a href="/admin/footer.html">Footer</a>
+      <a href="/admin/widget.html">Chat Widget</a>
+      <a href="/admin/head-scripts.html" aria-current="page">Head Scripts</a>
+    </nav>
+    <div class="admin-topbar__right">
+      <span data-user-email class="admin-muted"></span>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="admin-page" style="max-width:980px;">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-5">
+      <div>
+        <p class="admin-eyebrow mb-1">Tracking &amp; analytics</p>
+        <h1 class="admin-h1">Scripts in &lt;head&gt;</h1>
+        <p class="admin-muted">Paste any HTML you want injected into the <code>&lt;head&gt;</code> of every public page &mdash; Google Analytics, Google Ads tag, Facebook Pixel, Hotjar, WhatConverts, custom snippets, anything.</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <span data-saving class="admin-muted" style="font-size:0.85rem;"></span>
+        <button class="btn btn-ghost" type="button" id="reload-btn">Discard</button>
+        <button class="btn btn-primary" type="button" id="save-btn">Save &amp; open PR</button>
+      </div>
+    </div>
+
+    <div id="loading" class="empty">Loading head-scripts.json&hellip;</div>
+
+    <form id="form" class="grid gap-5" hidden>
+      <section class="admin-card section-block">
+        <div class="admin-card__head">
+          <h2 class="admin-h2">HTML content</h2>
+          <p class="admin-muted" style="font-size:0.85rem;margin-top:0.15rem;">Injected verbatim. Order matters &mdash; what you paste appears in the page in this order.</p>
+        </div>
+        <div class="admin-card__body">
+          <textarea id="scripts" class="input font-mono text-xs" rows="22"
+            placeholder='&lt;!-- Google tag (gtag.js) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag(&apos;js&apos;, new Date());
+  gtag(&apos;config&apos;, &apos;G-XXXXXXXXX&apos;);
+&lt;/script&gt;'></textarea>
+          <p class="admin-muted mt-2" style="font-size:0.8rem;">
+            <strong>Heads up:</strong> scripts you paste here load on <em>every</em> public page including the landing page. They do NOT load on the admin (we keep the admin tracker-free).
+          </p>
+        </div>
+      </section>
+
+      <section class="admin-card section-block">
+        <div class="admin-card__head"><h2 class="admin-h2">Quick reference &mdash; legacy WordPress site uses these</h2></div>
+        <div class="admin-card__body grid gap-2 text-sm">
+          <p class="admin-muted">For parity with the existing tracking on <code>ontargetaba.com</code>, you'll likely want:</p>
+          <ul class="list-disc pl-6 space-y-1 text-ink-soft">
+            <li>Google Analytics 4 measurement IDs &mdash; partial: <code>G-PHLC29WGVN</code>, <code>G-D3RBZZ5WPL</code> (two properties seen in cookies)</li>
+            <li>Google Ads conversion tag &mdash; <code>AW-354317910</code> (from the conversion link captured in the network trace)</li>
+            <li>Facebook Pixel &mdash; ID seen via <code>_fbp</code> cookie; copy from PixelYourSite settings in the WP admin</li>
+            <li>Hotjar &mdash; site ID <code>5016360</code></li>
+            <li>WhatConverts call tracking &mdash; account <code>159348</code> (their snippet from the dashboard)</li>
+          </ul>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    await Admin.requireAuth();
+    const form     = document.getElementById('form');
+    const loading  = document.getElementById('loading');
+    const saveBtn  = document.getElementById('save-btn');
+    const reloadBt = document.getElementById('reload-btn');
+    const slotSave = document.querySelector('[data-saving]');
+    const dirty    = Admin.dirtyGuard();
+
+    let state = null;
+    let sha   = null;
+
+    async function load() {
+      loading.hidden = false;
+      form.hidden = true;
+      const res = await Admin.api.get('/api/head-scripts');
+      sha = res.sha || null;
+      state = { scripts: typeof res.scripts === 'string' ? res.scripts : '' };
+      document.getElementById('scripts').value = state.scripts;
+      loading.hidden = true;
+      form.hidden = false;
+      dirty.set(false);
+    }
+
+    document.getElementById('scripts').addEventListener('input', function (e) {
+      state.scripts = e.target.value;
+      dirty.set(true);
+    });
+
+    saveBtn.addEventListener('click', async function () {
+      saveBtn.disabled = true;
+      const done = Admin.saving(slotSave, 'Submitting PR&hellip;');
+      try {
+        const body = { scripts: state.scripts, sha: sha };
+        const res = await Admin.api.put('/api/head-scripts', body);
+        done('Saved');
+        dirty.set(false);
+        if (res && res.pr) {
+          Admin.showPrSubmittedModal(res.pr, {
+            title: 'Head scripts update — PR #' + res.pr.number,
+            secondaryLabel: 'Back to dashboard'
+          });
+        } else {
+          Admin.toast('Saved', 'success');
+        }
+      } catch (err) {
+        Admin.toast(err.message || 'Save failed', 'error');
+        done();
+      } finally {
+        saveBtn.disabled = false;
+      }
+    });
+
+    reloadBt.addEventListener('click', function () {
+      if (dirty.get() && !confirm('Discard unsaved changes?')) return;
+      load();
+    });
+
+    await load();
+  })();
+  </script>
+</body>
+</html>

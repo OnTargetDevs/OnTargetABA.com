@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chat Widget &mdash; Admin</title>
+<meta name="robots" content="noindex, nofollow" />
+<script src="/assets/vendor/tailwind.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:   { DEFAULT: '#163243', soft: '#34495E' },
+        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
+        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
+        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
+        cream: '#FAF5E6',
+        mute:  '#6B7E8F',
+        line:  '#E8DFD0'
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" href="/admin/admin.css" />
+<style>
+.choice {
+  display: block;
+  border: 1px solid var(--c-line, #E8DFD0);
+  border-radius: 16px;
+  padding: 1.1rem 1.25rem;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.choice:hover { border-color: #00B7EA; }
+.choice.is-active { border-color: #E84F3B; background: #FCE0DA22; }
+.choice input[type="radio"] { display: none; }
+.choice h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.05rem; }
+.choice__body { display: none; margin-top: .9rem; padding-top: .9rem; border-top: 1px dashed var(--c-line, #E8DFD0); }
+.choice.is-active .choice__body { display: block; }
+</style>
+</head>
+<body class="admin font-sans">
+  <header class="admin-topbar">
+    <a class="admin-topbar__brand" href="/admin/">
+      <span class="dot" aria-hidden="true"></span>
+      <span>On Target Admin</span>
+    </a>
+    <nav class="admin-topbar__nav" aria-label="Admin">
+      <a href="/admin/">Dashboard</a>
+      <a href="/admin/posts.html">Posts</a>
+      <a href="/admin/header.html">Header</a>
+      <a href="/admin/footer.html">Footer</a>
+      <a href="/admin/widget.html" aria-current="page">Chat Widget</a>
+      <a href="/admin/head-scripts.html">Head Scripts</a>
+    </nav>
+    <div class="admin-topbar__right">
+      <span data-user-email class="admin-muted"></span>
+      <button class="btn btn-ghost btn-sm" type="button" data-action="logout">Log out</button>
+    </div>
+  </header>
+
+  <main class="admin-page" style="max-width:780px;">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-5">
+      <div>
+        <p class="admin-eyebrow mb-1">Site chrome</p>
+        <h1 class="admin-h1">Chat widget</h1>
+        <p class="admin-muted">Pick which floating chat appears in the bottom-right of every public page.</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <span data-saving class="admin-muted" style="font-size:0.85rem;"></span>
+        <button class="btn btn-ghost" type="button" id="reload-btn">Discard</button>
+        <button class="btn btn-primary" type="button" id="save-btn">Save &amp; open PR</button>
+      </div>
+    </div>
+
+    <div id="loading" class="empty">Loading widget.json&hellip;</div>
+
+    <form id="widget-form" class="grid gap-3" hidden>
+
+      <label class="choice" data-mode="leadbot">
+        <input type="radio" name="mode" value="leadbot" />
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3>In-repo widget (<code>leadbot.js</code>)</h3>
+            <p class="admin-muted mt-1" style="font-size:.85rem;">
+              The custom 4-step triage built into this repo. Routes to your real Jotforms. Free, no third-party dependency. <strong>Current default.</strong>
+            </p>
+          </div>
+        </div>
+      </label>
+
+      <label class="choice" data-mode="leadtrap">
+        <input type="radio" name="mode" value="leadtrap" />
+        <div class="flex items-start justify-between gap-3">
+          <div class="grow">
+            <h3>LeadTrap.ai (SaaS)</h3>
+            <p class="admin-muted mt-1" style="font-size:.85rem;">
+              The widget that runs on the legacy WordPress site. Their dashboard configures the conversation; your form data lives on their servers.
+            </p>
+            <div class="choice__body grid gap-3">
+              <div class="field">
+                <label>Partner ID</label>
+                <input class="input" type="text" id="leadtrap-partner"
+                       placeholder="236d3498-b935-4239-91a8-f2e1d6e2787f" />
+                <p class="admin-muted mt-1" style="font-size:.78rem;">
+                  Look this up in your LeadTrap.ai dashboard, or it's the value from the <code>partner_id</code> query param on the embed script.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+
+      <label class="choice" data-mode="custom">
+        <input type="radio" name="mode" value="custom" />
+        <div class="flex items-start justify-between gap-3">
+          <div class="grow">
+            <h3>Custom snippet (Jotform AI Agent, etc.)</h3>
+            <p class="admin-muted mt-1" style="font-size:.85rem;">
+              Paste any vendor's embed snippet. Use this for Jotform AI Agents, Tidio, Drift, or anything else that ships its own <code>&lt;script&gt;</code> tag.
+            </p>
+            <div class="choice__body grid gap-3">
+              <div class="field">
+                <label>Embed HTML</label>
+                <textarea class="input font-mono text-xs" id="custom-snippet" rows="8"
+                          placeholder='&lt;script src="https://example.com/widget.js"&gt;&lt;/script&gt;'></textarea>
+                <p class="admin-muted mt-1" style="font-size:.78rem;">
+                  Scripts inside this snippet will run on every public page. Paste only code you trust.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </label>
+
+      <label class="choice" data-mode="none">
+        <input type="radio" name="mode" value="none" />
+        <div>
+          <h3>No widget</h3>
+          <p class="admin-muted mt-1" style="font-size:.85rem;">
+            Don't load any chat widget. Page stays clean &mdash; visitors convert via the header CTA or the form pages.
+          </p>
+        </div>
+      </label>
+
+    </form>
+  </main>
+
+  <script src="/admin/admin.js"></script>
+  <script>
+  (async function () {
+    await Admin.requireAuth();
+    const form     = document.getElementById('widget-form');
+    const loading  = document.getElementById('loading');
+    const saveBtn  = document.getElementById('save-btn');
+    const reloadBt = document.getElementById('reload-btn');
+    const slotSave = document.querySelector('[data-saving]');
+    const dirty    = Admin.dirtyGuard();
+
+    let state = null;
+    let sha   = null;
+
+    function applyState() {
+      // Mode radios
+      form.querySelectorAll('input[name="mode"]').forEach(function (r) {
+        r.checked = (r.value === state.mode);
+      });
+      // Active styles on the choice card
+      form.querySelectorAll('.choice').forEach(function (c) {
+        c.classList.toggle('is-active', c.dataset.mode === state.mode);
+      });
+      // Fields
+      document.getElementById('leadtrap-partner').value =
+        (state.leadtrap && state.leadtrap.partnerId) || '';
+      document.getElementById('custom-snippet').value =
+        (state.custom && state.custom.snippet) || '';
+    }
+
+    function wireInputs() {
+      // Radio + click-card pattern
+      form.querySelectorAll('.choice').forEach(function (card) {
+        card.addEventListener('click', function (ev) {
+          // Don't hijack clicks inside the inputs
+          if (ev.target.closest('input, textarea, label[for]')) return;
+          state.mode = card.dataset.mode;
+          applyState();
+          dirty.set(true);
+        });
+      });
+      form.querySelectorAll('input[name="mode"]').forEach(function (r) {
+        r.addEventListener('change', function () {
+          state.mode = r.value;
+          applyState();
+          dirty.set(true);
+        });
+      });
+      document.getElementById('leadtrap-partner').addEventListener('input', function (e) {
+        state.leadtrap = state.leadtrap || {};
+        state.leadtrap.partnerId = e.target.value.trim();
+        dirty.set(true);
+      });
+      document.getElementById('custom-snippet').addEventListener('input', function (e) {
+        state.custom = state.custom || {};
+        state.custom.snippet = e.target.value;
+        dirty.set(true);
+      });
+    }
+
+    async function load() {
+      loading.hidden = false;
+      form.hidden = true;
+      const res = await Admin.api.get('/api/widget');
+      sha = res.sha || null;
+      state = {
+        mode: res.mode || 'leadbot',
+        leadtrap: res.leadtrap || { partnerId: '' },
+        custom:   res.custom   || { snippet: '' },
+      };
+      applyState();
+      loading.hidden = true;
+      form.hidden = false;
+      dirty.set(false);
+    }
+
+    saveBtn.addEventListener('click', async function () {
+      saveBtn.disabled = true;
+      const done = Admin.saving(slotSave, 'Submitting PR&hellip;');
+      try {
+        const body = JSON.parse(JSON.stringify(state));
+        body.sha = sha;
+        const res = await Admin.api.put('/api/widget', body);
+        done('Saved');
+        dirty.set(false);
+        if (res && res.pr) {
+          Admin.showPrSubmittedModal(res.pr, {
+            title: 'Widget update — PR #' + res.pr.number,
+            secondaryLabel: 'Back to dashboard'
+          });
+        } else {
+          Admin.toast('Saved', 'success');
+        }
+      } catch (err) {
+        Admin.toast(err.message || 'Save failed', 'error');
+        done();
+      } finally {
+        saveBtn.disabled = false;
+      }
+    });
+
+    reloadBt.addEventListener('click', function () {
+      if (dirty.get() && !confirm('Discard unsaved changes?')) return;
+      load();
+    });
+
+    wireInputs();
+    await load();
+  })();
+  </script>
+</body>
+</html>

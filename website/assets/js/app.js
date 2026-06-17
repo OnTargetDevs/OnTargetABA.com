@@ -123,36 +123,89 @@
     counters.forEach((c) => cio.observe(c));
   }
 
-  // ---------- Lazy-load the lead-bot widget ----------
-  // The widget is ~7KB of JS + a chunk of DOM and is purely a
-  // conversion helper — never blocking. We defer it until the
-  // browser is idle (or first user interaction on slow devices).
-  const loadLeadBot = () => {
-    if (document.querySelector('script[data-leadbot]')) return;
-    // Path resolution covers three URL shapes:
+  // ---------- Lazy-load the configured chat widget ----------
+  // Which widget loads is controlled by assets/data/widget.json (inlined
+  // into <script id="ota-widget-data"> at build time by optimize-pages.py).
+  // Modes: "leadbot" (in-repo), "leadtrap" (SaaS), "custom" (paste-in HTML
+  // snippet — e.g. a Jotform AI agent), "none" (no widget at all).
+  function getWidgetConfig() {
+    const slot = document.getElementById('ota-widget-data');
+    if (slot && slot.textContent.trim()) {
+      try { return JSON.parse(slot.textContent); } catch (e) { /* fall through */ }
+    }
+    return { mode: 'leadbot' };
+  }
+
+  function injectHtmlWithScripts(html, target) {
+    // template.innerHTML preserves <script> tags but doesn't execute them.
+    // Clone each <script> into a fresh element so the browser runs it.
+    const tmpl = document.createElement('template');
+    tmpl.innerHTML = html;
+    tmpl.content.querySelectorAll('script').forEach(function (old) {
+      const s = document.createElement('script');
+      for (let i = 0; i < old.attributes.length; i++) {
+        s.setAttribute(old.attributes[i].name, old.attributes[i].value);
+      }
+      if (old.textContent) s.textContent = old.textContent;
+      old.replaceWith(s);
+    });
+    target.appendChild(tmpl.content);
+  }
+
+  const loadWidget = () => {
+    if (window.__otaWidgetLoaded) return;
+    window.__otaWidgetLoaded = true;
+
+    const cfg = getWidgetConfig();
+
+    if (cfg.mode === 'none') return;
+
+    if (cfg.mode === 'leadtrap') {
+      const partnerId = cfg.leadtrap && cfg.leadtrap.partnerId;
+      if (!partnerId) return;
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://app.leadtrap.ai/platform/script?partner_id=' +
+              encodeURIComponent(partnerId);
+      s.dataset.widget = 'leadtrap';
+      document.head.appendChild(s);
+      return;
+    }
+
+    if (cfg.mode === 'custom') {
+      const snippet = cfg.custom && cfg.custom.snippet;
+      if (!snippet || !snippet.trim()) return;
+      const wrap = document.createElement('div');
+      wrap.dataset.widget = 'custom';
+      document.body.appendChild(wrap);
+      injectHtmlWithScripts(snippet, wrap);
+      return;
+    }
+
+    // Default: in-repo leadbot. Path resolution handles three URL shapes:
     //   /foo.html             -> "assets/js/leadbot.js"
     //   /blog/post.html       -> "../assets/js/leadbot.js"
     //   /blog/posts/{slug}    -> "../assets/js/leadbot.js"
-    //                            (rewritten to /blog/post.html
-    //                             with <base href="/blog/"> set,
-    //                             so "../" resolves to root)
+    //                            (rewritten to /blog/post.html with
+    //                             <base href="/blog/">, so "../" resolves
+    //                             to root)
     const inBlog = location.pathname.indexOf('/blog/') !== -1;
     const s = document.createElement('script');
     s.src = (inBlog ? '../' : '') + 'assets/js/leadbot.js';
     s.async = true;
-    s.dataset.leadbot = '1';
+    s.dataset.widget = 'leadbot';
     document.head.appendChild(s);
   };
 
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(loadLeadBot, { timeout: 2000 });
+    requestIdleCallback(loadWidget, { timeout: 2000 });
   } else {
-    setTimeout(loadLeadBot, 1500);
+    setTimeout(loadWidget, 1500);
   }
   // Also load on first user interaction for users on slow connections.
   const interactionEvents = ['mousemove', 'touchstart', 'keydown', 'scroll'];
   const earlyLoad = () => {
-    loadLeadBot();
+    loadWidget();
     interactionEvents.forEach((e) => removeEventListener(e, earlyLoad));
   };
   interactionEvents.forEach((e) => addEventListener(e, earlyLoad, { once: true, passive: true }));
