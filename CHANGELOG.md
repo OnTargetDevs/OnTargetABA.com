@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- real branded favicon + per-deploy asset cache-busting
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - allow Google Ads conversion + WhatConverts hosts
 
 
