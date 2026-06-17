@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- drop --exclude-mail from lychee args (default in current release)
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Fixed
+
 - broken-links issue body — closing fence on its own line
 
 
