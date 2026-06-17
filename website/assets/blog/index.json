@@ -1,6 +1,6 @@
 {
   "generated_at": null,
-  "post_count": 161,
+  "post_count": 162,
   "categories": [
     {
       "name": "ABA Therapy Basics",
@@ -120,6 +120,17 @@
     }
   ],
   "posts": [
+    {
+      "title": "Test",
+      "date": "2026-06-17",
+      "category": "",
+      "author": "On Target ABA",
+      "hero_image": "/assets/images/uploads/2026-06/community-connection-29-971c4eff.webp",
+      "excerpt": "",
+      "read_time": "",
+      "source_url": "",
+      "slug": "test"
+    },
     {
       "title": "How to Talk to an Autistic Teenager: A Guide for Parents, Educators, and Caregivers",
       "date": "2026-06-03",
