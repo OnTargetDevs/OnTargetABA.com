@@ -20,15 +20,21 @@ jobs:
 
       - name: Pick target URL
         id: target
-        # Default to the current preview host (beta.ontargetaba.com on
-        # the OnTargetDevs CF Pages project). Override via the STAGING_URL
-        # secret if a different host should be crawled.
+        # We feed Lychee the sitemap rather than the homepage. Lychee's
+        # CLI doesn't support recursive crawling — it checks every link
+        # on every input. Pointing it at /sitemap.xml gives it the full
+        # URL list (33 static pages + 162 blog posts) and it then checks
+        # every link on every one of those pages. That's the "test all
+        # internal pages too" coverage the homepage-only run lacked.
         run: |
           if [ -n "${{ secrets.STAGING_URL }}" ]; then
-            echo "url=${{ secrets.STAGING_URL }}" >> "$GITHUB_OUTPUT"
+            base="${{ secrets.STAGING_URL }}"
           else
-            echo "url=https://beta.ontargetaba.com/" >> "$GITHUB_OUTPUT"
+            base="https://beta.ontargetaba.com/"
           fi
+          # Trim trailing slash, append sitemap.xml
+          base="${base%/}"
+          echo "url=${base}/sitemap.xml" >> "$GITHUB_OUTPUT"
 
       - name: Run Lychee
         id: lychee
@@ -42,7 +48,6 @@ jobs:
             --timeout 20
             --accept 200,206,429
             --include-verbatim
-            --max-recursion-depth 3
             --exclude '^https://ontargetaba\.com/'
             --exclude '^https://static\.hotjar\.com/c/hotjar-$'
             --exclude 'search_term_string'
@@ -52,6 +57,19 @@ jobs:
             ${{ steps.target.outputs.url }}
           fail: false
           output: ./lychee-report.md
+
+      - name: Verify Lychee actually ran
+        # `fail: false` above lets the step continue when broken links
+        # are found, but it also masks the case where Lychee itself
+        # blew up (bad CLI args, sitemap unreachable, etc.) — in which
+        # case no report is produced and we'd silently open a misleading
+        # tracking issue. Treat "no report or empty report" as a hard
+        # workflow failure so red CI flags the real problem.
+        run: |
+          if [ ! -s ./lychee-report.md ]; then
+            echo "::error::Lychee produced no report — it likely failed to run. Check the 'Run Lychee' step logs above for CLI arg errors or network failures."
+            exit 1
+          fi
 
       - name: Find existing tracking issue
         id: existing
