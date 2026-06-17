@@ -103,33 +103,37 @@ function readMeta(html) {
   const titleM = /<title>([\s\S]*?)<\/title>/i.exec(html);
   if (titleM) out.title = titleM[1].trim();
 
+  // The audit's R4 regex character class `[^"']` truncated content
+  // values that contain an apostrophe ("A Parent's Guide" -> "A Parent").
+  // inject-seo.py always emits content="..." with double quotes, so the
+  // bounded-by-double-quote `[^"]*` is the right read pattern.
   function pickContent(re) {
     const m = re.exec(html);
     return m ? m[1] : "";
   }
   out.description = pickContent(
-    /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i,
+    /<meta\s+name=["']description["']\s+content="([^"]*)"/i,
   );
   out.keywords = pickContent(
-    /<meta\s+name=["']keywords["']\s+content=["']([^"']*)["']/i,
+    /<meta\s+name=["']keywords["']\s+content="([^"]*)"/i,
   );
   out.ogTitle = pickContent(
-    /<meta\s+property=["']og:title["']\s+content=["']([^"']*)["']/i,
+    /<meta\s+property=["']og:title["']\s+content="([^"]*)"/i,
   );
   out.ogDescription = pickContent(
-    /<meta\s+property=["']og:description["']\s+content=["']([^"']*)["']/i,
+    /<meta\s+property=["']og:description["']\s+content="([^"]*)"/i,
   );
   out.ogImage = pickContent(
-    /<meta\s+property=["']og:image["']\s+content=["']([^"']*)["']/i,
+    /<meta\s+property=["']og:image["']\s+content="([^"]*)"/i,
   );
   out.twitterTitle = pickContent(
-    /<meta\s+name=["']twitter:title["']\s+content=["']([^"']*)["']/i,
+    /<meta\s+name=["']twitter:title["']\s+content="([^"]*)"/i,
   );
   out.twitterDescription = pickContent(
-    /<meta\s+name=["']twitter:description["']\s+content=["']([^"']*)["']/i,
+    /<meta\s+name=["']twitter:description["']\s+content="([^"]*)"/i,
   );
   out.twitterImage = pickContent(
-    /<meta\s+name=["']twitter:image["']\s+content=["']([^"']*)["']/i,
+    /<meta\s+name=["']twitter:image["']\s+content="([^"]*)"/i,
   );
   return out;
 }

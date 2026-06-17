@@ -41,15 +41,18 @@ function readMeta(html) {
   if (!html) return out;
   const titleM = /<title>([\s\S]*?)<\/title>/i.exec(html);
   if (titleM) out.title = titleM[1].trim();
+  // [^"]* (not [^"']*) so apostrophes inside content (e.g. "Parent's
+  // Guide") don't truncate the captured value. inject-seo.py always
+  // emits content="..." with double quotes.
   function pick(re) { const m = re.exec(html); return m ? m[1] : ""; }
-  out.description        = pick(/<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i);
-  out.keywords           = pick(/<meta\s+name=["']keywords["']\s+content=["']([^"']*)["']/i);
-  out.ogTitle            = pick(/<meta\s+property=["']og:title["']\s+content=["']([^"']*)["']/i);
-  out.ogDescription      = pick(/<meta\s+property=["']og:description["']\s+content=["']([^"']*)["']/i);
-  out.ogImage            = pick(/<meta\s+property=["']og:image["']\s+content=["']([^"']*)["']/i);
-  out.twitterTitle       = pick(/<meta\s+name=["']twitter:title["']\s+content=["']([^"']*)["']/i);
-  out.twitterDescription = pick(/<meta\s+name=["']twitter:description["']\s+content=["']([^"']*)["']/i);
-  out.twitterImage       = pick(/<meta\s+name=["']twitter:image["']\s+content=["']([^"']*)["']/i);
+  out.description        = pick(/<meta\s+name=["']description["']\s+content="([^"]*)"/i);
+  out.keywords           = pick(/<meta\s+name=["']keywords["']\s+content="([^"]*)"/i);
+  out.ogTitle            = pick(/<meta\s+property=["']og:title["']\s+content="([^"]*)"/i);
+  out.ogDescription      = pick(/<meta\s+property=["']og:description["']\s+content="([^"]*)"/i);
+  out.ogImage            = pick(/<meta\s+property=["']og:image["']\s+content="([^"]*)"/i);
+  out.twitterTitle       = pick(/<meta\s+name=["']twitter:title["']\s+content="([^"]*)"/i);
+  out.twitterDescription = pick(/<meta\s+name=["']twitter:description["']\s+content="([^"]*)"/i);
+  out.twitterImage       = pick(/<meta\s+name=["']twitter:image["']\s+content="([^"]*)"/i);
   return out;
 }
 

@@ -442,11 +442,13 @@ export async function commitMultipleFiles({ branch, files, message, parentSha },
       });
       continue;
     }
+    // Prefer pre-encoded base64 (binary uploads like images), fall
+    // back to UTF-8-encoding text content (HTML/JSON/MD).
     const blob = await ghJson(`${repoBase(env)}/git/blobs`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        content: b64encodeUtf8(f.content),
+        content: f.contentBase64 != null ? f.contentBase64 : b64encodeUtf8(f.content),
         encoding: "base64",
       }),
     }, env);

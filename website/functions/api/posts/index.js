@@ -26,8 +26,12 @@ function isoMonth() {
   return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
 }
 
-// Convert a pending image upload into a { path, content, publicPath }
-// triple ready to commit alongside the post.
+// Convert a pending image upload into a { path, contentBase64, publicPath }
+// triple ready to commit alongside the post. We pass the raw base64
+// through to the commit step so commitMultipleFiles can hand it to
+// GitHub verbatim without UTF-8 re-encoding (which would mangle every
+// byte >= 0x80 — the same bug that corrupted the standalone image
+// uploads before contentBase64 was wired into ghPutFile).
 function makeAttachmentFile(slug, upload) {
   if (!upload || !upload.base64 || !upload.filename) return null;
   const ext = extOf(upload.filename);
@@ -35,10 +39,10 @@ function makeAttachmentFile(slug, upload) {
   const base = slugify(upload.filename.replace(/\.[^.]+$/, "")) || slug || "image";
   const tag = shortUuid();
   const path = `assets/images/uploads/${isoMonth()}/${base}-${tag}.${ext}`;
-  let binaryStr;
-  try { binaryStr = atob(String(upload.base64).replace(/\s+/g, "")); }
+  const cleanB64 = String(upload.base64).replace(/\s+/g, "");
+  try { atob(cleanB64.slice(0, 4)); }
   catch { throw new Error("attachment data is not valid base64"); }
-  return { path, content: binaryStr, publicPath: `/${path}` };
+  return { path, contentBase64: cleanB64, publicPath: `/${path}` };
 }
 
 // Rebuild the blog index by merging an updated entry into the cached
@@ -125,7 +129,7 @@ export const onRequestPost = async ({ request, env, data }) => {
       try {
         const att = makeAttachmentFile(slug, body.heroImageUpload);
         if (att) {
-          filesToCommit.push({ path: att.path, content: att.content });
+          filesToCommit.push({ path: att.path, contentBase64: att.contentBase64 });
           frontmatter.hero_image = att.publicPath;
         }
       } catch (err) { return badRequest(err.message); }

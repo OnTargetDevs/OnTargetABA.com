@@ -21,6 +21,10 @@ const ALLOWED_IMG_EXT = new Set(["jpg","jpeg","png","webp","gif","svg","avif"]);
 function extOf(name) { const m = /\.([a-zA-Z0-9]+)$/.exec(name||""); return m ? m[1].toLowerCase() : ""; }
 function isoMonth() { const d = new Date(); return `${d.getUTCFullYear()}-${String(d.getUTCMonth()+1).padStart(2,"0")}`; }
 
+// Pass the raw base64 through as contentBase64 so commitMultipleFiles
+// hands it to GitHub verbatim; never UTF-8 re-encode binary or every
+// byte >= 0x80 gets corrupted (same root cause as the original
+// images/upload.js webp corruption — repaired earlier).
 function makeAttachmentFile(slug, upload) {
   if (!upload || !upload.base64 || !upload.filename) return null;
   const ext = extOf(upload.filename);
@@ -28,10 +32,10 @@ function makeAttachmentFile(slug, upload) {
   const base = slugify(upload.filename.replace(/\.[^.]+$/, "")) || slug || "image";
   const tag = shortUuid();
   const path = `assets/images/uploads/${isoMonth()}/${base}-${tag}.${ext}`;
-  let binaryStr;
-  try { binaryStr = atob(String(upload.base64).replace(/\s+/g, "")); }
+  const cleanB64 = String(upload.base64).replace(/\s+/g, "");
+  try { atob(cleanB64.slice(0, 4)); }
   catch { throw new Error("attachment data is not valid base64"); }
-  return { path, content: binaryStr, publicPath: `/${path}` };
+  return { path, contentBase64: cleanB64, publicPath: `/${path}` };
 }
 
 function mergedIndexUpsert(existingPosts, updatedEntry) {
@@ -79,12 +83,22 @@ export const onRequestPut = async ({ params, request, env, data }) => {
     const existing = await ghGet(path, env);
     if (!existing) return notFound(`post "${slug}" not found`);
 
+    // Optimistic concurrency check. The editor sends the SHA it
+    // originally loaded; refuse the write if the file moved under us
+    // (two admins editing the same post in parallel).
+    if (body.sha && body.sha !== existing.sha) {
+      return badRequest(
+        "This post was modified by someone else since you opened it. " +
+        "Reload, re-apply your changes, and save again."
+      );
+    }
+
     const filesToCommit = [];
     if (body.heroImageUpload) {
       try {
         const att = makeAttachmentFile(slug, body.heroImageUpload);
         if (att) {
-          filesToCommit.push({ path: att.path, content: att.content });
+          filesToCommit.push({ path: att.path, contentBase64: att.contentBase64 });
           fm.hero_image = att.publicPath;
         }
       } catch (err) { return badRequest(err.message); }
