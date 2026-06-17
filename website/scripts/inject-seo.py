@@ -884,17 +884,14 @@ def build_head_block(slug: str, page: dict) -> str:
 
 
 def build_breadcrumb_html(page: dict) -> str:
-    # Visible breadcrumbs are now rendered by assets/js/header.js so each
-    # page only ever has one. The BreadcrumbList JSON-LD still ships via
-    # the @graph in build_head_block(). Keep this function as a no-op so
-    # the sweep logic continues to strip any stale auto-crumb blocks.
-    return ""
-
-
-def _old_build_breadcrumb_html(page: dict) -> str:
+    """Server-render visible breadcrumb nav into static HTML so bots
+    without JS, link previewers, and Lighthouse all see it. header.js
+    detects the existing nav and skips its own runtime render to avoid
+    duplicates. JSON-LD BreadcrumbList ships separately via the @graph
+    in build_head_block()."""
     crumbs = page["crumbs"]
     if len(crumbs) <= 1:
-        return ""  # don't render on homepage
+        return ""  # no breadcrumb on the homepage
     parts = []
     for i, (label, href) in enumerate(crumbs):
         is_last = i == len(crumbs) - 1
@@ -906,11 +903,11 @@ def _old_build_breadcrumb_html(page: dict) -> str:
             parts.append(
                 f'<a href="{href}" class="hover:text-coral transition">{label}</a>'
             )
-    sep = '<svg class="w-3 h-3 text-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>'
+    sep = '<svg class="w-3 h-3 text-mute shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>'
     inner = f' {sep} '.join(parts)
     return (
         f'{CRUMB_START}\n'
-        f'<nav aria-label="Breadcrumb" class="bg-cream/60 border-b border-line">\n'
+        f'<nav aria-label="Breadcrumb" class="bg-cream/60 border-b border-line" data-static-breadcrumb>\n'
         f'  <div class="max-w-7xl mx-auto px-5 py-3 text-sm text-mute flex items-center gap-2 flex-wrap">\n'
         f'    {inner}\n'
         f'  </div>\n'
@@ -940,12 +937,21 @@ def inject(path: Path, slug: str, page: dict) -> bool:
         return False
     text = text.replace("</head>", head_block + "</head>", 1)
 
-    # 4) Inject breadcrumbs immediately after the closing </header>
+    # 4) Inject breadcrumbs immediately after the closing </header>.
+    # Most pages now use the data-driven `<div id="site-header">` slot
+    # filled by assets/js/header.js at runtime, so we anchor to that
+    # if the static </header> isn't present.
     if crumb_block:
         if "</header>" in text:
             text = text.replace("</header>", "</header>\n" + crumb_block, 1)
+        elif '<div id="site-header"></div>' in text:
+            text = text.replace(
+                '<div id="site-header"></div>',
+                '<div id="site-header"></div>\n' + crumb_block,
+                1,
+            )
         else:
-            print(f"  ! no </header> in {slug}, breadcrumb skipped")
+            print(f"  ! no </header> or #site-header in {slug}, breadcrumb skipped")
 
     if text == orig:
         return False

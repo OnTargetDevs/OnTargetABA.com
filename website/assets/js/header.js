@@ -73,6 +73,11 @@
   }
 
   function renderCrumbs(headerData) {
+    // Skip rendering if a static server-rendered breadcrumb is already
+    // in the DOM (inject-seo.py emits one with data-static-breadcrumb on
+    // every non-homepage). Avoids duplicates and lets bots without JS
+    // still see the crumb in the static HTML.
+    if (document.querySelector('nav[data-static-breadcrumb]')) return '';
     const crumbs = getCrumbs(headerData);
     if (!crumbs || crumbs.length < 2) return '';
     const parts = crumbs.map((entry, i) => {
