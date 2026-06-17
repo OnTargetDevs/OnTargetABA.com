@@ -64,11 +64,14 @@ export const onRequestPost = async ({ request, env, data }) => {
   const tag = shortUuid();
   const path = `assets/images/uploads/${isoMonth()}/${slug}-${tag}.${ext}`;
 
-  // Decode base64 to a binary string for ghPutFile (which re-encodes via
-  // b64encodeUtf8). This preserves binary integrity.
-  let binaryStr;
+  // Validate the base64 payload, then pass it through to GitHub
+  // verbatim. Older code decoded to a binary string and let ghPutFile
+  // re-encode through UTF-8 — that double-encode mangled every byte
+  // >= 0x80 (0xB4 -> 0xC2 0xB4), silently corrupting every webp/png/jpg
+  // uploaded through this admin.
+  const cleanB64 = b64.replace(/\s+/g, "");
   try {
-    binaryStr = atob(b64.replace(/\s+/g, ""));
+    atob(cleanB64.slice(0, 4));
   } catch {
     return badRequest("data is not valid base64");
   }
@@ -76,7 +79,7 @@ export const onRequestPost = async ({ request, env, data }) => {
   try {
     const commit = await ghPutFile({
       path,
-      content: binaryStr,
+      contentBase64: cleanB64,
       message: `chore: upload image ${path}\n\nUploaded via Admin Dashboard by ${data?.admin?.email || "unknown"}.`,
       branch: env.GITHUB_BRANCH || "main",
     }, env);

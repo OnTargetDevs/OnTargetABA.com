@@ -257,7 +257,7 @@ export function clearAdminCookie() {
 // GitHub REST + Git Data API client
 // -----------------------------------------------------------------------------
 
-const GH_API = "https://api.github.com";
+export const GH_API = "https://api.github.com";
 
 // Every site file lives under `website/` in the repo (the rest of the
 // repo root holds docs, LICENSE, .github/, etc.). CF Pages serves
@@ -338,11 +338,19 @@ export async function ghGet(path, env, ref) {
 }
 
 // PUT (create/update) a single file via Contents API.
-export async function ghPutFile({ path, content, message, branch, sha }, env) {
+//
+// Pass `contentBase64` when uploading binary (images, fonts) so the
+// payload isn't re-encoded through UTF-8 — that double-encode mangles
+// every byte >= 0x80 (0xB4 -> 0xC2 0xB4) and was silently corrupting
+// every webp/png/jpg uploaded through the admin.
+//
+// Pass `content` for plain text (HTML, JSON, MD) — it'll be UTF-8
+// encoded then base64'd, which is correct for non-ASCII text.
+export async function ghPutFile({ path, content, contentBase64, message, branch, sha }, env) {
   const body = {
     message,
     branch,
-    content: b64encodeUtf8(content),
+    content: contentBase64 != null ? contentBase64 : b64encodeUtf8(content),
   };
   if (sha) body.sha = sha;
   return ghJson(`${repoBase(env)}/contents/${encodeContentsPath(repoPath(path))}`, {
