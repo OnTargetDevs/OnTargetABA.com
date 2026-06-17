@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Added
 
+- update header.json (#7)
+
+
+## [Unreleased] &mdash; 2026-06-17
+
+### Added
+
 - port 5 missing WP blog posts + restructure meet-the-team draft
 
 
