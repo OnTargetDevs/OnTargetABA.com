@@ -76,16 +76,16 @@ tailwind.config = {
         <div class="admin-card__head"><h2 class="admin-h2">Announcement bar</h2></div>
         <div class="admin-card__body field-grid">
           <div class="field" style="grid-column:1/-1;">
-            <label>Text</label>
-            <input class="input" data-bind="announcementBar.text" type="text" />
+            <label for="announcement-text">Text</label>
+            <input id="announcement-text" class="input" data-bind="announcementBar.text" type="text" />
           </div>
           <div class="field">
-            <label>Link label</label>
-            <input class="input" data-bind="announcementBar.linkLabel" type="text" />
+            <label for="announcement-link-label">Link label</label>
+            <input id="announcement-link-label" class="input" data-bind="announcementBar.linkLabel" type="text" />
           </div>
           <div class="field">
-            <label>Link href</label>
-            <input class="input" data-bind="announcementBar.linkHref" type="text" />
+            <label for="announcement-link-href">Link href</label>
+            <input id="announcement-link-href" class="input" data-bind="announcementBar.linkHref" type="text" />
           </div>
         </div>
       </section>
@@ -95,16 +95,16 @@ tailwind.config = {
         <div class="admin-card__head"><h2 class="admin-h2">Logo</h2></div>
         <div class="admin-card__body field-grid">
           <div class="field">
-            <label>Image src</label>
-            <input class="input" data-bind="logo.src" type="text" />
+            <label for="logo-src">Image src</label>
+            <input id="logo-src" class="input" data-bind="logo.src" type="text" />
           </div>
           <div class="field">
-            <label>Alt text</label>
-            <input class="input" data-bind="logo.alt" type="text" />
+            <label for="logo-alt">Alt text</label>
+            <input id="logo-alt" class="input" data-bind="logo.alt" type="text" />
           </div>
           <div class="field" style="grid-column:1/-1;">
-            <label>Click href</label>
-            <input class="input" data-bind="logo.href" type="text" />
+            <label for="logo-href">Click href</label>
+            <input id="logo-href" class="input" data-bind="logo.href" type="text" />
           </div>
         </div>
       </section>
@@ -125,12 +125,12 @@ tailwind.config = {
         <div class="admin-card__head"><h2 class="admin-h2">Call-to-action buttons</h2></div>
         <div class="admin-card__body grid gap-4">
           <div class="field-grid">
-            <div class="field"><label>Phone href</label><input class="input" data-bind="cta.phone.href" type="text" placeholder="tel:+18889895011" /></div>
-            <div class="field"><label>Phone label</label><input class="input" data-bind="cta.phone.label" type="text" /></div>
+            <div class="field"><label for="cta-phone-href">Phone href</label><input id="cta-phone-href" class="input" data-bind="cta.phone.href" type="text" placeholder="tel:+18889895011" /></div>
+            <div class="field"><label for="cta-phone-label">Phone label</label><input id="cta-phone-label" class="input" data-bind="cta.phone.label" type="text" /></div>
           </div>
           <div class="field-grid">
-            <div class="field"><label>Primary CTA href</label><input class="input" data-bind="cta.primary.href" type="text" /></div>
-            <div class="field"><label>Primary CTA label</label><input class="input" data-bind="cta.primary.label" type="text" /></div>
+            <div class="field"><label for="cta-primary-href">Primary CTA href</label><input id="cta-primary-href" class="input" data-bind="cta.primary.href" type="text" /></div>
+            <div class="field"><label for="cta-primary-label">Primary CTA label</label><input id="cta-primary-label" class="input" data-bind="cta.primary.label" type="text" /></div>
           </div>
         </div>
       </section>
@@ -213,15 +213,18 @@ tailwind.config = {
       items.forEach(function (item, idx) {
         const row = document.createElement('div');
         row.className = 'repeater__row';
+        const idLabel = 'nav-link-' + idx + '-label';
+        const idHref = 'nav-link-' + idx + '-href';
+        const idSection = 'nav-link-' + idx + '-section';
         row.innerHTML =
           '<div class="repeater__handle">' +
             '<button type="button" data-move="up" aria-label="Move up">&uarr;</button>' +
             '<button type="button" data-move="down" aria-label="Move down">&darr;</button>' +
           '</div>' +
           '<div class="repeater__fields">' +
-            '<div class="field"><label>Label</label><input class="input" data-k="label" type="text"></div>' +
-            '<div class="field"><label>Href</label><input class="input" data-k="href" type="text"></div>' +
-            '<div class="field full"><label>Section (nav highlight key)</label><input class="input" data-k="section" type="text"></div>' +
+            '<div class="field"><label for="' + idLabel + '">Label</label><input id="' + idLabel + '" class="input" data-k="label" type="text"></div>' +
+            '<div class="field"><label for="' + idHref + '">Href</label><input id="' + idHref + '" class="input" data-k="href" type="text"></div>' +
+            '<div class="field full"><label for="' + idSection + '">Section (nav highlight key)</label><input id="' + idSection + '" class="input" data-k="section" type="text"></div>' +
           '</div>' +
           '<button class="repeater__remove" type="button" data-remove aria-label="Remove">&times;</button>';
         row.querySelector('[data-k="label"]').value = item.label || '';
@@ -264,14 +267,15 @@ tailwind.config = {
       box.innerHTML = '';
       const paths = Object.keys(map);
       if (!paths.length) { box.innerHTML = '<div class="empty">No breadcrumb paths defined.</div>'; return; }
-      paths.forEach(function (path) {
+      paths.forEach(function (path, pIdx) {
         const crumbs = map[path] || [];
         const det = document.createElement('details');
         det.className = 'collapsible';
+        const idPath = 'breadcrumb-path-' + pIdx;
         det.innerHTML =
           '<summary><span></span></summary>' +
           '<div class="collapsible__body grid gap-3">' +
-            '<div class="field"><label>Path</label><input class="input" data-path-key type="text"></div>' +
+            '<div class="field"><label for="' + idPath + '">Path</label><input id="' + idPath + '" class="input" data-path-key type="text"></div>' +
             '<div class="field"><label>Crumbs</label><div class="repeater" data-crumbs></div><button class="btn btn-ghost btn-sm mt-2" type="button" data-add-crumb>+ Add crumb</button></div>' +
             '<div><button class="btn btn-danger btn-sm" type="button" data-remove-path>Remove this path</button></div>' +
           '</div>';
@@ -293,14 +297,16 @@ tailwind.config = {
           crumbs.forEach(function (pair, ci) {
             const cr = document.createElement('div');
             cr.className = 'repeater__row';
+            const idCrLabel = 'crumb-' + pIdx + '-' + ci + '-label';
+            const idCrHref = 'crumb-' + pIdx + '-' + ci + '-href';
             cr.innerHTML =
               '<div class="repeater__handle">' +
                 '<button type="button" data-move="up">&uarr;</button>' +
                 '<button type="button" data-move="down">&darr;</button>' +
               '</div>' +
               '<div class="repeater__fields">' +
-                '<div class="field"><label>Label</label><input class="input" data-k="label" type="text"></div>' +
-                '<div class="field"><label>Href (blank = current)</label><input class="input" data-k="href" type="text"></div>' +
+                '<div class="field"><label for="' + idCrLabel + '">Label</label><input id="' + idCrLabel + '" class="input" data-k="label" type="text"></div>' +
+                '<div class="field"><label for="' + idCrHref + '">Href (blank = current)</label><input id="' + idCrHref + '" class="input" data-k="href" type="text"></div>' +
               '</div>' +
               '<button class="repeater__remove" type="button">&times;</button>';
             cr.querySelector('[data-k="label"]').value = (pair && pair[0]) || '';
@@ -345,14 +351,16 @@ tailwind.config = {
       box.innerHTML = '';
       const keys = Object.keys(map);
       if (!keys.length) box.innerHTML = '<div class="empty">No mappings defined.</div>';
-      keys.forEach(function (key) {
+      keys.forEach(function (key, sIdx) {
         const row = document.createElement('div');
         row.className = 'repeater__row';
+        const idMapKey = 'section-map-' + sIdx + '-key';
+        const idMapVal = 'section-map-' + sIdx + '-val';
         row.innerHTML =
           '<div></div>' +
           '<div class="repeater__fields">' +
-            '<div class="field"><label>Path</label><input class="input" data-k="key" type="text"></div>' +
-            '<div class="field"><label>Section name</label><input class="input" data-k="val" type="text"></div>' +
+            '<div class="field"><label for="' + idMapKey + '">Path</label><input id="' + idMapKey + '" class="input" data-k="key" type="text"></div>' +
+            '<div class="field"><label for="' + idMapVal + '">Section name</label><input id="' + idMapVal + '" class="input" data-k="val" type="text"></div>' +
           '</div>' +
           '<button class="repeater__remove" type="button">&times;</button>';
         row.querySelector('[data-k="key"]').value = key;

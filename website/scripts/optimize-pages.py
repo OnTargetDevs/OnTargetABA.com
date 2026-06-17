@@ -96,6 +96,11 @@ def add_cache_bust(text: str) -> tuple[str, int]:
         nonlocal n
         n += 1
         attr_open, path, _existing_query, attr_close = m.group(1), m.group(2), m.group(3), m.group(4)
+        # Normalize to an absolute path so nested routes (e.g. the
+        # /blog/posts/{slug} rewrite, which sets <base href="/blog/">)
+        # don't resolve assets relative to the current URL.
+        if not path.startswith("/"):
+            path = "/" + path
         return f"{attr_open}{path}?v={CACHE_BUST}{attr_close}"
     return VERSIONED_ASSETS_RE.sub(replace, text), n
 

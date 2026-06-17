@@ -1,12 +1,14 @@
 /* ============================================================
    On Target ABA — shared site header (data-driven)
-   Fetches /assets/data/header.json + /assets/data/pages.json
-   and renders into <div id="site-header">:
+   Fetches /assets/data/header.json and renders into
+   <div id="site-header">:
      - announcement bar
      - sticky nav (with active-page highlight)
      - mobile slide-down panel
      - per-page breadcrumb
-   Falls back silently (no markup, console.warn) if either fetch fails.
+   Falls back silently (no markup, console.warn) if the fetch fails.
+   Note: per-page SEO metadata is not managed by this admin; static
+   pages own their <title>/<meta> tags directly in HTML.
    ============================================================ */
 (() => {
   'use strict';

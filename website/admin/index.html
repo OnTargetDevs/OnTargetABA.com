@@ -163,7 +163,8 @@ tailwind.config = {
       const posts = (postsResp && postsResp.posts) || [];
       const drafts = posts.filter(p => p.draft).length;
       const hidden = posts.filter(p => p.hidden).length;
-      document.querySelector('[data-stat="posts"]').textContent  = posts.length;
+      const live = posts.filter(p => !p.draft && !p.hidden).length;
+      document.querySelector('[data-stat="posts"]').textContent  = live;
       document.querySelector('[data-stat="drafts"]').textContent = drafts;
       document.querySelector('[data-stat="hidden"]').textContent = hidden;
     } catch (err) {

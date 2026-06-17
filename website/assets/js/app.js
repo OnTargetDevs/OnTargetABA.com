@@ -108,6 +108,18 @@
     el.textContent = new Date().getFullYear();
   });
 
+  // ---------- Hide-on-error images ----------
+  // index.html (and others) mark insurance/partner logos with
+  // data-hide-on-error so a broken image vanishes instead of showing
+  // a torn-page icon. Delegated on document so it covers lazy-loaded
+  // images too. `error` doesn't bubble, hence the capture-phase listener.
+  document.addEventListener('error', (e) => {
+    const t = e.target;
+    if (t && t.tagName === 'IMG' && t.hasAttribute('data-hide-on-error')) {
+      t.classList.add('hidden');
+    }
+  }, true);
+
   // ---------- Counter (stats) ----------
   const counters = document.querySelectorAll('[data-count]');
   if (counters.length) {
@@ -241,11 +253,38 @@
     return { mode: 'leadbot' };
   }
 
+  function sanitizeCustomSnippet(root) {
+    // Defense-in-depth for the admin-controlled custom widget snippet.
+    // Strip inline event handlers (onerror, onload, onclick, …) and any
+    // javascript: URLs on every element except <script>, which is still
+    // executed intentionally by the caller. No new dependency — runs as
+    // a DOM walk over the parsed template fragment.
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT);
+    const urlAttrs = ['href', 'src', 'xlink:href', 'action', 'formaction'];
+    while (walker.nextNode()) {
+      const el = walker.currentNode;
+      // Collect first because we'll mutate the attribute list.
+      const attrs = Array.from(el.attributes);
+      attrs.forEach((a) => {
+        const name = a.name.toLowerCase();
+        if (name.startsWith('on')) {
+          el.removeAttribute(a.name);
+          return;
+        }
+        if (urlAttrs.indexOf(name) !== -1) {
+          const v = (a.value || '').replace(/[\s -]/g, '').toLowerCase();
+          if (v.indexOf('javascript:') === 0) el.removeAttribute(a.name);
+        }
+      });
+    }
+  }
+
   function injectHtmlWithScripts(html, target) {
     // template.innerHTML preserves <script> tags but doesn't execute them.
     // Clone each <script> into a fresh element so the browser runs it.
     const tmpl = document.createElement('template');
     tmpl.innerHTML = html;
+    sanitizeCustomSnippet(tmpl.content);
     tmpl.content.querySelectorAll('script').forEach(function (old) {
       const s = document.createElement('script');
       for (let i = 0; i < old.attributes.length; i++) {
@@ -262,6 +301,13 @@
     window.__otaWidgetLoaded = true;
 
     const cfg = getWidgetConfig();
+
+    // If the in-repo leadbot isn't the active mode, sweep its stale
+    // localStorage so a prior leadbot session doesn't linger and so a
+    // future mode switch starts clean.
+    if (cfg.mode !== 'leadbot') {
+      try { localStorage.removeItem('ota_leadbot_v1'); } catch (e) { /* ignore */ }
+    }
 
     if (cfg.mode === 'none') return;
 

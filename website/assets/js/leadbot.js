@@ -236,11 +236,14 @@
           { name: 'email', label: 'Email',            type: 'email', placeholder: 'name@example.com' },
         ];
         fields.forEach(f => {
+          const inputId = 'lb-field-' + f.name;
           const lbl = document.createElement('label');
           lbl.className = 'lb-label';
           lbl.textContent = f.label;
+          lbl.htmlFor = inputId;
           form.appendChild(lbl);
           const i = document.createElement('input');
+          i.id = inputId;
           i.className = 'lb-input';
           i.type = f.type;
           i.placeholder = f.placeholder;
@@ -308,7 +311,7 @@
 
         // Auto-jump for non-career routes
         if (route.jot) {
-          setTimeout(() => { window.open(target, '_blank', 'noopener'); }, 1100);
+          setTimeout(() => { window.open(target, '_blank'); }, 1100);
         }
 
         saveState({ submitted: Date.now() });
@@ -359,18 +362,44 @@
   const avatar = launcher.querySelector('.lb-avatar');
   const xBtn = panel.querySelector('.lb-x');
 
+  // Focus management: remember which element opened the dialog so we can
+  // restore focus when it closes, and trap Tab cycling inside the panel
+  // while it is open (ARIA dialog authoring practices).
+  let lastFocusedBeforeOpen = null;
+  const FOCUSABLE_SEL = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  function getFocusable() {
+    return Array.prototype.filter.call(
+      panel.querySelectorAll(FOCUSABLE_SEL),
+      (el) => el.offsetParent !== null || el === document.activeElement
+    );
+  }
+
   function openPanel() {
+    lastFocusedBeforeOpen = document.activeElement;
     panel.classList.add('open');
     panelOpen = true;
     avatar.setAttribute('aria-expanded', 'true');
     if (stepIdx === 0 && !persisted.intent) renderStep();
     else if (stepIdx === 0) { go(0); }
     else renderStep();
+    // Move focus to the first focusable control inside the panel.
+    setTimeout(() => {
+      const f = getFocusable();
+      if (f.length) { try { f[0].focus(); } catch (_) { /* no-op */ } }
+      else { try { panel.focus(); } catch (_) { /* no-op */ } }
+    }, 0);
   }
   function closePanel() {
     panel.classList.remove('open');
     panelOpen = false;
     avatar.setAttribute('aria-expanded', 'false');
+    // Restore focus to whatever opened the dialog (usually the avatar button).
+    const restoreTarget = (lastFocusedBeforeOpen && document.contains(lastFocusedBeforeOpen))
+      ? lastFocusedBeforeOpen
+      : avatar;
+    try { restoreTarget.focus(); } catch (_) { /* no-op */ }
+    lastFocusedBeforeOpen = null;
   }
 
   avatar.addEventListener('click', () => panelOpen ? closePanel() : openPanel());
@@ -408,9 +437,24 @@
     closePanel();
   });
 
-  // Keyboard: Esc closes
+  // Keyboard: Esc closes; Tab/Shift+Tab traps focus inside the dialog.
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && panelOpen) closePanel();
+    if (!panelOpen) return;
+    if (e.key === 'Escape') { closePanel(); return; }
+    if (e.key === 'Tab') {
+      const f = getFocusable();
+      if (!f.length) { e.preventDefault(); return; }
+      const first = f[0];
+      const last = f[f.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey && (active === first || !panel.contains(active))) {
+        e.preventDefault();
+        try { last.focus(); } catch (_) { /* no-op */ }
+      } else if (!e.shiftKey && (active === last || !panel.contains(active))) {
+        e.preventDefault();
+        try { first.focus(); } catch (_) { /* no-op */ }
+      }
+    }
   });
 
   // Pre-render the first step so it's instant

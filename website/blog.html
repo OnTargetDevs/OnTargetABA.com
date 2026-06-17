@@ -722,7 +722,7 @@ tailwind.config = {
     const img = p.hero_image || FALLBACK_IMG;
     return (
       '<a href="blog/posts/' + encodeURIComponent(p.slug) + '" class="post-card">' +
-        '<div class="img-wrap"><img loading="lazy" src="' + escapeHtml(img) + '" alt="' + escapeHtml(p.title) + '" onerror="this.src=\'' + FALLBACK_IMG + '\'" /></div>' +
+        '<div class="img-wrap"><img loading="lazy" src="' + escapeHtml(img) + '" alt="' + escapeHtml(p.title) + '" data-fallback-src="' + escapeHtml(FALLBACK_IMG) + '" /></div>' +
         (p.category ? '<span class="cat-tag">' + escapeHtml(p.category) + '</span>' : '') +
         '<div class="body">' +
           '<h3 class="title">' + escapeHtml(p.title) + '</h3>' +
@@ -787,6 +787,14 @@ tailwind.config = {
         render();
       }, 150);
     });
+    // Delegated image-error handler (replaces inline onerror in card template).
+    // Use capture phase because `error` events do not bubble.
+    els.grid.addEventListener('error', e => {
+      const t = e.target;
+      if (t && t.tagName === 'IMG' && t.dataset.fallbackSrc && t.src !== t.dataset.fallbackSrc) {
+        t.src = t.dataset.fallbackSrc;
+      }
+    }, true);
   }
   fetch('assets/blog/index.json', { cache: 'no-cache' })
     .then(r => r.ok ? r.json() : Promise.reject(r.status))

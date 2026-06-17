@@ -513,7 +513,9 @@ tailwind.config = {
       <p data-editable="intro-paragraph" class="mt-3 text-ink-soft">All required fields are marked with an asterisk. Resume upload accepted at the end.</p>
     </div>
 
-    <form action="#" onsubmit="event.preventDefault(); alert('Thank you &mdash; we will be in touch.'); this.reset();" class="reveal reveal-delay-1 bg-white rounded-3xl ring-1 ring-line shadow-soft p-7 lg:p-10 grid gap-8">
+    <div id="job-application-form-status" role="status" aria-live="polite" class="hidden reveal mb-6 rounded-2xl px-5 py-4 text-sm font-semibold"></div>
+
+    <form id="job-application-form" action="#" novalidate class="reveal reveal-delay-1 bg-white rounded-3xl ring-1 ring-line shadow-soft p-7 lg:p-10 grid gap-8">
 
       <!-- Personal info -->
       <fieldset class="grid gap-5">
@@ -702,5 +704,52 @@ tailwind.config = {
 <script src="/assets/js/header.js?v=c6e0e997" defer></script>
 <script src="/assets/js/footer.js?v=c6e0e997" defer></script>
 <script src="assets/js/app.js?v=c6e0e997" defer></script>
+<script>
+  (function () {
+    var form = document.getElementById('job-application-form');
+    var status = document.getElementById('job-application-form-status');
+    if (!form || !status) return;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // HTML5 validation with accessible inline feedback (no alert()).
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        status.classList.remove('hidden');
+        status.classList.remove('bg-sage/40');
+        status.classList.add('bg-coral-soft', 'text-coral');
+        status.textContent = 'Please complete the required fields highlighted above.';
+        return;
+      }
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('aria-busy', 'true');
+        submitBtn.dataset.originalLabel = submitBtn.dataset.originalLabel || submitBtn.textContent.trim();
+        submitBtn.textContent = 'Submitting…';
+      }
+
+      // No backend wired for this form yet — show accessible confirmation in place
+      // of the legacy alert() and reset. When a Jotform/endpoint is configured,
+      // replace this block with the real submission (fetch or Jotform jsform).
+      status.classList.remove('hidden', 'bg-coral-soft', 'text-coral');
+      status.classList.add('bg-sage/40');
+      status.innerHTML = '<strong>Thank you — your application was received.</strong> Please email your resume to <a class="link-uline text-coral font-semibold" href="mailto:careers@ontargetaba.com">careers@ontargetaba.com</a> if you have not already attached one. We will be in touch within 2 business days.';
+      status.setAttribute('tabindex', '-1');
+      status.focus({ preventScroll: false });
+      status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      form.reset();
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute('aria-busy');
+        if (submitBtn.dataset.originalLabel) submitBtn.textContent = submitBtn.dataset.originalLabel;
+      }
+    });
+  })();
+</script>
 </body>
 </html>

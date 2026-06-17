@@ -17,7 +17,7 @@ function ghHeaders(env) {
   };
 }
 
-export const onRequestGet = async ({ request, env }) => {
+export const onRequestGet = async ({ request, env, data }) => {
   if (!env.GITHUB_REPO || !env.GITHUB_TOKEN) {
     return serverError("GITHUB_REPO or GITHUB_TOKEN env vars missing");
   }
@@ -64,7 +64,7 @@ export const onRequestGet = async ({ request, env }) => {
       state: p.state,
       merged: !!p.merged_at,
       draft: !!p.draft,
-      headBranch: p.head && p.head.ref,
+      branch: p.head && p.head.ref,
       createdAt: p.created_at,
       updatedAt: p.updated_at,
       mergedAt: p.merged_at,
