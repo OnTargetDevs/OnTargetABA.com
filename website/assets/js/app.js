@@ -364,41 +364,11 @@
 
 /* ============================================================
    Site enhancements (runs after the main behavior IIFE).
-   - Mirror any single-row review marquee into a 2-row pattern
-     with the mirror scrolling the opposite direction. Pages that
-     already shipped a 2-row layout (e.g. index.html) are left alone.
    - Inject a "Built by Shalom Karr" credit fallback in case a page
      ships without the shared footer for some reason.
    ============================================================ */
 (() => {
   'use strict';
-
-  // ---- Mirror review marquees ----
-  document.querySelectorAll('.review-marquee').forEach((m) => {
-    const prev = m.previousElementSibling;
-    const next = m.nextElementSibling;
-    if ((prev && prev.classList.contains('review-marquee')) ||
-        (next && next.classList.contains('review-marquee'))) return;
-
-    const clone = m.cloneNode(true);
-    // The original .reveal is wired to an IntersectionObserver that has
-    // already run by now; strip it from the clone so the mirror appears
-    // alongside the original instead of staying invisible.
-    clone.classList.remove('reveal');
-    clone.classList.add('mt-4');
-
-    const baseLabel = m.getAttribute('aria-label') || 'Parent reviews';
-    clone.setAttribute('aria-label', baseLabel + ' — reverse row');
-
-    const track = clone.querySelector('.review-track');
-    if (track) {
-      track.classList.add('reverse');
-      // De-sync so the two rows don't visibly tick together.
-      track.style.setProperty('--dur', '75s');
-    }
-    if (!/\bmb-\d/.test(m.className)) m.classList.add('mb-4');
-    m.insertAdjacentElement('afterend', clone);
-  });
 
   // ---- "Built by Shalom Karr" credit (JS fallback only) ----
   // The canonical chip lives in /assets/partials/footer.html. This
