@@ -544,6 +544,7 @@ body {
 }
 .review-track {
   display: flex;
+  flex-wrap: nowrap;
   gap: 1.25rem;
   width: max-content;
   animation: review-scroll var(--dur, 60s) linear infinite;
