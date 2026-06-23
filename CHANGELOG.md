@@ -12,6 +12,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-06-23
+
+### Added
+
+- delete blog post "test" (#8)
+
+
 ## [Unreleased] &mdash; 2026-06-17
 
 ### Fixed
