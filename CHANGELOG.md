@@ -12,6 +12,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-07-16
+
+### Added
+
+- update footer.json (#10)
+
+
 ## [Unreleased] &mdash; 2026-06-23
 
 ### Added
