@@ -385,7 +385,7 @@ tailwind.config = {
     const yaml = m[1];
     const body = m[2];
     const meta = {};
-    yaml.split('\n').forEach(line => {
+    yaml.split(/\r?\n/).forEach(line => {
       const kv = line.match(/^([a-zA-Z_][a-zA-Z0-9_]*)\s*:\s*(.*)$/);
       if (!kv) return;
       let v = kv[2].trim();
@@ -546,9 +546,11 @@ tailwind.config = {
 
     // Visible static-style breadcrumb so the page matches the rest of
     // the site and screen-reader / non-JS crawlers see it.
-    // header.js detects [data-static-breadcrumb] and skips its own
-    // runtime render to avoid duplicates.
-    if (!document.querySelector('nav[data-static-breadcrumb]')) {
+    // header.js usually renders the crumb first (header.json is preloaded);
+    // this block is only the fallback for when it hasn't. Whichever renders
+    // first wins: header.js skips when it sees [data-static-breadcrumb],
+    // and this guard skips when any breadcrumb nav already exists.
+    if (!document.querySelector('nav[data-static-breadcrumb], nav[aria-label="Breadcrumb"]')) {
       const header = document.querySelector('header');
       if (header && header.parentNode) {
         const safeTitle = (meta.title || '').replace(/[<>&"]/g, c =>
