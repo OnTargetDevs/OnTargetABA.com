@@ -70,7 +70,6 @@ ORG_LD = {
         "Discrete Trial Training",
         "Pivotal Response Treatment",
         "Parent Training",
-        "Potty Training for Children with Autism",
         "Social Skills Training",
     ],
     "medicalSpecialty": ["Behavioral", "Pediatrics"],
@@ -208,7 +207,6 @@ ORG_LD = {
         {"@type": "Offer", "name": "In-Home ABA Therapy", "url": f"{SITE}/in-home-aba-therapy/"},
         {"@type": "Offer", "name": "Early Intervention Autism Program", "url": f"{SITE}/early-intervention-autism-program/"},
         {"@type": "Offer", "name": "Autism Testing &amp; Evaluations", "url": f"{SITE}/on-target-aba-autism-testing-autism-evaluations/"},
-        {"@type": "Offer", "name": "Potty Training Program", "url": f"{SITE}/potty-training-progam/"},
     ],
     "sameAs": [
         "https://www.facebook.com/ontargetaba",
@@ -371,7 +369,7 @@ SEO_PAGES = {
     },
     "our-services.html": {
         "title": "ABA Therapy Programs &amp; Services | On Target ABA",
-        "desc": "Center-based, in-home, school-based, and daycare-based ABA therapy. Early intervention, potty training, autism testing — all evidence-based, all family-focused.",
+        "desc": "Center-based, in-home, school-based, and daycare-based ABA therapy. Early intervention and autism testing — all evidence-based, all family-focused.",
         "keywords": "ABA therapy services, center-based ABA, in-home ABA, school-based ABA, autism programs Ohio Utah",
         "crumbs": [("Home", "index.html"), ("Services", None)],
         "primary_type": "Service",
@@ -395,13 +393,6 @@ SEO_PAGES = {
         "desc": "Our specialized early intervention day program. The earlier we see your child, the quicker and greater the success.",
         "keywords": "early intervention autism, autism day program, early ABA therapy, toddler autism therapy",
         "crumbs": [("Home", "index.html"), ("Services", "our-services.html"), ("Early Intervention", None)],
-        "primary_type": "Service",
-    },
-    "potty-training-program.html": {
-        "title": "Potty Training Program for Children with Autism",
-        "desc": "A structured, gentle, evidence-based potty training program for children with autism.",
-        "keywords": "autism potty training, ABA potty training program, toilet training autism",
-        "crumbs": [("Home", "index.html"), ("Services", "our-services.html"), ("Potty Training", None)],
         "primary_type": "Service",
     },
     "autism-testing.html": {
@@ -818,7 +809,6 @@ def per_page_extras(slug: str, page: dict, page_url: str) -> list[dict]:
             "center-based-aba-therapy.html": ("Center-Based ABA Therapy", "Structured 1-on-1 and group ABA sessions in a dedicated, kid-friendly clinic environment."),
             "in-home-aba-therapy.html": ("In-Home &amp; School-Based ABA Therapy", "ABA therapy delivered in the home or school setting with built-in parent coaching."),
             "early-intervention-autism-program.html": ("Early Intervention Autism Program", "Specialized day program for young children with autism focused on maximal early gains."),
-            "potty-training-program.html": ("Potty Training Program", "Structured, gentle, evidence-based potty training for children with autism."),
             "our-services.html": ("ABA Therapy Services", "Comprehensive ABA therapy programs including center-based, in-home, school-based, early intervention, and autism testing."),
         }
         info = services.get(slug)

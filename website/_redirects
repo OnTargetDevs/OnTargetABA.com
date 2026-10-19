@@ -17,8 +17,11 @@
 /aba-therapy-murray-utah                           /murray-utah                301
 /everything-you-need-to-know-aba-therapy/          /aba-therapy-guide          301
 /everything-you-need-to-know-aba-therapy           /aba-therapy-guide          301
-/potty-training-progam/                            /potty-training-program     301
-/potty-training-progam                             /potty-training-program     301
+# Potty Training Program retired (service removed) -> Services
+/potty-training-progam/                            /our-services               301
+/potty-training-progam                             /our-services               301
+/potty-training-program/                           /our-services               301
+/potty-training-program                            /our-services               301
 /locations_/                                       /locations                  301
 /locations_                                        /locations                  301
 /thankyou/                                         /thank-you                  301
