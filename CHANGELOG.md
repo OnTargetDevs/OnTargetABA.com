@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-19
 
+### Added
+
+- remove the Potty Training Program page and every reference; old URL redirects to services
+
+
+## [Unreleased] &mdash; 2026-10-19
+
 ### Fixed
 
 - use raw-emoji sources for the 4 emoji post permalinks
