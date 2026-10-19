@@ -35,7 +35,6 @@ STATIC_PAGES = [
     ("/center-based-aba-therapy",         "0.85", "monthly"),
     ("/in-home-aba-therapy",              "0.85", "monthly"),
     ("/early-intervention-autism-program","0.85", "monthly"),
-    ("/potty-training-program",           "0.8",  "monthly"),
     ("/murray-utah",                      "0.85", "weekly"),
     ("/mayfield-ohio",                    "0.85", "weekly"),
     ("/gahanna-ohio",                     "0.85", "weekly"),

@@ -140,20 +140,6 @@
         null
       ]
     ],
-    "/potty-training-program": [
-      [
-        "Home",
-        "/"
-      ],
-      [
-        "Services",
-        "/our-services"
-      ],
-      [
-        "Potty Training",
-        null
-      ]
-    ],
     "/autism-testing": [
       [
         "Home",
@@ -782,7 +768,6 @@
     "/center-based-aba-therapy": "Services",
     "/in-home-aba-therapy": "Services",
     "/early-intervention-autism-program": "Services",
-    "/potty-training-program": "Services",
     "/autism-testing": "Autism Testing",
     "/about": "About",
     "/our-process": "About",
