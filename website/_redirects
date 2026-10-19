@@ -57,6 +57,47 @@
 /tag/*                                             /blog                       301
 
 # =============================================================
+# Emoji-prefixed WP post permalinks -> clean beta slug.
+# The live WP slugs begin with a percent-encoded emoji; the beta slug
+# drops it. These SPECIFIC rules must precede the generic /blog/:slug
+# rule below so the emoji URL lands on the right post.
+# =============================================================
+/blog/%f0%9f%8c%bf-finding-calm-how-downtime-supports-progress-in-aba-therapy/   /blog/posts/finding-calm-how-downtime-supports-progress-in-aba-therapy   301
+/blog/%f0%9f%8c%bf-finding-calm-how-downtime-supports-progress-in-aba-therapy    /blog/posts/finding-calm-how-downtime-supports-progress-in-aba-therapy   301
+/blog/%f0%9f%96%8d%ef%b8%8f-color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy/   /blog/posts/color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy   301
+/blog/%f0%9f%96%8d%ef%b8%8f-color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy    /blog/posts/color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy   301
+/blog/%f0%9f%8e%83-smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025/   /blog/posts/smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025   301
+/blog/%f0%9f%8e%83-smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025    /blog/posts/smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025   301
+/blog/%f0%9f%8e%83spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun/   /blog/posts/spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun   301
+/blog/%f0%9f%8e%83spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun    /blog/posts/spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun   301
+# Fallthrough: blog/post.html sanitises a stripped-emoji slug to a leading
+# dash. Normalise /blog/posts/-{slug} back to the clean slug. These must
+# precede the /blog/posts/* rewrite so the 301 wins over the 200 rewrite.
+/blog/posts/-finding-calm-how-downtime-supports-progress-in-aba-therapy   /blog/posts/finding-calm-how-downtime-supports-progress-in-aba-therapy   301
+/blog/posts/-color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy   /blog/posts/color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy   301
+/blog/posts/-smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025   /blog/posts/smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025   301
+
+# =============================================================
+# WP taxonomy / author archives served UNDER /blog/ (the /category/*,
+# /author/*, /tag/* rules above only catch the bare-root form; Yoast's
+# live permalinks are /blog/category/... and /blog/author/...).
+# =============================================================
+/blog/category/*   /blog   301
+/blog/category     /blog   301
+/blog/author/*     /blog   301
+/blog/author       /blog   301
+/blog/tag/*        /blog   301
+
+# =============================================================
+# WP post permalinks (current Yoast shape): /blog/{slug}/ -> pretty URL.
+# Every live post sits at /blog/{slug}/; without this rule those URLs
+# 404 on beta after cutover. Single-segment only, so it never shadows
+# the two-segment /blog/posts/* rewrite below.
+# =============================================================
+/blog/:slug/   /blog/posts/:slug   301
+/blog/:slug    /blog/posts/:slug   301
+
+# =============================================================
 # Pretty blog URLs: /blog/posts/{slug} serves /blog/post.html while
 # keeping the slug in the URL bar.
 #
