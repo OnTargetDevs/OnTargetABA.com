@@ -14,6 +14,17 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-19
 
+### Fixed
+
+- use raw-emoji sources for the 4 emoji post permalinks
+
+### Docs
+
+- record emoji-redirect verification result in the parity audit
+
+
+## [Unreleased] &mdash; 2026-10-19
+
 ### Added
 
 - Five Google Ads landing pages mirroring the current WordPress/Elementor PPC
