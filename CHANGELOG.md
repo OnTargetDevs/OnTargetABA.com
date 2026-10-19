@@ -12,6 +12,26 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-10-19
+
+### Added
+
+- Five Google Ads landing pages mirroring the current WordPress/Elementor PPC
+  pages, built on the `landing.html` conversion skeleton at the same slugs:
+  `aba-therapy-salt-lake-city-lp-g-new`, `on-target-aba-autism-testing-autism-evaluations`,
+  `aba-therapy-col-lp-g`, `aba-therapy-cleveland-lp-g`, and
+  `autism-testing-autism-evaluations-columbus-g-lp`. All `noindex, nofollow`
+  and excluded from the sitemap, matching `landing.html`.
+- `assets/images/landing/insurance/` &mdash; mirrored insurer logos (Humana,
+  CareSource, Utah Medicaid, Healthy U, SelectHealth, Health Choice Utah,
+  EMI Health) for the landing-page insurance strips.
+
+### Removed
+
+- Dropped the two `_redirects` 301s from `/on-target-aba-autism-testing-autism-evaluations`
+  (and its trailing-slash variant) to `/autism-testing`, which would otherwise
+  shadow the new same-slug landing page.
+
 ## [Unreleased] &mdash; 2026-07-16
 
 ### Added
