@@ -1,22 +1,30 @@
 {
   "generated_at": null,
-  "post_count": 166,
+  "post_count": 248,
   "categories": [
     {
-      "name": "ABA Therapy Basics",
-      "count": 27
+      "name": "Parent Resources",
+      "count": 42
     },
     {
-      "name": "Parent Resources",
-      "count": 19
+      "name": "ABA Therapy Basics",
+      "count": 34
     },
     {
       "name": "Developmental Milestones",
-      "count": 18
+      "count": 33
     },
     {
       "name": "Getting Started with ABA",
-      "count": 17
+      "count": 23
+    },
+    {
+      "name": "Community & Events",
+      "count": 20
+    },
+    {
+      "name": "Life at On Target ABA",
+      "count": 15
     },
     {
       "name": "Developmental Milestones, Parent Resources",
@@ -31,11 +39,11 @@
       "count": 9
     },
     {
-      "name": "Community & Events",
-      "count": 8
+      "name": "Specialized Programs",
+      "count": 9
     },
     {
-      "name": "Life at On Target ABA",
+      "name": "Insurance & Funding",
       "count": 6
     },
     {
@@ -44,10 +52,6 @@
     },
     {
       "name": "ABA Therapy Basics, Developmental Milestones, Parent Resources",
-      "count": 4
-    },
-    {
-      "name": "Insurance & Funding",
       "count": 4
     },
     {
@@ -115,15 +119,726 @@
       "count": 1
     },
     {
-      "name": "Specialized Programs",
-      "count": 1
-    },
-    {
       "name": "Success Stories & Communication",
       "count": 1
     }
   ],
   "posts": [
+    {
+      "title": "Being an Autistic Parent: Strengths, Challenges, and Support",
+      "date": "2026-10-16",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/being-an-autistic-parent-strengths-challenges-and-support/pexels-689600722-18070132-scaled-e1792173217151.jpg",
+      "excerpt": "Many autistic parents discover they are autistic only after their child is diagnosed. Research shows autistic parents face real challenges, including sensory overload, executive function demands, and judgement from others, but they also bring distinct strengths such as deep understanding of their.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/10/16/being-an-autistic-parent-strengths-challenges-and-support/",
+      "slug": "being-an-autistic-parent-strengths-challenges-and-support"
+    },
+    {
+      "title": "Neurodivergence and Coffee: What Caffeine Really Does for ADHD and Autistic Brains",
+      "date": "2026-10-14",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/neurodivergence-and-coffee-what-caffeine-really-does-for-adhd-and-autistic-brains/pexels-pavel-danilyuk-6612781-scaled.jpg",
+      "excerpt": "Many neurodivergent people, especially those with ADHD, report that coffee helps them focus or even feel calmer, which is often called the “paradoxical effect.” But the research is more cautious: a 2023 review of children’s trials found no clear benefit of caffeine over placebo, and caffeine can.",
+      "read_time": "10 min read",
+      "source_url": "https://ontargetaba.com/2026/10/14/neurodivergence-and-coffee-what-caffeine-really-does-for-adhd-and-autistic-brains/",
+      "slug": "neurodivergence-and-coffee-what-caffeine-really-does-for-adhd-and-autistic-brains"
+    },
+    {
+      "title": "Is Cocomelon Overstimulating? Low Stimulation Shows for Kids",
+      "date": "2026-10-13",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/is-cocomelon-overstimulating-low-stimulation-shows-for-kids/pexels-vika-glitter-392079-4089658-scaled-e1791911339810.jpg",
+      "excerpt": "Cocomelon is one of the most-watched kids’ shows in the world, but its fast cuts, neon colors, layered music, and constant motion make it highly stimulating for young brains. Research on fast-paced cartoons shows short-term dips in focus and self-control, and heavier preschool screen use has been.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/10/13/is-cocomelon-overstimulating-low-stimulation-shows-for-kids/",
+      "slug": "is-cocomelon-overstimulating-low-stimulation-shows-for-kids"
+    },
+    {
+      "title": "Autism and Work: Building Skills Today for Your Child’s Future Career",
+      "date": "2026-10-12",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-and-work-building-skills-today-for-your-childs-future-career/pexels-julia-m-cameron-4145036-scaled.jpg",
+      "excerpt": "Many autistic adults bring strengths like focus, honesty, attention to detail, and deep expertise to the workplace — yet they still face real barriers to employment. This guide explores autism and work, the challenges autistic adults commonly face, the strengths they bring, and how early.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/10/12/autism-and-work-building-skills-today-for-your-childs-future-career/",
+      "slug": "autism-and-work-building-skills-today-for-your-childs-future-career"
+    },
+    {
+      "title": "Autism and Friendships: How to Help Your Child Build Real Connections",
+      "date": "2026-10-09",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-and-friendships-how-to-help-your-child-build-real-connections/pexels-norma-mortenson-8457805-scaled.jpg",
+      "excerpt": "Autistic children want friendships too — they often just experience and express connection differently. This guide explains what friendship can look like for autistic kids, the social challenges they may face, and practical, play-based ways parents and ABA therapy teams can help children build.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/10/09/autism-and-friendships-how-to-help-your-child-build-real-connections/",
+      "slug": "autism-and-friendships-how-to-help-your-child-build-real-connections"
+    },
+    {
+      "title": "AAC Awareness Month Blog: Every Voice Deserves to Be Heard",
+      "date": "2026-10-07",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/aac-awareness-month-blog-every-voice-deserves-to-be-heard/pexels-julia-m-cameron-4145154-scaled.jpg",
+      "excerpt": "October is AAC Awareness Month. Augmentative and Alternative Communication (AAC) is any tool or method that supports or replaces spoken language, from sign and picture cards to speech-generating devices. This blog explains what AAC is, who uses it, the myths that hold families back, and practical.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/10/07/aac-awareness-month-blog-every-voice-deserves-to-be-heard/",
+      "slug": "aac-awareness-month-blog-every-voice-deserves-to-be-heard"
+    },
+    {
+      "title": "Fidgets in ABA Therapy: How Sensory Tools Help Kids Focus and Learn",
+      "date": "2026-10-05",
+      "category": "Getting Started with ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/fidgets-in-aba-therapy-how-sensory-tools-help-kids-focus-and-learn/pexels-towfiqu-barbhuiya-3440682-12670795-scaled.jpg",
+      "excerpt": "Fidgets in ABA therapy are sensory tools that help children with autism regulate their bodies, focus on learning, and stay engaged in sessions. Board Certified Behavior Analysts (BCBAs) and Registered Behavior Technicians (RBTs) choose fidgets based on each child’s needs and teach when and how to.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/10/05/fidgets-in-aba-therapy-how-sensory-tools-help-kids-focus-and-learn/",
+      "slug": "fidgets-in-aba-therapy-how-sensory-tools-help-kids-focus-and-learn"
+    },
+    {
+      "title": "What Really Happens in ABA Therapy: Same Moment, Different Lens",
+      "date": "2026-10-01",
+      "category": "Life at On Target ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/what-really-happens-in-aba-therapy-same-moment-different-lens/pexels-cottonbro-5789956-scaled.jpg",
+      "excerpt": "Applied Behavior Analysis (ABA) therapy often looks like ordinary play, snacks, or data collection from the outside. Behind each moment, trained RBTs and BCBAs are intentionally building communication, social, and daily living skills. This article walks through five everyday scenes and explains.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/10/01/what-really-happens-in-aba-therapy-same-moment-different-lens/",
+      "slug": "what-really-happens-in-aba-therapy-same-moment-different-lens"
+    },
+    {
+      "title": "Autism Self-Awareness: How to Tell Your Child They’re Autistic (and Why It Matters)",
+      "date": "2026-09-29",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-self-awareness-how-to-tell-your-child-theyre-autistic-and-why-it-matters/pexels-rdne-6182912-scaled.jpg",
+      "excerpt": "Autism self-awareness means a child understands that they are autistic, what that means for how their brain works, and how to use that knowledge to ask for what they need. Research suggests that autistic people who learn about their diagnosis earlier tend to report better quality of life and a more.",
+      "read_time": "11 min read",
+      "source_url": "https://ontargetaba.com/2026/09/29/autism-self-awareness-how-to-tell-your-child-theyre-autistic-and-why-it-matters/",
+      "slug": "autism-self-awareness-how-to-tell-your-child-theyre-autistic-and-why-it-matters"
+    },
+    {
+      "title": "Rainy and Snowy Day Activities for Neurodivergent Kids: A Parent’s Guide",
+      "date": "2026-09-28",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/rainy-and-snowy-day-activities-for-neurodivergent-kids-a-parents-guide/pexels-matej-bizjak-2148520448-30229141-scaled-e1790609317402.jpg",
+      "excerpt": "Rainy and snowy days can be hard for neurodivergent kids. Routines get canceled, clothing feels different, and energy has nowhere to go. This guide explains why weather changes can be difficult for autistic children and kids with ADHD or sensory processing differences. It covers how to prepare.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/09/28/rainy-and-snowy-day-activities-for-neurodivergent-kids-a-parents-guide/",
+      "slug": "rainy-and-snowy-day-activities-for-neurodivergent-kids-a-parents-guide"
+    },
+    {
+      "title": "Autism and Relationships: How to Build Stronger Connections With Your Autistic Child",
+      "date": "2026-09-24",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-and-relationships-how-to-build-stronger-connections-with-your-autistic-child/pexels-gustavo-fring-4971775-scaled.jpg",
+      "excerpt": "Autistic children want connection, but they often show and receive it differently than neurotypical peers. This blog explains how autism and relationships intersect across parents, siblings, and friendships. It covers why connection may look different, practical strategies families can use at home.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/09/24/autism-and-relationships-how-to-build-stronger-connections-with-your-autistic-child/",
+      "slug": "autism-and-relationships-how-to-build-stronger-connections-with-your-autistic-child"
+    },
+    {
+      "title": "Math for Kids with Autism: 10 Strategies That Work at Home and in Therapy",
+      "date": "2026-09-23",
+      "category": "Specialized Programs",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/math-for-kids-with-autism-10-strategies-that-work-at-home-and-in-therapy/pexels-keira-burton-6624378-scaled.jpg",
+      "excerpt": "Children with autism learn math in many different ways. Some show real strengths in numbers and patterns, while others need extra support with abstract concepts, word problems, or attention. This guide explains why math can feel easier or harder for autistic learners and shares research-informed.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/09/23/math-for-kids-with-autism-10-strategies-that-work-at-home-and-in-therapy/",
+      "slug": "math-for-kids-with-autism-10-strategies-that-work-at-home-and-in-therapy"
+    },
+    {
+      "title": "Common Behaviors in Kids With Autism: What They Mean & Why",
+      "date": "2026-09-21",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/common-behaviors-in-kids-with-autism-what-they-mean-why/pexels-kampus-8813511-scaled.jpg",
+      "excerpt": "Parents of children with autism often notice behaviors that seem hard to explain — hand-flapping, lining up toys, meltdowns during transitions, or repeating the same phrase over and over. This post walks through the most common behaviors seen in children with autism, what they typically mean from.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/09/21/common-behaviors-in-kids-with-autism-what-they-mean-why/",
+      "slug": "common-behaviors-in-kids-with-autism-what-they-mean-why"
+    },
+    {
+      "title": "Why Early ABA Therapy Matters: The Benefits of Starting Young",
+      "date": "2026-09-18",
+      "category": "Getting Started with ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/why-early-aba-therapy-matters-the-benefits-of-starting-young/pexels-antonius-ferret-5275817-scaled.jpg",
+      "excerpt": "Starting Applied Behavior Analysis (ABA) therapy early — ideally between ages 2 and 6 — takes advantage of the brain’s peak neuroplasticity, leading to stronger gains in communication, social skills, and independence. This post breaks down the research behind early intervention, what early ABA.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/09/18/why-early-aba-therapy-matters-the-benefits-of-starting-young/",
+      "slug": "why-early-aba-therapy-matters-the-benefits-of-starting-young"
+    },
+    {
+      "title": "How ABA Therapy Supports Reading Skills in Children with Autism",
+      "date": "2026-09-17",
+      "category": "Life at On Target ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/how-aba-therapy-supports-reading-skills-in-children-with-autism/pexels-artempodrez-7494552-scaled.jpg",
+      "excerpt": "ABA therapy supports reading development in children with autism by breaking literacy into small, teachable steps — from phonemic awareness to comprehension — using reinforcement, visual supports, and individualized pacing. This post explains why reading can be challenging for some children with.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/09/17/how-aba-therapy-supports-reading-skills-in-children-with-autism/",
+      "slug": "how-aba-therapy-supports-reading-skills-in-children-with-autism"
+    },
+    {
+      "title": "Caring for a Child with Autism During a Fever: A Parent’s Guide",
+      "date": "2026-09-16",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/caring-for-a-child-with-autism-during-a-fever-a-parents-guide/pexels-gustavo-fring-3985212-scaled.jpg",
+      "excerpt": "This guide helps parents care for an autistic child during a fever by combining standard pediatric fever guidance with autism-specific sensory and communication strategies. It covers why fevers can be harder to spot in autistic kids, how to build a calm sick-day environment, hydration and comfort.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/09/16/caring-for-a-child-with-autism-during-a-fever-a-parents-guide/",
+      "slug": "caring-for-a-child-with-autism-during-a-fever-a-parents-guide"
+    },
+    {
+      "title": "Preparing Neurodivergent Kids for the Holidays: A Family Guide",
+      "date": "2026-09-14",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/preparing-neurodivergent-kids-for-the-holidays-a-family-guide/pexels-tima-miroshnichenko-5813804-scaled.jpg",
+      "excerpt": "The holiday season brings disrupted routines, sensory overload, and unfamiliar social demands that can be especially challenging for neurodivergent children, including many kids with autism or ADHD. This guide offers evidence-informed strategies — visual schedules, sensory tool kits, social.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/09/14/preparing-neurodivergent-kids-for-the-holidays-a-family-guide/",
+      "slug": "preparing-neurodivergent-kids-for-the-holidays-a-family-guide"
+    },
+    {
+      "title": "What Is Autism, Really? Answering the Most Common Questions About ASD & Neurodivergence",
+      "date": "2026-09-11",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/what-is-autism-really-answering-the-most-common-questions-about-asd-neurodivergence/pexels-yankrukov-8613085-scaled-e1789138642891.jpg",
+      "excerpt": "This blog answers the most common questions people have about autism spectrum disorder (ASD) and neurodivergence — what it is, what causes it, how it’s diagnosed, and how it shows up differently in each person. It explains the difference between “high-functioning” and support needs, addresses myths.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/09/11/what-is-autism-really-answering-the-most-common-questions-about-asd-neurodivergence/",
+      "slug": "what-is-autism-really-answering-the-most-common-questions-about-asd-neurodivergence"
+    },
+    {
+      "title": "How to Act Around Someone With Autism: A Practical Guide for Families & Communities",
+      "date": "2026-09-09",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/how-to-act-around-someone-with-autism-a-practical-guide-for-families-communities/pexels-kampus-8813544-scaled.jpg",
+      "excerpt": "This guide explains how to interact respectfully and effectively with autistic individuals, covering communication style, sensory sensitivity, social cues, patience, and everyday etiquette. It offers concrete do’s and don’ts for parents, teachers, coworkers, and community members, emphasizing.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/09/09/how-to-act-around-someone-with-autism-a-practical-guide-for-families-communities/",
+      "slug": "how-to-act-around-someone-with-autism-a-practical-guide-for-families-communities"
+    },
+    {
+      "title": "Signs of Dyslexia in Children: What Parents Should Know",
+      "date": "2026-09-08",
+      "category": "Specialized Programs",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/signs-of-dyslexia-in-children-what-parents-should-know/pexels-karola-g-5877573-scaled.jpg",
+      "excerpt": "This article explains what dyslexia is, how it affects reading and spelling, the early warning signs parents can watch for at different ages, and the steps families can take to get support — including how ABA-based strategies can help kids build confidence around learning challenges. Signs of.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/09/08/signs-of-dyslexia-in-children-what-parents-should-know/",
+      "slug": "signs-of-dyslexia-in-children-what-parents-should-know"
+    },
+    {
+      "title": "ASD Inclusive Practices: Supporting Autism & Neurodivergence",
+      "date": "2026-09-04",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/asd-inclusive-practices-supporting-autism-neurodivergence/pexels-pavel-danilyuk-8422250-scaled.jpg",
+      "excerpt": "This guide explains what it means to create ASD inclusive, neurodivergent-friendly environments at home, in schools, and in the community. It covers practical strategies for sensory-friendly spaces, communication support, and collaboration with ABA providers, helping parents and caregivers build.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/09/04/asd-inclusive-practices-supporting-autism-neurodivergence/",
+      "slug": "asd-inclusive-practices-supporting-autism-neurodivergence"
+    },
+    {
+      "title": "Fecal Smearing in Toddlers: Causes & ABA-Based Solutions",
+      "date": "2026-09-03",
+      "category": "Specialized Programs",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/fecal-smearing-in-toddlers-causes-aba-based-solutions/pexels-elly-fairytale-4008801-scaled.jpg",
+      "excerpt": "Fecal smearing in young children — sometimes mistaken for “bad behavior” — is often driven by sensory-seeking needs, communication gaps, or underlying GI discomfort. This post breaks down the most common causes, explains why nighttime and co-sleeping environments can make it more frequent, and.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/09/03/fecal-smearing-in-toddlers-causes-aba-based-solutions/",
+      "slug": "fecal-smearing-in-toddlers-causes-aba-based-solutions"
+    },
+    {
+      "title": "Autism Accommodations in School: Support Without Stigma",
+      "date": "2026-09-01",
+      "category": "ABA Therapy Basics",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-accommodations-in-school-support-without-stigma/pexels-boom-12585863-scaled.jpg",
+      "excerpt": "Many autistic students face pushback when seeking school accommodations, especially if they’re labeled “high-functioning” or told support would give them an “unfair advantage.” This post explains why that mindset harms kids, how masking behaviors like eye contact can mask real struggles, and what.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/09/01/autism-accommodations-in-school-support-without-stigma/",
+      "slug": "autism-accommodations-in-school-support-without-stigma"
+    },
+    {
+      "title": "Adult Autism Diagnosis in Utah: SelectHealth Medicaid Resource Guide",
+      "date": "2026-08-31",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/adult-autism-diagnosis-in-utah-selecthealth-medicaid-resource-guide/pexels-karola-g-7281580-scaled.jpg",
+      "excerpt": "When a teenager reaches 18 and experiences escalating, lengthy emotional meltdowns, families face an immediate diagnostic crisis. For parents who are already managing a high-needs, non-verbal child at home, adding adult diagnostic hurdles can cause severe caregiver burnout. This comprehensive guide.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/08/31/adult-autism-diagnosis-in-utah-selecthealth-medicaid-resource-guide/",
+      "slug": "adult-autism-diagnosis-in-utah-selecthealth-medicaid-resource-guide"
+    },
+    {
+      "title": "BCBS ABA Copay Question: Double Copays for Split RBT Shifts?",
+      "date": "2026-08-28",
+      "category": "Specialized Programs",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/bcbs-aba-copay-question-double-copays-for-split-rbt-shifts/pexels-tima-miroshnichenko-6694571-scaled-e1787934331129.jpg",
+      "excerpt": "When a child receives full-day Applied Behavior Analysis (ABA) therapy at a single location, but the shift is split between two different Registered Behavior Technicians (RBTs), families often worry they will be charged multiple copays per day. In insurance billing, copay generation is determined.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/08/28/bcbs-aba-copay-question-double-copays-for-split-rbt-shifts/",
+      "slug": "bcbs-aba-copay-question-double-copays-for-split-rbt-shifts"
+    },
+    {
+      "title": "Special Needs School Placement: Navigating Autism and Epilepsy in Education",
+      "date": "2026-08-26",
+      "category": "Specialized Programs",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/special-needs-school-placement-navigating-autism-and-epilepsy-in-education/pexels-olly-4992997-scaled.jpg",
+      "excerpt": "Securing an appropriate school placement for a child who is dually diagnosed with Autism Spectrum Disorder (ASD) and epilepsy introduces a complex overlap of educational and medical advocacy. School districts frequently look at these diagnoses in isolation, leaving parents to fight for environments.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/08/26/special-needs-school-placement-navigating-autism-and-epilepsy-in-education/",
+      "slug": "special-needs-school-placement-navigating-autism-and-epilepsy-in-education"
+    },
+    {
+      "title": "Vaccines and Autism Regression: Navigating Wellness Checkups with Peace of Mind",
+      "date": "2026-08-25",
+      "category": "Specialized Programs",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/vaccines-and-autism-regression-navigating-wellness-checkups-with-peace-of-mind/pexels-thirdman-5921931-scaled.jpg",
+      "excerpt": "It is completely natural for parents to feel protective and skeptical about medical appointments following a child’s autism spectrum diagnosis. A common concern among caregivers is whether routine childhood vaccinations can cause developmental regression in children already diagnosed with Level 1.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/08/25/vaccines-and-autism-regression-navigating-wellness-checkups-with-peace-of-mind/",
+      "slug": "vaccines-and-autism-regression-navigating-wellness-checkups-with-peace-of-mind"
+    },
+    {
+      "title": "Violent Autistic Behavior in Teenagers: Crisis Resources and Parenting Strategies",
+      "date": "2026-08-24",
+      "category": "Specialized Programs",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/violent-autistic-behavior-in-teenagers-crisis-resources-and-parenting-strategies/pexels-mart-production-7699487-scaled.jpg",
+      "excerpt": "When a teenager with Level 1 Autism, ADHD, and Oppositional Defiant Disorder (ODD) exhibits escalating violence and property destruction, families face an acute safety crisis. Navigating this challenge under strict financial and insurance limitations requires a dual-track strategy. This guide.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/08/24/violent-autistic-behavior-in-teenagers-crisis-resources-and-parenting-strategies/",
+      "slug": "violent-autistic-behavior-in-teenagers-crisis-resources-and-parenting-strategies"
+    },
+    {
+      "title": "Gross Motor Skills in ASD: Uncovering the Hidden Coordination Bottleneck",
+      "date": "2026-08-20",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/gross-motor-skills-in-asd-uncovering-the-hidden-coordination-bottleneck/pexels-karola-g-7296459-scaled.jpg",
+      "excerpt": "While Autism Spectrum Disorder (ASD) is primarily defined by social and communication criteria, objective clinical tracking reveals that up to 87% of individuals on the spectrum present with significant, co-occurring gross motor skills deficits. These physical hurdles are driven by underlying.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/08/20/gross-motor-skills-in-asd-uncovering-the-hidden-coordination-bottleneck/",
+      "slug": "gross-motor-skills-in-asd-uncovering-the-hidden-coordination-bottleneck"
+    },
+    {
+      "title": "Reaching 6th Grade at a Preschool Reading Level: A Parent’s Action Guide",
+      "date": "2026-08-19",
+      "category": "Getting Started with ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/reaching-6th-grade-at-a-preschool-reading-level-a-parents-action-guide/pexels-anastasia-shuraeva-8466786-scaled.jpg",
+      "excerpt": "The Baseline Reality: A significant discrepancy between an adolescent’s chronological grade (e.g., 6th grade) and their reading level (e.g., preschool level) indicates a profound neurodevelopmental processing bottleneck that standard classroom instruction cannot bridge.The Clinical Culprits: Severe.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/08/19/reaching-6th-grade-at-a-preschool-reading-level-a-parents-action-guide/",
+      "slug": "reaching-6th-grade-at-a-preschool-reading-level-a-parents-action-guide"
+    },
+    {
+      "title": "Grief and Autism: Supporting Autistic Children and Adults Through Loss",
+      "date": "2026-08-18",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/grief-and-autism-supporting-autistic-children-and-adults-through-loss/pexels-pavel-danilyuk-7317738-scaled.jpg",
+      "excerpt": "The Baseline Reality: Individuals on the autism spectrum experience deep, profound grief, but their outward expression of loss rarely aligns with neurotypical expectations.The Clinical Culprits: Concrete thinking, communication barriers, high vulnerabilities to routine changes, and intense social.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/08/18/grief-and-autism-supporting-autistic-children-and-adults-through-loss/",
+      "slug": "grief-and-autism-supporting-autistic-children-and-adults-through-loss"
+    },
+    {
+      "title": "Self Esteem in Autism: How to Build Confidence in Neurodivergent Kids",
+      "date": "2026-08-14",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/self-esteem-in-autism-how-to-build-confidence-in-neurodivergent-kids/pexels-mikhail-nilov-8654460-scaled.jpg",
+      "excerpt": "Nurturing self esteem in children on the autism spectrum requires shifting away from traditional neurotypical benchmarks. Because these children frequently navigate chronic sensory overload, social rejection, and the exhaustion of masking, their confidence can take heavy hits early in life. This.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/08/14/self-esteem-in-autism-how-to-build-confidence-in-neurodivergent-kids/",
+      "slug": "self-esteem-in-autism-how-to-build-confidence-in-neurodivergent-kids"
+    },
+    {
+      "title": "Neurodiversity at Work: How to Build an Inclusive, High-Performing Workplace",
+      "date": "2026-08-13",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/neurodiversity-at-work-how-to-build-an-inclusive-high-performing-workplace/pexels-divinetechygirl-1181738-scaled.jpg",
+      "excerpt": "Neurodiversity at work is shifting from a standard human resources compliance checklist to a powerful competitive advantage. This comprehensive guide breaks down the professional strengths associated with neurodivergent brains—including autism, ADHD, and dyslexia—while offering practical, low-cost.",
+      "read_time": "5 min read",
+      "source_url": "https://ontargetaba.com/2026/08/13/neurodiversity-at-work-how-to-build-an-inclusive-high-performing-workplace/",
+      "slug": "neurodiversity-at-work-how-to-build-an-inclusive-high-performing-workplace"
+    },
+    {
+      "title": "Autism Summer to Fall Transition: 4 Back-to-School Parenting Hacks",
+      "date": "2026-08-11",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-summer-to-fall-transition-4-back-to-school-parenting-hacks/pexels-polesietoys-31196657-scaled.jpg",
+      "excerpt": "Shifting from the relaxed days of summer back to the rigid structure of a school classroom can be incredibly dysregulating for children on the autism spectrum. This comprehensive guide outlines four data-driven behavioral strategies to help parents manage the summer-to-fall transition seamlessly.",
+      "read_time": "5 min read",
+      "source_url": "https://ontargetaba.com/2026/08/11/autism-summer-to-fall-transition-4-back-to-school-parenting-hacks/",
+      "slug": "autism-summer-to-fall-transition-4-back-to-school-parenting-hacks"
+    },
+    {
+      "title": "Looking for an IEP Advocate in Salt Lake City? What They Do & Local Leads",
+      "date": "2026-08-07",
+      "category": "Getting Started with ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/looking-for-an-iep-advocate-in-salt-lake-city-what-they-do-local-leads/pexels-jonathanborba-19080454-scaled.jpg",
+      "excerpt": "Sitting in an Individualized Education Program (IEP) meeting can feel like listening to a foreign language full of confusing legal jargon. An IEP advocate is a professional who steps into your corner to balance the scale, translate special education laws, and ensure your child receives appropriate.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/08/07/looking-for-an-iep-advocate-in-salt-lake-city-what-they-do-local-leads/",
+      "slug": "looking-for-an-iep-advocate-in-salt-lake-city-what-they-do-local-leads"
+    },
+    {
+      "title": "Sharing a Diagnosis: How to Let People Know About Your Child’s Autism",
+      "date": "2026-08-06",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/sharing-a-diagnosis-how-to-let-people-know-about-your-childs-autism/pexels-kampus-8954894-scaled.jpg",
+      "excerpt": "Sharing your child’s autism diagnosis with the world is a deeply personal decision that balances privacy with the need for a strong support system. This guide provides actionable, parent-friendly strategies to handle disclosure across three key social circles: immediate family, school systems, and.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/08/06/sharing-a-diagnosis-how-to-let-people-know-about-your-childs-autism/",
+      "slug": "sharing-a-diagnosis-how-to-let-people-know-about-your-childs-autism"
+    },
+    {
+      "title": "Summer Activities for Autism: Fun & Sensory-Safe Ideas for All Ages",
+      "date": "2026-08-04",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/summer-activities-for-autism-fun-sensory-safe-ideas-for-all-ages/pexels-alittleimagery-1712854-scaled.jpg",
+      "excerpt": "The shift from a structured school or work routine to the open-ended days of summer can be incredibly dysregulating for neurodivergent individuals. This comprehensive guide provides practical summer activity ideas tailored for both children and adults on the autism spectrum. Learn how to maintain.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/08/04/summer-activities-for-autism-fun-sensory-safe-ideas-for-all-ages/",
+      "slug": "summer-activities-for-autism-fun-sensory-safe-ideas-for-all-ages"
+    },
+    {
+      "title": "What is PANS/PANDAS? A Caregiver’s Guide to Inflammatory Brain Flares",
+      "date": "2026-08-03",
+      "category": "Specialized Programs",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/what-is-pans-pandas-a-caregivers-guide-to-inflammatory-brain-flares/pexels-shvetsa-3771638-scaled.jpg",
+      "excerpt": "PANS and PANDAS are complex, post-infectious neuroimmune disorders that cause a sudden, severe onset of neuropsychiatric symptoms—such as intense obsessive-compulsive behaviors, motor tics, and emotional regression—in children. This overview breaks down the biological mechanisms behind these.",
+      "read_time": "5 min read",
+      "source_url": "https://ontargetaba.com/2026/08/03/what-is-pans-pandas-a-caregivers-guide-to-inflammatory-brain-flares/",
+      "slug": "what-is-pans-pandas-a-caregivers-guide-to-inflammatory-brain-flares"
+    },
+    {
+      "title": "Questioned Autism Diagnosis for DSPD Eligibility: Navigating the Re-Evaluation Fear",
+      "date": "2026-07-30",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/questioned-autism-diagnosis-for-dspd-eligibility-navigating-the-re-evaluation-fear/pexels-marcial-comeron-177639337-11497633-scaled.jpg",
+      "excerpt": "Navigating state-funded programs like the Division of Services for People with Disabilities (DSPD) can be a deeply stressful process, especially when a child’s existing autism diagnosis is questioned during intake. For parents of high-functioning girls, the fear of losing an hard-fought diagnosis.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/07/30/questioned-autism-diagnosis-for-dspd-eligibility-navigating-the-re-evaluation-fear/",
+      "slug": "questioned-autism-diagnosis-for-dspd-eligibility-navigating-the-re-evaluation-fear"
+    },
+    {
+      "title": "CHILL ACT Expo Salt Lake City 2026: Exhibitor Guide to Building Local Trust",
+      "date": "2026-07-29",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/chill-act-expo-salt-lake-city-2026-exhibitor-guide-to-building-local-trust/chill-expo.png",
+      "excerpt": "The CHILL ACT Expo is heading to the Salt Palace Convention Center in Salt Lake City on Saturday, August 8, 2026. For autism therapy centers, neurodivergent schools, and special needs providers, choosing the right exhibitor booth tier is the ultimate way to get your brand directly in front of.",
+      "read_time": "5 min read",
+      "source_url": "https://ontargetaba.com/2026/07/29/chill-act-expo-salt-lake-city-2026-exhibitor-guide-to-building-local-trust/",
+      "slug": "chill-act-expo-salt-lake-city-2026-exhibitor-guide-to-building-local-trust"
+    },
+    {
+      "title": "Communication in ASD: A Parent’s Guide to Unlocking Your Child’s Voice",
+      "date": "2026-07-27",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/communication-in-asd-a-parents-guide-to-unlocking-your-childs-voice/pexels-anete-lusina-5240500-scaled.jpg",
+      "excerpt": "Communication differences are a core characteristic of Autism Spectrum Disorder (ASD). For parents and caregivers, understanding how a child processes language is the first step to reducing frustration and meltdowns. This guide outlines the spectrum of neurodivergent communication, explains how to.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/07/27/communication-in-asd-a-parents-guide-to-unlocking-your-childs-voice/",
+      "slug": "communication-in-asd-a-parents-guide-to-unlocking-your-childs-voice"
+    },
+    {
+      "title": "How to Become an RBT: A Complete Guide to Working as a Registered Behavior Technician",
+      "date": "2026-07-23",
+      "category": "Life at On Target ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/how-to-become-an-rbt-a-complete-guide-to-working-as-a-registered-behavior-technician/pexels-karola-g-7296589-scaled.jpg",
+      "excerpt": "Working as a Registered Behavior Technician (RBT) is one of the fastest-growing and most rewarding careers in behavioral healthcare. This comprehensive guide outlines the exact eligibility requirements, steps to pass the board exam, and the daily reality of delivering life-changing therapy to.",
+      "read_time": "5 min read",
+      "source_url": "https://ontargetaba.com/2026/07/23/how-to-become-an-rbt-a-complete-guide-to-working-as-a-registered-behavior-technician/",
+      "slug": "how-to-become-an-rbt-a-complete-guide-to-working-as-a-registered-behavior-technician"
+    },
+    {
+      "title": "Can Parents Be Involved in ABA Therapy Sessions? The Collaborative Care Guide",
+      "date": "2026-07-21",
+      "category": "Getting Started with ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/can-parents-be-involved-in-aba-therapy-sessions-the-collaborative-care-guide/pexels-kseniachernaya-8535187-scaled.jpg",
+      "excerpt": "When a child begins Applied Behavior Analysis (ABA) therapy, parents frequently wonder whether they are allowed to observe or actively participate in clinical sessions. The short answer is yes. In fact, professional behavioral science indicates that parent involvement is one of the single most.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/07/21/can-parents-be-involved-in-aba-therapy-sessions-the-collaborative-care-guide/",
+      "slug": "can-parents-be-involved-in-aba-therapy-sessions-the-collaborative-care-guide"
+    },
+    {
+      "title": "Why My Child With Autism Screams: 4 Hidden Reasons & Behavioral Fixes",
+      "date": "2026-07-10",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/why-my-child-with-autism-screams-4-hidden-reasons-behavioral-fixes/pexels-keira-burton-6624327-scaled.jpg",
+      "excerpt": "Sudden or repetitive vocal outbursts can be incredibly overwhelming for families navigating an autism spectrum diagnosis. Rather than viewing screaming as a compliance issue, behavior science reveals that vocal outbursts serve as a primary form of communication. This comprehensive guide uncovers.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/07/10/why-my-child-with-autism-screams-4-hidden-reasons-behavioral-fixes/",
+      "slug": "why-my-child-with-autism-screams-4-hidden-reasons-behavioral-fixes"
+    },
+    {
+      "title": "How Much Does ABA Therapy Cost in 2026? A Parent’s Financial Guide",
+      "date": "2026-07-09",
+      "category": "Insurance & Funding",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/how-much-does-aba-therapy-cost-in-2026-a-parents-financial-guide/pexels-karola-g-7680742-scaled.jpg",
+      "excerpt": "Navigating the financial realities of Applied Behavior Analysis (ABA) can feel overwhelming for families. This 2026 price guide breaks down the true out-of-pocket sticker prices of ABA programs, analyzes the clinical factors that drive those numbers, and highlights the financial resources available.",
+      "read_time": "5 min read",
+      "source_url": "https://ontargetaba.com/2026/07/09/how-much-does-aba-therapy-cost-in-2026-a-parents-financial-guide/",
+      "slug": "how-much-does-aba-therapy-cost-in-2026-a-parents-financial-guide"
+    },
+    {
+      "title": "Navigating Medicaid and Commercial Insurance for ABA Therapy Coverage",
+      "date": "2026-07-08",
+      "category": "Insurance & Funding",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/navigating-medicaid-and-commercial-insurance-for-aba-therapy-coverage/pexels-silverkblack-36767117-scaled.jpg",
+      "excerpt": "Securing insurance funding for Applied Behavior Analysis (ABA) therapy can feel incredibly complex for families navigating an autism diagnosis. This comprehensive guide breaks down the core differences between Medicaid and commercial insurance coverage, defines critical concepts like “medical.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/07/08/navigating-medicaid-and-commercial-insurance-for-aba-therapy-coverage/",
+      "slug": "navigating-medicaid-and-commercial-insurance-for-aba-therapy-coverage"
+    },
+    {
+      "title": "Co-Occurring Conditions in Autism: The Truth About Diagnostic Overshadowing",
+      "date": "2026-07-07",
+      "category": "ABA Therapy Basics",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/co-occurring-conditions-in-autism-the-truth-about-diagnostic-overshadowing/pexels-mikhail-nilov-7929420-scaled.jpg",
+      "excerpt": "It is highly rare for Autism Spectrum Disorder (ASD) to exist in a completely isolated vacuum. This article breaks down the prominent statistics surrounding secondary diagnoses—such as ADHD, clinical anxiety, and depression—while exploring how social masking and diagnostic overshadowing complicate.",
+      "read_time": "5 min read",
+      "source_url": "https://ontargetaba.com/2026/07/07/co-occurring-conditions-in-autism-the-truth-about-diagnostic-overshadowing/",
+      "slug": "co-occurring-conditions-in-autism-the-truth-about-diagnostic-overshadowing"
+    },
+    {
+      "title": "Pets and Autism: Crucial Tips for Choosing the Right Animal Companion",
+      "date": "2026-07-06",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/pets-and-autism-crucial-tips-for-choosing-the-right-animal-companion/pexels-helenalopes-4453089-scaled.jpg",
+      "excerpt": "Choosing a pet for an autistic child or adult can offer profound emotional and social benefits, but it requires careful planning. This comprehensive guide covers the therapeutic advantages of the human-animal bond, matches specific pet types to unique sensory profiles, and provides actionable.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/07/06/pets-and-autism-crucial-tips-for-choosing-the-right-animal-companion/",
+      "slug": "pets-and-autism-crucial-tips-for-choosing-the-right-animal-companion"
+    },
+    {
+      "title": "Autism and Art: 6 Practical Creative Hacks for Sensory Regulation & Communication",
+      "date": "2026-07-03",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-and-art-6-practical-creative-hacks-for-sensory-regulation-communication/pexels-yankrukov-8612988-scaled.jpg",
+      "excerpt": "Art serves as a vital, non-verbal communication tool for autistic individuals, with a focus on sensory process over final product supporting emotional regulation. Key creative hacks, such as using textured tools for sensory input, engaging in mess-free painting, and implementing a “no-correction”.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/07/03/autism-and-art-6-practical-creative-hacks-for-sensory-regulation-communication/",
+      "slug": "autism-and-art-6-practical-creative-hacks-for-sensory-regulation-communication"
+    },
+    {
+      "title": "The Sensory-Friendly 4th of July Playbook: Strategic Holiday Support Most Families Have Never Tried",
+      "date": "2026-07-03",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/the-sensory-friendly-4th-of-july-playbook-strategic-holiday-support-most-families-have-never-tried/pexels-violetta-b-1460865357-27530286-scaled-e1783014642607.jpg",
+      "excerpt": "This clinical guide provides actionable “parenting hacks” to transform a high-stimulus 4th of July into a predictable, sensory-friendly celebration for autistic and neurodivergent children. Rather than avoiding festivities, it outlines structural environmental modifications and sensory management.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/07/03/the-sensory-friendly-4th-of-july-playbook-strategic-holiday-support-most-families-have-never-tried/",
+      "slug": "the-sensory-friendly-4th-of-july-playbook-strategic-holiday-support-most-families-have-never-tried"
+    },
+    {
+      "title": "Unlocking Autism and Critical Thinking: 5 Powerful Problem-Solving Strategies for Autistic Kids",
+      "date": "2026-07-01",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/unlocking-autism-and-critical-thinking-5-powerful-problem-solving-strategies-for-autistic-kids/pexels-ph-m-bui-748469960-38302589-scaled.jpg",
+      "excerpt": "Building critical thinking skills in autistic children requires shifting from abstract prompts to structured, visual, and action-based frameworks. By using predictable routines, visual mapping, and leveraging special interests, parents can help their neurodivergent kids navigate complex decisions.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/07/01/unlocking-autism-and-critical-thinking-5-powerful-problem-solving-strategies-for-autistic-kids/",
+      "slug": "unlocking-autism-and-critical-thinking-5-powerful-problem-solving-strategies-for-autistic-kids"
+    },
+    {
+      "title": "Beyond the Myths: An Educational Guide to Understanding the Autism Spectrum",
+      "date": "2026-06-30",
+      "category": "ABA Therapy Basics",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/beyond-the-myths-an-educational-guide-to-understanding-the-autism-spectrum/pexels-ai25studioai-6261886-scaled.jpg",
+      "excerpt": "This educational guide explores the realities of Autism Spectrum Disorder (ASD), actively breaking down common misconceptions to foster community empathy and inclusion. Rather than a linear scale, the autism spectrum operates as a diverse wheel of individual traits where every child presents a.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2026/06/30/beyond-the-myths-an-educational-guide-to-understanding-the-autism-spectrum/",
+      "slug": "beyond-the-myths-an-educational-guide-to-understanding-the-autism-spectrum"
+    },
+    {
+      "title": "Best Sports for Autistic Children: Adaptive Athletics and Sensory Tips",
+      "date": "2026-06-29",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/best-sports-for-autistic-children-adaptive-athletics-and-sensory-tips/pexels-goumbik-296302-scaled.jpg",
+      "excerpt": "This post explores how to choose the right sports for autistic children, contrasting the unique developmental benefits of individual versus team environments. It provides field-tested athletic accommodations—such as visual processing rules, sensory modifications, and coaching adjustments—designed.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/06/29/best-sports-for-autistic-children-adaptive-athletics-and-sensory-tips/",
+      "slug": "best-sports-for-autistic-children-adaptive-athletics-and-sensory-tips"
+    },
+    {
+      "title": "Autism and Music: 5 Therapeutic Sound Hacks Every Parent Should Try",
+      "date": "2026-06-26",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-and-music-5-therapeutic-sound-hacks-every-parent-should-try/pexels-gustavo-fring-4017437-scaled.jpg",
+      "excerpt": "This post explores the powerful connection between autism and music therapy, offering five practical, at-home sound hacks for parents. It covers how to use rhythm for seamless daily transitions, auditory pairing to improve focus, and calming soundscapes to prevent sensory meltdowns. These.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/06/26/autism-and-music-5-therapeutic-sound-hacks-every-parent-should-try/",
+      "slug": "autism-and-music-5-therapeutic-sound-hacks-every-parent-should-try"
+    },
+    {
+      "title": "Autism Hygiene Tips: Sensory Hacks and Daily Routines Most Families Have Never Tried",
+      "date": "2026-06-25",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-hygiene-tips-sensory-hacks-and-daily-routines-most-families-have-never-tried/pexels-boom-12645015-scaled.jpg",
+      "excerpt": "This guide offers actionable, evidence-based autism hygiene tips to help parents establish successful self-care routines. It explores how to modify overwhelming bathroom environments, apply highly structured visual schedules, use behavior-analytic strategies like prompt fading, and tackle specific.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/06/25/autism-hygiene-tips-sensory-hacks-and-daily-routines-most-families-have-never-tried/",
+      "slug": "autism-hygiene-tips-sensory-hacks-and-daily-routines-most-families-have-never-tried"
+    },
+    {
+      "title": "FCT in ABA Therapy: How to Replace Meltdowns with Meaningful Communication",
+      "date": "2026-06-24",
+      "category": "ABA Therapy Basics",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/fct-in-aba-therapy-how-to-replace-meltdowns-with-meaningful-communication/pexels-ketut-subiyanto-4473797-scaled.jpg",
+      "excerpt": "This comprehensive guide explores Functional Communication Training (FCT) within ABA therapy. It outlines how FCT identifies the root causes of challenging behaviors and replaces them with functional communication tools like speech, signs, or PECS. Caregivers will find actionable, step-by-step.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/06/24/fct-in-aba-therapy-how-to-replace-meltdowns-with-meaningful-communication/",
+      "slug": "fct-in-aba-therapy-how-to-replace-meltdowns-with-meaningful-communication"
+    },
+    {
+      "title": "Reframe the Discipline: 7 Practical Autism Redirection Hacks Most Families Overlook",
+      "date": "2026-06-23",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/reframe-the-discipline-7-practical-autism-redirection-hacks-most-families-overlook/pexels-gabby-k-7114748-scaled-e1782229819467.jpg",
+      "excerpt": "This post outlines evidence-informed alternatives to traditional punishment when disciplining a child with autism. It focuses on reframing “discipline” as teaching rather than penalizing, highlighting actionable ABA-based strategies like proactive antecedent manipulation, functional communication.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/06/23/reframe-the-discipline-7-practical-autism-redirection-hacks-most-families-overlook/",
+      "slug": "reframe-the-discipline-7-practical-autism-redirection-hacks-most-families-overlook"
+    },
+    {
+      "title": "Autism Parenting Hacks: Practical Tips Most Families Have Never Tried",
+      "date": "2026-06-22",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-parenting-hacks-practical-tips-most-families-have-never-tried/pexels-jibarofoto-17733997-scaled-e1782142680112.jpg",
+      "excerpt": "This post covers practical, evidence-informed strategies for parents raising children with autism, including communication reframing, sensory environment adjustments, and caregiver wellness tips. It highlights lesser-known approaches like the First/Then method, the 10-second processing rule, and.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2026/06/22/autism-parenting-hacks-practical-tips-most-families-have-never-tried/",
+      "slug": "autism-parenting-hacks-practical-tips-most-families-have-never-tried"
+    },
+    {
+      "title": "Doctor Visits for Children with Autism: A Reassuring Guide for Parents",
+      "date": "2026-06-19",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/doctor-visits-for-children-with-autism-a-reassuring-guide-for-parents/pexels-tima-miroshnichenko-8376229-scaled-e1781885887804.jpg",
+      "excerpt": "This guide helps parents and guardians of children with autism prepare for medical appointments with confidence. It covers finding the right doctor, requesting sensory accommodations, building predictability through visual schedules and social stories, and packing a sensory toolbox for the visit.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/06/19/doctor-visits-for-children-with-autism-a-reassuring-guide-for-parents/",
+      "slug": "doctor-visits-for-children-with-autism-a-reassuring-guide-for-parents"
+    },
+    {
+      "title": "The Hidden Barriers to ABA Therapy: What Families Are Really Up Against",
+      "date": "2026-06-18",
+      "category": "ABA Therapy Basics",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/the-hidden-barriers-to-aba-therapy-what-families-are-really-up-against/pexels-pavel-danilyuk-7938003-scaled-e1781799157283.jpg",
+      "excerpt": "This article examines the socioeconomic and cultural challenges families face when trying to access ABA (Applied Behavior Analysis) therapy for children with autism. It covers the high annual costs of intensive ABA, the reality of therapy deserts in rural and underserved areas, insurance.",
+      "read_time": "10 min read",
+      "source_url": "https://ontargetaba.com/2026/06/18/the-hidden-barriers-to-aba-therapy-what-families-are-really-up-against/",
+      "slug": "the-hidden-barriers-to-aba-therapy-what-families-are-really-up-against"
+    },
+    {
+      "title": "What Most People Don’t Know About Kids Who Do ABA Therapy",
+      "date": "2026-06-17",
+      "category": "Getting Started with ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/what-most-people-dont-know-about-kids-who-do-aba-therapy/pexels-sarahpictures-10412820-scaled.jpg",
+      "excerpt": "This blog explores the lesser-known truths about children who participate in ABA therapy, debunking common myths and shedding light on the remarkable progress, unique strengths, and deeply personal journeys of kids in ABA programs. Parents, educators, and the general public will gain a deeper.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/06/17/what-most-people-dont-know-about-kids-who-do-aba-therapy/",
+      "slug": "what-most-people-dont-know-about-kids-who-do-aba-therapy"
+    },
+    {
+      "title": "ABA Therapy Was Not Created for Autism — And It’s Not Exclusive to It",
+      "date": "2026-06-16",
+      "category": "ABA Therapy Basics",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/aba-therapy-was-not-created-for-autism-and-its-not-exclusive-to-it/pexels-markus-winkler-1430818-5192921-scaled.jpg",
+      "excerpt": "Most people associate ABA therapy almost entirely with autism. But the science behind it is far older, broader, and more versatile than many realize. This blog explores the true origins of Applied Behavior Analysis, how it came to be so closely linked to autism, and the wide range of conditions and.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/06/16/aba-therapy-was-not-created-for-autism-and-its-not-exclusive-to-it/",
+      "slug": "aba-therapy-was-not-created-for-autism-and-its-not-exclusive-to-it"
+    },
+    {
+      "title": "Autism Barbie: What Advocacy Groups Are Saying and Why It Matters for Your Child",
+      "date": "2026-06-15",
+      "category": "Developmental Milestones",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-barbie-what-advocacy-groups-are-saying-and-why-it-matters-for-your-child/pexels-reshma-mallecha-97608126-9646343-scaled.jpg",
+      "excerpt": "Following Mattel’s announcement of the first-ever autistic Barbie doll, autism advocacy groups and experts have responded with widespread praise — calling the doll a meaningful step toward inclusion, representation, and positive identity-building for autistic children. This is Part 2 of our.",
+      "read_time": "12 min read",
+      "source_url": "https://ontargetaba.com/2026/06/15/autism-barbie-what-advocacy-groups-are-saying-and-why-it-matters-for-your-child/",
+      "slug": "autism-barbie-what-advocacy-groups-are-saying-and-why-it-matters-for-your-child"
+    },
+    {
+      "title": "Autism Stigma: What It Really Looks Like and How Families Can Respond",
+      "date": "2026-06-12",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-stigma-what-it-really-looks-like-and-how-families-can-respond/pexels-polina-kovaleva-8709429-scaled.jpg",
+      "excerpt": "Autism stigma rarely looks like overt cruelty — it’s often subtle comments, unsolicited advice, and quiet judgment that families face from strangers, friends, and even relatives. This blog explores what autism stigma really looks like, the impact it has on both parents and children, and how.",
+      "read_time": "11 min read",
+      "source_url": "https://ontargetaba.com/2026/06/12/autism-stigma-what-it-really-looks-like-and-how-families-can-respond/",
+      "slug": "autism-stigma-what-it-really-looks-like-and-how-families-can-respond"
+    },
+    {
+      "title": "A Look Back at Autism Awareness Month: Chuck E. Cheese’s Sensory Sensitive Birthdays and What Inclusion Really Looks Like",
+      "date": "2026-06-11",
+      "category": "Community & Events",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/a-look-back-at-autism-awareness-month-chuck-e-cheeses-sensory-sensitive-birthdays-and-what-inclusion-really-looks-like/pexels-cottonbro-6670583-scaled.jpg",
+      "excerpt": "This post looks back at one of the most meaningful moments from Autism Awareness Month this past April — Chuck E. Cheese’s launch of Sensory Sensitive Birthdays in partnership with Autism Speaks. We explore what this initiative means for autism families, why sensory-friendly spaces matter, and how.",
+      "read_time": "9 min read",
+      "source_url": "https://ontargetaba.com/2026/06/11/a-look-back-at-autism-awareness-month-chuck-e-cheeses-sensory-sensitive-birthdays-and-what-inclusion-really-looks-like/",
+      "slug": "a-look-back-at-autism-awareness-month-chuck-e-cheeses-sensory-sensitive-birthdays-and-what-inclusion-really-looks-like"
+    },
     {
       "title": "Autism and Heart Health: What New Research Means for Your Child's Long-Term Wellbeing",
       "date": "2026-06-10",
@@ -136,6 +851,17 @@
       "slug": "autism-and-heart-health-what-new-research-means-for-your-childs-long-term-wellbeing"
     },
     {
+      "title": "IDEA and Autism: What Parents Need to Know About Your Child’s Education Rights",
+      "date": "2026-06-09",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/idea-and-autism-what-parents-need-to-know-about-your-childs-education-rights/pexels-kseniachernaya-8535629-scaled.jpg",
+      "excerpt": "The Individuals with Disabilities Education Act (IDEA) guarantees children with disabilities, including autism, the right to a Free Appropriate Public Education (FAPE) in the Least Restrictive Environment (LRE). Every eligible child is entitled to an Individualized Education Program (IEP), and.",
+      "read_time": "12 min read",
+      "source_url": "https://ontargetaba.com/2026/06/09/idea-and-autism-what-parents-need-to-know-about-your-childs-education-rights/",
+      "slug": "idea-and-autism-what-parents-need-to-know-about-your-childs-education-rights"
+    },
+    {
       "title": "Why Does My Child with Autism Throw Things? Understanding and Addressing Throwing Behavior",
       "date": "2026-06-08",
       "category": "Parent Resources",
@@ -145,6 +871,28 @@
       "read_time": "9 min read",
       "source_url": "https://ontargetaba.com/2026/06/08/why-does-my-child-with-autism-throw-things-understanding-and-addressing-throwing-behavior/",
       "slug": "why-does-my-child-with-autism-throw-things-understanding-and-addressing-throwing-behavior"
+    },
+    {
+      "title": "Throwing Toys in Autism: Why Does My Child With Autism Throw Things?",
+      "date": "2026-06-08",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/why-does-my-child-with-autism-throw-things/child-tipping-out-toys.png",
+      "excerpt": "Throwing behavior is one of the most common and confusing challenges families of children with autism face. If your child or toddler with autism throws toys instead of playing with them, or is in the habit of flinging random objects, understanding why it happens and having strategies to address it.",
+      "read_time": "11 min read",
+      "source_url": "https://ontargetaba.com/2026/06/08/why-does-my-child-with-autism-throw-things/",
+      "slug": "why-does-my-child-with-autism-throw-things"
+    },
+    {
+      "title": "Autism and Nutrition: Understanding Feeding Challenges and How to Help Your Child Thrive",
+      "date": "2026-06-05",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/autism-and-nutrition-understanding-feeding-challenges-and-how-to-help-your-child-thrive/pexels-kampus-7414380-scaled.jpg",
+      "excerpt": "Many children with autism experience significant feeding challenges — from extreme food selectivity and sensory-based aversions to ritualistic mealtime behaviors and nutritional gaps. This guide explores why autism and nutrition are so closely connected, what the research says about feeding.",
+      "read_time": "12 min read",
+      "source_url": "https://ontargetaba.com/2026/06/05/autism-and-nutrition-understanding-feeding-challenges-and-how-to-help-your-child-thrive/",
+      "slug": "autism-and-nutrition-understanding-feeding-challenges-and-how-to-help-your-child-thrive"
     },
     {
       "title": "What Is Extended School Year (ESY)? A Complete Guide for Families of Children with Autism",
@@ -708,6 +1456,17 @@
       "slug": "early-signs-of-autism-in-toddlers-what-parents-in-ohio-and-utah-should-know"
     },
     {
+      "title": "Early Signs and Symptoms of Autism in Infants",
+      "date": "2026-03-26",
+      "category": "ABA Therapy Basics",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/early-signs-symptoms-of-autism/young-girl-holding-sign-that-says-autism.png",
+      "excerpt": "As a parent, it can be difficult to know whether certain behaviors are simply part of normal development or possible early signs of autism. Because of this, understanding how to recognize the early signs of autism is important, especially since earlier diagnosis and support are associated with.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/03/26/early-signs-symptoms-of-autism/",
+      "slug": "early-signs-symptoms-of-autism"
+    },
+    {
       "title": "ABA Therapy Myths vs. Facts: What Every Parent Needs to Know",
       "date": "2026-03-25",
       "category": "ABA Therapy Basics",
@@ -796,6 +1555,17 @@
       "slug": "planning-and-ongoing-assessment-in-aba-therapy"
     },
     {
+      "title": "Antecedent-Behavior-Consequence: The ABCs of Behavior in ABA Therapy",
+      "date": "2026-03-14",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/antecedent-behavior-consequence/pexels-pavel-danilyuk-8422205-scaled.jpg",
+      "excerpt": "The ABCs of behavior in ABA therapy refer to three steps used to understand behavior: Antecedent (what happens before the behavior), Behavior (the action itself), and Consequence (what happens after the behavior). ABA therapists use this framework to identify behavior triggers and determine what.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/03/14/antecedent-behavior-consequence/",
+      "slug": "antecedent-behavior-consequence"
+    },
+    {
       "title": "Understanding the ABCs of Behavior in ABA Therapy: Antecedent, Behavior, and Consequence Explained",
       "date": "2026-03-14",
       "category": "Getting Started with ABA",
@@ -838,6 +1608,17 @@
       "read_time": "8 min read",
       "source_url": "https://ontargetaba.com/2026/03/10/autism-screening-why-early-autism-screening-matters-for-your-child/",
       "slug": "autism-screening-why-early-autism-screening-matters-for-your-child"
+    },
+    {
+      "title": "Early Autism Screening for Children",
+      "date": "2026-03-10",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/early-autism-screening/child-playing-with-a-doctor.png",
+      "excerpt": "Early autism screening is a standard check given to children to determine if further evaluation for autism is necessary. You may have noticed the term on the recommended list of well checks your pediatrician provides, and you can request a screening for your child at any time. In this article, On.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/03/10/early-autism-screening/",
+      "slug": "early-autism-screening"
     },
     {
       "title": "What Causes Autism? Understanding the Science Behind Autism Spectrum Disorder",
@@ -1159,6 +1940,17 @@
       "slug": "early-signs-of-autism-a-parent-friendly-guide-to-understanding-development"
     },
     {
+      "title": "Signs of Autism in Kids: Early Indicators Every Parent Should Know",
+      "date": "2026-01-17",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/signs-of-autism-in-kids/kids-holding-up-their-hands-and-smiling.png",
+      "excerpt": "Because every child grows and develops at their own pace, differences in communication, social interaction, play, and behavior are often a normal part of childhood. This can make it difficult for parents to distinguish between typical developmental variations and potential warning signs of autism.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2026/01/17/signs-of-autism-in-kids/",
+      "slug": "signs-of-autism-in-kids"
+    },
+    {
       "title": "A Transformed Life for Children With Autism: What Healing Really Looks Like",
       "date": "2026-01-15",
       "category": "Developmental Milestones, Early Intervention, Parent Resources",
@@ -1278,6 +2070,39 @@
       "read_time": "8 min read",
       "source_url": "https://ontargetaba.com/2026/01/03/helping-children-with-autism-get-ready-for-the-school-bus/",
       "slug": "helping-children-with-autism-get-ready-for-the-school-bus"
+    },
+    {
+      "title": "Movie Night at On Target ABA — A Sensory-Friendly Experience That Builds Skills",
+      "date": "2025-12-30",
+      "category": "Life at On Target ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/movie-night-at-on-target-aba-a-sensory-friendly-experience-that-builds-skills/movie-2-e1767104927911.jpg",
+      "excerpt": "Movie Night at On Target ABA wasn’t just an exciting event — it offered valuable developmental opportunities for children with autism. In a calm, sensory-friendly environment, kids practiced social skills, group participation, communication, and flexibility while enjoying a cozy movie experience.",
+      "read_time": "4 min read",
+      "source_url": "https://ontargetaba.com/2025/12/30/movie-night-at-on-target-aba-a-sensory-friendly-experience-that-builds-skills/",
+      "slug": "movie-night-at-on-target-aba-a-sensory-friendly-experience-that-builds-skills"
+    },
+    {
+      "title": "Pajama Day & Holiday Tree Decorating — A Fun, Meaningful Learning Experience at On Target ABA",
+      "date": "2025-12-30",
+      "category": "Life at On Target ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/pajama-day-holiday-tree-decorating-a-fun-meaningful-learning-experience-at-on-target-aba/pajama-tree-6-e1767020653975.jpg",
+      "excerpt": "Pajama Day at On Target ABA was more than a fun celebration—it offered meaningful learning moments for children with autism. Our kids enjoyed coming to therapy in cozy pajamas, decorating edible holiday trees, and practicing important skills like communication, sharing, and following routines. The.",
+      "read_time": "4 min read",
+      "source_url": "https://ontargetaba.com/2025/12/30/pajama-day-holiday-tree-decorating-a-fun-meaningful-learning-experience-at-on-target-aba/",
+      "slug": "pajama-day-holiday-tree-decorating-a-fun-meaningful-learning-experience-at-on-target-aba"
+    },
+    {
+      "title": "Early Diagnosis of Autism: A Closer Look",
+      "date": "2025-12-27",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/early-diagnosis-autism/child-with-puzzle.jpg",
+      "excerpt": "Key Takeaways About Early Diagnosis of Autism Hesitating before pursuing an early autism diagnosis is normal, and concerns about labeling, accuracy, and timing all deserve honest answers. A reliable autism diagnosis is possible from around 18 months to two years of age, and early diagnoses.",
+      "read_time": "10 min read",
+      "source_url": "https://ontargetaba.com/2025/12/27/early-diagnosis-autism/",
+      "slug": "early-diagnosis-autism"
     },
     {
       "title": "The Benefits of Early Autism Diagnosis: Why Early Answers Matter for Your Child",
@@ -1533,6 +2358,28 @@
       "slug": "caring-without-burning-out-a-parents-guide-to-supporting-a-child-with-autism-and-yourself"
     },
     {
+      "title": "🌿 Finding Calm: How Downtime Supports Progress in ABA Therapy",
+      "date": "2025-11-19",
+      "category": "Life at On Target ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/finding-calm-how-downtime-supports-progress-in-aba-therapy/relax-e1763573410507.jpg",
+      "excerpt": "This blog explains why downtime—quiet moments, swings, resting, simple play, or relaxing transitions—is an essential part of ABA therapy. Parents will learn how downtime helps with emotional regulation, sensory needs, skill retention, stress reduction, and readiness for learning. The blog.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2025/11/19/finding-calm-how-downtime-supports-progress-in-aba-therapy/",
+      "slug": "finding-calm-how-downtime-supports-progress-in-aba-therapy"
+    },
+    {
+      "title": "🖍️ Color, Connection & Confidence: How Group Coloring Activities Support Growth in ABA Therapy",
+      "date": "2025-11-17",
+      "category": "Life at On Target ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy/clinic-e1763392094385.jpg",
+      "excerpt": "This blog explores how group coloring activities in ABA therapy strengthen communication, social interaction, emotional regulation, and fine motor skills. Parents will learn why structured group activities — like the one shown in the photo — are powerful tools for growth, connection, and joyful.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2025/11/17/color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy/",
+      "slug": "color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy"
+    },
+    {
       "title": "Traveling With a Child Who Has Autism: How ABA Therapy Helps Families Prepare, Adapt & Enjoy the Journey",
       "date": "2025-11-17",
       "category": "Developmental Milestones, Parent Resources",
@@ -1610,6 +2457,17 @@
       "slug": "what-does-a-typical-day-in-aba-therapy-look-like"
     },
     {
+      "title": "How to Prepare for an Autism Assessment as a Parent",
+      "date": "2025-11-07",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/how-to-prepare-for-an-autism-assessment/woman-observing-a-child-while-drawing.png",
+      "excerpt": "Every parent notices things at their own pace. Maybe your child isn’t speaking as much as others their age, avoids eye contact, or becomes upset with certain sounds or changes in routine. These small moments can lead any parent to wonder if their child is on the autism spectrum. Understanding how.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2025/11/07/how-to-prepare-for-an-autism-assessment/",
+      "slug": "how-to-prepare-for-an-autism-assessment"
+    },
+    {
       "title": "Parent Training in ABA Therapy: Building Success Beyond the Session",
       "date": "2025-11-07",
       "category": "Developmental Milestones, Parent Resources",
@@ -1652,6 +2510,28 @@
       "read_time": "7 min read",
       "source_url": "https://ontargetaba.com/2025/11/06/my-child-might-have-autism-what-should-i-do-next/",
       "slug": "my-child-might-have-autism-what-should-i-do-next"
+    },
+    {
+      "title": "Signs a Child Might Need ABA Therapy",
+      "date": "2025-11-06",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/signs-a-child-needs-aba-therapy/child-lining-up-pencils.jpg",
+      "excerpt": "Every child develops at their own pace, with some hitting milestones later than others. Though this should mitigate concerns for some, others will notice behaviors or developmental patterns that make them wonder whether additional support would be helpful. For a parent who loves their child and.",
+      "read_time": "8 min read",
+      "source_url": "https://ontargetaba.com/2025/11/06/signs-a-child-needs-aba-therapy/",
+      "slug": "signs-a-child-needs-aba-therapy"
+    },
+    {
+      "title": "🎃 Smiles, Costumes, and Community: Inside the On Target ABA Halloween Party 2025",
+      "date": "2025-11-05",
+      "category": "Life at On Target ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025/worthington-fun-e1762330441590.jpg",
+      "excerpt": "This blog takes readers inside the On Target ABA Halloween Party 2025, celebrated across all centers — Cleveland, Columbus, Worthington, and Utah. From creative costumes and themed activities to laughter-filled moments shared by staff, parents, and clients, the celebration embodied the spirit of.",
+      "read_time": "6 min read",
+      "source_url": "https://ontargetaba.com/2025/11/05/smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025/",
+      "slug": "smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025"
     },
     {
       "title": "Understanding Medicaid ABA Therapy: What Parents Need to Know",
@@ -1742,6 +2622,17 @@
       "slug": "hope-and-progress-in-aba-what-every-parent-needs-to-know-about-their-childs-future"
     },
     {
+      "title": "🎃Spirit Week at Worthington: Building Confidence and Community Through Dress-Up Fun",
+      "date": "2025-10-29",
+      "category": "Life at On Target ABA",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun/1000026026-e1761753214334.jpeg",
+      "excerpt": "This blog highlights Spirit Week at On Target ABA’s Worthington center, where themed dress-up days — like Pumpkin Day and Wacky Wednesday — brought laughter, confidence, and connection. While it looked like simple fun, Spirit Week helped children with autism practice social skills, flexibility, and.",
+      "read_time": "4 min read",
+      "source_url": "https://ontargetaba.com/2025/10/29/spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun/",
+      "slug": "spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun"
+    },
+    {
       "title": "ABA vs Speech Therapy for Autism: Understanding the Difference and Working Together",
       "date": "2025-10-28",
       "category": "Getting Started with ABA",
@@ -1784,6 +2675,17 @@
       "read_time": "5 min read",
       "source_url": "https://ontargetaba.com/2025/10/27/when-should-aba-therapy-begin/",
       "slug": "when-should-aba-therapy-begin"
+    },
+    {
+      "title": "Why Is Early Intervention in Autism Important?",
+      "date": "2025-10-27",
+      "category": "Parent Resources",
+      "author": "On Target ABA Team",
+      "hero_image": "/assets/blog/images/why-is-early-intervention-in-autism-important/children-painting.png",
+      "excerpt": "Early intervention, which refers to targeted support and therapies provided to children from birth to age 3, is especially important in autism because it helps children develop communication, social, behavioral, and learning skills during the most critical stages of brain development. At On Target.",
+      "read_time": "7 min read",
+      "source_url": "https://ontargetaba.com/2025/10/27/why-is-early-intervention-in-autism-important/",
+      "slug": "why-is-early-intervention-in-autism-important"
     },
     {
       "title": "Inside an ABA Session: What Parents Can Expect from Day One",
