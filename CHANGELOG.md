@@ -25,6 +25,23 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 - `assets/images/landing/insurance/` &mdash; mirrored insurer logos (Humana,
   CareSource, Utah Medicaid, Healthy U, SelectHealth, Health Choice Utah,
   EMI Health) for the landing-page insurance strips.
+- **WordPress parity + full blog import.** Imported the 82 blog posts that were
+  live on `ontargetaba.com` but missing from beta (now 248 posts total), each as
+  `assets/blog/<slug>.md` with locally-downloaded hero images under
+  `assets/blog/images/<slug>/` (no `wp-content` hotlinks; body images stripped to
+  match the pre-existing posts). Built the one missing WordPress page,
+  `aba-therapy-ut-pc.html`, as a `noindex` Murray/Utah PPC conversion page on the
+  `landing.html` skeleton (Jotform `252544960929165`), excluded from the sitemap.
+  Full audit in `docs/wp_parity_2026-10-19.md`.
+
+### Changed
+
+- `_redirects`: added the current WordPress post-permalink shape
+  `/blog/{slug}/` &rarr; `/blog/posts/{slug}` (301) so every live post URL keeps
+  working after cutover (previously only legacy `/YYYY/MM/DD/{slug}/` was mapped);
+  added `/blog/category/*`, `/blog/author/*`, `/blog/tag/*` &rarr; `/blog`; and
+  added specific rules mapping the four emoji-prefixed WP post slugs to their
+  clean beta slugs. Regenerated `sitemap.xml` (301 URLs: 53 static + 248 posts).
 
 ### Removed
 
