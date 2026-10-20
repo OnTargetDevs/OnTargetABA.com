@@ -3,7 +3,7 @@ title: "ABA Therapy & Sensory Play: How It Works and How to Tell Your Child Is M
 date: 2026-02-04
 category: ABA Therapy Basics, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-tatianasyrikova-3933265-1024x683.jpg"
+hero_image: "/assets/blog/images/aba-therapy-sensory-play-how-it-works-and-how-to-tell-your-child-is-making-progress/pexels-tatianasyrikova-3933265-1024x683.jpg"
 excerpt: Parents often question whether sensory activities constitute genuine therapy. This piece clarifies that sensory play in ABA supports regulation and learning while demonstrating how to recognize meaningful developmental progress.
 read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/02/04/aba-therapy-sensory-play-how-it-works-and-how-to-tell-your-child-is-making-progress/"

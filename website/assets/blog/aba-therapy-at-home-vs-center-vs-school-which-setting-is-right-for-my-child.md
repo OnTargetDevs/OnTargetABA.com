@@ -3,7 +3,7 @@ title: "ABA Therapy at Home vs. Center vs. School: Which Setting Is Right for My
 date: 2026-03-30
 category: Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-anastasia-shuraeva-8465500-1024x684.jpg"
+hero_image: "/assets/blog/images/aba-therapy-at-home-vs-center-vs-school-which-setting-is-right-for-my-child/pexels-anastasia-shuraeva-8465500-1024x684.jpg"
 excerpt: The choice of ABA therapy setting—home, center, or school—significantly impacts a child's progress. This guide examines each environment's approach and helps families determine the best fit.
 read_time: 5 min read
 source_url: "https://ontargetaba.com/2026/03/30/aba-therapy-at-home-vs-center-vs-school-which-setting-is-right-for-my-child/"

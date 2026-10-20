@@ -3,7 +3,7 @@ title: "Autism Screening: Why Early Autism Screening Matters for Your Child"
 date: 2026-03-10
 category: Getting Started with ABA
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/recognizing_early_signs_autism.jpg"
+hero_image: "/assets/blog/images/autism-screening-why-early-autism-screening-matters-for-your-child/recognizing_early_signs_autism.jpg"
 excerpt: Autism screening is a brief assessment tool identifying children who may need further evaluation for autism spectrum disorder, not a diagnosis itself. The article explains what screening involves, timing recommendations, and why early detection matters for developmental outcomes.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/03/10/autism-screening-why-early-autism-screening-matters-for-your-child/"

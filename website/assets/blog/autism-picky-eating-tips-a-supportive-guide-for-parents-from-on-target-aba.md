@@ -3,7 +3,7 @@ title: "Autism Picky Eating Tips: A Supportive Guide for Parents From On Target 
 date: 2025-12-13
 category: ABA Therapy Basics, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-anastasia-shuraeva-8466773-1024x684.jpg"
+hero_image: "/assets/blog/images/autism-picky-eating-tips-a-supportive-guide-for-parents-from-on-target-aba/pexels-anastasia-shuraeva-8466773-1024x684.jpg"
 excerpt: Over 70% of children with autism experience feeding challenges rooted in sensory sensitivities, anxiety, and communication difficulties rather than defiance. The guide offers evidence-based ABA strategies to help families reduce mealtime stress and build confident eating habits.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/12/13/autism-picky-eating-tips-a-supportive-guide-for-parents-from-on-target-aba/"
