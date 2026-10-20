@@ -457,7 +457,7 @@ tailwind.config = {
 </nav>
 <!-- auto-crumb-end -->
 
-</div>
+<main>
 
 <!-- ============ HERO ============ -->
 <section id="main-content" class="hero-bg relative overflow-hidden">
@@ -783,56 +783,18 @@ tailwind.config = {
       </div>
 
       <div class="lg:col-span-7 reveal reveal-delay-2">
-        <form action="/contact" method="get" target="_blank" rel="noopener noreferrer" class="bg-cream rounded-3xl ring-1 ring-line p-7 sm:p-10 shadow-soft">
-          <div class="flex items-center justify-between mb-7">
-            <div>
-              <div class="text-xs uppercase tracking-wider text-mute font-semibold">Insurance verification</div>
-              <h3 class="font-display text-2xl font-700 mt-1">Tell us about your plan</h3>
+        <div class="bg-cream rounded-3xl ring-1 ring-line p-4 sm:p-6 shadow-soft" data-jotform-wrap>
+          <h3 class="sr-only">Insurance verification form</h3>
+          <div data-jotform-id="262656004872156" data-jotform-min-height="700" style="min-height:700px;" role="region" aria-label="Insurance verification form &mdash; loaded from Jotform">
+            <div class="text-center text-mute py-12" data-jotform-placeholder role="status" aria-live="polite">Loading the form&hellip;</div>
+          </div>
+          <noscript>
+            <div class="text-center py-10">
+              <p class="text-ink-soft mb-4">Our form needs JavaScript to load.</p>
+              <a href="https://form.jotform.com/262656004872156" target="_blank" rel="noopener" class="btn btn-coral">Open the form &rarr;</a>
             </div>
-            <div class="w-12 h-12 grid place-items-center rounded-2xl bg-coral text-white">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-            </div>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-4">
-            <label class="block">
-              <span class="text-sm font-semibold text-ink mb-1.5 block">Parent / guardian name</span>
-              <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Your full name" />
-            </label>
-            <label class="block">
-              <span class="text-sm font-semibold text-ink mb-1.5 block">Child's name</span>
-              <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Child's full name" />
-            </label>
-            <label class="block">
-              <span class="text-sm font-semibold text-ink mb-1.5 block">Email</span>
-              <input type="email" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="you@example.com" />
-            </label>
-            <label class="block">
-              <span class="text-sm font-semibold text-ink mb-1.5 block">Phone</span>
-              <input type="tel" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="(555) 555-5555" />
-            </label>
-            <label class="block">
-              <span class="text-sm font-semibold text-ink mb-1.5 block">Insurance carrier</span>
-              <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="e.g. Medicaid, Anthem, Molina" />
-            </label>
-            <label class="block">
-              <span class="text-sm font-semibold text-ink mb-1.5 block">Member ID</span>
-              <input type="text" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Found on insurance card" />
-            </label>
-            <label class="block sm:col-span-2">
-              <span class="text-sm font-semibold text-ink mb-1.5 block">Anything we should know?</span>
-              <textarea rows="3" class="w-full rounded-xl border border-line bg-white px-4 py-3 focus:border-coral focus:ring-2 focus:ring-coral-soft outline-none transition" placeholder="Diagnosis status, preferred location, etc."></textarea>
-            </label>
-          </div>
-
-          <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-4">
-            <button type="submit" class="btn btn-coral w-full sm:w-auto justify-center">
-              Verify my insurance
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-            </button>
-            <p class="text-xs text-mute">Submitting this form connects you with our insurance team. We never sell your data.</p>
-          </div>
-        </form>
+          </noscript>
+        </div>
       </div>
     </div>
   </div>
@@ -981,6 +943,8 @@ tailwind.config = {
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ============ FOOTER ============ -->
 <div id="site-footer" aria-busy="true"></div>
