@@ -22,7 +22,9 @@ source — never assumed "probably fine").
 |---|---:|---|
 | VERIFIED | 14 | 4 core addresses, 4 main phones, founder credentials, reviewer names, legal-entity wording, SMS boilerplate, community/area coverage, review authenticity |
 | CONTRADICTED | 11 | CareSource (undistinguished, 7 pages), "Opening Soon" banner for an operating site, "three states" (×3), only "four clinics" listed, ASP-provider-in-Cleveland, $18–22 RBT pay, Mayfield "Heights" vs "Village", whole become-an-rbt detail set |
-| UNVERIFIED | 16 | per-site hours, ages served (inconsistent), all start-time/waitlist promises, Murray "opened 2026 / 10,000 sq ft", in-house psychologist, Jon Peterson scholarship, $32,455 ASP figure, 216-770-9560 tracking line, "New Expanded Center" wording, payer lists, founded-2022, "10+ years", public naming of EL/SA/Nela Park/Reynoldsburg, "On Target ABA, LLC" entity |
+| UNVERIFIED | 16 | per-site hours, ages served (inconsistent), all start-time/waitlist promises, Murray "opened 2026 / 10,000 sq ft", in-house psychologist, Jon Peterson scholarship, $32,455 ASP figure, 216-770-9560 tracking line, "New Expanded Center" wording, payer lists, founded-2022, "10+ years", public naming of EL/SA/Nela Park/Reynoldsburg, "On Target ABA, LLC" entity, all careers-page benefit/pay claims ($0 BCBA supervision, paid travel time, paid training, top-of-market pay, lower caseloads) |
+
+*Careers pages are inventoried in full in §10 (become-an-rbt.html, careers.html, why-work-at-on-target-aba.html) per Window 4's request that they be treated as page one of the audit.*
 
 Several groups are both CONTRADICTED and UNVERIFIED (e.g. `become-an-rbt.html`: pay is CONTRADICTED, the rest UNVERIFIED). They are filed under their dominant status and cross-noted.
 
@@ -54,7 +56,7 @@ Several groups are both CONTRADICTED and UNVERIFIED (e.g. `become-an-rbt.html`: 
 | Cleveland/Mayfield **(216) 343-1198** | shared band; `contact.html:611` | **VERIFIED** — CLAUDE.md / intake_reference. |
 | Columbus **(614) 681-1030** (Gahanna + Worthington) | shared band; landing + metro pages | **VERIFIED** — intake_reference (Columbus main line). |
 | Murray **(385) 550-3500** | shared band; UT pages | **VERIFIED** — CLAUDE.md / intake_reference. |
-| **216-770-9560** used instead of 216-343-1198 | `aba-therapy-cleveland-lp-g.html:161,164,186,203,443,457` (Cleveland Google Ads LP only) | **UNVERIFIED** — looks like a call-tracking DID; confirm it routes to the Cleveland line. (No other page uses it; the other LPs use the standard numbers.) |
+| **216-770-9560** used instead of 216-343-1198 | `aba-therapy-cleveland-lp-g.html:161,164,186,203,443,457` (Cleveland Google Ads LP only) | **UNVERIFIED** — a WhatConverts call-tracking DID (vendor account 159348, declared on the careers pages); confirm it routes to the Cleveland line. (No other page uses it; the other LPs use the standard numbers.) |
 
 *(The "614-603-8781" my first sweep flagged on `aba-for-teenagers.html:827` is a false positive — it is the Jotform id `213614603878157`, not a phone.)*
 
@@ -118,9 +120,11 @@ Several groups are both CONTRADICTED and UNVERIFIED (e.g. `become-an-rbt.html`: 
 | "Intake call within 48 hours" / "Start in days, not months" | `aba-for-toddlers.html:779,785`; `aba-therapy-col-lp-g.html:42` | **UNVERIFIED + inconsistent**. |
 | "We pick up live" / "Live pickup, every time" | `aba-for-preschoolers.html:816`; `aba-for-school-age.html:836` | **UNVERIFIED** — confirm. |
 
-## 10. Careers / RBT page — treat every detail as suspect (Joshua)
+## 10. Careers pages — `become-an-rbt.html`, `careers.html`, `why-work-at-on-target-aba.html` (Window 4: treat as page one; Joshua: details off)
 
-Joshua, on a screenshot of `become-an-rbt.html`: "No!" to $18; "$23-27.50"; "Career path makes no sense"; "Where'd you get this info from? It's hallucinatory"; "The concept is good. The details are off."
+Joshua, on a screenshot of `become-an-rbt.html`: "No!" to $18; "$23-27.50"; "Career path makes no sense"; "Where'd you get this info from? It's hallucinatory"; "The concept is good. The details are off." Per Window 4, every claim on all three careers pages is listed below with a source or "no source". None of the benefit/pay/career-path/training/founding claims below has a written source; the only VERIFIED items are the four clinic addresses/phones, the "two states" count, and the founder attribution.
+
+### 10a. `become-an-rbt.html`
 
 | Claim | Where | Status + source |
 |---|---|---|
@@ -130,6 +134,33 @@ Joshua, on a screenshot of `become-an-rbt.html`: "No!" to $18; "$23-27.50"; "Car
 | "Path to RBT … about **4–6 weeks**": apply + 30-min video chat w/ hiring lead & BCBA → 40-hr online self-paced BACB-approved training "we cover the cost", finish 2–3 weeks → in-person skills check → **$45 RBT exam fee** to BACB | `become-an-rbt.html:585–616` | **UNVERIFIED / CONTRADICTED** (Joshua: "details are off"). |
 | Benefits: free 40-hr training; BCBA weekly 1:1 mentorship; tuition assistance; lower caseloads; FT health/dental/vision/PTO | `become-an-rbt.html:639–644` | **UNVERIFIED** (Joshua). |
 | Whether **paid training** may be mentioned at all | — | **OPEN** — Nate asked Joshua; unanswered (on the form). |
+
+### 10b. `careers.html`
+
+| Claim | Where | Status + source |
+|---|---|---|
+| JSON-LD `"foundingDate": "2022"` | `careers.html:90` | **UNVERIFIED** — same 2022 claim Joshua called "hallucinatory". |
+| "$0 / **FREE BCBA supervision** — the best package anywhere" + "$0 supervision cost" | `careers.html:41–42,172–173,203–204` | **UNVERIFIED** — no written source; Joshua flagged careers details as off. |
+| "paid work that qualifies for the BACB **unrestricted-hours** portion of supervision" | `careers.html:189` | **UNVERIFIED**. |
+| Benefits: "Competitive pay / **top-of-market** for BCBAs & RBTs", "**Paid travel time** / paid drive time between clients", "Room for growth RBT→BCBA", "Flexible hours" | `careers.html:120,128–137,144–152` | **UNVERIFIED** — no source. |
+| Hero stats "4" clinics / "$0" BCBA supervision / "2–3d" (hiring response) | `careers.html:37,41,45` | 4-clinic count **CONTRADICTED (omission)**; $0 supervision + 2–3-day response **UNVERIFIED**. |
+| Hiring process "Four steps. No mystery.": Apply online → Quick response → Interview → **Paid training** | `careers.html:250–282` | **UNVERIFIED** (career path); step 4 asserts **paid training** — pending Joshua's unanswered decision. |
+| "Four clinics, **three states**" + "**Three-state footprint**" | `careers.html:755,770` (and section headings ~296,311) | **CONTRADICTED** — two states (OH + UT). |
+| 4 clinics + addresses / phones / `openingHours Mo-Fr 08:00-17:00` (JSON-LD + "Where you can work" cards) | `careers.html:160–305` | **VERIFIED** addresses/phones; hours **UNVERIFIED** per-site; **CONTRADICTED (omission)** — only 4 of the operating centers listed. |
+
+### 10c. `why-work-at-on-target-aba.html`
+
+| Claim | Where | Status + source |
+|---|---|---|
+| "Small, **founder-run** ABA practice with clinics in Murray, Mayfield Village, Gahanna, and Worthington" | `why-work…:486` | **VERIFIED** (founder-run; Ilana) / **CONTRADICTED (omission)** — names only 4 clinics. |
+| Stat "**4** — Clinics, **two states**" | `why-work…:499–500` | "two states" **VERIFIED**; 4-clinic count understated vs operating sites. |
+| Stat "**Day 1** — Paid training" | `why-work…:503–504` | **UNVERIFIED** — paid-training claim, pending Joshua. |
+| Stat "**1:1** — RBT-to-kiddo sessions" | `why-work…:507–508` | **VERIFIED** — standard 1:1 ABA. |
+| Founder quote — "Ilana Gross, BCBA · Clinical Director & Founder" | `why-work…:518` | **VERIFIED** attribution (CLAUDE.md). |
+| Meta description: "Lower caseloads, real BCBA mentorship, clear growth path RBT→BCBA" | `why-work…:364` | **UNVERIFIED** — benefit claims, no source. |
+| JSON-LD `"foundingDate": "2022"` | `why-work…:90` | **UNVERIFIED**. |
+
+*(Call-tracking vendor on the careers pages is **WhatConverts, account 159348** — `careers.html:444`, `why-work…:450`; the same vendor explains the Cleveland LP's 216-770-9560 DID in §2.)*
 
 ## 11. Founder & staff credentials
 
