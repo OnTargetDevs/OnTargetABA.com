@@ -125,6 +125,33 @@ TAILWIND_CDN_RE = re.compile(
 )
 TAILWIND_LOCAL = '<script src="/assets/vendor/tailwind.js"></script>'
 
+# Public pages use a PRECOMPILED Tailwind stylesheet instead of the runtime
+# (CDN) JIT. Remove the runtime <script> + the now-dead inline
+# `tailwind.config = {...}` block, and link the compiled stylesheet
+# (scripts/build-tailwind.mjs, committed to the repo) immediately AFTER
+# app.css.
+#
+# Order matters: the runtime CDN appended its generated <style> to <head>
+# AFTER the static app.css <link>, so Tailwind utilities won conflicts with
+# app.css (e.g. `.tracking-tight` beating `.font-display`'s letter-spacing).
+# Linking the compiled CSS before app.css would silently flip that cascade
+# and reflow headings. So we re-place the link right after app.css to keep
+# the exact same winner — the site renders byte-for-byte the same.
+# Idempotent: the existing link (any position) is removed and re-inserted.
+TAILWIND_RUNTIME_RE = re.compile(
+    r'\s*<script\s+src="/assets/vendor/tailwind\.js(?:\?[^"]*)?"\s*>\s*</script>'
+)
+TAILWIND_CSS_LINK = '<link rel="stylesheet" href="/assets/css/tailwind.css">'
+TAILWIND_CSS_LINK_RE = re.compile(
+    r'\s*<link\s+rel="stylesheet"\s+href="/assets/css/tailwind\.css(?:\?[^"]*)?"\s*/?>'
+)
+TAILWIND_CONFIG_RE = re.compile(
+    r'\s*<script>\s*tailwind\.config\b.*?</script>', re.DOTALL
+)
+APP_CSS_LINK_RE = re.compile(
+    r'<link\s+rel="stylesheet"\s+href="/assets/css/app\.css(?:\?[^"]*)?"\s*/?>'
+)
+
 PERF_BLOCK_RE = re.compile(
     rf"\s*{re.escape(START)}.*?{re.escape(END)}\s*", re.DOTALL
 )
@@ -137,6 +164,15 @@ def build_perf_block(page_path: str) -> str:
     lines = [
         START,
         '<meta name="view-transition" content="same-origin">',
+        # CLS guard: #site-header is an empty placeholder that header.js
+        # replaces with the announcement bar + sticky nav on load. Reserve
+        # its rendered height so the hero below it doesn't jump down when
+        # the header paints (was the page's entire ~0.24 CLS). Heights are
+        # measured: 113px on mobile, 118px at the lg breakpoint where the
+        # desktop nav row is slightly taller. No effect on the final layout
+        # (the id is gone once the header is injected).
+        '<style id="ota-cls-reserve">#site-header{min-height:113px}'
+        '@media(min-width:1024px){#site-header{min-height:118px}}</style>',
         # PWA + favicon / touch icons. The PNG variants come from the
         # legacy WordPress favicon (real branded mark, not the generic
         # bullseye). Browsers pick the appropriate size; SVG fallback
@@ -185,11 +221,31 @@ def process(html_file: Path) -> tuple[bool, list[str]]:
     changes: list[str] = []
     new_text = text
 
-    # 1. Tailwind CDN -> local vendor
+    # 1. Tailwind CDN -> local vendor (legacy pages that still carry the CDN)
     if TAILWIND_CDN_RE.search(new_text):
         new_text, n = TAILWIND_CDN_RE.subn(TAILWIND_LOCAL, new_text)
         if n:
-            changes.append(f"tailwind:{n}")
+            changes.append(f"tailwind-cdn:{n}")
+
+    # 1b. Runtime Tailwind JIT -> precompiled stylesheet linked AFTER
+    # app.css (see cascade note above). Public pages only; admin keeps the
+    # runtime (see process_tailwind_only). Remove the runtime script, the
+    # dead inline config, and any existing tailwind.css link, then re-insert
+    # the link directly after app.css. Idempotent.
+    had_runtime = bool(TAILWIND_RUNTIME_RE.search(new_text))
+    if had_runtime:
+        new_text = TAILWIND_RUNTIME_RE.sub("", new_text)
+    if TAILWIND_CONFIG_RE.search(new_text):
+        new_text, n = TAILWIND_CONFIG_RE.subn("", new_text)
+        if n:
+            changes.append(f"tailwind-config-strip:{n}")
+    # Pull any existing compiled-CSS link so we can re-place it deterministically.
+    new_text = TAILWIND_CSS_LINK_RE.sub("", new_text)
+    m = APP_CSS_LINK_RE.search(new_text)
+    if m:
+        new_text = new_text[: m.end()] + "\n" + TAILWIND_CSS_LINK + new_text[m.end():]
+        if had_runtime:
+            changes.append("tailwind-css:1")
 
     # 2. Add ?v=<sha> cache-bust to in-repo JS/CSS so CF + browser
     # cache invalidates per deploy. Idempotent — replaces any existing

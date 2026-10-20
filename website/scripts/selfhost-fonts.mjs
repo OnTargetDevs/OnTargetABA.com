@@ -61,6 +61,19 @@ for (const path of files) {
   html = html.replace(PRECONNECT_GSTATIC, '');
   html = html.replace(GFONTS_STYLESHEET, '');
 
+  // Preload the Fraunces weight the first paint actually uses. The display
+  // headings (hero h1 included — the mobile LCP element) all render at
+  // Fraunces 400, because the `font-700`/`font-600` utility classes are
+  // no-ops in this build. Pages shipped a preload for fraunces-700.woff2,
+  // a byte-identical copy of the variable master but a DIFFERENT URL, so it
+  // never satisfied the 400 request — the real font swapped in late and the
+  // h1 reflow shoved the hero subhead/CTAs/stats down (~0.14 CLS under
+  // throttling). Repoint the preload to the 400 file. Idempotent.
+  html = html.replace(
+    /(<link rel="preload" as="font" type="font\/woff2" crossorigin href="(?:\.\.\/|\/)?assets\/fonts\/)fraunces-700(\.woff2">)/g,
+    '$1fraunces-400$2',
+  );
+
   // Idempotent preload injection. Insert immediately before the
   // <link rel="stylesheet" href="...app.css"> so the font fetch
   // can start in parallel with the stylesheet that references it.
