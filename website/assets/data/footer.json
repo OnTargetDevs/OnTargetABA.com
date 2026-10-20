@@ -97,12 +97,16 @@
           "label": "Cleveland | Mayfield Village, OH"
         },
         {
-          "href": "/gahanna-ohio",
-          "label": "Columbus | Gahanna, OH"
+          "href": "/cleveland",
+          "label": "Cleveland | Nela Park"
         },
         {
-          "href": "/worthington-ohio",
-          "label": "Worthington | Worthington, OH"
+          "href": "/gahanna-ohio",
+          "label": "Columbus | Airport, OH"
+        },
+        {
+          "href": "/reynoldsburg-ohio",
+          "label": "Columbus | Reynoldsburg, OH"
         }
       ]
     }

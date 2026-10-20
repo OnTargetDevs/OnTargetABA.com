@@ -42,10 +42,10 @@ ORG_LD = {
     "priceRange": "$$",
     "description": (
         "Compassionate, evidence-based ABA therapy and autism testing for "
-        "children. Quality care without the wait. Serving Cleveland, Columbus, "
+        "children. Quality care, short wait times. Serving Cleveland, Columbus, "
         "and the Salt Lake Valley."
     ),
-    "slogan": "Quality care without the wait.",
+    "slogan": "Quality care, short wait times.",
     "foundingDate": "2022",
     "founder": {
         "@type": "Person",
@@ -85,6 +85,8 @@ ORG_LD = {
         {"@type": "City", "name": "Columbus"},
         {"@type": "City", "name": "Gahanna"},
         {"@type": "City", "name": "Worthington"},
+        {"@type": "City", "name": "Reynoldsburg"},
+        {"@type": "City", "name": "East Cleveland"},
     ],
     "department": [
         {
@@ -134,8 +136,8 @@ ORG_LD = {
         },
         {
             "@type": "MedicalClinic",
-            "@id": f"{SITE}/#clinic-gahanna",
-            "name": "On Target ABA &mdash; Columbus / Gahanna",
+            "@id": f"{SITE}/#clinic-airport-schoolage",
+            "name": "On Target ABA &mdash; Columbus / Airport School Age",
             "url": f"{SITE}/locations/",
             "telephone": "+1-614-681-1030",
             "image": f"{SITE}/assets/images/footerImg.png",
@@ -155,8 +157,8 @@ ORG_LD = {
         },
         {
             "@type": "MedicalClinic",
-            "@id": f"{SITE}/#clinic-worthington",
-            "name": "On Target ABA &mdash; Columbus / Worthington",
+            "@id": f"{SITE}/#clinic-airport-earlylearners",
+            "name": "On Target ABA &mdash; Columbus / Airport Early Learners",
             "url": f"{SITE}/locations/",
             "telephone": "+1-614-681-1030",
             "image": f"{SITE}/assets/images/footerImg.png",
@@ -164,15 +166,57 @@ ORG_LD = {
             "openingHours": "Mo-Fr 08:00-17:00",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "130 E Wilson Bridge Rd, Suite 200",
-                "addressLocality": "Worthington",
+                "streetAddress": "2740 Airport Dr, Suite 240",
+                "addressLocality": "Columbus",
                 "addressRegion": "OH",
-                "postalCode": "43085",
+                "postalCode": "43219",
                 "addressCountry": "US",
             },
-            "geo": {"@type": "GeoCoordinates", "latitude": 40.0934, "longitude": -83.0179},
+            "geo": {"@type": "GeoCoordinates", "latitude": 39.9939, "longitude": -82.8859},
             "medicalSpecialty": "Behavioral",
-            "areaServed": ["Worthington", "Columbus", "Union County", "Delaware County"],
+            "areaServed": ["Columbus", "Gahanna", "Franklin County"],
+        },
+        {
+            "@type": "MedicalClinic",
+            "@id": f"{SITE}/#clinic-reynoldsburg",
+            "name": "On Target ABA &mdash; Columbus / Reynoldsburg",
+            "url": f"{SITE}/reynoldsburg-ohio/",
+            "telephone": "+1-614-681-1030",
+            "image": f"{SITE}/assets/images/footerImg.png",
+            "priceRange": "$$",
+            "openingHours": "Mo-Fr 08:00-17:00",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "4707 Hilton Corporate Dr",
+                "addressLocality": "Columbus",
+                "addressRegion": "OH",
+                "postalCode": "43232",
+                "addressCountry": "US",
+            },
+            "geo": {"@type": "GeoCoordinates", "latitude": 39.9548, "longitude": -82.8121},
+            "medicalSpecialty": "Behavioral",
+            "areaServed": ["Reynoldsburg", "Columbus", "Franklin County"],
+        },
+        {
+            "@type": "MedicalClinic",
+            "@id": f"{SITE}/#clinic-nelapark",
+            "name": "On Target ABA &mdash; Cleveland / Nela Park",
+            "url": f"{SITE}/locations/",
+            "telephone": "+1-216-343-1198",
+            "image": f"{SITE}/assets/images/footerImg.png",
+            "priceRange": "$$",
+            "openingHours": "Mo-Fr 08:00-17:00",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1975 Noble Rd, Bldg 329",
+                "addressLocality": "Cleveland",
+                "addressRegion": "OH",
+                "postalCode": "44112",
+                "addressCountry": "US",
+            },
+            "geo": {"@type": "GeoCoordinates", "latitude": 41.5431, "longitude": -81.5676},
+            "medicalSpecialty": "Behavioral",
+            "areaServed": ["Cleveland", "East Cleveland", "Cleveland Heights", "Akron"],
         },
     ],
     "contactPoint": [
@@ -307,7 +351,7 @@ WEBSITE_LD = {
     "@id": f"{SITE}/#website",
     "url": f"{SITE}/",
     "name": "On Target ABA",
-    "description": "ABA therapy and autism testing for children. Quality care without the wait.",
+    "description": "ABA therapy and autism testing for children. Quality care, short wait times.",
     "publisher": {"@id": f"{SITE}/#organization"},
     "inLanguage": "en-US",
     "potentialAction": [{
@@ -334,7 +378,7 @@ WEBSITE_LD = {
 SEO_PAGES = {
     "index.html": {
         "title": "ABA Therapy &amp; Autism Testing | On Target ABA",
-        "desc": "Quality care without the wait. Compassionate, evidence-based ABA therapy and autism testing for children ages 2&ndash;18. Now serving the Salt Lake Valley.",
+        "desc": "Quality care, short wait times. Compassionate, evidence-based ABA therapy and autism testing for children ages 2&ndash;7. Now serving the Salt Lake Valley.",
         "keywords": "ABA therapy, autism testing, applied behavior analysis, autism evaluation Salt Lake City, ABA therapy Cleveland, ABA therapy Columbus, BCBA, early intervention, autism diagnosis Utah",
         "crumbs": [("Home", None)],
         "primary_type": "WebPage",
@@ -348,7 +392,7 @@ SEO_PAGES = {
     },
     "our-process.html": {
         "title": "Our Process — How ABA Therapy Starts &amp; Progresses at On Target ABA",
-        "desc": "From intake to first session in less than 72 hours. Walk through our compassionate, step-by-step ABA therapy process for families.",
+        "desc": "From intake to first session, without the long wait. Walk through our compassionate, step-by-step ABA therapy process for families.",
         "keywords": "ABA intake process, how to start ABA therapy, ABA therapy steps, On Target ABA process",
         "crumbs": [("Home", "index.html"), ("About", "about.html"), ("Our Process", None)],
         "primary_type": "WebPage",
@@ -396,9 +440,9 @@ SEO_PAGES = {
         "primary_type": "Service",
     },
     "autism-testing.html": {
-        "title": "Autism Testing in Salt Lake City — No Waitlist, $0 for Most Families",
-        "desc": "Fast autism evaluations in the Salt Lake Valley. Most families pay $0 through insurance. Usually scheduled within a week.",
-        "keywords": "autism testing Salt Lake City, autism evaluation Utah, autism diagnosis Murray, autism testing no waitlist, free autism testing",
+        "title": "Autism Testing in Salt Lake City — Short Wait Times, $0 for Most Families",
+        "desc": "Fast autism evaluations in the Salt Lake Valley. Most families pay $0 through insurance. Usually scheduled soon.",
+        "keywords": "autism testing Salt Lake City, autism evaluation Utah, autism diagnosis Murray, fast autism testing, free autism testing",
         "crumbs": [("Home", "index.html"), ("Services", "our-services.html"), ("Autism Testing", None)],
         "primary_type": "MedicalProcedure",
     },
@@ -423,11 +467,11 @@ SEO_PAGES = {
         "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Gahanna, Ohio", None)],
         "primary_type": "LocalLocation",
     },
-    "worthington-ohio.html": {
-        "title": "ABA Therapy in Worthington &amp; North Columbus, Ohio &mdash; On Target ABA",
-        "desc": "Center-based and in-home ABA therapy plus autism testing at our Worthington center. Serving Dublin, Powell, Lewis Center, and the north Columbus suburbs.",
-        "keywords": "ABA therapy Worthington OH, ABA therapy north Columbus, autism clinic Dublin Powell, ABA Delaware County",
-        "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Worthington, Ohio", None)],
+    "reynoldsburg-ohio.html": {
+        "title": "ABA Therapy in Reynoldsburg &amp; East Columbus, Ohio &mdash; On Target ABA",
+        "desc": "Center-based and in-home ABA therapy plus autism testing at our new Reynoldsburg center, serving east Columbus.",
+        "keywords": "ABA therapy Reynoldsburg OH, ABA therapy east Columbus, autism clinic east Columbus, ABA Franklin County",
+        "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Reynoldsburg, Ohio", None)],
         "primary_type": "LocalLocation",
     },
     "locations.html": {
@@ -581,7 +625,7 @@ SEO_PAGES = {
     },
     "columbus.html": {
         "title": 'ABA Therapy in Columbus, Ohio — On Target ABA',
-        "desc": 'ABA therapy and autism testing in Columbus, with two metro clinics (Gahanna + Worthington) serving Westerville, Bexley, Dublin, Upper Arlington, and beyond.',
+        "desc": 'ABA therapy and autism testing in Columbus, with centers on Airport Dr and in Reynoldsburg serving Westerville, Bexley, Dublin, Upper Arlington, and beyond.',
         "keywords": "",
         "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Columbus", None)],
         "primary_type": "WebPage",
@@ -623,7 +667,7 @@ SEO_PAGES = {
     },
     "autism-scholarship-program-ohio.html": {
         "title": 'Ohio Autism Scholarship Program: Funding ABA Therapy — On Target ABA',
-        "desc": 'The Ohio Autism Scholarship Program provides up to $32,455/year per child for autism services including ABA. Eligibility, applying, and using it at On Target.',
+        "desc": 'The Ohio Autism Scholarship Program provides up to $34,000/year per child for autism services including ABA. Eligibility, applying, and using it at On Target.',
         "keywords": "",
         "crumbs": [("Home", "index.html"), ("Insurance", "insurance.html"), ("Ohio Autism Scholarship", None)],
         "primary_type": "WebPage",
@@ -665,7 +709,7 @@ SEO_PAGES = {
     },
     "cost-of-autism-evaluation.html": {
         "title": 'How Much Does an Autism Evaluation Cost? — On Target ABA',
-        "desc": 'Most families pay $0 through insurance. Without insurance, typical costs run $2,000-$4,000. Our process: free benefits check, no waitlist.',
+        "desc": 'Most families pay $0 through insurance. Without insurance, typical costs run $2,000-$4,000. Our process: free benefits check, short wait times.',
         "keywords": "",
         "crumbs": [("Home", "index.html"), ("Resources", None), ("Cost of Autism Evaluation", None)],
         "primary_type": "Article",
@@ -846,15 +890,15 @@ def per_page_extras(slug: str, page: dict, page_url: str) -> list[dict]:
                 "latitude": 39.9939,
                 "longitude": -82.8859,
             },
-            "worthington-ohio.html": {
-                "name": "On Target ABA &mdash; Columbus / Worthington",
+            "reynoldsburg-ohio.html": {
+                "name": "On Target ABA &mdash; Columbus / Reynoldsburg",
                 "telephone": "+1-614-681-1030",
-                "streetAddress": "130 E Wilson Bridge Rd, Suite 200",
-                "addressLocality": "Worthington",
+                "streetAddress": "4707 Hilton Corporate Dr",
+                "addressLocality": "Columbus",
                 "addressRegion": "OH",
-                "postalCode": "43085",
-                "latitude": 40.0934,
-                "longitude": -83.0179,
+                "postalCode": "43232",
+                "latitude": 39.9548,
+                "longitude": -82.8121,
             },
         }
         c = clinics.get(slug, clinics["murray-utah.html"])
