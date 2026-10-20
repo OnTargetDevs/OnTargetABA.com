@@ -28,32 +28,49 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Poll the PR's deployments for the CF Pages "preview" environment.
-          # Fall back to a 90s sleep if no deployment shows up.
+          # Cloudflare Pages reports a CHECK RUN named "Cloudflare Pages" on the
+          # head commit (no GitHub deployment, no commit status), and its
+          # details link carries the deployment id. The deployment-specific
+          # host <first 8 hex of id>.ontargetaba.pages.dev serves exactly this
+          # commit's build; the branch alias may still serve the previous one.
+          # Never fall back to another site: auditing the wrong URL is worse
+          # than a red check (that is how every run 2026-10-19..20 scored the
+          # retired website.ontargetnotes.com copy instead of the PR).
           owner_repo="${{ github.repository }}"
           sha="${{ github.event.pull_request.head.sha }}"
+          branch="${{ github.head_ref }}"
+          alias=$(printf '%s' "$branch" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g' | cut -c1-28 | sed -E 's/-+$//')
           url=""
-          for i in $(seq 1 30); do
-            url=$(gh api "repos/$owner_repo/deployments?sha=$sha" --jq \
-              '[.[] | select(.environment | test("preview|Preview"))][0].payload.web_url // empty' 2>/dev/null || true)
-            if [ -n "$url" ]; then
-              echo "Preview ready: $url"
-              break
+          for i in $(seq 1 40); do
+            read -r conclusion details <<EOF2
+          $(gh api "repos/$owner_repo/commits/$sha/check-runs" --jq \
+              '[.check_runs[] | select(.name == "Cloudflare Pages")][0] | "\(.conclusion // "pending") \(.details_url // "")"' 2>/dev/null || echo "pending")
+          EOF2
+            if [ "$conclusion" = "success" ]; then
+              dep=$(printf '%s' "$details" | sed -nE 's#.*/pages/view/ontargetaba/([0-9a-f]{8})[0-9a-f-]*.*#\1#p')
+              if [ -n "$dep" ]; then
+                url="https://$dep.ontargetaba.pages.dev/"
+              else
+                url="https://$alias.ontargetaba.pages.dev/"
+              fi
+              code=$(curl -s -o /dev/null -w '%{http_code}' "$url" || echo 000)
+              if [ "$code" = "200" ]; then
+                echo "Preview ready: $url"
+                break
+              fi
+              echo "Preview built but $url answered $code; retrying ($i/40)..."
+              url=""
+            elif [ "$conclusion" = "failure" ] || [ "$conclusion" = "cancelled" ]; then
+              echo "::error::Cloudflare Pages build $conclusion for $sha"
+              exit 1
+            else
+              echo "Waiting for the Cloudflare Pages build ($i/40)..."
             fi
-            statuses_url=$(gh api "repos/$owner_repo/commits/$sha/status" --jq \
-              '[.statuses[] | select(.context | test("Cloudflare Pages|cloudflare/pages"))][0].target_url // empty' 2>/dev/null || true)
-            if [ -n "$statuses_url" ]; then
-              url="$statuses_url"
-              echo "Preview ready (via status): $url"
-              break
-            fi
-            echo "Waiting for preview deploy ($i/30)..."
             sleep 15
           done
-
           if [ -z "$url" ]; then
-            echo "::warning::No CF Pages preview detected after 7.5min; falling back to staging URL"
-            url="https://website.ontargetnotes.com/"
+            echo "::error::No Cloudflare Pages preview for $sha after 10 min; not auditing a substitute site."
+            exit 1
           fi
           echo "preview_url=$url" >> "$GITHUB_OUTPUT"
 
@@ -61,6 +78,7 @@ jobs:
         id: lhci
         uses: treosh/lighthouse-ci-action@v12
         with:
+          configPath: ./.lighthouserc.json
           urls: ${{ steps.cf-preview.outputs.preview_url }}
           uploadArtifacts: true
           temporaryPublicStorage: true
