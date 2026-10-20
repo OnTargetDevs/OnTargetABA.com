@@ -14,6 +14,15 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-20
 
+### Added
+
+- update header.json (#18)
+- move Worthington to Reynoldsburg, name the Airport buildings, add Nela Park
+- RBT pay $23-$27.50, careers factual audit, two-states + ASP corrections
+
+
+## [Unreleased] &mdash; 2026-10-20
+
 ### Docs
 
 - expand careers-page coverage in website audit (Window 4 request)

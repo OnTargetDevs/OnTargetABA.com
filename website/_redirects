@@ -24,6 +24,9 @@
 /potty-training-program                            /our-services               301
 /locations_/                                       /locations                  301
 /locations_                                        /locations                  301
+# Worthington center moved to Reynoldsburg (2026-10) -> Reynoldsburg page
+/worthington-ohio/                                 /reynoldsburg-ohio          301
+/worthington-ohio                                  /reynoldsburg-ohio          301
 /thankyou/                                         /thank-you                  301
 /thankyou                                          /thank-you                  301
 /blogs/                                            /blog                       301
