@@ -38,7 +38,7 @@ STATIC_PAGES = [
     ("/murray-utah",                      "0.85", "weekly"),
     ("/mayfield-ohio",                    "0.85", "weekly"),
     ("/gahanna-ohio",                     "0.85", "weekly"),
-    ("/worthington-ohio",                 "0.85", "weekly"),
+    ("/reynoldsburg-ohio",                "0.85", "weekly"),
     ("/locations",                        "0.8",  "monthly"),
     ("/about",                            "0.75", "monthly"),
     ("/our-process",                      "0.7",  "monthly"),

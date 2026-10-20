@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "announcementBar": {
-    "text": "New East Cleveland Location (Nela Park) Opening Soon!",
+    "text": "New East Cleveland Location (Nela Park) Now Open!",
     "linkLabel": "",
     "linkHref": ""
   },
@@ -206,7 +206,7 @@
         null
       ]
     ],
-    "/worthington-ohio": [
+    "/reynoldsburg-ohio": [
       [
         "Home",
         "/"
@@ -216,7 +216,7 @@
         "/locations"
       ],
       [
-        "Worthington, OH",
+        "Reynoldsburg, OH",
         null
       ]
     ],
@@ -776,7 +776,7 @@
     "/murray-utah": "Locations",
     "/mayfield-ohio": "Locations",
     "/gahanna-ohio": "Locations",
-    "/worthington-ohio": "Locations",
+    "/reynoldsburg-ohio": "Locations",
     "/faqs": "FAQs",
     "/careers": "Careers",
     "/job-application": "Careers",
