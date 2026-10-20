@@ -3,7 +3,7 @@ title: How ABA Therapy Supports the Whole Family—Not Just the Child
 date: 2025-08-11
 category: Getting Started with ABA
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/08/pexels-elena-todos-2147667769-29702168-1024x683.jpg"
+hero_image: "/assets/blog/images/aba-therapy-supports-whole-family/pexels-elena-todos-2147667769-29702168-1024x683.jpg"
 excerpt: ABA therapy extends beyond helping children with autism develop skills—it supports parents, caregivers, and entire families through coaching and collaboration, empowering all household members.
 read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/08/11/aba-therapy-supports-whole-family/"
