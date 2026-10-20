@@ -94,6 +94,7 @@
   --c-teal-deep:  #0E5E6E;
   --c-teal-soft:  #D6F0F8;
   --c-coral:      #E84F3B;
+  --c-coral-btn:  #CE4635;
   --c-coral-soft: #FCE0DA;
   --c-sun:        #F4C842;
   --c-sun-soft:   #FFF1C2;
@@ -101,7 +102,7 @@
   --c-sage-soft:  #E6F1EB;
   --c-cream:      #FAF5E6;
   --c-paper:      #FFFFFF;
-  --c-mute:       #6B7E8F;
+  --c-mute:       #607181;
   --c-line:       #E8DFD0;
 
   --shadow-soft:  0 1px 2px rgba(11,34,51,.04), 0 8px 24px rgba(11,34,51,.06);
@@ -321,10 +322,10 @@ body {
 }
 .btn:active { transform: translateY(1px); }
 .btn-coral {
-  background: var(--c-coral); color: #fff;
+  background: var(--c-coral-btn); color: #fff;
   box-shadow: var(--shadow-coral);
 }
-.btn-coral:hover { background: #F26A57; transform: translateY(-2px); }
+.btn-coral:hover { background: var(--c-coral); transform: translateY(-2px); }
 .btn-ink {
   background: var(--c-ink); color: #fff;
 }
@@ -838,3 +839,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .review-track { animation: none; }
 }
+
+/* ── Accessibility token overrides ─────────────────────────────────────────
+   Tailwind's inline config still references the old hex; these rules bind
+   the utility classes to the design-token values so contrast targets hold
+   even when Tailwind regenerates the utilities.                             */
+.text-mute { color: var(--c-mute) !important; }
+.text-coral { color: var(--c-coral-btn) !important; }
