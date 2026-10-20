@@ -14,6 +14,14 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-20
 
+### Docs
+
+- expand careers-page coverage in website audit (Window 4 request)
+- website factual-accuracy audit (2026-10-19)
+
+
+## [Unreleased] &mdash; 2026-10-20
+
 ### Added
 
 - localise 40 hotlinked hero images off the WordPress box
