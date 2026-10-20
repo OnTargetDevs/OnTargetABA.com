@@ -3,7 +3,7 @@ title: "Autism & Religion: How Faith Communities Can Welcome and Support Autisti
 date: 2025-12-06
 category: Community & Events, Getting Started with ABA, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-askar-abayev-5638605-1024x683.jpg"
+hero_image: "/assets/blog/images/autism-religion-how-faith-communities-can-welcome-and-support-autistic-children/pexels-askar-abayev-5638605-1024x683.jpg"
 excerpt: Faith communities can become welcoming spaces for autistic children through sensory accommodations and predictable routines. With thoughtful adjustments, worship environments can help neurodivergent families feel included and supported.
 read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/12/06/autism-religion-how-faith-communities-can-welcome-and-support-autistic-children/"

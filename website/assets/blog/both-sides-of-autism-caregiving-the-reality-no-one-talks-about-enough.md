@@ -3,7 +3,7 @@ title: "Both Sides of Autism Caregiving: The Reality No One Talks About Enough"
 date: 2026-04-10
 category: Community & Events
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-cottonbro-4569329-1024x683.jpg"
+hero_image: "/assets/blog/images/both-sides-of-autism-caregiving-the-reality-no-one-talks-about-enough/pexels-cottonbro-4569329-1024x683.jpg"
 excerpt: The blog explores the authentic experiences of both autism families and ABA professionals, examining the enormous love and equally enormous exhaustion that defines caregiving while highlighting how understanding both perspectives enables truly effective therapy.
 read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/10/both-sides-of-autism-caregiving-the-reality-no-one-talks-about-enough/"

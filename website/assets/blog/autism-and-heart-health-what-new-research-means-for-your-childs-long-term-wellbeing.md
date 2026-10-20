@@ -3,7 +3,7 @@ title: "Autism and Heart Health: What New Research Means for Your Child's Long-T
 date: 2026-06-10
 category: Developmental Milestones
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/06/pexels-edward-jenner-4031321-1024x683.jpg"
+hero_image: "/assets/blog/images/autism-and-heart-health-what-new-research-means-for-your-childs-long-term-wellbeing/pexels-edward-jenner-4031321-1024x683.jpg"
 excerpt: New research from the American Heart Association and Autism Speaks reveals that autistic people face significantly higher risks for heart disease, high blood pressure, and diabetes. A joint fellowship program is now funding researchers to close critical gaps in cardiovascular care.
 read_time: 9 min read
 source_url: "https://ontargetaba.com/2026/06/10/autism-and-heart-health-what-new-research-means-for-your-childs-long-term-wellbeing/"

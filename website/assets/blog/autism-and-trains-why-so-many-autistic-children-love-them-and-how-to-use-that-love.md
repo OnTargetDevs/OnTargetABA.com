@@ -3,7 +3,7 @@ title: "Autism and Trains: Why So Many Autistic Children Love Them — and How t
 date: 2026-05-21
 category: ABA Therapy Basics
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-brett-sayles-3633710-1024x681.jpg"
+hero_image: "/assets/blog/images/autism-and-trains-why-so-many-autistic-children-love-them-and-how-to-use-that-love/pexels-brett-sayles-3633710-1024x681.jpg"
 excerpt: The connection between autism and trains represents one of the most recognized patterns in autism research. This article explores why trains appeal to autistic individuals, the neuroscience behind special interests, and how ABA therapy leverages these passions as powerful tools.
 read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/05/21/autism-and-trains-why-so-many-autistic-children-love-them-and-how-to-use-that-love/"

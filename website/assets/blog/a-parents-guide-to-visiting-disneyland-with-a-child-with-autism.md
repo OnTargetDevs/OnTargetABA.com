@@ -3,7 +3,7 @@ title: A Parent's Guide to Visiting Disneyland With a Child With Autism
 date: 2025-12-13
 category: ABA Therapy Basics, Developmental Milestones, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-john-tekeridis-21837-28505392-1024x683.jpg"
+hero_image: "/assets/blog/images/a-parents-guide-to-visiting-disneyland-with-a-child-with-autism/pexels-john-tekeridis-21837-28505392-1024x683.jpg"
 excerpt: Planning a Disneyland trip with an autistic child can feel overwhelming, but with proper preparation, sensory supports, and accommodations, families can create a magical, low-stress experience. The guide covers sensory planning, disability services access, quiet spaces, and practical strategies.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/12/13/a-parents-guide-to-visiting-disneyland-with-a-child-with-autism/"
