@@ -42,10 +42,9 @@ jobs:
           alias=$(printf '%s' "$branch" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g' | cut -c1-28 | sed -E 's/-+$//')
           url=""
           for i in $(seq 1 40); do
-            read -r conclusion details <<EOF2
-          $(gh api "repos/$owner_repo/commits/$sha/check-runs" --jq \
-              '[.check_runs[] | select(.name == "Cloudflare Pages")][0] | "\(.conclusion // "pending") \(.details_url // "")"' 2>/dev/null || echo "pending")
-          EOF2
+            info=$(gh api "repos/$owner_repo/commits/$sha/check-runs" --jq '[.check_runs[] | select(.name == "Cloudflare Pages")][0] | "\(.conclusion // "pending")|\(.details_url // "")"' 2>/dev/null || echo "pending|")
+            conclusion="${info%%|*}"
+            details="${info#*|}"
             if [ "$conclusion" = "success" ]; then
               dep=$(printf '%s' "$details" | sed -nE 's#.*/pages/view/ontargetaba/([0-9a-f]{8})[0-9a-f-]*.*#\1#p')
               if [ -n "$dep" ]; then
