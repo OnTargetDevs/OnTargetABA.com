@@ -3,7 +3,7 @@ title: 7 Ways to Help a Child With Nonverbal Autism Learn to Communicate
 date: 2026-01-29
 category: Developmental Milestones, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-pavel-danilyuk-8422142-1024x684.jpg"
+hero_image: "/assets/blog/images/7-ways-to-help-a-child-with-nonverbal-autism-learn-to-communicate/pexels-pavel-danilyuk-8422142-1024x684.jpg"
 excerpt: The piece explains that communication for nonverbal autistic children extends beyond spoken words, offering seven evidence-based strategies parents can use to support their child's development with proper tools and professional support.
 read_time: 3 min read
 source_url: "https://ontargetaba.com/2026/01/29/7-ways-to-help-a-child-with-nonverbal-autism-learn-to-communicate/"

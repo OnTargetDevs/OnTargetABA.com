@@ -61,7 +61,7 @@ These are the real Jotform IDs you should embed in the corresponding pages:
 | `autism-testing.html` (eval scheduler) | `260534406459156` | `<script src="https://form.jotform.com/jsform/260534406459156"></script>` |
 | `job-application.html` + `employment-application.html` (job application) | `210610411740034` | `<script src="https://form.jotform.com/jsform/210610411740034"></script>` |
 
-When you embed, wrap the script in a styled container (matching `.bg-white ring-1 ring-line rounded-3xl shadow-soft p-6`-style) so the form drops into the design language. The Jotform script self-replaces with the form iframe at load time.
+When you embed, wrap the form in a styled container (matching `.bg-white ring-1 ring-line rounded-3xl shadow-soft p-6`-style) so it drops into the design language. Pages do NOT include the Jotform `jsform` script: they carry a `<div data-jotform-id="<id>" data-jotform-min-height="700">` holding a `[data-jotform-placeholder]` "Loading…" div, and `assets/js/app.js` mounts a direct `https://form.jotform.com/<id>` iframe the moment it runs, turns the placeholder into a spinner overlay (`.jot-loading` in `app.css`) that stays until Jotform posts its first `setHeight:<px>:<id>` message or the iframe's load event fires, and after 20 s swaps the label for an "Open the form in a new tab" link (Nate 2026-10-19: the contact form showed a blank card for up to ~9 s on a cold load). The same listener fires the GA4 `form_submission` event on `submission-completed`.
 
 ## "AI intake agent" = lead-bot widget
 

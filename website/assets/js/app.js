@@ -145,12 +145,16 @@
     counters.forEach((c) => cio.observe(c));
   }
 
-  // ---------- Lazy-load Jotform iframes ----------
+  // ---------- Jotform iframes ----------
   // Replaces the old <script src="form.jotform.com/jsform/{id}"> sync
-  // tag, which used document.write and blocked render. We render an
-  // iframe when the placeholder is within ~800px of the viewport (or
-  // 2.5s after first paint as a failsafe), then attach Jotform's
-  // auto-resize handler once so the iframe grows with its content.
+  // tag, which used document.write and blocked render. The iframe mounts
+  // as soon as this script runs (these pages exist for their form; the
+  // earlier near-viewport lazy mount only delayed below-the-fold forms),
+  // the "Loading…" placeholder becomes a spinner overlay that stays until
+  // Jotform reports its first height (or the iframe's load event fires),
+  // and after 20 s it offers the direct link so nobody is left staring at
+  // a blank card. Jotform's auto-resize handler is attached once so the
+  // iframe grows with its content.
   const jotPlaceholders = document.querySelectorAll('[data-jotform-id]');
   if (jotPlaceholders.length) {
     // ---------- GA4 form_submission tracking ----------
@@ -205,25 +209,89 @@
         document.head.appendChild(s);
       });
     };
+
+    // ---------- Loading state ----------
+    const FALLBACK_MS = 20000;
+    const pending = Object.create(null); // formId -> { host, ph, timer }
+    const settle = (id) => {
+      const p = pending[id];
+      if (!p) return;
+      delete pending[id];
+      clearTimeout(p.timer);
+      p.host.removeAttribute('aria-busy');
+      p.ph.classList.add('is-done');
+      setTimeout(() => p.ph.remove(), 300);
+    };
+    // Jotform's first "setHeight:<px>:<formID>" means the form has rendered —
+    // it arrives well before the iframe's own load event, which waits for
+    // every asset inside the form.
+    window.addEventListener('message', (ev) => {
+      if (!ev.origin || ev.origin.indexOf('jotform') === -1) return;
+      const data = ev.data;
+      let id = '';
+      let isHeight = false;
+      if (typeof data === 'string') {
+        const parts = data.split(':');
+        isHeight = parts[0] === 'setHeight' || parts[0] === 'setMinHeight';
+        if (isHeight) id = parts[2] || '';
+      } else if (data && typeof data === 'object' && data.formID) {
+        id = String(data.formID);
+        isHeight = /height/i.test(String(data.action || data.type || ''));
+      }
+      if (!isHeight) return;
+      if (id && pending[id]) { settle(id); return; }
+      const ids = Object.keys(pending);
+      if (!id && ids.length === 1) settle(ids[0]);
+    });
+    const showFallback = (id) => {
+      const p = pending[id];
+      if (!p) return;
+      const label = p.ph.querySelector('.jot-loading-label');
+      if (label) label.textContent = 'This is taking longer than usual.';
+      const a = document.createElement('a');
+      a.className = 'btn btn-coral';
+      a.href = 'https://form.jotform.com/' + id;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = 'Open the form in a new tab';
+      p.ph.appendChild(a);
+    };
+
     const mountForm = async (host) => {
       if (host.dataset.jotMounted) return;
       host.dataset.jotMounted = '1';
       const id = host.dataset.jotformId;
       const minH = host.dataset.jotformMinHeight || '600';
+
+      let ph = host.querySelector('[data-jotform-placeholder]');
+      if (!ph) {
+        ph = document.createElement('div');
+        ph.setAttribute('data-jotform-placeholder', '');
+        host.appendChild(ph);
+      }
+      const labelText = (ph.textContent || '').trim() || 'Loading the form\u2026';
+      ph.className = 'jot-loading';
+      ph.setAttribute('role', 'status');
+      ph.setAttribute('aria-live', 'polite');
+      ph.innerHTML = '<span class="jot-spinner" aria-hidden="true"></span><span class="jot-loading-label"></span>';
+      ph.querySelector('.jot-loading-label').textContent = labelText;
+      host.setAttribute('aria-busy', 'true');
+
       const iframe = document.createElement('iframe');
       iframe.id = 'JotFormIFrame-' + id;
       iframe.title = 'Form';
       iframe.allowTransparency = 'true';
       iframe.setAttribute('allow', 'geolocation; microphone; camera; fullscreen; payment');
-      iframe.src = 'https://form.jotform.com/' + id;
       iframe.setAttribute('frameborder', '0');
       iframe.scrolling = 'no';
       iframe.setAttribute('style',
         'min-width:100%;max-width:100%;width:100%;height:' + minH + 'px;border:none;'
       );
-      const ph = host.querySelector('[data-jotform-placeholder]');
-      if (ph) ph.remove();
-      host.appendChild(iframe);
+      iframe.addEventListener('load', () => settle(id));
+      pending[id] = { host, ph, timer: setTimeout(() => showFallback(id), FALLBACK_MS) };
+      iframe.src = 'https://form.jotform.com/' + id;
+      host.insertBefore(iframe, ph);
+
       await loadHandler();
       if (window.jotformEmbedHandler) {
         try {
@@ -231,13 +299,7 @@
         } catch (e) { /* swallow */ }
       }
     };
-    const jotIo = new IntersectionObserver((entries, obs) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { mountForm(e.target); obs.unobserve(e.target); }
-      });
-    }, { rootMargin: '800px' });
-    jotPlaceholders.forEach(el => jotIo.observe(el));
-    setTimeout(() => jotPlaceholders.forEach(mountForm), 2500);
+    jotPlaceholders.forEach(mountForm);
   }
 
   // ---------- Lazy-load the configured chat widget ----------

@@ -3,7 +3,7 @@ title: "Bubble & Music Party: How On Target ABA's Gahanna EL Center Kicked Off A
 date: 2026-04-24
 category: Clinic Updates
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/bubble-party-banner-1024x683.png"
+hero_image: "/assets/blog/images/bubble-music-party-how-on-target-abas-gahanna-el-center-kicked-off-autism-acceptance-month/bubble-party-banner-1024x683.png"
 excerpt: This April, the team at On Target ABA's Gahanna EL Center planned special sensory activities for every Tuesday of Autism Acceptance Month. Week one featured a Bubble & Music Party — a sensory-rich celebration exploring why sensory play matters in ABA therapy.
 read_time: 6 min read
 source_url: "https://ontargetaba.com/2026/04/24/bubble-music-party-how-on-target-abas-gahanna-el-center-kicked-off-autism-acceptance-month/"

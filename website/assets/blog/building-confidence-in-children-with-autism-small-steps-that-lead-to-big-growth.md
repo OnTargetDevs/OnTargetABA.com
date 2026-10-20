@@ -3,7 +3,7 @@ title: "Building Confidence in Children With Autism: Small Steps That Lead to Bi
 date: 2026-02-10
 category: Developmental Milestones
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-cottonbro-3661453-1024x683.jpg"
+hero_image: "/assets/blog/images/building-confidence-in-children-with-autism-small-steps-that-lead-to-big-growth/pexels-cottonbro-3661453-1024x683.jpg"
 excerpt: Confidence grows in children with autism through encouragement, practice, and meaningful successes. ABA therapy builds confidence by breaking learning into manageable steps and celebrating each achievement.
 read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/02/10/building-confidence-in-children-with-autism-small-steps-that-lead-to-big-growth/"

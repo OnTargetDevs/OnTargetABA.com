@@ -3,7 +3,7 @@ title: "A Fresh Start: New Year Inspiration for Parents of Children With Autism"
 date: 2026-01-08
 category: Life at On Target ABA, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-vlada-karpovich-4609070-scaled-e1767889440361-1024x604.jpg"
+hero_image: "/assets/blog/images/a-fresh-start-new-year-inspiration-for-parents-of-children-with-autism/pexels-vlada-karpovich-4609070-scaled-e1767889440361-1024x604.jpg"
 excerpt: The new year offers families a chance to reset and celebrate progress already made. The post provides gentle reminders and encouragement for parents of children with autism, emphasizing how small moments drive long-term growth.
 read_time: 1 min read
 source_url: "https://ontargetaba.com/2026/01/08/a-fresh-start-new-year-inspiration-for-parents-of-children-with-autism/"
