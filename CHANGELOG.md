@@ -12,6 +12,17 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-10-20
+
+### Added
+
+- localise 40 hotlinked hero images off the WordPress box
+
+### Changed
+
+- spinner until the Jotform renders, mount it immediately, 20 s fallback link
+
+
 ## [Unreleased] &mdash; 2026-10-19
 
 ### Added
