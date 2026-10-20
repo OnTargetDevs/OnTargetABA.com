@@ -14,6 +14,16 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-20
 
+### Changed
+
+- preload the Fraunces weight the hero actually uses (400, not 700)
+- reserve header height to eliminate layout shift (CLS 0.24 -> ~0)
+- convert the hero photo to WebP (374 KB PNG -> 41 KB)
+- precompile Tailwind instead of the in-browser CDN JIT
+
+
+## [Unreleased] &mdash; 2026-10-20
+
 ### Added
 
 - training on paid time at the center, community work options, sourced supervision benefit
