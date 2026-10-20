@@ -42,6 +42,9 @@ node scripts/selfhost-fonts.mjs
 echo "==> Sweeping HTML for skip-to-content links..."
 node scripts/add-skip-link.mjs
 
+echo "==> Optimizing images (PNG -> WebP)..."
+python3 scripts/optimize-images.py
+
 echo "==> Compiling Tailwind stylesheet (assets/css/tailwind.css)..."
 node scripts/build-tailwind.mjs
 
