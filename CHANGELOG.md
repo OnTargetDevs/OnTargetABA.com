@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Added
 
+- training on paid time at the center, community work options, sourced supervision benefit
+
+
+## [Unreleased] &mdash; 2026-10-20
+
+### Added
+
 - apply CEO rulings 2026-10-20 (timing wording, ages, Jon Peterson, ASP figure)
 
 
