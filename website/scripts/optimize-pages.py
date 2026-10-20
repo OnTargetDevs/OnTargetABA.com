@@ -164,6 +164,15 @@ def build_perf_block(page_path: str) -> str:
     lines = [
         START,
         '<meta name="view-transition" content="same-origin">',
+        # CLS guard: #site-header is an empty placeholder that header.js
+        # replaces with the announcement bar + sticky nav on load. Reserve
+        # its rendered height so the hero below it doesn't jump down when
+        # the header paints (was the page's entire ~0.24 CLS). Heights are
+        # measured: 113px on mobile, 118px at the lg breakpoint where the
+        # desktop nav row is slightly taller. No effect on the final layout
+        # (the id is gone once the header is injected).
+        '<style id="ota-cls-reserve">#site-header{min-height:113px}'
+        '@media(min-width:1024px){#site-header{min-height:118px}}</style>',
         # PWA + favicon / touch icons. The PNG variants come from the
         # legacy WordPress favicon (real branded mark, not the generic
         # bullseye). Browsers pick the appropriate size; SVG fallback
