@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-20
 
+### Fixed
+
+- insurance page uses the HIPAA Jotform instead of a raw form that put PHI in the URL
+
+
+## [Unreleased] &mdash; 2026-10-20
+
 ### Added
 
 - update header.json (#18)
