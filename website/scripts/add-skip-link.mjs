@@ -22,7 +22,9 @@ function walk(dir, out = []) {
     const p = join(dir, entry);
     const st = statSync(p);
     if (st.isDirectory()) {
-      if (['node_modules', '.git', 'scraped', 'figma-refs', 'scripts', 'assets'].includes(entry)) continue;
+      if (['node_modules', '.git', 'scraped', 'figma-refs', 'scripts', 'assets', 'lp-assets'].includes(entry)) continue;
+      // Google Ads landing pages are served verbatim from the agency's static bundle (2026-10-21); never rewrite them.
+      if (/^(aba-therapy-(cleveland|col)-lp-g(-brand)?|aba-therapy-salt-lake-city-lp-g-(new|brand)|autism-testing-autism-evaluations-columbus-g-lp|on-target-aba-autism-testing-autism-evaluations|thank-you-confirmation)$/.test(entry)) continue;
       walk(p, out);
     } else if (entry.endsWith('.html')) {
       out.push(p);
