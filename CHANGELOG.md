@@ -12,6 +12,22 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-10-22
+
+### Changed
+
+- load the chat widget on first interaction (20 s fallback), not 2 s after load
+
+### Docs
+
+- record the 2026-10-20 Lighthouse round (what merged, measured scores, what is left)
+
+### Chore
+
+- read the check-run conclusion without a heredoc (robust under YAML dedent)
+- audit the PR's real Cloudflare preview, never the old staging site
+
+
 ## [Unreleased] &mdash; 2026-10-20
 
 ### Changed
