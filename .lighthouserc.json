@@ -1,0 +1,10 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 3,
+      "settings": {
+        "skipAudits": ["is-crawlable"]
+      }
+    }
+  }
+}
