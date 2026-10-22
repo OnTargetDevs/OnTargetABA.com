@@ -62,7 +62,7 @@ tailwind.config = {
       <div>
         <p class="admin-eyebrow mb-1">Tracking &amp; analytics</p>
         <h1 class="admin-h1">Scripts in &lt;head&gt;</h1>
-        <p class="admin-muted">Paste any HTML you want injected into the <code>&lt;head&gt;</code> of every public page &mdash; Google Analytics, Google Ads tag, Facebook Pixel, Hotjar, WhatConverts, custom snippets, anything.</p>
+        <p class="admin-muted">Paste any HTML you want injected into the <code>&lt;head&gt;</code> of every public page &mdash; Google Analytics, Google Ads tag, Facebook Pixel, Hotjar, WhatConverts, custom snippets, anything. Keep the timing wrappers that are in the current snippet (the Google tag loads after the window load event and immediately on the thank-you pages; Hotjar loads on the first scroll or tap): the ads team set them on 2026-10-20, and pasting the vendors' plain snippets would undo them and slow first paint again.</p>
       </div>
       <div class="flex items-center gap-2">
         <span data-saving class="admin-muted" style="font-size:0.85rem;"></span>
