@@ -193,7 +193,7 @@ ORG_LD = {
                 "postalCode": "43232",
                 "addressCountry": "US",
             },
-            "geo": {"@type": "GeoCoordinates", "latitude": 39.9548, "longitude": -82.8121},
+            "geo": {"@type": "GeoCoordinates", "latitude": 39.9352, "longitude": -82.8705},
             "medicalSpecialty": "Behavioral",
             "areaServed": ["Reynoldsburg", "Columbus", "Franklin County"],
         },
@@ -897,8 +897,8 @@ def per_page_extras(slug: str, page: dict, page_url: str) -> list[dict]:
                 "addressLocality": "Columbus",
                 "addressRegion": "OH",
                 "postalCode": "43232",
-                "latitude": 39.9548,
-                "longitude": -82.8121,
+                "latitude": 39.9352,
+                "longitude": -82.8705,
             },
         }
         c = clinics.get(slug, clinics["murray-utah.html"])
