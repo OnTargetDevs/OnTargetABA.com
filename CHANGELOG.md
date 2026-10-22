@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-22
 
+### Added
+
+- pin the 4707 Hilton Corporate Dr center at the building, not the Reynoldsburg town centre
+
+
+## [Unreleased] &mdash; 2026-10-22
+
 ### Changed
 
 - load the chat widget on first interaction (20 s fallback), not 2 s after load
