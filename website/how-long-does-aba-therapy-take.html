@@ -8,8 +8,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/plus-jakarta-sans-600.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/plus-jakarta-sans-400.woff2">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/fraunces-400.woff2">
-<link rel="stylesheet" href="/assets/css/app.css?v=91a26bdc" />
-<link rel="stylesheet" href="/assets/css/tailwind.css?v=91a26bdc">
+<link rel="stylesheet" href="/assets/css/app.css?v=4abe7b18" />
+<link rel="stylesheet" href="/assets/css/tailwind.css?v=4abe7b18">
 <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 <link rel="icon" type="image/png" href="/assets/images/footerImg.png">
 <link rel="apple-touch-icon" href="/assets/images/footerImg.png">
@@ -419,8 +419,15 @@
 <link rel="prefetch" href="/autism-testing.html">
 <link rel="prefetch" href="/locations.html">
 <!-- auto-perf head-scripts start -->
-<!-- Google tag (gtag.js) -- handles both GA4 properties and Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHLC29WGVN"></script>
+<!-- Google tag (gtag.js) -- both GA4 properties + Google Ads.
+     Timing (ads lane, 2026-10-20): the gtag.js script is fetched after the
+     window load event, i.e. after first paint. It is never gated on a tap
+     or scroll, which would lose the Google click cookie and the pageview
+     when a visitor's first tap is a navigation. Exception: the thank-you
+     pages load it immediately, because the form conversion fires there
+     with no interaction. A 5 s fallback covers pages whose load event is
+     held up by a slow iframe (the Jotform pages). The config calls queue
+     in dataLayer and replay the moment the script runs. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -428,21 +435,42 @@
   gtag('config', 'G-PHLC29WGVN');
   gtag('config', 'G-D3RBZZ5WPL');
   gtag('config', 'AW-354317910');
+  (function(w,d){
+    var done = false;
+    function load(){
+      if (done) return; done = true;
+      var s = d.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PHLC29WGVN';
+      d.head.appendChild(s);
+    }
+    var immediate = /^\/thank-you(-confirmation)?(\.html)?\/?$/.test(w.location.pathname);
+    if (immediate || d.readyState === 'complete') { load(); return; }
+    w.addEventListener('load', load, {once: true});
+    w.setTimeout(load, 5000);
+  })(window, document);
 </script>
 
-<!-- Hotjar Tracking Code -->
+<!-- Hotjar Tracking Code -- loads on the first scroll, tap, mouse move
+     or key press (ads lane, 2026-10-20: it carries no attribution, so it
+     stays out of the way of first paint). No interaction, no recording. -->
 <script>
-  (function(h,o,t,j,a,r){
-      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-      h._hjSettings={hjid:5016360,hjsv:6};
-      a=o.getElementsByTagName('head')[0];
-      r=o.createElement('script');r.async=1;
+  (function(h,o,t,j){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:5016360,hjsv:6};
+    var evs=['mousemove','touchstart','pointerdown','keydown','scroll'], done=false;
+    function load(){
+      if (done) return; done = true;
+      evs.forEach(function(e){ o.removeEventListener(e, load); });
+      var r=o.createElement('script');r.async=1;
       r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-      a.appendChild(r);
+      o.head.appendChild(r);
+    }
+    evs.forEach(function(e){ o.addEventListener(e, load, {passive:true}); });
   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 
-<!-- WhatConverts call tracking (account 159348) -->
+<!-- WhatConverts call tracking (account 159348) -- timing unchanged:
+     its number swap must happen before the visitor reads the number. -->
 <script async type="text/javascript" src="https://s.wc-data.com/159348/wc.js"></script>
 <!-- auto-perf head-scripts end -->
 <!-- auto-perf-end -->
@@ -881,8 +909,8 @@
 <!-- ============ FOOTER ============ -->
 <div id="site-footer" aria-busy="true"></div>
 
-<script src="/assets/js/header.js?v=91a26bdc" defer></script>
-<script src="/assets/js/footer.js?v=91a26bdc" defer></script>
-<script src="/assets/js/app.js?v=91a26bdc" defer></script>
+<script src="/assets/js/header.js?v=4abe7b18" defer></script>
+<script src="/assets/js/footer.js?v=4abe7b18" defer></script>
+<script src="/assets/js/app.js?v=4abe7b18" defer></script>
 </body>
 </html>
