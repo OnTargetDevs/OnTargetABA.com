@@ -410,13 +410,16 @@
     document.head.appendChild(s);
   };
 
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(loadWidget, { timeout: 2000 });
-  } else {
-    setTimeout(loadWidget, 1500);
-  }
-  // Also load on first user interaction for users on slow connections.
-  const interactionEvents = ['mousemove', 'touchstart', 'keydown', 'scroll'];
+  // Load on the first user interaction, with a long fallback for visitors
+  // who never move. The widget (LeadTrap launcher + the carelu.com chat
+  // bundle, ~380 KB / ~1.1 s of main-thread work on a phone) used to start
+  // ~2 s after load; queued behind the analytics tags it then executed at
+  // ~10 s and repainted the hero headline, which is what Lighthouse scored
+  // as a 10.4 s LCP (the headline is actually on screen at 2.2 s). Anyone
+  // who scrolls, taps or moves the pointer still gets the launcher at once.
+  const WIDGET_FALLBACK_MS = 20000;
+  setTimeout(loadWidget, WIDGET_FALLBACK_MS);
+  const interactionEvents = ['mousemove', 'touchstart', 'pointerdown', 'keydown', 'scroll'];
   const earlyLoad = () => {
     loadWidget();
     interactionEvents.forEach((e) => removeEventListener(e, earlyLoad));
