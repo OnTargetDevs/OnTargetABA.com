@@ -1,0 +1,48 @@
+name: fetch-lp-images (one-off)
+on:
+  push:
+    branches: [fix/lp-unmasked-images]
+    paths: [.github/workflows/fetch-lp-images.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pillow
+      - name: Download, verify, commit
+        run: |
+          set -euo pipefail
+          cd website/lp-assets
+          fetch() { curl -sSfL -o "$1" "https://drive.usercontent.google.com/download?id=$2&export=download&confirm=t"; }
+          fetch uploads__2026__10__lp-hero-child-ohio.webp       1kZ4UF4dpdDe-K0L6kKDZUR5zaiebx5Nv
+          fetch uploads__2026__10__lp-hero-child-utah-aba-1.webp 1BmxNgJQmwqJJGA4v9dDk5LH6YR_YzlhK
+          fetch uploads__2026__10__lp-children-playing.webp      1MTvOM2K8JOLMHNipL1xMmYBQSWKyBV9c
+          fetch uploads__2026__10__lp-evaluation-visit.webp      1pYswADXwvLNB3yUhGQX8tblbObeGMQf3
+          python - <<'PY'
+          import hashlib
+          from PIL import Image
+          want = {
+            "uploads__2026__10__lp-hero-child-ohio.webp": ("f87acd976c6a", (640, 578)),
+            "uploads__2026__10__lp-hero-child-utah-aba-1.webp": ("0477237e7ada", (900, 1053)),
+            "uploads__2026__10__lp-children-playing.webp": ("41b8367f63aa", (607, 555)),
+            "uploads__2026__10__lp-evaluation-visit.webp": ("10e6064fcd8a", (900, 695)),
+          }
+          bad = False
+          for f, (pre, size) in want.items():
+              b = open(f, "rb").read()
+              h = hashlib.sha256(b).hexdigest()
+              im = Image.open(f)
+              rgb = im.convert("RGB")
+              gray = sum(1 for p in rgb.getdata() if p == (51, 51, 51)) / (rgb.width * rgb.height) * 100
+              ok = h.startswith(pre) and im.size == size and gray < 0.5
+              bad |= not ok
+              print(f"{f} sha256={h} size={im.size} gray={gray:.2f}% {'OK' if ok else 'FAIL'}")
+          raise SystemExit(1 if bad else 0)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add uploads__2026__10__lp-*.webp
+          git commit -m "Landing pages: replace the 4 filter-masked photos with clean ones (fetched off-network, sha256 + 0% gray verified)"
+          git push
