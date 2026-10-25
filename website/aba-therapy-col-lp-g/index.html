@@ -379,7 +379,9 @@ a.inline-link:hover,a.text-link:hover,.elementor a.inline-link:hover,.elementor 
     const present = KEYS.filter(k => url.searchParams.get(k));
     const store = (k, v) => { try { sessionStorage.setItem('ot_' + k, v); } catch (e) {} try { document.cookie = 'ot_' + k + '=' + encodeURIComponent(v) + ';max-age=7776000;path=/;SameSite=Lax;Secure'; } catch (e) {} };
     const read = k => { try { const s = sessionStorage.getItem('ot_' + k); if (s) return s; } catch (e) {} const m = document.cookie.match(new RegExp('(?:^|; )ot_' + k + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : ''; };
-    if (present.length) { present.forEach(k => store(k, url.searchParams.get(k))); }
+    const V = '2'; const purge = () => KEYS.forEach(k => { try { sessionStorage.removeItem('ot_' + k); } catch (e) {} try { document.cookie = 'ot_' + k + '=;max-age=0;path=/;SameSite=Lax;Secure'; } catch (e) {} });
+    if (read('v') !== V) { purge(); store('v', V); }
+    if (present.length) { purge(); present.forEach(k => store(k, url.searchParams.get(k))); }
     else { let changed = false; KEYS.forEach(k => { const v = read(k); if (v) { url.searchParams.set(k, v); changed = true; } }); if (changed) history.replaceState(history.state, '', url.toString()); }
   } catch (e) {}
 })();
