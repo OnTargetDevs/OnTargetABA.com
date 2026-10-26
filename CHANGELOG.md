@@ -12,6 +12,17 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-10-26
+
+### Changed
+
+- load the Google tag after window load and Hotjar on first interaction
+
+### Docs
+
+- record the head-snippet tag-timing rule in CLAUDE.md
+
+
 ## [Unreleased] &mdash; 2026-10-22
 
 ### Added
