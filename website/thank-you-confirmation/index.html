@@ -358,7 +358,9 @@ a.inline-link:hover,a.text-link:hover,.elementor a.inline-link:hover,.elementor 
   <meta name="robots" content="noindex">
 <!-- site tags: static bundle 2026-10-21 -->
 <!-- Google Tag Manager (both containers), immediate as on the live thank-you page -->
-<script>function ota_gtm(){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-W42536PM';document.head.appendChild(s);})();window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-N2RP5GST';document.head.appendChild(s);})();}ota_gtm();</script>
+<script>function ota_gtm(){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-W42536PM';document.head.appendChild(s);})();window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-N2RP5GST';document.head.appendChild(s);})();}
+/* Frame escape (page audit 2026-10-28): the Jotform embeds on the ad pages submit inside their own iframe (Jotform's forms.js sets target="_top" only for two hard-coded customers), so this page can land INSIDE the ~540px form card. When that happens, move the whole browser window to this page so the parent sees the full confirmation and a single chat bubble. Tags start exactly once: immediately at top level; inside a frame only after 1.5 s and only if the frame is still alive (escape failed or was blocked) - the timer is cancelled on pagehide, so a successful escape never sends the form conversion twice. */
+if(window.top!==window.self){var ota_t=window.setTimeout(ota_gtm,1500);window.addEventListener('pagehide',function(){window.clearTimeout(ota_t);});try{window.top.location.replace(window.location.href);}catch(e){}}else{ota_gtm();}</script>
 <script id="whatconverts-tracking-script-js-before">var $wc_load=function(a){return JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};</script>
 <script id="whatconverts-tracking-script-js" async src="https://s.ksrndkehqnwntyxlhgto.com/159348.js?ver=7.1.3"></script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="X04JOTNWVJpQBqzS98e16A" async></script>
@@ -372,9 +374,18 @@ a.inline-link:hover,a.text-link:hover,.elementor a.inline-link:hover,.elementor 
   <section style="max-width:640px;width:100%;background:#fff;border:1px solid var(--line,#ded9d2);border-radius:20px;box-shadow:0 12px 36px rgb(24 51 69 / 7%);padding:40px 28px;text-align:center;font-family:var(--font,'Figtree',system-ui,sans-serif);color:var(--ink,#183345);">
     <img src="/lp-assets/uploads__2026__02__Logo1.svg" alt="On Target ABA" width="220" height="60" style="width:220px;height:auto;margin:0 auto 24px;display:block;">
     <h1 style="font-family:var(--display,'Fraunces',Georgia,serif);font-weight:600;font-size:2.25rem;line-height:1.15;margin:0 0 12px;">Thank You!</h1>
-    <p style="font-size:1.125rem;line-height:1.6;margin:0 0 6px;">We've received your submission.</p>
-    <p style="font-size:1.125rem;line-height:1.6;margin:0 0 24px;">Our team will be in contact shortly.</p>
-    <p style="font-size:1rem;line-height:1.6;margin:0;color:var(--muted,#465967);">Looking to speed up the intake process? Fill out our <a href="https://ontargetaba.com/pre-intake-form/" style="color:#1d4ed8;text-decoration:underline;font-weight:600;">intake form</a> to get started.</p>
+    <p style="font-size:1.125rem;line-height:1.6;margin:0 0 24px;">We've received your request. A member of our intake team will reach out to you soon by phone or text.</p>
+    <div style="text-align:left;background:var(--warm,#faf7f2);border:1px solid var(--line,#ded9d2);border-radius:12px;padding:20px 22px;margin:0 0 24px;">
+      <p style="font-size:1rem;font-weight:700;line-height:1.4;margin:0 0 10px;">What happens next</p>
+      <ol class="list" style="font-size:1rem;line-height:1.55;margin:0;">
+        <li>We'll call or text you to learn a little about your child and answer your questions.</li>
+        <li>We'll go over your insurance and the options for your family.</li>
+        <li>Together we'll choose the next step, whether that's an evaluation or starting therapy.</li>
+      </ol>
+    </div>
+    <p style="font-size:1rem;line-height:1.6;margin:0 0 14px;">Want a head start? Our short pre-intake form gives us the details we need to move faster.</p>
+    <a class="button" href="https://ontargetaba.com/pre-intake-form/" style="width:100%;max-width:360px;">Fill out the pre-intake form</a>
+    <p style="font-size:0.9375rem;line-height:1.6;margin:20px 0 0;color:var(--muted,#465967);">Have a question right now? The chat bubble on this page is an automated assistant that can answer common questions.</p>
   </section>
 </main>
 </body>
