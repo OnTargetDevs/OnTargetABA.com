@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- Google Tag Manager (both containers; standard async snippet, was bootstrapped at window load) -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W42536PM');</script>
+  <!-- Google Tag Manager (our container GTM-N2RP5GST; standard async snippet, was bootstrapped at window load). The second, older container was removed 2026-10-28: it loaded the Meta pixel, Hotjar and a page-load Meta event (CEO ruling 2026-10-19, "switch off all four"). -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N2RP5GST');</script>
   <!-- End Google Tag Manager -->
   <!-- Google tag (gtag.js) for Google Ads AW-354317910: defines window.gtag so the LeadTrap chat widget can record its chat-lead conversion; Tag Manager keeps loading exactly as before (same dataLayer) -->
@@ -374,11 +373,10 @@ a.inline-link:hover,a.text-link:hover,.elementor a.inline-link:hover,.elementor 
 <!-- Google Tag Manager (both containers), loaded at window load as on the live ad pages (T1, 2026-10-20) -->
 <script id="whatconverts-tracking-script-js-before">var $wc_load=function(a){return JSON.parse(JSON.stringify(a))},$wc_leads=$wc_leads||{doc:{url:$wc_load(document.URL),ref:$wc_load(document.referrer),search:$wc_load(location.search),hash:$wc_load(location.hash)}};</script>
 <script id="whatconverts-tracking-script-js" async src="https://s.ksrndkehqnwntyxlhgto.com/159348.js?ver=7.1.3"></script>
-<!-- LeadTrap chat: after window load, once Tag Manager is confirmed loaded (either container object present; 8 s fallback). It no longer waits for a gtag script: LeadTrap's own script brings its Google tag (AW-354317910) when the page has none, and re-uses gtag when the page has it. -->
-<script>(function(){var SRC='https://app.leadtrap.ai/platform/script?partner_id=236d3498-b935-4239-91a8-f2e1d6e2787f',done=false;function inject(why){if(done)return;done=true;var s=document.createElement('script');s.async=true;s.src=SRC;s.setAttribute('data-ot-loaded-after',why);document.head.appendChild(s);}function gtmReady(){var g=window.google_tag_manager;return !!(g&&(g['GTM-N2RP5GST']||g['GTM-W42536PM']));}function start(){var t0=Date.now();(function poll(){if(gtmReady()){inject('gtm-ready');}else if(Date.now()-t0>8000){inject('gtm-timeout-8s');}else{setTimeout(poll,250);}})();}if(document.readyState==='complete'){start();}else{window.addEventListener('load',start);}})();</script>
+<!-- LeadTrap chat: after window load, once Tag Manager is confirmed loaded (container object present; 8 s fallback). It no longer waits for a gtag script: LeadTrap's own script brings its Google tag (AW-354317910) when the page has none, and re-uses gtag when the page has it. -->
+<script>(function(){var SRC='https://app.leadtrap.ai/platform/script?partner_id=236d3498-b935-4239-91a8-f2e1d6e2787f',done=false;function inject(why){if(done)return;done=true;var s=document.createElement('script');s.async=true;s.src=SRC;s.setAttribute('data-ot-loaded-after',why);document.head.appendChild(s);}function gtmReady(){var g=window.google_tag_manager;return !!(g&&g['GTM-N2RP5GST']);}function start(){var t0=Date.now();(function poll(){if(gtmReady()){inject('gtm-ready');}else if(Date.now()-t0>8000){inject('gtm-timeout-8s');}else{setTimeout(poll,250);}})();}if(document.readyState==='complete'){start();}else{window.addEventListener('load',start);}})();</script>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W42536PM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2RP5GST" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <link rel="preconnect" href="https://form.jotform.com"><link rel="preconnect" href="https://cdn.jotfor.ms" crossorigin>
@@ -554,7 +552,7 @@ a.inline-link:hover,a.text-link:hover,.elementor a.inline-link:hover,.elementor 
   </script>
 <script>
 (() => {
-  // lp_fix 2026-10-26: website conversion signals for Tag Manager (both containers read the same dataLayer). Nothing personal is pushed: only our own phone number, the form id and the page path.
+  // lp_fix 2026-10-26: website conversion signals for Tag Manager (our container GTM-N2RP5GST reads the dataLayer). Nothing personal is pushed: only our own phone number, the form id and the page path.
   const dl = window.dataLayer = window.dataLayer || [];
   const page = location.pathname;
   // 1) Tap-to-call: every tel: link pushes call_click (capture phase, so it runs before the dialer opens). GTM trigger: Custom Event "call_click".
@@ -562,6 +560,8 @@ a.inline-link:hover,a.text-link:hover,.elementor a.inline-link:hover,.elementor 
     const a = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
     if (!a) return;
     dl.push({ event: 'call_click', phone: a.getAttribute('href').slice(4), phone_display: (a.textContent || '').replace(/\s+/g, ' ').trim(), call_placement: a.getAttribute('data-ot-place') || '', page_path: page });
+    // 2026-10-28: the "Calls From Website" Google Ads counter (secondary action, label gz3sCI3kn7cZENbs-agB) used to fire from the old Tag Manager container on every tel: click; it fires from the page now so the number keeps counting after that container's removal.
+    if (typeof window.gtag === 'function') window.gtag('event', 'conversion', { send_to: 'AW-354317910/gz3sCI3kn7cZENbs-agB' });
   }, true);
   // 2) Inquiry form, ANALYTICS-ONLY SIGNAL (not a conversion): the thank-you redirect lives inside the Jotform (activeRedirect=thankurl -> /thank-you-confirmation/, in the top window) and the embed posts no "submitted" message; the frame's first load is the form, the next load is the submit response, so that second load is the submit signal. The thank-you page is where the ONE counted form conversion (MSLP Form Fill) fires; do not attach a second counted conversion to this event.
   document.querySelectorAll('iframe.jf-frame').forEach(f => {
