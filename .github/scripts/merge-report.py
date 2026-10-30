@@ -14,11 +14,14 @@ tag (doubleclick.net), which is required business tracking.  They are
 reported but excluded when computing the "adjusted best-practices" score
 used for the pass/fail gate.
 """
-import argparse, json, os, pathlib, sys
+import argparse, json, os, pathlib, re, sys
 from datetime import datetime, timezone
 
 # Audits caused by Google Ads; excluded from the adjusted BP score.
 GOOGLE_ADS_AUDITS = {"third-party-cookies", "inspector-issues"}
+
+# Pattern for Cloudflare Pages preview URLs: https://<8hex>.ontargetaba.pages.dev
+_PREVIEW_RE = re.compile(r"^https://[0-9a-f]+\.ontargetaba\.pages\.dev", re.IGNORECASE)
 
 CAT_KEYS = ["performance", "accessibility", "best-practices", "seo"]
 
@@ -84,6 +87,11 @@ def url_to_path(url: str) -> str:
         if url.startswith(prefix):
             url = url[len(prefix):]
             break
+    else:
+        # CF Pages preview URLs: https://<hash>.ontargetaba.pages.dev/...
+        m = _PREVIEW_RE.match(url)
+        if m:
+            url = url[m.end():]
     # Strip port (e.g. :6789/)
     if url and url[0] == ":":
         url = "/" + url.split("/", 1)[-1]

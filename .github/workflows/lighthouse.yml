@@ -138,7 +138,7 @@ jobs:
         with:
           configPath: ./.lighthouserc.json
           urls: ${{ steps.pages.outputs.urls }}
-          numberOfRuns: 3
+          runs: 3
           uploadArtifacts: true
           temporaryPublicStorage: true
 
@@ -236,7 +236,7 @@ jobs:
         with:
           configPath: ./.lighthouserc.json
           urls: ${{ steps.pages.outputs.urls }}
-          numberOfRuns: 1
+          runs: 1
           uploadArtifacts: false
 
       - name: Upload shard results
