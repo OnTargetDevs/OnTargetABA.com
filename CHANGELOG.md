@@ -12,6 +12,34 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-10-30
+
+### Fixed
+
+- every blog post rendered blank — close the not-found box before <main>
+
+
+## [Unreleased] &mdash; 2026-10-30
+
+### Added
+
+- merge duplicate blog posts and make the Utah diagnosis guide clearly Utah
+
+
+## [Unreleased] &mdash; 2026-10-30
+
+### Fixed
+
+- blog post breadcrumb shows the article title instead of 'Article'
+
+
+## [Unreleased] &mdash; 2026-10-30
+
+### Added
+
+- shorten page titles and descriptions Google was cutting off
+
+
 ## [Unreleased] &mdash; 2026-10-26
 
 ### Changed

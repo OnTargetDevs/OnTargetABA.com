@@ -147,7 +147,7 @@ At On Target ABA, we serve children ages 2–12 across Ohio and Utah with center
 
 [→ Contact us to learn about evaluations and ABA therapy services](https://ontargetaba.com/contact/)
 
-[→ Read: Early autism screening — why it matters and how to get started](https://ontargetaba.com/2026/04/23/early-autism-screening-why-it-matters-and-how-to-get-started/)
+[→ Read: Early autism screening — why it matters and how to get started](https://ontargetaba.com/2026/04/23/early-autism-screening/)
 
 [→ Read: ABA therapy myths vs. facts — what every family should know](https://ontargetaba.com/2026/01/20/myths-about-aba-therapy-what-parents-should-really-know/)
 

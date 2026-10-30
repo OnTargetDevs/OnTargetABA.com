@@ -108,4 +108,4 @@ If you’d like more individualized strategies for supporting your child through
 
 ---
 
-*If you have questions about your child’s development or are considering an evaluation, reaching out to a qualified provider is always a great first step. [Early answers lead to early support](https://ontargetaba.com/blog/early-autism-screening-why-it-matters-and-how-to-get-started/) — and early support can make all the difference.*
+*If you have questions about your child’s development or are considering an evaluation, reaching out to a qualified provider is always a great first step. [Early answers lead to early support](https://ontargetaba.com/blog/early-autism-screening/) — and early support can make all the difference.*

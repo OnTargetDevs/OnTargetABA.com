@@ -1,14 +1,14 @@
 {
   "generated_at": null,
-  "post_count": 248,
+  "post_count": 245,
   "categories": [
     {
       "name": "Parent Resources",
-      "count": 42
+      "count": 41
     },
     {
       "name": "ABA Therapy Basics",
-      "count": 34
+      "count": 33
     },
     {
       "name": "Developmental Milestones",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Getting Started with ABA",
-      "count": 23
+      "count": 22
     },
     {
       "name": "Community & Events",
@@ -873,17 +873,6 @@
       "slug": "why-does-my-child-with-autism-throw-things-understanding-and-addressing-throwing-behavior"
     },
     {
-      "title": "Throwing Toys in Autism: Why Does My Child With Autism Throw Things?",
-      "date": "2026-06-08",
-      "category": "Parent Resources",
-      "author": "On Target ABA Team",
-      "hero_image": "/assets/blog/images/why-does-my-child-with-autism-throw-things/child-tipping-out-toys.png",
-      "excerpt": "Throwing behavior is one of the most common and confusing challenges families of children with autism face. If your child or toddler with autism throws toys instead of playing with them, or is in the habit of flinging random objects, understanding why it happens and having strategies to address it.",
-      "read_time": "11 min read",
-      "source_url": "https://ontargetaba.com/2026/06/08/why-does-my-child-with-autism-throw-things/",
-      "slug": "why-does-my-child-with-autism-throw-things"
-    },
-    {
       "title": "Autism and Nutrition: Understanding Feeding Challenges and How to Help Your Child Thrive",
       "date": "2026-06-05",
       "category": "Parent Resources",
@@ -1223,17 +1212,6 @@
       "read_time": "6 min read",
       "source_url": "https://ontargetaba.com/2026/04/24/bubble-music-party-how-on-target-abas-gahanna-el-center-kicked-off-autism-acceptance-month/",
       "slug": "bubble-music-party-how-on-target-abas-gahanna-el-center-kicked-off-autism-acceptance-month"
-    },
-    {
-      "title": "Early Autism Screening: Why It Matters and How to Get Started",
-      "date": "2026-04-23",
-      "category": "ABA Therapy Basics",
-      "author": "On Target ABA Team",
-      "hero_image": "/assets/images/wp/2026/04/pexels-marina-abrosimova-3319804-8397971-1024x683.jpg",
-      "excerpt": "The article emphasizes that autism can be reliably detected as early as 18 months, yet the average U.S. diagnosis occurs at age 5—a gap that costs children critical early intervention years during peak brain development.",
-      "read_time": "11 min read",
-      "source_url": "https://ontargetaba.com/2026/04/23/early-autism-screening-why-it-matters-and-how-to-get-started/",
-      "slug": "early-autism-screening-why-it-matters-and-how-to-get-started"
     },
     {
       "title": "Stimming and Autism: What It Is, What It Means, and Why It Should Never Be Suppressed",
@@ -1599,17 +1577,6 @@
       "slug": "sensory-issues-in-autism-understanding-sensory-processing-and-how-to-help"
     },
     {
-      "title": "Autism Screening: Why Early Autism Screening Matters for Your Child",
-      "date": "2026-03-10",
-      "category": "Getting Started with ABA",
-      "author": "On Target ABA Team",
-      "hero_image": "/assets/blog/images/autism-screening-why-early-autism-screening-matters-for-your-child/recognizing_early_signs_autism.jpg",
-      "excerpt": "Autism screening is a brief assessment tool identifying children who may need further evaluation for autism spectrum disorder, not a diagnosis itself. The article explains what screening involves, timing recommendations, and why early detection matters for developmental outcomes.",
-      "read_time": "8 min read",
-      "source_url": "https://ontargetaba.com/2026/03/10/autism-screening-why-early-autism-screening-matters-for-your-child/",
-      "slug": "autism-screening-why-early-autism-screening-matters-for-your-child"
-    },
-    {
       "title": "Early Autism Screening for Children",
       "date": "2026-03-10",
       "category": "Parent Resources",
@@ -1676,7 +1643,7 @@
       "slug": "why-parent-training-in-aba-therapy-makes-all-the-difference"
     },
     {
-      "title": "Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing in Utah",
+      "title": "Where Can I Get an Autism Diagnosis in Utah? A Salt Lake Valley Parent's Guide",
       "date": "2026-02-28",
       "category": "Getting Started with ABA",
       "author": "On Target ABA Team",

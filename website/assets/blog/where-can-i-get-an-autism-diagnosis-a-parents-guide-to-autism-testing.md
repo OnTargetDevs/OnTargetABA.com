@@ -234,3 +234,5 @@ With progress comes confidence — for both you and your child.
 If you're ready to explore autism testing, On Target ABA offers comprehensive evaluations and guidance every step of the way.
 
 Because no parent should navigate this journey alone.
+
+*In Utah? See our Utah-specific guide: [Where Can I Get an Autism Diagnosis in Utah?](/blog/posts/where-can-i-get-an-autism-diagnosis-a-parents-guide-to-autism-testing-in-utah)*
