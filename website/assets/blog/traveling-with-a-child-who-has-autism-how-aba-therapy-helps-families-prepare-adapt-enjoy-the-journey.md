@@ -3,7 +3,7 @@ title: "Traveling With a Child Who Has Autism: How ABA Therapy Helps Families Pr
 date: 2025-11-17
 category: Developmental Milestones, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-gustavo-fring-4173212-1024x683.jpg"
+hero_image: "/assets/images/wp/2025/11/pexels-gustavo-fring-4173212-1024x683.jpg"
 excerpt: Many parents fear traveling with autistic children due to concerns about meltdowns and sensory overload, but with ABA therapy strategies, families can successfully enjoy vacations, road trips, and flights while building confidence and joyful memories.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/17/traveling-with-a-child-who-has-autism-how-aba-therapy-helps-families-prepare-adapt-enjoy-the-journey/"

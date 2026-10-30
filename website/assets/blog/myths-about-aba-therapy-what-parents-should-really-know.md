@@ -3,7 +3,7 @@ title: "Myths About ABA Therapy: What Parents Should Really Know"
 date: 2026-01-20
 category: Getting Started with ABA, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-diva-plavalaguna-6147365-1024x683.jpg"
+hero_image: "/assets/images/wp/2026/01/pexels-diva-plavalaguna-6147365-1024x683.jpg"
 excerpt: Many misconceptions about ABA therapy circulate online, leaving families confused. This article clarifies common myths and explains what modern, compassionate ABA truly involves.
 read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/01/20/myths-about-aba-therapy-what-parents-should-really-know/"

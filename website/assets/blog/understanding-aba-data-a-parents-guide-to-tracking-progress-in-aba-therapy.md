@@ -3,7 +3,7 @@ title: "Understanding ABA Data: A Parent's Guide to Tracking Progress in ABA The
 date: 2026-02-14
 category: Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-kindelmedia-7688336-1024x768.jpg"
+hero_image: "/assets/images/wp/2026/02/pexels-kindelmedia-7688336-1024x768.jpg"
 excerpt: "ABA therapy data tracking provides objective measurement of a child's behavioral and skill development over time. Once parents understand what the numbers represent, they discover a reassuring pattern: the data tells the story of their child's growth."
 read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/02/14/understanding-aba-data-a-parents-guide-to-tracking-progress-in-aba-therapy/"

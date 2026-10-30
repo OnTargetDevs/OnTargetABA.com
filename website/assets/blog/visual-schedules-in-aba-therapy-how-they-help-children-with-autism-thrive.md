@@ -3,7 +3,7 @@ title: "Visual Schedules in ABA Therapy: How They Help Children With Autism Thri
 date: 2026-02-11
 category: Developmental Milestones
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/aba-visual-supports-1024x768.jpg"
+hero_image: "/assets/images/wp/2026/02/aba-visual-supports-1024x768.jpg"
 excerpt: Visual schedules are a foundational ABA tool that help children with autism navigate routines and transitions with reduced anxiety. The piece explains their mechanisms, effectiveness, and practical applications for parents seeking to support their child's independence and confidence.
 read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/02/11/visual-schedules-in-aba-therapy-how-they-help-children-with-autism-thrive/"

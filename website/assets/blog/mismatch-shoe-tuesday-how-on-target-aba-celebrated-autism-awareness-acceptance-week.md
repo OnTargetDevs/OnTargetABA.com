@@ -3,7 +3,7 @@ title: "Mismatch Shoe Tuesday: How On Target ABA Celebrated Autism Awareness & A
 date: 2026-04-15
 category: Life at On Target ABA
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/Image_20260414_134618_877-scaled-e1776241857451-1024x768.jpeg"
+hero_image: "/assets/images/wp/2026/04/Image_20260414_134618_877-scaled-e1776241857451-1024x768.jpeg"
 excerpt: On an ordinary Tuesday at On Target ABA, our team showed up to work in mismatched shoes — one pink Croc and one dark, a red sneaker paired with a rainbow one. Every pair different. Every combination intentional. A small, joyful declaration that difference is not a deficit. It is a gift.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/04/15/mismatch-shoe-tuesday-how-on-target-aba-celebrated-autism-awareness-acceptance-week/"

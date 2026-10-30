@@ -3,7 +3,7 @@ title: "Teaching Kindness: Helping Children Understand and Support Kids With Spe
 date: 2026-01-12
 category: Community & Events
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-rdne-8035133-1024x683.jpg"
+hero_image: "/assets/images/wp/2026/01/pexels-rdne-8035133-1024x683.jpg"
 excerpt: Parents can teach children to be kind and inclusive toward peers with autism and special needs through open conversations and simple explanations. These moments of gentle guidance build empathy and help create more welcoming communities.
 read_time: 5 min read
 source_url: "https://ontargetaba.com/2026/01/12/teaching-kindness-helping-children-understand-and-support-kids-with-special-needs/"

@@ -3,7 +3,7 @@ title: "How ABA Centers Keep Children Safe: Inside Safety Protocols, Supervision
 date: 2025-12-04
 category: Getting Started with ABA, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-ian-panelo-19875876-scaled-e1764860248984-1024x762.jpg"
+hero_image: "/assets/images/wp/2025/12/pexels-ian-panelo-19875876-scaled-e1764860248984-1024x762.jpg"
 excerpt: When parents tour an ABA center, their primary concern is safety. This article explains how quality ABA centers integrate safety through supervision, staff training, building design, health protocols, and emotional support.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/12/04/how-aba-centers-keep-children-safe-inside-safety-protocols-supervision-and-staff-training/"

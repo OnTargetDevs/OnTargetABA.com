@@ -3,7 +3,7 @@ title: "To the Mothers Who Move Mountains: A Mother's Day Letter from On Target 
 date: 2026-05-11
 category: Life at On Target ABA
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/05/pexels-barbara-chickenz-10935456-scaled-e1778483745154-1024x691.jpg"
+hero_image: "/assets/images/wp/2026/05/pexels-barbara-chickenz-10935456-scaled-e1778483745154-1024x691.jpg"
 excerpt: Mother's Day looks different in autism families. This letter celebrates women who have fought harder, loved deeper, and advocated more fiercely than most people will ever understand.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/05/11/to-the-mothers-who-move-mountains-a-mothers-day-letter-from-on-target-aba/"

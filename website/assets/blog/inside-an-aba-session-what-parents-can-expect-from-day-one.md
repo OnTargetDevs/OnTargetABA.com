@@ -3,7 +3,7 @@ title: "Inside an ABA Session: What Parents Can Expect from Day One"
 date: 2025-10-25
 category: ABA Therapy Basics
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-yankrukov-8612991-1024x683.jpg"
+hero_image: "/assets/images/wp/2025/10/pexels-yankrukov-8612991-1024x683.jpg"
 excerpt: Parents often wonder what happens during ABA therapy sessions. This guide explains each stage of therapy, from initial assessment through progress tracking, and describes how On Target ABA creates welcoming, child-centered experiences.
 read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/10/25/inside-an-aba-session-what-parents-can-expect-from-day-one/"

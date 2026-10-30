@@ -3,7 +3,7 @@ title: "How to Become a Certified RBT: Steps, Requirements & Career Benefits"
 date: 2026-02-02
 category: ABA Therapy Basics, Life at On Target ABA
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/RBT-Blog-1024x576.png"
+hero_image: "/assets/images/wp/2026/02/RBT-Blog-1024x576.png"
 excerpt: This guide walks prospective Registered Behavior Technicians through each step—from initial training through certification—explaining what the role entails and why the credential enables meaningful work with children with autism.
 read_time: 3 min read
 source_url: "https://ontargetaba.com/2026/02/02/how-to-become-a-certified-rbt/"

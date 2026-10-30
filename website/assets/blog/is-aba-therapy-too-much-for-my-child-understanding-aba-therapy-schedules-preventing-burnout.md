@@ -3,7 +3,7 @@ title: Is ABA Therapy Too Much for My Child? Understanding ABA Therapy Schedules
 date: 2025-12-03
 category: Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-anastasia-shuraeva-4079283-1024x683.jpg"
+hero_image: "/assets/images/wp/2025/12/pexels-anastasia-shuraeva-4079283-1024x683.jpg"
 excerpt: Parents commonly worry whether intensive ABA therapy schedules are overwhelming for their children. The article explains that well-designed ABA programs integrate learning through play, movement, and sensory breaks rather than rigid, exhausting demands.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/12/03/is-aba-therapy-too-much-for-my-child-understanding-aba-therapy-schedules-preventing-burnout/"

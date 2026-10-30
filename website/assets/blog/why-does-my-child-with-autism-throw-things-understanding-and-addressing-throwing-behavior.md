@@ -3,7 +3,7 @@ title: Why Does My Child with Autism Throw Things? Understanding and Addressing 
 date: 2026-06-08
 category: Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/06/pexels-keira-burton-6624273-1024x683.jpg"
+hero_image: "/assets/images/wp/2026/06/pexels-keira-burton-6624273-1024x683.jpg"
 excerpt: Throwing behavior is one of the most common and confusing challenges families of autistic children face. This guide explains why autistic children throw toys and objects, what those behaviors are communicating, and how evidence-based ABA strategies can help.
 read_time: 9 min read
 source_url: "https://ontargetaba.com/2026/06/08/why-does-my-child-with-autism-throw-things-understanding-and-addressing-throwing-behavior/"

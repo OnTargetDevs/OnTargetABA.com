@@ -3,7 +3,7 @@ title: "Estimated Expenses for ABA Therapy in Ohio: A Parent's Guide"
 date: 2026-02-25
 category: Insurance & Funding
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/02/pexels-cottonbro-3943714-1024x683.jpg"
+hero_image: "/assets/images/wp/2026/02/pexels-cottonbro-3943714-1024x683.jpg"
 excerpt: When families learn their child has autism, they naturally wonder about therapy costs. In Ohio, most families don't pay full therapy expenses out-of-pocket because insurance and Medicaid typically provide significant coverage.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/02/25/estimated-expenses-for-aba-therapy-in-ohio-a-parents-guide/"

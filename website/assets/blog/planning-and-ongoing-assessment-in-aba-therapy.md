@@ -3,7 +3,7 @@ title: Planning and Ongoing Assessment in ABA Therapy
 date: 2026-03-16
 category: ABA Therapy Basics, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-artempodrez-8088092-scaled-e1773811440444-1024x909.jpg"
+hero_image: "/assets/images/wp/2026/03/pexels-artempodrez-8088092-scaled-e1773811440444-1024x909.jpg"
 excerpt: ABA therapy programs are designed by Board Certified Behavior Analysts who conduct detailed assessments and develop individualized treatment goals. Therapists teach these skills step-by-step while collecting data during each session to track progress.
 read_time: 6 min read
 source_url: "https://ontargetaba.com/2026/03/16/planning-and-ongoing-assessment-in-aba-therapy/"

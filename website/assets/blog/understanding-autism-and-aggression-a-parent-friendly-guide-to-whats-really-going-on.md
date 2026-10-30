@@ -3,7 +3,7 @@ title: "Understanding Autism and Aggression: A Parent-Friendly Guide to What's R
 date: 2025-12-18
 category: Early Intervention, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-vika-glitter-392079-4113700-1024x681.jpg"
+hero_image: "/assets/images/wp/2025/12/pexels-vika-glitter-392079-4113700-1024x681.jpg"
 excerpt: The article explains that aggressive behaviors in autistic children typically signal unmet communication needs rather than intentional defiance. It describes how ABA therapy helps families understand the root causes of aggression and teaches children healthier ways to express themselves.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/12/18/understanding-autism-and-aggression-a-parent-friendly-guide-to-whats-really-going-on/"

@@ -3,7 +3,7 @@ title: "Building Peer Relationships for Children With Autism: How ABA Therapy He
 date: 2026-01-12
 category: Community & Events, Developmental Milestones
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-rdne-8385030-1024x683.jpg"
+hero_image: "/assets/images/wp/2026/01/pexels-rdne-8385030-1024x683.jpg"
 excerpt: For many families, a primary hope is seeing their child build friendships. For children with autism, making friends can feel overwhelming at times; however, with the right support, meaningful peer relationships are possible.
 read_time: 3 min read
 source_url: "https://ontargetaba.com/2026/01/12/building-peer-relationships-for-children-with-autism-how-aba-therapy-helps-kids-connect-communicate-and-thrive/"

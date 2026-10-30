@@ -3,7 +3,7 @@ title: "Teaching Self-Advocacy Skills in ABA Therapy: Helping Kids Speak Up for 
 date: 2025-10-27
 category: Developmental Milestones
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-vlada-karpovich-7026028-1024x683.jpg"
+hero_image: "/assets/images/wp/2025/10/pexels-vlada-karpovich-7026028-1024x683.jpg"
 excerpt: The article explains how ABA therapy teaches children with autism to understand their needs, express them confidently, and make choices. It emphasizes that self-advocacy skills are transformational for developing independence and emotional regulation.
 read_time: 5 min read
 source_url: "https://ontargetaba.com/2025/10/27/teaching-self-advocacy-skills-in-aba-therapy-helping-kids-speak-up-for-themselves/"

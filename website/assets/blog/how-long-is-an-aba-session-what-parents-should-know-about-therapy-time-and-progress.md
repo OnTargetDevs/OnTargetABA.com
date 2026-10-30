@@ -3,7 +3,7 @@ title: How Long Is an ABA Session? What Parents Should Know About Therapy Time a
 date: 2025-11-04
 category: ABA Therapy Basics, Early Intervention, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-cottonbro-3662630-scaled-e1762229191398-1024x642.jpg"
+hero_image: "/assets/images/wp/2025/11/pexels-cottonbro-3662630-scaled-e1762229191398-1024x642.jpg"
 excerpt: Parents frequently ask about ABA session duration, and this guide explains how therapy hours are personalized to each child's needs. The post emphasizes that consistency and engagement matter more than session length alone.
 read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/11/04/how-long-is-an-aba-session-what-parents-should-know-about-therapy-time-and-progress/"
