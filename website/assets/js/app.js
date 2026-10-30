@@ -377,6 +377,9 @@
     }
 
     if (cfg.mode === 'none') return;
+    // Pages that opt out (the job application) keep the family-intake chat off,
+    // since its auto-open bubble covered the form's Submit button on phones.
+    if (document.body && document.body.hasAttribute('data-no-chat')) return;
 
     if (cfg.mode === 'leadtrap') {
       const partnerId = cfg.leadtrap && cfg.leadtrap.partnerId;
