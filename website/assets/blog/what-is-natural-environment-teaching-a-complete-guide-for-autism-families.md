@@ -3,7 +3,7 @@ title: What Is Natural Environment Teaching (NET)? A Complete Guide for Autism F
 date: 2026-04-13
 category: Specialized Programs
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-mikhail-nilov-8922405-scaled-e1776068763706-1024x909.jpg"
+hero_image: "/assets/images/wp/2026/04/pexels-mikhail-nilov-8922405-scaled-e1776068763706-1024x909.jpg"
 excerpt: NET is a powerful ABA therapy approach where children learn skills in their natural environments through play and preferred activities. The most powerful learning doesn't happen at a table — it happens in life.
 read_time: 13 min read
 source_url: "https://ontargetaba.com/2026/04/13/what-is-natural-environment-teaching-a-complete-guide-for-autism-families/"

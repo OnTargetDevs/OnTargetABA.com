@@ -3,7 +3,7 @@ title: "College Transition Support for Students With Autism & ADHD: How Families
 date: 2025-12-10
 category: Developmental Milestones, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-george-pak-7973031-1024x683.jpg"
+hero_image: "/assets/images/wp/2025/12/pexels-george-pak-7973031-1024x683.jpg"
 excerpt: Teens and young adults with autism and ADHD often have college aspirations but need extra support bridging the gap between high school and higher education. College transition programs help build independence, confidence, social skills, and academic readiness through structured experiences.
 read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/12/10/college-transition-support-for-students-with-autism-adhd-how-families-can-prepare-for-success/"

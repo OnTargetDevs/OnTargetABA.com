@@ -3,7 +3,7 @@ title: "The Benefits of Early Autism Diagnosis: Why Early Answers Matter for You
 date: 2025-12-27
 category: Early Intervention, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-karola-g-7269501-1024x683.jpg"
+hero_image: "/assets/images/wp/2025/12/pexels-karola-g-7269501-1024x683.jpg"
 excerpt: Early autism diagnosis opens doors rather than placing limits on children. When families understand their child's needs early, they gain access to life-changing services and support during critical brain development years.
 read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/12/27/the-benefits-of-early-autism-diagnosis-why-early-answers-matter-for-your-child/"

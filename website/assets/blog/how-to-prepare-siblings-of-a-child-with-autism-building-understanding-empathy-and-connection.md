@@ -3,7 +3,7 @@ title: "How to Prepare Siblings of a Child with Autism: Building Understanding, 
 date: 2025-10-30
 category: ABA Therapy Basics, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-ian-taylor-2156586581-34507618-1024x683.jpg"
+hero_image: "/assets/images/wp/2025/10/pexels-ian-taylor-2156586581-34507618-1024x683.jpg"
 excerpt: The article addresses how parents can help siblings understand and support their brother or sister with autism through open conversations, inclusion, and empathy-building strategies that strengthen family bonds.
 read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/10/30/how-to-prepare-siblings-of-a-child-with-autism-building-understanding-empathy-and-connection/"

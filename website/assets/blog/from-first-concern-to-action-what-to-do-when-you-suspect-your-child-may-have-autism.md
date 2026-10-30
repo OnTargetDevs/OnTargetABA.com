@@ -3,7 +3,7 @@ title: "From First Concern to Action: What to Do When You Suspect Your Child May
 date: 2026-04-29
 category: Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-werner-pfennig-5442704-1024x683.jpg"
+hero_image: "/assets/images/wp/2026/04/pexels-werner-pfennig-5442704-1024x683.jpg"
 excerpt: The blog guides families through steps from initial autism concerns to therapeutic action, providing a structured roadmap based on Autism Speaks' framework. It addresses screening, evaluation, early intervention access, and beginning ABA therapy.
 read_time: 12 min read
 source_url: "https://ontargetaba.com/2026/04/29/from-first-concern-to-action-what-to-do-when-you-suspect-your-child-may-have-autism/"

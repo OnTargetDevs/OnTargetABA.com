@@ -3,7 +3,7 @@ title: Parent-Teacher Communication for Autism — How to Build a Supportive Tea
 date: 2025-12-20
 category: Developmental Milestones, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/12/pexels-pavel-danilyuk-7221016-1024x684.jpg"
+hero_image: "/assets/images/wp/2025/12/pexels-pavel-danilyuk-7221016-1024x684.jpg"
 excerpt: Effective parent–teacher communication can make a huge difference in a child's progress, especially for children with autism who thrive on consistency. This blog shares simple, practical strategies parents can use to build strong, positive partnerships with teachers, therapists, and school teams.
 read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/12/20/on-target-aba-blog-parent-teacher-communication-for-autism-how-to-build-a-supportive-team/"

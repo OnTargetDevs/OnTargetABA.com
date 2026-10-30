@@ -3,7 +3,7 @@ title: Homeschool or Traditional School for a Child with Autism — Which Is Bet
 date: 2025-11-01
 category: Developmental Milestones, Early Intervention, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-anastasia-shuraeva-8466776-1024x684.jpg"
+hero_image: "/assets/images/wp/2025/11/pexels-anastasia-shuraeva-8466776-1024x684.jpg"
 excerpt: Parents of children with autism often struggle with choosing between homeschooling and traditional school. This guide explores both options — highlighting the pros, challenges, and key factors to consider.
 read_time: 7 min read
 source_url: "https://ontargetaba.com/2025/11/01/homeschooling-or-traditional-school-for-a-child-with-autism-which-is-better/"

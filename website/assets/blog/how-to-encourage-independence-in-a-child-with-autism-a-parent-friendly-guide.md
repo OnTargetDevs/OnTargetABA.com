@@ -3,7 +3,7 @@ title: "How to Encourage Independence in a Child With Autism: A Parent-Friendly 
 date: 2026-01-14
 category: ABA Therapy Basics, Developmental Milestones, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-cottonbro-5991002-scaled-e1768410766469-1024x822.jpg"
+hero_image: "/assets/images/wp/2026/01/pexels-cottonbro-5991002-scaled-e1768410766469-1024x822.jpg"
 excerpt: Encouraging independence in a child with autism starts with small, achievable steps. Using routines, visual supports, modeling, positive reinforcement, and the right level of prompting can help your child learn skills confidently and safely.
 read_time: 3 min read
 source_url: "https://ontargetaba.com/2026/01/14/how-to-encourage-independence-in-a-child-with-autism-a-parent-friendly-guide/"

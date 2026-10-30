@@ -3,7 +3,7 @@ title: Simple Everyday Tips to Make Life Easier for Families of Children With Au
 date: 2026-01-08
 category: Life at On Target ABA, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-tieugiang007-35548524-scaled-e1767890406510-1024x693.jpg"
+hero_image: "/assets/images/wp/2026/01/pexels-tieugiang007-35548524-scaled-e1767890406510-1024x693.jpg"
 excerpt: This blog provides practical guidance for parents of children with autism to streamline daily routines in 2026. The suggestions cover predictable schedules, communication strategies, sensory supports, and self-care to reduce family stress and support child development.
 read_time: 2 min read
 source_url: "https://ontargetaba.com/2026/01/08/simple-everyday-tips-to-make-life-easier-for-families-of-children-with-autism-in-2026/"

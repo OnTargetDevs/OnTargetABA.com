@@ -3,7 +3,7 @@ title: What Is Discrete Trial Training (DTT)? A Complete Guide for Autism Famili
 date: 2026-04-16
 category: ABA Therapy Basics
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/04/pexels-pavel-danilyuk-8441839-1024x684.jpg"
+hero_image: "/assets/images/wp/2026/04/pexels-pavel-danilyuk-8441839-1024x684.jpg"
 excerpt: DTT is a structured ABA technique that breaks down skills into small, discrete components taught systematically with tangible reinforcements. This guide explains what DTT is, how it works, what skills it builds, and how it differs from broader ABA approaches.
 read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/04/16/what-is-discrete-trial-training-dtt-a-complete-guide-for-autism-families/"

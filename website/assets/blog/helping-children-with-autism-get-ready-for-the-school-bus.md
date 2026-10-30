@@ -3,7 +3,7 @@ title: Helping Children With Autism Get Ready for the School Bus
 date: 2026-01-03
 category: Developmental Milestones, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/pexels-nicosiegl01-19524286-scaled-e1767452229455-1024x674.jpg"
+hero_image: "/assets/images/wp/2026/01/pexels-nicosiegl01-19524286-scaled-e1767452229455-1024x674.jpg"
 excerpt: Getting ready for the school bus creates stress for many autistic children due to sensory overload and unpredictable routines. This guide explains how consistent routines, visual supports, and ABA-based strategies help children feel prepared and confident.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2026/01/03/helping-children-with-autism-get-ready-for-the-school-bus/"

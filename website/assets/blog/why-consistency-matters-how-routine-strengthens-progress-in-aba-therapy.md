@@ -3,7 +3,7 @@ title: ABA Therapy Routines And Why Consistency Matters
 date: 2025-10-20
 category: Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/10/pexels-kampus-7414394-1024x683.jpg"
+hero_image: "/assets/images/wp/2025/10/pexels-kampus-7414394-1024x683.jpg"
 excerpt: This blog explores why consistency and routines are essential for success in ABA therapy. Parents will learn how predictable structure reduces anxiety, improves communication, and helps children generalize skills from therapy to daily life.
 read_time: 6 min read
 source_url: "https://ontargetaba.com/2025/10/20/why-consistency-matters-how-routine-strengthens-progress-in-aba-therapy/"

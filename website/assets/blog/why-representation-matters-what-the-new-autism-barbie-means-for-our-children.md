@@ -3,7 +3,7 @@ title: "Why Representation Matters: What the New Autism Barbie Means for Our Chi
 date: 2026-01-24
 category: Community & Events, Developmental Milestones
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/01/BAR_FNS_2026_S26Merch_KeyArt_Horizontal_RGB-1024x529.jpg"
+hero_image: "/assets/images/wp/2026/01/BAR_FNS_2026_S26Merch_KeyArt_Horizontal_RGB-1024x529.jpg"
 excerpt: Mattel launched its first autism-inclusive Barbie doll, developed with autism experts and advocates. The article explores how this representation matters for autistic children's emotional development, peer acceptance, and therapeutic progress.
 read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/01/24/why-representation-matters-what-the-new-autism-barbie-means-for-our-children/"

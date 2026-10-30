@@ -3,7 +3,7 @@ title: "Early Signs of Autism in Toddlers: What Parents in Ohio and Utah Should 
 date: 2026-03-26
 category: ABA Therapy Basics
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-shvetsa-3771648-1024x683.jpg"
+hero_image: "/assets/images/wp/2026/03/pexels-shvetsa-3771648-1024x683.jpg"
 excerpt: The piece emphasizes that early autism detection enables better developmental outcomes. It guides parents through developmental milestones and common early signs while explaining when to seek professional evaluation and support services.
 read_time: 5 min read
 source_url: "https://ontargetaba.com/2026/03/26/early-signs-of-autism-in-toddlers-what-parents-in-ohio-and-utah-should-know/"

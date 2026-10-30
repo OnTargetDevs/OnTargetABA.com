@@ -3,7 +3,7 @@ title: What Ohio's Autism Scholarship Program Covers — and How to Use It for A
 date: 2026-03-31
 category: Insurance & Funding
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/03/pexels-2158518894-35782351-1024x665.jpg"
+hero_image: "/assets/images/wp/2026/03/pexels-2158518894-35782351-1024x665.jpg"
 excerpt: Ohio's Autism Scholarship Program (ASP) is an underutilized state-funded resource for families of children with autism. The program allows scholarship funds to follow children to approved private providers like On Target ABA, enabling access to both specialized education and ABA therapy in one coordinated setting.
 read_time: 4 min read
 source_url: "https://ontargetaba.com/2026/03/31/what-ohios-autism-scholarship-program-covers-and-how-to-use-it-for-aba-therapy/"

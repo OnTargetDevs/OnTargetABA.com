@@ -3,7 +3,7 @@ title: "The First Week of ABA Therapy: What Parents Can Expect"
 date: 2025-11-10
 category: Getting Started with ABA, Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2025/11/pexels-towfiqu-barbhuiya-3440682-9882201-1024x683.jpg"
+hero_image: "/assets/images/wp/2025/11/pexels-towfiqu-barbhuiya-3440682-9882201-1024x683.jpg"
 excerpt: Starting ABA therapy is an exciting milestone for families—but it can also bring questions. This guide helps parents understand what to expect during the first week of ABA therapy.
 read_time: 8 min read
 source_url: "https://ontargetaba.com/2025/11/10/the-first-week-of-aba-therapy-what-parents-can-expect/"

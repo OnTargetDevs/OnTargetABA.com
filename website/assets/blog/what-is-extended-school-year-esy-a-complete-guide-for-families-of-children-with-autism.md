@@ -3,7 +3,7 @@ title: What Is Extended School Year (ESY)? A Complete Guide for Families of Chil
 date: 2026-06-05
 category: Parent Resources
 author: On Target ABA Team
-hero_image: "https://ontargetaba.com/wp-content/uploads/2026/06/pexels-rdne-8500353-1024x683.jpg"
+hero_image: "/assets/images/wp/2026/06/pexels-rdne-8500353-1024x683.jpg"
 excerpt: Extended School Year (ESY) services provide eligible students with disabilities — including children with autism — continued educational support beyond the traditional 180-day school year. This guide breaks down what ESY is, how eligibility is determined, and how ABA therapy complements it.
 read_time: 11 min read
 source_url: "https://ontargetaba.com/2026/06/05/what-is-extended-school-year-esy-a-complete-guide-for-families-of-children-with-autism/"
