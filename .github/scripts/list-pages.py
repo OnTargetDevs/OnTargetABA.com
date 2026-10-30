@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """Generate page URL list for Lighthouse CI audits.
 
-Scans website/ for *.html (excluding non-pages) and outputs newline-separated
-URLs for a given base URL. Supports sharding for parallel matrix jobs.
+Scans website/ for *.html (excluding non-pages) and also generates /blog/<slug>
+URLs from website/assets/blog/*.md (client-side-rendered posts). Outputs
+newline-separated URLs for a given base URL. Supports sharding for parallel
+matrix jobs.
 
 Usage:
     # All pages for production
     python3 list-pages.py --base-url https://beta.ontargetaba.com
 
-    # Shard 2 of 6 for a matrix job
-    python3 list-pages.py --base-url https://... --shard 2 --total 6
+    # Shard 2 of 12 for a matrix job
+    python3 list-pages.py --base-url https://... --shard 2 --total 12
 
     # Map changed files (from git diff) to URL paths
     python3 list-pages.py --changed-files /tmp/changed.txt --base-url https://...
@@ -22,6 +24,17 @@ import argparse, pathlib, sys
 EXCLUDE_NAMES = {"404.html", "test.html", "landing.html"}
 EXCLUDE_TOP_DIRS = {"admin", "functions", "assets", "node_modules"}
 EXCLUDE_PATHS = {"blog/post.html"}
+
+
+def collect_blog_posts(website: pathlib.Path) -> list[str]:
+    """Return sorted /blog/<slug> URL paths from website/assets/blog/*.md."""
+    blog_dir = website / "assets" / "blog"
+    if not blog_dir.is_dir():
+        return []
+    return sorted(
+        "/blog/" + md.stem
+        for md in blog_dir.glob("*.md")
+    )
 
 
 def collect_pages(website: pathlib.Path) -> list[str]:
@@ -46,7 +59,9 @@ def collect_pages(website: pathlib.Path) -> list[str]:
         elif len(parts) == 1:
             paths.add("/" + html.stem)
         # Pages more than 1 level deep with non-index names are sub-templates; skip
-    return sorted(paths, key=lambda p: ("" if p == "/" else p.lstrip("/")))
+    html_pages = sorted(paths, key=lambda p: ("" if p == "/" else p.lstrip("/")))
+    blog_pages = collect_blog_posts(website)
+    return html_pages + blog_pages
 
 
 def changed_to_paths(changed_files_path: pathlib.Path, base: str) -> list[str]:
