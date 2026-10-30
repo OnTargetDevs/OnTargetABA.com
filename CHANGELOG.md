@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-30
 
+### Fixed
+
+- blog post breadcrumb shows the article title instead of 'Article'
+
+
+## [Unreleased] &mdash; 2026-10-30
+
 ### Added
 
 - shorten page titles and descriptions Google was cutting off
