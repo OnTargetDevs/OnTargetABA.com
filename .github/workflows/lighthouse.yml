@@ -3,6 +3,14 @@ name: lighthouse
 on:
   pull_request:
     branches: ['**']
+  schedule:
+    - cron: '0 6 * * 1'   # Monday 06:00 UTC – all pages against production
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Base URL to audit (leave blank for https://beta.ontargetaba.com)'
+        required: false
+        default: 'https://beta.ontargetaba.com'
 
 permissions:
   pull-requests: write
@@ -10,43 +18,48 @@ permissions:
   deployments: read
   statuses: read
   actions: read
+  issues: write
 
+# ─────────────────────────────────────────────────────────────────────────────
+# PR mode: wait for the CF Pages preview, detect which pages changed, run
+# Lighthouse against them (3 runs each), post a sticky comment, fail on
+# any regression >5 pts vs the per-page baseline.
+# ─────────────────────────────────────────────────────────────────────────────
 jobs:
-  lighthouse:
-    # Skip admin-dashboard PRs. Those auto-merge once validate-content
-    # passes and don't need perf gating on every text tweak; if they
-    # introduce a regression the next hand-authored PR will catch it.
-    if: ${{ !startsWith(github.head_ref, 'admin/') }}
-    name: Lighthouse audit against CF Pages preview
+  pr-audit:
+    name: "Lighthouse – PR"
+    if: >
+      github.event_name == 'pull_request' &&
+      !startsWith(github.head_ref, 'admin/')
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Wait for Cloudflare Pages preview
-        id: cf-preview
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # needed for git diff against base branch
+
+      # ── Wait for Cloudflare Pages preview ──────────────────────────────────
+      - name: Wait for CF Pages preview
+        id: cf
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Cloudflare Pages reports a CHECK RUN named "Cloudflare Pages" on the
-          # head commit (no GitHub deployment, no commit status), and its
-          # details link carries the deployment id. The deployment-specific
-          # host <first 8 hex of id>.ontargetaba.pages.dev serves exactly this
-          # commit's build; the branch alias may still serve the previous one.
-          # Never fall back to another site: auditing the wrong URL is worse
-          # than a red check (that is how every run 2026-10-19..20 scored the
-          # retired website.ontargetnotes.com copy instead of the PR).
           owner_repo="${{ github.repository }}"
           sha="${{ github.event.pull_request.head.sha }}"
           branch="${{ github.head_ref }}"
-          alias=$(printf '%s' "$branch" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g' | cut -c1-28 | sed -E 's/-+$//')
+          alias=$(printf '%s' "$branch" | tr '[:upper:]' '[:lower:]' \
+            | sed -E 's/[^a-z0-9]+/-/g' | cut -c1-28 | sed -E 's/-+$//')
           url=""
           for i in $(seq 1 40); do
-            info=$(gh api "repos/$owner_repo/commits/$sha/check-runs" --jq '[.check_runs[] | select(.name == "Cloudflare Pages")][0] | "\(.conclusion // "pending")|\(.details_url // "")"' 2>/dev/null || echo "pending|")
+            info=$(gh api "repos/$owner_repo/commits/$sha/check-runs" \
+              --jq '[.check_runs[] | select(.name == "Cloudflare Pages")][0]
+                    | "\(.conclusion // "pending")|\(.details_url // "")"' \
+              2>/dev/null || echo "pending|")
             conclusion="${info%%|*}"
             details="${info#*|}"
             if [ "$conclusion" = "success" ]; then
-              dep=$(printf '%s' "$details" | sed -nE 's#.*/pages/view/ontargetaba/([0-9a-f]{8})[0-9a-f-]*.*#\1#p')
+              dep=$(printf '%s' "$details" \
+                | sed -nE 's#.*/pages/view/ontargetaba/([0-9a-f]{8})[0-9a-f-]*.*#\1#p')
               if [ -n "$dep" ]; then
                 url="https://$dep.ontargetaba.pages.dev/"
               else
@@ -60,113 +73,270 @@ jobs:
               echo "Preview built but $url answered $code; retrying ($i/40)..."
               url=""
             elif [ "$conclusion" = "failure" ] || [ "$conclusion" = "cancelled" ]; then
-              echo "::error::Cloudflare Pages build $conclusion for $sha"
+              echo "::error::CF Pages build $conclusion for $sha"
               exit 1
             else
-              echo "Waiting for the Cloudflare Pages build ($i/40)..."
+              echo "Waiting for CF Pages build ($i/40)..."
             fi
             sleep 15
           done
           if [ -z "$url" ]; then
-            echo "::error::No Cloudflare Pages preview for $sha after 10 min; not auditing a substitute site."
+            echo "::error::No CF Pages preview for $sha after 10 min."
             exit 1
           fi
           echo "preview_url=$url" >> "$GITHUB_OUTPUT"
 
+      # ── Determine which pages to audit ─────────────────────────────────────
+      - name: Determine pages to audit
+        id: pages
+        env:
+          PREVIEW_BASE: ${{ steps.cf.outputs.preview_url }}
+        run: |
+          BASE="${PREVIEW_BASE%/}"
+
+          # Files changed in this PR
+          git diff --name-only \
+            "origin/${{ github.base_ref }}...HEAD" > /tmp/changed.txt 2>/dev/null \
+            || touch /tmp/changed.txt
+
+          # Shared-asset change → audit every page
+          ASSETS=$(grep -cE \
+            '^website/(assets/|_headers|_redirects|build\.sh|package\.json)' \
+            /tmp/changed.txt || true)
+
+          echo "${BASE}/" > /tmp/urls.txt   # homepage always
+
+          if [ "${ASSETS:-0}" -gt 0 ]; then
+            echo "Shared assets changed – auditing all pages"
+            python3 .github/scripts/list-pages.py --base-url "$BASE" >> /tmp/urls.txt
+          else
+            python3 .github/scripts/list-pages.py \
+              --base-url "$BASE" \
+              --changed-files /tmp/changed.txt >> /tmp/urls.txt || true
+          fi
+
+          # Deduplicate
+          sort -u /tmp/urls.txt -o /tmp/urls.txt
+          echo "Pages queued for audit:"
+          cat /tmp/urls.txt
+
+          # Paths of directly-changed HTML pages for the regression gate
+          CHANGED_PATHS=$(python3 .github/scripts/list-pages.py \
+            --base-url "" --changed-files /tmp/changed.txt 2>/dev/null \
+            | tr '\n' ',' | sed 's/,$//' || echo "")
+
+          {
+            echo "urls<<URLEOF"
+            cat /tmp/urls.txt
+            echo "URLEOF"
+            echo "changed=${CHANGED_PATHS:-/}"
+          } >> "$GITHUB_OUTPUT"
+
+      # ── Run Lighthouse (3 runs per page, median used for score) ────────────
       - name: Run Lighthouse CI
-        id: lhci
         uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./.lighthouserc.json
-          urls: ${{ steps.cf-preview.outputs.preview_url }}
+          urls: ${{ steps.pages.outputs.urls }}
+          runs: 3
           uploadArtifacts: true
           temporaryPublicStorage: true
 
-      - name: Score gate + baseline comparison
+      # ── Parse results, check regression, write comment ────────────────────
+      - name: Parse results and gate
         id: gate
         run: |
-          python3 - <<'PY'
-          import json, os, pathlib, sys, glob
+          python3 .github/scripts/merge-report.py \
+            --mode pr \
+            --lhci-dir .lighthouseci \
+            --baseline .github/lighthouse-baseline.json \
+            --changed-pages "${{ steps.pages.outputs.changed }}"
 
-          # Collect the LHCI manifest produced by treosh's action.
-          manifests = glob.glob(".lighthouseci/manifest.json")
-          if not manifests:
-              print("::warning::No LHCI manifest found; skipping gate.")
-              sys.exit(0)
-
-          rep = json.loads(pathlib.Path(manifests[0]).read_text())
-          # Use the median run if present.
-          run = next((r for r in rep if r.get("isRepresentativeRun")), rep[0])
-          summary = run.get("summary", {})
-
-          scores = {
-              "performance":    round(summary.get("performance", 0) * 100, 1),
-              "accessibility":  round(summary.get("accessibility", 0) * 100, 1),
-              "seo":            round(summary.get("seo", 0) * 100, 1),
-              "best-practices": round(summary.get("best-practices", 0) * 100, 1),
-          }
-          print("Scores:", scores)
-
-          thresholds = {"performance": 90, "accessibility": 95, "seo": 95, "best-practices": 90}
-          failures = [k for k, v in scores.items() if v < thresholds[k]]
-
-          baseline_path = pathlib.Path(".github/lighthouse-baseline.json")
-          regression = []
-          if baseline_path.exists():
-              try:
-                  baseline = json.loads(baseline_path.read_text())
-                  for k, v in scores.items():
-                      if k in baseline and v < baseline[k] - 5:
-                          regression.append(f"{k}: {v} (baseline {baseline[k]}, drop > 5)")
-              except Exception as e:
-                  print(f"::warning::Could not parse baseline: {e}")
-          else:
-              print("No baseline found; recording current scores as baseline.")
-              baseline_path.parent.mkdir(parents=True, exist_ok=True)
-              baseline_path.write_text(json.dumps(scores, indent=2))
-
-          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-              for k, v in scores.items():
-                  f.write(f"{k}={v}\n")
-              f.write(f"failures={','.join(failures)}\n")
-              f.write(f"regression={'; '.join(regression)}\n")
-
-          if failures or regression:
-              print(f"::error::Failed thresholds: {failures}; regressions: {regression}")
-              sys.exit(1)
-          PY
-
-      - name: Commit baseline if new
+      # ── Commit baseline additions (new pages added by this PR) ─────────────
+      - name: Commit updated baseline
         if: always()
         run: |
-          if [ -f .github/lighthouse-baseline.json ] && \
-             ! git diff --quiet -- .github/lighthouse-baseline.json; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add .github/lighthouse-baseline.json
-            git commit -m "chore: record Lighthouse baseline [skip ci]" || true
-            git push || true
+          if git diff --quiet -- .github/lighthouse-baseline.json 2>/dev/null; then
+            exit 0
           fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/lighthouse-baseline.json
+          git commit -m "chore: add new-page Lighthouse baseline entries [skip ci]" || true
+          git push origin "HEAD:${{ github.head_ref }}" || true
 
-      - name: Comment on PR
+      # ── Upsert sticky PR comment ──────────────────────────────────────────
+      - name: Post PR comment
         if: always()
+        uses: actions/github-script@v7
+        env:
+          COMMENT: ${{ steps.gate.outputs.comment }}
+        with:
+          script: |
+            const MARKER = '<!-- lighthouse-report -->';
+            const body  = process.env.COMMENT || '<!-- lighthouse-report -->\nNo results.';
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const old = comments.find(c => c.body && c.body.includes(MARKER));
+            if (old) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                comment_id: old.id, body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: context.issue.number, body,
+              });
+            }
+
+      # ── Fail the check if regressions were found ──────────────────────────
+      - name: Fail on regressions
+        if: steps.gate.outputs.passed == 'false'
+        run: |
+          echo "::error::Lighthouse regressions detected. See the PR comment for details."
+          exit 1
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# All-pages mode: sharded matrix of 6 parallel runners, each auditing ~1/6
+# of the page list against the production site (or a custom base URL).
+# 1 run per page. Never fails the workflow – reports via GitHub issue.
+# ─────────────────────────────────────────────────────────────────────────────
+  all-pages-shard:
+    name: "Lighthouse – all pages (shard ${{ matrix.shard }})"
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get URLs for this shard
+        id: pages
+        run: |
+          BASE="${{ github.event.inputs.base_url || 'https://beta.ontargetaba.com' }}"
+          BASE="${BASE%/}"
+          {
+            echo "urls<<URLEOF"
+            python3 .github/scripts/list-pages.py \
+              --base-url "$BASE" \
+              --shard ${{ matrix.shard }} \
+              --total 6
+            echo "URLEOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Run Lighthouse CI (1 run per page)
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./.lighthouserc.json
+          urls: ${{ steps.pages.outputs.urls }}
+          runs: 1
+          uploadArtifacts: false
+
+      - name: Upload shard results
+        uses: actions/upload-artifact@v4
+        with:
+          name: lhci-shard-${{ matrix.shard }}
+          path: .lighthouseci/
+          if-no-files-found: warn
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Merge shards → report → GitHub issue + baseline commit (dispatch only)
+# ─────────────────────────────────────────────────────────────────────────────
+  all-pages-report:
+    name: "Lighthouse – all-pages report"
+    if: >
+      always() &&
+      (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    needs: all-pages-shard
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all shard results
+        uses: actions/download-artifact@v4
+        with:
+          pattern: lhci-shard-*
+          path: lhci-results/
+
+      - name: Generate report
+        run: |
+          EXTRA=""
+          [ "${{ github.event_name }}" = "workflow_dispatch" ] && EXTRA="--update-baseline"
+          python3 .github/scripts/merge-report.py \
+            --mode all-pages \
+            --results-dir lhci-results/ \
+            --baseline .github/lighthouse-baseline.json \
+            --output report.md \
+            $EXTRA
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-all-pages-report
+          path: report.md
+
+      - name: Open or update GitHub issue
         uses: actions/github-script@v7
         with:
           script: |
-            const out = ${{ toJson(steps.gate.outputs) }};
-            const body = [
-              '### Lighthouse',
-              '',
-              `- performance: **${out.performance}**`,
-              `- accessibility: **${out.accessibility}**`,
-              `- seo: **${out.seo}**`,
-              `- best-practices: **${out['best-practices']}**`,
-              out.failures ? `\n:x: Failures: ${out.failures}` : '',
-              out.regression ? `\n:warning: Regressions: ${out.regression}` : '',
-            ].join('\n');
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body,
+            const fs  = require('fs');
+            const report = fs.readFileSync('report.md', 'utf8');
+            const TITLE = 'Lighthouse: all pages';
+            const LABEL = 'lighthouse';
+
+            // Ensure the label exists
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner, repo: context.repo.repo,
+                name: LABEL,
+              });
+            } catch {
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner, repo: context.repo.repo,
+                name: LABEL, color: 'e4e669',
+                description: 'Lighthouse CI reports',
+              });
+            }
+
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              labels: LABEL, state: 'open',
             });
+            const existing = issues.data.find(i => i.title === TITLE);
+            if (existing) {
+              await github.rest.issues.update({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: existing.number, body: report,
+              });
+              console.log(`Updated issue #${existing.number}`);
+            } else {
+              const { data: created } = await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: TITLE, body: report, labels: [LABEL],
+              });
+              console.log(`Created issue #${created.number}`);
+            }
+
+      # Commit updated baseline only for workflow_dispatch (manual trigger)
+      - name: Commit baseline
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          if git diff --quiet -- .github/lighthouse-baseline.json 2>/dev/null; then
+            echo "Baseline unchanged."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/lighthouse-baseline.json
+          git commit -m "chore: update Lighthouse all-pages baseline [skip ci]"
+          git push origin "HEAD:${{ github.ref_name }}"
+          echo "Baseline committed and pushed."
