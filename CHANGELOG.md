@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-30
 
+### Fixed
+
+- every blog post rendered blank — close the not-found box before <main>
+
+
+## [Unreleased] &mdash; 2026-10-30
+
 ### Added
 
 - merge duplicate blog posts and make the Utah diagnosis guide clearly Utah
