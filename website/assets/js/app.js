@@ -283,9 +283,14 @@
       iframe.allowTransparency = 'true';
       iframe.setAttribute('allow', 'geolocation; microphone; camera; fullscreen; payment');
       iframe.setAttribute('frameborder', '0');
-      iframe.scrolling = 'no';
+      // data-jotform-scroll: long multi-page forms (the job application) can
+      // outgrow a missed auto-resize and hide their Submit button, so let them
+      // scroll inside the frame instead of being cut off.
+      const canScroll = host.dataset.jotformScroll === 'yes';
+      iframe.scrolling = canScroll ? 'yes' : 'no';
       iframe.setAttribute('style',
-        'min-width:100%;max-width:100%;width:100%;height:' + minH + 'px;border:none;'
+        'min-width:100%;max-width:100%;width:100%;height:' + minH + 'px;border:none;' +
+        (canScroll ? 'overflow:auto;' : '')
       );
       iframe.addEventListener('load', () => settle(id));
       pending[id] = { host, ph, timer: setTimeout(() => showFallback(id), FALLBACK_MS) };
@@ -372,6 +377,9 @@
     }
 
     if (cfg.mode === 'none') return;
+    // Pages that opt out (the job application) keep the family-intake chat off,
+    // since its auto-open bubble covered the form's Submit button on phones.
+    if (document.body && document.body.hasAttribute('data-no-chat')) return;
 
     if (cfg.mode === 'leadtrap') {
       const partnerId = cfg.leadtrap && cfg.leadtrap.partnerId;

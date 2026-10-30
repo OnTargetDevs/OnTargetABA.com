@@ -1,6 +1,2162 @@
 {
   "/": {
+    "performance": 81.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-for-nonverbal-children": {
+    "performance": 87.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-for-preschoolers": {
+    "performance": 88.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-for-school-age": {
+    "performance": 84.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-for-teenagers": {
+    "performance": 83.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-for-toddlers": {
+    "performance": 87.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-therapy-cleveland-lp-g": {
+    "performance": 72.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/aba-therapy-cleveland-lp-g-brand": {
+    "performance": 72.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/aba-therapy-col-lp-g": {
+    "performance": 59.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/aba-therapy-col-lp-g-brand": {
+    "performance": 74.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/aba-therapy-guide": {
+    "performance": 87.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-therapy-salt-lake-city-lp-g-brand": {
+    "performance": 71.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/aba-therapy-salt-lake-city-lp-g-new": {
+    "performance": 79.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/aba-therapy-ut-pc": {
+    "performance": 84.0,
+    "accessibility": 87.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-vs-occupational-therapy": {
+    "performance": 85.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-vs-speech-therapy": {
+    "performance": 86.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/about": {
     "performance": 75.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 89.0
+  },
+  "/autism-scholarship-program-ohio": {
+    "performance": 86.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/autism-testing": {
+    "performance": 81.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/autism-testing-autism-evaluations-cleveland-g-lp": {
+    "performance": 80.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/autism-testing-autism-evaluations-columbus-g-lp": {
+    "performance": 78.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/become-an-rbt": {
+    "performance": 83.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog": {
+    "performance": 86.0,
+    "accessibility": 91.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/10-ways-to-build-your-autistic-childs-independence-starting-today": {
+    "performance": 49.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/2025-autism-by-the-numbers-what-the-latest-data-means-for-families": {
+    "performance": 46.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/7-potty-training-tips-for-nonverbal-kids-with-autism": {
+    "performance": 43.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/7-ways-to-help-a-child-with-nonverbal-autism-learn-to-communicate": {
+    "performance": 45.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/8-practical-tips-for-daily-life-when-caring-for-a-child-with-autism": {
+    "performance": 44.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/a-fresh-start-new-year-inspiration-for-parents-of-children-with-autism": {
+    "performance": 51.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/a-look-back-at-autism-awareness-month-chuck-e-cheeses-sensory-sensitive-birthdays-and-what-inclusion-really-looks-like": {
+    "performance": 75.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/a-parents-guide-to-visiting-disneyland-with-a-child-with-autism": {
+    "performance": 65.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/a-transformed-life-for-children-with-autism-what-healing-really-looks-like": {
+    "performance": 80.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aac-awareness-month-blog-every-voice-deserves-to-be-heard": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aba-therapy-and-potty-training-what-parents-should-expect": {
+    "performance": 75.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aba-therapy-at-home-vs-center-vs-school-which-setting-is-right-for-my-child": {
+    "performance": 75.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aba-therapy-ethics-what-every-family-should-know-before-choosing-a-provider": {
+    "performance": 63.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aba-therapy-in-public-settings-teaching-real-world-skills-that-last": {
+    "performance": 53.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aba-therapy-is-not-what-you-think-it-is-debunking-the-most-common-myths": {
+    "performance": 79.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aba-therapy-sensory-play-how-it-works-and-how-to-tell-your-child-is-making-progress": {
+    "performance": 67.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aba-therapy-supports-whole-family": {
+    "performance": 51.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aba-therapy-was-not-created-for-autism-and-its-not-exclusive-to-it": {
+    "performance": 45.0,
+    "accessibility": 91.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/aba-vs-speech-therapy-for-autism-understanding-the-difference-and-working-together": {
+    "performance": 69.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/adult-autism-diagnosis-in-utah-selecthealth-medicaid-resource-guide": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/antecedent-behavior-consequence": {
+    "performance": 74.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/are-more-children-being-diagnosed-with-autism-understanding-asd-prevalence": {
+    "performance": 33.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/asd-inclusive-practices-supporting-autism-neurodivergence": {
+    "performance": 73.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-accommodations-in-school-support-without-stigma": {
+    "performance": 76.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-anxiety-understanding-the-connection-and-supporting-your-child-for-the-future": {
+    "performance": 76.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-art-6-practical-creative-hacks-for-sensory-regulation-communication": {
+    "performance": 71.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-driving-what-families-need-to-know": {
+    "performance": 73.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-eye-contact-what-every-family-needs-to-know": {
+    "performance": 59.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-friendships-how-to-help-your-child-build-real-connections": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-heart-health-what-new-research-means-for-your-childs-long-term-wellbeing": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-mental-health-understanding-co-occurring-conditions-and-how-to-get-support": {
+    "performance": 76.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-music-5-therapeutic-sound-hacks-every-parent-should-try": {
+    "performance": 40.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-nutrition-understanding-feeding-challenges-and-how-to-help-your-child-thrive": {
+    "performance": 77.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-pets-how-animals-support-emotional-social-sensory-growth": {
+    "performance": 79.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-relationships-how-to-build-stronger-connections-with-your-autistic-child": {
+    "performance": 49.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-school-your-childs-rights-a-complete-guide-for-families": {
+    "performance": 76.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-siblings-how-to-support-the-whole-family": {
+    "performance": 63.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-sleep-why-children-struggle-and-what-actually-helps": {
+    "performance": 50.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-trains-why-so-many-autistic-children-love-them-and-how-to-use-that-love": {
+    "performance": 73.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-and-work-building-skills-today-for-your-childs-future-career": {
+    "performance": 81.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-barbie-what-advocacy-groups-are-saying-and-why-it-matters-for-your-child": {
+    "performance": 64.0,
+    "accessibility": 91.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-doctor-visit-tips-how-to-help-your-child-feel-safe-prepared-supported": {
+    "performance": 44.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-grants-for-families-financial-help-and-support-options-explained": {
+    "performance": 76.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-hygiene-tips-sensory-hacks-and-daily-routines-most-families-have-never-tried": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-nutrition-support-when-to-seek-a-dietitian-how-to-help-your-child-thrive": {
+    "performance": 70.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-parenting-hacks-practical-tips-most-families-have-never-tried": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-picky-eating-tips-a-supportive-guide-for-parents-from-on-target-aba": {
+    "performance": 74.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-religion-how-faith-communities-can-welcome-and-support-autistic-children": {
+    "performance": 67.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-self-awareness-how-to-tell-your-child-theyre-autistic-and-why-it-matters": {
+    "performance": 77.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-sleep-help-a-gentle-guide-for-parents-navigating-bedtime-challenges": {
+    "performance": 75.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-stigma-what-it-really-looks-like-and-how-families-can-respond": {
+    "performance": 71.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/autism-summer-to-fall-transition-4-back-to-school-parenting-hacks": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/bcbs-aba-copay-question-double-copays-for-split-rbt-shifts": {
+    "performance": 45.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/being-an-autistic-parent-strengths-challenges-and-support": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/best-sports-for-autistic-children-adaptive-athletics-and-sensory-tips": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/beyond-the-clinic-how-aba-therapy-builds-confidence-in-everyday-life": {
+    "performance": 49.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/beyond-the-myths-an-educational-guide-to-understanding-the-autism-spectrum": {
+    "performance": 73.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/both-sides-of-autism-caregiving-the-reality-no-one-talks-about-enough": {
+    "performance": 76.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/break-cards-in-aba-therapy-giving-children-a-voice-when-they-need-it-most": {
+    "performance": 69.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/bubble-music-party-how-on-target-abas-gahanna-el-center-kicked-off-autism-acceptance-month": {
+    "performance": 47.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/building-confidence-in-children-with-autism-small-steps-that-lead-to-big-growth": {
+    "performance": 62.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/building-confidence-in-children-with-autism-through-aba-therapy": {
+    "performance": 77.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/building-peer-relationships-for-children-with-autism-how-aba-therapy-helps-kids-connect-communicate-and-thrive": {
+    "performance": 50.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/building-social-skills-through-aba-therapy-helping-kids-connect-play-and-thrive": {
+    "performance": 43.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/can-i-cancel-aba-therapy-what-parents-need-to-know-before-making-a-decision": {
+    "performance": 43.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/can-parents-be-involved-in-aba-therapy-sessions-the-collaborative-care-guide": {
+    "performance": 52.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/caring-for-a-child-with-autism-during-a-fever-a-parents-guide": {
+    "performance": 45.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/caring-without-burning-out-a-parents-guide-to-supporting-a-child-with-autism-and-yourself": {
+    "performance": 65.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/chill-act-expo-salt-lake-city-2026-exhibitor-guide-to-building-local-trust": {
+    "performance": 62.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/co-occurring-conditions-in-autism-the-truth-about-diagnostic-overshadowing": {
+    "performance": 68.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/college-transition-support-for-students-with-autism-adhd-how-families-can-prepare-for-success": {
+    "performance": 48.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy": {
+    "performance": 73.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/common-behaviors-in-kids-with-autism-what-they-mean-why": {
+    "performance": 40.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/communication-in-asd-a-parents-guide-to-unlocking-your-childs-voice": {
+    "performance": 62.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/communication-skills-in-aba-from-gestures-to-words-and-beyond": {
+    "performance": 67.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/do-vaccines-cause-autism-what-the-science-actually-says": {
+    "performance": 52.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/doctor-visits-for-children-with-autism-a-reassuring-guide-for-parents": {
+    "performance": 48.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/does-insurance-cover-aba-therapy-everything-ohio-and-utah-families-need-to-know": {
+    "performance": 78.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/does-my-child-really-need-aba-therapy-or-something-else": {
+    "performance": 61.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/early-autism-screening": {
+    "performance": 64.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/early-diagnosis-autism": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/early-signs-of-autism-a-parent-friendly-guide-to-understanding-development": {
+    "performance": 74.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/early-signs-of-autism-in-toddlers-what-parents-in-ohio-and-utah-should-know": {
+    "performance": 79.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/early-signs-symptoms-of-autism": {
+    "performance": 77.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/emotion-cards-in-aba-therapy-how-parents-can-introduce-them-at-home": {
+    "performance": 45.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/emotional-regulation-in-aba-therapy-helping-children-manage-big-feelings": {
+    "performance": 48.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/estimated-expenses-for-aba-therapy-in-ohio-a-parents-guide": {
+    "performance": 77.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/executive-functioning-and-autism-what-it-is-why-it-matters-and-how-aba-therapy-helps": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/fct-in-aba-therapy-how-to-replace-meltdowns-with-meaningful-communication": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/fecal-smearing-in-toddlers-causes-aba-based-solutions": {
+    "performance": 48.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/fidgets-in-aba-therapy-how-sensory-tools-help-kids-focus-and-learn": {
+    "performance": 69.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/finding-calm-how-downtime-supports-progress-in-aba-therapy": {
+    "performance": 48.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/finding-the-right-aba-agencies-near-me-how-to-choose-the-best-support-for-your-child": {
+    "performance": 68.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/finding-the-right-aba-centers-near-me-what-parents-should-know-before-choosing-a-provider": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/finding-your-community-a-guide-for-families-of-children-with-autism": {
+    "performance": 53.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/from-first-concern-to-action-what-to-do-when-you-suspect-your-child-may-have-autism": {
+    "performance": 65.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/from-meltdowns-to-milestones-understanding-behavior-in-aba-therapy": {
+    "performance": 48.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/from-nonverbal-to-100-words-real-stories-of-communication-breakthroughs-in-aba-therapy": {
+    "performance": 52.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/grief-and-autism-supporting-autistic-children-and-adults-through-loss": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/gross-motor-skills-in-asd-uncovering-the-hidden-coordination-bottleneck": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/hands-on-learning-in-aba-how-making-energy-balls-supports-kids-in-the-autism-scholarship-program": {
+    "performance": 49.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/helping-children-with-autism-get-ready-for-the-school-bus": {
+    "performance": 74.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/holiday-air-travel-with-autistic-children-tips-to-make-the-journey-smoother": {
+    "performance": 67.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/home-meets-therapy-simple-aba-strategies-parents-can-use-every-day": {
+    "performance": 49.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/homeschooling-or-traditional-school-for-a-child-with-autism-which-is-better": {
+    "performance": 59.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/hope-and-progress-in-aba-what-every-parent-needs-to-know-about-their-childs-future": {
+    "performance": 76.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-aba-centers-keep-children-safe-inside-safety-protocols-supervision-and-staff-training": {
+    "performance": 72.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-aba-helps-children-with-autism-manage-big-feelings": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-aba-therapy-builds-executive-function-skills-in-children-with-autism": {
+    "performance": 76.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-aba-therapy-helps-children-build-communication-skills": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-aba-therapy-supports-reading-skills-in-children-with-autism": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-can-i-help-my-child-with-autism-enjoy-thanksgiving-a-parents-guide-to-stress-free-family-gatherings": {
+    "performance": 68.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-can-i-set-my-child-with-autism-up-for-success-in-adulthood": {
+    "performance": 76.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-general-education-teachers-can-support-students-with-autism-a-complete-guide": {
+    "performance": 62.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-long-does-it-take-for-aba-therapy-to-work": {
+    "performance": 65.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-long-is-an-aba-session-what-parents-should-know-about-therapy-time-and-progress": {
+    "performance": 76.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-much-does-aba-therapy-cost-in-2026-a-parents-financial-guide": {
+    "performance": 77.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-play-based-aba-supports-real-world-learning": {
+    "performance": 61.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-technology-is-transforming-aba-therapy-for-children-with-autism": {
+    "performance": 49.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-act-around-someone-with-autism-a-practical-guide-for-families-communities": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-advocate-for-your-child-during-iep-meetings": {
+    "performance": 70.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-become-a-certified-rbt": {
+    "performance": 42.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-become-an-rbt-a-complete-guide-to-working-as-a-registered-behavior-technician": {
+    "performance": 49.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-create-a-calm-home-environment-for-a-child-with-autism": {
+    "performance": 60.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-encourage-independence-in-a-child-with-autism-a-parent-friendly-guide": {
+    "performance": 70.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-get-started-with-aba-therapy-at-on-target-aba-a-step-by-step-guide": {
+    "performance": 67.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-help-your-child-with-autism-build-independence-at-home": {
+    "performance": 43.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-prepare-for-an-autism-assessment": {
+    "performance": 51.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-prepare-siblings-of-a-child-with-autism-building-understanding-empathy-and-connection": {
+    "performance": 44.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-talk-to-an-autistic-teenager-a-guide-for-parents-educators-and-caregivers": {
+    "performance": 47.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-talk-to-your-childs-school-about-autism-iep-tips-scripts-and-everything-you-need-to-know": {
+    "performance": 46.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/how-to-talk-to-your-childs-teacher-about-aba-therapy": {
+    "performance": 52.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/idea-and-autism-what-parents-need-to-know-about-your-childs-education-rights": {
+    "performance": 74.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/if-my-child-can-talk-they-dont-need-aba-why-this-myth-is-holding-families-back": {
+    "performance": 70.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/inside-an-aba-session-what-parents-can-expect-from-day-one": {
+    "performance": 68.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/is-aba-therapy-too-much-for-my-child-understanding-aba-therapy-schedules-preventing-burnout": {
+    "performance": 45.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/is-cocomelon-overstimulating-low-stimulation-shows-for-kids": {
+    "performance": 43.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/is-my-child-making-progress-a-parents-guide-to-understanding-aba-data": {
+    "performance": 51.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/life-skills-and-autism-a-complete-guide-to-building-independence-at-every-age": {
+    "performance": 50.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/long-distance-grandparenting-8-ways-to-stay-connected-with-your-grandchild-with-autism": {
+    "performance": 67.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/looking-for-an-iep-advocate-in-salt-lake-city-what-they-do-local-leads": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/making-life-easier-with-visual-supports-how-they-help-children-with-autism-thrive": {
+    "performance": 77.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/math-for-kids-with-autism-10-strategies-that-work-at-home-and-in-therapy": {
+    "performance": 77.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/meltdowns-vs-tantrums-whats-the-difference-and-how-aba-can-help": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/mismatch-shoe-tuesday-how-on-target-aba-celebrated-autism-awareness-acceptance-week": {
+    "performance": 68.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/mitochondrial-disease-autism-what-parents-should-know": {
+    "performance": 62.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/more-than-therapy-the-culture-behind-on-target-aba": {
+    "performance": 71.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/movie-night-at-on-target-aba-a-sensory-friendly-experience-that-builds-skills": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/my-child-might-have-autism-what-should-i-do-next": {
+    "performance": 43.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/myths-about-aba-therapy-what-parents-should-really-know": {
+    "performance": 73.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/navigating-family-gatherings-how-to-handle-relatives-reactions-when-your-child-has-autism": {
+    "performance": 41.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/navigating-medicaid-and-commercial-insurance-for-aba-therapy-coverage": {
+    "performance": 44.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/neurodivergence-and-coffee-what-caffeine-really-does-for-adhd-and-autistic-brains": {
+    "performance": 41.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/neurodiversity-at-work-how-to-build-an-inclusive-high-performing-workplace": {
+    "performance": 72.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/on-target-aba-blog-parent-teacher-communication-for-autism-how-to-build-a-supportive-team": {
+    "performance": 45.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/on-target-aba-blog-what-to-expect-when-getting-an-adult-autism-diagnosis": {
+    "performance": 47.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/pajama-day-holiday-tree-decorating-a-fun-meaningful-learning-experience-at-on-target-aba": {
+    "performance": 45.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/parent-led-strategies-to-support-communication-in-children-with-autism": {
+    "performance": 82.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/parent-training-in-aba-therapy-building-success-beyond-the-session": {
+    "performance": 52.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/pecs-for-autism-a-parents-guide-to-the-picture-exchange-communication-system": {
+    "performance": 51.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/pets-and-autism-crucial-tips-for-choosing-the-right-animal-companion": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/planning-and-ongoing-assessment-in-aba-therapy": {
+    "performance": 43.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/preparing-neurodivergent-kids-for-the-holidays-a-family-guide": {
+    "performance": 60.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/questioned-autism-diagnosis-for-dspd-eligibility-navigating-the-re-evaluation-fear": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/rainy-and-snowy-day-activities-for-neurodivergent-kids-a-parents-guide": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/reaching-6th-grade-at-a-preschool-reading-level-a-parents-action-guide": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/real-world-autism-interventions-how-aba-therapy-meets-children-where-they-actually-live": {
+    "performance": 68.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/reframe-the-discipline-7-practical-autism-redirection-hacks-most-families-overlook": {
+    "performance": 65.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/rest-breathe-youve-got-this-an-easter-message-for-autism-caregivers": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/self-esteem-in-autism-how-to-build-confidence-in-neurodivergent-kids": {
+    "performance": 45.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/sensory-issues-in-autism-understanding-sensory-processing-and-how-to-help": {
+    "performance": 64.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/sharing-a-diagnosis-how-to-let-people-know-about-your-childs-autism": {
+    "performance": 52.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/signs-a-child-needs-aba-therapy": {
+    "performance": 50.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/signs-of-autism-in-kids": {
+    "performance": 47.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/signs-of-autism-in-women-and-girls-what-to-know-and-why-it-matters": {
+    "performance": 74.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/signs-of-dyslexia-in-children-what-parents-should-know": {
+    "performance": 52.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/simple-everyday-tips-to-make-life-easier-for-families-of-children-with-autism-in-2026": {
+    "performance": 79.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025": {
+    "performance": 63.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/special-needs-school-placement-navigating-autism-and-epilepsy-in-education": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun": {
+    "performance": 81.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/stimming-and-autism-what-it-is-what-it-means-and-why-it-should-never-be-suppressedby-the-numbers-what-the-latest-data-means-for-families": {
+    "performance": 49.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/summer-activities-for-autism-fun-sensory-safe-ideas-for-all-ages": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/teaching-kindness-helping-children-understand-and-support-kids-with-special-needs": {
+    "performance": 47.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/teaching-self-advocacy-skills-in-aba-therapy-helping-kids-speak-up-for-themselves": {
+    "performance": 65.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-autism-response-team-a-free-resource-every-autism-family-should-know-about": {
+    "performance": 63.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-benefits-of-early-autism-diagnosis-why-early-answers-matter-for-your-child": {
+    "performance": 44.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-caregiver-skills-training-program-a-free-evidence-based-resource": {
+    "performance": 65.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-first-week-of-aba-therapy-what-parents-can-expect": {
+    "performance": 45.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-hidden-barriers-to-aba-therapy-what-families-are-really-up-against": {
+    "performance": 72.0,
+    "accessibility": 91.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-power-of-early-intervention-how-aba-therapy-changes-futures-for-children-with-autism": {
+    "performance": 63.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-power-of-reinforcement-how-positive-aba-strategies-motivate-real-change": {
+    "performance": 78.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-power-of-routine-in-aba-therapy-why-predictability-helps-children-thrive": {
+    "performance": 76.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-role-of-play-in-aba-therapy-how-fun-builds-real-progress": {
+    "performance": 64.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/the-sensory-friendly-4th-of-july-playbook-strategic-holiday-support-most-families-have-never-tried": {
+    "performance": 68.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/to-the-mothers-who-move-mountains-a-mothers-day-letter-from-on-target-aba": {
+    "performance": 71.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/traveling-with-a-child-who-has-autism-how-aba-therapy-helps-families-prepare-adapt-enjoy-the-journey": {
+    "performance": 73.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/understanding-aba-data-a-parents-guide-to-tracking-progress-in-aba-therapy": {
+    "performance": 76.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/understanding-autism-and-aggression-a-parent-friendly-guide-to-whats-really-going-on": {
+    "performance": 67.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/understanding-medicaid-aba-therapy-what-parents-need-to-know": {
+    "performance": 61.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/understanding-the-abcs-of-behavior-in-aba-therapy-antecedent-behavior-and-consequence-explained": {
+    "performance": 51.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/understanding-the-autism-diagnosis-process-what-parents-can-expect-and-how-to-prepare": {
+    "performance": 44.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/unlocking-autism-and-critical-thinking-5-powerful-problem-solving-strategies-for-autistic-kids": {
+    "performance": 48.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/vaccines-and-autism-regression-navigating-wellness-checkups-with-peace-of-mind": {
+    "performance": 49.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/violent-autistic-behavior-in-teenagers-crisis-resources-and-parenting-strategies": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/virtual-activities-for-kids-with-autism-the-complete-guide-for-families": {
+    "performance": 62.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/visual-schedules-in-aba-therapy-how-they-help-children-with-autism-thrive": {
+    "performance": 72.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-causes-autism-understanding-the-science-behind-autism-spectrum-disorder": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-does-a-typical-day-in-aba-therapy-look-like": {
+    "performance": 66.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-a-bcba-and-why-does-their-caseload-size-actually-matter": {
+    "performance": 79.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-a-bcba-understanding-the-clinical-heart-of-aba-therapy": {
+    "performance": 67.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-an-autism-scholarship-program-asp-and-how-can-it-help-your-child": {
+    "performance": 43.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-autism-really-answering-the-most-common-questions-about-asd-neurodivergence": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-discrete-trial-training-dtt-a-complete-guide-for-autism-families": {
+    "performance": 67.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-extended-school-year-esy-a-complete-guide-for-families-of-children-with-autism": {
+    "performance": 44.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-natural-environment-teaching-a-complete-guide-for-autism-families": {
+    "performance": 48.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-pans-pandas-a-caregivers-guide-to-inflammatory-brain-flares": {
+    "performance": 72.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-pivotal-response-treatment-prt-a-complete-guide-for-autism-families": {
+    "performance": 46.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-is-the-best-medicine-for-autism-aggression": {
+    "performance": 82.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-most-people-dont-know-about-kids-who-do-aba-therapy": {
+    "performance": 46.0,
+    "accessibility": 91.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-ohios-autism-scholarship-program-covers-and-how-to-use-it-for-aba-therapy": {
+    "performance": 82.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-progress-actually-looks-like-in-aba-beyond-big-milestones": {
+    "performance": 49.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-really-happens-in-aba-therapy-same-moment-different-lens": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-to-do-when-your-child-resists-new-foods-aba-tips-for-picky-eating": {
+    "performance": 48.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-to-do-while-youre-on-an-aba-waitlist-and-why-you-dont-have-to-wait": {
+    "performance": 67.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/what-to-expect-starting-aba-therapy": {
+    "performance": 49.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 89.0
+  },
+  "/blog/when-aba-therapy-doesnt-look-like-therapy-and-why-thats-a-good-thing": {
+    "performance": 75.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/when-it-comes-to-your-childs-progress-we-move-mountains": {
+    "performance": 51.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/when-should-aba-therapy-begin": {
+    "performance": 46.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/where-can-i-get-an-autism-diagnosis-a-parents-guide-to-autism-testing": {
+    "performance": 79.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/where-can-i-get-an-autism-diagnosis-a-parents-guide-to-autism-testing-in-utah": {
+    "performance": 66.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/who-works-with-my-child-in-aba-therapy-understanding-the-aba-therapy-team": {
+    "performance": 45.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-a-simple-game-of-bowling-is-actually-serious-therapy-turn-taking-and-pretend-play-in-aba": {
+    "performance": 51.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-consistency-matters-how-routine-strengthens-progress-in-aba-therapy": {
+    "performance": 49.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-data-matters-in-aba-therapy-turning-small-wins-into-big-results": {
+    "performance": 68.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-does-my-child-with-autism-throw-things-understanding-and-addressing-throwing-behavior": {
+    "performance": 64.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-early-aba-therapy-matters-the-benefits-of-starting-young": {
+    "performance": 75.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-families-love-in-home-aba-therapy-for-personalized-autism-support": {
+    "performance": 79.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-is-early-intervention-in-autism-important": {
+    "performance": 42.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-more-women-are-being-diagnosed-with-autism-later-in-life": {
+    "performance": 62.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-my-child-with-autism-screams-4-hidden-reasons-behavioral-fixes": {
+    "performance": 50.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-parent-training-in-aba-therapy-makes-all-the-difference": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-physical-fitness-matters-for-autistic-children": {
+    "performance": 73.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-representation-matters-what-the-new-autism-barbie-means-for-our-children": {
+    "performance": 53.0,
+    "accessibility": 94.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/why-the-best-aba-therapy-feels-like-play-and-why-thats-the-point": {
+    "performance": 43.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/blog/your-questions-about-aba-therapy-answered": {
+    "performance": 46.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/careers": {
+    "performance": 85.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/center-based-aba-therapy": {
+    "performance": 76.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/cleveland": {
+    "performance": 86.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/clinical-philosophy": {
+    "performance": 84.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/columbus": {
+    "performance": 82.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/contact": {
+    "performance": 81.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/cookie-consent": {
+    "performance": 87.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/cost-of-autism-evaluation": {
+    "performance": 89.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/disclaimer": {
+    "performance": 88.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/early-intervention-autism-program": {
+    "performance": 68.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/employment-application": {
+    "performance": 77.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/faqs": {
+    "performance": 85.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/gahanna-ohio": {
+    "performance": 75.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/how-long-does-aba-therapy-take": {
+    "performance": 87.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/icon-attribution": {
+    "performance": 89.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/in-home-aba-therapy": {
+    "performance": 71.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/insurance": {
+    "performance": 82.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/insurance-aetna": {
+    "performance": 85.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/insurance-anthem": {
+    "performance": 83.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/insurance-medicaid-ohio": {
+    "performance": 84.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/insurance-medicaid-utah": {
+    "performance": 87.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/insurance-united-healthcare": {
+    "performance": 86.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/job-application": {
+    "performance": 82.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/late-autism-diagnosis": {
+    "performance": 85.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/locations": {
+    "performance": 84.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 89.0
+  },
+  "/mayfield-ohio": {
+    "performance": 74.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/meet-the-team": {
+    "performance": 82.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/murray-utah": {
+    "performance": 74.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/on-target-aba-autism-testing-autism-evaluations": {
+    "performance": 78.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/our-process": {
+    "performance": 86.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/our-services": {
+    "performance": 68.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/pre-intake-form": {
+    "performance": 81.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/privacy-policy": {
+    "performance": 87.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/reynoldsburg-ohio": {
+    "performance": 75.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/salt-lake-city": {
+    "performance": 81.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/signs-of-autism-in-girls": {
+    "performance": 80.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/signs-of-autism-in-toddlers": {
+    "performance": 84.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/terms-of-service": {
+    "performance": 88.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/thank-you": {
+    "performance": 88.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/thank-you-confirmation": {
+    "performance": 72.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/why-work-at-on-target-aba": {
+    "performance": 83.0,
     "accessibility": 100.0,
     "best-practices": 75.0,
     "best-practices-adjusted": 95.5,
