@@ -42,7 +42,7 @@ Early developmental skills — joint attention, eye contact, imitation, and basi
 
 ## Key Benefits of Starting ABA Therapy Early
 
-[Early ABA intervention](https://ontargetaba.com/blog/early-autism-screening-why-it-matters-and-how-to-get-started/) doesn’t just address one area of a child’s development — it supports growth across nearly every domain of daily life. Some of the most well-documented benefits include:
+[Early ABA intervention](https://ontargetaba.com/blog/early-autism-screening/) doesn’t just address one area of a child’s development — it supports growth across nearly every domain of daily life. Some of the most well-documented benefits include:
 
 - Stronger communication skills. Early ABA often incorporates speech and language goals alongside behavioral ones, helping children develop functional communication — whether verbal, through sign, or using an AAC device — sooner rather than later.
 

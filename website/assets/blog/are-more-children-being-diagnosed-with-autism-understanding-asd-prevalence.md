@@ -75,7 +75,7 @@ Importantly, prevalence rates still vary across communities. Some areas report h
 
 Children today are often diagnosed at younger ages than in previous decades.
 
-[Early screening guidelines](https://ontargetaba.com/2026/03/10/autism-screening-why-early-autism-screening-matters-for-your-child/) recommend autism-specific screening at 18 and 24 months. Because pediatricians actively monitor development, signs are recognized sooner.
+[Early screening guidelines](https://ontargetaba.com/2026/03/10/early-autism-screening/) recommend autism-specific screening at 18 and 24 months. Because pediatricians actively monitor development, signs are recognized sooner.
 
 Earlier diagnosis increases recorded prevalence within tracking age groups.
 

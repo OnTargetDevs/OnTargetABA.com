@@ -1,5 +1,5 @@
 ---
-title: Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing in Utah
+title: Where Can I Get an Autism Diagnosis in Utah? A Salt Lake Valley Parent's Guide
 date: 2026-02-28
 category: Getting Started with ABA
 author: On Target ABA Team
@@ -10,7 +10,7 @@ source_url: "https://ontargetaba.com/2026/02/28/where-can-i-get-an-autism-diagno
 draft: false
 hidden: false
 ---
-# Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing in Utah
+# Where Can I Get an Autism Diagnosis in Utah? A Salt Lake Valley Parent's Guide
 
 If you've found yourself typing "where can I get an autism diagnosis" into Google, you're not alone.
 
@@ -246,3 +246,5 @@ Support leads to progress.
 And progress leads to hope.
 
 If you're ready to take the first step, we're here.
+
+*Not in Utah? Read our general guide: [Where Can I Get an Autism Diagnosis? A Parent's Guide to Autism Testing](/blog/posts/where-can-i-get-an-autism-diagnosis-a-parents-guide-to-autism-testing).*

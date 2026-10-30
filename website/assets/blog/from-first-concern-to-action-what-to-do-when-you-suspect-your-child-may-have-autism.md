@@ -208,6 +208,6 @@ _On Target ABA serves children ages 2–12 across Ohio and Utah with center-base
 
 [→ Contact us to take the first step toward evaluation and therapy](https://ontargetaba.com/contact/)
 [→ Access the Autism Speaks First Concern to Action Tool Kit at autismspeaks.org](https://www.autismspeaks.org/first-concern-action)
-[→ Complete the free M-CHAT-R screening at autismspeaks.org/screen-your-child](https://ontargetaba.com/2026/03/10/autism-screening-why-early-autism-screening-matters-for-your-child/)
-[→ Read: Early autism screening — why it matters](https://ontargetaba.com/2026/04/23/early-autism-screening-why-it-matters-and-how-to-get-started/)
+[→ Complete the free M-CHAT-R screening at autismspeaks.org/screen-your-child](https://ontargetaba.com/2026/03/10/early-autism-screening/)
+[→ Read: Early autism screening — why it matters](https://ontargetaba.com/2026/04/23/early-autism-screening/)
 [→ Read: Does insurance cover ABA therapy? A complete guide](https://ontargetaba.com/2026/04/06/does-insurance-cover-aba-therapy-everything-ohio-and-utah-families-need-to-know/)

@@ -85,6 +85,23 @@
 /blog/posts/-smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025   /blog/posts/smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025   301
 
 # =============================================================
+# Duplicate posts merged (2026-10-29): each retired slug 301s to the version
+# with the most Google Search clicks over the last 90 days. Must precede the
+# generic /blog/:slug and /blog/posts/* rules below.
+# =============================================================
+/blog/why-does-my-child-with-autism-throw-things/   /blog/posts/why-does-my-child-with-autism-throw-things-understanding-and-addressing-throwing-behavior   301
+/blog/why-does-my-child-with-autism-throw-things   /blog/posts/why-does-my-child-with-autism-throw-things-understanding-and-addressing-throwing-behavior   301
+/blog/posts/why-does-my-child-with-autism-throw-things   /blog/posts/why-does-my-child-with-autism-throw-things-understanding-and-addressing-throwing-behavior   301
+/blog/posts/why-does-my-child-with-autism-throw-things/   /blog/posts/why-does-my-child-with-autism-throw-things-understanding-and-addressing-throwing-behavior   301
+/blog/early-autism-screening-why-it-matters-and-how-to-get-started/   /blog/posts/early-autism-screening   301
+/blog/early-autism-screening-why-it-matters-and-how-to-get-started   /blog/posts/early-autism-screening   301
+/blog/posts/early-autism-screening-why-it-matters-and-how-to-get-started   /blog/posts/early-autism-screening   301
+/blog/posts/early-autism-screening-why-it-matters-and-how-to-get-started/   /blog/posts/early-autism-screening   301
+/blog/autism-screening-why-early-autism-screening-matters-for-your-child/   /blog/posts/early-autism-screening   301
+/blog/autism-screening-why-early-autism-screening-matters-for-your-child   /blog/posts/early-autism-screening   301
+/blog/posts/autism-screening-why-early-autism-screening-matters-for-your-child   /blog/posts/early-autism-screening   301
+/blog/posts/autism-screening-why-early-autism-screening-matters-for-your-child/   /blog/posts/early-autism-screening   301
+# =============================================================
 # WP taxonomy / author archives served UNDER /blog/ (the /category/*,
 # /author/*, /tag/* rules above only catch the bare-root form; Yoast's
 # live permalinks are /blog/category/... and /blog/author/...).

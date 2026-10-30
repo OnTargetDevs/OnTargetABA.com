@@ -98,7 +98,7 @@ Left unaddressed, dyslexia doesn’t just affect reading scores — it can affec
 
 The good news: [dyslexia is well-researched](https://www.southcarolinapublicradio.org/show/health-focus/2026-08-31/dyslexia-in-children), and early, targeted support makes a significant difference. Children who receive structured, evidence-based reading intervention — especially before third grade — tend to make stronger, faster progress than those who are identified later.
 
-This is also why pediatric specialists, including neuropsychologists, are increasingly vocal about raising awareness.[Recognizing patterns early gives families a head start](https://ontargetaba.com/blog/early-autism-screening-why-it-matters-and-how-to-get-started/) rather than a game of catch-up.
+This is also why pediatric specialists, including neuropsychologists, are increasingly vocal about raising awareness.[Recognizing patterns early gives families a head start](https://ontargetaba.com/blog/early-autism-screening/) rather than a game of catch-up.
 
 ## What Should Parents Do If They Have Concerns?
 
