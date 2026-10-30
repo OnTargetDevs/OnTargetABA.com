@@ -81,7 +81,11 @@
     const crumbs = getCrumbs(headerData);
     if (!crumbs || crumbs.length < 2) return '';
     const parts = crumbs.map((entry, i) => {
-      const label = entry[0];
+      // Blog posts render their title client-side; blog/post.html publishes it
+      // on window.__otaPostTitle so a crumb drawn after the article loads
+      // shows the real title instead of the generic "Article" label.
+      const label = (i === crumbs.length - 1 && window.__otaPostTitle && pageSlug().indexOf('/blog/posts/') === 0)
+        ? window.__otaPostTitle : entry[0];
       const href = entry[1];
       const isLast = i === crumbs.length - 1;
       if (isLast || !href) {
