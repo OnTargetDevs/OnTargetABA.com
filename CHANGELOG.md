@@ -14,6 +14,19 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-10-30
 
+### Fixed
+
+- correct treosh param name and preview URL path parsing
+
+### Chore
+
+- add 246 blog posts, 12 shards, fix hidden-dir upload
+- reset baseline; PR job wrote wrong key before url_to_path fix
+- audit all 64 pages, per-page baseline, adjusted best-practices
+
+
+## [Unreleased] &mdash; 2026-10-30
+
 ### Added
 
 - copy WordPress-hosted images into the beta repo and point pages at the local copies
