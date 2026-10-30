@@ -153,7 +153,7 @@ The most evidence-based response to an autism diagnosis is early intervention �
 _At On Target ABA, we serve children ages 2–12 across Ohio and Utah with center-based, home-based, and school-based ABA therapy. We accept most major insurance plans and Medicaid._
 
 [→ Contact us to learn about early intervention ABA therapy services](https://ontargetaba.com/contact/)
-[→ Read: Early autism screening — why it matters and how to get started](https://ontargetaba.com/2026/04/23/early-autism-screening-why-it-matters-and-how-to-get-started/)
+[→ Read: Early autism screening — why it matters and how to get started](https://ontargetaba.com/2026/04/23/early-autism-screening/)
 [→ Read: 2025 autism statistics — what the numbers mean for families](https://ontargetaba.com/2026/04/21/2025-autism-by-the-numbers-what-the-latest-data-means-for-families/)
 [→ Read: ABA therapy myths vs. facts — what every family should know](https://ontargetaba.com/2026/03/25/aba-therapy-is-not-what-you-think-it-is-debunking-the-most-common-myths/)
 [→ Read: What is ABA therapy? A complete guide for families](https://ontargetaba.com/2025/12/18/understanding-autism-and-aggression-a-parent-friendly-guide-to-whats-really-going-on/)
