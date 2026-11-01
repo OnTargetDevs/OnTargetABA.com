@@ -1,9 +1,16 @@
 {
   "/": {
-    "performance": 75.0,
+    "performance": 73.0,
     "accessibility": 100.0,
     "best-practices": 75.0,
     "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/aba-therapy-col-lp-g": {
+    "performance": 78.0,
+    "accessibility": 100.0,
+    "best-practices": 79.0,
+    "best-practices-adjusted": 100.0,
     "seo": 100.0
   }
 }
