@@ -76,6 +76,6 @@ While collaboration is beautiful, it does introduce practical challenges that cl
 
 ## Your Next Steps: Building a Unified Care Path
 
-At [On Target ABA](https://ontargetaba.com/our-process/), we explicitly view parents as our most valuable clinical partners. We don’t want you to feel left in the dark about what happens during your child’s therapy hours. Whether your child receives care at our Mayfield Heights clinic or our Columbus center, our doors are open to collaboration.
+At [On Target ABA](https://ontargetaba.com/our-process/), we explicitly view parents as our most valuable clinical partners. We don’t want you to feel left in the dark about what happens during your child’s therapy hours. Whether your child receives care at our Mayfield Village clinic or our Columbus center, our doors are open to collaboration.
 
 Our BCBAs explicitly customize parent training goals to match your household’s unique schedule, lifestyle, and values—ensuring that every breakthrough achieved inside our centers seamlessly transforms into lasting harmony, communication, and independence at your family dinner table.
