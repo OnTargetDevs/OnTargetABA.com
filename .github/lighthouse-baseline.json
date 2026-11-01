@@ -1,7 +1,35 @@
 {
   "/": {
-    "performance": 75.0,
+    "performance": 79.0,
     "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/become-an-rbt": {
+    "performance": 95.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/locations": {
+    "performance": 88.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 89.0
+  },
+  "/murray-utah": {
+    "performance": 74.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
+  },
+  "/salt-lake-city": {
+    "performance": 85.0,
+    "accessibility": 96.0,
     "best-practices": 75.0,
     "best-practices-adjusted": 95.5,
     "seo": 100.0
