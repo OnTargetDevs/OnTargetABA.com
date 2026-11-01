@@ -862,5 +862,15 @@ body {
 .bg-coral .bg-white\/15, .bg-coral .bg-white\/20,
 .from-teal .bg-white\/15, .from-teal .bg-white\/20 { background-color: rgba(8,66,76,.2); }
 .eyebrow.text-white, .eyebrow.text-sun { background: rgba(255,255,255,.12); }
+.bg-white\/10.text-sun, .bg-white\/15.text-sun { background-color: rgba(8,66,76,.35); }
 .from-teal .bg-white\/15.text-sun { background-color: rgba(8,66,76,.5); }
 .from-coral.to-coral\/80 { --tw-gradient-to: var(--c-coral-deep) var(--tw-gradient-to-position); }
+
+/* Decorative teal fills (icon/number tiles, the insurance hero card) use the
+   bright brand teal; whatever sits on them switches to ink, 4.99:1 on #6CBCAF. */
+.grid.place-items-center.bg-teal.text-white { background-color: var(--c-teal-bright); color: var(--c-ink); }
+.bg-gradient-to-br.deco-teal { background-image: linear-gradient(135deg, var(--c-teal-bright), #8DCDC2); }
+.deco-teal.text-white { color: var(--c-ink); }
+.deco-teal .text-white\/60 { color: var(--c-ink) !important; }
+.bg-coral .font-semibold.text-sun:not(.rounded-full),
+.from-teal .font-semibold.text-sun:not(.rounded-full) { color: #FFF6D6; }
