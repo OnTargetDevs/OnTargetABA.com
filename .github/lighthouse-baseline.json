@@ -26,5 +26,12 @@
     "best-practices": 75.0,
     "best-practices-adjusted": 95.5,
     "seo": 100.0
+  },
+  "/salt-lake-city": {
+    "performance": 85.0,
+    "accessibility": 96.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
+    "seo": 100.0
   }
 }
