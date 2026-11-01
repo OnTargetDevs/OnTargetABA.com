@@ -38,7 +38,7 @@ Designer's 2026 palette: deep teal `#08424C`, coral `#F55050`, teal `#6CBCAF`, y
 | `ink` | `#08424C` | Body type, headings, footer, primary dark surfaces |
 | `ink-soft` | `#2D5257` | Secondary body text |
 | `teal` | `#36776D` | Icon tiles / cards with white text (brand teal darkened for AA) |
-| `teal-bright` (CSS only) | `#6CBCAF` | Blobs, target rings, decoration |
+| `teal-bright` (CSS only) | `#6CBCAF` | Blobs, target rings, and decorative fills: icon/number tiles (`.grid.place-items-center.bg-teal.text-white`) and `.deco-teal` cards, where content switches to ink (4.99:1) |
 | `teal-deep` | `#0B5961` | Emphasis text, dark gradient ends |
 | `coral` / `coral-btn` | `#C73636` | CTAs, coral text, coral cards (brand coral darkened for AA) |
 | `coral-bright` (CSS only) | `#F55050` | Blobs, rings, dots, glows, launcher |
