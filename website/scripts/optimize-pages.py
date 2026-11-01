@@ -178,10 +178,10 @@ def build_perf_block(page_path: str) -> str:
         # bullseye). Browsers pick the appropriate size; SVG fallback
         # for crisp scaling on supported browsers.
         '<link rel="manifest" href="/manifest.json">',
-        '<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">',
-        '<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">',
-        '<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">',
-        '<link rel="apple-touch-icon" sizes="270x270" href="/assets/images/favicon-270x270.png">',
+        '<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-2026-32x32.png">',
+        '<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-2026-192x192.png">',
+        '<link rel="icon" type="image/svg+xml" href="/assets/images/favicon-2026.svg">',
+        '<link rel="apple-touch-icon" sizes="270x270" href="/assets/images/favicon-2026-270x270.png">',
         '<link rel="shortcut icon" href="/favicon.ico">',
         # Warm DNS+TLS for the third-party hosts the page will hit later
         # (Jotform forms, LeadTrap chat). Cheap on first paint, saves

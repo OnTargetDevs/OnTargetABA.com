@@ -70,7 +70,7 @@
         '<div class="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-12 gap-10">' +
           '<div class="lg:col-span-4">' +
             '<div class="flex items-center">' +
-              '<img src="' + esc(logo.src) + '" alt="' + esc(logo.alt) + '" class="h-11 w-auto" />' +
+              '<img src="' + esc(logo.src) + '" alt="' + esc(logo.alt) + '" width="734" height="120" class="h-10 w-auto" />' +
             '</div>' +
             '<p class="mt-4 text-white/70 max-w-sm">' + esc(data.tagline) + '</p>' +
             '<a href="' + esc(phone.href) + '" class="mt-5 inline-flex items-center gap-2 font-semibold text-sun">' +
