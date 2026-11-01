@@ -28,19 +28,26 @@ Hours at all clinics: **Mon–Fri 8:00 AM – 5:00 PM**.
 
 Founder / Clinical Director: **Ilana Gross, BCBA**. Bachelor's in Speech & Language Pathology (Touro College), dual Master's in Education + Special Education (Mercy College), ABA certificate (Florida Institute of Technology).
 
-## Brand palette (Figma-aligned, not what the live site exposes in CSS)
+## Brand palette (2026 designer palette, nudged in 2026-11)
 
-Source: the user's Figma board for the redesign (the live WordPress CSS uses a brighter, less-coordinated palette). When in doubt, the Figma file is authoritative.
+Designer's 2026 palette: deep teal `#08424C`, coral `#F55050`, teal `#6CBCAF`, yellow `#F2C50C`, blush `#F4C0BD`, cream `#F7F5DA` / `#FBFAEA`. The site applies it as a nudge, not a rebrand: tokens live in `website/assets/css/app.css` (`:root --c-*`) and are mirrored in `website/tailwind.config.js` (rebuild `assets/css/tailwind.css` with `node scripts/build-tailwind.mjs`). Text-carrying tokens are AA-safe shades; the exact brand coral/teal are the `-bright` tokens and are decoration only (white text on `#F55050` is 3.4:1, on `#6CBCAF` 2.2:1).
 
 | Token | Hex | Purpose |
 |---|---|---|
-| `cream` | `#FAF5E6` | Warm page background |
-| `ink` | `#163243` | Body type, footer |
-| `teal` | `#00B7EA` | Bright accent (used sparingly — links, accents) |
-| `teal-deep` | `#0E5E6E` | Body emphasis, dark gradient ends |
-| `coral` | `#E84F3B` | Primary CTA, italic emphasis in headlines |
-| `sun` | `#F4C842` | Big circle hero device, secondary CTA |
+| `cream` | `#FBFAEA` | Warm page background |
+| `ink` | `#08424C` | Body type, headings, footer, primary dark surfaces |
+| `ink-soft` | `#2D5257` | Secondary body text |
+| `teal` | `#36776D` | Icon tiles / cards with white text (brand teal darkened for AA) |
+| `teal-bright` (CSS only) | `#6CBCAF` | Blobs, target rings, decoration |
+| `teal-deep` | `#0B5961` | Emphasis text, dark gradient ends |
+| `coral` / `coral-btn` | `#C73636` | CTAs, coral text, coral cards (brand coral darkened for AA) |
+| `coral-bright` (CSS only) | `#F55050` | Blobs, rings, dots, glows, launcher |
+| `coral-deep` (CSS only) | `#A62C2C` | Coral button hover |
+| `sun` | `#F2C50C` | Secondary CTA (ink text), accents |
 | `sage` | `#C5E0D5` | 5th accent — backgrounds, sage-soft cards |
+| `mute` | `#52676B` | Muted text (AA on cream, white and every soft tint) |
+
+The Google Ads landing pages (`*-lp-g*`, `*-g-lp`, `on-target-aba-autism-testing-autism-evaluations`, `thank-you-confirmation`) carry their own `:root` variables inside their `<style>` block; only those variables were nudged. Their scripts, GTM, Jotform iframes, `tel:` links and `data-*` attributes stay byte-identical.
 
 The display font in the Figma is a chunky humanist (Recoleta-style). Closest free fit is Bricolage Grotesque or Caprasimo. **The current site uses Fraunces and stays on Fraunces** — the user previewed a Bricolage Grotesque swap in `demo.html` and explicitly rejected it. Don't propose this swap again.
 

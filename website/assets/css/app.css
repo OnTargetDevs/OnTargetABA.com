@@ -83,31 +83,37 @@
 }
 
 :root {
-  /* ====== On Target ABA brand palette ======
-     Warmer / Figma-aligned tokens. Bright cyan kept as accent;
-     a deeper teal carries body emphasis. Coral nudged toward red.
-     New sage accent added for the 5th color in the Figma board.
+  /* ====== On Target ABA brand palette (2026 nudge) ======
+     Tokens follow the designer's 2026 palette: deep teal #08424C ink,
+     coral #F55050, teal #6CBCAF, yellow #F2C50C, cream #FBFAEA.
+     Tokens that carry text keep WCAG AA: --c-coral / --c-teal are the
+     brand hues darkened until white text passes 4.5:1. The pure brand
+     coral and teal live in the -bright tokens, used only for decoration
+     (blobs, rings, dots, glows) and never behind or as body text.
   */
-  --c-ink:        #163243;
-  --c-ink-soft:   #34495E;
-  --c-teal:       #00B7EA;
-  --c-teal-deep:  #0E5E6E;
-  --c-teal-soft:  #D6F0F8;
-  --c-coral:      #E84F3B;
-  --c-coral-btn:  #CE4635;
-  --c-coral-soft: #FCE0DA;
-  --c-sun:        #F4C842;
-  --c-sun-soft:   #FFF1C2;
-  --c-sage:       #C5E0D5;
-  --c-sage-soft:  #E6F1EB;
-  --c-cream:      #FAF5E6;
-  --c-paper:      #FFFFFF;
-  --c-mute:       #607181;
-  --c-line:       #E8DFD0;
+  --c-ink:          #08424C;
+  --c-ink-soft:     #2D5257;
+  --c-teal:         #36776D;
+  --c-teal-bright:  #6CBCAF;
+  --c-teal-deep:    #0B5961;
+  --c-teal-soft:    #DAEEEB;
+  --c-coral:        #C73636;
+  --c-coral-bright: #F55050;
+  --c-coral-btn:    #C73636;
+  --c-coral-deep:   #A62C2C;
+  --c-coral-soft:   #FDEFEE;
+  --c-sun:          #F2C50C;
+  --c-sun-soft:     #FCF0C2;
+  --c-sage:         #C5E0D5;
+  --c-sage-soft:    #E6F1EB;
+  --c-cream:        #FBFAEA;
+  --c-paper:        #FFFFFF;
+  --c-mute:         #52676B;
+  --c-line:         #E6E1CC;
 
-  --shadow-soft:  0 1px 2px rgba(11,34,51,.04), 0 8px 24px rgba(11,34,51,.06);
-  --shadow-pop:   0 1px 2px rgba(11,34,51,.06), 0 18px 48px rgba(11,34,51,.12);
-  --shadow-coral: 0 16px 40px rgba(232,79,59,.28);
+  --shadow-soft:  0 1px 2px rgba(8,66,76,.04), 0 8px 24px rgba(8,66,76,.06);
+  --shadow-pop:   0 1px 2px rgba(8,66,76,.06), 0 18px 48px rgba(8,66,76,.12);
+  --shadow-coral: 0 16px 40px rgba(245,80,80,.28);
 
   --r-sm: 8px;
   --r-md: 14px;
@@ -141,11 +147,11 @@ body {
   aspect-ratio: 1/1;
   border-radius: 999px;
   background: radial-gradient(circle at center,
-    var(--c-coral)    0%,  var(--c-coral)    50%,
+    var(--c-coral-bright) 0%, var(--c-coral-bright) 50%,
     #ffffff           50%, #ffffff           58%,
     var(--c-sun)      58%, var(--c-sun)      68%,
     #ffffff           68%, #ffffff           76%,
-    var(--c-teal)     76%, var(--c-teal)     86%,
+    var(--c-teal-bright) 76%, var(--c-teal-bright) 86%,
     #ffffff           86%, #ffffff           100%);
   box-shadow: var(--shadow-pop);
 }
@@ -169,7 +175,7 @@ body {
   letter-spacing: .22em;
   font-weight: 700;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(11,34,51,.25);
+  text-shadow: 0 1px 2px rgba(8,66,76,.25);
   margin-bottom: .35rem;
 }
 .target-overlay .tm-figure {
@@ -177,7 +183,7 @@ body {
   font-weight: 700;
   color: #fff;
   line-height: 1;
-  text-shadow: 0 2px 6px rgba(11,34,51,.25);
+  text-shadow: 0 2px 6px rgba(8,66,76,.25);
   font-size: clamp(3.5rem, 9vw, 7rem);
 }
 .target-overlay .tm-foot {
@@ -186,7 +192,7 @@ body {
   letter-spacing: .18em;
   font-weight: 700;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(11,34,51,.25);
+  text-shadow: 0 1px 2px rgba(8,66,76,.25);
   margin-top: .35rem;
 }
 
@@ -199,9 +205,9 @@ body {
   pointer-events: none;
   z-index: 0;
 }
-.blob-coral { background: var(--c-coral); }
+.blob-coral { background: var(--c-coral-bright); }
 .blob-sun   { background: var(--c-sun); }
-.blob-teal  { background: var(--c-teal); }
+.blob-teal  { background: var(--c-teal-bright); }
 
 /* =========== Scroll-reveal =========== */
 /* `.reveal` is no longer hidden by default. app.js stamps `.r-hide` on
@@ -261,7 +267,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  border: 2px solid var(--c-coral);
+  border: 2px solid var(--c-coral-bright);
   animation: pulse-ring 2.6s cubic-bezier(.2,.7,.2,1) infinite;
 }
 .pulse-ring::after { animation-delay: 1.3s; }
@@ -325,20 +331,20 @@ body {
   background: var(--c-coral-btn); color: #fff;
   box-shadow: var(--shadow-coral);
 }
-.btn-coral:hover { background: var(--c-coral); transform: translateY(-2px); }
+.btn-coral:hover { background: var(--c-coral-deep); transform: translateY(-2px); }
 .btn-ink {
   background: var(--c-ink); color: #fff;
 }
 .btn-ink:hover { background: var(--c-teal-deep); transform: translateY(-2px); }
 .btn-ghost {
   background: transparent; color: var(--c-ink);
-  border: 1.5px solid rgba(11,34,51,.18);
+  border: 1.5px solid rgba(8,66,76,.18);
 }
-.btn-ghost:hover { background: rgba(11,34,51,.05); }
+.btn-ghost:hover { background: rgba(8,66,76,.05); }
 .btn-sun {
   background: var(--c-sun); color: var(--c-ink);
 }
-.btn-sun:hover { background: #FFD75E; transform: translateY(-2px); }
+.btn-sun:hover { background: #F6D33F; transform: translateY(-2px); }
 
 /* =========== Section labels (eyebrow) =========== */
 .eyebrow {
@@ -352,16 +358,16 @@ body {
 }
 .eyebrow .dot {
   width: .5rem; height: .5rem; border-radius: 999px;
-  background: var(--c-coral);
+  background: var(--c-coral-bright);
 }
 
 /* =========== Hero gradient background =========== */
 .hero-bg {
   background:
-    radial-gradient(60% 80% at 90% 0%, rgba(244,200,66,.32), transparent 60%),
-    radial-gradient(50% 70% at 0% 100%, rgba(232,79,59,.14), transparent 60%),
+    radial-gradient(60% 80% at 90% 0%, rgba(242,197,12,.28), transparent 60%),
+    radial-gradient(50% 70% at 0% 100%, rgba(245,80,80,.12), transparent 60%),
     radial-gradient(40% 60% at 50% 50%, rgba(197,224,213,.30), transparent 70%),
-    linear-gradient(180deg, #FDFAEF 0%, var(--c-cream) 100%);
+    linear-gradient(180deg, #FDFDF3 0%, var(--c-cream) 100%);
 }
 
 /* Big yellow sun behind hero subject — Figma signature device */
@@ -441,7 +447,7 @@ body {
   position: absolute;
   left: 0; top: .55rem;
   width: .55rem; height: .55rem; border-radius: 999px;
-  background: var(--c-coral);
+  background: var(--c-coral-bright);
   box-shadow: 0 0 0 4px var(--c-coral-soft);
 }
 
@@ -474,8 +480,8 @@ body {
 /* =========== Subtle grid background =========== */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(14,77,110,.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(14,77,110,.07) 1px, transparent 1px);
+    linear-gradient(rgba(8,66,76,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8,66,76,.07) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(60% 60% at 50% 50%, #000, transparent);
 }
@@ -549,7 +555,7 @@ body {
 .jot-loading.is-done { opacity: 0; pointer-events: none; }
 .jot-spinner {
   width: 48px; height: 48px; border-radius: 9999px;
-  border: 4px solid var(--c-sage-soft); border-top-color: var(--c-coral);
+  border: 4px solid var(--c-sage-soft); border-top-color: var(--c-coral-bright);
   animation: spin .9s linear infinite;
 }
 .jot-loading-label { font-size: .95rem; }
@@ -638,7 +644,7 @@ body {
   pointer-events: auto;
   width: 60px; height: 60px;
   border-radius: 999px;
-  background: var(--c-coral);
+  background: var(--c-coral-bright);
   display: grid;
   place-items: center;
   box-shadow: var(--shadow-coral);
@@ -651,7 +657,7 @@ body {
   content: '';
   position: absolute; inset: 0;
   border-radius: 999px;
-  border: 2px solid var(--c-coral);
+  border: 2px solid var(--c-coral-bright);
   animation: pulse-ring 2.6s cubic-bezier(.2,.7,.2,1) infinite;
 }
 .lb-avatar svg { width: 28px; height: 28px; color: #fff; }
@@ -797,7 +803,7 @@ body {
   transition: background .2s, transform .15s;
   box-shadow: var(--shadow-coral);
 }
-.lb-submit:hover { background: #F26A57; transform: translateY(-1px); }
+.lb-submit:hover { background: var(--c-coral-deep); transform: translateY(-1px); }
 
 .lb-foot {
   padding: .75rem 1.1rem;
@@ -846,3 +852,15 @@ body {
    even when Tailwind regenerates the utilities.                             */
 .text-mute { color: var(--c-mute) !important; }
 .text-coral { color: var(--c-coral-btn) !important; }
+
+/* Translucent white text and frosted pills sit on the brand surfaces (ink,
+   teal, coral). The 2026 tokens are lighter than the old ones, so these
+   floors keep that text at WCAG AA (4.5:1) without touching the markup. */
+.text-white\/80, .text-white\/85, .text-white\/90, .text-white\/95 { color: #fff !important; }
+.text-white\/50, .text-white\/60, .text-white\/70 { color: rgba(255,255,255,.9) !important; }
+.bg-coral .opacity-80, .bg-teal .opacity-80, .from-teal .opacity-80 { opacity: 1; }
+.bg-coral .bg-white\/15, .bg-coral .bg-white\/20,
+.from-teal .bg-white\/15, .from-teal .bg-white\/20 { background-color: rgba(8,66,76,.2); }
+.eyebrow.text-white, .eyebrow.text-sun { background: rgba(255,255,255,.12); }
+.from-teal .bg-white\/15.text-sun { background-color: rgba(8,66,76,.5); }
+.from-coral.to-coral\/80 { --tw-gradient-to: var(--c-coral-deep) var(--tw-gradient-to-position); }

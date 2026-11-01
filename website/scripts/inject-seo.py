@@ -1057,7 +1057,7 @@ def build_head_block(slug: str, page: dict) -> str:
         # <link rel="alternate" hreflang="..."> entries here.
         f'<link rel="alternate" hreflang="en-us" href="{page_url}" />',
         f'<link rel="alternate" hreflang="x-default" href="{page_url}" />',
-        '<meta name="theme-color" content="#00B7EA" />',
+        '<meta name="theme-color" content="#08424C" />',
         f'<meta name="keywords" content="{keywords}" />',
         '<meta name="author" content="On Target ABA" />',
         '<meta name="publisher" content="On Target ABA, LLC" />',
