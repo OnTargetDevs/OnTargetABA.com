@@ -159,7 +159,7 @@
             '<a href="' + esc(primary.href) + '" class="btn btn-coral text-sm">' + esc(primary.label) + '</a>' +
           '</div>' +
           '<button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu" style="margin-right: env(safe-area-inset-right, 0px);">' +
-            '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#163243" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
+            '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#08424C" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
           '</button>' +
         '</div>' +
         '<div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>' +
