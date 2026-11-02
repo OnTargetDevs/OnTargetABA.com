@@ -245,6 +245,12 @@ def make_common_audits(pages: list[dict], top: int = 15) -> str:
 
 # ── Baseline + regression logic ───────────────────────────────────────────────
 
+# Performance swings ~±7 points between identical runs on shared CI runners
+# (measured 2026-11-01/02: one unchanged page scored 78-92), so it gets a wider
+# margin than the categories that are stable run to run.
+TOLERANCE = {"performance": 10, "accessibility": 5, "seo": 5, "best-practices": 5}
+
+
 def check_regressions(pages: list[dict], baseline: dict, changed: list[str]) -> list[str]:
     """Return list of regression messages for directly-changed pages."""
     issues: list[str] = []
@@ -261,7 +267,7 @@ def check_regressions(pages: list[dict], baseline: dict, changed: list[str]) -> 
             bl_score = bl.get(cat)
             if bl_score is None:
                 continue
-            if score < bl_score - 5:
+            if score < bl_score - TOLERANCE[cat]:
                 issues.append(
                     f"`{path}` {cat}: {score:.0f} (was {bl_score:.0f}, Δ {score-bl_score:+.0f})"
                 )
@@ -270,7 +276,7 @@ def check_regressions(pages: list[dict], baseline: dict, changed: list[str]) -> 
         # Use adjusted BP for the gate
         bp = p["best-practices-adjusted"]
         bl_bp = bl.get("best-practices-adjusted", bl.get("best-practices"))
-        if bl_bp is not None and bp < bl_bp - 5:
+        if bl_bp is not None and bp < bl_bp - TOLERANCE["best-practices"]:
             issues.append(
                 f"`{path}` best-practices†: {bp:.0f} (was {bl_bp:.0f}, Δ {bp-bl_bp:+.0f})"
             )

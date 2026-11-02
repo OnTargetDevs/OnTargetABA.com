@@ -22,8 +22,9 @@ permissions:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # PR mode: wait for the CF Pages preview, detect which pages changed, run
-# Lighthouse against them (3 runs each), post a sticky comment, fail on
-# any regression >5 pts vs the per-page baseline.
+# Lighthouse against them (5 runs each, median kept), post a sticky comment,
+# fail on a performance drop >10 pts or any other category drop >5 pts vs the
+# per-page baseline (performance swings ~±7 between identical runs).
 # ─────────────────────────────────────────────────────────────────────────────
 jobs:
   pr-audit:
@@ -132,13 +133,13 @@ jobs:
             echo "changed=${CHANGED_PATHS:-/}"
           } >> "$GITHUB_OUTPUT"
 
-      # ── Run Lighthouse (3 runs per page, median used for score) ────────────
+      # ── Run Lighthouse (5 runs per page, median used for score) ────────────
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./.lighthouserc.json
           urls: ${{ steps.pages.outputs.urls }}
-          runs: 3
+          runs: 5
           uploadArtifacts: true
           temporaryPublicStorage: true
 
