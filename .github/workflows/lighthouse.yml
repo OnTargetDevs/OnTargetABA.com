@@ -152,18 +152,9 @@ jobs:
             --baseline .github/lighthouse-baseline.json \
             --changed-pages "${{ steps.pages.outputs.changed }}"
 
-      # ── Commit baseline additions (new pages added by this PR) ─────────────
-      - name: Commit updated baseline
-        if: always()
-        run: |
-          if git diff --quiet -- .github/lighthouse-baseline.json 2>/dev/null; then
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/lighthouse-baseline.json
-          git commit -m "chore: add new-page Lighthouse baseline entries [skip ci]" || true
-          git push origin "HEAD:${{ github.head_ref }}" || true
+      # The baseline is NOT committed from PR runs: writing it onto every PR branch made
+      # sibling PRs conflict on this file once one merged. New pages simply have no
+      # baseline until the next all-pages run (workflow_dispatch below) refreshes it on main.
 
       # ── Upsert sticky PR comment ──────────────────────────────────────────
       - name: Post PR comment
