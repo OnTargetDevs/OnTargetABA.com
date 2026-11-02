@@ -161,7 +161,7 @@ Simply providing access to digital tools is not the same as using them therapeut
 
 ### Social and Recreational:
 
-* **Camp BuddEConnect Virtual Summer Camp — campbdec.com**
+* **Camp BuddEConnect Virtual Summer Camp — buddeconnect.org**
 * **Khan Academy Kids — khanacademy.org/kids**
 
 ## Frequently Asked Questions
