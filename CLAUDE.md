@@ -55,7 +55,21 @@ Similarly, the user **rejected the big yellow-sun hero device** (large `#F4C842`
 
 ## Logo — IMPORTANT
 
-The site shows the **real wordmark** at `assets/images/footerImg.png` (mirrored from `https://ontargetaba.com/wp-content/uploads/2022/04/footerImg.png`). Earlier in this project I used a custom SVG bullseye-and-text as a placeholder; the user explicitly rejected it. The placeholder is wiped by `scripts/swap-logo.ps1` if it ever creeps back in. **Do not** generate a new logo.
+The site uses the **2026 wordmark** (navy bullseye "On", coral "Target", teal "ABA"; Nate 2026-11-01). The old cartoon mark (kids around a target, mirrored from the WordPress `footerImg.png`) is retired: do not bring it back, and do not generate a new logo either. Every logo file is derived from Joshua's master `joshua_no_backgrnd_black_target_2026-10-12.png` (2550x610, transparent), trimmed to its alpha bounding box with the aspect ratio kept (6.11:1):
+
+| File | What it is | Used by |
+|---|---|---|
+| `assets/images/logo-2026.png` | Wordmark, 734x120 | Header (`header.json` / `ota-header-data`, rendered by `header.js` at `h-9 lg:h-8`), JSON-LD `logo`/`image`, team placeholders |
+| `assets/images/logo-2026-mark.png` | The bullseye alone, transparent, 120x120 | Header between 1024 and 1279 px, where the nav and CTAs leave no room for the wordmark (`<picture>` in `header.js`) |
+| `assets/images/logo-2026-on-dark.png` | Same wordmark with the navy recoloured white | Footer (`bg-ink`) via `footer.json` / `ota-footer-data` |
+| `lp-assets/uploads__2026__02__Logo1.svg` | SVG wrapper around a 489x80 PNG of the wordmark (no true vector source exists) | Google Ads landing pages + thank-you-confirmation |
+| `assets/images/og-default-2026.png` | 1200x630 social card, wordmark on cream `#FAF5E6` | Default `og:image` / `twitter:image` |
+| `assets/images/favicon-2026.svg` | True vector bullseye (radii measured from the wordmark's "O"), navy `#08424C` on white | Favicon |
+| `favicon.ico` (16/32/48), `favicon-2026-32x32.png`, `favicon-2026-192x192.png`, `favicon-2026-270x270.png`, `apple-touch-icon.png` (180) | The bullseye rendered from the same geometry; the 180/192/270 sizes sit on an opaque white square so iOS and maskable icons don't get a black fill | `<link rel=icon>`, `manifest.json`, apple-touch-icon |
+
+**Logo changes need NEW file names.** `_headers` serves `/assets/images/*` as `max-age=31536000, immutable`, so replacing a file's content at the same path leaves returning visitors on the old image for up to a year. That is why the 2026 files have new names. The old paths (`footerImg.png`, `favicon.svg`, `favicon-32x32.png`, `-192x192.png`, `-270x270.png`) still exist, overwritten with the 2026 artwork, only so stale cached HTML shows the new logo too; nothing references them. The `assets/images/wp/` copies are untouched archival mirrors of the WordPress uploads (`asset-manifest.json`).
+
+Give every logo `<img>` `width`/`height` attributes at the 6.11:1 aspect so the header doesn't shift on load. Insurance/payer logos are separate files; never touch them in a logo swap.
 
 ## Jotform IDs (production forms — already in use on the live site)
 
@@ -158,7 +172,7 @@ the CF dashboard) to ping every URL after a large content change.
 |---|---|
 | `download-assets.ps1` | Downloads a manifest of asset URLs to `assets/images/`. Emits `assets/asset-manifest.json`. Was originally used when migrating from WordPress; kept for re-mirroring rounds. |
 | `recolor.ps1` | Swaps any old palette hex values across HTML/CSS/SVG to the current brand palette. |
-| `swap-logo.ps1` | Replaces placeholder bullseye lockup with real `footerImg.png` wordmark in every page. |
+| `swap-logo.ps1` | No longer in the repo. Historically replaced the early placeholder lockup with `footerImg.png`; the logo now lives at `logo-2026.png`. |
 | `fix-encoding.ps1` | Normalizes UTF-8 (writes BOM), decodes mojibake (`â†'` → `→`), replaces literal Unicode glyphs with HTML entities so the page renders even if a server picks the wrong charset. **Run this any time after agents touch HTML.** |
 | `sync-tailwind-config.ps1` | Rewrites the inline `<script>tailwind.config = {...}</script>` block in every page to match the current palette. |
 | `qa-check.ps1` | Sweeps for broken local links, missing image references, leftover old palette hex. |
@@ -196,9 +210,9 @@ in the corner. No Pillow/Sharp/Canvas dependency.
 
 `inject-seo.py` picks up the per-page SVG automatically (its
 `resolve_og_image()` looks for `assets/og/{page-slug}.svg` and falls back
-to `footerImg.png` if none exists). The blog post template
+to `og-default-2026.png` if none exists). The blog post template
 (`blog/post.html`) sets `og:image`/`twitter:image` to
-`/assets/og/blog-${slug}.svg` at runtime and falls back to `footerImg.png`
+`/assets/og/blog-${slug}.svg` at runtime and falls back to `og-default-2026.png`
 if the SVG fails to load. The script is idempotent (mtime-vs-index.json
 check) and runs after `build-blog-index.py` in `build.sh`.
 

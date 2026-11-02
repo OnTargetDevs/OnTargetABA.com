@@ -149,7 +149,11 @@
       '<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">' +
         '<div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">' +
           '<a href="' + esc(logo.href || '/') + '" class="flex items-center group" aria-label="' + esc(logo.alt || 'On Target ABA') + ' &mdash; home">' +
-            '<img src="' + esc(logo.src) + '" alt="' + esc(logo.alt) + '" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />' +
+            // Between lg and xl the nav + CTAs fill the row, so show the bullseye alone there.
+            '<picture>' +
+              '<source media="(min-width: 1024px) and (max-width: 1279.98px)" srcset="/assets/images/logo-2026-mark.png" width="120" height="120">' +
+              '<img src="' + esc(logo.src) + '" alt="' + esc(logo.alt) + '" width="734" height="120" class="h-9 lg:h-8 w-auto object-contain transition-transform group-hover:scale-[1.02]" />' +
+            '</picture>' +
           '</a>' +
           '<nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85" aria-label="Primary">' +
             navLinks.map((l) => navLinkHtml(l, activeSection)).join('') +

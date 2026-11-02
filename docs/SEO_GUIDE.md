@@ -151,7 +151,7 @@ The script skips slugs whose SVG is newer than `index.json`, so to force a
 full regeneration delete `assets/og/` first (or `touch assets/blog/index.json`).
 
 `inject-seo.py` automatically picks up the per-page SVG (its `resolve_og_image()`
-looks for `assets/og/{slug}.svg` and falls back to `footerImg.png`).
+looks for `assets/og/{slug}.svg` and falls back to `og-default-2026.png`, a 1200x630 brand card).
 `blog/post.html` does the same at runtime for blog posts.
 
 ---
