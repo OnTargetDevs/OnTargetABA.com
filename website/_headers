@@ -71,3 +71,12 @@
 # Blog markdown source files: short cache so updates are picked up.
 /assets/blog/*
   Cache-Control: public, max-age=600
+
+# Keep the Pages hostnames out of search so they never compete with
+# ontargetaba.com. Host-only: a future launch on ontargetaba.com is unaffected.
+# Google Ads landing pages live on beta; noindex does not stop ads serving.
+https://beta.ontargetaba.com/*
+  X-Robots-Tag: noindex
+
+https://ontargetaba.pages.dev/*
+  X-Robots-Tag: noindex
