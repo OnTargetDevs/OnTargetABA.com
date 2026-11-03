@@ -1,6 +1,6 @@
 {
   "/": {
-    "performance": 81.0,
+    "performance": 86.0,
     "accessibility": 100.0,
     "best-practices": 75.0,
     "best-practices-adjusted": 95.5,
@@ -46,6 +46,13 @@
     "accessibility": 100.0,
     "best-practices": 79.0,
     "best-practices-adjusted": 100.0,
+    "seo": 100.0
+  },
+  "/autism-scholarship-program-ohio": {
+    "performance": 90.0,
+    "accessibility": 100.0,
+    "best-practices": 75.0,
+    "best-practices-adjusted": 95.5,
     "seo": 100.0
   },
   "/autism-testing-autism-evaluations-cleveland-g-lp": {
