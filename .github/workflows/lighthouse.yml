@@ -22,8 +22,12 @@ permissions:
 
 # ─────────────────────────────────────────────────────────────────────────────
 # PR mode: wait for the CF Pages preview, detect which pages changed, run
-# Lighthouse against them (3 runs each), post a sticky comment, fail on
-# any regression >5 pts vs the per-page baseline.
+# Lighthouse against them (3 runs each, median kept), post a sticky comment.
+# Performance is gated against main measured IN THE SAME JOB (the gated pages
+# are also audited on https://ontargetaba.pages.dev, main's production build),
+# so runner speed cancels out: fail if the PR is >10 pts slower than main.
+# Accessibility / SEO / best-practices are gated against the stored baseline
+# (>5 pts, or any drop from 100); they don't swing between runs.
 # ─────────────────────────────────────────────────────────────────────────────
 jobs:
   pr-audit:
@@ -125,6 +129,12 @@ jobs:
             --base-url "" --changed-files /tmp/changed.txt 2>/dev/null \
             | tr '\n' ',' | sed 's/,$//' || echo "")
 
+          # Same-job reference: the gated pages on main's production build, so the
+          # performance comparison runs on the same runner at the same time.
+          for p in / $(echo "${CHANGED_PATHS}" | tr ',' ' '); do
+            echo "https://ontargetaba.pages.dev${p}"
+          done | sort -u >> /tmp/urls.txt
+
           {
             echo "urls<<URLEOF"
             cat /tmp/urls.txt
@@ -152,18 +162,9 @@ jobs:
             --baseline .github/lighthouse-baseline.json \
             --changed-pages "${{ steps.pages.outputs.changed }}"
 
-      # ── Commit baseline additions (new pages added by this PR) ─────────────
-      - name: Commit updated baseline
-        if: always()
-        run: |
-          if git diff --quiet -- .github/lighthouse-baseline.json 2>/dev/null; then
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .github/lighthouse-baseline.json
-          git commit -m "chore: add new-page Lighthouse baseline entries [skip ci]" || true
-          git push origin "HEAD:${{ github.head_ref }}" || true
+      # The baseline is NOT committed from PR runs: writing it onto every PR branch made
+      # sibling PRs conflict on this file once one merged. New pages simply have no
+      # baseline until the next all-pages run (workflow_dispatch below) refreshes it on main.
 
       # ── Upsert sticky PR comment ──────────────────────────────────────────
       - name: Post PR comment
