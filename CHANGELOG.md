@@ -12,6 +12,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-11-03
+
+### Fixed
+
+- 9 non-wording UX fixes — announcement bar link, card links, JSON-LD, sitemap, Nela Park view-clinic, blog fallback
+
+
 ## [Unreleased] &mdash; 2026-10-30
 
 ### Fixed
