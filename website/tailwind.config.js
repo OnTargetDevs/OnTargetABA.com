@@ -51,14 +51,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink:   { DEFAULT: '#163243', soft: '#34495E' },
-        teal:  { DEFAULT: '#00B7EA', deep: '#0E5E6E', soft: '#D6F0F8' },
-        coral: { DEFAULT: '#E84F3B', soft: '#FCE0DA' },
-        sun:   { DEFAULT: '#F4C842', soft: '#FFF1C2' },
+        // 2026 palette nudge; values mirror the --c-* tokens in assets/css/app.css.
+        ink:   { DEFAULT: '#08424C', soft: '#2D5257' },
+        teal:  { DEFAULT: '#36776D', deep: '#0B5961', soft: '#DAEEEB' },
+        coral: { DEFAULT: '#C73636', soft: '#FDEFEE' },
+        sun:   { DEFAULT: '#F2C50C', soft: '#FCF0C2' },
         sage:  { DEFAULT: '#C5E0D5', soft: '#E6F1EB' },
-        cream: '#FAF5E6',
-        mute:  '#6B7E8F',
-        line:  '#E8DFD0',
+        cream: '#FBFAEA',
+        mute:  '#52676B',
+        line:  '#E6E1CC',
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
