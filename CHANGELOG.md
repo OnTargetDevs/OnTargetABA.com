@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- remove dead space on the Cleveland ABA ad landing page
+
+
+## [Unreleased] &mdash; 2026-11-06
+
+### Fixed
+
 - make every landing-page photo match its caption
 
 
