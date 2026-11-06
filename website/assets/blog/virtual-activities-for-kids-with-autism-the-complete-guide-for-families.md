@@ -100,7 +100,7 @@ These tools work because they allow repetition without social consequences. A ch
 
 **Video Modeling:** Video modeling — watching videos of others demonstrating target social behaviors — is one of the most research-supported strategies in ABA therapy for teaching social skills. YouTube and other platforms offer extensive libraries of video modeling content, and many ABA therapists create custom video modeling materials for their clients.
 
-**[Camp BuddEConnect:](https://www.buddeconnect.org/)** One of the most exciting virtual resources for autistic children is Camp BuddEConnect — a virtual summer camp specifically designed for children with special needs. Running five days a week for three hours a day across seven one-week sessions, the camp is staffed by high school and college students. Activities are focused on fun, socialization, and engagement through virtual activity cabins including music, games, film, arts and crafts, and storytelling.
+**Camp BuddEConnect:** One of the most exciting virtual resources for autistic children is Camp BuddEConnect — a virtual summer camp specifically designed for children with special needs. Running five days a week for three hours a day across seven one-week sessions, the camp is staffed by high school and college students. Activities are focused on fun, socialization, and engagement through virtual activity cabins including music, games, film, arts and crafts, and storytelling.
 
 This kind of structured virtual social experience — with clear expectations, consistent routine, and supportive staff — is exactly the kind of environment that allows autistic children to practice social engagement in a way that builds genuine skills and confidence.
 
@@ -161,7 +161,7 @@ Simply providing access to digital tools is not the same as using them therapeut
 
 ### Social and Recreational:
 
-* **Camp BuddEConnect Virtual Summer Camp — buddeconnect.org**
+* **Camp BuddEConnect Virtual Summer Camp**
 * **Khan Academy Kids — khanacademy.org/kids**
 
 ## Frequently Asked Questions
