@@ -14,6 +14,15 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-11-06
 
+### Changed
+
+- make the dark-teal and ink number tiles match the light teal tile
+- friendlier decorative teal and brighter landing-page links
+- nudge site colors toward the 2026 On Target palette
+
+
+## [Unreleased] &mdash; 2026-11-06
+
 ### Added
 
 - Joshua's 11/06 copy asks for the Cleveland ad pages
