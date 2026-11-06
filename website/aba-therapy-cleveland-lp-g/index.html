@@ -353,7 +353,7 @@ a.inline-link:hover,a.text-link:hover,.elementor a.inline-link:hover,.elementor 
 #lead-bot-engagement.ota-hold{display:none!important}
 
 #banner-form{min-height:1184px}@media (max-width:1023px){#banner-form{min-height:1089px}}@media (max-width:767px){#banner-form{min-height:1288px}}@media (max-width:380px){#banner-form{min-height:1424px}}
-@media (min-width: 1024px) { .hero-art img { object-position: right top; } }
+@media (min-width: 1024px) { .hero-art img { max-height:none; object-position: center bottom; } }
 /* lp-cle-refresh 2026-11-01: photo-led sections */
 .pain-photo{width:100%;max-width:300px;height:auto;margin-inline:auto}
 @media (max-width:1023px){.why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -632,7 +632,7 @@ a.inline-link:hover,a.text-link:hover,.elementor a.inline-link:hover,.elementor 
       // Jotform resize messages for the non-blocking iframe embeds: one listener keyed by form id (the same commands the jsform embed handled), so every form on the page resizes itself.
       const jfOk = o => { try { const u = new URL(o); return u.protocol === 'https:' && ['jotform.com', 'jotform.pro'].some(d => u.hostname === d || u.hostname.endsWith('.' + d)); } catch (e) { return false; } };
       window.addEventListener('message', e => { if (!e.data || !e.data.split) return; const a = e.data.split(':'); if (a.length < 3) return; const f = document.getElementById('JotFormIFrame-' + a[a.length - 1]); if (!f) return;
-        switch (a[0]) { case 'scrollIntoView': f.scrollIntoView(); break; case 'setHeight': f.style.height = a[1] + 'px'; if (!isNaN(a[1]) && parseInt(f.style.minHeight, 10) > parseInt(a[1], 10)) f.style.minHeight = a[1] + 'px'; break; case 'setMinHeight': f.style.minHeight = a[1] + 'px'; break; case 'collapseErrorPage': if (f.clientHeight > window.innerHeight) f.style.height = window.innerHeight + 'px'; break; case 'reloadPage': location.reload(); break; case 'removeIframeOnloadAttr': f.removeAttribute('onload'); break; case 'setDeviceType': window.jfDeviceType = a[1]; break; case 'backgroundStyles': try { new URLSearchParams(a[1]).forEach((v, k) => { f.style[k] = v; }); } catch (r) {} break; }
+        switch (a[0]) { case 'scrollIntoView': f.scrollIntoView(); break; case 'setHeight': f.style.height = a[1] + 'px'; if (parseInt(a[1], 10) > 200) { const card = f.closest('.form-card'); if (card) card.style.minHeight = '0'; } if (!isNaN(a[1]) && parseInt(f.style.minHeight, 10) > parseInt(a[1], 10)) f.style.minHeight = a[1] + 'px'; break; case 'setMinHeight': f.style.minHeight = a[1] + 'px'; break; case 'collapseErrorPage': if (f.clientHeight > window.innerHeight) f.style.height = window.innerHeight + 'px'; break; case 'reloadPage': location.reload(); break; case 'removeIframeOnloadAttr': f.removeAttribute('onload'); break; case 'setDeviceType': window.jfDeviceType = a[1]; break; case 'backgroundStyles': try { new URLSearchParams(a[1]).forEach((v, k) => { f.style[k] = v; }); } catch (r) {} break; }
         if (jfOk(e.origin) && f.contentWindow && f.contentWindow.postMessage) f.contentWindow.postMessage(JSON.stringify({ type: 'urls', value: { docurl: encodeURIComponent(document.URL), referrer: encodeURIComponent(document.referrer) } }), '*'); }, false);
       // Map: load only when within 500px of the viewport (no visual change).
       const maps = document.querySelectorAll('iframe.map-frame[data-src]');
