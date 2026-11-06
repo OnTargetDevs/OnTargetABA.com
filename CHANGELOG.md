@@ -12,6 +12,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-11-06
+
+### Fixed
+
+- make every landing-page photo match its caption
+
+
 ## [Unreleased] &mdash; 2026-11-03
 
 ### Fixed
