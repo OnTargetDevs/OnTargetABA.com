@@ -12,6 +12,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-11-07
+
+### Fixed
+
+- hero photo alt text and three-center meta descriptions
+
+
 ## [Unreleased] &mdash; 2026-11-06
 
 ### Changed
