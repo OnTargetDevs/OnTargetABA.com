@@ -373,6 +373,18 @@
 
     if (cfg.mode === 'none') return;
 
+    // On Target website chat (Blanca). The portal's loader decides per visitor
+    // (portal config portal_share) whether to show; it hides LeadTrap only for
+    // its own visitors and only after the portal answers, so LeadTrap stays the
+    // default. widget.json "blanca": false turns the tag off site-wide.
+    if (cfg.blanca !== false && !document.querySelector('script[src*="/api/chat-intake/v1/public/loader.js"]')) {
+      const bs = document.createElement('script');
+      bs.async = true;
+      bs.src = 'https://portal.ontargetnotes.com/api/chat-intake/v1/public/loader.js';
+      bs.dataset.widget = 'blanca';
+      document.head.appendChild(bs);
+    }
+
     if (cfg.mode === 'leadtrap') {
       const partnerId = cfg.leadtrap && cfg.leadtrap.partnerId;
       if (!partnerId) return;
