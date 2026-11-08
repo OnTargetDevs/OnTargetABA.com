@@ -88,10 +88,10 @@ At On Target ABA, we know every child's story is unique — and every family des
 
 We're proud to serve families across:
 
-* [Cleveland ABA Therapy](https://ontargetaba.com/aba-therapy-cleveland/)
-* [Columbus ABA Therapy](https://ontargetaba.com/aba-therapy-columbus/)
-* [Worthington ABA Therapy](https://ontargetaba.com/aba-therapy-worthington/)
-* [Utah ABA Therapy](https://ontargetaba.com/aba-therapy-utah/)
+* [Cleveland ABA Therapy](/cleveland)
+* [Columbus ABA Therapy](/columbus)
+* [Reynoldsburg ABA Therapy](/reynoldsburg-ohio)
+* [Utah ABA Therapy](/murray-utah)
 
 Our centers are built on compassion, evidence-based care, and the belief that every child — and every family — deserves to feel hopeful about tomorrow.
 
