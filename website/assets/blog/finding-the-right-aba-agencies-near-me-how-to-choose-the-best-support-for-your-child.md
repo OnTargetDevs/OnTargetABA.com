@@ -79,10 +79,10 @@ At [On Target ABA](https://ontargetaba.com/about/), we've built our centers arou
 
 Serving families across:
 
-- [Cleveland ABA Therapy](https://ontargetaba.com/aba-therapy-cleveland/)
-- [Columbus ABA Therapy](https://ontargetaba.com/aba-therapy-columbus/)
-- [Worthington ABA Therapy](https://ontargetaba.com/aba-therapy-worthington/)
-- [Utah ABA Therapy](https://ontargetaba.com/aba-therapy-utah/)
+- [Cleveland ABA Therapy](/cleveland)
+- [Columbus ABA Therapy](/columbus)
+- [Reynoldsburg ABA Therapy](/reynoldsburg-ohio)
+- [Utah ABA Therapy](/murray-utah)
 
 ### Red Flags to Avoid When Choosing an ABA Agency
 

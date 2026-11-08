@@ -50,7 +50,7 @@ Through ABA therapy, we work to:
 
 The result? Less chaos. More connection.
 
-Explore our [ABA Therapy Services](https://ontargetaba.com/aba-therapy/) to see how we support skill-building that benefits your whole home.
+Explore our [ABA Therapy Services](/our-services) to see how we support skill-building that benefits your whole home.
 
 ### 3. Communication Tools for Caregivers
 
@@ -122,7 +122,7 @@ You can choose:
 * Clinic-based therapy – ideal for structured learning and peer interaction
 * Hybrid model – a blend of home and clinic sessions
 
-Visit our [ABA Therapy Services page](https://ontargetaba.com/aba-therapy/) to learn more about your options.
+Visit our [ABA Therapy Services page](/our-services) to learn more about your options.
 
 ### Family Growth, Not Just Child Progress
 

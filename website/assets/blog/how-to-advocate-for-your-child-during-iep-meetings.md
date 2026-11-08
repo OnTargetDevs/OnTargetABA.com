@@ -127,8 +127,8 @@ Tip: Some parents also keep a digital version in Google Drive or Dropbox for qui
 
 **Related On Target ABA Blog Posts:**
 
-* [What to Expect When Starting ABA Therapy: A Parent's Step-by-Step Guide](https://ontargetaba.com/what-to-expect-starting-aba-therapy/)
-* [How ABA Therapy Can Help Your Child Succeed in School](https://ontargetaba.com/how-aba-therapy-can-help-your-child-succeed-in-school/)
+* [What to Expect When Starting ABA Therapy: A Parent's Step-by-Step Guide](/blog/posts/what-to-expect-starting-aba-therapy)
+* [Autism and School: Your Child's Rights](/blog/posts/autism-and-school-your-childs-rights-a-complete-guide-for-families)
 
 **External Resources:**
 
