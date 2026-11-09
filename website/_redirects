@@ -7,6 +7,17 @@
 # WP date-archive permalinks -> new pretty blog URLs
 # Old: /YYYY/MM/DD/the-slug/  New: /blog/posts/the-slug
 # =============================================================
+# Emoji-prefixed WP posts under their OLD dated permalink. The generic
+# date rule below would carry the emoji into /blog/posts/<emoji-slug>, which
+# post.html cannot resolve in one hop; send them straight to the clean slug.
+/2025/11/19/🌿-finding-calm-how-downtime-supports-progress-in-aba-therapy/   /blog/posts/finding-calm-how-downtime-supports-progress-in-aba-therapy   301
+/2025/11/19/🌿-finding-calm-how-downtime-supports-progress-in-aba-therapy   /blog/posts/finding-calm-how-downtime-supports-progress-in-aba-therapy   301
+/2025/11/17/🖍️-color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy/   /blog/posts/color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy   301
+/2025/11/17/🖍️-color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy   /blog/posts/color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy   301
+/2025/11/05/🎃-smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025/   /blog/posts/smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025   301
+/2025/11/05/🎃-smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025   /blog/posts/smiles-costumes-and-community-inside-the-on-target-aba-halloween-party-2025   301
+/2025/10/29/🎃spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun/   /blog/posts/spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun   301
+/2025/10/29/🎃spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun   /blog/posts/spirit-week-at-worthington-building-confidence-and-community-through-dress-up-fun   301
 /:year/:month/:day/:slug/   /blog/posts/:slug   301
 /:year/:month/:day/:slug    /blog/posts/:slug   301
 
