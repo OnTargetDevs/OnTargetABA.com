@@ -71,3 +71,13 @@
 # Blog markdown source files: short cache so updates are picked up.
 /assets/blog/*
   Cache-Control: public, max-age=600
+
+# Keep the beta copy of the site out of Google until it replaces ontargetaba.com
+# (Search Console, Oct 2026: 40 beta.ontargetaba.com pages indexed alongside the
+# live site). Host-scoped, so it can never apply to ontargetaba.com itself.
+# UNDO: delete this block (and do delete it at the cutover).
+https://beta.ontargetaba.com/*
+  X-Robots-Tag: noindex
+
+https://ontargetaba.pages.dev/*
+  X-Robots-Tag: noindex

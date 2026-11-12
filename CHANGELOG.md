@@ -12,6 +12,50 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-11-07
+
+### Fixed
+
+- hero photo alt text and three-center meta descriptions
+
+
+## [Unreleased] &mdash; 2026-11-06
+
+### Changed
+
+- make the dark-teal and ink number tiles match the light teal tile
+- friendlier decorative teal and brighter landing-page links
+- nudge site colors toward the 2026 On Target palette
+
+
+## [Unreleased] &mdash; 2026-11-06
+
+### Added
+
+- Joshua's 11/06 copy asks for the Cleveland ad pages
+
+
+## [Unreleased] &mdash; 2026-11-06
+
+### Fixed
+
+- remove dead space on the Cleveland ABA ad landing page
+
+
+## [Unreleased] &mdash; 2026-11-06
+
+### Fixed
+
+- make every landing-page photo match its caption
+
+
+## [Unreleased] &mdash; 2026-11-03
+
+### Fixed
+
+- 9 non-wording UX fixes — announcement bar link, card links, JSON-LD, sitemap, Nela Park view-clinic, blog fallback
+
+
 ## [Unreleased] &mdash; 2026-10-30
 
 ### Fixed
