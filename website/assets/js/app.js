@@ -371,6 +371,17 @@
       try { localStorage.removeItem('ota_leadbot_v1'); } catch (e) { /* ignore */ }
     }
 
+    // On Target website chat (Blanca). The portal's loader decides per visitor
+    // (portal config portal_share) whether to show; it loads even when widget.json
+    // mode is "none". widget.json "blanca": false turns the tag off site-wide.
+    if (cfg.blanca !== false && !document.querySelector('script[src*="/api/chat-intake/v1/public/loader.js"]')) {
+      const bs = document.createElement('script');
+      bs.async = true;
+      bs.src = 'https://portal.ontargetnotes.com/api/chat-intake/v1/public/loader.js';
+      bs.dataset.widget = 'blanca';
+      document.head.appendChild(bs);
+    }
+
     if (cfg.mode === 'none') return;
 
     if (cfg.mode === 'leadtrap') {
