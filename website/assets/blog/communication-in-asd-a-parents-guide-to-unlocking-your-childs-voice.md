@@ -99,4 +99,4 @@ The Rewards
 
 At [On Target ABA](https://ontargetaba.com/job-application/), we know that our clinical care is only as exceptional as the Registered Behavior Technicians delivering it. That is why we don’t just hire certified staff—we actively recruit passionate individuals and fund their complete 40-hour training, competency assessments, and exam preparation packages.
 
-Whether you are a seasoned childcare worker, a psychology student looking for clinical hours, or simply someone eager to make a tangible difference in local communities like Mayfield Heights and Columbus, we provide the mentorship, competitive compensation, and structured support systems you need to launch a thriving career.
+Whether you are a seasoned childcare worker, a psychology student looking for clinical hours, or simply someone eager to make a tangible difference in local communities like Mayfield and Columbus, we provide the mentorship, competitive compensation, and structured support systems you need to launch a thriving career.
