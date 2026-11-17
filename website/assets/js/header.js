@@ -304,7 +304,7 @@
         document.body.appendChild(stick.firstElementChild);
         // Add bottom padding to clear the sticky bar on mobile only.
         const style = document.createElement('style');
-        style.textContent = '@media (max-width: 1023.98px) { body { padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); } }';
+        style.textContent = '@media (max-width: 1279.98px) { body { padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); } }';
         document.head.appendChild(style);
       }
     })
