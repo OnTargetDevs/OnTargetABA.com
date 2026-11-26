@@ -12,6 +12,42 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-11-26
+
+### Fixed
+
+- turn LeadTrap off site-wide (Joshua 11/10 12:19: "it gives completely made up info")
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Chore
+
+- refresh /become-an-rbt performance baseline 95 -> 83
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Chore
+
+- never gate performance on the stored single-run baseline
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Chore
+
+- gate performance against main measured in the same job
+- 5 runs per page and a 10-point performance margin
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Fixed
+
+- call the Cleveland-area center plain "Mayfield"
+
+
 ## [Unreleased] &mdash; 2026-11-07
 
 ### Fixed
