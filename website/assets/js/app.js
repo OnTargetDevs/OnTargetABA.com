@@ -376,6 +376,10 @@
       try { localStorage.removeItem('ota_leadbot_v1'); } catch (e) { /* ignore */ }
     }
 
+    // Pages that opt out (the job application) keep every family-intake chat off,
+    // Blanca included, since its auto-open bubble covered the form's Submit button on phones.
+    if (document.body && document.body.hasAttribute('data-no-chat')) return;
+
     // On Target website chat (Blanca). The portal's loader decides per visitor
     // (portal config portal_share) whether to show; it loads even when widget.json
     // mode is "none". widget.json "blanca": false turns the tag off site-wide.
@@ -388,9 +392,6 @@
     }
 
     if (cfg.mode === 'none') return;
-    // Pages that opt out (the job application) keep the family-intake chat off,
-    // since its auto-open bubble covered the form's Submit button on phones.
-    if (document.body && document.body.hasAttribute('data-no-chat')) return;
 
     if (cfg.mode === 'leadtrap') {
       const partnerId = cfg.leadtrap && cfg.leadtrap.partnerId;
