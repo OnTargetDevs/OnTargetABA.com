@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-11-26
 
+### Fixed
+
+- repoint 15 dead links in 6 posts to pages that exist
+
+
+## [Unreleased] &mdash; 2026-11-26
+
 ### Added
 
 - state BCBA caseloads as 8–12 per BCBA
