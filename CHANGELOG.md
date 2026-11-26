@@ -16,6 +16,14 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- allow Google call-tracking loader and Ahrefs analytics in the CSP
+- serve the public Content-Security-Policy (it was silently dropped)
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Fixed
+
 - keep the family chat off the job application pages
 - job application form can always reach Submit
 
