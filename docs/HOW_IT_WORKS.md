@@ -101,7 +101,7 @@ Concrete example: `https://ontargetaba.com/blog/posts/aba-therapy-explained`.
    author, read time, category) populates the title block, hero banner, and
    meta strip.
 9. **OG / Twitter tags updated.** The script overwrites `og:image` to
-   `/assets/og/blog-{slug}.svg` (falling back to `footerImg.png`), updates
+   `/assets/og/blog-{slug}.svg` (falling back to `og-default-2026.png`), updates
    `og:title`, `og:description`, and the canonical link.
 10. **Related posts.** `index.json` is fetched. The post's category and tags
     are used to pick three related posts; they render in the right rail.
