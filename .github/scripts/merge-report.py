@@ -116,8 +116,8 @@ def find_lhr_file(entry: dict, shard_dir: pathlib.Path) -> pathlib.Path | None:
     return None
 
 
-def parse_results(results_base: pathlib.Path) -> list[dict]:
-    """Walk results_base for manifest.json files; return per-page dicts."""
+def parse_results(results_base: pathlib.Path, ref: dict | None = None) -> list[dict]:
+    """Walk results_base for manifest.json files; return per-page dicts (REF_ORIGIN pages go into `ref` when given)."""
     pages: dict[str, dict] = {}
 
     for manifest_path in sorted(results_base.rglob("manifest.json")):
@@ -149,7 +149,8 @@ def parse_results(results_base: pathlib.Path) -> list[dict]:
                 except Exception as e:
                     print(f"Warning: could not parse LHR {lhr_file}: {e}", file=sys.stderr)
 
-            pages[path] = {
+            target = ref if (ref is not None and url.startswith(REF_ORIGIN + "/")) else pages
+            target[path] = {
                 "path": path,
                 "performance": scores["performance"],
                 "accessibility": scores["accessibility"],
@@ -245,7 +246,15 @@ def make_common_audits(pages: list[dict], top: int = 15) -> str:
 
 # ── Baseline + regression logic ───────────────────────────────────────────────
 
-def check_regressions(pages: list[dict], baseline: dict, changed: list[str]) -> list[str]:
+# Performance swings 10+ points between identical runs on shared CI runners
+# (2026-11-01/02: an unchanged page scored 78-92; `/` 69-81), so a stored
+# baseline can't gate it. PR mode also audits the gated pages on main's
+# production build in the same job (REF_ORIGIN) and compares against that.
+TOLERANCE = {"performance": 10, "accessibility": 5, "seo": 5, "best-practices": 5}
+REF_ORIGIN = "https://ontargetaba.pages.dev"
+
+
+def check_regressions(pages: list[dict], baseline: dict, changed: list[str], ref: dict | None = None) -> list[str]:
     """Return list of regression messages for directly-changed pages."""
     issues: list[str] = []
     changed_set = set(changed)
@@ -259,9 +268,18 @@ def check_regressions(pages: list[dict], baseline: dict, changed: list[str]) -> 
         for cat in ["performance", "accessibility", "seo"]:
             score = p[cat]
             bl_score = bl.get(cat)
+            if cat == "performance" and ref and path in ref:
+                main_score = ref[path]["performance"]
+                if score < main_score - TOLERANCE[cat]:
+                    issues.append(f"`{path}` performance: {score:.0f} vs main {main_score:.0f} in this run (Δ {score-main_score:+.0f})")
+                continue
+            if cat == "performance":
+                # No same-run main measurement (e.g. a page that isn't on main yet): the stored
+                # performance numbers are single runs from another day and can't gate reliably.
+                continue
             if bl_score is None:
                 continue
-            if score < bl_score - 5:
+            if score < bl_score - TOLERANCE[cat]:
                 issues.append(
                     f"`{path}` {cat}: {score:.0f} (was {bl_score:.0f}, Δ {score-bl_score:+.0f})"
                 )
@@ -270,7 +288,7 @@ def check_regressions(pages: list[dict], baseline: dict, changed: list[str]) -> 
         # Use adjusted BP for the gate
         bp = p["best-practices-adjusted"]
         bl_bp = bl.get("best-practices-adjusted", bl.get("best-practices"))
-        if bl_bp is not None and bp < bl_bp - 5:
+        if bl_bp is not None and bp < bl_bp - TOLERANCE["best-practices"]:
             issues.append(
                 f"`{path}` best-practices†: {bp:.0f} (was {bl_bp:.0f}, Δ {bp-bl_bp:+.0f})"
             )
@@ -317,7 +335,8 @@ def main():
 
     # ── PR mode ──────────────────────────────────────────────────────────────
     if args.mode == "pr":
-        pages = parse_results(pathlib.Path(args.lhci_dir))
+        ref: dict = {}
+        pages = parse_results(pathlib.Path(args.lhci_dir), ref)
         if not pages:
             print("::warning::No LHCI results found; skipping gate.", file=sys.stderr)
             gho = os.environ.get("GITHUB_OUTPUT", "")
@@ -327,7 +346,7 @@ def main():
             sys.exit(0)
 
         changed = [p.strip() for p in args.changed_pages.split(",") if p.strip()]
-        regressions = check_regressions(pages, baseline, changed)
+        regressions = check_regressions(pages, baseline, changed, ref)
 
         now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
         audited_paths = ", ".join(f"`{p['path']}`" for p in sorted(pages, key=lambda x: x["path"]))
@@ -339,6 +358,10 @@ def main():
             "",
             make_table(pages, baseline, show_delta=True),
         ]
+        if ref:
+            comment_parts += ["", "Performance vs main measured in this same run: " + ", ".join(
+                f"`{p['path']}` {p['performance']:.0f} vs {ref[p['path']]['performance']:.0f}"
+                for p in sorted(pages, key=lambda x: x["path"]) if p["path"] in ref)]
         if regressions:
             comment_parts += [
                 "",
