@@ -273,6 +273,10 @@ def check_regressions(pages: list[dict], baseline: dict, changed: list[str], ref
                 if score < main_score - TOLERANCE[cat]:
                     issues.append(f"`{path}` performance: {score:.0f} vs main {main_score:.0f} in this run (Δ {score-main_score:+.0f})")
                 continue
+            if cat == "performance":
+                # No same-run main measurement (e.g. a page that isn't on main yet): the stored
+                # performance numbers are single runs from another day and can't gate reliably.
+                continue
             if bl_score is None:
                 continue
             if score < bl_score - TOLERANCE[cat]:
