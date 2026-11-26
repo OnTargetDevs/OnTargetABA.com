@@ -14,6 +14,19 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-11-26
 
+### Fixed
+
+- keep the family chat off the job application pages
+- job application form can always reach Submit
+
+### Chore
+
+- bump app.js cache key to aa91bf35
+- bump app.js cache key to f00ec474 on 58 pages so browsers load the job-form fix
+
+
+## [Unreleased] &mdash; 2026-11-26
+
 ### Added
 
 - mark the spot for a third scholarship location card
