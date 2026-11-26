@@ -6,7 +6,7 @@
     "linkHref": "/cleveland"
   },
   "logo": {
-    "src": "/assets/images/footerImg.png",
+    "src": "/assets/images/logo-2026.png",
     "alt": "On Target ABA",
     "href": "/"
   },
@@ -30,6 +30,11 @@
       "href": "/insurance",
       "label": "Insurance",
       "section": "Insurance"
+    },
+    {
+      "href": "/autism-scholarship-program-ohio",
+      "label": "Autism Scholarship",
+      "section": "Autism Scholarship"
     },
     {
       "href": "/locations",
@@ -188,7 +193,7 @@
         "/locations"
       ],
       [
-        "Mayfield Village, OH",
+        "Mayfield, OH",
         null
       ]
     ],
@@ -793,7 +798,7 @@
     "/insurance-united-healthcare": "Insurance",
     "/insurance-medicaid-utah": "Insurance",
     "/insurance-medicaid-ohio": "Insurance",
-    "/autism-scholarship-program-ohio": "Insurance",
+    "/autism-scholarship-program-ohio": "Autism Scholarship",
     "/aba-for-toddlers": "Services",
     "/aba-for-preschoolers": "Services",
     "/aba-for-school-age": "Services",

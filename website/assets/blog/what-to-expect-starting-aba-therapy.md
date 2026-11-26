@@ -81,7 +81,7 @@ Common focus areas include:
 * Reducing challenging behaviors
 * Self-help routines like dressing, brushing teeth, and toileting
 
-You can learn more about how we build goals around real-life needs on our [Services page](https://ontargetaba.com/aba-therapy/).
+You can learn more about how we build goals around real-life needs on our [Services page](/our-services).
 
 ### Step 5: Meet Your Behavior Technician
 
@@ -101,7 +101,7 @@ Sessions typically happen:
 * Daycare-based, providing ABA support in a familiar childcare setting
 * Or a combination, depending on your child's needs
 
-You can explore our flexible therapy formats [here](https://ontargetaba.com/aba-therapy/).
+You can explore our flexible therapy formats [here](/our-services).
 
 ### Step 7: Ongoing Support, Parent Coaching & Progress Updates
 
