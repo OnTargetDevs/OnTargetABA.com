@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Chore
 
+- never gate performance on the stored single-run baseline
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Chore
+
 - gate performance against main measured in the same job
 - 5 runs per page and a 10-point performance margin
 
