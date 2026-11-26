@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-11-26
 
+### Fixed
+
+- turn LeadTrap off site-wide (Joshua 11/10 12:19: "it gives completely made up info")
+
+
+## [Unreleased] &mdash; 2026-11-26
+
 ### Chore
 
 - refresh /become-an-rbt performance baseline 95 -> 83
