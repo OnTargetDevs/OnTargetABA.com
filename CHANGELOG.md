@@ -14,6 +14,15 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-11-26
 
+### Added
+
+- mark the spot for a third scholarship location card
+- apply the ASP billing team's fact-check to the scholarship page
+- rewrite the Autism Scholarship page to sourced facts only
+
+
+## [Unreleased] &mdash; 2026-11-26
+
 ### Fixed
 
 - repoint 15 dead links in 6 posts to pages that exist
