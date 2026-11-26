@@ -16,6 +16,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Chore
 
+- refresh /become-an-rbt performance baseline 95 -> 83
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Chore
+
 - never gate performance on the stored single-run baseline
 
 
