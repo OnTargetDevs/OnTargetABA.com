@@ -22,7 +22,7 @@ NEW = [
      "0.85", "WebPage", "Locations"),
     ("cleveland",
      "ABA Therapy in Cleveland — On Target ABA",
-     "ABA therapy and autism testing serving Greater Cleveland: Beachwood, Cleveland Heights, Pepper Pike, Lyndhurst, and more from our Mayfield Village clinic.",
+     "ABA therapy and autism testing serving Greater Cleveland: Beachwood, Cleveland Heights, Pepper Pike, Lyndhurst, and more from our Mayfield clinic.",
      [("Home", "index.html"), ("Locations", "locations.html"), ("Cleveland", None)],
      "0.85", "WebPage", "Locations"),
     ("columbus",
