@@ -4,7 +4,7 @@ date: 2026-03-04
 category: Getting Started with ABA
 author: On Target ABA Team
 hero_image: "/assets/images/wp/2026/03/what-is-aba-therapy-1024x682.jpg"
-excerpt: The Autism Scholarship Program Ohio gives parents of children with autism the option to choose a special education provider outside their home school district. Eligible children (ages 3-21) can receive services outlined in their IEP or Autism Education Plan (AEP) using state-funded scholarship dollars.
+excerpt: The Autism Scholarship Program Ohio gives parents of children with autism the option to choose an approved Autism Scholarship provider outside their home school district. Eligible children (ages 3-21) can receive services outlined in their IEP or Autism Education Plan (AEP) using state-funded scholarship dollars.
 read_time: 7 min read
 source_url: "https://ontargetaba.com/2026/03/04/what-is-an-autism-scholarship-program-asp-and-how-can-it-help-your-child/"
 draft: false
@@ -22,7 +22,7 @@ Is it insurance?
 
 Is it a therapy program?
 
-The [Autism Scholarship Program Ohio](https://education.ohio.gov/Topics/Other-Resources/Scholarships/Autism-Scholarship) is a state-funded scholarship that gives parents the choice to send their child to a special education provider outside of their public school district — while still receiving the services outlined in their child's Individualized Education Program (IEP) or Autism Education Plan (AEP).
+The [Autism Scholarship Program Ohio](https://education.ohio.gov/Topics/Other-Resources/Scholarships/Autism-Scholarship) is a state-funded scholarship that gives parents the choice to use an approved Autism Scholarship provider outside of their public school district — while still receiving the services outlined in their child's Individualized Education Program (IEP) or Autism Education Plan (AEP).
 
 In simple terms:
 
@@ -32,7 +32,7 @@ And options matter.
 
 ## What Is the Autism Scholarship Program Ohio?
 
-The Autism Scholarship Program Ohio was created to give parents flexibility in choosing the educational setting that best supports their child's needs. Instead of being limited to the special education program operated by their district of residence, eligible families may choose to enroll with a participating scholarship provider.
+The Autism Scholarship Program Ohio was created to give parents flexibility in choosing the educational setting that best supports their child's needs. Instead of being limited to the services offered by their school district of residence, eligible families may choose to enroll with a participating scholarship provider.
 
 The state then directs scholarship funds to the approved provider to deliver the services outlined in the child's IEP or AEP.
 
@@ -163,7 +163,7 @@ The difference is the environment.
 
 The Autism Scholarship Program Ohio is about flexibility, empowerment, and access.
 
-It gives parents of children with autism the opportunity to choose a special education provider that aligns with their child's unique needs.
+It gives parents of children with autism the opportunity to choose an approved Autism Scholarship provider that fits their child's unique needs.
 
 For eligible families, it can open doors to ABA therapy, specialized instruction, and targeted behavioral support — all funded through state scholarship dollars.
 
