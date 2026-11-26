@@ -14,6 +14,13 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased] &mdash; 2026-11-26
 
+### Added
+
+- state BCBA caseloads as 8–12 per BCBA
+
+
+## [Unreleased] &mdash; 2026-11-26
+
 ### Fixed
 
 - drop both buddeconnect.org references (staged for Nate's "remove both")
