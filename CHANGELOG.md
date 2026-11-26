@@ -12,6 +12,79 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ## [Unreleased]
 
+## [Unreleased] &mdash; 2026-11-26
+
+### Fixed
+
+- turn LeadTrap off site-wide (Joshua 11/10 12:19: "it gives completely made up info")
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Chore
+
+- refresh /become-an-rbt performance baseline 95 -> 83
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Chore
+
+- never gate performance on the stored single-run baseline
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Chore
+
+- gate performance against main measured in the same job
+- 5 runs per page and a 10-point performance margin
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Fixed
+
+- call the Cleveland-area center plain "Mayfield"
+
+
+## [Unreleased] &mdash; 2026-11-07
+
+### Fixed
+
+- hero photo alt text and three-center meta descriptions
+
+
+## [Unreleased] &mdash; 2026-11-06
+
+### Changed
+
+- make the dark-teal and ink number tiles match the light teal tile
+- friendlier decorative teal and brighter landing-page links
+- nudge site colors toward the 2026 On Target palette
+
+
+## [Unreleased] &mdash; 2026-11-06
+
+### Added
+
+- Joshua's 11/06 copy asks for the Cleveland ad pages
+
+
+## [Unreleased] &mdash; 2026-11-06
+
+### Fixed
+
+- remove dead space on the Cleveland ABA ad landing page
+
+
+## [Unreleased] &mdash; 2026-11-06
+
+### Fixed
+
+- make every landing-page photo match its caption
+
+
 ## [Unreleased] &mdash; 2026-11-03
 
 ### Fixed
