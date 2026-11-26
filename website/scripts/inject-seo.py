@@ -454,10 +454,10 @@ SEO_PAGES = {
         "primary_type": "LocalLocation",
     },
     "mayfield-ohio.html": {
-        "title": "ABA Therapy in Mayfield Village &amp; Cleveland, Ohio &mdash; On Target ABA",
-        "desc": "Center-based and in-home ABA therapy plus autism testing at our expanded Mayfield Village clinic. Serving Greater Cleveland and Akron.",
-        "keywords": "ABA therapy Cleveland OH, ABA therapy Mayfield Village, autism clinic Cleveland, autism services Akron Ohio",
-        "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Mayfield Village, Ohio", None)],
+        "title": "ABA Therapy in Mayfield &amp; Cleveland, Ohio &mdash; On Target ABA",
+        "desc": "Center-based and in-home ABA therapy plus autism testing at our expanded Mayfield clinic. Serving Greater Cleveland and Akron.",
+        "keywords": "ABA therapy Cleveland OH, ABA therapy Mayfield, autism clinic Cleveland, autism services Akron Ohio",
+        "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Mayfield, Ohio", None)],
         "primary_type": "LocalLocation",
     },
     "gahanna-ohio.html": {
@@ -618,7 +618,7 @@ SEO_PAGES = {
     },
     "cleveland.html": {
         "title": 'ABA Therapy in Cleveland — On Target ABA',
-        "desc": 'ABA therapy and autism testing serving Greater Cleveland: Beachwood, Cleveland Heights, Pepper Pike, Lyndhurst, and more from our Mayfield Village clinic.',
+        "desc": 'ABA therapy and autism testing serving Greater Cleveland: Beachwood, Cleveland Heights, Pepper Pike, Lyndhurst, and more from our Mayfield clinic.',
         "keywords": "",
         "crumbs": [("Home", "index.html"), ("Locations", "locations.html"), ("Cleveland", None)],
         "primary_type": "WebPage",
@@ -871,7 +871,7 @@ def per_page_extras(slug: str, page: dict, page_url: str) -> list[dict]:
                 "longitude": -111.8889,
             },
             "mayfield-ohio.html": {
-                "name": "On Target ABA &mdash; Cleveland / Mayfield Village",
+                "name": "On Target ABA &mdash; Cleveland / Mayfield",
                 "telephone": "+1-216-343-1198",
                 "streetAddress": "767 Beta Dr, Suite C",
                 "addressLocality": "Mayfield Village",
