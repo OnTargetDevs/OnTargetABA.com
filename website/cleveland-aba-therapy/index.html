@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ABA Therapy in Cleveland | On Target ABA</title>
+<link rel="icon" href="/assets/images/favicon-2026.svg" type="image/svg+xml">
+<meta name="description" content="Compassionate, individualized ABA therapy in Cleveland. Center-based, in-home and school-based ABA. Medicaid and major insurance plans accepted.">
+<link rel="preload" href="/lp-assets/cleveland-aba-therapy/anybody-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/lp-assets/cleveland-aba-therapy/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://form.jotform.com"><link rel="preconnect" href="https://cdn.jotfor.ms" crossorigin>
+<style>
+@font-face{font-family:"Anybody";font-style:normal;font-weight:500 800;font-stretch:75% 125%;font-display:swap;src:url(/lp-assets/cleveland-aba-therapy/anybody-var.woff2) format("woff2")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:400;font-display:swap;src:url(/lp-assets/cleveland-aba-therapy/poppins-400.woff2) format("woff2")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:500;font-display:swap;src:url(/lp-assets/cleveland-aba-therapy/poppins-500.woff2) format("woff2")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:600;font-display:swap;src:url(/lp-assets/cleveland-aba-therapy/poppins-600.woff2) format("woff2")}
+/* Layout concept: a warm cream page in On Target's own vocabulary (arch frames, target rings,
+   coral/teal/mint from the logo). Two deep-teal bands (locations, final call) bookend the story. */
+:root{
+  --teal:#08424C;        /* brand ink, buttons, dark bands */
+  --teal-deep:#06343C;   /* footer */
+  --teal-hover:#0B5663;
+  --mint:#6CBCAF;        /* brand accent */
+  --mint-tint:#E2F0EC;
+  --cream:#F7F5DA;       /* brand cream */
+  --paper:#FBFAEA;       /* lighter brand cream */
+  --white:#FFFFFF;
+  --sun:#F2C50C;         /* brand yellow, CTA on dark */
+  --sun-hover:#FFD62E;
+  --coral:#F55050;       /* brand red, large display text and marks only */
+  --blush:#F4C0BD;
+  --ink:#08424C;
+  --ink-soft:#3A5F66;
+  --on-dark:#F7F5DA;
+  --on-dark-soft:#C9DEDA;
+  --rule:rgba(8,66,76,.16);
+  --rule-dark:rgba(247,245,218,.22);
+  --ph:#B3261E; --ph-bg:rgba(245,80,80,.07);
+
+  --f-display:"Anybody","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  --wrap:1220px;
+  --gut-l:max(20px, env(safe-area-inset-left, 0px));
+  --gut-r:max(20px, env(safe-area-inset-right, 0px));
+  --sec:clamp(64px, 8vw, 112px);
+  --radius:14px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;margin:0;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-stretch:100%;margin:0;line-height:1.08;text-wrap:balance;letter-spacing:-.012em}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:var(--gut-l);padding-right:var(--gut-r)}
+.sec{padding-block:var(--sec)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:4px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* type scale */
+.eyebrow{font-family:var(--f-body);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.h2{font-size:clamp(2rem,3.6vw,3rem);font-weight:700}
+.kicker{font-family:var(--f-display);font-weight:600;font-size:clamp(1.15rem,1.6vw,1.35rem);color:var(--ink-soft);letter-spacing:0;margin-top:10px;line-height:1.3}
+.lead{font-size:1.06rem;color:var(--ink-soft);max-width:58ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:10px;font:600 1rem/1.2 var(--f-body);text-decoration:none;border:0;cursor:pointer;transition:background-color .15s ease, transform .15s ease}
+.btn-primary{background:var(--teal);color:var(--cream)}
+.btn-primary:hover{background:var(--teal-hover)}
+.btn-sun{background:var(--sun);color:var(--teal)}
+.btn-sun:hover{background:var(--sun-hover)}
+.btn .dot{width:14px;height:14px;flex:none}
+.cta-row{margin-top:44px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.cta-row .call{font-weight:500;color:var(--ink-soft);text-decoration:none}
+.cta-row .call b{color:var(--ink);font-weight:600;white-space:nowrap}
+
+/* placeholders: deliberately loud so nothing missing ships by accident */
+.ph{display:inline-block;border:1.5px dashed var(--coral);background:var(--ph-bg);color:var(--ph);font:500 .8rem/1.35 ui-monospace,"Cascadia Mono",Consolas,monospace;padding:6px 9px;border-radius:6px}
+
+/* ---------- header ---------- */
+.top{background:var(--cream)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.top .logo img{height:44px;width:auto}
+.top-call{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:1.02rem;white-space:nowrap}
+.top-call svg{width:20px;height:20px;color:var(--coral)}
+.top-call span{border-bottom:1.5px solid var(--mint)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--cream);padding-block:clamp(28px,4vw,56px) clamp(56px,6vw,88px);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 280px 384px;grid-template-areas:"copy photo form";gap:40px;align-items:start}
+.hero-copy{grid-area:copy;min-width:0;padding-top:12px}
+.hero h1{font-size:clamp(2.6rem,4.3vw,3.7rem);font-weight:750;margin-top:16px;font-stretch:88%}
+.hero h1 em{font-style:normal;color:var(--coral);display:block}
+.hero .lead{margin-top:20px;font-size:1.1rem;max-width:34ch;color:var(--ink)}
+.ticks{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:12px}
+.ticks li{display:grid;grid-template-columns:20px 1fr;gap:12px;align-items:start;font-weight:500}
+.ticks svg{width:20px;height:20px;margin-top:3px}
+.where{margin-top:28px;display:inline-flex;align-items:center;gap:10px;font-weight:600;text-decoration:none;padding-top:20px;border-top:1px solid var(--rule)}
+.where svg{width:18px;height:18px;color:var(--coral);flex:none}
+.where:hover span{text-decoration:underline;text-underline-offset:4px}
+
+.hero-photo{grid-area:photo;position:relative;margin-top:24px}
+.arch{border-radius:999px 999px 18px 18px;overflow:hidden;background:var(--mint)}
+.hero-photo .arch{aspect-ratio:300/470}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.badge{position:absolute;right:-22px;bottom:-22px;width:92px;height:92px}
+
+.form-card{grid-area:form;background:var(--white);border:1px solid var(--rule);border-radius:var(--radius);padding:30px 28px 26px;box-shadow:0 1px 0 rgba(8,66,76,.04),0 18px 40px -24px rgba(8,66,76,.35);scroll-margin-top:24px}
+.form-card h2{font-size:1.7rem;font-weight:700}
+.jf-wrap{margin:-28px -8px 0;min-height:330px}
+.jf-wrap iframe{width:100%!important;min-width:100%!important;border:0!important;display:block}
+.field{display:grid;gap:6px;margin-top:16px}
+.field label{font-size:.88rem;font-weight:500;color:var(--ink)}
+.field input{font:400 1rem var(--f-body);color:var(--ink);background:var(--paper);border:1px solid rgba(8,66,76,.28);border-radius:9px;min-height:50px;padding:0 14px;width:100%}
+.field input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(108,188,175,.45);background:var(--white)}
+.field input[aria-invalid="true"]{border-color:var(--coral)}
+.form-card .btn{width:100%;margin-top:22px}
+.privacy{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:12px;font-size:.85rem;color:var(--ink-soft)}
+.privacy svg{width:14px;height:14px}
+.form-note{margin-top:12px;font-size:.85rem}
+.speak{margin-top:22px;padding-top:20px;border-top:1px solid var(--rule);text-align:center}
+.speak p{font-size:.92rem;color:var(--ink-soft)}
+.speak a{display:inline-flex;align-items:center;gap:8px;margin-top:4px;font:700 1.35rem var(--f-display);text-decoration:none;color:var(--teal);letter-spacing:.01em}
+.speak a svg{width:20px;height:20px;color:var(--coral)}
+
+/* ---------- insurance ---------- */
+.ins{background:var(--white);border-block:1px solid var(--rule)}
+.ins .wrap{padding-block:40px 36px;display:grid;gap:26px;text-align:center;justify-items:center}
+.ins h2{font-size:1.35rem;font-weight:700;line-height:1.2}
+.logos{width:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px 24px;list-style:none;margin:0;padding:22px 0;border-block:1px solid var(--rule)}
+.logos li{display:flex;align-items:center;justify-content:center;min-height:56px}
+.logos img{width:auto}
+.lg-aetna{height:26px}.lg-buckeye{height:40px}.lg-humana{height:27px}.lg-mm{height:22px}
+.lg-cs{display:block;width:136px;height:46px;overflow:hidden}
+.lg-cs img{width:137px;height:137px;max-width:none;margin-top:-36px}.lg-molina{height:36px}.lg-umr{height:40px}.lg-champva{height:24px}
+.logos .ph{font-size:.7rem;width:124px;text-align:center}
+.ins-note{color:#5E7477;font-size:.92rem;max-width:62ch}
+
+/* ---------- how we help ---------- */
+.help-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:center}
+.help-head .lead{margin-top:20px}
+.help-photo{border-radius:50% 50% 16px 16px / 34% 34% 16px 16px;overflow:hidden;aspect-ratio:4/3;background:var(--mint)}
+.help-photo img{width:100%;height:100%;object-fit:cover}
+.skills{margin-top:72px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px 48px;list-style:none;padding:0}
+.skills li{border-top:1.5px solid var(--teal);padding-top:22px;min-width:0}
+.skills svg{width:30px;height:30px;color:var(--teal);stroke-width:1.7}
+.skills h3{font-size:1.4rem;font-weight:700;margin-top:16px}
+.skills p{margin-top:8px;color:var(--ink-soft)}
+
+/* ---------- locations ---------- */
+.loc{background:var(--teal);color:var(--on-dark)}
+.loc .h2{color:var(--on-dark)}
+.loc .kicker{color:var(--mint)}
+.loc-grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:48px}
+.side{font:600 .8rem var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--mint);padding-bottom:14px;border-bottom:1px solid var(--rule-dark)}
+.side-e{grid-column:1 / span 2;grid-row:1}.side-w{grid-column:3;grid-row:1}
+.pl-1{grid-column:1;grid-row:2}.pl-2{grid-column:2;grid-row:2}.pl-3{grid-column:3;grid-row:2}
+.place{padding-top:30px;min-width:0}
+.place svg{width:44px;height:44px}
+.place h3{font-size:clamp(1.8rem,2.8vw,2.4rem);font-weight:700;margin-top:18px;color:var(--on-dark)}
+.place address{font-style:normal;margin-top:10px;color:var(--on-dark-soft);line-height:1.6}
+.place .ph{color:#FFD7D3;background:rgba(245,80,80,.14);border-color:#FF8A84}
+
+/* ---------- why choose ---------- */
+.why-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center}
+.rings{width:min(100%,440px);aspect-ratio:1;border-radius:50%;border:clamp(18px,2.6vw,30px) solid var(--mint);padding:clamp(14px,2vw,22px);background:var(--paper);justify-self:center}
+.rings img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.why .h2{max-width:14ch}
+.reasons{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 40px;list-style:none;padding:0}
+.reasons li{min-width:0}
+.reasons h3{font-family:var(--f-body);font-size:1.05rem;font-weight:600;letter-spacing:0;line-height:1.35;display:flex;gap:10px;align-items:center}
+.reasons h3::before{content:"";width:10px;height:10px;border-radius:50%;border:2.5px solid var(--coral);flex:none}
+.reasons p{margin-top:8px;color:var(--ink-soft);font-size:.97rem}
+
+/* ---------- services ---------- */
+.svc{background:var(--cream)}
+.svc-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:72px;align-items:end}
+.svc-list{list-style:none;margin:44px 0 0;padding:0;border-top:1px solid var(--rule)}
+.svc-list li{display:grid;grid-template-columns:minmax(0,17rem) minmax(0,1fr);gap:8px 28px;padding-block:26px;border-bottom:1px solid var(--rule);align-items:center}
+.svc-list h3{font-size:1.5rem;font-weight:700;display:flex;align-items:center;gap:12px;white-space:nowrap}
+.svc-list h3 i{width:14px;height:20px;border-radius:7px 7px 2px 2px;flex:none;display:inline-block}
+.svc-list p{color:var(--ink-soft)}
+.fine{margin-top:16px;font-size:.88rem;color:var(--ink-soft)}
+.svc-photo{aspect-ratio:760/932}
+.svc-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- testimonials ---------- */
+.quotes{margin-top:48px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;list-style:none;padding:0}
+.quote{border-top:1.5px solid var(--teal);padding-top:22px;display:grid;gap:14px;align-content:start;min-width:0}
+.stars{display:flex;gap:3px}
+.stars svg{width:18px;height:18px;color:var(--sun)}
+.quote blockquote{margin:0;font-size:1rem;line-height:1.7;color:var(--ink)}
+.quote .who{font-weight:600;font-size:.95rem;color:var(--ink)}
+.quote .src{font-size:.85rem;color:var(--ink-soft);margin-top:-8px}
+
+/* ---------- steps ---------- */
+.steps-sec{background:var(--white)}
+.steps{margin-top:56px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;list-style:none;padding:0;position:relative}
+.steps li{position:relative;min-width:0}
+.steps li:not(:last-child)::before{content:"";position:absolute;top:31px;left:76px;right:-20px;height:2px;background:repeating-linear-gradient(90deg,var(--mint) 0 8px,transparent 8px 16px)}
+.num{width:64px;height:64px;border-radius:50%;background:var(--white);border:3px solid var(--teal);display:grid;place-items:center;position:relative}
+.num::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--teal)}
+.num span{position:relative;z-index:1;font:700 1.5rem var(--f-display);color:var(--cream)}
+.steps li:nth-child(2) .num{border-color:var(--mint)}.steps li:nth-child(2) .num::after{background:var(--mint)}.steps li:nth-child(2) .num span{color:var(--teal)}
+.steps li:nth-child(3) .num{border-color:var(--sun)}.steps li:nth-child(3) .num::after{background:var(--sun)}.steps li:nth-child(3) .num span{color:var(--teal)}
+.steps li:nth-child(4) .num{border-color:var(--coral)}.steps li:nth-child(4) .num::after{background:var(--coral)}.steps li:nth-child(4) .num span{color:var(--teal)}
+.steps h3{font-size:1.4rem;font-weight:700;margin-top:22px}
+.steps p{margin-top:8px;color:var(--ink-soft);max-width:26ch}
+.steps-cta{justify-content:center}
+
+/* ---------- faq ---------- */
+.faq{background:var(--paper)}
+.faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px;align-items:start}
+.qa{border-top:1px solid var(--rule)}
+.qa details{border-bottom:1px solid var(--rule)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 2px;font-weight:600;font-size:1.06rem}
+.qa summary::-webkit-details-marker{display:none}
+.pm{width:22px;height:22px;flex:none;position:relative}
+.pm::before,.pm::after{content:"";position:absolute;left:3px;right:3px;top:10px;height:2px;background:var(--teal);border-radius:2px;transition:transform .2s ease}
+.pm::after{transform:rotate(90deg)}
+details[open] .pm::after{transform:rotate(0)}
+.qa summary:hover{color:var(--teal-hover)}
+.qa .a{padding:0 44px 24px 2px;color:var(--ink-soft);max-width:62ch}
+
+/* ---------- final cta ---------- */
+.final{background:var(--teal);color:var(--on-dark);text-align:center}
+.final .h2{color:var(--on-dark)}
+.final p{margin:16px auto 0;color:var(--on-dark-soft);font-size:1.1rem;max-width:44ch}
+.final .btn{margin-top:34px}
+.final .call{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--on-dark);text-decoration:none;font-weight:500}
+.final .call svg{width:18px;height:18px;color:var(--sun)}
+.final .call:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ---------- footer ---------- */
+.foot{background:var(--teal-deep);color:var(--on-dark-soft);font-size:.88rem}
+.foot .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding-block:30px}
+.foot img{height:34px;width:auto}
+.foot .hipaa{display:inline-flex;align-items:center;background:var(--white);border-radius:8px;padding:6px 10px}
+.foot .hipaa img{height:32px}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center}
+.foot a{color:var(--on-dark)}
+.foot .photo-note{flex-basis:100%;padding-top:16px;border-top:1px solid var(--rule-dark);font-size:.82rem}
+.team-fig{margin:0;display:grid;justify-items:center;gap:14px;min-width:0}
+.team-fig figcaption{font-size:.92rem;font-weight:500;color:var(--ink-soft)}
+.foot .ph,.final .ph{color:#FFD7D3;background:rgba(245,80,80,.14);border-color:#FF8A84}
+.faq-grid > .h2{position:sticky;top:32px}
+
+/* ---------- mobile call bar ---------- */
+.mbar{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1180px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) 380px;grid-template-areas:"copy form" "photo form";gap:36px 44px}
+  .hero-photo{margin-top:0}
+  .hero-photo .arch{aspect-ratio:16/8;border-radius:50% 50% 16px 16px / 60% 60% 16px 16px}
+  .hero-photo img{object-position:50% 26%}
+  .badge{right:18px;bottom:-26px;width:76px;height:76px}
+  .hero .lead{max-width:46ch}
+}
+@media (max-width:960px){
+  .ins .wrap{grid-template-columns:1fr}
+  .ins-note{grid-column:1}
+  .help-head,.why-grid,.svc-grid,.faq-grid{grid-template-columns:1fr;gap:40px}
+  .skills{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc-photo{max-width:420px}
+  .why .h2{max-width:none}
+}
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr;grid-template-areas:"copy" "photo" "form";gap:32px}
+  .hero-photo .arch{aspect-ratio:4/3}
+  .loc-grid{grid-template-columns:1fr;row-gap:0}
+  .side-e,.side-w,.pl-1,.pl-2,.pl-3{grid-column:1;grid-row:auto}
+  .side-w{margin-top:44px}
+  .place{display:grid;grid-template-columns:44px 1fr;column-gap:18px;padding-top:24px}
+  .place svg{grid-row:span 2;width:40px;height:40px;margin-top:4px}
+  .place h3{margin-top:0}
+  .place address{margin-top:4px}
+  .svc-list li{grid-template-columns:1fr}
+  .quotes{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:86%;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:8px;margin-right:calc(-1 * var(--gut-r))}
+  .quote{scroll-snap-align:start}
+  .steps{grid-template-columns:1fr;gap:0}
+  .steps li:not(:last-child)::before{top:72px;bottom:4px;left:31px;right:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--mint) 0 8px,transparent 8px 16px)}
+  .steps li{display:grid;grid-template-columns:64px 1fr;column-gap:20px;padding-bottom:30px}
+  .steps .num{grid-row:span 2}
+  .steps h3{margin-top:14px}
+  .steps p{max-width:none}
+  .steps-cta{justify-content:flex-start}
+}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .top .logo img{height:36px}
+  .top-call{font-size:.95rem}
+  .top-call .label{display:none}
+  .hero h1{font-size:clamp(2.35rem,11vw,3rem)}
+  .form-card{padding:24px 20px 22px}
+  .logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 18px}
+  .logos li{justify-content:center}
+  .skills{gap:32px 22px}
+  .skills h3{font-size:1.18rem}
+  .skills p{font-size:.93rem}
+  .reasons{gap:26px 20px}
+  .reasons h3{font-size:.98rem;align-items:flex-start}
+  .reasons h3::before{margin-top:6px}
+  .reasons p{font-size:.92rem}
+  .cta-row .btn{width:100%}
+  .qa .a{padding-right:8px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:10px;background:var(--cream);border-top:1px solid var(--rule);padding:10px var(--gut-r) calc(10px + env(safe-area-inset-bottom, 0px)) var(--gut-l);transform:translateY(0);transition:transform .2s ease}
+  .mbar[data-hide="true"]{transform:translateY(110%)}
+  .mbar .btn{flex:1;min-height:50px;padding:0 14px;font-size:.95rem}
+  .mbar .ring-call{flex:none;width:54px;min-height:50px;border-radius:10px;border:1.5px solid var(--teal);display:grid;place-items:center;color:var(--teal)}
+  .mbar .ring-call svg{width:22px;height:22px}
+  .foot{padding-bottom:76px}
+}
+</style>
+<script>function ota_gtm(){window.dataLayer=window.dataLayer||[];window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-W42536PM';document.head.appendChild(s);})();window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});(function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-N2RP5GST';document.head.appendChild(s);})();}if(document.readyState==='complete'){ota_gtm();}else{window.addEventListener('load',ota_gtm);}</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W42536PM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2RP5GST" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.3 20.1 3.9 13.7 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-target" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8.2" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="10" cy="10" r="3.4" fill="currentColor"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.6l2.9 6 6.5.8-4.8 4.5 1.2 6.5L12 17.2l-5.8 3.2 1.2-6.5L2.6 9.4l6.5-.8z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="On Target ABA"><img src="/lp-assets/cleveland-aba-therapy/logo-dark.png" width="978" height="160" alt="On Target ABA"></a>
+    <a class="top-call" href="tel:+18889895011"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>888-989-5011</span></a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">HELPING YOUR CHILD THRIVE</p>
+      <h1 id="hero-title">ABA Therapy in <em>Cleveland</em></h1>
+      <p class="lead">Compassionate, individualized care that helps your child build communication, social and everyday life skills.</p>
+      <ul class="ticks">
+        <li><svg style="color:var(--mint)" aria-hidden="true"><use href="#i-target"/></svg><span>Center-based, in-home &amp; school-based ABA</span></li>
+        <li><svg style="color:var(--mint)" aria-hidden="true"><use href="#i-target"/></svg><span>Medicaid &amp; major insurance plans accepted</span></li>
+        <li><svg style="color:var(--mint)" aria-hidden="true"><use href="#i-target"/></svg><span>Experienced, BCBA-led clinical teams</span></li>
+        <li><svg style="color:var(--mint)" aria-hidden="true"><use href="#i-target"/></svg><span>Flexible scheduling options</span></li>
+      </ul>
+      <a class="where" href="#locations"><svg aria-hidden="true"><use href="#i-pin"/></svg><span>Eastside &amp; Westside Cleveland Locations</span></a>
+    </div>
+
+    <figure class="hero-photo" style="margin:0">
+      <div class="arch">
+        <img src="/lp-assets/cleveland-aba-therapy/hero-child-640.webp" srcset="/lp-assets/cleveland-aba-therapy/hero-child-640.webp 640w, /lp-assets/cleveland-aba-therapy/hero-child-1000.webp 1000w" sizes="(max-width:820px) 100vw, (max-width:1180px) 60vw, 300px" width="640" height="736" alt="A smiling young boy riding a yellow tricycle at an On Target ABA center" fetchpriority="high">
+      </div>
+      <svg class="badge" viewBox="0 0 92 92" aria-hidden="true"><circle cx="46" cy="46" r="46" fill="#08424C"/><circle cx="46" cy="46" r="31" fill="#F2C50C"/><circle cx="46" cy="46" r="21" fill="#08424C"/><circle cx="46" cy="46" r="9" fill="#F2C50C"/></svg>
+    </figure>
+
+    <div class="form-card" id="get-started" role="region" aria-labelledby="form-title">
+      <h2 id="form-title">Let's Get Started!</h2>
+      <!-- HIPAA Jotform 263295263845163 (Google Ads - ABA Therapy - CLE - 11.26.26). Non-blocking iframe embed, same pattern as the other ad pages: passes the page's query string (gclid, utm_*) and parentURL to the form. -->
+      <div class="jf-wrap"><iframe id="JotFormIFrame-263295263845163" class="jf-frame" title="Let's Get Started!" allow="geolocation; microphone; camera; fullscreen" data-src="https://form.jotform.com/263295263845163" frameborder="0" style="min-width:100%;max-width:100%;height:420px;border:none;" scrolling="no"></iframe><script>(function(f){var p=location.href,i=p.indexOf("?"),q=i>-1?p.slice(i+1).split("&").map(function(x){var v=x.slice(x.indexOf("=")+1),e;try{e=encodeURIComponent(decodeURIComponent(v))}catch(r){e=v}return x.replace(v,e)}).join("&"):"";f.src=f.getAttribute("data-src")+"?"+(q?q+"&":"")+"parentURL="+encodeURIComponent(p)+"&jsForm=true";})(document.currentScript.previousElementSibling);</script></div>
+      <p class="privacy"><svg aria-hidden="true"><use href="#i-lock"/></svg>We respect your privacy.</p>
+      <div class="speak">
+        <p>Prefer to speak with someone?</p>
+        <a href="tel:+18889895011"><svg aria-hidden="true"><use href="#i-phone"/></svg>888-989-5011</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSURANCE -->
+<section class="ins" aria-labelledby="ins-title">
+  <div class="wrap">
+    <h2 id="ins-title">Medicaid &amp; Most Major Insurance Plans Accepted</h2>
+    <ul class="logos">
+      <li><img class="lg-molina" src="/lp-assets/cleveland-aba-therapy/ins-molina.png" width="412" height="120" alt="Molina Healthcare"></li>
+      <li><img class="lg-buckeye" src="/lp-assets/cleveland-aba-therapy/ins-buckeye.png" width="218" height="63" alt="Buckeye Health Plan"></li>
+      <li><span class="lg-cs"><img src="/lp-assets/cleveland-aba-therapy/ins-caresource.webp" width="400" height="400" alt="CareSource"></span></li>
+      <li><img class="lg-humana" src="/lp-assets/cleveland-aba-therapy/ins-humana.png" width="579" height="120" alt="Humana"></li>
+      <li><img class="lg-aetna" src="/lp-assets/cleveland-aba-therapy/ins-aetna.png" width="584" height="120" alt="Aetna"></li>
+      <li><img class="lg-mm" src="/lp-assets/cleveland-aba-therapy/ins-medical-mutual.png" width="767" height="120" alt="Medical Mutual"></li>
+      <li><img class="lg-umr" src="/lp-assets/cleveland-aba-therapy/ins-umr.png" width="211" height="110" alt="UMR"></li>
+      <li><img class="lg-champva" src="/lp-assets/cleveland-aba-therapy/ins-champva.png" width="240" height="56" alt="CHAMPVA"></li>
+    </ul>
+    <p class="ins-note">Don't see your insurance listed? We may still accept your plan. Contact us, and we'll be happy to verify your coverage.</p>
+  </div>
+</section>
+
+<!-- HOW WE HELP -->
+<section class="sec help" aria-labelledby="help-title">
+  <div class="wrap">
+    <div class="help-head">
+      <div>
+        <h2 class="h2" id="help-title">How We Help Your Child</h2>
+        <p class="kicker">Building Skills for a Brighter Future</p>
+        <p class="lead">Every child is unique. Our individualized ABA therapy programs are designed to help your child develop meaningful skills, build confidence and become more independent.</p>
+      </div>
+      <div class="help-photo">
+        <img src="/lp-assets/cleveland-aba-therapy/kids-play-wide-700.webp" srcset="/lp-assets/cleveland-aba-therapy/kids-play-wide-700.webp 700w, /lp-assets/cleveland-aba-therapy/kids-play-wide-1100.webp 1100w" sizes="(max-width:960px) 100vw, 640px" width="700" height="525" loading="lazy" alt="Three children laughing together during outdoor water play">
+      </div>
+    </div>
+    <ul class="skills">
+      <li>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5A2.5 2.5 0 0 1 7.5 5h17A2.5 2.5 0 0 1 27 7.5v11a2.5 2.5 0 0 1-2.5 2.5H14l-6 5v-5h-.5A2.5 2.5 0 0 1 5 18.5z"/><path d="M11 12h10M11 16h6"/></svg>
+        <h3>Communication</h3>
+        <p>Helping your child express their wants, needs and feelings.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="10" r="4"/><circle cx="22" cy="12" r="3.2"/><path d="M3.5 26c.6-5 3.6-8 7.5-8s6.9 3 7.5 8M17 20.5c1.2-1.6 2.9-2.5 5-2.5 3.2 0 5.6 2.4 6 6.5"/></svg>
+        <h3>Social Skills</h3>
+        <p>Building meaningful connections and positive interactions with others.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5c2.6 0 4 2.6 4 6.5 0 2.6-.9 4.4-1.1 6.5H6.3C6 15.4 5 13.6 5 11c0-3.9 1.4-6.5 4-6.5zM6.4 21h5.4v1.6a2.7 2.7 0 0 1-5.4 0zM23 8.5c2.6 0 4 2.6 4 6.5 0 2.6-1 4.4-1.3 6.5h-5.6c-.2-2.1-1.1-3.9-1.1-6.5 0-3.9 1.4-6.5 4-6.5zM20.2 25h5.4v1.6a2.7 2.7 0 0 1-5.4 0z"/></svg>
+        <h3>Independence</h3>
+        <p>Developing practical skills for everyday routines and activities.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 27S4.5 20.2 4.5 12A6.2 6.2 0 0 1 16 8.6 6.2 6.2 0 0 1 27.5 12C27.5 20.2 16 27 16 27z"/></svg>
+        <h3>Emotional Regulation</h3>
+        <p>Helping your child develop healthy coping skills and navigate everyday challenges.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="17" width="10" height="10" rx="1.5"/><rect x="17.5" y="17" width="10" height="10" rx="1.5"/><path d="M16 4.5l5.5 9.5h-11z"/></svg>
+        <h3>Learning &amp; Play</h3>
+        <p>Encouraging engagement, exploration and learning through positive experiences.</p>
+      </li>
+      <li>
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 28V15"/><path d="M16 17c-5.5 0-9-3.4-9-9 5.5 0 9 3.4 9 9zM16 14c0-5 3-8.5 9-8.5 0 5-3.5 8.5-9 8.5z"/></svg>
+        <h3>Positive Behavior</h3>
+        <p>Understanding your child's needs and developing healthier ways to communicate and respond.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="sec loc" id="locations" aria-labelledby="loc-title">
+  <div class="wrap">
+    <h2 class="h2" id="loc-title">Our Cleveland Locations</h2>
+    <p class="kicker">Exceptional ABA Therapy, Close to Home</p>
+    <div class="loc-grid">
+      <p class="side side-e">Eastside</p>
+      <div class="place pl-1">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#F2C50C"/><circle cx="22" cy="22" r="14" fill="#08424C"/><circle cx="22" cy="22" r="6" fill="#F2C50C"/></svg>
+        <h3>Mayfield</h3>
+        <address>767 Beta Dr, Suite C<br>Mayfield Village, OH 44143</address>
+      </div>
+      <div class="place pl-2">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#6CBCAF"/><circle cx="22" cy="22" r="14" fill="#08424C"/><circle cx="22" cy="22" r="6" fill="#6CBCAF"/></svg>
+        <h3>East Cleveland</h3>
+        <address>1975 Noble Rd, Bldg 329<br>Cleveland, OH 44112</address>
+      </div>
+      <p class="side side-w">Westside</p>
+      <div class="place pl-3">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="22" fill="#F4C0BD"/><circle cx="22" cy="22" r="14" fill="#08424C"/><circle cx="22" cy="22" r="6" fill="#F4C0BD"/></svg>
+        <h3>Brooklyn</h3>
+        <address>7575 Northcliff Ave, Suite 105<br>Brooklyn, OH 44144</address>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="sec why" aria-labelledby="why-title">
+  <div class="wrap why-grid">
+    <figure class="team-fig"><div class="rings"><img src="/lp-assets/cleveland-aba-therapy/team-529.webp" width="529" height="529" loading="lazy" alt="The On Target ABA clinical team together outdoors, smiling"></div><figcaption>Our team.</figcaption></figure>
+    <div>
+      <h2 class="h2" id="why-title">Why Choose On Target ABA?</h2>
+      <p class="kicker">Exceptional Care. Meaningful Progress.</p>
+      <ul class="reasons">
+        <li><h3>Individualized Care</h3><p>Therapy tailored to your child's unique strengths, needs and goals.</p></li>
+        <li><h3>Experienced Clinical Teams</h3><p>Compassionate professionals providing expert, BCBA-led care.</p></li>
+        <li><h3>Flexible Therapy Options</h3><p>Center-based, in-home and school-based ABA to meet your family's needs.</p></li>
+        <li><h3>Family-Centered Support</h3><p>Partnering with families every step of the way, from enrollment through therapy.</p></li>
+      </ul>
+      <div class="cta-row"><a class="btn btn-primary js-cta" href="#get-started">Get Started with ABA Therapy</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec svc" aria-labelledby="svc-title">
+  <div class="wrap svc-grid">
+    <div>
+      <h2 class="h2" id="svc-title">Our ABA Therapy Services</h2>
+      <p class="kicker">Quality Care. Wherever Your Child Needs It.</p>
+      <ul class="svc-list">
+        <li><h3><i style="background:var(--sun)" aria-hidden="true"></i>Center-Based ABA</h3><p>Structured learning and social development in our welcoming therapy centers.</p></li>
+        <li><h3><i style="background:var(--mint)" aria-hidden="true"></i>In-Home ABA</h3><p>Individualized therapy in the comfort of your own home.</p></li>
+        <li><h3><i style="background:var(--coral)" aria-hidden="true"></i>School-Based ABA</h3><p>Support for learning, participation and independence at school.*</p></li>
+      </ul>
+      <p class="fine">*Subject to school approval and service availability.</p>
+      <div class="cta-row"><a class="btn btn-primary js-cta" href="#get-started">Get Started with ABA Therapy</a></div>
+    </div>
+    <div class="svc-photo arch">
+      <img src="/lp-assets/cleveland-aba-therapy/gym-portrait-520.webp" srcset="/lp-assets/cleveland-aba-therapy/gym-portrait-520.webp 520w, /lp-assets/cleveland-aba-therapy/gym-portrait-760.webp 760w" sizes="(max-width:960px) 420px, 380px" width="520" height="638" loading="lazy" alt="A bright therapy room with a climbing wall, soft rainbow arch and colorful rugs">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec" aria-labelledby="t-title">
+  <div class="wrap">
+    <h2 class="h2" id="t-title">Trusted by Families Like Yours</h2>
+    <p class="kicker">Real Families. Real Experiences. Meaningful Progress.</p>
+    <ul class="quotes">
+      <li class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“This is a phenomenal ABA center. Everyone at the center is really kind and patient with my son. I have seen a huge improvement with him. I'm truly grateful for everyone at, On target. Thank you.”</blockquote>
+        <p class="who">Andreana Tadajopen</p>
+        <p class="src">Review source: Google</p>
+      </li>
+      <li class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“My son’s been going here for 3 months, and he’s using forks and spoons… He’s been using new sounds, getting our attention the correct way… He loves coming here… We absolutely love you guys and can’t thank everyone enough for the help that my boy needed. He’s doing soooo much better!”</blockquote>
+        <p class="who">Briana Martin</p>
+        <p class="src">Review source: Google</p>
+      </li>
+      <li class="quote">
+        <div class="stars" role="img" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“My twins are currently attending one of the centers, and we have had an amazing experience with On Target, especially the Airport location. 5 stars all around! My family appreciates you guys so much. You respond very quickly to any concerns we have and always come up with solutions!!!”</blockquote>
+        <p class="who">Zi zi World Tarpeh</p>
+        <p class="src">Review source: Google</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="sec steps-sec" aria-labelledby="s-title">
+  <div class="wrap">
+    <h2 class="h2" id="s-title">Getting Started Is Easy</h2>
+    <ol class="steps">
+      <li><div class="num"><span>1</span></div><h3>Contact Us</h3><p>Fill out our short form or give us a call.</p></li>
+      <li><div class="num"><span>2</span></div><h3>Verify Insurance</h3><p>We'll help verify your child's insurance coverage.</p></li>
+      <li><div class="num"><span>3</span></div><h3>Complete an Assessment</h3><p>Our clinical team develops a treatment plan tailored to your child.</p></li>
+      <li><div class="num"><span>4</span></div><h3>Begin ABA Therapy</h3><p>Start therapy once approvals are in place and services are available.</p></li>
+    </ol>
+    <div class="cta-row steps-cta"><a class="btn btn-primary js-cta" href="#get-started">Get Started with ABA Therapy</a></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <h2 class="h2" id="faq-title">Frequently Asked Questions</h2>
+    <div class="qa">
+      <details><summary>Do you accept Medicaid?<span class="pm" aria-hidden="true"></span></summary><p class="a">Yes! We accept several Medicaid and major insurance plans. Our team will help verify your coverage.</p></details>
+      <details><summary>How soon can my child begin therapy?<span class="pm" aria-hidden="true"></span></summary><p class="a">Start times depend on availability and insurance authorization. We'll work with you to get started as quickly as possible.</p></details>
+      <details><summary>What ages do you serve?<span class="pm" aria-hidden="true"></span></summary><p class="a">We primarily serve children ages 12 and under.</p></details>
+      <details><summary>How much does ABA therapy cost?<span class="pm" aria-hidden="true"></span></summary><p class="a">ABA therapy is covered by many insurance plans. Our team will help you understand your coverage and any out-of-pocket costs.</p></details>
+      <details><summary>Does my child need an autism diagnosis?<span class="pm" aria-hidden="true"></span></summary><p class="a">An autism diagnosis is generally required for insurance-funded ABA therapy. If your child doesn't have a diagnosis, we can help guide you through the process.</p></details>
+      <details><summary>Do you offer in-home ABA therapy?<span class="pm" aria-hidden="true"></span></summary><p class="a">Yes! We offer center-based, in-home and school-based ABA, subject to availability.</p></details>
+      <details><summary>Do you offer flexible scheduling?<span class="pm" aria-hidden="true"></span></summary><p class="a">Yes. We work with families to determine appropriate schedules based on clinical recommendations and availability.</p></details>
+      <details><summary>What is ABA therapy?<span class="pm" aria-hidden="true"></span></summary><p class="a">ABA is an evidence-based therapy that helps children develop communication, social and everyday living skills.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sec final" aria-labelledby="final-title">
+  <div class="wrap">
+    <h2 class="h2" id="final-title">Let's Help Your Child Thrive</h2>
+    <p>Take the first step toward compassionate, individualized ABA therapy.</p>
+    <a class="btn btn-sun js-cta" href="#get-started">Get Started with ABA Therapy</a><br>
+    <a class="call" href="tel:+18889895011"><svg aria-hidden="true"><use href="#i-phone"/></svg>Or call 888-989-5011</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="/lp-assets/cleveland-aba-therapy/logo-light.png" width="978" height="160" alt="On Target ABA" loading="lazy">
+    <nav aria-label="Legal">
+      <a href="https://ontargetaba.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+      <span>© 2026 On Target ABA</span>
+    </nav>
+    <p class="photo-note">All photos show our real team, centers and families. No stock photos.</p>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar" aria-label="Quick contact">
+  <a class="ring-call" href="tel:+18889895011" aria-label="Call 888-989-5011"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
+  <a class="btn btn-primary js-cta" href="#get-started">Get Started with ABA Therapy</a>
+</div>
+
+<script>
+(function(){
+  var form=document.getElementById('get-started');
+  // Every CTA lands on the form card.
+  document.querySelectorAll('.js-cta').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      form.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+    });
+  });
+  // Mobile bar steps aside while the form itself is on screen.
+  var bar=document.getElementById('mbar');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){bar.setAttribute('data-hide',en[0].isIntersecting?'true':'false');},{threshold:0.15}).observe(form);
+  }
+})();
+</script>
+<script>
+(function(){
+  // Jotform resize messages for the non-blocking iframe embed (same handler as the other ad pages).
+  var jfOk=function(o){try{var u=new URL(o);return u.protocol==='https:'&&['jotform.com','jotform.pro'].some(function(d){return u.hostname===d||u.hostname.endsWith('.'+d);});}catch(e){return false;}};
+  window.addEventListener('message',function(e){if(!e.data||!e.data.split)return;var a=e.data.split(':');if(a.length<3)return;var f=document.getElementById('JotFormIFrame-'+a[a.length-1]);if(!f)return;
+    switch(a[0]){case 'scrollIntoView':f.scrollIntoView();break;case 'setHeight':f.style.height=a[1]+'px';if(!isNaN(a[1])&&parseInt(f.style.minHeight,10)>parseInt(a[1],10))f.style.minHeight=a[1]+'px';break;case 'setMinHeight':f.style.minHeight=a[1]+'px';break;case 'collapseErrorPage':if(f.clientHeight>window.innerHeight)f.style.height=window.innerHeight+'px';break;case 'reloadPage':location.reload();break;case 'removeIframeOnloadAttr':f.removeAttribute('onload');break;}
+    if(jfOk(e.origin)&&f.contentWindow&&f.contentWindow.postMessage)f.contentWindow.postMessage(JSON.stringify({type:'urls',value:{docurl:encodeURIComponent(document.URL),referrer:encodeURIComponent(document.referrer)}}),'*');},false);
+})();
+</script>
+</body>
+</html>
