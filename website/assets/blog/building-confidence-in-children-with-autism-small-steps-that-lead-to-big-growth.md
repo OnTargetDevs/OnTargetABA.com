@@ -122,7 +122,7 @@ Confidence cannot grow when emotions feel overwhelming. ABA helps children learn
 * break requests
 * early signs of overwhelm
 
-A regulated child becomes [a confident child](https://ontargetaba.com/2025/11/17/%f0%9f%96%8d%ef%b8%8f-color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy/) because they feel more in control of their world.
+A regulated child becomes [a confident child](/blog/posts/color-connection-confidence-how-group-coloring-activities-support-growth-in-aba-therapy) because they feel more in control of their world.
 
 ### 6. Encouraging Flexible Thinking Through Play
 
