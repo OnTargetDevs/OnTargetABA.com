@@ -149,7 +149,11 @@
       '<header class="nav-bar sticky top-0 z-40 border-b border-transparent transition">' +
         '<div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-6">' +
           '<a href="' + esc(logo.href || '/') + '" class="flex items-center group" aria-label="' + esc(logo.alt || 'On Target ABA') + ' &mdash; home">' +
-            '<img src="' + esc(logo.src) + '" alt="' + esc(logo.alt) + '" class="h-10 w-auto transition-transform group-hover:scale-[1.02]" />' +
+            // Between lg and xl the nav + CTAs fill the row, so show the bullseye alone there.
+            '<picture>' +
+              '<source media="(min-width: 1024px) and (max-width: 1279.98px)" srcset="/assets/images/logo-2026-mark.png" width="120" height="120">' +
+              '<img src="' + esc(logo.src) + '" alt="' + esc(logo.alt) + '" width="734" height="120" class="h-9 lg:h-8 w-auto object-contain transition-transform group-hover:scale-[1.02]" />' +
+            '</picture>' +
           '</a>' +
           '<nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink/85" aria-label="Primary">' +
             navLinks.map((l) => navLinkHtml(l, activeSection)).join('') +
@@ -159,7 +163,7 @@
             '<a href="' + esc(primary.href) + '" class="btn btn-coral text-sm">' + esc(primary.label) + '</a>' +
           '</div>' +
           '<button class="lg:hidden inline-grid place-items-center w-11 h-11 rounded-full bg-white shadow ring-1 ring-line" data-mnav-toggle aria-expanded="false" aria-label="Menu" style="margin-right: env(safe-area-inset-right, 0px);">' +
-            '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#163243" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
+            '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#08424C" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>' +
           '</button>' +
         '</div>' +
         '<div class="mnav lg:hidden absolute top-full left-0 right-0 bg-white border-y border-line shadow-lg" data-mnav-panel>' +
