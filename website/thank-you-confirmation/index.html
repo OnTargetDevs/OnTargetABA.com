@@ -362,6 +362,7 @@ a.inline-link:hover,a.text-link:hover,.elementor a.inline-link:hover,.elementor 
 /* Frame escape (page audit 2026-10-28): the Jotform embeds on the ad pages submit inside their own iframe (Jotform's forms.js sets target="_top" only for two hard-coded customers), so this page can land INSIDE the ~540px form card. When that happens, move the whole browser window to this page so the parent sees the full confirmation and a single chat bubble. Tags start exactly once: immediately at top level; inside a frame only after 1.5 s and only if the frame is still alive (escape failed or was blocked) - the timer is cancelled on pagehide, so a successful escape never sends the form conversion twice. */
 if(window.top!==window.self){var ota_t=window.setTimeout(ota_gtm,1500);window.addEventListener('pagehide',function(){window.clearTimeout(ota_t);});try{window.top.location.replace(window.location.href);}catch(e){}}else{ota_gtm();}</script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="X04JOTNWVJpQBqzS98e16A" async></script>
+<script async src="https://portal.ontargetnotes.com/api/chat-intake/v1/public/loader.js"></script>
 </head>
 <body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W42536PM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
