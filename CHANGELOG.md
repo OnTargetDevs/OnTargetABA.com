@@ -16,6 +16,14 @@ and `Security`. The `changelog.yml` workflow appends new entries to the
 
 ### Fixed
 
+- replace unregistered campbdec.com with buddeconnect.org
+- load WhatConverts from its real host on the 59 non-LP pages
+
+
+## [Unreleased] &mdash; 2026-11-26
+
+### Fixed
+
 - turn LeadTrap off site-wide (Joshua 11/10 12:19: "it gives completely made up info")
 
 
