@@ -283,9 +283,14 @@
       iframe.allowTransparency = 'true';
       iframe.setAttribute('allow', 'geolocation; microphone; camera; fullscreen; payment');
       iframe.setAttribute('frameborder', '0');
-      iframe.scrolling = 'no';
+      // data-jotform-scroll: long multi-page forms (the job application) can
+      // outgrow a missed auto-resize and hide their Submit button, so let them
+      // scroll inside the frame instead of being cut off.
+      const canScroll = host.dataset.jotformScroll === 'yes';
+      iframe.scrolling = canScroll ? 'yes' : 'no';
       iframe.setAttribute('style',
-        'min-width:100%;max-width:100%;width:100%;height:' + minH + 'px;border:none;'
+        'min-width:100%;max-width:100%;width:100%;height:' + minH + 'px;border:none;' +
+        (canScroll ? 'overflow:auto;' : '')
       );
       iframe.addEventListener('load', () => settle(id));
       pending[id] = { host, ph, timer: setTimeout(() => showFallback(id), FALLBACK_MS) };
@@ -370,6 +375,10 @@
     if (cfg.mode !== 'leadbot') {
       try { localStorage.removeItem('ota_leadbot_v1'); } catch (e) { /* ignore */ }
     }
+
+    // Pages that opt out (the job application) keep every family-intake chat off,
+    // Blanca included, since its auto-open bubble covered the form's Submit button on phones.
+    if (document.body && document.body.hasAttribute('data-no-chat')) return;
 
     // On Target website chat (Blanca). The portal's loader decides per visitor
     // (portal config portal_share) whether to show; it loads even when widget.json
